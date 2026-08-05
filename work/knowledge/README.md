@@ -32,6 +32,14 @@ work/knowledge/
 └── 全局总览/
 ```
 
+## 2026-08-06 首轮校准执行状态
+
+已完成一轮受控吞吐校准：10 张知识卡和 5 张单元图谱已落盘，全部登记为 `drafted`，对应 15 项交付记录已写入 `_meta/deliverables.jsonl` 并标注 owner。图谱仅作候选校准视图，未把任何 `drafted` 卡汇总为正式 `accepted` 图谱。
+
+任务包位于 `dev/knowledge-extraction-foundation/05_task_packets/`；本轮覆盖必修上册 U02–U06。U06 图谱明确标出规划中的 U06-03、U06-04 尚未交付，U04 的真实学生实施材料也仍待补证。
+
+本轮完成后仍须经过独立评分、否决项审查和协调者裁决，才能推进 `drafted → linted → reviewed → accepted`；候选契约仍保持 `candidate`。
+
 ## Agent执行协议
 
 1. 协调者从 `deliverables.jsonl` 分配一个 `deliverable_id`，并生成一份 `agent_task_packet.md`；执行者不得自行抢占共享文件。

@@ -15,6 +15,7 @@ In scope:
 - 候选 V2 Schema、受控词表、评分量表和模板；
 - 自动校验器及一条真实记录的首通验证；
 - 供其他 agent 使用的运行与交接说明。
+- 首轮校准吞吐的 10 张卡 + 5 张图草稿及其证据记录（不计正式验收）。
 
 Out of scope:
 
@@ -30,6 +31,7 @@ Out of scope:
 | `03-architecture` | `../../work/语文备课系统_知识点提取研究计划.md` §3–§8 | complete | data contracts and gates defined | approved 2026-08-06 |
 | `04-implementation-spec` | `04_execution/implementation_spec_20260806_010616.md` | complete | implemented | approved 2026-08-06 |
 | `04-first-throughput-evidence` | `04_execution/first_throughput_evidence_20260806_013226.md` | complete | passed | approved 2026-08-06 |
+| `04-calibration-throughput` | `04_execution/calibration_throughput_20260806_061159.md` | complete | 10 cards + 5 graphs drafted; G2 pending | coordinator merged 2026-08-06 |
 
 ## Open questions and blockers
 
