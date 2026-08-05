@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "split_manifest.schema.json",
+  "title": "Split Manifest V2 Candidate",
+  "type": "object",
+  "required": ["split_id", "source_id", "master_source_id", "master_artifact_id", "split_artifact_id", "original_page_start", "original_page_end", "split_page_count", "master_page_count", "page_count_check", "mapping_verification_status", "verification_method"],
+  "properties": {
+    "split_id": {"type": "string", "pattern": "^SPLIT-[A-Z0-9-]+$"},
+    "source_id": {"type": "string"},
+    "master_source_id": {"type": "string"},
+    "master_artifact_id": {"type": "string"},
+    "split_artifact_id": {"type": "string"},
+    "original_page_start": {"type": "integer", "minimum": 1},
+    "original_page_end": {"type": "integer", "minimum": 1},
+    "split_page_count": {"type": "integer", "minimum": 1},
+    "master_page_count": {"type": "integer", "minimum": 1},
+    "page_count_check": {"const": true},
+    "mapping_verification_status": {"const": "verified"},
+    "verification_method": {"type": "string", "minLength": 1},
+    "verified_at": {"type": "string"}
+  },
+  "additionalProperties": false
+}

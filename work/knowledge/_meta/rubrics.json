@@ -1,0 +1,92 @@
+{
+  "schema_version": "2.0-candidate",
+  "contract_status": "candidate",
+  "source": "work/语文备课系统_知识点提取研究计划.md §6.1–§6.10",
+  "hard_rejections": [
+    {"code": "R01", "rule": "关键事实错误、伪造或张冠李戴"},
+    {"code": "R02", "rule": "直接引文不可定位、需证主张缺适配来源或I类解释少于两处文本证据"},
+    {"code": "R03", "rule": "合编文本漏项、必填模块缺失或特殊内容包模板错误"},
+    {"code": "R04", "rule": "把研究解释、学习提示、网络解析或OCR冒充规范来源结论"},
+    {"code": "R05", "rule": "原子知识点缺主层级、映射理由或有效证据"},
+    {"code": "R06", "rule": "把非M1记录称为高考直接衔接，或引用未登记真题"},
+    {"code": "R07", "rule": "使用未验收上游生成下游成果"},
+    {"code": "R08", "rule": "数量、ID、版本或链接不一致导致断链"},
+    {"code": "R09", "rule": "使用非现行课标、改写任务群名称或把任务群当固定课型/教法"},
+    {"code": "R10", "rule": "机械铺满四项核心素养，或把学业质量水平当作单课/知识点/题目难度标签"}
+  ],
+  "rubrics": {
+    "knowledge_card": {
+      "total_threshold": 85,
+      "calibration_threshold": 92,
+      "dimensions": [
+        {"id": "evidence", "name": "证据链与可追溯性", "weight": 25, "minimum": 21, "checkpoints": {"正式主张覆盖": 5, "定位可解析": 5, "引文与规范artifact一致": 5, "来源适配": 5, "证据元数据": 5}},
+        {"id": "accuracy", "name": "事实与术语准确性", "weight": 20, "minimum": 18, "checkpoints": {"书目信息": 5, "课标术语": 5, "事实解释边界": 5, "内外一致": 5}},
+        {"id": "completeness", "name": "字段完整与知识粒度", "weight": 15, "minimum": 12, "checkpoints": {"必填字段": 5, "合编与子文本覆盖": 5, "原子化与文本特异性": 5}},
+        {"id": "dual_dimension", "name": "双维度与母题质量", "weight": 15, "minimum": 12, "checkpoints": {"人文": 5, "语言与三类活动": 5, "母题两证据与学生关怀": 5}},
+        {"id": "exam", "name": "四层与高考映射", "weight": 10, "minimum": 8, "checkpoints": {"主层级及理由": 4, "官方定义": 2, "M0-M3及证据": 3, "不确定性": 1}},
+        {"id": "vertical", "name": "纵向贯通", "weight": 8, "minimum": 6, "checkpoints": {"目标册次": 2, "关系类型": 2, "递进说明": 2, "双方证据": 2}},
+        {"id": "teaching", "name": "教学可用性与表达", "weight": 7, "minimum": 5, "checkpoints": {"三类提示分离": 2, "核心素养与学业质量依据": 2, "可操作性": 2, "边界与NA": 1}}
+      ]
+    },
+    "unit_graph": {
+      "total_threshold": 88,
+      "calibration_threshold": 92,
+      "dimensions": [
+        {"id": "coverage", "name": "卡片、KP、单元任务覆盖及回链", "weight": 25, "minimum": 22, "checkpoints": {"卡清单": 5, "KP回链": 5, "任务源覆盖": 5, "无重漏": 5, "仅accepted上游": 5}},
+        {"id": "synthesis", "name": "跨课综合、共性与差异提炼", "weight": 20, "minimum": 16, "checkpoints": {"共性": 5, "差异": 5, "关系": 5, "不新增无证结论": 5}},
+        {"id": "dual_dimension", "name": "人文与语言双维度结构", "weight": 15, "minimum": 12, "checkpoints": {"人文结构": 5, "语言结构": 5, "交叉节点": 5}},
+        {"id": "task", "name": "单元任务拆解", "weight": 15, "minimum": 12, "checkpoints": {"原文定位": 5, "任务拆解": 5, "能力成果对应": 5}},
+        {"id": "exam", "name": "高考衔接及证据", "weight": 10, "minimum": 8, "checkpoints": {"分级": 3, "双向证据": 4, "M0与不确定性": 3}},
+        {"id": "progression", "name": "前后递进", "weight": 10, "minimum": 8, "checkpoints": {"前序": 5, "后续": 5}},
+        {"id": "readability", "name": "可读性与检索性", "weight": 5, "minimum": 4, "checkpoints": {"索引": 2, "图表与图例": 3}}
+      ]
+    },
+    "book_summary": {
+      "total_threshold": 90,
+      "dimensions": [
+        {"id": "coverage", "name": "全单元、特殊内容和诵读覆盖", "weight": 25, "minimum": 23, "checkpoints": {"全单元": 5, "特殊单元": 5, "诵读": 5, "前言定位": 5, "仅accepted上游": 5}},
+        {"id": "progression", "name": "跨单元递进", "weight": 20, "minimum": 17, "checkpoints": {"前置": 5, "深化": 5, "迁移": 5, "关系证据": 5}},
+        {"id": "classification", "name": "分类、去重与稳定ID", "weight": 15, "minimum": 13, "checkpoints": {"受控词表": 5, "去重": 5, "ID稳定": 5}},
+        {"id": "dual_line", "name": "双线、任务群与课程定位", "weight": 15, "minimum": 13, "checkpoints": {"人文": 5, "语言": 5, "任务群与课程定位": 5}},
+        {"id": "exam", "name": "高考板块映射", "weight": 10, "minimum": 8, "checkpoints": {"板块覆盖": 3, "证据": 4, "M0治理": 3}},
+        {"id": "consistency", "name": "上下游一致性", "weight": 10, "minimum": 9, "checkpoints": {"元数据": 5, "链接": 5}},
+        {"id": "retrieval", "name": "检索性", "weight": 5, "minimum": 4, "checkpoints": {"索引": 3, "问题清单": 2}}
+      ]
+    },
+    "exam_analysis": {
+      "total_threshold": 90,
+      "dimensions": [
+        {"id": "source", "name": "原卷、版本和答案来源", "weight": 20, "minimum": 18, "checkpoints": {"原卷": 5, "答案与评分资料": 5, "元数据与哈希": 5, "权威等级与不确定性": 5}},
+        {"id": "fidelity", "name": "题文、题号、分值和答案忠实度", "weight": 25, "minimum": 23, "checkpoints": {"卷别与小问ID": 5, "分值": 5, "题文": 5, "答案": 5, "规范artifact定位": 5}},
+        {"id": "coding", "name": "四层、四翼、情境与能力动作编码", "weight": 25, "minimum": 20, "checkpoints": {"四层": 5, "四翼": 5, "情境": 5, "能力动作": 5, "判定理由": 5}},
+        {"id": "extraction", "name": "原子考点提取与分析理由", "weight": 15, "minimum": 12, "checkpoints": {"原子考点": 5, "文本特异性": 5, "分析理由": 5}},
+        {"id": "coverage", "name": "题目与小问层级及整卷覆盖", "weight": 10, "minimum": 9, "checkpoints": {"全题": 4, "小问层级": 2, "分值校验": 2, "整卷审计": 2}},
+        {"id": "uncertainty", "name": "不确定性与版本记录", "weight": 5, "minimum": 4, "checkpoints": {"冲突": 2, "非官方答案边界": 2, "版本": 1}}
+      ]
+    },
+    "exam_kp_mapping": {
+      "total_threshold": 90,
+      "dimensions": [
+        {"id": "coverage", "name": "真题覆盖、KP反向核对与稳定ID", "weight": 20, "minimum": 18, "checkpoints": {"四卷小问边或M0": 10, "真题ID有效": 5, "81卡反向核对": 5}},
+        {"id": "level", "name": "M0-M3分级准确性", "weight": 20, "minimum": 18, "checkpoints": {"M1": 5, "M2": 5, "M3": 5, "M0": 5}},
+        {"id": "evidence", "name": "真题与教材双向证据链", "weight": 25, "minimum": 22, "checkpoints": {"真题定位": 5, "KP证据": 5, "双向链接": 5, "映射推理": 5, "无无证断言": 5}},
+        {"id": "consistency", "name": "映射完整性、去重与关系一致性", "weight": 15, "minimum": 13, "checkpoints": {"去重": 5, "多对多关系": 5, "ID与版本一致": 5}},
+        {"id": "cross_year", "name": "跨年比较与频次计算", "weight": 10, "minimum": 8, "checkpoints": {"比较口径": 4, "分母与频次": 3, "可复算": 3}},
+        {"id": "uncertainty", "name": "M0、冲突和不确定性治理", "weight": 5, "minimum": 4, "checkpoints": {"冲突": 3, "M0说明": 2}},
+        {"id": "usability", "name": "检索、版本与教学可用性", "weight": 5, "minimum": 4, "checkpoints": {"检索": 3, "版本与教学使用": 2}}
+      ]
+    },
+    "global_map": {
+      "total_threshold": 92,
+      "dimensions": [
+        {"id": "lineage", "name": "全量覆盖与来源血缘", "weight": 25, "minimum": 23, "checkpoints": {"81卡": 5, "28图": 5, "5册表": 5, "映射表": 5, "仅accepted上游": 5}},
+        {"id": "ontology", "name": "分类本体与稳定ID", "weight": 20, "minimum": 18, "checkpoints": {"受控分类": 5, "稳定ID": 5, "去重": 5, "版本": 5}},
+        {"id": "relations", "name": "双维度节点与关系", "weight": 15, "minimum": 13, "checkpoints": {"人文": 5, "语言": 5, "交叉关系": 5}},
+        {"id": "integration", "name": "学段递进、课标和高考整合", "weight": 15, "minimum": 13, "checkpoints": {"初中关联": 5, "必修到选必": 5, "课标与高考": 5}},
+        {"id": "consistency", "name": "全库一致性", "weight": 10, "minimum": 9, "checkpoints": {"元数据": 5, "链接": 5}},
+        {"id": "usability", "name": "查询与备课可用性", "weight": 10, "minimum": 8, "checkpoints": {"查询": 5, "备课使用": 5}},
+        {"id": "visualization", "name": "可视化与版本记录", "weight": 5, "minimum": 4, "checkpoints": {"图例": 2, "版本与依赖": 3}}
+      ]
+    }
+  }
+}

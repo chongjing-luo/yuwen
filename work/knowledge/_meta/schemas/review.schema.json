@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "review.schema.json",
+  "title": "Review Record V2 Candidate",
+  "type": "object",
+  "required": ["review_id", "deliverable_id", "artifact_version", "review_round", "reviewer", "review_role", "hard_rejections", "dimension_scores", "total_score", "decision", "reviewed_at"],
+  "properties": {
+    "review_id": {"type": "string", "minLength": 1},
+    "deliverable_id": {"type": "string", "minLength": 1},
+    "artifact_version": {"type": "string"},
+    "review_round": {"type": "integer", "minimum": 1},
+    "reviewer": {"type": "string", "minLength": 1},
+    "review_role": {"enum": ["self", "primary", "secondary", "adjudicator"]},
+    "hard_rejections": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "dimension_scores": {"type": "array", "items": {"type": "object"}, "minItems": 1},
+    "total_score": {"type": "number", "minimum": 0, "maximum": 100, "multipleOf": 0.5},
+    "decision": {"enum": ["pass", "rework", "adjudication"]},
+    "reviewed_at": {"type": "string"}
+  },
+  "additionalProperties": false
+}

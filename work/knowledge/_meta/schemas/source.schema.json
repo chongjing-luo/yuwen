@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "source.schema.json",
+  "title": "Source V2 Candidate",
+  "type": "object",
+  "required": ["source_id", "source_kind", "title", "scope", "source_level", "canonical_artifact_id", "metadata_status"],
+  "properties": {
+    "source_id": {"type": "string", "pattern": "^SRC-[A-Z0-9-]+$"},
+    "source_kind": {"enum": ["textbook_master", "textbook_package", "curriculum_standard", "policy", "exam_paper", "exam_answer", "exam_scoring", "reference"]},
+    "title": {"type": "string", "minLength": 1},
+    "creator_or_issuer": {"type": ["string", "null"]},
+    "publisher_or_channel": {"type": ["string", "null"]},
+    "edition": {"type": ["string", "null"]},
+    "isbn_or_document_number": {"type": ["string", "null"]},
+    "publication_date": {"type": ["string", "null"]},
+    "scope": {"type": "string", "minLength": 1},
+    "source_level": {"enum": ["S1", "S2", "S3", "S4"]},
+    "copyright_note": {"type": ["string", "null"]},
+    "canonical_artifact_id": {"type": "string", "pattern": "^ART-[A-Z0-9-]+$"},
+    "metadata_status": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": true
+}

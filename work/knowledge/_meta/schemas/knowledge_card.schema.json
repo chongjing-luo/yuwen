@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "knowledge_card.schema.json",
+  "title": "Knowledge Card Front Matter V2 Candidate",
+  "type": "object",
+  "required": ["schema_version", "card_id", "status", "book", "unit", "material_type", "title", "curriculum_version", "course_type", "primary_task_group", "related_task_groups", "quality_descriptor_refs", "source_ids", "subtext_ids", "producer", "reviewers", "version"],
+  "properties": {
+    "schema_version": {"const": "2.0-candidate"},
+    "card_id": {"type": "string", "pattern": "^CARD-(B1|B2|X1|X2|X3)-(U\\d{2}|REC)-\\d{2}$"},
+    "status": {"type": "string"},
+    "book": {"enum": ["必修上册", "必修下册", "选择性必修上册", "选择性必修中册", "选择性必修下册"]},
+    "unit": {"type": "string"},
+    "material_type": {"enum": ["lesson", "activity", "whole_book", "language_topic", "recitation"]},
+    "title": {"type": "string", "minLength": 1},
+    "curriculum_version": {"const": "普通高中语文课程标准（2017年版2020年修订）"},
+    "course_type": {"enum": ["必修", "选择性必修"]},
+    "primary_task_group": {"type": "string", "minLength": 1},
+    "related_task_groups": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "quality_descriptor_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "source_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+    "subtext_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "producer": {"type": "string"},
+    "reviewers": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"}
+  },
+  "additionalProperties": false
+}

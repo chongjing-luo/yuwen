@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deliverable.schema.json",
+  "title": "Deliverable V2 Candidate",
+  "type": "object",
+  "required": ["schema_version", "deliverable_id", "deliverable_type", "title", "status", "output_path", "source_ids", "upstream_deliverable_ids", "owner", "reviewers", "version"],
+  "properties": {
+    "schema_version": {"const": "2.0-candidate"},
+    "deliverable_id": {"type": "string", "minLength": 1},
+    "deliverable_type": {"enum": ["knowledge_card", "unit_graph", "book_summary", "exam_analysis", "exam_kp_mapping", "global_map"]},
+    "title": {"type": "string", "minLength": 1},
+    "status": {"enum": ["planned", "draft_existing", "drafted", "linted", "primary_reviewed", "secondary_reviewed", "adjudication", "rework", "accepted", "published", "review_required"]},
+    "output_path": {"type": "string", "minLength": 1},
+    "legacy_path": {"type": ["string", "null"]},
+    "source_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "upstream_deliverable_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "owner": {"type": "string"},
+    "reviewers": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"}
+  },
+  "additionalProperties": true
+}

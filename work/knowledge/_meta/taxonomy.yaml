@@ -1,0 +1,86 @@
+{
+  "schema_version": "2.0-candidate",
+  "contract_status": "candidate",
+  "freeze_gate": "G2: 10 cards and 5 unit graphs each score >=92 from both reviewers",
+  "curriculum_versions": [
+    "普通高中语文课程标准（2017年版2020年修订）"
+  ],
+  "book_codes": {
+    "B1": "必修上册",
+    "B2": "必修下册",
+    "X1": "选择性必修上册",
+    "X2": "选择性必修中册",
+    "X3": "选择性必修下册",
+    "TB2": "必修下册教师用书"
+  },
+  "course_types": ["必修", "选择性必修", "选修", "教师参考"],
+  "task_groups": [
+    {"number": 1, "name": "整本书阅读与研讨"},
+    {"number": 2, "name": "当代文化参与"},
+    {"number": 3, "name": "跨媒介阅读与交流"},
+    {"number": 4, "name": "语言积累、梳理与探究"},
+    {"number": 5, "name": "文学阅读与写作"},
+    {"number": 6, "name": "思辨性阅读与表达"},
+    {"number": 7, "name": "实用性阅读与交流"},
+    {"number": 8, "name": "中华传统文化经典研习"},
+    {"number": 9, "name": "中国革命传统作品研习"},
+    {"number": 10, "name": "中国现当代作家作品研习"},
+    {"number": 11, "name": "外国作家作品研习"},
+    {"number": 12, "name": "科学与文化论著研习"},
+    {"number": 13, "name": "汉字汉语专题研讨"},
+    {"number": 14, "name": "中华传统文化专题研讨"},
+    {"number": 15, "name": "中国革命传统作品专题研讨"},
+    {"number": 16, "name": "中国现当代作家作品专题研讨"},
+    {"number": 17, "name": "跨文化专题研讨"},
+    {"number": 18, "name": "学术论著专题研讨"}
+  ],
+  "core_competencies": ["语言建构与运用", "思维发展与提升", "审美鉴赏与创造", "文化传承与理解"],
+  "language_activities": ["阅读与鉴赏", "表达与交流", "梳理与探究"],
+  "quality_descriptor_policy": {
+    "allowed": "引用与目标相关的具体学业质量表现描述及规范PDF locator",
+    "forbidden": "给单卡、单课、知识点或题目直接判定完整水平X"
+  },
+  "deliverable_statuses": [
+    "planned", "draft_existing", "drafted", "linted", "primary_reviewed",
+    "secondary_reviewed", "adjudication", "rework", "accepted",
+    "published", "review_required"
+  ],
+  "import_only_statuses": ["draft_existing"],
+  "status_transitions": {
+    "planned": ["drafted"],
+    "draft_existing": ["drafted"],
+    "drafted": ["linted", "rework"],
+    "linted": ["primary_reviewed", "rework"],
+    "primary_reviewed": ["secondary_reviewed", "accepted", "adjudication", "rework"],
+    "secondary_reviewed": ["accepted", "adjudication", "rework"],
+    "adjudication": ["accepted", "rework"],
+    "rework": ["drafted"],
+    "accepted": ["published", "review_required"],
+    "published": ["review_required"],
+    "review_required": ["linted"]
+  },
+  "deliverable_types": ["knowledge_card", "unit_graph", "book_summary", "exam_analysis", "exam_kp_mapping", "global_map"],
+  "material_types": [
+    "lesson", "activity", "whole_book", "language_topic", "recitation",
+    "preface", "unit_task", "afterword", "reference_preface",
+    "reference_guide", "reference_lesson", "reference_unit", "reference_special"
+  ],
+  "source_levels": ["S1", "S2", "S3", "S4"],
+  "carrier_types": ["正式电子版", "纸本扫描件", "切分衍生", "OCR衍生", "网页快照", "图像", "计算结果"],
+  "authenticity_statuses": ["unverified", "verified", "conflict", "rejected"],
+  "source_relation_types": ["excerpt_of", "edition_match", "revision_of", "answer_for", "scoring_for"],
+  "source_relation_statuses": ["verified", "incompatible", "unknown"],
+  "claim_types": ["Q", "F", "I", "M", "R", "E", "D"],
+  "support_relations": ["supports", "context", "contradicts"],
+  "verification_statuses": ["unverified", "verified", "conflict", "rejected"],
+  "locator_types": ["pdf", "html", "image", "derived_calculation"],
+  "knowledge_dimensions": ["人文", "语言"],
+  "knowledge_types": ["事实", "概念", "程序", "策略", "解释", "价值辨析"],
+  "primary_layers": ["必备知识", "关键能力", "学科素养", "核心价值"],
+  "confidence_values": ["已核实", "有依据的解释", "暂定", "冲突", "未核实"],
+  "kp_relation_types": ["前提", "深化", "比较", "迁移", "例证", "组成", "冲突"],
+  "exam_mapping_levels": ["M0", "M1", "M2", "M3"],
+  "defect_levels": ["P0", "P1", "P2"],
+  "document_roles": ["paper", "answer", "scoring"],
+  "na_policy": "仅Schema明确允许且同时填写na_reason时可用N/A；不得用N/A掩盖缺失"
+}

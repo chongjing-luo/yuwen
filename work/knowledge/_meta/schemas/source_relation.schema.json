@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "source_relation.schema.json",
+  "title": "Source Relation V2 Candidate",
+  "type": "object",
+  "required": ["relation_id", "relation_type", "source_id_from", "source_id_to", "relation_status", "evidence_ids", "verifier", "verified_at"],
+  "properties": {
+    "relation_id": {"type": "string", "pattern": "^REL-[A-Z0-9-]+$"},
+    "relation_type": {"enum": ["excerpt_of", "edition_match", "revision_of", "answer_for", "scoring_for"]},
+    "source_id_from": {"type": "string"},
+    "source_id_to": {"type": "string"},
+    "relation_status": {"enum": ["verified", "incompatible", "unknown"]},
+    "evidence_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "verifier": {"type": ["string", "null"]},
+    "verified_at": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}
