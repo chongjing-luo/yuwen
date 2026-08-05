@@ -1,0 +1,28 @@
+# ---- Secrets / tokens ----
+.env
+*.token
+mineru_token
+**/mineru_token
+
+# ---- Agent / tool local state ----
+.workbuddy/
+.DS_Store
+**/.DS_Store
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.envrc
+
+# ---- Editor / OS ----
+.idea/
+.vscode/
+*.swp
+Thumbs.db
+
+# ---- Caches & temp ----
+/tmp/
+*.log

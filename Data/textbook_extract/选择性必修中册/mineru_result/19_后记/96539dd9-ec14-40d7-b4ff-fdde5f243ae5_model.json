@@ -1,0 +1,171 @@
+[
+    {
+        "layout_dets": [
+            {
+                "cls_id": 13,
+                "label": "header_image",
+                "score": 0.5683,
+                "bbox": [
+                    99,
+                    147,
+                    193,
+                    234
+                ],
+                "index": 1
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9165,
+                "bbox": [
+                    93,
+                    904,
+                    637,
+                    943
+                ],
+                "index": 2
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.8334,
+                "bbox": [
+                    94,
+                    963,
+                    283,
+                    1013
+                ],
+                "index": 3
+            },
+            {
+                "cls_id": 14,
+                "label": "image",
+                "score": 0.7794,
+                "bbox": [
+                    1268,
+                    1977,
+                    1514,
+                    2167
+                ],
+                "index": 4
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.7037,
+                "bbox": [
+                    1302,
+                    2195,
+                    1479,
+                    2232
+                ],
+                "index": 5
+            },
+            {
+                "cls_id": 9,
+                "label": "footer_image",
+                "score": 0.9173,
+                "bbox": [
+                    69,
+                    1948,
+                    236,
+                    2145
+                ],
+                "index": 6
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    90,
+                    904,
+                    637,
+                    940
+                ],
+                "score": 1.0,
+                "text": "PUTONG GAOZHONG JIAOKESHU"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    88,
+                    958,
+                    287,
+                    1017
+                ],
+                "score": 1.0,
+                "text": "YUWEN"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    1304,
+                    2196,
+                    1476,
+                    2233
+                ],
+                "score": 1.0,
+                "text": "定价：9.80元"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    150,
+                    1961,
+                    172,
+                    1978
+                ],
+                "score": 1.0,
+                "text": "境"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    125,
+                    1963,
+                    149,
+                    1979
+                ],
+                "score": 1.0,
+                "text": "环"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    180,
+                    1971,
+                    194,
+                    1988
+                ],
+                "score": 0.536,
+                "text": "粉"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    79,
+                    2031,
+                    94,
+                    2064
+                ],
+                "score": 0.822,
+                "text": "CHIN"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    70,
+                    2116,
+                    233,
+                    2143
+                ],
+                "score": 1.0,
+                "text": "绿色印刷产品"
+            }
+        ],
+        "page_info": {
+            "page_no": 0,
+            "width": 1654,
+            "height": 2339
+        }
+    }
+]
