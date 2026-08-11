@@ -110,9 +110,15 @@ def validate_data_contract(data: dict) -> list[str]:
 
     slides = data.get("slides", [])
     kinds = {slide.get("kind") for slide in slides}
-    if "first_full_read" not in kinds:
+    has_first_read = "first_full_read" in kinds or any(
+        slide.get("kind") == "full_read" and slide.get("phase") == "opening" for slide in slides
+    )
+    has_final_read = "final_full_read" in kinds or any(
+        slide.get("kind") == "full_read" and slide.get("phase") == "final" for slide in slides
+    )
+    if not has_first_read:
         errors.append("first uninterrupted full reading is required")
-    if "final_full_read" not in kinds:
+    if not has_final_read:
         errors.append("final full rereading is required")
 
     for index, question in enumerate(THREE_QUESTIONS, 1):

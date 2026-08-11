@@ -3,6 +3,7 @@ from __future__ import annotations
 import tempfile
 import unittest
 import zipfile
+import json
 from pathlib import Path
 
 from scripts.validate_meng_v5_lesson_package import (
@@ -12,6 +13,17 @@ from scripts.validate_meng_v5_lesson_package import (
     validate_markdown_contract,
     validate_pptx_contract,
 )
+
+
+ROOT = Path(__file__).resolve().parents[1]
+LESSON_DIR = ROOT / "work" / "备课" / "选择性必修下册" / "氓"
+SNAPSHOT = LESSON_DIR / "06_氓_V5课程数据快照.json"
+MARKDOWN_FILES = {
+    "lesson": LESSON_DIR / "02_氓_V5全文逐句教学母版.md",
+    "worksheet": LESSON_DIR / "03_氓_V5学生学习单.md",
+    "script": LESSON_DIR / "04A_氓_V5逐页无生试讲稿.md",
+    "audit": LESSON_DIR / "08_氓_V5学生接收桌面审计.md",
+}
 
 
 def valid_notes(page: int) -> str:
@@ -164,6 +176,25 @@ class PptxContractTests(unittest.TestCase):
             errors = validate_pptx_contract(path, expected_slide_count=3, first_view_pages={1})
 
             self.assertTrue(any("P1" in error and "伪装" in error for error in errors), errors)
+
+
+class GeneratedPackageIntegrationTests(unittest.TestCase):
+    def test_generated_data_and_markdown_satisfy_v5_contracts(self):
+        self.assertTrue(SNAPSHOT.exists(), SNAPSHOT)
+        data = json.loads(SNAPSHOT.read_text(encoding="utf-8"))
+        self.assertEqual([], validate_data_contract(data))
+
+        texts = {}
+        for label, path in MARKDOWN_FILES.items():
+            self.assertTrue(path.exists(), path)
+            texts[label] = path.read_text(encoding="utf-8")
+        self.assertEqual([], validate_markdown_contract(texts))
+
+    def test_generated_slide_count_stays_within_approved_range(self):
+        self.assertTrue(SNAPSHOT.exists(), SNAPSHOT)
+        data = json.loads(SNAPSHOT.read_text(encoding="utf-8"))
+        self.assertGreaterEqual(len(data["slides"]), 95)
+        self.assertLessEqual(len(data["slides"]), 120)
 
 
 if __name__ == "__main__":
