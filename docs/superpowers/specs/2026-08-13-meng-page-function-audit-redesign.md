@@ -65,19 +65,29 @@ V5.3在V6通过全量审查以前只作为基线保留，不被覆盖；它的�
 
 首轮审计覆盖V5.3全部127页：S001为隐藏教师导航，S002—S127为126张学生路径页。隐藏页也要说明其管理功能，但不套用学生发言覆盖指标。
 
-审计先保留旧ID，以便定位旧版问题；新版结构冻结后再分配V6页码，并生成“旧ID—处理决定—新ID”映射。被合并或删除的旧ID仍保留审计记录，避免问题随重编号消失。
+审计证据分为三个不可互相替代的层次：
+
+1. `legacy_initial_audit`：对V5.3原页原样作出的初始诊断，恰好覆盖S001—S127且每个旧ID只出现一次。初审完成后，六门的`pass/fail/na`、证据、审查者和时间不可改写；后续修好的是V6，不是假装V5原页当初没有问题。
+2. `legacy_disposition_closure`：记录每个旧ID的“保留、合并、移动、重写、删除”决定、决定状态、目标引用、决定专属证据和关闭状态。它回答旧问题后来怎样被处置，但不覆盖初始诊断。
+3. `current_release_audit`：只审计权威V6现行清单中的页面和学习事件；结构冻结后使用新ID。只有这一层的全部现行节点通过，才能证明新版可发布。
+
+新版结构冻结后分配V6页码，并生成“旧ID—处理决定—现行页/事件ID”多对多映射。被合并或删除的旧ID仍保留初始诊断和关闭记录，避免问题随重编号消失；同一现行节点可以承接多个旧ID，但每个目标都必须存在于权威现行清单并通过现行审计。
+
+单个内容任务只生成`legacy_initial_audit`草案，不得自行宣布封存。每个相应检查点（连续内容批次通常成对）须在自审之后，由两名未参与该批写作、身份不同于作者且彼此不同的独立审查者完成旧页初诊复核，再生成`initial_audit_seal`。封存记录必须包含`seal_id`、规范化`source_path`、恰好覆盖该批的`legacy_ids`、`source_sha256`、两个`reviewer_ids`、逐旧ID审查证据、`sealed_at`和`seal_hash`；任一审查者缺席、覆盖范围有缺口或审查证据不能定位到旧ID与门，均不得封存。
+
+后续构建与发布必须复算封存哈希。初审源或封存清单有任何字节变化，引用旧有效哈希的处置关闭、现行审计和放行证据立即失效。确有事实性错误时也不得改写原文件，只能追加`seal_amendment`。每条修订至少包含`amendment_id`、`target_seal_id`、`previous_effective_hash`、`claim_pointer`、`old_claim`、`new_claim`、`reason`、`evidence_refs`、`author_id`、两个独立`reviewer_ids`、`reviewed_at`和`amendment_hash`。有效视图按封存基线与通过双审的修订按序叠加并生成新的`effective_view_hash`；下一条修订必须唯一承接上一有效哈希。断链、分叉、自承接、缺少双审或重复前驱均为失败。原封存文件和原诊断永久保留；所有下游记录必须声明`based_on_effective_hash`并在修订后重新验证，不能沿用旧关闭状态。
 
 ### 4.2 页面处理决定
 
 | 决定 | 含义 |
 |---|---|
-| 保留 | 六道硬门全部通过，仅允许校字、间距等非功能性修正 |
-| 合并 | 功能可由相邻页同一学习事件无损承担，合并后重新审计 |
-| 移动 | 页面功能有效，但前置条件、认识边界或调用位置错误 |
-| 重写 | 功能值得保留，但问题、动作、覆盖、证据或视觉不合格 |
-| 删除 | 没有不可替代的学习收益，或只是重复、装饰、预制答案 |
+| 保留 | 旧页所有适用硬门通过；恰有一个现行页面目标，旧功能逐项与目标字段双向对应，目标通过现行审计 |
+| 合并 | 旧页功能可由相邻页或同一学习事件无损承担；至少一个现行目标，逐元素记录被承接内容和无损证据，合并目标重新审计并通过 |
+| 移动 | 旧页核心功能有效，G2、G3、G4、G6通过，G1或G5暴露位置/调用错误；恰有一个现行页面目标，记录原位置、新位置和修复证据，目标通过现行审计 |
+| 重写 | 功能值得保留，但问题、动作、覆盖、证据、语言或视觉不合格；至少一个现行目标，逐项记录保留了什么、关闭了哪些旧失败/缺陷，所有目标通过现行审计 |
+| 删除 | 没有不可替代的学习收益，或只是重复、装饰、预制答案；目标引用必须为空，逐元素删除依据和全局“不再换页重现”证据齐全 |
 
-不允许用“加一句说明”掩盖前置条件错误，也不允许把“移动”当作规避重写的手段。
+不允许用“加一句说明”掩盖前置条件错误，也不允许把“移动”当作规避重写的手段。学生可见旧页，以及含前台文字、视觉、版式或学生接收缺陷的旧页，采用合并或重写时至少有一个现行页面目标；事件目标只能附加。只有确属隐藏后台事件逻辑的旧页才允许`event-only`，并须保存实际隐藏状态、后台功能和无页面承接理由。`decision_status=final`不等于关闭：只有决定专属条件、目标存在与可达、目标现行审计、旧功能/内容/失败/缺陷逐项双向承接和独立复核均成立，`closure_status`才能为`closed`。一段说明文字、一个目标ID或一个与旧功能无关但恰好通过的目标，均不构成关闭证据。
 
 ### 4.3 版本
 
@@ -97,20 +107,26 @@ V5.3在V6通过全量审查以前只作为基线保留，不被覆盖；它的�
 
 一句话不能清楚写完，说明页面承担了过多核心任务；与相邻页写出相同变化，说明页面重复。
 
-审计首先标明`audit_scope`：
+现行审计先标明`node_type`与`audit_scope`：
 
-- `learning_page`：独立承担一次学生认识或作品变化的学习页；
-- `event_carrier`：因远距可读、完整听读、活动持续显示等原因承载同一学习事件的一种屏幕状态。
+- `node_type=page, audit_scope=learning_page`：独立承担一次学生认识或作品变化的学习页；
+- `node_type=page, audit_scope=event_carrier`：因远距可读、完整听读、活动持续显示等原因承载同一学习事件的一种屏幕状态；
+- `node_type=event, audit_scope=learning_event`：由一个或多个页面、教师话语、学习单和学生动作共同构成，独立保存输入—行动—作品—修订—后用证据的学习事件。
 
 `event_carrier`不是逃避逐页审计的例外。它仍须证明唯一载体职责、视觉必要、不能无损合并和所属事件；只是“作品变化、保存、后续调用”在完整学习事件层面判定。例如首次听读跨两张原文页，两页的唯一职责分别是让前三章、后三章在不中断听读时保持可读，整体事件才生成个人停顿句。若一张载体页没有可读性或课堂操作上的独立损失，仍须合并或删除。
 
 ### 5.2 必填数据字段
 
+下表字段用于页面功能诊断：V5原页把它们保存在`legacy_initial_audit`，V6现行页把它们保存在`current_release_audit`。诊断字段只由这两个诊断层使用，证据对象不同；`legacy_disposition_closure`使用后文的独立关闭字段，是不可省略的第三层。验证器不得把现行页的通过状态回填覆盖旧页的失败状态。
+
 | 字段 | 必填内容 | 直接否决情形 |
 |---|---|---|
-| `legacy_id` / `new_id` | 旧版稳定ID和冻结后的新版ID | 页码变化后无法追踪处理决定 |
-| `audit_scope` | `learning_page`或`event_carrier`；后者必须引用所属事件 | 用载体页身份掩盖重复内容 |
+| `node_id/page_id` | 页面节点的稳定ID：旧页两者均使用S001—S127，现行页均使用N001起的新ID | 混用旧新ID、两个ID不一致或页码变化后无法追踪 |
+| `node_type/audit_scope` | 页面必须为`page + learning_page/event_carrier`；旧页只允许页面类型；现行事件另按事件合同审计 | 用错误类型绕过适用字段或硬门 |
+| `execution_order`（仅现行页） | 现行页在全课节点中的唯一严格递增整数 | 缺失、重复，或不能用于后用边时序校验 |
+| `release_status`（仅现行页） | `provisional`或`final`，须与门状态一致 | 有`pending/deferred/fail`却标`final` |
 | `learning_unit` | 页面所属的完整学习事件 | 页面孤立，找不到输入与闭合位置 |
+| `owner_event_id` | `event_carrier`必填且只能指向一个所属事件；`learning_page`必须为`null` | 载体无所有者、多所有者或学习页伪借事件 |
 | `unit_role` | 输入、体验、澄清、生成、交流、质询、修订、收束、转场中的一个主角色 | 主角色不唯一 |
 | `supporting_move` | 可选的朗读、书写、倾听、板书等辅助动作 | 用辅助动作冒充第二核心功能 |
 | `prerequisite` | 已有原文经历、知识、方法、作品及证据页 | 所需框架尚未建立，或只是假定学生会 |
@@ -124,6 +140,7 @@ V5.3在V6通过全量审查以前只作为基线保留，不被覆盖；它的�
 | `artifact_location` | 教材旁批、学习单、板书、口头采集或屏幕现场记录 | 声称有证据却无保存位置 |
 | `previous_relation` | 前页怎样成为本页输入 | 只有主题连续，没有学习连续 |
 | `next_relation` | 后页怎样比较、质询或修订本页产出 | 一次性书写，后续再未出现 |
+| `next_use_refs`（仅现行页） | 结构化后用边：`target_event_id`、`source_artifact_field`、`target_input_field`、`expected_use` | G5通过却无可提取目标/字段，或与事件反向输入不一致 |
 | `deletion_loss` | 删除将失去的不可替代能力、证据或转折 | 只能回答“少一个过渡”“不够完整” |
 | `merge_test` | 与前后页合并的结果和不能合并的理由 | 可以无损合并却仍独占一页和时间 |
 | `channel_split` | 屏幕、教师口头、学习单分别承担什么 | 三者问题口径、任务或答案状态不一致 |
@@ -131,13 +148,47 @@ V5.3在V6通过全量审查以前只作为基线保留，不被覆盖；它的�
 | `primary_visual_duty` | 题名、全文/章内整读、原文批注、文本比较/关系图、动作小景、意象点景、活动界面、现场共创中的唯一主视觉机制 | 没有主机制，或多个机制争抢解释权 |
 | `secondary_visual` | 可选，只能用于定位、强调或维持连续性，不得承载新的解释 | 辅助元素删去后任务含义改变，说明它实际是第二主机制 |
 | `time_value` | 分钟成本与不可替代收益 | 时间增加却没有覆盖、作品或理解增量 |
-| `decision` | 保留、合并、移动、重写、删除 | 用模糊结论回避处理 |
-| `decision_status` | `provisional`或`final` | 尚有跨批次后用未核验却标为`final` |
-| `review_status` | 自审、学生接收审查、视觉审查的缺陷与关闭证据 | 缺陷无责任页、无修复、无复验 |
+| `legacy_source_refs`（仅现行页） | 现行页反向指向所承接的旧ID；无旧来源时显式为空；旧初诊不存在此字段 | 与关闭层`target_refs`不对称，或指向无关旧页 |
+| `inherited_functions`（仅现行页） | 逐旧ID列出承接的功能/内容元素及本页具体字段；旧初诊不存在此字段 | 只写“继承”而无元素和字段，或漏承接必要元素 |
+| `review_status` | 仅保存Checkpoint 4以前的结构/内容自审、学生接收结构审查和视觉结构审查；不得引用Task 27最终发布审查ID | 缺陷无责任页、无修复、无复验，或把最终审查回写造成哈希自引用 |
 
-六道门分别保存结构化结果：`gate_id`、`gate_status`（`pass/fail/deferred/na`）、`evidence_refs`、`failure_code`、`reviewer`和`reviewed_at`。证据引用采用`页ID#字段`、`事件ID#产出`或`资产ID#任务卡字段`格式。`na`只允许`event_carrier`在第4、5门使用，且必须引用一个已经通过这两门的所属学习事件；其他位置出现`na`即失败。
+现行事件使用独立合同：`node_id=event_id`、`node_type=event`、`audit_scope=learning_event`、`execution_order`、`inputs`、`actions`、`artifacts`、`observable_change`（前态/后态/判据）、`artifact_locations`、`next_uses`、`carrier_ids`、`owner_page_ids`、`gate_4`、`gate_5`、`evidence_refs`、`legacy_source_refs`、`inherited_functions`、`release_status`、`terminal_sink`、`terminal_use`和`review_status`。事件G4、G5证据必须来自实际学生作品、调用点、学习单或课堂脚本字段，不得引用所属载体的`na`结果。`carrier_ids`必须与载体页的`owner_event_id`双向完全相等；事件不得把自己或其他仅以`na`借证的载体当作独立G4/G5证据。
 
-`deferred`只允许阶段审计中的第五门使用，用来诚实记录“产出将在尚未实施的后续批次调用”。它必须同时填写`target_event_id`、`target_batch`和`expected_use`，并把`decision_status`记为`provisional`。`deferred`不算通过，也不能成为页面放行证据。目标事件完成后，验证器必须检查来源页和目标事件的双向引用以及真实调用，再把第五门转为`pass`、把决定转为`final`；如果未调用，则转为`fail/G5_OUTPUT_ORPHAN`。结构冻结和正式放行模式拒绝任何`deferred`或`provisional`。
+旧页初诊若把页面标为`event_carrier`，不得引用V6现行事件。对应封存批次必须同时保存`legacy_event_evidence[]`：`legacy_event_id`、`learning_unit`、`carrier_ids`、`inputs`、`actions`、`artifacts`、`observable_change`、`next_use_evidence`、独立`gate_4/gate_5`、`reviewer_ids`和`reviewed_at`。旧载体的`owner_event_id`与旧事件`carrier_ids`须同封存层双向相等；旧G4/G5的`na`只能引用该旧事件的具体通过字段。若无法从V5原材料证明事件级变化或后用，就应把旧门记为`fail`，不能借新版设计补证。
+
+`legacy_disposition_closure`使用独立关闭合同，至少包含：`legacy_id`、`based_on_effective_hash`、`decision`、`decision_status`、`target_refs`、`legacy_content_elements`、`required_carry_forward`、`forbidden_reappearance_signatures`、`element_mappings`、`coverage_result`、`decision_evidence`、`initial_failure_codes`、`closed_failure_codes`、`initial_defect_ids`、`closed_defect_ids`、`defect_closures`、`closure_status`、`closure_evidence_refs`和`review_status`。
+
+- `target_refs`采用`page:Nxxx`或`event:E_xxx`的带类型引用，其数量和类型必须符合4.2；删除必须为空。
+- 初审根对象另有不可变`defect_registry`，每项包含`defect_id`、`severity=P0/P1/P2/P3`、`reviewer_id`、`object_ref`、`claim`和`evidence_refs`；`review_status`只能引用其中ID。`initial_failure_codes`和`initial_defect_ids`由当前有效旧初诊视图机械导出；后者必须恰好包含其`review_status`所引用、且在登记表中分级为P0、P1、P2的全部缺陷ID。`closed_*`集合须分别与`initial_*`严格相等，不能遗漏、增补或改名；P3只转入真实试教观察项，不伪作桌面关闭。
+- 每个`defect_closures`项须记录`defect_id`、`closure_method=target_fix|deletion_absence`、修复/删除前后证据、`original_reviewer_id`、原审查者复验结论与时间。非删除决定只允许`target_fix`，并必须给出`target_ref`、`target_field`、规范化`target_field_sha256`、`element_mapping_sha256`和`current_audit_node_sha256`；删除只允许`deletion_absence`，其`target_ref/target_field`必须为`null`，改为引用禁现签名、全局扫描结果及其SHA-256和原审查者复验。一个笼统的“目标已通过”不能关闭具体缺陷。任一目标字段、映射或现行审计节点变化，相关`closure_status`和原审查者复验立即失效为`pending`，须在Checkpoint 4及release重新核验；不能只更新结构bundle而保留旧关闭结论。
+- `legacy_content_elements`逐项登记旧页的可保留功能、前台文字/答案、视觉构成和后台事件逻辑；`required_carry_forward`说明哪些必须承接，`element_mappings`把每一项映射到目标的具体字段，`coverage_result`机械证明无遗漏。
+- 每个非删除目标须在现行记录中以`legacy_source_refs`和`inherited_functions`反向指回旧ID及所承接功能，且目标必须从课程根节点可达。双向映射集合不等、字段证据不存在或目标功能无关时，即使目标审计通过也不能关闭。
+- 删除为每个应消失元素生成可复算的`forbidden_reappearance_signatures`，每项标明`signature_type=text|asset|layout|event`、规范化器、检测器、扫描范围和允许例外。冻结时扫描全部课程源、学生前台、讲者备注、活动与学习单；正式含图材料生成后，再扫描PPTX正文/notes/XML/资产关系、每个模块切片、DOCX/学习单和实际渲染。资产签名还须使用感知相似或任务语义标记，不能仅靠资产ID，防止同一删除视觉换文件名重现。任一签名换页、换资产ID或后期生图重现即删除失败。合并/重写则逐元素验证承接覆盖，不能只承接一半。
+- `closure_status`只允许`pending/deferred/closed/failed`；结构冻结和发布拒绝`pending/deferred/failed`。
+
+权威清单明确拆为结构层和物理输出层，避免结构冻结时预测尚未生成的幻灯片：
+
+- `structure_manifest`列出所有V6页面和学习事件的ID、`execution_order`、所属模块、事件—载体关系和声明型安全停点，不含`occurrences`或`student_visible`。`execution_order`是每个现行节点唯一、严格递增的整数，不允许作者用相同序号规避后继校验。结构冻结前可以使用稳定草案ID；冻结时一次性生成N001起的正式页ID并重算全部引用。
+- Task 27从最终PPTX实测生成`slide_occurrence_inventory`。每个slide出现记录包含`occurrence_ref`、`artifact_id`、`physical_index`、`page_id`、`hidden`、`reachable_from_start`、`projected`和`official_entry_id`；另从三份DOCX实测生成`document_page_inventory`，每页只含`artifact_id`、`doc_page_index`、渲染/源哈希和可选`content_refs`。`release_artifact_manifest`冻结哪些PPTX/DOCX及入口属于计划中的学生放映或教师使用路径；真实使用情况待试教。
+- Task 27还生成`other_channel_inventory`，登记不是PPT物理页但课堂脚本规定学生会接触的渠道：`channel_ref`、`channel_type=teacher_spoken|worksheet_region|board|audio|other`、`source_artifact_id`、规范化`source_path`及SHA-256、`field_or_region`、该字段内容SHA-256、`student_exposure_order`、`owner_event_id`、`exposure_status=scripted|observed`和`exposure_evidence_refs`。本轮桌面发布只允许并只声称`scripted`：它必须绑定真实剧本/学习单/音频的具体字段与哈希，并验证导航顺序和可执行性；`observed`只能在真实试教后凭课堂记录另行追加，既不允许在课前伪填，也不作为本次桌面发布硬门。教师备注只有明确标为将说出的台词时才能登记`scripted teacher_spoken`，设计意图或未说备注不能冒充学生听见；事件及渠道须双向互指。
+- 最终`current_manifest`是`structure_manifest + slide_occurrence_inventory + document_page_inventory + other_channel_inventory + release_artifact_manifest`的派生视图。`student_visible`不是单独可编辑结论，而等于所有官方学生PPTX输出中`projected=true` slide出现记录之逻辑或；一份母版隐藏不能抵消另一模块中的可见出现。DOCX物理页单独保存，学习单区域、教师话语、板书、音频的脚本暴露顺序与所属事件通过其他渠道进入最终清单。
+
+“清单与审计相等”不允许自证完备，须再通过四个独立来源交叉核对：
+
+1. 静态枚举所有`content/*`模块实际声明的页面、事件与边，生成`declared_node_inventory`；任何重复声明、无归属声明或未进入课程根图的孤儿节点本身即失败。
+2. 从课程数据唯一根节点遍历全部可达页面、事件与后用边，生成只读`source_graph_inventory`；声明集、可达集和清单的页面集/事件集须分别相等。
+3. Checkpoint 4由装配器独立输出`structure_assembly_snapshot`，只记录结构节点、事件—载体关系、计划模块归属和安全停点，不含物理页、文件路径或occurrence；不得直接复制`structure_manifest`作为结果。
+4. 正式候选生成后，Task 27输出`physical_assembly_snapshot`，解析完整PPTX及所有模块PPTX的物理slide顺序、隐藏标志、页ID、备注事件ID和输出文件归属。每张物理slide必须恰有一个合法页ID，同一文件内页ID唯一，且`物理页数 = occurrence映射数 = 该artifact声明应有页数`；按`physical_index`核对有序多重集和一一双射，不以去重集合代替。完整母版与模块均不得有无ID额外页、重复ID、重页、错序或漏页；备注事件亦须逐物理出现核验。
+
+`current_release_audit`的页面/事件集合必须与`structure_manifest`相等，后者又须与声明/可达/`structure_assembly_snapshot`的结构事实相等；最终`current_manifest`还须与`physical_assembly_snapshot`、物理事实和脚本渠道事实相等。`student_visible/projected_to_students`由逐artifact出现记录、实际隐藏标志、被冻结的官方放映入口和导航可达性推导，不得由作者手填；学生接收审查覆盖每一个`projected=true`的物理出现，同页在不同输出中的上下文不能互相代替。事件审查中的`other_channel_evidence_refs`必须在`other_channel_inventory`中存在，所属事件与脚本暴露顺序一致并双向互指。源声明、孤儿节点、物理页、备注事件、出现双射、渠道哈希/归属/顺序或可见性任一不符，均阻断冻结/发布。
+
+六道门分别保存结构化结果：`gate_id`、`gate_status`（旧页初审为`pending/pass/fail/na`；现行阶段审计另允许G5使用`deferred`）、`evidence_refs`、`failure_code`、`reviewer`和`reviewed_at`。证据引用采用`页ID#字段`、`事件ID#产出`或`资产ID#任务卡字段`格式。`na`只允许`event_carrier`在第4、5门使用，且必须引用一个已经通过这两门的所属学习事件；其他位置出现`na`即失败。
+
+`deferred`只允许`current_release_audit`阶段模式中的第五门使用，用来诚实记录“现行产出将在尚未实施的后续批次调用”。它必须同时填写`target_event_id`、`target_batch`和`expected_use`，并把当前节点的`release_status`记为`provisional`。`deferred`不算通过，也不能成为页面或旧问题关闭证据。目标事件完成后，验证器必须检查来源节点和目标事件的双向引用以及真实调用，再把第五门转为`pass`、把`release_status`转为`final`；如果未调用，则转为`fail/G5_OUTPUT_ORPHAN`。
+
+除全课唯一终端学习事件外，所有G5后用边（不只`deferred`）必须满足`target.execution_order > source.execution_order`，并进入全局有向无环图检查。来源和目标须双向互指，证据须定位到目标实际读取的来源作品字段；自环、A↔B互借、任意长度环、同序、倒序调用或只写“以后会用”均失败。
+
+课程允许且只允许一个`terminal_sink=true`的最后学习事件，用来停止无限后继；其他事件必须显式为`false`。它必须位于最大`execution_order`，不得再声明后续学习事件；其G5仍不能以“这是最后一页”自动通过，而须填写`terminal_use`子字段：`final_artifact`、`recipient_or_owner`、`post_class_use`、`artifact_location`、`delivery_evidence_refs`和`no_further_classroom_call_reason`。现行设计采用“退出条交付—教师课后诊断/学生保留问题”作为终端用途；若没有实际交付渠道、保存位置或可核验用途，仍为`fail/G5_OUTPUT_ORPHAN`。终端例外不得用于封面、转场、知识答案页或任何中途节点。零个或多个终端、终端非最大顺序、`terminal_use`缺字段、以中途页冒充终端均失败。旧页初始诊断不得使用`deferred`，结构冻结和正式放行模式拒绝任何现行`deferred/provisional`或旧页关闭层的`pending/deferred/failed`。
 
 统一失败码至少包括：
 
@@ -166,9 +217,13 @@ V5.3在V6通过全量审查以前只作为基线保留，不被覆盖；它的�
 5. **产出后来真的使用：** 它进入后续解释、追问、修订或总结；
 6. **删除或合并确有损失：** 损失不能由相邻页以相同时长承担。
 
-任一硬门失败，`decision`不得为“保留”。第五门仍为`deferred`时可以记录暂定处理方向，但不能把页面判为已通过或进入结构冻结。版式漂亮、教师台词流畅、总分较高均不能抵消。
+`learning_event`不重复虚构页面级六门，而独立通过事件G4、G5：G4用`inputs/actions/artifacts/observable_change`证明学生前后作品或认识确实可比较；G5用`next_uses`和目标实际读取字段证明该作品后来被调用。事件的输入、行动、作品、载体、页面所有者和后用必须都在课程可达图中，且G5边遵守严格后继与无环合同。事件G4/G5任一失败，所属载体页的`na`即失效。
 
-`event_carrier`必须通过第1、2、3、6门；第4、5门在所属学习事件级通过并以`na + 事件证据引用`回填。这样既逐页说明它为何存在，也不伪造一张封面或半幅原文独自造成了学习变化。
+V5旧页任一硬门初始失败，`legacy_disposition_closure.decision`不得为“保留”，但该失败必须永久保留并用关闭记录证明怎样处置，不能改写成`pass`。V6现行节点任一硬门失败则不得进入结构冻结或发布；第五门仍为`deferred`时只能保持`release_status=provisional`。版式漂亮、教师台词流畅、总分较高均不能抵消。
+
+`event_carrier`必须通过第1、2、3、6门；第4、5门在所属`learning_event`级通过并以`na + 事件具体字段证据`回填。所属事件必须存在于同层权威清单、确为该载体的直接所有者；载体`owner_event_id`与事件`carrier_ids`须双向完全相等。事件独立通过不得反向借用该载体的`na`，也不得形成载体—事件或普通G5引用循环。这样既逐页说明它为何存在，也不伪造一张封面或半幅原文独自造成了学习变化。
+
+除逐节点硬门外，现行清单还必须通过一次全局反事实检查：任意两张相邻页或同一事件载体若能在相同时长、相同覆盖和相同可读性下无损合并，结构冻结失败；全部旧页删除签名还要执行全局负向扫描。逐页各自写“不可合并”或“已经删除”不能代替这些全局检查。
 
 ### 5.4 特殊页面
 
@@ -553,7 +608,7 @@ V6按以下因果链重组，不受旧模块页数限制：
 | 等级 | 定义 | 处理 |
 |---|---|---|
 | P0 | 事实错误、文本越界、文件损坏、严重前台泄漏、关键学习链断裂 | 禁止交付，立即返工 |
-| P1 | 任一页面硬门失败、活动覆盖虚假、前置框架错误、听众无任务、产出无后用、插图误导 | 不得放行 |
+| P1 | 任一V6现行页面/事件硬门失败、旧页处置未闭合、活动覆盖虚假、前置框架错误、听众无任务、产出无后用、插图误导 | 不得放行 |
 | P2 | 语言AI化、课堂话语不自然、互动不足、视觉层级或节奏明显削弱学习 | 本轮必须关闭 |
 | P3 | 只有真实试教才能判定的负担、回应或时间风险 | 记录试教观察点，不伪装为已验证 |
 
@@ -563,17 +618,32 @@ P0、P1、P2不能用总分抵消，也不能降级成“建议”。
 
 至少设置两名不参与本轮写作的审查者：
 
-- **学生接收审查者：** 只依据实际页面、讲者备注和学习单，逐页记录学生看见、听见、做过、可能理解、可能误解和留下的作品；重点检查前置条件、发言覆盖、听众任务和后续调用。
+- **学生接收审查者：** 只依据实际生成的页面、讲者备注和学习单，逐页模拟学生按设计将看见、将听见、可能参与什么、可能理解或误解什么、预期留下什么作品；重点检查前置条件、发言覆盖、听众任务和后续调用，不把模拟写成已发生事实。
 - **视觉审查者：** 依据完整母版与各模块逐页可读的分批渲染（每批8—12页、子图不低于1600×900）、规定页面的300 dpi单页图、三份DOCX逐页状态、角色设定和插图任务卡，检查原诗是否为视觉主线、远距可读、留白、层级、动作辨识、人物一致和文本越界。
 
 审查者不能以设计者“本来想表达什么”为放行依据。审查结论必须定位到页、字段或资产；修复后由原审查者复验修复页，并扩大到所属模块，防止局部修复制造新断点。
 
-视觉结论还必须绑定结构化`render_manifest`和`review_evidence`，不能只绑定页ID或截图文件名：
+审计证据采用无自引用的三级链。Checkpoint 4生成`structure_audit_bundle_sha256`，内容为`structure_manifest`、`current_release_audit`、旧初审有效视图/处置关闭，不含尚未存在的物理输出或Task 27最终审查。Task 21/22可绑定这个结构哈希做候选构建检查。Task 26最终PPTX和Task 22最终DOCX均完成实测后，由Task 27冻结`release_artifact_manifest`、`slide_occurrence_inventory`、`document_page_inventory`和`other_channel_inventory`，派生最终`current_manifest`，再生成不可变的“最终审查前”`release_audit_bundle_sha256`。Task 27的最终学生接收/视觉结论只进入独立追加式`release_review_ledger`，每条绑定该final bundle，但ledger绝不反写`current_release_audit.review_status`，也不被final bundle反向哈希。
 
-- 每个源PPTX/DOCX记录规范化路径、文件类型、SHA-256、页数、页ID—物理页码映射及其SHA-256；PPTX同时记录批准资产清单SHA-256；
+`release_review_ledger`为哈希链式追加账本。每条审查记录必填`review_id`、`review_type`、`object_key`、`revision`、`previous_ledger_hash`、可空`supersedes_review_id`、`release_audit_bundle_sha256`、状态、审查者、时间和缺陷ID；同一`(bundle, review_type, object_key)`的首条记录revision=1且无supersedes，后续记录须revision连续、恰好替代上一当前记录并承接唯一前驱哈希。断链、分叉、重复当前状态或跨bundle替代均失败。有效审查视图按上述键只取唯一链尾，但完整原账永久保留。
+
+ledger另含不可删除的`release_defect_registry`和只追加的`release_defect_closures`。每个发现登记`defect_id`、`severity=P0|P1|P2|P3`、`object_ref`、`review_record_ref`、`claim`、`evidence_refs`、`reviewer_id`、`discovered_at`和`source_state_sha256`；已发现项不得删除、改ID或改严重度，只能追加修订说明。完整不可变审查记录中全部`defect_ids`的并集必须严格等于registry的`defect_id`集合；每个记录内ID恰有一个registry项反向指回该`review_id`，每个registry项也必须出现在其`review_record_ref.defect_ids`中，且severity/object/evidence/reviewer与发现记录一致。同ID多registry、记录漏登记、孤儿registry或错误反指均失败。每个关闭登记`defect_id`、`fix_refs`、修复前/后SHA-256、`original_reviewer_id`、原审查者复验状态/时间、`closure_status`和`verified_source_state_sha256`；无源关闭、重复有效关闭或修复后源状态再次变化均使关闭无效。有效开放集合由registry减去“恰好一条仍匹配当前源状态的有效关闭”机械导出。
+
+Task 28的`final_defect_closure_summary.closed_p0_p1_p2_ids`必须严格等于registry中全部P0/P1/P2 ID集合，逐项恰一有效关闭；不得手填`open=0`，P3单列到真实试教观察项。Task 28再生成`release_attestation_sha256`，其组件为final bundle哈希、完整ledger及其有效视图哈希、机械缺陷关闭汇总和评分；审查记录绑定前置final bundle，因此不存在自引用。候选重建、occurrence/渠道变化或artifact清单变化都会产生新final bundle，使旧ledger状态失效。
+
+两个bundle和最终证明共用`bundle_schema_version=1`与同一可复算规范。结构bundle固定四组件：`structure_manifest`、`current_release_audit`、`legacy_effective_view`、`legacy_disposition_closure`；final bundle固定六组件：`structure_audit_bundle`、`release_artifact_manifest`、`slide_occurrence_inventory`、`document_page_inventory`、`other_channel_inventory`、`current_manifest`；release attestation固定五组件：`release_audit_bundle`、`release_review_ledger`、`effective_release_review_view`、`final_defect_closure_summary`、`final_scorecard`。各组件先转为canonical JSON——UTF-8、LF、Unicode NFC、路径转工作区相对POSIX路径、对象键按Unicode码点升序；语义有序数组（页面/事件执行顺序、物理slide、DOCX分页、渠道暴露、G5边序列）保持原序并把顺序本身纳入哈希，集合数组（ID集合、缺陷集合、审查者集合）按稳定ID升序；只排除明确列在schema中的`generated_at`、纯展示用绝对缓存路径，其他字段一律纳入。每个组件分别计算SHA-256并记录为`component_sha256`；bundle/attestation文档按schema版本、上述固定组件名和组件哈希的固定顺序再次canonicalize并计算SHA-256。验证器必须自己从源重算，不接受生产器自报哈希；键书写顺序变化不改变哈希，任一非排除字段、数组语义顺序、组件内容变化都必须改变哈希，组件缺失或替换必须失败。
+
+最终审查证据还分两类，且都绑定`release_audit_bundle_sha256`：
+
+- `student_occurrence_review`的辨别字段为`review_type=student_occurrence`，逐物理出现必填`release_audit_bundle_sha256`、`occurrence_ref`、`artifact_id`、`physical_index`、`page_id`、桌面模拟的`simulated_seen/simulated_heard/simulated_activity_participation`、`possible_understanding`、`possible_misunderstanding`、`possible_gain`、`reviewer_id`、`reviewed_at`、`status`和`defect_ids`。其键的有序多重集必须严格等于冻结官方入口推导出的全部`projected=true` slide occurrence；隐藏非投影页不得混入接收集合，但仍进入视觉集合。另一artifact中的同页记录不能代替本出现。
+- `student_event_review`的辨别字段为`review_type=student_event`，逐完整`learning_event`记录`release_audit_bundle_sha256`、`event_id`、按执行顺序排列的`ordered_carrier_occurrence_refs`、`other_channel_evidence_refs`、桌面模拟中学生将看见/听见/做什么，以及对设计上的`inputs/actions/artifacts/observable_change/next_uses`的可执行性复核、审查者、时间、状态与缺陷ID。它的事件ID集合必须严格等于`structure_manifest/current_release_audit`全部现行学习事件；每个载体引用必须指向合法`projected` slide occurrence，每个其他渠道引用必须双向匹配`other_channel_inventory`中的所属事件、`scripted`状态和顺序，不能用未说出的备注或几条逐页记录冒充事件整体审查。所有结论均是课前模拟，不写成学生已经理解或实际参与。
+
+最终视觉和接收证据不能只绑定页ID、源Office文件或截图文件名：
+
+- 每个源PPTX记录`release_audit_bundle_sha256`、规范化路径、文件类型、SHA-256、页数、V6页ID—物理slide有序双射及其SHA-256、批准资产清单SHA-256；三份DOCX另进`document_page_inventory`，每页只要求`artifact_id + doc_page_index`唯一，可选`content_refs`指向事件/学习单区/讲稿段，不得分配Nxxx或污染`structure_manifest`页面集合；
 - 每次渲染记录源文件SHA-256、生成PDF的路径与SHA-256、渲染器及版本、DPI、色彩/裁切等参数、生成时间；每张分批联系表和300 dpi单页图记录路径、SHA-256及所含源文件、页ID和物理页码；
-- 每条逐页`review_evidence`记录源文件路径与SHA-256、页ID、物理页码、实际审查的渲染资产路径与SHA-256、审查者、审查时间、状态和缺陷ID；同一页出现在完整母版与模块文件时，分别绑定并审查，不以相同页ID互相代替；
-- 源文件SHA-256、批准资产清单SHA-256、页数、页码映射、渲染器版本/参数或被审查渲染资产SHA-256任一变化，受影响的视觉状态立即失效并回到`pending`；必须重新渲染、复验和回归，不能沿用旧图或旧“通过”；
+- `review_evidence`采用按`review_type`区分的联合类型：`student_occurrence/visual_slide`记录单一PPTX slide occurrence、V6页ID/物理slide和渲染引用；`visual_document_page`记录DOCX artifact及`doc_page_index/content_refs`，不要求V6页ID；`student_event`记录event ID、多个按序occurrence/其他渠道引用以及可选的多个source/render refs，禁止强制或伪造单一`page_id/physical_index`。同一页出现在完整母版与模块文件时，出现/视觉记录分别绑定并审查，不以相同页ID互相代替；
+- `release_audit_bundle_sha256`、源文件SHA-256、批准资产清单SHA-256、页数、页码双射、官方放映入口、渲染器版本/参数或被审查渲染资产SHA-256任一变化，受影响的学生接收与视觉状态立即失效并回到`pending`；必须重新渲染、复验和回归，不能沿用旧图或旧“通过”；
 - 正式发布若只改变路径，须有候选路径—正式路径的逐文件晋升记录，且两端SHA-256完全相同；否则视为文件变化。正式放行验证器必须证明每个正式PPTX/DOCX的SHA-256均等于其最终已审候选源SHA-256，并检查所绑定的全部渲染证据仍有效。
 
 ### 15.4 百分制量表
@@ -587,13 +657,13 @@ P0、P1、P2不能用总分抵消，也不能降级成“建议”。
 | 语文质地、体验和课堂剧本 | 15 |
 | 视觉、插图与跨文件实施质量 | 10 |
 
-评分只在硬门全部通过、P0—P2清零以后进行，不能参与缺陷豁免。每一分必须绑定`页ID/事件ID/资产ID + 证据字段`。各维度使用下列可复算锚点：
+评分只在V6现行页面/事件硬门全部通过、旧页处置全部关闭且P0—P2清零以后进行，不能参与缺陷豁免。每一分必须绑定`页ID/事件ID/资产ID + 证据字段`。各维度使用下列可复算锚点：
 
 | 维度 | 90%锚点 | 95%锚点 | 100%锚点 |
 |---|---|---|---|
 | 文本、教材和认识边界 | 所有事实与解释正确，事实/推断/延伸明确 | 多义处主动呈现竞争解释及限度，跨文件完全一致 | 在95%基础上，所有高风险判断均有教材或原诗双重定位且无冗余解释 |
 | 学生接收连续性与问题时机 | 无前置倒置，全文—局部—全文链闭合 | 各事件输入与后用可逐项追踪，认知负担有恢复支架 | 在95%基础上，每个关键转折均能由学生作品重建而非教师代述 |
-| 页面必要性与因果闭合 | 六门全通过，旧新映射完整 | 所有合并/删除均有反事实证据，载体页无伪功能 | 在95%基础上，全课无可进一步无损合并的页面或事件 |
+| 页面必要性与因果闭合 | V6现行节点六门全通过，旧页初始失败保留且处置关闭，旧新映射完整 | 所有合并/删除均有反事实证据，载体页无伪功能 | 在95%基础上，全课无可进一步无损合并的页面或事件 |
 | 参与覆盖、倾听、追问和修订 | 关键意义页全员有入口，展示均有听众任务 | 个人—小组—公开—修订链均有保存证据，无一人包办路径 | 在95%基础上，不同表达偏好的学生均有等价参与通道且证据被后用 |
 | 语文质地、体验和课堂剧本 | 前台无研发语言，台词自然，剧本可演 | 朗读、动作、意象、讨论随文本生长，分支和等待真实 | 在95%基础上，删去任何教师套话仍不损害课堂，体验与语言发现高度统一 |
 | 视觉、插图与实施质量 | 远距可读、无技术缺陷、图文不越界、文件一致 | 原诗持续为主线，角色和资产全量一致，修复回归完成 | 在95%基础上，每项视觉都能证明三秒理解收益且无可删装饰 |
@@ -602,8 +672,9 @@ P0、P1、P2不能用总分抵消，也不能降级成“建议”。
 
 放行必须同时满足：
 
-- 全部页面硬门通过；
-- P0、P1、P2清零；
+- 权威V6现行清单中的全部页面/事件适用硬门通过；清单与现行审计、源码声明、课程数据可达图、装配快照和最终PPTX物理页/备注事件分别相等，可见性与实际投影状态一致；逐物理出现接收审查和逐学习事件整体接收审查均全覆盖；
+- 旧S001—S127初始诊断封存链未被改写，所有修订链有效；六门失败码与全部P0—P2缺陷逐项关闭，所有处置的双向谱系、元素覆盖和决定专属条件通过；
+- `release_review_ledger`覆盖全部规定的物理出现、学习事件和视觉对象，P0、P1、P2清零；结构审计中不存在Task 27审查ID，`release_attestation_sha256`验证通过；
 - 总分不低于95；
 - 每一维度得分率不低于90%；
 - 学生接收与视觉两名独立审查者明确通过；
@@ -618,7 +689,7 @@ P0、P1、P2不能用总分抵消，也不能降级成“建议”。
 
 ## 16. 实施顺序
 
-1. 建立覆盖S001—S127的逐页审计总表和字段校验器；
+1. 建立覆盖S001—S127的旧页初始诊断、双审封存/追加修订链、处置关闭表、权威现行清单、可达图/装配/PPTX外部清点与现行页面/事件审计校验器；
 2. 完成S002—S016导入、听读和支架的示范审计，验证审计质量；
 3. 审计S017—S088六章讲读，重点重构孤句页和持续原文坐标；
 4. 审计S089—S116三问、首章回看和婚姻圆桌；
@@ -638,7 +709,7 @@ P0、P1、P2不能用总分抵消，也不能降级成“建议”。
 正式交付至少包括：
 
 - V6设计与评估标准；
-- 旧版127页逐页功能审计总表及旧新页映射；
+- 旧版127页不可改写的初始诊断、处置关闭表、权威V6现行清单及旧新页/事件映射；
 - V6全文教学母版（Markdown与DOCX）；
 - V6学生学习单（Markdown与DOCX）；
 - V6逐页无生试讲稿（Markdown与DOCX）；
@@ -661,7 +732,7 @@ V6的机器检查、桌面模拟和独立代理审查只能证明：设计内部
 本规格要求后续实施始终回答三个问题：
 
 1. 这一页为什么必须在这里？
-2. 学生在这一页实际做了什么，作品或理解怎样改变？
-3. 没有这一页，哪项后续学习会真实受损？
+2. 按设计，学生将在这一页做什么，预期作品或理解变化怎样被观察？真实发生情况待试教。
+3. 没有这一页，按学习链会损失哪项后续支撑？真实损失程度待试教。
 
 任何页面、活动或插图若不能给出可核验答案，就不进入V6正式交付。

@@ -22,13 +22,20 @@ V6不继承127页和274分钟作为目标。新版页数、模块数和自然时
 - 旧V5.3只按经过核对的精确清单移入系统回收站，不使用通配符，不永久删除；
 - 其他代理的高考试卷、知识库和无关脚本不在本计划修改范围内。
 
-### 2.2 两层审计
+### 2.2 三层审计与权威现行清单
 
-- `learning_page`在页面级通过六道硬门；
-- `event_carrier`在页面级通过第1、2、3、6门，并引用所属学习事件对第4、5门的通过证据；
-- 审计源按旧ID分块保存，构建器合并为覆盖127页的JSON与Markdown总表；
-- `stage`模式允许尚未审到的旧页为`pending`，但已经审计的页不允许缺字段；
-- `release`模式不允许`pending`、`deferred`、`provisional`、`na`误用、未关闭缺陷或旧ID缺失。
+- `legacy_initial_audit`按旧ID保存V5原页的不可改写初始诊断，恰好覆盖S001—S127；
+- `legacy_disposition_closure`保存每个旧ID的决定、决定专属证据、带类型目标引用、旧失败关闭情况和独立复核；
+- `current_release_audit`分别审计现行`learning_page/event_carrier`页面和`learning_event`事件；事件用独立输入—行动—作品—变化—后用合同通过G4/G5；
+- Checkpoint 4冻结不含物理输出的`structure_manifest`并与独立`structure_assembly_snapshot`核对；Task 27从最终PPTX实测生成`slide_occurrence_inventory`，从DOCX实测生成独立`document_page_inventory`和`physical_assembly_snapshot`，并与`other_channel_inventory/release_artifact_manifest`派生最终`current_manifest`；结构清单还须与源码声明、课程数据可达图分别相等，最终清单再与PPTX slide、DOCX页、隐藏标志和备注事件清点相等；`student_visible`由实际PPTX投影状态推导，不允许手填绕审；
+- 现行`learning_page`在页面级通过六道硬门；现行`event_carrier`通过第1、2、3、6门，并与同层清单中直接所属的`learning_event`双向互指，只引用事件独立G4/G5字段且无循环；
+- 旧页初审与关闭源按旧ID分块保存，构建器合并为覆盖127页的JSON与Markdown总表；现行内容另由清单和现行审计承载；
+- 单个内容任务只生成旧页初审草案；每个相应检查点（连续内容批次通常成对）由两名未参与写作的独立审查者逐旧ID复核后，才生成逐文件`initial_audit_seal`；任何初审或封存链变化使后续关闭和放行失效；
+- 事实性纠错只能追加带链式哈希、双独立复核和`effective_view_hash`的`seal_amendment`，相关处置必须基于新有效哈希重验；
+- 旧页六门失败与初审中全部P0—P2缺陷均须集合级逐项关闭；非删除目标须以目标字段双向承接旧功能，学生可见/视觉缺陷不得仅关闭到事件；删除须全局扫描换页重现；
+- `stage`模式允许尚未审到的旧页初审与关闭记录为`pending`，也允许现行G5合法`deferred`；已经审计的记录不允许缺字段；
+- `release`模式要求旧S001—S127初始诊断完整且未改写、处置全部关闭，并拒绝现行`pending/deferred/provisional`、`na`误用、未关闭缺陷、清单遗漏或现行失败门；
+- 所有G5后用边必须严格指向执行顺序更晚的事件并通过全局DAG检查；结构冻结另执行相邻页/同事件载体的无损合并反事实和删除内容全局负向扫描，不以逐页自述代替。
 
 ### 2.3 内容与生成器解耦
 
@@ -37,11 +44,11 @@ V6不继承127页和274分钟作为目标。新版页数、模块数和自然时
         ↓
 scripts/meng_v6/text.js                 30组诗句、12个意义句群、解释边界
         ↓
-scripts/meng_v6/audit/*.json            旧S001—S127处理决定与六门证据
+scripts/meng_v6/audit/*.json            旧S001—S127初始诊断与处置关闭证据
 scripts/meng_v6/content/*.js            新学习事件、学生前台、真实剧本和学习证据
         ↓
 scripts/meng_v6/assemble.js              结构冻结后分配V6页码
-        ├──→ 审计总表与旧新映射
+        ├──→ 权威现行清单、现行审计、旧页关闭总表与旧新映射
         ├──→ 教案、学习单、逐页无生试讲稿
         ├──→ 完整母版与模块PPTX
         ├──→ Markdown与DOCX
@@ -107,23 +114,39 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 ## Task 2：实现逐页审计数据合同与失败码
 
-**描述：** 把规格中的字段、`learning_page/event_carrier`规则、六门状态、跨批次`deferred`、证据引用格式、失败码和`stage/release`差异实现为可测试合同。
+**描述：** 把规格中的三层证据、封存/修订链、决定专属闭合、权威现行清单及外部清点、`learning_page/event_carrier/learning_event`规则、六门状态、跨批次`deferred`、G5有向无环图、证据引用格式、失败码和`stage/freeze/release`差异实现为可测试合同。
 
 **验收标准：**
 
-- [ ] 必填字段、枚举值和`gate_status`规则逐项可验证；
-- [ ] `event_carrier`只有第4、5门可用`na`，且必须引用已通过的事件；
-- [ ] `deferred`只允许阶段审计的第五门，必须绑定目标事件、目标批次和预期用途，且页面决定只能是`provisional`；
-- [ ] 目标事件实现后，验证器检查来源—目标双向引用和真实调用，再转为`pass/final`或`fail/G5_OUTPUT_ORPHAN`；
+- [ ] 旧页初始诊断、旧页处置关闭、权威现行清单、现行页面审计和`learning_event`事件审计的必填字段、枚举值及引用规则逐项可验证；
+- [ ] 现行page具有`execution_order/release_status/next_use_refs`，`event_carrier.owner_event_id`必填且`learning_page`为空；页面pass G5边也进入严格后继DAG与事件反向输入核对；
+- [ ] 旧`event_carrier`只允许借同一封存层`legacy_event_evidence`的独立G4/G5证据，旧事件与旧载体双向互指；引用V6事件或缺旧事件证据失败；
+- [ ] S001—S127初始门状态、失败和带严重度/证据的`defect_registry`一经审定不可被现行结果覆盖；P0—P2缺陷由登记表机械导出，`closed_failure_codes/closed_defect_ids`分别与初始集合严格相等且逐项有目标字段证据和原审查者复验；
+- [ ] `initial_audit_seal`逐文件绑定精确旧ID范围、SHA-256、两个不同的独立审查者、逐旧ID证据和时间；单任务不能提前封存；
+- [ ] 追加式`seal_amendment`验证前驱/后继哈希、唯一链、双独立复核和有效视图；断链、分叉、未复核、初审/封存篡改均使相关下游关闭失效；
+- [ ] 保留/合并/移动/重写/删除分别执行目标数量/类型、旧门前提、逐内容元素覆盖、双向谱系、缺陷闭合和目标现行通过规则；只有删除允许零目标；
+- [ ] 学生可见旧页或前台/视觉/接收缺陷采用合并/重写时至少有一个页面目标；后台`event-only`须有隐藏状态与理由；
+- [ ] text/asset/layout/event删除签名按各自规范化器和检测器扫描全部课程源；最终含图Office文件生成后再扫正文、notes/XML、资产引用、模块切片、DOCX和渲染，换资产ID重现也失败；
+- [ ] `structure_manifest`与现行审计页面/事件集合完全相等，并分别等于源码声明节点、课程数据可达图和独立`structure_assembly_snapshot`；源声明不可达孤儿失败；最终`current_manifest`另与`physical_assembly_snapshot`及物理输出核对；
+- [ ] 最终完整/模块PPTX中每个物理slide恰有一个合法且文件内唯一的page_id，物理页数、映射数、artifact声明页数相等，并按顺序一一双射；无ID页、重复ID、重页和错序均失败；
+- [ ] 清单逐页记录每个正式artifact occurrence；官方学生放映入口由release artifact manifest冻结，`student_visible`等于所有官方输出中projected occurrence的OR；母版隐藏但模块可见仍须接收审查；
+- [ ] 现行page必填反向谱系，旧初诊不得被要求填写现行`legacy_source_refs/inherited_functions`；候选输出完成后由审计+该候选artifact manifest生成bundle，重建候选须换哈希并使旧审查失效；
+- [ ] 非删除缺陷关闭绑定目标字段、元素映射和现行审计节点的规范化SHA-256；任一目标/映射/审计变化使关闭及原审查者复验回到`pending`，Checkpoint 4和release均重验；
+- [ ] 现行`event_carrier`只有第4、5门可用`na`，与直接所属`learning_event`双向互指，且只引用事件独立G4/G5证据；
+- [ ] `deferred`只允许现行阶段审计的第五门，必须绑定目标事件、目标批次和预期用途，且节点只能是`provisional`；
+- [ ] 目标事件实现后，验证器检查来源—目标双向引用、目标实际读取字段和严格后继顺序，再转为`pass/final`或`fail/G5_OUTPUT_ORPHAN`；
+- [ ] 节点`execution_order`唯一且严格递增；全部G5边组成有向无环图；self、A↔B、任意环、同序和倒序调用均失败；
+- [ ] 恰有一个现行事件`terminal_sink=true`且位于最大顺序，其他事件显式为false；终端`terminal_use`六个子字段、实际交付/保存证据齐全，零/多终端、非最大、缺证或封面/中途节点冒充均失败；
+- [ ] canonical证据链固定schema版本：结构bundle四组件为`structure_manifest/current_release_audit/legacy_effective_view/legacy_disposition_closure`；final bundle六组件为`structure_audit_bundle/release_artifact_manifest/slide_occurrence_inventory/document_page_inventory/other_channel_inventory/current_manifest`；release attestation五组件为`release_audit_bundle/release_review_ledger/effective_release_review_view/final_defect_closure_summary/final_scorecard`；同时固定组件哈希、UTF-8/LF/NFC、相对POSIX路径、对象键排序、语义有序数组/集合数组规则和明确排除字段，生产器与验证器独立重算；
 - [ ] 每一失败码至少有一个失败测试；
 - [ ] 两个审查者结果不一致时，记录状态自动为`blocked_for_adjudication`而非通过；
-- [ ] 结构冻结和`release`模式拒绝任何`pending`、`deferred`或`provisional`。
+- [ ] 结构冻结和`release`拒绝旧页未关闭/漏缺陷状态、现行`pending/deferred/provisional/fail`、清单或外部集合不等、谱系无关、删除重现和全局无损可合并状态。
 
 **验证：**
 
 - [ ] `python -m unittest tests/test_validate_meng_v6_page_audit.py`
 - [ ] `python scripts/validate_meng_v6_page_audit.py --help`
-- [ ] 伪造缺少`next_relation`、误用`na`、非法`deferred`、目标无真实调用、重复旧ID的样本，均得到对应失败码。
+- [ ] 反例至少覆盖：精确旧ID S001—S127；缺字段/误用`na`；旧载体缺旧事件证据/借V6事件；旧初诊非法`deferred`；合法现行G5 `deferred`；page pass边漏目标；目标无真实调用；G5 self/A↔B/同序/倒序；终端零/多/非最大/缺交付/中途冒充；重复旧ID；删除带目标、文本换页重现、删除视觉换资产ID/后期生图重现；合并无目标/只承接一半；移动掩盖G2/G3/G4/G6；无关但通过的目标；关闭后目标字段修改/删除或映射/现行审计改变；现行page漏反向谱系；学生可见视觉缺陷event-only；源声明孤儿；清单漏物理页/备注事件；完整母版重复ID、无ID额外页；DOCX强制Nxxx污染结构清单；母版隐藏但模块可见；模块可见却伪称非官方；可见标志造假；缺事件审计；owner/carrier单向或循环；其他渠道不存在/owner或顺序错误/内容变更/未说备注冒充听见；真实试教前伪标observed、无脚本却标scripted；旧P0—P2缺陷漏关；删除缺陷合法`deletion_absence`与非法target；seal篡改及amendment断链/分叉/未复核；ledger重复当前状态/断链/旧open未闭合；release缺陷漏关/伪open=0/重复或无源关闭/删除旧发现/修复后源变更；最终review ID非法回写structure audit造成hash循环；bundle键序变化哈希稳定、非排除字段变化必变、组件漏项/替换失败；release现行fail/pending/deferred/provisional，均得到对应失败码。
 
 **依赖：** Task 1
 **预计涉及文件：** `scripts/validate_meng_v6_page_audit.py`、`tests/test_validate_meng_v6_page_audit.py`、`tests/fixtures/meng_v6_audit/`
@@ -131,12 +154,12 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 ## Task 3：生成覆盖127页的旧版审计台账骨架
 
-**描述：** 从V5课程快照导入S001—S127的稳定ID、模块、阶段、页型、标题、可见文字、旧时长和页序；为十二个批次建立独立审计源。未审批次只允许在`stage`模式标为`pending`，不能预填“保留”。
+**描述：** 从V5课程快照导入S001—S127的稳定ID、模块、阶段、页型、标题、可见文字、旧时长和页序；为十二个批次分别建立不可改写的初始诊断源和处置关闭源。未审批次只允许在`stage`模式标为`pending`，不能预填“保留”或关闭结论。
 
 **验收标准：**
 
 - [ ] 旧ID集合恰为S001—S127，无缺失、重复、越界；
-- [ ] 每个旧页都绑定一个批次和一个审计源文件；
+- [ ] 每个旧页都绑定一个批次、一个初始诊断源文件和一个处置关闭源文件；
 - [ ] 总表能生成JSON与便于人工复核的Markdown；
 - [ ] 骨架不把旧`experience/thought/learning`模板误当成V6审计证据。
 
@@ -186,7 +209,7 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 **验收标准：**
 
-- [ ] S001—S016每页六门状态、证据引用、删除/合并损失和处理方向齐全；主题谱等跨批次后用标为`deferred/provisional`，不提前伪造通过；
+- [ ] S001—S016旧页初始六门、证据引用和处置方向草案齐全，初始失败不改写；本任务不得提前封存；对应V6现行主题谱等跨批次后用标为`deferred/provisional`，不提前伪造通过；
 - [ ] 旧S003—S005不以原结构进入V6；
 - [ ] 每名学生有独立检索和小组发言入口，想不起作品者有隐藏提示条、翻目录或先听后补路径；
 - [ ] 主题谱只使用现场出现的学生材料，并保留作品出处；
@@ -276,7 +299,8 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 ### Checkpoint 1：首条纵向链
 
-- [ ] S001—S016审计无`pending`；允许只在第五门出现符合合同且目标已登记的`deferred`，相应决定必须为`provisional`；
+- [ ] 两名独立审查者逐旧ID复核S001—S016初诊草案；旧页被诊断出的P0/P1/P2全部编号写入`defect_registry`并原样封存，只要求审计记录自身无缺证、漏项或未裁决分歧；随后生成双审`initial_audit_seal`并验证范围、身份与哈希；
+- [ ] S001—S016旧页初审无`pending`且已封存，处置记录无未解释状态；导入现行节点只允许第五门出现符合合同且目标已登记的`deferred`，相应`release_status`必须为`provisional`；
 - [ ] 导入事件不预制婚姻处方；
 - [ ] 全员发言、听众任务和记忆恢复可执行；
 - [ ] 三张版式原型双审通过；
@@ -287,7 +311,7 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 以下六个任务均执行同一闭环：旧页审计 → 新意义句群 → 基本释义与行动 → 本章异质活动 → 整章回读与连续章意 → 局部材料生成 → 自动验证 → 学生接收结构化自检 → 视觉结构化自检。每批自检必须逐页记录前置、全员入口、听众任务、作品保存、第五门状态、后用目标、当前原句字号、章内轨道字号、六章位置码、信息块数和唯一主视觉。每一章不得复制上一章的模板化`experience/thought/learning`或通用讲稿。
 
-早期章节的产出若只能在任何尚未实施的后续批次中核验（包括Task 12、Q1—Q3、全文回看或Task 19知识收纳），阶段审计将第五门记为`deferred`，同时登记目标事件；不得提前伪造`pass`。目标任务完成后必须转为`pass/final`或暴露为失败。每完成两个连续内容批次进行一次学生接收、视觉双独立审查和模块回归，未通过不得进入下一批。
+早期V6现行节点的产出若只能在任何尚未实施的后续批次中核验（包括Task 12、Q1—Q3、全文回看或Task 19知识收纳），现行阶段审计将第五门记为`deferred`，同时登记目标事件；不得提前伪造`pass`。目标任务完成后必须转为`pass/final`或暴露为失败。旧页初始诊断不用`deferred`且不得随现行结果改写。每完成两个连续内容批次进行一次学生接收、视觉双独立审查和模块回归，未通过不得进入下一批。
 
 ## Task 9：重构第一章S017—S027
 
@@ -295,7 +319,7 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 **验收标准：**
 
-- [ ] 旧11页全部获得明确处理方向；跨批次后用未实现者明确标`provisional/deferred`；
+- [ ] 旧11页初始诊断与处置方向草案齐全，本任务不提前封存；V6现行跨批次后用未实现者明确标`provisional/deferred`；
 - [ ] “蚩蚩”“贸丝/谋”“无怒”不越过事实边界；
 - [ ] 学生先形成自己的初见印象，教师不提前宣布“伪装”或“恋爱脑”；
 - [ ] 章末能用自然话连续讲清相识、求婚和婚期条件；
@@ -317,7 +341,7 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 **验收标准：**
 
-- [ ] 旧12页全部获得明确处理方向；进入Q1的章意后用标`provisional/deferred`；
+- [ ] 旧12页初始诊断与处置方向草案齐全，本任务不提前封存；V6现行进入Q1的章意后用标`provisional/deferred`；
 - [ ] 模块承接页若不能证明独立损失则合并，不保留纯口号；
 - [ ] 学生能用动作顺序解释朗读速度，而非只接受情绪标签；
 - [ ] 卜筮只按当时婚俗与人物寻求确定来解释，不写成长期关系保证；
@@ -335,6 +359,7 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 ### Checkpoint 2A：第一、二章双审回归
 
+- [ ] 两名独立审查者逐旧ID复核S017—S039初诊草案；旧页P0/P1/P2全部编号封存，只清除审计记录自身的漏项、缺证与未裁决分歧；随后生成覆盖完整、身份合规的双审封存；
 - [ ] 两章每页学生接收与视觉结构化自检完成；
 - [ ] 学生接收审查者检查前置、全员入口、听众任务、保存和后用登记；
 - [ ] 视觉审查者检查全部两章页面的实际渲染，不只看原型；
@@ -347,7 +372,7 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 **验收标准：**
 
-- [ ] 旧11页全部获得明确处理方向；桑叶假设到Task 12、章意到Task 15的后用分别登记`deferred/provisional`；
+- [ ] 旧11页初始诊断与处置方向草案齐全，本任务不提前封存；V6现行桑叶假设到Task 12、章意到Task 15的后用分别登记`deferred/provisional`；
 - [ ] 赋比兴在学生先观察语言现象后才命名；
 - [ ] “耽/说”进入男女后果差异，但不把女子投入写成对方伤害原因；
 - [ ] 至少两种桑叶解释均记录证据和限度；
@@ -369,7 +394,7 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 **验收标准：**
 
-- [ ] 旧12页全部获得明确处理方向；第三章解释后用的双向引用在本任务转为`pass/final`，本章章意到Task 15的后用仍按合同登记；
+- [ ] 旧12页初始诊断与处置方向草案齐全，本任务不提前封存；V6现行第三章解释后用的双向引用在本任务转为`pass/final`，本章章意到Task 15的后用仍按合同登记；
 - [ ] 第三章解释假设发生可见修订；
 - [ ] “淇水汤汤”不固定为第三次明确渡水；
 - [ ] 事实和责任判断由学生分类并返回原词；
@@ -387,11 +412,12 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 ### Checkpoint 2：第三、四章双审回归
 
+- [ ] 两名独立审查者逐旧ID复核S040—S062初诊草案；旧页P0/P1/P2全部编号封存，只清除审计记录自身的漏项、缺证与未裁决分歧；随后生成覆盖完整、身份合规的双审封存；
 - [ ] 第三、四章每页结构化自检完整；
 - [ ] 第三章桑叶假设到第四章修订的双向调用已转`pass/final`；
 - [ ] 两名独立审查者覆盖第三、四章全部实际生成页面；
 - [ ] P0/P1/P2清零；
-- [ ] S017—S062旧页均已审计，前三章到婚变责任的叙事、意象和语言连续回归通过。
+- [ ] S017—S062旧页初诊均已双审封存，处置状态可追踪；对应现行节点审计完成，前三章到婚变责任的叙事、意象和语言连续回归通过。
 
 ## Task 13：重构第五章S063—S073
 
@@ -399,7 +425,7 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 **验收标准：**
 
-- [ ] 旧11页全部获得明确处理方向；进入Q1/Q2的章意和生活处境产出按合同登记`deferred/provisional`；
+- [ ] 旧11页初始诊断与处置方向草案齐全，本任务不提前封存；V6现行进入Q1/Q2的章意和生活处境产出按合同登记`deferred/provisional`；
 - [ ] 每人先写生活动作和原诗依据，不能由一名表演者包办；
 - [ ] 生活镜头标明诗中事实和合理想象，不虚构施暴方式；
 - [ ] “兄弟不知”不推断女子必然曾求助，也不脸谱化全部家人；
@@ -421,7 +447,7 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 **验收标准：**
 
-- [ ] 旧12页全部获得明确处理方向；章意与朗读证据进入Task 15/19的后用按合同登记`deferred/provisional`；
+- [ ] 旧12页初始诊断与处置方向草案齐全，本任务不提前封存；V6现行章意与朗读证据进入Task 15/19的后用按合同登记`deferred/provisional`；
 - [ ] “有岸/有泮”保留教材允许的解释竞争；
 - [ ] 总角是童年回忆，不以青年人物替代；
 - [ ] “亦已焉哉”只证明停止判断，不证明已经离家或后来生活；
@@ -439,7 +465,8 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 ### Checkpoint 3：第五、六章双审与六章全文回归
 
-- [ ] S017—S085全部审计；
+- [ ] 两名独立审查者逐旧ID复核S063—S085初诊草案；旧页P0/P1/P2全部编号封存，只清除审计记录自身的漏项、缺证与未裁决分歧；随后生成覆盖完整、身份合规的双审封存；
+- [ ] S017—S085旧页初诊均已双审封存、处置状态可追踪，对应现行页面/事件均已按当前阶段审计；
 - [ ] 第五、六章每页结构化自检完整，两名独立审查者覆盖全部实际生成页面；
 - [ ] 30组诗句、12个意义句群和六章顺序100%覆盖；
 - [ ] 六章均完成整章读—句群讲读—章内活动—完整回读—连续章意；
@@ -455,7 +482,7 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 **验收标准：**
 
-- [ ] 旧10页全部获得明确处理方向；本任务关闭六章指向Q1的后用，自身转折修订进入Task 19收纳时登记`deferred/provisional`；
+- [ ] 旧10页初始诊断与处置方向草案齐全，本任务不提前封存；本任务关闭V6六章指向Q1的后用，自身转折修订进入Task 19收纳时登记`deferred/provisional`；
 - [ ] 两张全文原文页只作为一个回读事件的载体；
 - [ ] 组内材料覆盖全员，公开代表不能替代组员生成；
 - [ ] 听众记录一处转折与一处空缺，每两章至少发生一次追问；
@@ -478,7 +505,7 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 **验收标准：**
 
-- [ ] 旧6页全部获得明确处理方向；本任务关闭前文章内指向Q2的后用，自身处境句进入Task 19时登记`deferred/provisional`；
+- [ ] 旧6页初始诊断与处置方向草案齐全，本任务不提前封存；本任务关闭V6前文章内指向Q2的后用，自身处境句进入Task 19时登记`deferred/provisional`；
 - [ ] 每人有个人选景和原诗依据；
 - [ ] 每个公开镜头后都发生一次证据质疑和现场修改；
 - [ ] 听众能区分诗中依据与合理想象；
@@ -497,6 +524,7 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 ### Checkpoint 4A：Q1、Q2双审回归
 
+- [ ] 两名独立审查者逐旧ID复核S086—S101初诊草案；旧页P0/P1/P2全部编号封存，只清除审计记录自身的漏项、缺证与未裁决分歧；随后生成覆盖完整、身份合规的双审封存；
 - [ ] Q1、Q2每页学生接收与视觉结构化自检完整；
 - [ ] 章意接力和生活镜头的前向`deferred`均按真实调用关闭；
 - [ ] Q1/Q2新生成且指向Task 19收纳的`deferred`均有合法目标，不被误算为通过；
@@ -510,7 +538,7 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 **验收标准：**
 
-- [ ] 旧11页全部获得明确处理方向；本任务关闭第一章/Q3前向后用，自身原因修订进入Task 19时登记`deferred/provisional`；
+- [ ] 旧11页初始诊断与处置方向草案齐全，本任务不提前封存；本任务关闭V6第一章/Q3前向后用，自身原因修订进入Task 19时登记`deferred/provisional`；
 - [ ] 每名学生明确选择一类问题，不写含混“主要原因”；
 - [ ] 指定质询组和其余听众均有同步分类、证据或疑问任务；
 - [ ] 每轮抽取一项非指定组补充；
@@ -536,7 +564,7 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 **验收标准：**
 
-- [ ] 旧4页全部获得明确处理方向；本任务关闭Task 5主题谱后用，自身婚姻提醒进入Task 19时登记`deferred/provisional`；
+- [ ] 旧4页初始诊断与处置方向草案齐全，本任务不提前封存；本任务关闭V6 Task 5主题谱后用，自身婚姻提醒进入Task 19时登记`deferred/provisional`；
 - [ ] 五问不预制成必须全部出现的教师框架；
 - [ ] 四人轮流发言，听者分别承担找依据、查归责、问限度；
 - [ ] 每组保留一项分歧，公开后发生可见修订；
@@ -556,6 +584,7 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 ### Checkpoint 4B：Q3、圆桌双审回归
 
+- [ ] 两名独立审查者逐旧ID复核S102—S116初诊草案；旧页P0/P1/P2全部编号封存，只清除审计记录自身的漏项、缺证与未裁决分歧；随后生成覆盖完整、身份合规的双审封存；
 - [ ] Q3和圆桌每页结构化自检完整；
 - [ ] 第一章回看、责任/阻力听证和圆桌之间的输入、产出、听众任务、修订与后用闭合；
 - [ ] Q3/圆桌新生成且指向Task 19收纳的`deferred`目标合法，不被误算为通过；
@@ -569,19 +598,22 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 **验收标准：**
 
-- [ ] 旧11页全部获得明确处理决定；
+- [ ] 旧11页初始诊断与处置方向草案齐全，本任务不提前封存；
 - [ ] 知识页不是看答案式重讲，检索和答案状态严格分开；
 - [ ] 收纳覆盖故事结构、字词、四言、叠词/反复/对照/时间压缩、赋比兴、意象多解、人物与阅读方法；
 - [ ] 个人初读停顿、转折句、生活处境句、原因判断和婚姻提醒均可回看；
 - [ ] Task 15—18指向知识收纳的全部`deferred`逐项核验真实调用并转为`pass/final`；
 - [ ] 终读用于把知识放回完整声音，退出条允许保留问题。
+- [ ] 生成全课唯一`terminal_sink`事件：学生将退出条交至明确收集位置或保存在规定载体，教师课后据此诊断尚未解决的问题；`terminal_use`六字段及交付证据齐全，其余事件均`terminal_sink=false`。
 
 **验证：**
 
 - [ ] 运行`--through final`全链验证；
 - [ ] 审计总表S001—S127全部无`pending`；
-- [ ] 审计总表S001—S127全部无`deferred`和`provisional`；
-- [ ] `python scripts/validate_meng_v6_page_audit.py --mode release ...`通过；
+- [ ] S117—S127在本任务仍为待检查点双审的初诊草案；相应处置不得在有效封存哈希产生前伪标`closed`；
+- [ ] S001—S116已封存旧页的处置关闭表无无法解释的状态，旧页初始失败仍原样保留；
+- [ ] `structure_manifest`与现行审计、源码声明、课程数据可达图、独立`structure_assembly_snapshot`集合分别相等，现行审计无`pending/deferred/provisional/fail`；
+- [ ] `python scripts/validate_meng_v6_page_audit.py --mode freeze-candidate ...`通过；正式`release`验证只在Checkpoint 4完成末批封存和全量处置重验后运行；
 - [ ] 旧ID覆盖集合、处理决定计数和删除/合并映射可复算。
 
 **依赖：** Checkpoint 4B
@@ -590,13 +622,19 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 ### Checkpoint 4：结构冻结
 
-- [ ] 旧S001—S127全部有明确决定和六门证据；
-- [ ] 所有阶段性`deferred`均依真实调用转为`pass/final`或经返工关闭；
+- [ ] 两名独立审查者逐旧ID复核S117—S127初诊草案；旧页P0/P1/P2全部编号封存，只清除审计记录自身的漏项、缺证与未裁决分歧；随后生成覆盖完整、身份合规的双审封存；至此所有旧ID均且只被一个有效封存覆盖；
+- [ ] 旧S001—S127不可改写初始诊断、明确决定、决定专属证据和关闭记录齐全；
+- [ ] 全部处置记录引用当前`effective_view_hash`重验；旧六门失败码与P0—P2缺陷集合逐项关闭；非删除关闭的目标字段/映射/现行审计节点哈希复算一致且原审查者复验仍有效，删除签名全局无重现；
+- [ ] 所有现行阶段性`deferred`均依真实调用转为`pass/final`或经返工关闭；
 - [ ] 所有学习事件输入、产出、保存和后用闭合；
-- [ ] 没有可以无损合并的页面；
+- [ ] 除唯一、位于最大顺序且具真实交付/保存用途的退出条终端事件外，所有G5边严格后继且全局无环；终端事件缺交付证据时不得通过；
+- [ ] `structure_manifest`与现行审计、源码声明节点、课程数据可达图、独立`structure_assembly_snapshot`的页面/事件集合分别完全相等，无源声明孤儿；该快照只含结构节点/计划归属/安全停点，此时不预测物理页、occurrence或student_visible；
+- [ ] 全局反事实检查证明没有可以无损合并的现行页面/载体；
 - [ ] 冻结V6事件顺序、模块安全停点、自然时长和新页码；
 - [ ] 生成旧ID—决定—新ID完整映射；
 - [ ] 双独立审查同意结构冻结后，才进入正式全量生成与生图。
+- [ ] `python scripts/validate_meng_v6_page_audit.py --mode freeze ...`通过；最终物理PPTX清点留待Task 21/26/27和正式`release`模式。
+- [ ] 生成`structure_audit_bundle.json`及其SHA-256；它只封存结构审计四组件，不预测物理occurrence或最终artifact清单。
 
 ### Phase 4：全量无图材料与跨文件回归
 
@@ -606,18 +644,18 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 **验收标准：**
 
-- [ ] S001—S127旧ID映射和所有V6新ID完整、唯一；
+- [ ] S001—S127旧ID映射完整，所有V6现行ID完整、唯一且与冻结的`structure_manifest`集合相等；
 - [ ] 所有V6学生可见页均有真实剧本；
 - [ ] 教案、学习单、逐页剧本、审计表和课程快照的任务、时长、产出位置一致；
-- [ ] 无`pending`、`deferred`、`provisional`或未裁决审查分歧；
+- [ ] 旧页处置无未关闭状态；现行审计无`pending`、`deferred`、`provisional`、`fail`或未裁决审查分歧；旧页初始失败证据完整保留；
 - [ ] 学生前台禁词、预制答案和假共创命中为0；
 - [ ] 所有文件仍位于`_v6_stage`。
 
 **验证：**
 
-- [ ] `node scripts/build_meng_v6_markdown.js --mode release --out .../_v6_stage`
-- [ ] `python scripts/validate_meng_v6_page_audit.py --mode release ...`
-- [ ] `python scripts/validate_meng_v6_lesson_package.py --mode release --formats data,markdown ...`
+- [ ] `node scripts/build_meng_v6_markdown.js --mode freeze --out .../_v6_stage`
+- [ ] `python scripts/validate_meng_v6_page_audit.py --mode freeze ...`
+- [ ] `python scripts/validate_meng_v6_lesson_package.py --mode freeze --formats data,markdown ...`
 - [ ] 文本、页码、事件与产出引用的全量一致性测试通过。
 
 **依赖：** Checkpoint 4
@@ -637,7 +675,7 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 - [ ] 验证器同时核对实际PPTX XML和生成时布局清单；任何例外都有页ID、原因和300 dpi人工复验；
 - [ ] `warnIfSlideHasOverlaps`与`warnIfSlideElementsOutOfBounds`意外警告为0；
 - [ ] 每个PPTX通过Office结构验证、文本/备注提取和PDF转换。
-- [ ] 为完整母版和每个模块生成结构化`render_manifest`：源路径/SHA-256、页数、页ID—物理页码映射及哈希、资产清单哈希、PDF路径/哈希、渲染器版本和参数、联系表/单页图路径及哈希齐全。
+- [ ] 为完整母版和每个模块生成候选`render_manifest`：`structure_audit_bundle_sha256`、源路径/SHA-256、页数、页ID—物理页码有序双射及哈希、实测逐artifact occurrence/候选入口、资产清单哈希、PDF路径/哈希、渲染器版本和参数、联系表/单页图路径及哈希齐全；物理页、映射和声明页数相等。最终`release_audit_bundle_sha256`在Task 27冻结实际artifact清单后回填并重验，不得预测。
 
 **验证：**
 
@@ -667,7 +705,7 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 - [ ] 三份DOCX每一页进入可读分批联系表并有逐页状态；
 - [ ] 表格密集页、分页交界、页眉页脚、学习单书写区另输出300 dpi单页图；
 - [ ] 无孤立标题、跨页表头丢失、内容裁切、书写区不足或打印越界。
-- [ ] 每份DOCX的`render_manifest`绑定源路径/SHA-256、页数、页ID—物理页码映射及哈希、PDF路径/哈希、渲染器版本和参数、全部联系表/单页图路径与SHA-256；源文件或证据变化使相关状态失效。
+- [ ] 每份DOCX的候选`render_manifest`绑定`structure_audit_bundle_sha256`、源路径/SHA-256、页数、`artifact_id—doc_page_index`有序清点及哈希、可选内容引用、PDF路径/哈希、渲染器版本和参数、全部联系表/单页图路径与SHA-256；不分配Nxxx。Task 27冻结`document_page_inventory`后绑定final bundle并重验；任一bundle、源文件或证据变化使相关状态失效。
 
 **验证：**
 
@@ -695,7 +733,7 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 **验证：**
 
-- [ ] `python scripts/validate_meng_v6_lesson_package.py --mode release --formats all --assets none ...`
+- [ ] `python scripts/validate_meng_v6_lesson_package.py --mode freeze --formats all --assets none ...`
 - [ ] `python -m unittest tests/test_validate_meng_v6_lesson_package.py`
 - [ ] V5基线清单再次验证一致。
 
@@ -766,6 +804,7 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 - [ ] 全量页面按每批8—12页可读审查并逐页登记；所有含图页另有300 dpi单页审查；
 - [ ] 含图版修复后重新构建完整母版和全部模块，不进行局部手工修改。
 - [ ] 最终含图版生成新的`render_manifest`和逐页`review_evidence`；它们绑定最终源文件、批准资产清单和最终渲染的SHA-256，不沿用Task 21无图版或Task 25候选图的视觉状态。
+- [ ] 对最终含图PPTX正文/notes/XML/资产关系、全部模块切片、DOCX/学习单和渲染结果重跑text/asset/layout/event删除签名扫描；删除视觉换资产ID或后期插图重现为0。
 
 **验证：**
 
@@ -792,27 +831,37 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 ## Task 27：完成学生接收和视觉双独立审查闭环
 
-**描述：** 两名未参与相应内容写作的审查者分别进行全量审查。学生接收审查覆盖每页实际看见、听见、行动、可能理解、误解、作品和后用；视觉审查不得只依赖概览联系表，而要覆盖每一页的可读渲染。
+**描述：** 先从Task 26最终PPTX实测冻结`slide_occurrence_inventory`，从Task 22最终DOCX实测冻结`document_page_inventory`，再冻结`release_artifact_manifest`和教师话语/学习单/板书/音频等`other_channel_inventory`，派生最终清单并按canonical合同生成“审查前”`release_audit_bundle_sha256`；再由两名未参与相应内容写作的审查者进行全量审查，结果只写入独立哈希链式`release_review_ledger`，不反写结构审计。学生接收审查既覆盖每个投影slide，也独立覆盖每个完整学习事件；视觉审查不得只依赖概览联系表，而要覆盖每一页的可读渲染。
 
 **验收标准：**
 
-- [ ] 学生接收审查覆盖所有V6学生可见页及全部跨页事件；
+- [ ] 学生接收桌面模拟覆盖由`slide_occurrence_inventory`和冻结官方放映入口推导出的所有`projected=true` slide及全部跨页事件；不得以母版隐藏或手填`student_visible=false`排除计划投影路径中的页面；字段使用`simulated_* / possible_*`，不声称学生已实际接收或理解；
+- [ ] `student_event_review`的event_id集合严格等于全部现行`learning_event`集合；每条绑定最终bundle、按序载体occurrence/其他渠道，并复核学生看/听/做及事件inputs/actions/artifacts/observable_change/next_uses；
+- [ ] `other_channel_inventory`逐项记录渠道类型、源文件/字段/内容哈希、脚本暴露顺序、owner event、`exposure_status=scripted`及证据；event review引用须双向一致，教师未说出的备注不得充当模拟听见证据；`observed`只允许真实试教后另行追加且不作为本轮硬门；
+- [ ] `student_occurrence_review`按辨别字段合同记录occurrence/artifact/物理slide、模拟看见/听见/参加活动、可能理解/误解和可能收获；其有序键集合恰等于全部`projected=true` slide occurrences，隐藏非投影页不混入接收集合；
 - [ ] 完整母版和每个模块PPTX的每一页都有视觉审查状态；
 - [ ] 全量页面以每批8—12页、每张子图≥1600×900像素的可读联系表审查；
 - [ ] 最长文字、比较、活动、跨页整读、模块首尾和所有含图页具有300 dpi单页审查；
 - [ ] 三份DOCX的每一页均有视觉状态，表格密集、分页交界、页眉页脚和书写区有300 dpi单页审查；
-- [ ] 每条视觉状态均绑定源PPTX/DOCX规范化路径与SHA-256、页ID与物理页码、实际审查渲染资产路径与SHA-256、审查者和审查时间；同页在完整母版和模块文件中分别留证；
+- [ ] 审查证据采用按`review_type`区分的联合类型：`student_occurrence/visual_slide`绑定单一PPTX slide；`visual_document_page`绑定DOCX artifact+doc page index；`student_event`绑定event及多个按序occurrence/其他渠道，可含多个source/render refs，不强制伪造单一页码；全部绑定最终bundle、审查者、时间、状态和缺陷；
 - [ ] 每个缺陷定位到页ID/事件ID/资产ID并标P0—P3；
 - [ ] P0/P1/P2全部关闭；
+- [ ] Task 27最终缺陷与关闭只进入`release_review_ledger`，不得回写已在structure bundle中的`current_release_audit.review_status`；回写尝试自动失败，避免哈希循环和双状态源；
+- [ ] ledger审查记录含review ID/revision/唯一前驱/supersedes，按`bundle+review_type+object_key`机械生成唯一有效链尾；断链、分叉、重复当前状态、跨bundle替代失败；完整原账与有效视图均保留；
+- [ ] 不可删除`release_defect_registry`与追加式关闭记录逐项关联；P0—P2发现集合必须等于恰有一条仍匹配当前源状态的有效关闭集合，漏关、伪`open=0`、重复/无源关闭、删除旧发现或修复后源变更均失败；P3进入试教观察项；
+- [ ] 完整不可变review记录中`defect_ids`并集严格等于registry ID集合，逐ID双向恰一关联且severity/object/evidence/reviewer一致；记录漏登记、孤儿registry、错误反指或同ID多registry均失败；
 - [ ] 修复页由原审查者复验，所属模块和跨模块路径完成回归；
 - [ ] 审查分歧按证据复核，仍不一致时由第三名新鲜审查者裁决；
 - [ ] 至少一轮完整“发现—修复—复验—模块回归—整课回归”有永久记录。
 
 **验证：**
 
-- [ ] 逐页状态表的页面集合与最终PPTX/DOCX实际页集合完全相等；
-- [ ] `render_manifest`中的源文件、批准资产清单、PDF、分批联系表、300 dpi单页图、页数和页码映射哈希全部存在且可复算；所有`review_evidence`引用的哈希与当前最终候选完全一致；
-- [ ] 负向篡改测试证明源文件、批准资产清单、页码映射、渲染器版本/参数或任一被审图哈希变化时，相关状态立即失效为`pending`并阻断放行；
+- [ ] PPTX slide状态有序多重集与实际slide一一双射，每张slide恰有一个合法、文件内唯一的Nxxx，页数/映射数/声明数相等；DOCX视觉状态另与`document_page_inventory`一一对应，只用artifact ID+doc page index，不要求Nxxx；
+- [ ] 事件接收状态表与现行学习事件集合严格相等；缺事件记录、漏载体、载体乱序或用逐页记录冒充事件记录均失败；
+- [ ] occurrence接收记录有序多重集严格等于官方`projected=true` slide出现；漏一项、额外隐藏项、跨artifact复用记录或缺模拟活动/可能理解/误解/收获字段均失败；视觉记录分别覆盖全部PPTX slide与DOCX页面，不与接收集合混用；
+- [ ] 从最终PPTX/DOCX/讲稿/学习单实测生成`physical_assembly_snapshot`，冻结`release_artifact_manifest`、`slide_occurrence_inventory`、`document_page_inventory`、`other_channel_inventory`和官方入口，派生最终`current_manifest`并生成审查前`release_audit_bundle_sha256`；`render_manifest`中的final bundle、源文件、批准资产清单、PDF、分批联系表、300 dpi单页图、页数和各自物理清点哈希全部存在且可复算；所有`review_evidence`引用的哈希与当前最终候选完全一致；
+- [ ] 验证器独立重算结构/最终bundle；键书写顺序变化不改变哈希，任一非排除字段或语义顺序变化改变哈希，组件缺失/替换失败；
+- [ ] 负向篡改测试证明只改`current_manifest/current_release_audit`形成的新bundle、源文件、批准资产清单、页码映射、官方入口、渲染器版本/参数或任一被审图哈希时，相关状态立即失效为`pending`并阻断放行；
 - [ ] 审查报告机器扫描确认`open_p0=open_p1=open_p2=0`；
 - [ ] 所有修复提交均能由缺陷ID追溯；
 - [ ] 修复后重新运行页面审计、课程合同、Office/XML合同、最终PPTX重建和全量渲染。
@@ -827,9 +876,12 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 **验收标准：**
 
-- [ ] 页面六门全部通过，旧S001—S127全覆盖；
+- [ ] 旧S001—S127初始诊断由有效双审封存/追加修订链全覆盖且原记录未改写，六门失败和P0—P2缺陷逐项关闭，处置全部基于当前有效哈希重验；
+- [ ] 所有非删除关闭重新复算目标字段、映射和现行审计节点哈希；任一变化/删除均使旧关闭与原审查者结论失效，未完成重新复验不得发布；
+- [ ] `structure_manifest`中的页面/事件全部适用硬门通过，且分别等于现行审计、源码声明、课程数据可达图和装配快照；派生最终`current_manifest`再与PPTX物理页/备注事件清点相等，可见性等于实际投影状态；
 - [ ] P0/P1/P2为0；
 - [ ] 总分≥95，每维度≥90%，每分绑定页/事件/资产证据；
+- [ ] 生成`release_attestation_sha256`，固定绑定审查前final bundle、完整`release_review_ledger`、机械`effective_release_review_view`、最终缺陷关闭汇总和评分表；ledger记录只绑定前置bundle，不形成自引用；
 - [ ] 全部PPTX、DOCX、Markdown、JSON和图片通过最终合同；
 - [ ] 质量报告明确“桌面设计已验证；真实课堂效果待试教”；
 - [ ] V6正式交付清单与SHA-256只包含当前版本；
@@ -841,11 +893,13 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 - [ ] `python scripts/validate_meng_v6_release.py --stage .../_v6_stage --baseline-manifest .../baseline_manifest.json`
 - [ ] 对正式目录重新运行V6页面审计、课程合同、Office/XML合同、PDF页数、逐页状态集合和SHA-256核验；
-- [ ] `validate_meng_v6_release.py`复算正式文件、最终候选、`render_manifest`和`review_evidence`全部哈希；路径外内容有变化或任一哈希/页码映射不一致时拒绝发布；
+- [ ] `validate_meng_v6_release.py`复算`structure_audit_bundle_sha256`、`release_audit_bundle_sha256`、`release_review_ledger`和`release_attestation_sha256`，并核验正式文件、最终候选、`render_manifest`及学生接收/视觉证据全部哈希；结构审计出现Task27 review ID、自引用、渠道内容变化、路径外内容或任一哈希/页码双射不一致时拒绝发布；
+- [ ] 最终完整母版及模块PPTX逐物理页验证单一合法ID、文件内唯一性、有序双射和occurrence可见性；重复ID、无ID额外页、母版隐藏但模块可见漏审、伪造非官方入口均拒绝发布；
+- [ ] 最终Office/XML/渲染重跑四类删除签名扫描，后期资产重现为0；
 - [ ] 过期版本扫描只针对学生可见文本、文件标题和当前版本元数据；审计总表、旧新映射、基线说明和回收记录列入明确溯源白名单；
 - [ ] 结构化校验确保所有正式内容的`current_version`为`6.0-page-function-audit`，不要求删除合法V5历史引用；
 - [ ] 系统回收站记录V5移动清单，未使用永久删除；
-- [ ] 最终质量报告记录真实试教观察项，不虚构学生效果。
+- [ ] 最终质量报告明确所有学生接收结论为桌面模拟，只验证`scripted`渠道与可执行性；`observed`留待真实试教台账，不虚构学生效果。
 
 **依赖：** Task 27
 **预计涉及文件：** 正式V6交付物、质量报告、机器验收报告、SHA-256清单、V5回收记录
@@ -855,7 +909,7 @@ scripts/meng_v6/assemble.js              结构冻结后分配V6页码
 
 | 要求 | 权威证据 | 放行条件 |
 |---|---|---|
-| 每页存在意义 | 127页审计总表、六门状态、删除/合并测试 | 无失败门，无`pending/deferred/provisional` |
+| 每页存在意义 | 127页旧页初始诊断与处置关闭、权威现行清单、现行适用硬门、声明/可达图、装配/物理页清点、全局删除/合并反事实 | 旧失败原样保存且逐缺陷关闭；现行清单与审计及声明、可达、装配、物理输出分别相等，现行无失败门及`pending/deferred/provisional` |
 | 原文连续讲读 | 30组诗句合同、12句群、六章页面与学生接收审查 | 全覆盖，能由学生作品重建故事 |
 | 活动真实参与 | 学习单痕迹、逐字稿、接收审查 | 个人—小组—公开—听众—修订闭合 |
 | 学生前台纯净 | PPTX文本提取、禁词与删除测试 | 研发语言、预制答案、假共创为0 |
