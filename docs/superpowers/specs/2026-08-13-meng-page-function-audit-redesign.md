@@ -2,8 +2,10 @@
 document_type: lesson_page_function_audit_redesign_spec
 lesson: "《氓》"
 version: "6.0-page-function-audit"
-status: "approved_for_implementation"
+status: "independent_review_passed_pending_user_review"
 approved_at: "2026-08-13"
+spec_revision: "6.1-student-reception-proof"
+revised_at: "2026-08-13"
 date: "2026-08-13"
 baseline: "5.3-literary-participation"
 scope: "教案、学习单、逐页无生试讲稿、PPT、课程数据、插图资产与质量闭环"
@@ -21,21 +23,33 @@ V6不以“把V5.3再润色一遍”为目标，也不以保住127页、274分�
 
 一页只有在这条因果链闭合、且不能由邻页无损承担时，才能保留。审计结果只允许“保留、合并、移动、重写、删除”，没有“基本可用，以后再改”。
 
+结构化字段、完整清单和机器校验只能证明设计文件自洽，不能独自证明学生看懂了任务、边界学生也能完成、产物真的支持理解。V6因此再增加三道跨材料证据门：
+
+1. **物理真相门：** 实际PPT渲染、speaker notes、学习单、板书/实物和课堂操作逐项相符；设计说明不能替代学生真实会看见或听见的内容。
+2. **反例生存门：** 对“想不起、暂无新增、尚未找到、走神、误读、沉默、不同意、时间超限”等正常课堂状态逐一执行，学生仍有诚实、可完成且不伪造观点的路径。
+3. **理解闭环门：** 关键理解必须经历“原文在场—学生加工—留下证据—获得反馈—可见修订—后页实际读取”，不能以教师讲过或屏幕出现过冒充学生理解。
+
+机器门负责发现不一致，独立审查者负责用反例否决貌似完备的设计；二者都通过，仍只意味着“桌面设计具备可执行的学习通道”。
+
 V5.3在V6通过全量审查以前只作为基线保留，不被覆盖；它的页数和时长不构成新版目标。V6放行后，旧版才移入版本历史或系统回收站，不与正式交付并列。
 
 ## 2. 为什么此前会出现“看似完整，实际浅薄”
 
-问题不是AI完全没有框架，而是常见生成方式有四个结构性偏差：
+问题不是AI完全没有框架，而是常见生成方式有六个结构性偏差：
 
 1. **以教师发送代替学生接收。** 页面写了问题、教师说了解释，就被误判为学生已经理解。
 2. **以局部合理代替全程因果。** 单页语言通顺、活动像活动，却不检查学生此刻是否已有完成它的文本经验和分析工具。
 3. **以成分齐全代替页面必要。** 有导入、有三问、有讨论、有总结，并不能证明相邻四页没有重复，也不能证明听众有任务。
 4. **缺少真正的否决机制。** 评分容易让优点抵消关键缺陷，“大体不错”最终成为放行理由。
+5. **以理想学生路径替代真实班级。** 默认学生能想起作品、总有新观点、愿意发言、不会走神；任务一遇到空白、重复或误读便断裂。
+6. **以预制答案制造顺畅。** 先显示成熟结论，再要求学生复述、讨论或“共创”，课堂看似流畅，实则取消了学生加工。
 
-因此，增加提示词或再列一批原则仍不够。V6同时引入三种约束：
+因此，增加提示词或再列一批原则仍不够。V6同时引入五种约束：
 
 - **前置约束：** 学生现在能不能做；
 - **因果约束：** 做前与做后发生了什么可观察变化；
+- **接收约束：** 屏幕、教师话语和学习单是否在正确时点把任务交给学生；
+- **反证约束：** 不沿理想路径时课堂是否仍能继续；
 - **否决约束：** 任一硬门失败就返工，平均分不能补偿。
 
 ## 3. 项目目标与非目标
@@ -124,8 +138,10 @@ V5.3在V6通过全量审查以前只作为基线保留，不被覆盖；它的�
 |---|---|---|
 | `node_id/page_id` | 页面节点的稳定ID：旧页两者均使用S001—S127，现行页均使用N001起的新ID | 混用旧新ID、两个ID不一致或页码变化后无法追踪 |
 | `node_type/audit_scope` | 页面必须为`page + learning_page/event_carrier`；旧页只允许页面类型；现行事件另按事件合同审计 | 用错误类型绕过适用字段或硬门 |
+| `author_ids` | 生成或实质修改本节点内容、结构、视觉或剧本的全部作者ID，按稳定ID排序 | 缺失作者、作者集合被后改以制造“独立审查”，或审查者与作者集合有交集 |
 | `execution_order`（仅现行页） | 现行页在全课节点中的唯一严格递增整数 | 缺失、重复，或不能用于后用边时序校验 |
-| `release_status`（仅现行页） | `provisional`或`final`，须与门状态一致 | 有`pending/deferred/fail`却标`final` |
+| `audit_phase`（仅现行页/事件） | `structure`、`physical_candidate`、`release`之一；只能按此前后推进 | 阶段缺失、倒退，或物理证据未生成却标`release` |
+| `release_status`（仅现行页） | `provisional`或`final`，须与阶段和门状态一致：`structure`必须`provisional`；`physical_candidate`只有全部九门通过后才可转`final`；`release`只接受`final` | G7仍待建、任一门`pending/deferred/fail`或候选未全审却标`final` |
 | `learning_unit` | 页面所属的完整学习事件 | 页面孤立，找不到输入与闭合位置 |
 | `owner_event_id` | `event_carrier`必填且只能指向一个所属事件；`learning_page`必须为`null` | 载体无所有者、多所有者或学习页伪借事件 |
 | `unit_role` | 输入、体验、澄清、生成、交流、质询、修订、收束、转场中的一个主角色 | 主角色不唯一 |
@@ -135,16 +151,22 @@ V5.3在V6通过全量审查以前只作为基线保留，不被覆盖；它的�
 | `unique_function` | 学生将什么变成什么 | 不能说清，或与前后页相同 |
 | `student_input` | 实际调用的前页产出或既有经验 | 只在语言上说“承接”，却不使用产出 |
 | `student_action` | 主体、动作、对象、时长、产物 | 只有“理解、感受、思考、讨论”等空泛动词 |
+| `first_glance_contract` | 学生第一眼应能确认的对象、动作、结束条件及实际承载区域 | 关键动作、二选一分支或结束条件只藏在备注和后台 |
+| `answer_state` | `necessary_input/open_question/student_generated/post_feedback_summary`之一，并标明何时转态 | 问题态同屏显示足以照读的完整答案，或教师结论冒充学生生成 |
 | `voice_coverage` | 独立准备、同伴表达、小组贡献、公开发言的覆盖和抽取方式 | 意义生成没有全员准备，小组可由一人包办 |
 | `listener_task` | 非发言者听什么、记什么、怎样反馈 | 有展示而听众无事可做，或记录从未使用 |
+| `fallback_routes` | 对想不起、暂无新增、尚未找到、误读、沉默、不同意和超时等适用状态，逐项写明触发条件、学生可见/可听路径和保存方式 | 只设计理想回应，或强迫学生制造不存在的观点、感受和“新增” |
 | `observable_change` | 页前状态、页后状态及判据 | 证据只是“完成任务”，看不出认识变化 |
 | `artifact_location` | 教材旁批、学习单、板书、口头采集或屏幕现场记录 | 声称有证据却无保存位置 |
+| `understanding_loop` | 理解性页/事件定位原文暴露、学生加工、证据、反馈、修订和后用六环；载体页可引用所属事件 | 从教师结论直接跳到学生复述，或六环缺失且无事件承接 |
 | `previous_relation` | 前页怎样成为本页输入 | 只有主题连续，没有学习连续 |
 | `next_relation` | 后页怎样比较、质询或修订本页产出 | 一次性书写，后续再未出现 |
 | `next_use_refs`（仅现行页） | 结构化后用边：`target_event_id`、`source_artifact_field`、`target_input_field`、`expected_use` | G5通过却无可提取目标/字段，或与事件反向输入不一致 |
 | `deletion_loss` | 删除将失去的不可替代能力、证据或转折 | 只能回答“少一个过渡”“不够完整” |
 | `merge_test` | 与前后页合并的结果和不能合并的理由 | 可以无损合并却仍独占一页和时间 |
 | `channel_split` | 屏幕、教师口头、学习单分别承担什么 | 三者问题口径、任务或答案状态不一致 |
+| `prepared_physical_truth_refs`（仅候选/发布阶段） | 课前可验证的PPT occurrence、notes台词与时点、学习单区域、板书/卡片模板与材料清单、空板/场地准备证据、保存或摄影备份路径、渲染图和操作对象 | 只引用源字段或设计意图；声称动画、淡入、书写区、卡片或保存路径但物理准备不存在 |
+| `observed_classroom_execution_refs`（仅试教后追加） | 真实课堂中的板书、卡墙、作品、操作、时长及回收记录；不进入本轮桌面发布硬门 | 课前伪填`observed`，或用`scripted/prepared`冒充已经发生 |
 | `framework_cost` | 新增概念、分类维度和操作步骤 | 支架比原诗更难，或一次引入过多维度 |
 | `primary_visual_duty` | 题名、全文/章内整读、原文批注、信息路标、文本比较/关系图、动作小景、意象点景、活动界面、现场共创中的唯一主视觉机制 | 没有主机制，或多个机制争抢解释权 |
 | `secondary_visual` | 可选，只能用于定位、强调或维持连续性，不得承载新的解释 | 辅助元素删去后任务含义改变，说明它实际是第二主机制 |
@@ -153,7 +175,9 @@ V5.3在V6通过全量审查以前只作为基线保留，不被覆盖；它的�
 | `inherited_functions`（仅现行页） | 逐旧ID列出承接的功能/内容元素及本页具体字段；旧初诊不存在此字段 | 只写“继承”而无元素和字段，或漏承接必要元素 |
 | `review_status` | 仅保存Checkpoint 4以前的结构/内容自审、学生接收结构审查和视觉结构审查；不得引用Task 27最终发布审查ID | 缺陷无责任页、无修复、无复验，或把最终审查回写造成哈希自引用 |
 
-现行事件使用独立合同：`node_id=event_id`、`node_type=event`、`audit_scope=learning_event`、`execution_order`、`inputs`、`actions`、`artifacts`、`observable_change`（前态/后态/判据）、`artifact_locations`、`next_uses`、`carrier_ids`、`owner_page_ids`、`gate_4`、`gate_5`、`evidence_refs`、`legacy_source_refs`、`inherited_functions`、`release_status`、`terminal_sink`、`terminal_use`和`review_status`。事件G4、G5证据必须来自实际学生作品、调用点、学习单或课堂脚本字段，不得引用所属载体的`na`结果。`carrier_ids`必须与载体页的`owner_event_id`双向完全相等；事件不得把自己或其他仅以`na`借证的载体当作独立G4/G5证据。
+现行事件使用独立合同：`node_id=event_id`、`node_type=event`、`audit_scope=learning_event`、`author_ids`、`execution_order`、`audit_phase`、`inputs`、`actions`、`artifacts`、`observable_change`（前态/后态/判据）、`artifact_locations`、`feedback_and_revision`、`next_uses`、`carrier_ids`、`owner_page_ids`、`fallback_routes`、`understanding_loop`、`prepared_physical_truth_refs`、`observed_classroom_execution_refs`、`gate_4`、`gate_5`、`gate_7`、`gate_8`、`gate_9`、`evidence_refs`、`legacy_source_refs`、`inherited_functions`、`release_status`、`terminal_sink`、`terminal_use`和`review_status`。事件G4、G5、G7、G8、G9证据必须来自实际学生作品控件、调用点、物理出现、学习单、课前可验证的材料准备或明确会说出的课堂台词；真实学生作品和实际课堂执行只能在试教后作为`observed`追加，不得用所属载体的`na`或作者声明代替。`carrier_ids`必须与载体页的`owner_event_id`双向完全相等；事件不得把自己或其他仅以`na`借证的载体当作独立证据。
+
+课程根数据另维护不可静默改写的`authorship_registry`：每个内容批次、页面、事件、学习单区域、PPT构建器和插图资产登记`object_ref`、`author_ids`、`authored_at`、`source_state_sha256`及变更继承关系。任一对象变化必须产生新源状态和新作者集合；不能删除实际作者以让其转身成为“独立审查者”。所有结构审查、学生接收审查、视觉审查和缺陷复验的`reviewer_id`必须与目标对象有效`author_ids`集合不相交，验证器机械检查；若审查对象由多个来源组装，作者集合取全部上游作者并集。
 
 旧页初诊若把页面标为`event_carrier`，不得引用V6现行事件。对应封存批次必须同时保存`legacy_event_evidence[]`：`legacy_event_id`、`learning_unit`、`carrier_ids`、`inputs`、`actions`、`artifacts`、`observable_change`、`next_use_evidence`、独立`gate_4/gate_5`、`reviewer_ids`和`reviewed_at`。旧载体的`owner_event_id`与旧事件`carrier_ids`须同封存层双向相等；旧G4/G5的`na`只能引用该旧事件的具体通过字段。若无法从V5原材料证明事件级变化或后用，就应把旧门记为`fail`，不能借新版设计补证。
 
@@ -165,13 +189,13 @@ V5.3在V6通过全量审查以前只作为基线保留，不被覆盖；它的�
 - `legacy_content_elements`逐项登记旧页的可保留功能、前台文字/答案、视觉构成和后台事件逻辑；`required_carry_forward`说明哪些必须承接，`element_mappings`把每一项映射到目标的具体字段，`coverage_result`机械证明无遗漏。
 - 每个非删除目标须在现行记录中以`legacy_source_refs`和`inherited_functions`反向指回旧ID及所承接功能，且目标必须从课程根节点可达。双向映射集合不等、字段证据不存在或目标功能无关时，即使目标审计通过也不能关闭。
 - 删除为每个应消失元素生成可复算的`forbidden_reappearance_signatures`，每项标明`signature_type=text|asset|layout|event`、规范化器、检测器、扫描范围和允许例外。冻结时扫描全部课程源、学生前台、讲者备注、活动与学习单；正式含图材料生成后，再扫描PPTX正文/notes/XML/资产关系、每个模块切片、DOCX/学习单和实际渲染。资产签名还须使用感知相似或任务语义标记，不能仅靠资产ID，防止同一删除视觉换文件名重现。任一签名换页、换资产ID或后期生图重现即删除失败。合并/重写则逐元素验证承接覆盖，不能只承接一半。
-- `closure_status`只允许`pending/deferred/closed/failed`；结构冻结和发布拒绝`pending/deferred/failed`。
+- `closure_status`只允许`pending/deferred/closed/failed`；结构冻结要求旧页处置和G1—G6/G8/G9结构证据不存在`pending/deferred/failed`，发布再额外拒绝G7及全部物理复核中的`pending/deferred/failed`。
 
 权威清单明确拆为结构层和物理输出层，避免结构冻结时预测尚未生成的幻灯片：
 
 - `structure_manifest`列出所有V6页面和学习事件的ID、`execution_order`、所属模块、事件—载体关系和声明型安全停点，不含`occurrences`或`student_visible`。`execution_order`是每个现行节点唯一、严格递增的整数，不允许作者用相同序号规避后继校验。结构冻结前可以使用稳定草案ID；冻结时一次性生成N001起的正式页ID并重算全部引用。
 - Task 27从最终PPTX实测生成`slide_occurrence_inventory`。每个slide出现记录包含`occurrence_ref`、`artifact_id`、`physical_index`、`page_id`、`hidden`、`reachable_from_start`、`projected`和`official_entry_id`；另从三份DOCX实测生成`document_page_inventory`，每页只含`artifact_id`、`doc_page_index`、渲染/源哈希和可选`content_refs`。`release_artifact_manifest`冻结哪些PPTX/DOCX及入口属于计划中的学生放映或教师使用路径；真实使用情况待试教。
-- Task 27还生成`other_channel_inventory`，登记不是PPT物理页但课堂脚本规定学生会接触的渠道：`channel_ref`、`channel_type=teacher_spoken|worksheet_region|board|audio|other`、`source_artifact_id`、规范化`source_path`及SHA-256、`field_or_region`、该字段内容SHA-256、`student_exposure_order`、`owner_event_id`、`exposure_status=scripted|observed`和`exposure_evidence_refs`。本轮桌面发布只允许并只声称`scripted`：它必须绑定真实剧本/学习单/音频的具体字段与哈希，并验证导航顺序和可执行性；`observed`只能在真实试教后凭课堂记录另行追加，既不允许在课前伪填，也不作为本次桌面发布硬门。教师备注只有明确标为将说出的台词时才能登记`scripted teacher_spoken`，设计意图或未说备注不能冒充学生听见；事件及渠道须双向互指。
+- Task 27还生成`other_channel_inventory`，登记不是PPT物理页但课堂脚本规定学生会接触的渠道：`channel_ref`、`channel_type=teacher_spoken|worksheet_region|board|physical_material|audio|other`、`source_artifact_id`、规范化`source_path`及SHA-256、`field_or_region`、该字段内容SHA-256、`student_exposure_order`、`owner_event_id`、`exposure_status=scripted|prepared|observed`和`exposure_evidence_refs`。本轮桌面发布只允许并只声称`scripted/prepared`：`scripted`绑定真实剧本、学习单、音频的具体字段与哈希，`prepared`绑定卡片模板、材料清单、空板/场地准备、保存或拍照备份路径；二者均验证顺序和可执行性，但都不声称课堂已经发生。`observed`只能在真实试教后凭课堂记录另行追加，既不允许在课前伪填，也不作为本次桌面发布硬门。教师备注只有明确标为将说出的台词时才能登记`scripted teacher_spoken`，设计意图或未说备注不能冒充学生听见；事件及渠道须双向互指。
 - 最终`current_manifest`是`structure_manifest + slide_occurrence_inventory + document_page_inventory + other_channel_inventory + release_artifact_manifest`的派生视图。`student_visible`不是单独可编辑结论，而等于所有官方学生PPTX输出中`projected=true` slide出现记录之逻辑或；一份母版隐藏不能抵消另一模块中的可见出现。DOCX物理页单独保存，学习单区域、教师话语、板书、音频的脚本暴露顺序与所属事件通过其他渠道进入最终清单。
 
 “清单与审计相等”不允许自证完备，须再通过四个独立来源交叉核对：
@@ -183,13 +207,27 @@ V5.3在V6通过全量审查以前只作为基线保留，不被覆盖；它的�
 
 `current_release_audit`的页面/事件集合必须与`structure_manifest`相等，后者又须与声明/可达/`structure_assembly_snapshot`的结构事实相等；最终`current_manifest`还须与`physical_assembly_snapshot`、物理事实和脚本渠道事实相等。`student_visible/projected_to_students`由逐artifact出现记录、实际隐藏标志、被冻结的官方放映入口和导航可达性推导，不得由作者手填；学生接收审查覆盖每一个`projected=true`的物理出现，同页在不同输出中的上下文不能互相代替。事件审查中的`other_channel_evidence_refs`必须在`other_channel_inventory`中存在，所属事件与脚本暴露顺序一致并双向互指。源声明、孤儿节点、物理页、备注事件、出现双射、渠道哈希/归属/顺序或可见性任一不符，均阻断冻结/发布。
 
-六道门分别保存结构化结果：`gate_id`、`gate_status`（旧页初审为`pending/pass/fail/na`；现行阶段审计另允许G5使用`deferred`）、`evidence_refs`、`failure_code`、`reviewer`和`reviewed_at`。证据引用采用`页ID#字段`、`事件ID#产出`或`资产ID#任务卡字段`格式。`na`只允许`event_carrier`在第4、5门使用，且必须引用一个已经通过这两门的所属学习事件；其他位置出现`na`即失败。
+旧页初诊继续保存原有六道功能门；V6现行节点在六门之外增加G7—G9三道证据门。九道门均保存结构化结果：`gate_id`、`gate_status`、`evidence_refs`、`counterexample_run_refs`、`failure_code`、`reviewer_id`、`reviewed_author_ids`和`reviewed_at`。状态枚举明确如下：旧页六门只允许`pending/pass/fail/na`；现行G1—G6、G8、G9只允许`pending/pass/fail`，只有G5另允许`deferred`；现行G7只允许`pending_physical_build/pass/fail`。证据引用采用`页ID#字段`、`事件ID#产出`、`occurrence_ref#对象`、`channel_ref#字段`或`资产ID#任务卡字段`格式。`reviewed_author_ids`必须等于`authorship_registry`从目标及全部上游来源机械导出的有效作者集合，`reviewer_id`必须不在其中。`na`只允许旧页或现行`event_carrier`在第4、5门使用，且必须引用一个已经通过这两门的所属学习事件；其他位置出现`na`即失败。
 
-`deferred`只允许`current_release_audit`阶段模式中的第五门使用，用来诚实记录“现行产出将在尚未实施的后续批次调用”。它必须同时填写`target_event_id`、`target_batch`和`expected_use`，并把当前节点的`release_status`记为`provisional`。`deferred`不算通过，也不能成为页面或旧问题关闭证据。目标事件完成后，验证器必须检查来源节点和目标事件的双向引用以及真实调用，再把第五门转为`pass`、把`release_status`转为`final`；如果未调用，则转为`fail/G5_OUTPUT_ORPHAN`。
+状态机不得由作者自由解释：
+
+| `audit_phase` | G7合法状态 | `release_status` | 阶段出口 |
+|---|---|---|---|
+| `structure` | 必须`pending_physical_build`，并列出待核对PPT/notes/学习单/材料渠道 | 必须`provisional` | G1—G6、G8、G9通过后，允许生成物理候选 |
+| `physical_candidate` | 候选生成后必须转`pass`或`fail` | 任一门未通过仍为`provisional`；九门全通过方可转`final` | 双独立审查和缺陷关闭完成后进入release |
+| `release` | 必须`pass` | 必须`final` | 只允许晋升已审候选的同哈希文件 |
+
+G7只审`prepared_physical_truth`，即课前可以验证的物理准备和渠道一致性；它不审也不宣称真实学生已经贴卡、教师已经移动卡片或圆桌已经回看。真实课堂事实进入`observed_classroom_execution_refs`和试教记录，不构成本次桌面发布硬门。
+
+状态推进采用追加覆盖而非改写结构审计。Checkpoint 4冻结的`current_release_audit`永远保留`audit_phase=structure`、G7=`pending_physical_build`和`release_status=provisional`。物理候选生成后另建不可变`physical_release_gate_overlay`，每个现行节点必填`node_id`、`based_on_structure_audit_bundle_sha256`、`physical_candidate_source_sha256s`、`authorship_registry_effective_sha256`、G7的`pass/fail`及证据、其他门在物理事实下是否仍有效、`effective_release_status`、`reviewer_ids`和`reviewed_at`。overlay不得覆盖G1—G6/G8/G9的结构事实，只能在源变化使其失效时记`invalidated`并阻断发布。
+
+`effective_release_audit`由已冻结的结构审计与overlay机械派生，不是可编辑源文件：保留结构阶段全部门和证据，以overlay的G7状态替换结构占位，并仅在九门全部有效时派生`audit_phase=physical_candidate`、`release_status=final`。发布晋升不再改写任何门，只验证候选与正式文件SHA-256完全相同，并派生`audit_phase=release`视图。overlay缺节点、重复节点、结构bundle哈希不匹配、候选源哈希变化、作者登记哈希变化或试图改写结构门，均使overlay失效。这样Checkpoint 4哈希保持不变，物理事实又有单独受哈希保护的落点。
+
+`deferred`只允许`current_release_audit`的结构阶段G5使用，用来诚实记录“现行产出将在尚未实施的后续批次调用”。它必须同时填写`target_event_id`、`target_batch`和`expected_use`，并把当前节点的`release_status`记为`provisional`。`deferred`不算通过，也不能成为页面或旧问题关闭证据。目标事件完成后，验证器检查来源节点和目标事件的双向引用以及真实调用，只把G5转为`pass`；节点仍保持`provisional`，直至物理候选阶段G7及其余八门全部通过方可转`final`。如果目标未调用，则G5转为`fail/G5_OUTPUT_ORPHAN`。
 
 除全课唯一终端学习事件外，所有G5后用边（不只`deferred`）必须满足`target.execution_order > source.execution_order`，并进入全局有向无环图检查。来源和目标须双向互指，证据须定位到目标实际读取的来源作品字段；自环、A↔B互借、任意长度环、同序、倒序调用或只写“以后会用”均失败。
 
-课程允许且只允许一个`terminal_sink=true`的最后学习事件，用来停止无限后继；其他事件必须显式为`false`。它必须位于最大`execution_order`，不得再声明后续学习事件；其G5仍不能以“这是最后一页”自动通过，而须填写`terminal_use`子字段：`final_artifact`、`recipient_or_owner`、`post_class_use`、`artifact_location`、`delivery_evidence_refs`和`no_further_classroom_call_reason`。现行设计采用“退出条交付—教师课后诊断/学生保留问题”作为终端用途；若没有实际交付渠道、保存位置或可核验用途，仍为`fail/G5_OUTPUT_ORPHAN`。终端例外不得用于封面、转场、知识答案页或任何中途节点。零个或多个终端、终端非最大顺序、`terminal_use`缺字段、以中途页冒充终端均失败。旧页初始诊断不得使用`deferred`，结构冻结和正式放行模式拒绝任何现行`deferred/provisional`或旧页关闭层的`pending/deferred/failed`。
+课程允许且只允许一个`terminal_sink=true`的最后学习事件，用来停止无限后继；其他事件必须显式为`false`。它必须位于最大`execution_order`，不得再声明后续学习事件；其G5仍不能以“这是最后一页”自动通过，而须填写`terminal_use`子字段：`final_artifact`、`recipient_or_owner`、`post_class_use`、`artifact_location`、`delivery_evidence_refs`和`no_further_classroom_call_reason`。现行设计采用“退出条交付—教师课后诊断/学生保留问题”作为终端用途；若没有实际交付渠道、保存位置或可核验用途，仍为`fail/G5_OUTPUT_ORPHAN`。终端例外不得用于封面、转场、知识答案页或任何中途节点。零个或多个终端、终端非最大顺序、`terminal_use`缺字段、以中途页冒充终端均失败。旧页初始诊断不得使用`deferred`；结构冻结拒绝G1—G6/G8/G9及旧页关闭层的`pending/deferred/failed`，正式放行另拒绝G7未转为`pass`和任何现行`provisional`。
 
 统一失败码至少包括：
 
@@ -204,12 +242,18 @@ V5.3在V6通过全量审查以前只作为基线保留，不被覆盖；它的�
 - `G5_OUTPUT_ORPHAN`：产出没有后续调用；
 - `G6_MERGEABLE`：可以无损合并；
 - `G6_DELETION_LOSS_EMPTY`：删除损失不存在。
+- `G7_PHYSICAL_MISMATCH`：设计声明与实际PPT、notes、学习单、板书/实物或渲染不一致；
+- `G7_CRITICAL_INSTRUCTION_HIDDEN`：完成任务所需的关键指令只存在于后台或错误时点；
+- `G8_BOUNDARY_PATH_MISSING`：空白、重复、误读、沉默、不同意或超时学生没有诚实完成路径；
+- `G8_IDEAL_PATH_ONLY`：只验证了最顺利的学生回应，反例执行即断裂；
+- `G9_TEXT_PROCESSING_SKIP`：教师答案或标签跳过学生对原文的加工；
+- `G9_FEEDBACK_REVISION_MISSING`：有表达或展示，却没有反馈、修订或后页真实读取。
 
 两名审查者结果不一致时默认不放行。双方先只围绕证据引用复核一次；仍不一致，则由未参加写作、未看双方结论的第三名审查者独立裁决。裁决结果及理由写入`review_status`，不得由设计者自行取较宽结论。
 
 合同里的学生行动、听众任务、允许分支和反馈判据，都必须进入学生实际会看见的屏幕/学习单，或进入明确会说出的教师台词；只存在于后台`listener_task`、`framework_cost`、`previous_relation`或设计说明中的要求，一律视为未实施。相反，学生前台不得泄漏设计目标、审计术语和预制结论。独立接收审查须比对后台合同与实际暴露渠道：不一致至少记为P2；若造成前置缺失、覆盖虚假或产物断链，则记为P1。
 
-### 5.3 六道硬门
+### 5.3 六道功能硬门与三道证据门
 
 `learning_page`必须同时通过：
 
@@ -220,11 +264,19 @@ V5.3在V6通过全量审查以前只作为基线保留，不被覆盖；它的�
 5. **产出后来真的使用：** 它进入后续解释、追问、修订或总结；
 6. **删除或合并确有损失：** 损失不能由相邻页以相同时长承担。
 
-`learning_event`不重复虚构页面级六门，而独立通过事件G4、G5：G4用`inputs/actions/artifacts/observable_change`证明学生前后作品或认识确实可比较；G5用`next_uses`和目标实际读取字段证明该作品后来被调用。事件的输入、行动、作品、载体、页面所有者和后用必须都在课程可达图中，且G5边遵守严格后继与无环合同。事件G4/G5任一失败，所属载体页的`na`即失效。
+V6现行页面和事件还必须同时通过：
 
-V5旧页任一硬门初始失败，`legacy_disposition_closure.decision`不得为“保留”，但该失败必须永久保留并用关闭记录证明怎样处置，不能改写成`pass`。V6现行节点任一硬门失败则不得进入结构冻结或发布；第五门仍为`deferred`时只能保持`release_status=provisional`。版式漂亮、教师台词流畅、总分较高均不能抵消。
+7. **物理真相门：** 实际投影页、明确会说出的台词、学习单控件、板书/实物和操作时点一致；“后台写了”不算学生接收到。
+8. **反例生存门：** 独立审查者至少执行本页适用的边界情形；每条路径都有真实出口、产物和返回主线的方法。
+9. **理解闭环门：** 理解性事件必须由原文进入，经过学生加工和反馈修订，再由后页读取；活动热闹、教师讲过或学生照读均不能替代。
 
-`event_carrier`必须通过第1、2、3、6门；第4、5门在所属`learning_event`级通过并以`na + 事件具体字段证据`回填。所属事件必须存在于同层权威清单、确为该载体的直接所有者；载体`owner_event_id`与事件`carrier_ids`须双向完全相等。事件独立通过不得反向借用该载体的`na`，也不得形成载体—事件或普通G5引用循环。这样既逐页说明它为何存在，也不伪造一张封面或半幅原文独自造成了学习变化。
+每一道通过结论至少需要两种异源证据。字段齐全、作者布尔值、时间盒求和、哈希一致、字号数值或自审`pass`都不能单独放行。G7必须以物理生成后的外部清点为准，因此不阻止通过G1—G6/G8/G9的结构进入候选构建，但它未通过时绝不允许发布；G8必须保存反例执行记录；G9必须指向实际原句、学生作品控件、反馈/修订痕迹和目标页读取位置。
+
+`learning_event`不重复虚构页面级G1、G2、G3、G6，而独立通过事件G4、G5、G7、G8、G9：G4用`inputs/actions/artifacts/observable_change`证明学生前后作品或认识确实可比较；G5用`next_uses`和目标实际读取字段证明该作品后来被调用；G7核对全部物理渠道；G8执行适用反例；G9核对原文—加工—反馈—修订—后用闭环。事件的输入、行动、作品、载体、页面所有者和后用必须都在课程可达图中，且G5边遵守严格后继与无环合同。事件任一适用门失败，所属载体页的对应借证即失效。
+
+V5旧页任一硬门初始失败，`legacy_disposition_closure.decision`不得为“保留”，但该失败必须永久保留并用关闭记录证明怎样处置，不能改写成`pass`。V6现行节点的G1—G6、G8或G9任一失败则不得进入结构冻结；物理候选生成后G7失败或任何适用门失败则不得发布。第五门仍为`deferred`时只能保持`release_status=provisional`。版式漂亮、教师台词流畅、总分较高均不能抵消。
+
+`event_carrier`必须通过第1、2、3、6、7、8、9门；第4、5门在所属`learning_event`级通过并以`na + 事件具体字段证据`回填。所属事件必须存在于同层权威清单、确为该载体的直接所有者；载体`owner_event_id`与事件`carrier_ids`须双向完全相等。事件独立通过不得反向借用该载体的`na`，也不得形成载体—事件或普通G5引用循环。这样既逐页说明它为何存在，也不伪造一张封面或半幅原文独自造成了学习变化。
 
 除逐节点硬门外，现行清单还必须通过一次全局反事实检查：任意两张相邻页或同一事件载体若能在相同时长、相同覆盖和相同可读性下无损合并，结构冻结失败；全部旧页删除签名还要执行全局负向扫描。逐页各自写“不可合并”或“已经删除”不能代替这些全局检查。
 
@@ -240,32 +292,37 @@ V5旧页任一硬门初始失败，`legacy_disposition_closure.decision`不得�
 
 V6按以下因果链重组，不受旧模块页数限制：
 
-1. 广泛回忆初高中爱情、婚姻文学；
-2. 完整听读《氓》，保存个人停顿处；
-3. 补充进入原文所需的最小《诗经》与朗读支架；
-4. 六章按意义句群讲读，持续看见前后叙事；
-5. 每章穿插一个与本章困难匹配、形态不同的短活动；
-6. 六章接力，重构女主人公的一生；
-7. 把诗中压缩的婚后生活还原成可感的日常；
-8. 通过证据听证区分伤害责任、关系延续条件和时代阻力；
-9. 婚姻圆桌，让学生形成并修订自己的判断；
-10. 收纳字词、叙事、语言形式、意象、人物认识和阅读方法；
-11. 最后完整朗读，以声音检验理解是否重新进入全文。
+1. 学生从个人记忆广泛检索初高中爱情、婚姻文学；
+2. 个人记忆经过四人轮说、班级贡献和现场整理，形成由本班真实作品构成的爱情与婚姻文学主题谱；
+3. 教师在主题谱之后才揭示《氓》的题名和出处，把它作为一则新的、更早的婚姻叙事引入；
+4. 学生读三问，只选择个人追踪方向，不在缺少文本时提前作答；
+5. 完整听读《氓》，保存个人停顿处；
+6. 补充进入原文所需的最小《诗经》与朗读支架；
+7. 六章按意义句群讲读，持续看见前后叙事；
+8. 每章穿插一个与本章真实阅读困难匹配的短活动；
+9. 六章接力，重构女主人公的一生；
+10. 把诗中压缩的婚后生活还原成可感的日常；
+11. 通过证据听证区分伤害责任、关系延续条件和时代阻力；
+12. 婚姻圆桌，让学生形成并修订自己的判断；
+13. 收纳字词、叙事、语言形式、意象、人物认识和阅读方法；
+14. 最后完整朗读，以声音检验理解是否重新进入全文。
 
 这一链条遵循“全文—局部—全文”“体验—解释—表达—修订”。三问开头只导航，不要求学生在缺少原文时写高阶归因；完整读懂后再集中回答。
 
 ## 7. 导入示范批次：从广泛回忆到新的婚姻叙事
 
-旧S003—S005限定三篇作品，并过早追问“幸福或困境取决于什么”。学生既缺分析框架，也没有充分开口；固定显示“真实了解、尊重与行动、平衡支持与边界”，还把教师结论伪装成课堂共创。V6按下列事件重做。
+旧S003—S005限定三篇作品，并过早追问“幸福或困境取决于什么”。学生既缺分析框架，也没有充分开口；固定显示“真实了解、尊重与行动、平衡支持与边界”，还把教师结论伪装成课堂共创。首版V6又把《氓》题名放在检索之前，使导入在叙事上仍是“教师先宣布今天教什么，学生再补做回忆”。修订版把题名揭示移动到本班主题谱之后，让学生真正经历“唤醒旧故事—打开主题范围—遇见新的婚姻叙事”。
 
-| 现行候选页 | 唯一功能 | 学生动作与覆盖 | 可见变化与后续调用 | 视觉职责 |
+下表沿用首版候选ID作为可追踪引用，ID数字不表示物理顺序；结构冻结时按`execution_order`统一分配正式页ID。
+
+| 新执行顺序 | 首版候选页 | 唯一功能 | 学生动作与覆盖 | 可见变化与后续调用 | 视觉职责 |
 |---|---|---|---|---|
-| N01 | 命名《氓》并让全班进入作品 | 看题、翻到原文；教师不从结尾定调 | 全班知道今天共同阅读的文本 | 纯题名、出处和纸本肌理；首次听读前不突出桑叶、淇水、枯黄、湍急或人物情绪 |
-| N02 | 从个人记忆中检索爱情或婚姻文学 | 每人写1—3篇初高中语文课上读过的课文或整本书，并用一句自然话说“它写了什么”；45秒仍空白者可翻教材目录、举手领取教师按本班真实进度准备且正面只写篇名的纸质提示条，也可先听同伴后补写 | 从“等教师列篇目”变为“每人带着一份旧经验”；允许经恢复支架后形成 | 初始屏只显示主任务；45秒后页脚淡入恢复路径。提示条扣放讲台，不另做作品答案页，不写主题 |
-| N03 | 让每名学生的旧经验进入小组公共记忆 | 四人依次发言，每人15—20秒；记录者只记篇名和主题短语；重复作品可以补不同主题 | 个人清单变成小组作品谱，不由一人包办 | 清楚显示轮流规则、计时和记录位置 |
-| N04 | 扩大班级看到的爱情、婚姻主题范围 | 每组代表先贴一张“篇名＋它写了什么”贡献卡，再用20秒说尚未出现的作品或不同主题；若均重复，就指出两个已有作品之间一项有根据的联系。按8组设计，每组另留平均10秒贴卡和换组，共4分钟；此前说明20秒，末尾听众核对、补记和异常缓冲40秒，总计5分钟。超过8组时先同主题并组 | 形成可追溯的班级作品卡墙，人人同时勾记一项自己未想到的内容 | 屏幕固定20秒倒计时和听众任务；真实卡墙承载作品，不预填学生答案 |
-| N05 | 把贡献卡整理成文学主题谱，而不替学生深析 | 静看30秒；一名学生试移一张相近卡并说明理由；教师只沿现场卡片作两三条串联；全班各自核对一张卡，发现篇名与说法错配即纠正，未发言者补记一处相近或不同。总时长4分钟 | 零散作品成为由本班实际材料形成、保留作品出处的宽广主题场，后续可回看《氓》新增了哪一种叙事 | 真实贡献卡是主视觉；PPT只保留“观察—移动—核对”三步，不预制分类框或主题答案 |
-| N07 | 用一句教师转场后建立全文导航，不预制答案 | 教师不换页地说：“今天再读一个更早的故事。它不只写相遇，还由一位女子回望婚后的日子。”学生随即只读三问，不写三份猜想 | 从熟悉作品转向新的第一人称婚姻叙事，并知道读完全诗后要回答什么 | 只呈现简洁、远距可读的三问；转场不独占一页，不给婚姻处方 |
+| 1 | N002 | 从个人记忆中检索爱情或婚姻文学 | 每人独立写1—3篇初高中语文课上读过的课文或整本书，并用一句自然话说“它写了什么”；前45秒不出现篇名或主题答案。45秒后教师口头说出三条恢复路径并指向学习单：翻教材目录、领取正面只写篇名的纸质提示条、先听一位同伴再补写 | 从“等教师列篇目”变为“每人拥有一份真实起点”；空白不是失败，也不由教师代写主题 | 活动界面；初始静态页只显示主任务。首版虚构的“页脚淡入”删除，不为技术效果增加无学习功能页面 |
+| 2 | N003 | 让每名学生的旧经验进入小组公共记忆 | 四人按号依次发言，每人15—20秒；记录者只记篇名和主题短语；重复作品可以补不同主题。听见新增者勾记，暂无新增者如实标记并从小组作品谱圈一项值得带入全班的内容 | 个人清单变成小组作品谱，不由一人包办；每人都留下发言或听记痕迹 | 活动界面；清楚显示轮次、发言者、听者和执笔人的同步动作，不放人物装饰图 |
+| 3 | N004 | 扩大班级看到的爱情、婚姻文学范围 | 每组代表先贴一张“篇名＋它写了什么”贡献卡，再用20秒说尚未出现的作品或不同主题。听众有新增则记一项；暂无新增则核对一张重复卡：它是否真的补了不同说法。按8组为贴卡、表达、换组、补记和异常留足5分钟 | 形成可追溯的班级作品卡墙；“全员参与”不再等同于强迫人人产生新观点 | 活动界面；真实卡墙承载作品，屏幕只显示20秒节奏和两条同层级听者路径，不预填学生答案 |
+| 4 | N005 | 把贡献卡整理成宽广的文学主题谱，而不替学生深析 | 静看30秒；一名学生试移一张相近卡并说明理由；教师只沿现场卡片作两三条串联；全班各自核对一张卡，发现篇名与说法错配即纠正，未发言者补记一处相近或不同 | 零散作品成为由本班实际材料形成、保留作品出处的主题场；最终圆桌会回来比较《氓》增加了怎样的叙事 | 现场共创；真实贡献卡是第一视觉，PPT只保留“观察—移动—核对”，不预制分类框或成熟婚姻理论 |
+| 5 | N001 | 在广阔旧故事之后揭示《氓》，完成阅读对象转换 | 教师沿现场卡墙收束：“这些故事写相遇、等待、相守，也写错过、离别和关系中的难题。今天再读一个更早的故事。”随后切出纯题名，学生看题、读出处、翻到原文 | 学生从自己参与生成的主题谱进入一则新的早期婚姻叙事，而不是被动接收教师预告 | 纯题名、出处和纸本肌理；不突出桑叶、淇水、枯黄、湍急、人物悲伤或结尾判断 |
+| 6 | N007 | 建立全文导航，不预制答案 | 学生静默读三问，只选一问做记号；教师明确“现在不回答，读懂六章后再回来” | 每人拥有一个贯穿全文的追踪方向 | 活动界面；标题、主任务和页脚统一使用同一时态，不制造“读完/现在”的冲突 |
 
 三问保持朴素：
 
@@ -274,6 +331,8 @@ V6按以下因果链重组，不受旧模块页数限制：
 3. 这场婚姻为什么走到这一步？
 
 导入的价值在广度、发言和共同记忆，不在立刻形成深刻婚姻理论。教材课文和语文课整本书阅读优先；学生说到影视改编时，教师自然追问其文学来源，能定位原作则收入，不能定位则暂记在“相邻故事”而不批评。学生主动说到其他课外文学作品可以进入，教师不主动铺开课外清单。教师总结明确标为教师对现场材料的整理，不伪称学生原话。导入时间不能用“发言秒数相加”冒充真实课堂时间，必须为贴卡、换组、倾听记录和纠错留出可核验余量。
+
+导入广度的桌面判据不是“列出多少固定名篇”，而是：每人有个人起点或诚实空白状态、每人有一次轮说机会、每人承担听者动作、全班作品墙确有班级增量、教师没有提前把主题收束成婚姻处方。真实作品数量、来源广度和主题增量只能在试教后记录。
 
 ## 8. 全文听读与最小必要支架
 
@@ -289,10 +348,32 @@ V6按以下因果链重组，不受旧模块页数限制：
 
 - 《诗经》是我国最早的诗歌总集，收诗305篇；
 - 风、雅、颂，《氓》属于《卫风》；
-- 女子第一人称回望婚姻经历；
+- 本诗由一位女子用第一人称回望自己的婚姻经历；这一条是进入逐句讲读所需的教师提供型`necessary_input`，不是要求学生仅凭初听自主发现的答案；
 - 四言节奏和本课确实会造成朗读阻滞的字音。
 
+上述第三条先由教师简短提供，随后撤去完整句，只留下“女子第一人称”路标；学生遮屏或转看纸卡后用自己的话检索复述“谁在回望什么”。复述用于检查必要输入能否被提取，不伪称为学生自主发现；若仍不确定，可回看教师路标再说，不把猜测计作理解。
+
 赋、比、兴、反复、叠词、时间压缩、对照等，在学生先听见或看见语言现象以后再命名。字音不采用一页集中倾倒；能随章解决的放回相应句群。
+
+### 8.3 首批11张实际页面的重新处置
+
+这一处置以当前实际PPTX、speaker notes、学习单和两名独立审查结果为依据，不以首版结构审查的“通过”状态为依据。处置来源绑定`student_reception_qa/review_2026-08-13_full11_v2`与`ppt_visual_qa/review_2026-08-13_full11_v2`；正式生成审查账本时须记录两名审查者ID、所审源SHA-256和作者集合不相交证明，若源已变化则这些结论只作缺陷来源，不能冒充新版复验通过。正式页ID在结构冻结后重排；表中暂沿用现有ID追踪缺陷。
+
+| 现有页 | 处理决定 | 本页不可替代的意义 | 必须完成的局部优化 | 下一步放行证据 |
+|---|---|---|---|---|
+| N001 | 移动 | 在本班爱情、婚姻文学主题谱之后揭示《氓》，完成阅读对象转换 | 从物理第1页移动到N005之后；逐字稿沿真实卡墙自然收束再报题；题名页不加人物和结尾意象 | 新物理顺序、转场台词、渲染页三者一致；删除本页后确会失去作品揭示时刻 |
+| N002 | 重写 | 让每人从自己的语文学习经历获得一份可说的旧故事起点 | 删除不存在的“45秒后淡入”；初始屏只保留独立检索，45秒后教师口头提示并指向学习单三条恢复路径 | PPT无虚假动画声明；notes准确给出时点；学习单三条路径真实可见；空白学生反例执行成功 |
+| N003 | 保留并微调 | 让四个人的个人记忆进入共同作品谱 | 保留1→2→3→4轮说、代记和“暂无新增”；压低重复说明，提升后排可读性，不加装饰性人物图 | 四类角色动作无冲突；每人有发言/听记痕迹；学习单控件与屏幕一致 |
+| N004 | 重写 | 把小组材料扩展成全班可见的文学范围 | 听者任务改为同层级二选一：“有新增｜记下一项；暂无新增｜核对一张重复卡是否真的补出不同说法”；同步修改学习单和逐字稿 | “无新增”反例可完成；听者记录后在N005被读取；五分钟包含贴卡、换组和补记 |
+| N005 | 保留 | 把本班真实贡献卡整理成宽广且可追溯的文学主题谱 | 真实卡墙继续作为第一视觉；PPT只保留观察、移动、核对，不伪造卡片和分类答案；补强最终圆桌对卡墙的真实回看。课前冻结二选一保存方案：跨课时保留实物卡墙；若场地不能保留，则当场拍摄并在下一课时使用归档照片 | 卡片模板、磁贴/板位、保存方案和备用照片路径达到`prepared`；真实卡墙及回看只在试教后记`observed` |
+| N007 | 保留并微调 | 建立全文追踪方向，不在缺少原文时提前分析 | 标题、主命令和页脚统一为“现在只选一问做记号；读懂六章后再回答”；不要求写猜想 | 第一眼无时态冲突；三问记录在后文三问活动中真实读取 |
+| N008 | 保留为事件载体 | 让第一至第三章在不中断的整体听读中保持可读 | 不加插图；教师真实连续朗读；光点只帮助找回行首；与N009无声衔接 | 实际声音、原文、notes一致；后排投影列P3，未实测前不宣称通过 |
+| N009 | 保留为事件载体 | 让第四至第六章保持可读并完成第一次整体接收 | 不加插图；末句后保留真实静默；允许“尚未找到” | 与N008共同归属一次听读事件；初读标记真实进入N010 |
+| N010 | 重写 | 把个人初听停顿转成可保存、可交流、后续可回看的证据 | 把“抄一句｜或写‘尚未找到’”置于同一视觉层级，再选择“我听见/看见/想问”；不把诚实空白藏在页脚 | 两条路径第一眼平权；同桌听记有控件；全文后确实回看并修订初读卡 |
+| N011 | 重写 | 补足继续逐句阅读所需的最小作品身份 | 教师先把“我国最早的诗歌总集、305篇；《氓》属于《卫风》；一位女子用第一人称回望婚姻经历”作为`necessary_input`简短提供。随后撤去完整句，只保留“305篇、《卫风》、女子第一人称”三个标签；学生遮屏或转看纸卡后复述“谁在回望什么” | 复述不能照读完整句，也不冒充自主发现；不确定者可回看后再检索；误把《卫风》当作者等反例有最小纠正；不扩张成文学史知识墙 |
+| N012 | 保留并微调 | 用基本四言节奏读顺第一句群并及时撤去斜线支架 | 突出教师触发词“看教材”，随后学生转看纸质无斜线原句；必要时增加短暂静态无斜线状态，但不得依赖不存在的动画 | 学生能够在无斜线原句中保持动作完整；听者提问、读者重读、学习单改动三者闭合 |
+
+这11页只承担“唤醒旧经验—进入新文本—完整听见—保存初读—获得最小路标”的功能，不能用其通过状态证明学生已经读懂全文。六章讲读、三问、婚姻圆桌、知识收纳和终读没有完成以前，完整PPT始终判定为未完成。
 
 ## 9. 六章讲读：让原文持续成为理解主线
 
@@ -354,28 +435,37 @@ V6按以下因果链重组，不受旧模块页数限制：
 
 连续学习事件若重复相同动作，却没有改变阅读对象、任务难度、反馈方式或产出形态，就合并或重写。朗读、回诗、倾听等核心语文动作可以多次出现，但每次必须在完整学习链中承担不同的可定位作用。活动不以表演能力、私人情感披露或少数外向学生为门槛。
 
+每个意义单元最多设置一个主活动。主活动使用统一路由合同：
+
+> `原诗输入 → 当前阅读困难 → 选择的方法 → 每人先做的动作 → 小组/公开交换 → 非发言者任务 → 反馈与修订 → 保存位置 → 后页读取`
+
+缺少任一环节，活动不得以“参与性强”或“形式丰富”为理由进入正式课件。以下做法不计入教学手段丰富性：只改变座位、分组名称、颜色卡、抢答方式、计时器或角色称谓，却没有改变学生处理原文的认知动作和作品形态；角色扮演若依赖表演能力、补写诗中未明事实或强迫私人情绪暴露，也直接删除。
+
 ### 10.2 手法库
 
-| 学习困难 | 可选手法 | 合格产出 |
-|---|---|---|
-| 字词或背景造成进入障碍 | 定点释义、微型背景、教师示范、分歧整理 | 能把字义放回原句，继续朗读 |
-| 听不见声音变化 | 完整听读、句群连读、变速读、重音迁移、双声部、静默读 | 有证据的停顿、重音或速度方案 |
-| 看不清动作和时空 | 动作接龙、人物站位、路线图、时间展开、接力讲述 | 连续行动链或时空变化图 |
-| 只会报术语 | 去术语观察、替换、删除、关键词回声、多解释竞争、镜像对照 | “原词—语言变化—处境变化”解释 |
-| 诗句过度压缩，生活不可感 | 生活镜头、声音场景、定格、物件视角、情绪温度 | 有原诗依据且标明想象边界的日常画面 |
-| 小组由少数人包办 | 人人先说、同桌复述、小组拼图、随机代表、观点续写 | 每人有准备或表达痕迹 |
-| 展示时听众失去任务 | 听众证据单、找空缺、记录分歧、补充、反例、可见修订 | 发言者作品因听众反馈而改变 |
-| 观点像标签 | 证据听证、事实/推断界线、反例检验、责任与解释分庭 | 判断—证据—限度三者齐全 |
-| 读完无法收束 | 一句话章意、三十秒旁白、双层句、修改前后、给后来人的一句话 | 可从原诗重建的个人表达 |
+| 学习困难 | 优先手法 | 每人入口 | 合格产物 | 反馈与后用 |
+|---|---|---|---|---|
+| 字词或背景造成进入障碍 | 定点释义、微型背景、教师示范、分歧整理 | 先尝试把一个词放回原句口译 | 能继续朗读的句意或动作句 | 同伴核对“谁做什么”，下一句群恢复叙事 |
+| 听不见声音变化 | 完整听读、句群连读、变速读、重音迁移、双声部、静默读 | 每人标一处停顿、重音或速度 | 有原词依据的朗读谱 | 听者说出听到的差异，读者修订后重读 |
+| 看不清动作和时空 | 动作接龙、人物站位、路线图、时间展开、接力讲述 | 每人先写一个人物动作或位置变化 | 连续行动链或时空变化图 | 听众找断点，后页用行动链复述本章 |
+| 只会报术语 | 去术语观察、替换、删除、关键词回声、多解释竞争、镜像对照 | 每人先说删换前后“哪里不同” | “原词—语言变化—处境变化”解释 | 同伴追问证据，术语在观察后命名 |
+| 意象被套成唯一答案 | 感官描述、两种解释竞争、后文回看 | 每人先写能看见/触到的质地和一个暂定解释 | 带证据与限度的意象假设 | 后文新证据到来后保留、改写或撤回 |
+| 诗句过度压缩，生活不可感 | 二十四小时时间轴、生活镜头、声音场景、定格、物件视角 | 每人先选一个时刻、动作和原诗依据 | 标明文本依据与想象边界的日常画面 | 听众区分“诗中明写/合理想象”，原作者现场改词 |
+| 小组由少数人包办 | 人人先写、依次轮说、同桌复述、小组拼图、随机代表 | 每人先有可追踪准备痕迹 | 由全员材料合成的共同作品 | 代表只呈现共同作品，抽查能回到个人来源 |
+| 展示时听众失去任务 | 听众证据单、找空缺、记录分歧、补充、反例 | 每名听众记录一条指定证据或疑问 | 发言者作品旁的反馈痕迹 | 发言者依据听众意见移动、改写或保留并说明 |
+| 观点像标签或因果混乱 | 证据听证、事实/推断/延伸界线、反例检验、责任与解释分庭 | 每人形成“判断＋原句＋不能说满之处” | 判断—证据—限度三者齐全 | 质询后保留、移动、改写或撤回，进入三问和圆桌 |
+| 读完无法收束 | 一句话章意、三十秒旁白、双层句、修改前后、给后来人的一句话 | 每人先形成一条章意或转折句 | 可从原诗重建的个人表达 | 六章接力和最终知识收纳实际读取 |
 
 ### 10.3 六章优先活动形态
 
 - 第一章：不知道结局时的初见印象；全文后再回来看哪些细节需重新判断；
-- 第二章：按“望—不见—泣—见—笑—迁”组织动作并设计两种速度；
-- 第三章：先描述“沃若”的质地，再让两种解释竞争，到“黄而陨”后修订；
-- 第四章：把经历事实与叙述者的责任判断分开；
-- 第五章：把“夙兴夜寐”的多年压缩展开为一天，标出原诗依据和合理想象；
-- 第六章：用疲惫克制与清醒决绝两种声音读“亦已焉哉”，允许复杂情绪并存。
+- 第二章：按“望—不见—泣—见—笑—迁”组织动作并设计两种速度，听者用声音差异核对情绪是否有原词依据；
+- 第三章：先描述“沃若”的质地，再让两种解释竞争，到“黄而陨”出现后每人必须对旧解释执行保留、改写或撤回；
+- 第四章：把经历事实与叙述者的责任判断分开，以“明写/判断/不能说满”三栏完成证据听证；
+- 第五章：把“夙兴夜寐”的多年压缩展开为二十四小时中的一天，标出原诗依据和合理想象，听者负责删去无依据细节；
+- 第六章：用疲惫克制与清醒决绝两种声音读“亦已焉哉”，学生用此前经历选择、混合或重写朗读谱，不把结尾画成已经离家或胜利释然。
+
+六章的活动形态允许不同，但每章都必须回到同一理解底线：学生能脱离答案页，以自然话说清本章“谁在说、谁在做、发生了什么”，并至少引用一个本章原词解释人物行动、声音或判断。不能连续复述、不能指出原词或只能照读屏幕，均不计为理解。
 
 ## 11. 全文后的三问活动
 
@@ -545,6 +635,23 @@ V6按以下因果链重组，不受旧模块页数限制：
 
 衣服编号表示视觉连续性而非声称诗中人物只有三套衣服。所有人物场景必须调用对应阶段的参考设定图；未通过多视角和同框比例审查，不得生成正式场景。
 
+角色连续之外，还须冻结“场景—构图—道具”连续性合同：
+
+- **场景词典：** 为淇水、道路、村舍、垝垣、室内劳作处分别登记`scene_id`、季节/时段、天气、地平线、地貌、建筑材料、可见道具和文本不确定项。诗中不明确的地点、渡水次数和生活事件不得借背景画成确定事实。
+- **构图词典：** 动作小景默认采用左侧60%—68%原文/任务、右侧32%—40%点景；人物图不超过整页约35%的视觉面积。每图只承担一个动作，连续场景冻结镜头尺度、人物相对身高、视线轴和主要光源方向。
+- **道具登记：** 布、车、帷裳等逐项绑定原诗和场景；无原文依据的布带、离家包袱、施暴姿势、第三者、刑具式阴影和现代婚礼物件列入禁现表。
+- **联系表：** 按叙事时间顺序渲染全部候选人物场景，审查脸型、发式、服装、比例、姿态、视线、场景和光源；只看单张漂亮不能替代连续性检查。
+- **跨页盲认：** 未看提示词的独立观察者须能认出同一人物及正确阶段。任一观察者误认人物、年龄阶段或把推断当成诗中事实，该场景退回。
+
+`scene_registry`和`prop_registry`是正式资产外键表，不是说明性附录：
+
+- `scene_registry`每项必填`scene_id`、`author_ids`、`source_line_refs`、`allowed_elements`、`forbidden_elements`、`timeline_phase`、`season_time_weather`、`horizon_terrain_architecture`、`reference_asset_sha256`、`continuity_neighbors`、`approval_status=pending|approved|rejected`、`reviewer_ids`和`reviewed_at`；
+- `prop_registry`每项必填`prop_id`、`author_ids`、`source_line_refs`、`allowed_scene_ids`、`allowed_character_variants`、`allowed_use`、`forbidden_use`、`reference_asset_sha256`、`forbidden_reappearance_signatures`、`approval_status`、`reviewer_ids`和`reviewed_at`；
+- 两张登记表的`author_ids`均进入`authorship_registry`；`approval_status=approved`要求至少两名审查者，且所有`reviewer_ids`都与该条目及参考资产的有效作者并集不相交。作者自批、只有一名批准者或作者谱系缺失一律不得批准；
+- 插图任务卡中的`scene_id`必须外键存在且`approved`，引用的参考SHA-256必须相等；`prop_ids`为数组，可为空。非空时每个ID必须外键存在、`approved`且SHA一致；为空时必填`no_prop_reason`，不得为满足schema创建没有语义的`PROP_NONE`伪资产；
+- 联系表须自动列出每个相邻场景在脸型、发式、服装、人物比例、左右关系、视线轴、镜头尺度、光源、场景和道具上的差异。差异只有绑定原诗或页面唯一功能并填写`allowed_difference_reason`才可通过；
+- 登记表、任务卡、参考资产、作者集合或联系表任一变化，相关批准状态失效，必须由新的独立审查重新批准，并重新盲认和入页测试。
+
 ### 14.4 场景资产候选池
 
 以下V01—V18是候选资产登记，不等于必须全部生成。只有对应页面功能冻结、插图必要性通过后才生图：
@@ -572,7 +679,7 @@ V6按以下因果链重组，不受旧模块页数限制：
 
 ### 14.5 插图任务卡与一票否决
 
-每张人物图在生成前必须填写：服务页面、原诗依据、唯一视觉功能、允许事实、禁止推断、角色ID、`character_variant`、`costume_id`、`hair_id`、`prop_id`、`timeline_position`、`relative_scale`、`reference_sheet`、`continuity_neighbors`、动作、构图、镜头尺度、画面复杂度、缩小后核心、固定配色、放置区域和无图替代方案。缺少任一人物连续性字段，不得生成人物场景。无人物资产将人物字段明确记为`na`，并说明视觉连续性依据。
+每张人物图在生成前必须填写：服务页面、原诗依据、对应学生动作、后续课堂调用、唯一视觉功能、删除后的具体理解损失、允许事实、禁止推断、角色ID、`character_variant`、`costume_id`、`hair_id`、`scene_id`、`prop_ids`、`no_prop_reason`、`timeline_position`、`relative_scale`、`reference_sheet`、`continuity_neighbors`、动作、构图、镜头尺度、视线轴、光源方向、画面复杂度、缩小后核心、固定配色、放置区域和无图替代方案。`prop_ids`非空时`no_prop_reason=null`，为空时必须给出真实理由。缺少任一人物连续性字段，不得生成人物场景。无人物资产将人物字段明确记为`na`，并说明视觉连续性依据。
 
 出现下列任一情况，图片不得进入正式PPT：
 
@@ -583,17 +690,19 @@ V6按以下因果链重组，不受旧模块页数限制：
 - 人物跨页漂移、服饰失据或年龄跳变；
 - 缩小到实际入页尺寸后三秒内看不出核心动作；
 - 相邻页无新增教学功能地重复同一画面；若复用，必须有可定位的高亮、批注、视角或理解变化；
+- 课堂后续没有观察、比较、指认或引用图中信息，图片只是教师没有调用的气氛；
+- 无图版已经能同样快、同样准确地完成任务，加图只增加审美而没有动作、时空、意象或关系理解收益；
 - 只能解释为“好看”，说不出具体理解收益。
 
 每张候选图按同一程序验收：
 
-1. 提交无图页和有图页的同尺寸对照；
+1. 提交无图A页和有图B页的同尺寸、同文字、同版式对照；除插图及其必需占位变化外不得暗改标题、字号和任务；
 2. 按实际PPT放置尺寸渲染整页，不用原始大图代替入页效果；
-3. 至少两名未参与生成、未看提示词的观察者分别进行三秒辨识；
-4. 观察者记录第一眼对象、辨认到的动作/意象/关系、它带来的理解和新增误读；
-5. 两名观察者都必须先将原诗或学生任务识别为页面主对象，并准确辨认任务卡规定的核心视觉；
-6. 任一观察者把合理推断说成文本事实，或第一眼只看图而忽略原诗/任务，该图立即否决；
-7. 通过后再核对角色参考图、相邻场景和实际课件色彩；修复过的图重新进行完整三秒测试。
+3. 至少四名未参与生成、未看提示词的观察者，按随机或交叉顺序盲看A/B，每人只在一轮中先看其中一版，防止答案记忆；记录分组和顺序；
+4. A/B完成同一三秒任务：指出页面第一视觉、定位对应原句或当前任务、辨认任务卡规定的动作/空间/意象，并给出置信度；记录答案、完成时间和新增误读；
+5. B只有同时满足下列条件才通过：原诗/任务识别率不低于A；没有新增文本越界误读；核心动作/空间/意象的准确率更高或中位完成时间更短；四名观察者均未把插图当作标准答案；
+6. 任一观察者把合理推断说成文本事实，或第一眼只看图而忽略原诗/任务，该图立即否决；小样本结果只作为保守桌面门，不声称统计显著或真实课堂增益；
+7. 通过后再核对角色参考图、scene/prop外键、相邻场景联系表和实际课件色彩；修复过的图重新进行完整A/B测试。
 
 现有第二张“亦已焉哉”样片所用布带没有文本依据，不进入正式V18方案；V18默认不再生成人物图。
 
@@ -601,8 +710,8 @@ V6按以下因果链重组，不受旧模块页数限制：
 
 ### 15.1 四层评估
 
-1. **页面级：** 六道硬门、前台纯净、剧本可演、视觉职责；
-2. **学习事件级：** 输入—行动—交流—修订—调用是否闭合，覆盖是否真实；
+1. **页面级：** 六道功能门、三道证据门、前台纯净、剧本可演、视觉职责；
+2. **学习事件级：** 原文—行动—作品—反馈—修订—调用是否闭合，覆盖和反例路径是否真实；
 3. **整课级：** 全文连续性、问题时机、活动多样性、三问回收、知识收纳；
 4. **插图资产级：** 文本边界、角色一致、时代可信、三秒辨识、美感和入页收益。
 
@@ -621,25 +730,40 @@ P0、P1、P2不能用总分抵消，也不能降级成“建议”。
 
 至少设置两名不参与本轮写作的审查者：
 
-- **学生接收审查者：** 只依据实际生成的页面、讲者备注和学习单，逐页模拟学生按设计将看见、将听见、可能参与什么、可能理解或误解什么、预期留下什么作品；重点检查前置条件、发言覆盖、听众任务和后续调用，不把模拟写成已发生事实。
-- **视觉审查者：** 依据完整母版与各模块逐页可读的分批渲染（每批8—12页、子图不低于1600×900）、规定页面的300 dpi单页图、三份DOCX逐页状态、角色设定和插图任务卡，检查原诗是否为视觉主线、远距可读、留白、层级、动作辨识、人物一致和文本越界。
+- **学生接收审查者：** 只依据实际生成的页面、明确会说出的讲者台词、学习单和其他学生暴露渠道，逐页模拟学生将看见、将听见、可能参与什么、可能理解或误解什么、预期留下什么作品；重点检查前置条件、发言覆盖、听众任务、答案泄漏和后续调用。每页须主动选择适用反例执行，不能只沿最理想回应，不把模拟写成已发生事实。
+- **视觉与课堂可执行性审查者：** 依据完整母版与各模块逐页可读的分批渲染（每批8—12页、子图不低于1600×900）、规定页面的300 dpi单页图、三份DOCX逐页状态、角色/场景/道具设定和插图任务卡，检查原诗是否为视觉主线、远距可读、留白、层级、动作辨识、人物一致、文本越界以及PPT/notes/学习单/实物的物理一致性。
 
 审查者不能以设计者“本来想表达什么”为放行依据。审查结论必须定位到页、字段或资产；修复后由原审查者复验修复页，并扩大到所属模块，防止局部修复制造新断点。
 
-审计证据采用无自引用的三级链。Checkpoint 4生成`structure_audit_bundle_sha256`，内容为`structure_manifest`、`current_release_audit`、旧初审有效视图/处置关闭，不含尚未存在的物理输出或Task 27最终审查。Task 21/22可绑定这个结构哈希做候选构建检查。Task 26最终PPTX和Task 22最终DOCX均完成实测后，由Task 27冻结`release_artifact_manifest`、`slide_occurrence_inventory`、`document_page_inventory`和`other_channel_inventory`，派生最终`current_manifest`，再生成不可变的“最终审查前”`release_audit_bundle_sha256`。Task 27的最终学生接收/视觉结论只进入独立追加式`release_review_ledger`，每条绑定该final bundle，但ledger绝不反写`current_release_audit.review_status`，也不被final bundle反向哈希。
+逐页独立审查必须记录以下十项，不允许只写总体印象：
 
-`release_review_ledger`为哈希链式追加账本。每条审查记录必填`review_id`、`review_type`、`object_key`、`revision`、`previous_ledger_hash`、可空`supersedes_review_id`、`release_audit_bundle_sha256`、状态、审查者、时间和缺陷ID；同一`(bundle, review_type, object_key)`的首条记录revision=1且无supersedes，后续记录须revision连续、恰好替代上一当前记录并承接唯一前驱哈希。断链、分叉、重复当前状态或跨bundle替代均失败。有效审查视图按上述键只取唯一链尾，但完整原账永久保留。
+1. 学生第一眼看见什么；
+2. 学生在准确时点实际听见什么；
+3. 不同角色各自做什么，何时结束；
+4. 适用边界学生怎样完成；
+5. 本页调用哪句原文或哪项前页作品；
+6. 学生留下什么，确切保存在哪里；
+7. 页前—页后发生什么可观察变化；
+8. 谁提供什么反馈，学生改了什么；
+9. 后续哪页怎样实际读取；
+10. 当前P0/P1/P2/P3、证据、最小修复及`Pass/Veto`。
+
+最少反例集包括：想不起、暂无新增、尚未找到、走神、误读、沉默、不同意、回答重复、发言超时、少数人包办和依赖动画但对象不存在。每页按适用性选择，不适用须说明理由，不能统一填`na`。同一作者填写的`all_students_have_entry=true`、`artifact_location`、`next_use`或时间盒总和不构成独立证据。
+
+审计证据采用无自引用的三级链。Checkpoint 4生成`structure_audit_bundle_sha256`，内容为`structure_manifest`、结构阶段`current_release_audit`、旧初审有效视图/处置关闭和`authorship_registry_effective_view`，不含尚未存在的物理输出或Task 27最终审查。Task 21/22可绑定这个结构哈希做候选构建检查。Task 26最终PPTX和Task 22最终DOCX均完成实测后，由Task 27冻结`release_artifact_manifest`、`slide_occurrence_inventory`、`document_page_inventory`、`other_channel_inventory`、`physical_release_gate_overlay`和候选时的`authorship_registry_effective_view`，机械派生`current_manifest`与`effective_release_audit`，再生成不可变的“最终审查前”`release_audit_bundle_sha256`。Task 27的最终学生接收/视觉结论只进入独立追加式`release_review_ledger`，每条绑定该final bundle，但ledger绝不反写结构审计或overlay，也不被final bundle反向哈希。
+
+`release_review_ledger`为哈希链式追加账本。每条审查记录必填`review_id`、`review_type`、`object_key`、`revision`、`previous_ledger_hash`、可空`supersedes_review_id`、`release_audit_bundle_sha256`、`authorship_registry_effective_sha256`、机械导出的`reviewed_author_ids`、`reviewer_id`、状态、时间和缺陷ID；验证器要求登记哈希等于final bundle中的作者登记有效视图哈希，且审查者不属于作者并集。同一`(bundle, review_type, object_key)`的首条记录revision=1且无supersedes，后续记录须revision连续、恰好替代上一当前记录并承接唯一前驱哈希。断链、分叉、重复当前状态、作者登记哈希漂移或跨bundle替代均失败。有效审查视图按上述键只取唯一链尾，但完整原账永久保留。
 
 ledger另含不可删除的`release_defect_registry`和只追加的`release_defect_closures`。每个发现登记`defect_id`、`severity=P0|P1|P2|P3`、`object_ref`、`review_record_ref`、`claim`、`evidence_refs`、`reviewer_id`、`discovered_at`和`source_state_sha256`；已发现项不得删除、改ID或改严重度，只能追加修订说明。完整不可变审查记录中全部`defect_ids`的并集必须严格等于registry的`defect_id`集合；每个记录内ID恰有一个registry项反向指回该`review_id`，每个registry项也必须出现在其`review_record_ref.defect_ids`中，且severity/object/evidence/reviewer与发现记录一致。同ID多registry、记录漏登记、孤儿registry或错误反指均失败。每个关闭登记`defect_id`、`fix_refs`、修复前/后SHA-256、`original_reviewer_id`、原审查者复验状态/时间、`closure_status`和`verified_source_state_sha256`；无源关闭、重复有效关闭或修复后源状态再次变化均使关闭无效。有效开放集合由registry减去“恰好一条仍匹配当前源状态的有效关闭”机械导出。
 
 Task 28的`final_defect_closure_summary.closed_p0_p1_p2_ids`必须严格等于registry中全部P0/P1/P2 ID集合，逐项恰一有效关闭；不得手填`open=0`，P3单列到真实试教观察项。Task 28再生成`release_attestation_sha256`，其组件为final bundle哈希、完整ledger及其有效视图哈希、机械缺陷关闭汇总和评分；审查记录绑定前置final bundle，因此不存在自引用。候选重建、occurrence/渠道变化或artifact清单变化都会产生新final bundle，使旧ledger状态失效。
 
-两个bundle和最终证明共用`bundle_schema_version=1`与同一可复算规范。结构bundle固定四组件：`structure_manifest`、`current_release_audit`、`legacy_effective_view`、`legacy_disposition_closure`；final bundle固定六组件：`structure_audit_bundle`、`release_artifact_manifest`、`slide_occurrence_inventory`、`document_page_inventory`、`other_channel_inventory`、`current_manifest`；release attestation固定五组件：`release_audit_bundle`、`release_review_ledger`、`effective_release_review_view`、`final_defect_closure_summary`、`final_scorecard`。各组件先转为canonical JSON——UTF-8、LF、Unicode NFC、路径转工作区相对POSIX路径、对象键按Unicode码点升序；语义有序数组（页面/事件执行顺序、物理slide、DOCX分页、渠道暴露、G5边序列）保持原序并把顺序本身纳入哈希，集合数组（ID集合、缺陷集合、审查者集合）按稳定ID升序；只排除明确列在schema中的`generated_at`、纯展示用绝对缓存路径，其他字段一律纳入。每个组件分别计算SHA-256并记录为`component_sha256`；bundle/attestation文档按schema版本、上述固定组件名和组件哈希的固定顺序再次canonicalize并计算SHA-256。验证器必须自己从源重算，不接受生产器自报哈希；键书写顺序变化不改变哈希，任一非排除字段、数组语义顺序、组件内容变化都必须改变哈希，组件缺失或替换必须失败。
+两个bundle和最终证明共用`bundle_schema_version=1`与同一可复算规范。结构bundle固定五组件：`structure_manifest`、`current_release_audit`、`legacy_effective_view`、`legacy_disposition_closure`、`authorship_registry_effective_view`；final bundle固定九组件：`structure_audit_bundle`、`release_artifact_manifest`、`slide_occurrence_inventory`、`document_page_inventory`、`other_channel_inventory`、`physical_release_gate_overlay`、`effective_release_audit`、`current_manifest`、`authorship_registry_effective_view`；release attestation固定五组件：`release_audit_bundle`、`release_review_ledger`、`effective_release_review_view`、`final_defect_closure_summary`、`final_scorecard`。final bundle中的作者登记有效视图必须为结构bundle视图的同一谱系后继，并覆盖物理构建器、Office输出和插图资产作者；任何差异都纳入哈希。各组件先转为canonical JSON——UTF-8、LF、Unicode NFC、路径转工作区相对POSIX路径、对象键按Unicode码点升序；语义有序数组（页面/事件执行顺序、物理slide、DOCX分页、渠道暴露、G5边序列）保持原序并把顺序本身纳入哈希，集合数组（ID集合、缺陷集合、审查者集合）按稳定ID升序；只排除明确列在schema中的`generated_at`、纯展示用绝对缓存路径，其他字段一律纳入。每个组件分别计算SHA-256并记录为`component_sha256`；bundle/attestation文档按schema版本、上述固定组件名和组件哈希的固定顺序再次canonicalize并计算SHA-256。验证器必须自己从源重算，不接受生产器自报哈希；键书写顺序变化不改变哈希，任一非排除字段、数组语义顺序、组件内容变化都必须改变哈希，组件缺失或替换必须失败。
 
 最终审查证据还分两类，且都绑定`release_audit_bundle_sha256`：
 
-- `student_occurrence_review`的辨别字段为`review_type=student_occurrence`，逐物理出现必填`release_audit_bundle_sha256`、`occurrence_ref`、`artifact_id`、`physical_index`、`page_id`、桌面模拟的`simulated_seen/simulated_heard/simulated_activity_participation`、`possible_understanding`、`possible_misunderstanding`、`possible_gain`、`reviewer_id`、`reviewed_at`、`status`和`defect_ids`。其键的有序多重集必须严格等于冻结官方入口推导出的全部`projected=true` slide occurrence；隐藏非投影页不得混入接收集合，但仍进入视觉集合。另一artifact中的同页记录不能代替本出现。
-- `student_event_review`的辨别字段为`review_type=student_event`，逐完整`learning_event`记录`release_audit_bundle_sha256`、`event_id`、按执行顺序排列的`ordered_carrier_occurrence_refs`、`other_channel_evidence_refs`、桌面模拟中学生将看见/听见/做什么，以及对设计上的`inputs/actions/artifacts/observable_change/next_uses`的可执行性复核、审查者、时间、状态与缺陷ID。它的事件ID集合必须严格等于`structure_manifest/current_release_audit`全部现行学习事件；每个载体引用必须指向合法`projected` slide occurrence，每个其他渠道引用必须双向匹配`other_channel_inventory`中的所属事件、`scripted`状态和顺序，不能用未说出的备注或几条逐页记录冒充事件整体审查。所有结论均是课前模拟，不写成学生已经理解或实际参与。
+- `student_occurrence_review`的辨别字段为`review_type=student_occurrence`，逐物理出现必填`release_audit_bundle_sha256`、`authorship_registry_effective_sha256`、`reviewed_author_ids`、`occurrence_ref`、`artifact_id`、`physical_index`、`page_id`、桌面模拟的`simulated_seen/simulated_heard/simulated_activity_participation`、`possible_understanding`、`possible_misunderstanding`、`possible_gain`、`reviewer_id`、`reviewed_at`、`status`和`defect_ids`。其键的有序多重集必须严格等于冻结官方入口推导出的全部`projected=true` slide occurrence；隐藏非投影页不得混入接收集合，但仍进入视觉集合。另一artifact中的同页记录不能代替本出现。
+- `student_event_review`的辨别字段为`review_type=student_event`，逐完整`learning_event`记录`release_audit_bundle_sha256`、`authorship_registry_effective_sha256`、`reviewed_author_ids`、`event_id`、按执行顺序排列的`ordered_carrier_occurrence_refs`、`other_channel_evidence_refs`、桌面模拟中学生将看见/听见/做什么，以及对设计上的`inputs/actions/artifacts/observable_change/next_uses`的可执行性复核、审查者、时间、状态与缺陷ID。它的事件ID集合必须严格等于`structure_manifest/effective_release_audit`全部现行学习事件；每个载体引用必须指向合法`projected` slide occurrence；每个其他渠道引用必须双向匹配`other_channel_inventory`中的所属事件、顺序及其合法状态：教师话语、学习单和音频须为`scripted`，课前实物材料、空板和保存方案须为`prepared`。不能用未说出的备注、未准备的材料或几条逐页记录冒充事件整体审查。所有结论均是课前模拟，不写成学生已经理解或实际参与。
 
 最终视觉和接收证据不能只绑定页ID、源Office文件或截图文件名：
 
@@ -666,7 +790,7 @@ Task 28的`final_defect_closure_summary.closed_p0_p1_p2_ids`必须严格等于re
 |---|---|---|---|
 | 文本、教材和认识边界 | 所有事实与解释正确，事实/推断/延伸明确 | 多义处主动呈现竞争解释及限度，跨文件完全一致 | 在95%基础上，所有高风险判断均有教材或原诗双重定位且无冗余解释 |
 | 学生接收连续性与问题时机 | 无前置倒置，全文—局部—全文链闭合 | 各事件输入与后用可逐项追踪，认知负担有恢复支架 | 在95%基础上，每个关键转折均能由学生作品重建而非教师代述 |
-| 页面必要性与因果闭合 | V6现行节点六门全通过，旧页初始失败保留且处置关闭，旧新映射完整 | 所有合并/删除均有反事实证据，载体页无伪功能 | 在95%基础上，全课无可进一步无损合并的页面或事件 |
+| 页面必要性与因果闭合 | V6现行节点九门全通过，旧页初始失败保留且处置关闭，旧新映射完整 | 所有合并/删除均有反事实证据，载体页无伪功能 | 在95%基础上，全课无可进一步无损合并的页面或事件 |
 | 参与覆盖、倾听、追问和修订 | 关键意义页全员有入口，展示均有听众任务 | 个人—小组—公开—修订链均有保存证据，无一人包办路径 | 在95%基础上，不同表达偏好的学生均有等价参与通道且证据被后用 |
 | 语文质地、体验和课堂剧本 | 前台无研发语言，台词自然，剧本可演 | 朗读、动作、意象、讨论随文本生长，分支和等待真实 | 在95%基础上，删去任何教师套话仍不损害课堂，体验与语言发现高度统一 |
 | 视觉、插图与实施质量 | 远距可读、无技术缺陷、图文不越界、文件一致 | 原诗持续为主线，角色和资产全量一致，修复回归完成 | 在95%基础上，每项视觉都能证明三秒理解收益且无可删装饰 |
@@ -676,6 +800,7 @@ Task 28的`final_defect_closure_summary.closed_p0_p1_p2_ids`必须严格等于re
 放行必须同时满足：
 
 - 权威V6现行清单中的全部页面/事件适用硬门通过；清单与现行审计、源码声明、课程数据可达图、装配快照和最终PPTX物理页/备注事件分别相等，可见性与实际投影状态一致；逐物理出现接收审查和逐学习事件整体接收审查均全覆盖；
+- G7物理真相、G8反例生存、G9理解闭环全部有异源证据，反例执行记录和跨材料核对不存在开放缺陷；
 - 旧S001—S127初始诊断封存链未被改写，所有修订链有效；六门失败码与全部P0—P2缺陷逐项关闭，所有处置的双向谱系、元素覆盖和决定专属条件通过；
 - `release_review_ledger`覆盖全部规定的物理出现、学习事件和视觉对象，P0、P1、P2清零；结构审计中不存在Task 27审查ID，`release_attestation_sha256`验证通过；
 - 总分不低于95；
