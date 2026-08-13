@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "module": "chapter_2",
+  "status": "historical_superseded_by_2026-08-13_full_reaudit",
+  "frozen_at": "2026-08-13",
+  "artifacts": {
+    "pptx": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_2/pptx/04_氓_V6第二章课堂课件.pptx",
+      "sha256": "4b5c41594c6727c0199f6584b43cccc09397c92de609ffccb4d689c26db8c0d5"
+    },
+    "snapshot": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_2/package/06_氓_V6第二章课程数据快照.json",
+      "sha256": "54a6e72cb90bc6fdd4457d4f1f491e7ebf74e002c1c0ca02d15a8314b249fd57"
+    },
+    "render_contact": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_2/pptx/rendered_v11/contact.jpg",
+      "sha256": "773c660200e0b9d357f9aaafc46957c30fe3bb4a5a381d420c58c84ba98b7323"
+    },
+    "markitdown": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_2/pptx/rendered_v11/markitdown.txt",
+      "sha256": "ca0654de8e4374e08a6d55c685a91cec43f471b6811423ab9f17fbdf13533f4f"
+    },
+    "pptx_manifest": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_2/pptx/chapter2_pptx_manifest.json",
+      "sha256": "586df0c387ef870cd8c7a28ae7cb144ce83724b35088f8de1e5851ad1ba7e7eb"
+    },
+    "package_manifest": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_2/package/chapter2_package_manifest.json",
+      "sha256": "8de6873e1336efbeb20276838ee60263c722617abc05aa48630e06be8c85ab97"
+    }
+  },
+  "independent_reviews": {
+    "visual": {
+      "path": "scripts/meng_v6/reviews/chapter2_visual_v11.json",
+      "sha256": "74039039b84b6cbc243320328c9c09f7f2da6e4db021aa263fd39b17fa66a499",
+      "status": "pass",
+      "p0": 0,
+      "p1": 0,
+      "p2": 0,
+      "p3": 1
+    },
+    "student_reception": {
+      "path": "scripts/meng_v6/reviews/chapter2_student_v11.json",
+      "sha256": "1e40aca10854acad9bb9003a838f502bc397227ce8e52d1233f182bb9c749e2e",
+      "status": "pass",
+      "p0": 0,
+      "p1": 0,
+      "p2": 0,
+      "p3": 1
+    }
+  },
+  "closed_focus_pages": ["N022", "N026", "N027", "N029"],
+  "closed_findings": [
+    "N022允许带有情绪意味的动作，同时不在生成前列出望、泣、笑三个现成答案。",
+    "N026保留第二遍仍需调整的诚实出口，N030完整重读时再次验证且仍可保留待调整。",
+    "N027先由学生口译和划定时间边界，真实静默后才由教师校准；四个文化词义后排可读。",
+    "N029取回章首三步并保留乘、来等七词外合理动作；先独立排序，再在自己的序列中定位转折，不提前显示正确相对顺序。"
+  ],
+  "p3_observations": [
+    {
+      "page_id": "N030",
+      "risk": "四分钟内完成待调整复验、完整重读、双人旁白、反馈、回诗补说与一句章意，真实课堂转换时间可能挤压最后书写。",
+      "observation_method": "试教逐段计时并记录最后一句章意的实际完成率；若低于80%，优先延长N030，不删除完整重读或学生补说。"
+    }
+  ],
+  "integration_watchlist": [
+    {
+      "risk": "学生可能记住活动步骤而弱化人物生活推进。",
+      "source": "scripts/meng_v6/reviews/student_role_linxiaoyu_baseline.md",
+      "closure_target": "third_chapter_and_whole_deck_integration",
+      "required_check": "每章末学生须合书用30秒说清谁做了什么、事情怎样转、下一章从哪里接上；整合阶段建立六章公共故事轨道。"
+    }
+  ],
+  "validation_record": {
+    "contract_tests": "16/16 pass before final build",
+    "office_schema": "pass",
+    "pptx_zip_integrity": "pass",
+    "markitdown_content_check": "pass",
+    "libreoffice_pdf_render": "pass; 9 pages; 16:9",
+    "fix_verify_cycle": "v10 visual review rejected N022 and N029 for two P2 answer leaks; v11 removed both leaks and passed same-hash independent visual and student-reception reviews"
+  },
+  "claim_boundary": "historical old-standard desktop pass only; superseded by all_existing_visual_reaudit_v1.json and all_existing_student_reaudit_v1.json; not a current delivery candidate",
+  "freeze_rule": "Superseded. Rebuild under 12_氓_V6逐页功能压缩重构规格.md and obtain new same-hash independent reviews."
+}

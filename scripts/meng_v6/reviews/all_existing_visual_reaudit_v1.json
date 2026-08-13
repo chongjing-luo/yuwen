@@ -1,0 +1,420 @@
+{
+  "report_id": "meng_v6_all_existing_visual_reaudit_v1",
+  "review_date": "2026-08-13",
+  "scope": "只读复审现有 opening、chapter_1、chapter_2、chapter_3 PPTX；仅评价功能必要性、程序成本与认知收益、视觉服务功能及可删并性。",
+  "requested_page_count": 38,
+  "observed_page_count": 38,
+  "count_note": "实际文件为 opening 12页（N011a知识呈现、N011b撤答检索分别计一页）、chapter_1 9页、chapter_2 9页、chapter_3 8页，共38页；本报告未漏审。",
+  "inputs": {
+    "opening": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/opening/pptx/04_氓_V6导入课堂课件.pptx",
+      "sha256": "b45be280b7f2738090600c7dedf69ed0b3c683754c5f5fdd2f56337bf8c894ff",
+      "pages": 12
+    },
+    "chapter_1": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_1/pptx/04_氓_V6第一章课堂课件.pptx",
+      "sha256": "4284ab0418afcfd2280242edbd6d24ebde1e7f6c3e656836a12d455fa7cc41ed",
+      "pages": 9
+    },
+    "chapter_2": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_2/pptx/04_氓_V6第二章课堂课件.pptx",
+      "sha256": "4b5c41594c6727c0199f6584b43cccc09397c92de609ffccb4d689c26db8c0d5",
+      "pages": 9
+    },
+    "chapter_3": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_3/pptx/04_氓_V6第三章课堂课件.pptx",
+      "sha256": "75eba84c25dcc32bcd56abed7af35d0713b5db84751fbbad2454ef455774edf9",
+      "pages": 8
+    }
+  },
+  "severity_counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 10,
+    "P3": 11,
+    "none": 17
+  },
+  "overall_verdict": "REWORK_REQUIRED",
+  "pages": [
+    {
+      "module": "opening",
+      "slide_index": 1,
+      "page_id": "N002",
+      "unique_function": "唤醒并外显学生既有的爱情与婚姻文学记忆。",
+      "verdict": "保留；功能单一且是后续真实交流的输入。",
+      "severity": "P3",
+      "issues": ["空表与检索要求匹配，但弱记忆学生可能先经历检索压力；是否需要提示条只能由现场观察确认。"],
+      "recommendation": "保留简洁空表；提示路径继续后置，不在屏幕提前铺满作品名。"
+    },
+    {
+      "module": "opening",
+      "slide_index": 2,
+      "page_id": "N003",
+      "unique_function": "让四名学生都说出自己的旧故事，并听见同伴新增内容。",
+      "verdict": "功能应保留，页面须重做；程序管理压过文学交流。",
+      "severity": "P2",
+      "issues": ["编号、轮说、勾选、圈选、执笔、代记、贡献卡、来源编号和签认同时上屏，工作记忆主要用于执行协议。", "卡片溯源手续对理解作品关系的增益有限。", "视觉第一层级是流程控制而非学生要说的故事。"],
+      "recommendation": "压成‘人人说一篇—听见新内容就记—小组选两项’三步；来源签认转入教师后台或取消。"
+    },
+    {
+      "module": "opening",
+      "slide_index": 3,
+      "page_id": "N004",
+      "unique_function": "把小组记忆扩展为全班共享的作品版图。",
+      "verdict": "功能可保留，但当前页面程序成本过高，宜与下一页统筹删并。",
+      "severity": "P2",
+      "issues": ["贴卡、二十秒发言、新增与重复分支、听众双路径同时呈现，视觉层级碎裂。", "听众记录‘新增或核重复’更像参与证明，不能稳定形成可用的文学关系。", "与N005连续构成两轮卡墙操作，局部收益重复。"],
+      "recommendation": "只保留代表贴卡和一句说明；听众直接观察异同，把公开归类与N005合为一次。"
+    },
+    {
+      "module": "opening",
+      "slide_index": 4,
+      "page_id": "N005",
+      "unique_function": "依据学生卡片发现并暂命名爱情婚姻故事之间的相近、相反或互补关系。",
+      "verdict": "概念功能有价值，但现形态须重构；不宜独立承载三轮移动、举证和全班表决。",
+      "severity": "P2",
+      "issues": ["页面以三阶段社会程序为中心，学生第一眼看不到任何真实作品关系。", "移动、命名、逐人写理由、保留改名移回的程序成本高于有限的关系发现。", "三列同权布局强化了操作流程，未保存最终形成的两三条关系。"],
+      "recommendation": "与N004合并：学生卡贴出后，请少量学生指出一组关系，教师只归纳现场已生成的两三条线索并转入《氓》。"
+    },
+    {
+      "module": "opening",
+      "slide_index": 5,
+      "page_id": "N001",
+      "unique_function": "揭示课题、读音与出处，并让全班定位原文第一句。",
+      "verdict": "保留；删除会失去从旧故事到新文本的明确门槛。",
+      "severity": "none",
+      "issues": [],
+      "recommendation": "维持纯题名页及大字号，让教师口头完成转场。"
+    },
+    {
+      "module": "opening",
+      "slide_index": 6,
+      "page_id": "N007",
+      "unique_function": "给六章初读提供三条长期追踪的问题方向。",
+      "verdict": "保留；三问有导航价值，但需避免问题措辞替学生预设过多。",
+      "severity": "P3",
+      "issues": ["‘婚后的不幸’和‘为什么走到这一步’预置了悲剧框架；其对初读开放度的真实影响需试教观察。"],
+      "recommendation": "保留三问与‘暂不回答’，后续必须明确回收个人所选问题。"
+    },
+    {
+      "module": "opening",
+      "slide_index": 7,
+      "page_id": "N008",
+      "unique_function": "让学生不中断地第一次听见第一至第三章原文。",
+      "verdict": "保留；原文连续在场，不应拆成知识卡。",
+      "severity": "P3",
+      "issues": ["三章全文字号和行距对后排可读性的影响需在真实教室确认。"],
+      "recommendation": "维持原文为唯一视觉主体；投影测试后再决定是否放大或减少页眉提示。"
+    },
+    {
+      "module": "opening",
+      "slide_index": 8,
+      "page_id": "N009",
+      "unique_function": "接续完成第四至第六章的首次完整听读。",
+      "verdict": "保留；与N008共同构成不可中断的全诗初遇。",
+      "severity": "P3",
+      "issues": ["后三章文本密度仍高，后排辨读风险只能通过投影实测确认。"],
+      "recommendation": "保持与N008一致的视觉语法；不要增加情节概括或结论图。"
+    },
+    {
+      "module": "opening",
+      "slide_index": 9,
+      "page_id": "N010",
+      "unique_function": "把完整听读后的一个真实感受、画面或问题固定为个人阅读入口。",
+      "verdict": "保留；画面清楚地区分‘已有一句’和‘尚未找到’两种正常状态。",
+      "severity": "P3",
+      "issues": ["只留一句可能强化片段记忆；是否能在后续回收为整篇理解需观察。"],
+      "recommendation": "保留双路径；在全诗后续回看时真实调用这张初听记录。"
+    },
+    {
+      "module": "opening",
+      "slide_index": 10,
+      "page_id": "N011a",
+      "unique_function": "提供理解文本所需的三项最低作品定位信息。",
+      "verdict": "信息必要，独立答案屏不必要；可与撤答页合并为一次短暂显隐。",
+      "severity": "P2",
+      "issues": ["三个知识卡直接给出答案，视觉整齐但与上一页个人初听形成突兀知识插入。", "与下一页承担同一知识组，独立成页的删除损失不足。"],
+      "recommendation": "使用同一页面先短显三项定位，再遮答口述；或将知识放在教材旁注，不占两张逻辑页。"
+    },
+    {
+      "module": "opening",
+      "slide_index": 11,
+      "page_id": "N011b",
+      "unique_function": "撤去答案，让学生检索复述三项作品定位。",
+      "verdict": "检索功能可保留，但不值得作为第二张独立页面。",
+      "severity": "P2",
+      "issues": ["再次占用整页只复述刚出现的三项事实，认知收益低于转场成本。", "深色三卡视觉仍像知识测验，与原文阅读暂时脱节。"],
+      "recommendation": "并入N011_INPUT，用动画、遮卡或教师口头撤答完成；随后直接进入原句。"
+    },
+    {
+      "module": "opening",
+      "slide_index": 12,
+      "page_id": "N012",
+      "unique_function": "用前两句的四言停连帮助学生听清完整动作，并桥接第一章细读。",
+      "verdict": "保留；节奏标记直接服务原句进入。",
+      "severity": "P3",
+      "issues": ["屏幕同时显示示例、边界说明和两种学生分支，后排可能只看见程序；实际可读性待投影确认。"],
+      "recommendation": "优先突出两行诗与斜线；将‘原本读顺/需调整’等分支改为教师口头提示。"
+    },
+    {
+      "module": "chapter_1",
+      "slide_index": 1,
+      "page_id": "N013",
+      "unique_function": "以全章原文建立人物行动的初步轮廓。",
+      "verdict": "保留；为后续逐句阅读提供整章先行框架。",
+      "severity": "P3",
+      "issues": ["圈与划的符号区分在投影及教材实操中是否清楚需现场确认。"],
+      "recommendation": "保留全文和唯一问题‘谁做了什么’，不要再加章意或人物评价。"
+    },
+    {
+      "module": "chapter_1",
+      "slide_index": 2,
+      "page_id": "N014",
+      "unique_function": "从主体、状态、物件与动作四项准确理解男子出场。",
+      "verdict": "保留；四格与原句轨道均直接服务句意。",
+      "severity": "none",
+      "issues": [],
+      "recommendation": "维持答案为空及底部章内轨道。"
+    },
+    {
+      "module": "chapter_1",
+      "slide_index": 3,
+      "page_id": "N015",
+      "unique_function": "识别‘匪……来……’的转折，区分表面动作与真实来意。",
+      "verdict": "保留；与前句形成必要的情节推进。",
+      "severity": "none",
+      "issues": [],
+      "recommendation": "保留两格对照和原句轨道，避免增加‘欺骗’等越界视觉标签。"
+    },
+    {
+      "module": "chapter_1",
+      "slide_index": 4,
+      "page_id": "N016",
+      "unique_function": "通过送、涉、至三个动作确认女子送行的主体、路径与终点。",
+      "verdict": "保留；路线视觉将古句空间关系转为可见关系。",
+      "severity": "none",
+      "issues": [],
+      "recommendation": "维持简洁箭头，不添加完成图或人物插画。"
+    },
+    {
+      "module": "chapter_1",
+      "slide_index": 5,
+      "page_id": "N017",
+      "unique_function": "用原词证据区分拒婚与婚姻条件暂未具备。",
+      "verdict": "保留；二选一产生明确的文本校准需求。",
+      "severity": "none",
+      "issues": [],
+      "recommendation": "继续保持两项不预标答案，教师校准后让学生修订。"
+    },
+    {
+      "module": "chapter_1",
+      "slide_index": 6,
+      "page_id": "N018",
+      "unique_function": "拆出安抚男子与约定婚期两层语意。",
+      "verdict": "保留；双栏视觉准确对应一句中的两层言语行动。",
+      "severity": "none",
+      "issues": [],
+      "recommendation": "保留两空格；朗读标记从属于语意，不再增加独立朗读流程。"
+    },
+    {
+      "module": "chapter_1",
+      "slide_index": 7,
+      "page_id": "N019",
+      "unique_function": "撤去原文提示，重建第一章五步事件链并暴露断点。",
+      "verdict": "保留；它把逐句所得重新组成故事，删除损失明确。",
+      "severity": "none",
+      "issues": [],
+      "recommendation": "保持五格空白和合书要求，不把标准节点提前上屏。"
+    },
+    {
+      "module": "chapter_1",
+      "slide_index": 8,
+      "page_id": "N020",
+      "unique_function": "区分原文明写、初读感受与当前不能确定的判断。",
+      "verdict": "保留；属于证据边界训练，但视觉与课堂节拍存在同质化风险。",
+      "severity": "P3",
+      "issues": ["三张同权卡片紧接五格重建，学生可能再次进入填表程序；是否遮蔽刚形成的事件链需试教观察。"],
+      "recommendation": "保留三栏但减少操作口令；结尾用一句自然话接回第一章相遇情境。"
+    },
+    {
+      "module": "chapter_1",
+      "slide_index": 9,
+      "page_id": "N021",
+      "unique_function": "重读全文并用自然话完整讲出男子来、女子回应和婚期确定。",
+      "verdict": "保留；承担不可替代的章末连续化与跨章出口。",
+      "severity": "none",
+      "issues": [],
+      "recommendation": "保留全文和三问；将学生形成的一句章意纳入后章故事轨道。"
+    },
+    {
+      "module": "chapter_2",
+      "slide_index": 1,
+      "page_id": "N022",
+      "unique_function": "完整初读第二章并提取学生最确定的动作，建立等待到迁嫁的粗轮廓。",
+      "verdict": "保留；整章原文与动作入口必要。",
+      "severity": "P3",
+      "issues": ["三个空格容易诱导学生追求固定数量而非真实抓取；‘带着感受的动作’能否有效开放动作概念需现场观察。"],
+      "recommendation": "保留空格但允许二至四项；不要在学生落笔前口头报具体动作。"
+    },
+    {
+      "module": "chapter_2",
+      "slide_index": 2,
+      "page_id": "N023",
+      "unique_function": "区分人物站位、视线方向和行走路线，准确理解登垣望复关。",
+      "verdict": "保留；图式空位与目光/路线辨析直接服务空间句意。",
+      "severity": "none",
+      "issues": [],
+      "recommendation": "保持学生先画，不增加预制人物位置图。"
+    },
+    {
+      "module": "chapter_2",
+      "slide_index": 3,
+      "page_id": "N024",
+      "unique_function": "以正面对照识别不见与既见造成的动作和语势翻转。",
+      "verdict": "保留；三组对照与两句原文形成强视觉对应。",
+      "severity": "none",
+      "issues": [],
+      "recommendation": "本页作为两句核心理解页保留，并承接后续一次性朗读验证。"
+    },
+    {
+      "module": "chapter_2",
+      "slide_index": 4,
+      "page_id": "N025",
+      "unique_function": "把不见与既见的语意转折设计成可听见的速度、停顿或重音。",
+      "verdict": "功能有价值，但可无损并入N026；独立成页造成叙事停滞。",
+      "severity": "P2",
+      "issues": ["与N024、N026连续三页使用同两句，新增的是准备程序而非新的文本理解。", "三张卡仍是填写式界面，视觉未呈现声音变化，只列控制选项。"],
+      "recommendation": "把个人标谱压入N026顶部，形成‘标一处—盲听—改一处—再读’单页闭环。"
+    },
+    {
+      "module": "chapter_2",
+      "slide_index": 5,
+      "page_id": "N026",
+      "unique_function": "让同伴仅凭声音验证两句转折是否真正可感。",
+      "verdict": "验证功能保留，但当前四步独立页应与N025合并。",
+      "severity": "P2",
+      "issues": ["四级流程框占据主视觉，学生首先接收活动协议而非原句情绪转折。", "与N025相互依赖，任一页单独存在都没有完整学习闭环。"],
+      "recommendation": "与N025合成一页，只显示两句、一次标记、一次听者反馈和一次修改；结束时口头说回女子的处境。"
+    },
+    {
+      "module": "chapter_2",
+      "slide_index": 6,
+      "page_id": "N027",
+      "unique_function": "提供卜筮最低文化支架，并限定‘无咎言’只说明当次占问。",
+      "verdict": "保留；词义和时间边界都有必要，但视觉抽象度较高。",
+      "severity": "P3",
+      "issues": ["四个术语卡与两个抽象边界问题同时出现，中等学生可能先记教师结论而未稳固句意；真实认知负荷需试教。"],
+      "recommendation": "先只呈现四词并完成自然话，再显示未来边界追问；不要扩展为婚俗讲座。"
+    },
+    {
+      "module": "chapter_2",
+      "slide_index": 7,
+      "page_id": "N028",
+      "unique_function": "拆清‘以尔/以我’对应的两人、物件和迁移动作。",
+      "verdict": "保留；双栏视觉与句法结构完全一致。",
+      "severity": "none",
+      "issues": [],
+      "recommendation": "保持左右动作对读后合回原句。"
+    },
+    {
+      "module": "chapter_2",
+      "slide_index": 8,
+      "page_id": "N029",
+      "unique_function": "把章首动作扩展为七个关键节点，并定位声音转折。",
+      "verdict": "当前形态应删并；排序程序与N030章末复述高度重复。",
+      "severity": "P2",
+      "issues": ["七张词卡、编号、圈转折、连线、同桌查断点、翻诗修订、合书连说叠加，程序远多于新增理解。", "七个孤立词容易把第二章降为顺序游戏，不能自动生成‘谁做什么’的故事。", "视觉主层级是卡片操作而非人物等待和迁嫁。"],
+      "recommendation": "删除独立排序页；把必要的两三个节点提示并入N030，让学生直接用人物和动作讲完整章。"
+    },
+    {
+      "module": "chapter_2",
+      "slide_index": 9,
+      "page_id": "N030",
+      "unique_function": "重读并复述女子等待、情绪转折、占问和迁嫁的完整过程。",
+      "verdict": "保留；它是本章最直接的故事重建与跨章出口。",
+      "severity": "none",
+      "issues": [],
+      "recommendation": "接收N029删并后的必要节点提示，但仍以全文和三问为视觉主体。"
+    },
+    {
+      "module": "chapter_3",
+      "slide_index": 1,
+      "page_id": "N031",
+      "unique_function": "调用前两章故事轨道，完整初读第三章并辨认画面与劝告对象的变化。",
+      "verdict": "保留；跨章轨道、全文和三个初读落点彼此服务。",
+      "severity": "none",
+      "issues": [],
+      "recommendation": "保持第三格空白，让章末学生自然话回填。"
+    },
+    {
+      "module": "chapter_3",
+      "slide_index": 2,
+      "page_id": "N032",
+      "unique_function": "从‘沃若’的感官特征生成并保留两种待第四章检验的联想假设。",
+      "verdict": "保留；延迟定论设计合理，但视觉是否足以支持感官观察需试教。",
+      "severity": "P3",
+      "issues": ["页面要求观察色泽、质地和生命感，却只有文字和空卡；部分学生可能没有可共享的具体叶片表象。", "加入写实叶片图又可能把‘沃若’固定成单一图像，需权衡。"],
+      "recommendation": "优先依靠原词想象；若试教显示表象不足，可用无叙事暗示的桑叶细节图，且不得替代原句。"
+    },
+    {
+      "module": "chapter_3",
+      "slide_index": 3,
+      "page_id": "N033",
+      "unique_function": "通过重复与对象变化，理解劝告如何从斑鸠转向女子。",
+      "verdict": "保留；上下原句与三项变化框直接对应。",
+      "severity": "none",
+      "issues": [],
+      "recommendation": "保持释义最小化，手法命名继续后置。"
+    },
+    {
+      "module": "chapter_3",
+      "slide_index": 4,
+      "page_id": "N034",
+      "unique_function": "比较士女同样沉溺却可脱与不可脱的不同处境，并暂缓原因归纳。",
+      "verdict": "保留；正面对举和待证栏服务证据边界。",
+      "severity": "none",
+      "issues": [],
+      "recommendation": "保留原句为最高视觉层级；责任边界继续由教师口头维护。"
+    },
+    {
+      "module": "chapter_3",
+      "slide_index": 5,
+      "page_id": "N035",
+      "unique_function": "用删句对照体验桑叶与斑鸠如何改变劝诫到来的画面、声音和情感铺垫。",
+      "verdict": "保留；A/B视觉比较构成不可替代的手法生成证据。",
+      "severity": "none",
+      "issues": [],
+      "recommendation": "维持两种文本并置，教师在学生比较后再命名比兴。"
+    },
+    {
+      "module": "chapter_3",
+      "slide_index": 6,
+      "page_id": "N036",
+      "unique_function": "重建第三章从桑叶到士女处境对照的声音推进。",
+      "verdict": "当前四卡排序应并入N037；独立成页的程序成本超过认知收益。",
+      "severity": "P2",
+      "issues": ["排序、补原词、同桌找断层、翻诗修订、合书旁白多层叠加。", "与N037都承担全章重建，删除后可由N037自然话复述覆盖。", "卡片视觉再次把诗歌阅读转为流程界面。"],
+      "recommendation": "删去独立排序；在N037的三问中保留‘眼前—劝鸠—劝女—处境对照’作为口头复述支架。"
+    },
+    {
+      "module": "chapter_3",
+      "slide_index": 7,
+      "page_id": "N037",
+      "unique_function": "让五句原诗重新成为女子回望中的一段自然话，并补入跨章故事轨道。",
+      "verdict": "保留；承担本章连续化和跨章输出。",
+      "severity": "none",
+      "issues": [],
+      "recommendation": "吸收N036必要支架，仍以全文、三问和章意空格为主。"
+    },
+    {
+      "module": "chapter_3",
+      "slide_index": 8,
+      "page_id": "N038",
+      "unique_function": "归档第三章字词、声音、手法、待证问题、责任边界及个人未稳项。",
+      "verdict": "归档功能必要，但现页须重构；信息密度和分类界面会把刚形成的整章理解再次切碎。",
+      "severity": "P2",
+      "issues": ["字词、声音、手法、待证、责任五条并列，正文与说明字号偏小。", "页面混合学生应记内容、后文研究问题和教师伦理控制语，前后台边界不清。", "视觉像知识清单，学生容易带走栏目名而非第三章在全诗中的作用。"],
+      "recommendation": "改成一页低密度‘第三章我带走什么’：保留一句章意、两处原词和一个待证问题；完整分类表转入学习单或教案后台。"
+    }
+  ]
+}
