@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "review_scope": "opening_actual_markdown_package_desktop_only",
+  "reviewed_package_sha256": "ca2adb01778800a2e278ff6e08f905e174a1b53d2f73ffcf47f41e62c99e2e2d",
+  "student_reception": {
+    "reviewer": "student_reception_qa",
+    "reviewed_at": "2026-08-13T11:03:26+08:00",
+    "status": "pass",
+    "evidence": "11 pages / 15 events; lesson master, worksheet A, worksheet B, actual rehearsal script and course snapshot rechecked; reciprocal three-question return closed"
+  },
+  "visual": {
+    "reviewer": "ppt_visual_qa",
+    "reviewed_at": "2026-08-13T11:03:26+08:00",
+    "status": "pass",
+    "evidence": "11-page package rechecked; no character illustration admitted; N002/N004/N008/N009 physical risks remain explicitly P3"
+  },
+  "p0": 0,
+  "p1": 0,
+  "p2": 0,
+  "p3_observations": [
+    "N002 animation/static fallback typography requires rendered prototype QA",
+    "N004 projection and physical magnetic-board sightline requires classroom-space QA",
+    "N008/N009 rear-seat legibility requires rendered prototype and later physical-room QA"
+  ],
+  "status": "pass",
+  "claim_boundary": "desktop_design_scaffold_only"
+}

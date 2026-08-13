@@ -78,15 +78,18 @@ class MengV6OpeningAuditTests(unittest.TestCase):
             self.assertTrue(event["artifact_locations"])
             self.assertTrue(event["next_uses"])
         self.assertIn("每人", " ".join(events["E_RECALL_GROUP"]["actions"]))
-        self.assertIn("最多4分钟", " ".join(events["E_RECALL_CLASS"]["actions"]))
+        self.assertIn("共5分钟", " ".join(events["E_RECALL_CLASS"]["actions"]))
 
     def test_visual_review_failures_were_removed_not_downgraded(self):
         pages = {page["page_id"]: page for page in self.document["current_release_audit"]["pages"]}
         self.assertNotIn("N006", pages)
         self.assertIn("只写篇名的提示条", pages["N002"]["student_visible_text"])
         self.assertIn("先贴一张卡", pages["N004"]["student_visible_text"])
-        self.assertIn("最多4分钟", pages["N004"]["student_visible_text"])
+        self.assertIn("5分钟", pages["N004"]["student_visible_text"])
         self.assertIn("移动一张卡", pages["N005"]["student_visible_text"])
+        self.assertNotIn("教师据此", pages["N005"]["student_visible_text"])
+        self.assertEqual("信息路标", pages["N011"]["primary_visual_duty"])
+        self.assertIn("教材原句互读", pages["N012"]["student_visible_text"])
         self.assertEqual(4, pages["N005"]["time_value"]["minutes"])
         self.assertNotIn("赋、比、兴", pages["N012"]["student_visible_text"])
 
@@ -124,13 +127,21 @@ class MengV6OpeningAuditTests(unittest.TestCase):
             self.assertEqual("deferred", event["gate_5"]["gate_status"])
             self.assertEqual("provisional", event["release_status"])
             self.assertEqual(target_id, event["gate_5"]["target_event_id"])
+        full_return = events["E_FULL_TEXT_RETURN"]
+        self.assertEqual("E_THREE_QUESTION_RETURN", full_return["next_use_contracts"][0]["target_event_id"])
+        three_return = events["E_THREE_QUESTION_RETURN"]
+        self.assertTrue(any(item.get("source_node_id") == "N007" for item in three_return["inputs"]))
+        round_table = events["E_MARRIAGE_ROUND_TABLE"]
+        self.assertTrue(any(item.get("source_node_id") == "N005" for item in round_table["inputs"]))
+        self.assertTrue(any(item.get("source_node_id") == "E_THREE_QUESTION_RETURN" for item in round_table["inputs"]))
 
     def test_student_facing_or_heard_channels_include_honest_branch_and_peer_feedback(self):
         pages = {page["page_id"]: page for page in self.document["current_release_audit"]["pages"]}
-        self.assertIn("听的人各勾一项", pages["N003"]["student_visible_text"])
+        self.assertIn("听者｜各勾一项", pages["N003"]["student_visible_text"])
         self.assertIn("尚未找到", pages["N010"]["channel_split"]["teacher"])
         self.assertIn("谁在回望什么", pages["N011"]["student_visible_text"])
         self.assertIn("谁做什么", pages["N012"]["student_visible_text"])
+        self.assertIn("不可说也", pages["N008"]["channel_split"]["teacher"])
 
     def test_title_is_reused_when_the_class_returns_from_prior_works_to_meng(self):
         events = {event["event_id"]: event for event in self.document["current_release_audit"]["events"]}

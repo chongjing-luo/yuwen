@@ -9,6 +9,7 @@ visual reviews remain pending by design.
 
 from __future__ import annotations
 
+import argparse
 import copy
 import hashlib
 import json
@@ -188,13 +189,15 @@ def reviewable_current_hash(pages: list[dict[str, Any]], events: list[dict[str, 
 
 
 def apply_independent_review_receipt(
-    pages: list[dict[str, Any]], events: list[dict[str, Any]],
+    pages: list[dict[str, Any]], events: list[dict[str, Any]], *, allow_pending: bool = False,
 ) -> dict[str, Any] | None:
     if not REVIEW_RECEIPT.exists():
         return None
     receipt = json.loads(REVIEW_RECEIPT.read_text(encoding="utf-8"))
     expected_hash = reviewable_current_hash(pages, events)
     if receipt.get("reviewed_source_sha256") != expected_hash:
+        if allow_pending:
+            return None
         raise ValueError("opening independent-review receipt is stale")
     if receipt.get("status") != "pass" or any(receipt.get(key) != 0 for key in ("p0", "p1", "p2")):
         raise ValueError("opening independent review has unresolved P0-P2 defects")
@@ -251,6 +254,7 @@ def visual_duty(value: str) -> str:
     return {
         "题名": "题名", "活动界面": "活动界面", "现场共创": "现场共创",
         "全文/章内整读": "全文/章内整读", "原文批注": "原文批注",
+        "信息路标": "信息路标",
     }[value]
 
 
@@ -438,7 +442,11 @@ def compile_events(source: dict[str, Any], pages: list[dict[str, Any]]) -> list[
         if order in used_orders:
             raise ValueError(f"duplicate future execution order: {order}")
         terminal = bool(future.get("terminal_sink"))
-        inputs = incoming.get(future["event_id"], future["inputs"])
+        incoming_inputs = incoming.get(future["event_id"], [])
+        if "input_contracts" in future:
+            inputs = [*incoming_inputs, *future["input_contracts"]]
+        else:
+            inputs = incoming_inputs or future["inputs"]
         events.append({
             "node_id": future["event_id"], "event_id": future["event_id"], "node_type": "event",
             "audit_scope": "learning_event", "execution_order": order,
@@ -469,6 +477,22 @@ def compile_events(source: dict[str, Any], pages: list[dict[str, Any]]) -> list[
                 "artifact_is_saved": True, "later_reuse_is_named": bool(future["next_uses"]) or terminal,
             },
         })
+    event_by_id = {item["event_id"]: item for item in events}
+    for future in source["future_events"]:
+        source_event = event_by_id[future["event_id"]]
+        target_id = future.get("next_event_id")
+        if not target_id:
+            source_event["next_use_contracts"] = []
+            continue
+        target = event_by_id[target_id]
+        source_event["next_use_contracts"] = [{
+            "target_event_id": target_id,
+            "target_input_field": "inputs",
+            "expected_use": future["next_uses"][0],
+        }]
+        source_event["gate_5"] = deferred_event_gate(
+            source_event["event_id"], target, future["next_uses"][0],
+        )
     events = sorted(events, key=lambda item: item["execution_order"])
     event_by_id = {item["event_id"]: item for item in events}
     page_by_id = {item["node_id"]: item for item in pages}
@@ -566,7 +590,17 @@ def render_markdown(document: dict[str, Any]) -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--allow-pending-review", action="store_true",
+        help="write a review-invalidated stage candidate so independent reviewers can inspect it",
+    )
+    return parser.parse_args()
+
+
 def main() -> int:
+    args = parse_args()
     skeleton = json.loads(SKELETON.read_text(encoding="utf-8"))
     source = load_opening_source()
     legacy, defects = diagnose_legacy(skeleton["legacy_initial_audit"])
@@ -574,7 +608,9 @@ def main() -> int:
     # Even execution orders are pages; odd orders are their implemented events.
     pages = [compile_page(item, index * 10) for index, item in enumerate(source["pages"], start=1)]
     events = compile_events(source, pages)
-    independent_review = apply_independent_review_receipt(pages, events)
+    independent_review = apply_independent_review_receipt(
+        pages, events, allow_pending=args.allow_pending_review,
+    )
     manifest = inventories(pages, events)
 
     document = copy.deepcopy(skeleton)
