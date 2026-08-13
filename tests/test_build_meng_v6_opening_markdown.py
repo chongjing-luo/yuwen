@@ -99,6 +99,11 @@ class MengV6OpeningMarkdownTests(unittest.TestCase):
         self.assertIn("没有斜线的原句", self.worksheet_b)
         self.assertIn("《诗经》篇数：305篇", self.worksheet_b)
         self.assertIn("我写下重读后改动的一处", self.worksheet_b)
+        self.assertIn("教师说“看教材”", self.worksheet_b)
+        self.assertIn("读者带着完整动作再读", self.worksheet_b)
+        self.assertIn("四轮后，每人圈出最想带进全班的一项", self.worksheet_a)
+        self.assertGreaterEqual(self.worksheet_a.count("□作品／主题"), 3)
+        self.assertIn("□暂无新增", self.worksheet_a)
 
     def test_student_frontstage_has_no_design_or_audit_language(self):
         banned = (

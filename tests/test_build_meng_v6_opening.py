@@ -57,7 +57,7 @@ class MengV6OpeningAuditTests(unittest.TestCase):
         pages = self.document["current_release_audit"]["pages"]
         visible = "\n".join(str(page.get("student_visible_text", "")) for page in pages)
         self.assertIn("写下1—3篇", visible)
-        self.assertIn("每人15—20秒", visible)
+        self.assertIn("轮到我｜15—20秒", visible)
         self.assertIn("贡献一篇尚未出现的作品", visible)
         question_page = next(page for page in pages if page["page_id"] == "N007")
         self.assertIn("今天再读一个更早的故事", question_page["previous_relation"])
@@ -89,7 +89,9 @@ class MengV6OpeningAuditTests(unittest.TestCase):
         self.assertIn("移动一张卡", pages["N005"]["student_visible_text"])
         self.assertNotIn("教师据此", pages["N005"]["student_visible_text"])
         self.assertEqual("信息路标", pages["N011"]["primary_visual_duty"])
-        self.assertIn("教材原句互读", pages["N012"]["student_visible_text"])
+        self.assertIn("教材第一章开头的无斜线原句", pages["N012"]["student_visible_text"])
+        self.assertIn("听者问", pages["N012"]["student_visible_text"])
+        self.assertIn("读者带着完整动作再读", pages["N012"]["student_visible_text"])
         self.assertEqual(4, pages["N005"]["time_value"]["minutes"])
         self.assertNotIn("赋、比、兴", pages["N012"]["student_visible_text"])
 
@@ -137,11 +139,19 @@ class MengV6OpeningAuditTests(unittest.TestCase):
 
     def test_student_facing_or_heard_channels_include_honest_branch_and_peer_feedback(self):
         pages = {page["page_id"]: page for page in self.document["current_release_audit"]["pages"]}
-        self.assertIn("听者｜各勾一项", pages["N003"]["student_visible_text"])
+        self.assertIn("1 → 2 → 3 → 4", pages["N003"]["student_visible_text"])
+        self.assertIn("听见新内容就勾", pages["N003"]["student_visible_text"])
+        self.assertIn("暂无新增，从作品谱圈一项", pages["N003"]["student_visible_text"])
         self.assertIn("尚未找到", pages["N010"]["channel_split"]["teacher"])
         self.assertIn("谁在回望什么", pages["N011"]["student_visible_text"])
         self.assertIn("谁做什么", pages["N012"]["student_visible_text"])
         self.assertIn("不可说也", pages["N008"]["channel_split"]["teacher"])
+        self.assertIn("不齐读", pages["N008"]["student_visible_text"])
+        self.assertIn("用笔在教材原句旁留一点", pages["N008"]["student_visible_text"])
+        self.assertIn("第一章", pages["N008"]["student_visible_text"])
+        self.assertIn("第六章", pages["N009"]["student_visible_text"])
+        self.assertIn("看教材", pages["N012"]["student_visible_text"])
+        self.assertIn("教材第一章开头", pages["N012"]["student_visible_text"])
 
     def test_title_is_reused_when_the_class_returns_from_prior_works_to_meng(self):
         events = {event["event_id"]: event for event in self.document["current_release_audit"]["events"]}
