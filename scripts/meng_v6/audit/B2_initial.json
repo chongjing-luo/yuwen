@@ -1,0 +1,1353 @@
+{
+  "batch_id": "B2",
+  "pages": [
+    {
+      "audit_scope": "pending",
+      "batch_content": "模块承接、第二章及章内活动",
+      "batch_id": "B2",
+      "batch_range": "S028—S039",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/B2_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/B2_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S028",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S028",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "module_reconnect",
+      "source_minutes": 1,
+      "source_module": "M2",
+      "source_order": 28,
+      "source_phase": "reconnect",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "故事走到这里",
+      "source_visible_text": "故事走到这里\n第二章将进入等待、卜筮与迁嫁。\n相识议婚｜女子远送并约定秋期"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "模块承接、第二章及章内活动",
+      "batch_id": "B2",
+      "batch_range": "S028—S039",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/B2_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/B2_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S029",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S029",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "chapter_text",
+      "source_minutes": 2,
+      "source_module": "M2",
+      "source_order": 29,
+      "source_phase": "chapter",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "第二章｜等待、占卜与迁嫁",
+      "source_visible_text": "第二章｜等待、占卜与迁嫁\n乘彼垝垣，以望复关。不见复关，泣涕涟涟。\n既见复关，载笑载言。尔卜尔筮，体无咎言。\n以尔车来，以我贿迁。"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "模块承接、第二章及章内活动",
+      "batch_id": "B2",
+      "batch_range": "S028—S039",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/B2_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/B2_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S030",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S030",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "line",
+      "source_minutes": 2,
+      "source_module": "M2",
+      "source_order": 30,
+      "source_phase": "chapter",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "第二章 · 1/5",
+      "source_visible_text": "第二章 · 1/5\n乘彼垝垣，以望复关\n登上那堵残破的墙，来眺望复关。\n乘：登上；垝垣 guǐ yuán：残破的墙；以：来。\n登墙望 → 不见而泣 → 既见而笑 → 卜筮 → 迁嫁"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "模块承接、第二章及章内活动",
+      "batch_id": "B2",
+      "batch_range": "S028—S039",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/B2_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/B2_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S031",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S031",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "line",
+      "source_minutes": 2,
+      "source_module": "M2",
+      "source_order": 31,
+      "source_phase": "chapter",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "第二章 · 2/5",
+      "source_visible_text": "第二章 · 2/5\n不见复关，泣涕涟涟\n泣涕：流泪；涟涟：泪流不断的样子。\n登墙望 → 不见而泣 → 既见而笑 → 卜筮 → 迁嫁"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "模块承接、第二章及章内活动",
+      "batch_id": "B2",
+      "batch_range": "S028—S039",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/B2_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/B2_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S032",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S032",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "key",
+      "source_minutes": 2,
+      "source_module": "M2",
+      "source_order": 32,
+      "source_phase": "chapter",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "第二章 · 2/5｜读懂关键变化",
+      "source_visible_text": "第二章 · 2/5｜读懂关键变化\n不见复关，泣涕涟涟\n看不见复关，就泪流不断。\n“不见”触发“泣”；叠词“涟涟”延长情绪。\n不要只说“痴情”。先读出“不见”这一条件，再听“涟涟”怎样把等待拉长。\n登墙望 → 不见而泣 → 既见而笑 → 卜筮 → 迁嫁"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "模块承接、第二章及章内活动",
+      "batch_id": "B2",
+      "batch_range": "S028—S039",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/B2_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/B2_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S033",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S033",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "line",
+      "source_minutes": 2,
+      "source_module": "M2",
+      "source_order": 33,
+      "source_phase": "chapter",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "第二章 · 3/5",
+      "source_visible_text": "第二章 · 3/5\n既见复关，载笑载言\n既：已经；载……载……：又……又……。\n登墙望 → 不见而泣 → 既见而笑 → 卜筮 → 迁嫁"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "模块承接、第二章及章内活动",
+      "batch_id": "B2",
+      "batch_range": "S028—S039",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/B2_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/B2_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S034",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S034",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "key",
+      "source_minutes": 2,
+      "source_module": "M2",
+      "source_order": 34,
+      "source_phase": "chapter",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "第二章 · 3/5｜读懂关键变化",
+      "source_visible_text": "第二章 · 3/5｜读懂关键变化\n既见复关，载笑载言\n已经看见复关，便又笑又说。\n“不见/既见”“泣/笑”正面对照；反复“载”加强动作。\n把前后两句连读：同一个“见”字改变情绪速度。诗没有解释全部心理，却用动作让依赖感可听见。\n登墙望 → 不见而泣 → 既见而笑 → 卜筮 → 迁嫁"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "模块承接、第二章及章内活动",
+      "batch_id": "B2",
+      "batch_range": "S028—S039",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/B2_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/B2_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S035",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S035",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "line",
+      "source_minutes": 2,
+      "source_module": "M2",
+      "source_order": 35,
+      "source_phase": "chapter",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "第二章 · 4/5",
+      "source_visible_text": "第二章 · 4/5\n尔卜尔筮，体无咎言\n你用龟甲、蓍草占卜，卦象没有不吉利的话。\n卜：用火灼龟甲看裂纹；筮 shì：用蓍草占卜；体：卦象；咎：灾祸。\n登墙望 → 不见而泣 → 既见而笑 → 卜筮 → 迁嫁"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "模块承接、第二章及章内活动",
+      "batch_id": "B2",
+      "batch_range": "S028—S039",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/B2_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/B2_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S036",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S036",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "line",
+      "source_minutes": 2,
+      "source_module": "M2",
+      "source_order": 36,
+      "source_phase": "chapter",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "第二章 · 5/5",
+      "source_visible_text": "第二章 · 5/5\n以尔车来，以我贿迁\n你用车来接我，我带着财物嫁过去。\n贿：财物，这里指嫁妆；迁：迁往男子家。\n登墙望 → 不见而泣 → 既见而笑 → 卜筮 → 迁嫁"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "模块承接、第二章及章内活动",
+      "batch_id": "B2",
+      "batch_range": "S028—S039",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/B2_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/B2_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S037",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S037",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "activity",
+      "source_minutes": 4,
+      "source_module": "M2",
+      "source_order": 37,
+      "source_phase": "question",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "让等待拥有两种速度",
+      "source_visible_text": "让等待拥有两种速度\n排列“望—不见—泣—见—笑—迁”，为前半和后半各设计一种速度、停顿与重音。\n慢下来的一处：__________　因为：________________\n加快的一处：__________　因为：________________"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "模块承接、第二章及章内活动",
+      "batch_id": "B2",
+      "batch_range": "S028—S039",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/B2_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/B2_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S038",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S038",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "activity",
+      "source_minutes": 2,
+      "source_module": "M2",
+      "source_order": 38,
+      "source_phase": "return",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "动作顺序就是情绪过程",
+      "source_visible_text": "动作顺序就是情绪过程\n望—不见—泣：视线受阻，时间和声音都被拉长。\n见—笑—言：信息突然改变，情绪快速释放。\n迁嫁不是孤立事件，而是等待获得确定后的行动结果。"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "模块承接、第二章及章内活动",
+      "batch_id": "B2",
+      "batch_range": "S028—S039",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/B2_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/B2_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S039",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S039",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "chapter_text",
+      "source_minutes": 2,
+      "source_module": "M2",
+      "source_order": 39,
+      "source_phase": "end",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "第二章｜完整重读，连成一句",
+      "source_visible_text": "第二章｜完整重读，连成一句\n登墙望 → 不见而泣 → 既见而笑 → 卜筮 → 迁嫁\n乘彼垝垣，以望复关。不见复关，泣涕涟涟。\n既见复关，载笑载言。尔卜尔筮，体无咎言。\n以尔车来，以我贿迁。"
+    }
+  ],
+  "range": "S028—S039",
+  "schema_version": "1.0",
+  "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+  "status": "pending_review"
+}

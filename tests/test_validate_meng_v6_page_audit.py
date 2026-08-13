@@ -375,6 +375,8 @@ def valid_freeze_document() -> dict:
     result = {
         "schema_version": "2.0",
         "audit_version": "6.0-page-function-audit",
+        "document_status": "structure_frozen",
+        "claim_boundary": "desktop_design_scaffold_only",
         "legacy_initial_audit": legacy,
         "legacy_event_evidence": [],
         "defect_registry": [],
@@ -407,6 +409,7 @@ def valid_freeze_document() -> dict:
 
 def add_release_evidence(document: dict) -> dict:
     result = copy.deepcopy(document)
+    result["document_status"] = "release_ready"
     files = fixture_files()
     slide_inventory = [{
         "occurrence_ref": "PPT_MAIN:1",

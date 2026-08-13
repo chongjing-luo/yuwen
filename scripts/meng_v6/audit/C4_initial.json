@@ -1,0 +1,457 @@
+{
+  "batch_id": "C4",
+  "pages": [
+    {
+      "audit_scope": "pending",
+      "batch_content": "婚姻圆桌",
+      "batch_id": "C4",
+      "batch_range": "S113—S116",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/C4_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/C4_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S113",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S113",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "marriage_discussion",
+      "source_minutes": 3,
+      "source_module": "M5",
+      "source_order": 113,
+      "source_phase": "question",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "如果把《氓》说给后来人听",
+      "source_visible_text": "如果把《氓》说给后来人听\n一段值得珍惜的婚姻，最不能缺少什么？\n先说你的判断，再说诗中哪一处让你这样想。\n只谈作品或第三人称案例。"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "婚姻圆桌",
+      "batch_id": "C4",
+      "batch_range": "S113—S116",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/C4_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/C4_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S114",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S114",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "marriage_write",
+      "source_minutes": 3,
+      "source_module": "M5",
+      "source_order": 114,
+      "source_phase": "question",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "把一句提醒留给后来人",
+      "source_visible_text": "把一句提醒留给后来人\n可以选一个句首，也可以写自己的句子。\n不要只听一个人怎样许诺，还要看________。\n两个人共同生活，不能总让一个人________。\n当伤害发生时，________。\n一段值得珍惜的婚姻，应当________。"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "婚姻圆桌",
+      "batch_id": "C4",
+      "batch_range": "S113—S116",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/C4_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/C4_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S115",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S115",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "marriage_share",
+      "source_minutes": 4,
+      "source_module": "M5",
+      "source_order": 115,
+      "source_phase": "question",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "让彼此的句子被听见",
+      "source_visible_text": "让彼此的句子被听见\n同桌互读：哪一个词最有力量？哪一处还可以更具体？\n修改以后，各桌选一句最想让全班听见的话。"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "婚姻圆桌",
+      "batch_id": "C4",
+      "batch_range": "S113—S116",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/C4_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/C4_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S116",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S116",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "marriage_after",
+      "source_minutes": 2,
+      "source_module": "M5",
+      "source_order": 116,
+      "source_phase": "return",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "诗没有替后来人写完答案",
+      "source_visible_text": "诗没有替后来人写完答案\n用班级刚才真正写出的句子现场补全；有证据的分歧可以并存。\n怎样看一个人：________________________\n怎样共同生活：________________________\n受伤时怎样得到支持：__________________\n想要停止伤害时，应当守住：____________"
+    }
+  ],
+  "range": "S113—S116",
+  "schema_version": "1.0",
+  "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+  "status": "pending_review"
+}

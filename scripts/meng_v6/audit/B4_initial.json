@@ -1,0 +1,1353 @@
+{
+  "batch_id": "B4",
+  "pages": [
+    {
+      "audit_scope": "pending",
+      "batch_content": "模块承接、第四章及章内活动",
+      "batch_id": "B4",
+      "batch_range": "S051—S062",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/B4_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/B4_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S051",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S051",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "module_reconnect",
+      "source_minutes": 1,
+      "source_module": "M3",
+      "source_order": 51,
+      "source_phase": "reconnect",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "故事走到这里",
+      "source_visible_text": "故事走到这里\n第四、五章将进入婚后事实。\n相识议婚 → 等待迁嫁 → 回望中的劝诫"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "模块承接、第四章及章内活动",
+      "batch_id": "B4",
+      "batch_range": "S051—S062",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/B4_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/B4_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S052",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S052",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "chapter_text",
+      "source_minutes": 3,
+      "source_module": "M3",
+      "source_order": 52,
+      "source_phase": "chapter",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "第四章｜桑叶转黄与责任判断",
+      "source_visible_text": "第四章｜桑叶转黄与责任判断\n桑之落矣，其黄而陨。自我徂尔，三岁食贫。\n淇水汤汤，渐车帷裳。女也不爽，士贰其行。\n士也罔极，二三其德。"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "模块承接、第四章及章内活动",
+      "batch_id": "B4",
+      "batch_range": "S051—S062",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/B4_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/B4_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S053",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S053",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "line",
+      "source_minutes": 2,
+      "source_module": "M3",
+      "source_order": 53,
+      "source_phase": "chapter",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "第四章 · 1/5",
+      "source_visible_text": "第四章 · 1/5\n桑之落矣，其黄而陨\n陨：坠落。\n桑叶坠落 → 多年食贫 → 渡淇回忆 → 辨明责任 → 指出反复"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "模块承接、第四章及章内活动",
+      "batch_id": "B4",
+      "batch_range": "S051—S062",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/B4_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/B4_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S054",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S054",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "key",
+      "source_minutes": 3,
+      "source_module": "M3",
+      "source_order": 54,
+      "source_phase": "chapter",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "第四章 · 1/5｜读懂关键变化",
+      "source_visible_text": "第四章 · 1/5｜读懂关键变化\n桑之落矣，其黄而陨\n桑叶落下，已经枯黄坠落。\n与“其叶沃若”形成色彩、状态和位置对照。\n把第三章的“沃若”和此处“黄而陨”并置：青春、感情、关系状态都获得更多语境支持，但仍不能把桑叶压成一个固定答案。\n桑叶坠落 → 多年食贫 → 渡淇回忆 → 辨明责任 → 指出反复"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "模块承接、第四章及章内活动",
+      "batch_id": "B4",
+      "batch_range": "S051—S062",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/B4_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/B4_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S055",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S055",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "line",
+      "source_minutes": 2,
+      "source_module": "M3",
+      "source_order": 55,
+      "source_phase": "chapter",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "第四章 · 2/5",
+      "source_visible_text": "第四章 · 2/5\n自我徂尔，三岁食贫\n自从我嫁到你家，多年来生活贫苦。\n徂 cú：往；尔：你家；三岁：多年；食贫：过贫苦生活。\n桑叶坠落 → 多年食贫 → 渡淇回忆 → 辨明责任 → 指出反复"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "模块承接、第四章及章内活动",
+      "batch_id": "B4",
+      "batch_range": "S051—S062",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/B4_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/B4_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S056",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S056",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "line",
+      "source_minutes": 2,
+      "source_module": "M3",
+      "source_order": 56,
+      "source_phase": "chapter",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "第四章 · 3/5",
+      "source_visible_text": "第四章 · 3/5\n淇水汤汤，渐车帷裳\n淇水浩荡，浸湿了车上的帷幔。\n汤汤 shāng shāng：水势浩大；渐 jiān：浸湿；帷裳：车旁帷幔。\n桑叶坠落 → 多年食贫 → 渡淇回忆 → 辨明责任 → 指出反复"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "模块承接、第四章及章内活动",
+      "batch_id": "B4",
+      "batch_range": "S051—S062",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/B4_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/B4_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S057",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S057",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "line",
+      "source_minutes": 2,
+      "source_module": "M3",
+      "source_order": 57,
+      "source_phase": "chapter",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "第四章 · 4/5",
+      "source_visible_text": "第四章 · 4/5\n女也不爽，士贰其行\n爽：差错；贰：不专一、前后不一。\n桑叶坠落 → 多年食贫 → 渡淇回忆 → 辨明责任 → 指出反复"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "模块承接、第四章及章内活动",
+      "batch_id": "B4",
+      "batch_range": "S051—S062",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/B4_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/B4_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S058",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S058",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "key",
+      "source_minutes": 3,
+      "source_module": "M3",
+      "source_order": 58,
+      "source_phase": "chapter",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "第四章 · 4/5｜读懂关键变化",
+      "source_visible_text": "第四章 · 4/5｜读懂关键变化\n女也不爽，士贰其行\n女子没有差错，男子的行为却前后不一。\n“女/士”“不爽/贰”并置，责任由语言直接显出。\n这不是旁观者替她判定，而是第一人称回望中的自我辨明。先区分“食贫、渡水”等经历事实，再看“不爽/贰”怎样作出责任判断。\n桑叶坠落 → 多年食贫 → 渡淇回忆 → 辨明责任 → 指出反复"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "模块承接、第四章及章内活动",
+      "batch_id": "B4",
+      "batch_range": "S051—S062",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/B4_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/B4_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S059",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S059",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "line",
+      "source_minutes": 2,
+      "source_module": "M3",
+      "source_order": 59,
+      "source_phase": "chapter",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "第四章 · 5/5",
+      "source_visible_text": "第四章 · 5/5\n士也罔极，二三其德\n男子的行为没有准则，品德反复无常。\n罔极：没有准则；二三：反复无常，这里是数词活用。\n桑叶坠落 → 多年食贫 → 渡淇回忆 → 辨明责任 → 指出反复"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "模块承接、第四章及章内活动",
+      "batch_id": "B4",
+      "batch_range": "S051—S062",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/B4_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/B4_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S060",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S060",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "activity",
+      "source_minutes": 4,
+      "source_module": "M3",
+      "source_order": 60,
+      "source_phase": "question",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "哪些是事实，哪些是责任判断？",
+      "source_visible_text": "哪些是事实，哪些是责任判断？\n把本章诗句放入“经历事实”和“责任判断”两栏，并说明判断由哪组对照形成。\n经历事实：____________________________\n责任判断：____________________________\n语言依据：____________________________"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "模块承接、第四章及章内活动",
+      "batch_id": "B4",
+      "batch_range": "S051—S062",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/B4_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/B4_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S061",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S061",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "activity",
+      "source_minutes": 2,
+      "source_module": "M3",
+      "source_order": 61,
+      "source_phase": "return",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "事实与判断并不混在一起",
+      "source_visible_text": "事实与判断并不混在一起\n食贫、淇水、车帷被浸，是叙述中的经历。\n“女也不爽，士贰其行”直接辨明双方责任。\n现代评价可以继续讨论，但必须先站稳诗中的事实和判断。"
+    },
+    {
+      "audit_scope": "pending",
+      "batch_content": "模块承接、第四章及章内活动",
+      "batch_id": "B4",
+      "batch_range": "S051—S062",
+      "content_elements": [
+        {
+          "element_id": "visible_text",
+          "kind": "text",
+          "source_field": "source_visible_text"
+        },
+        {
+          "element_id": "page_function",
+          "kind": "function",
+          "source_field": "source_title"
+        },
+        {
+          "element_id": "layout_identity",
+          "kind": "layout",
+          "source_field": "source_kind"
+        }
+      ],
+      "disposition_source": "scripts/meng_v6/audit/B4_disposition.json",
+      "gates": [
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G1",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G2",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G3",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        {
+          "evidence_refs": [],
+          "failure_code": null,
+          "gate_id": "G6",
+          "gate_status": "pending",
+          "reviewed_at": null,
+          "reviewer": null
+        }
+      ],
+      "initial_diagnosis_source": "scripts/meng_v6/audit/B4_initial.json",
+      "legacy_student_visible": true,
+      "node_id": "S062",
+      "node_type": "page",
+      "owner_event_id": null,
+      "page_id": "S062",
+      "review_status": {
+        "adjudication": null,
+        "consensus": "pending",
+        "scope": "legacy_initial_diagnosis",
+        "self_review": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "student_reception": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        },
+        "visual": {
+          "defect_ids": [],
+          "reviewed_at": null,
+          "reviewer": null,
+          "status": "pending"
+        }
+      },
+      "source_kind": "chapter_text",
+      "source_minutes": 2,
+      "source_module": "M3",
+      "source_order": 62,
+      "source_phase": "end",
+      "source_snapshot_path": "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json",
+      "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+      "source_title": "第四章｜完整重读，连成一句",
+      "source_visible_text": "第四章｜完整重读，连成一句\n桑叶坠落 → 多年食贫 → 渡淇回忆 → 辨明责任 → 指出反复\n桑之落矣，其黄而陨。自我徂尔，三岁食贫。\n淇水汤汤，渐车帷裳。女也不爽，士贰其行。\n士也罔极，二三其德。"
+    }
+  ],
+  "range": "S051—S062",
+  "schema_version": "1.0",
+  "source_snapshot_sha256": "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3",
+  "status": "pending_review"
+}

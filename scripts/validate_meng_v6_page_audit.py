@@ -26,7 +26,11 @@ from typing import Any, Iterable
 
 
 MODES = {"stage", "freeze-candidate", "freeze", "release"}
+DOCUMENT_STATUSES = {
+    "legacy_skeleton_pending_review", "structure_in_progress", "structure_frozen", "release_ready",
+}
 LEGACY_IDS = {f"S{number:03d}" for number in range(1, 128)}
+LEGACY_AUDIT_SCOPES = {"pending", "learning_page", "event_carrier"}
 GATE_IDS = {f"G{number}" for number in range(1, 7)}
 GATE_STATUSES = {"pending", "pass", "fail", "deferred", "na"}
 DECISIONS = {"保留", "合并", "移动", "重写", "删除"}
@@ -53,6 +57,24 @@ BUNDLE_COMPONENTS = {
     ),
 }
 WORKSPACE_ROOT = Path(__file__).resolve().parents[1]
+V5_SNAPSHOT_PATH = "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json"
+V5_BASELINE_MANIFEST_PATH = "work/备课/选择性必修下册/氓/_v6_stage/baseline_manifest.json"
+V5_SNAPSHOT_SHA256 = "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3"
+V6_AUDIT_INDEX_PATH = "scripts/meng_v6/audit/index.json"
+SKELETON_BATCHES = (
+    ("A", 1, 16, "隐藏导航、封面、导入、三问、首次听读、最小支架"),
+    ("B1", 17, 27, "第一章及章内活动"),
+    ("B2", 28, 39, "模块承接、第二章及章内活动"),
+    ("B3", 40, 50, "第三章及章内活动"),
+    ("B4", 51, 62, "模块承接、第四章及章内活动"),
+    ("B5", 63, 73, "第五章及章内活动"),
+    ("B6", 74, 85, "模块承接、第六章及章内活动"),
+    ("C1", 86, 95, "全文回读、初读修订、问题一"),
+    ("C2", 96, 101, "问题二"),
+    ("C3", 102, 112, "问题三、责任/阻力、第一章回看"),
+    ("C4", 113, 116, "婚姻圆桌"),
+    ("D", 117, 127, "知识检索、收纳、终读、退出条"),
+)
 
 
 def diagnostic(code: str, path: str, message: str) -> dict[str, str]:
@@ -564,6 +586,14 @@ def validate_review(review: Any, path: str, strict: bool) -> list[dict[str, str]
 def validate_legacy_layer(document: dict[str, Any], mode: str) -> list[dict[str, str]]:
     errors: list[dict[str, str]] = []
     legacy = as_list(document.get("legacy_initial_audit"))
+    skeleton_status = document.get("document_status") == "legacy_skeleton_pending_review"
+    if (skeleton_status or document.get("pages") is not None) and document.get("pages") != legacy:
+        errors.append(diagnostic("LEGACY_PAGE_VIEW_MISMATCH", "pages", "top-level pages must be the exact derived view of legacy_initial_audit"))
+    elif "pages" not in document and (
+        skeleton_status
+        or (mode == "stage" and len(legacy) == 127 and not current_nodes(document)[0] and not current_nodes(document)[1])
+    ):
+        errors.append(diagnostic("LEGACY_PAGE_VIEW_MISMATCH", "pages", "Task 3 skeleton requires the exact derived pages view"))
     legacy_ids = [item.get("page_id") for item in legacy if isinstance(item, dict)]
     if set(legacy_ids) != LEGACY_IDS or len(legacy_ids) != 127:
         errors.append(diagnostic("LEGACY_ID_SET_INVALID", "legacy_initial_audit", "legacy audit must cover S001-S127 exactly once"))
@@ -585,6 +615,8 @@ def validate_legacy_layer(document: dict[str, Any], mode: str) -> list[dict[str,
             ):
                 errors.append(diagnostic("LEGACY_CONTENT_INVENTORY_INVALID", f"{path}.content_elements", "sealed legacy page needs a source-grounded content-element inventory"))
             scope = page.get("audit_scope")
+            if scope not in LEGACY_AUDIT_SCOPES:
+                errors.append(diagnostic("LEGACY_AUDIT_SCOPE_INVALID", f"{path}.audit_scope", "legacy page audit scope is invalid"))
             na_gates = {gate_id for gate_id, item in gate_index(page).items() if item.get("gate_status") == "na"}
             if na_gates:
                 owner_id = str(page.get("owner_event_id"))
@@ -699,6 +731,192 @@ def validate_legacy_layer(document: dict[str, Any], mode: str) -> list[dict[str,
         if not review_ids.issubset(set(defects)) or review_ids != registered_ids:
             errors.append(diagnostic("LEGACY_DEFECT_REGISTRY_MISMATCH", f"legacy:{legacy_id}", "effective-view P0-P2 review defects and registry must match"))
     return errors
+
+
+def validate_stage_skeleton_sources(document: dict[str, Any], mode: str) -> list[dict[str, str]]:
+    """Rebuild the pending Task 3 view from independently read, immutable sources."""
+    valid_current_pages, valid_current_events = current_nodes(document)
+    empty_current = not valid_current_pages and not valid_current_events
+    task3_shape = len(as_list(document.get("legacy_initial_audit"))) == 127 and empty_current
+    if mode != "stage" or not (
+        document.get("document_status") == "legacy_skeleton_pending_review" or task3_shape
+    ):
+        return []
+
+    problems: list[str] = []
+
+    def load_json(relative_path: str, label: str) -> tuple[dict[str, Any] | None, Path | None]:
+        path = resolve_source_path(relative_path)
+        if path is None:
+            problems.append(f"{label}文件不存在或越出工作区")
+            return None, None
+        try:
+            value = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+            problems.append(f"{label}不是可读UTF-8 JSON")
+            return None, path
+        if not isinstance(value, dict):
+            problems.append(f"{label}顶层必须是对象")
+            return None, path
+        return value, path
+
+    source = document.get("legacy_source")
+    if not isinstance(source, dict):
+        return [diagnostic(
+            "LEGACY_STAGE_SOURCE_MISMATCH", "legacy_source",
+            "Task 3骨架必须绑定V5快照、基线清单、索引和24个批次源",
+        )]
+    if source.get("path") != V5_SNAPSHOT_PATH or source.get("index_path") != V6_AUDIT_INDEX_PATH:
+        problems.append("总表来源路径不是冻结的V5快照与V6审计索引")
+
+    snapshot, snapshot_path = load_json(V5_SNAPSHOT_PATH, "V5课程快照")
+    baseline, _ = load_json(V5_BASELINE_MANIFEST_PATH, "V5基线清单")
+    index, index_path = load_json(V6_AUDIT_INDEX_PATH, "V6审计索引")
+    if snapshot is None or snapshot_path is None or baseline is None or index is None or index_path is None:
+        return [diagnostic(
+            "LEGACY_STAGE_SOURCE_MISMATCH", "legacy_source",
+            "; ".join(problems),
+        )]
+
+    snapshot_hash = file_sha256(snapshot_path)
+    if snapshot_hash != V5_SNAPSHOT_SHA256:
+        problems.append("实际V5课程快照不等于冻结SHA-256")
+    baseline_files = as_list(baseline.get("files"))
+    baseline_matches = [
+        item for item in baseline_files
+        if isinstance(item, dict) and item.get("path") == V5_SNAPSHOT_PATH
+    ]
+    if (baseline.get("file_count") != len(baseline_files) or len(baseline_matches) != 1
+            or baseline_matches[0].get("sha256") != snapshot_hash):
+        problems.append("V5基线清单没有唯一、正确绑定实际课程快照")
+    if source.get("sha256") != snapshot_hash:
+        problems.append("总表legacy_source.sha256与实际课程快照不一致")
+
+    index_hash = file_sha256(index_path)
+    if source.get("index_sha256") != index_hash:
+        problems.append("总表legacy_source.index_sha256与实际索引文件不一致")
+    if index.get("source_snapshot_sha256") != snapshot_hash:
+        problems.append("索引没有绑定实际V5课程快照")
+
+    slides = snapshot.get("slides")
+    expected_ids = [f"S{number:03d}" for number in range(1, 128)]
+    if (not isinstance(slides, list) or len(slides) != 127
+            or [item.get("id") for item in slides if isinstance(item, dict)] != expected_ids):
+        problems.append("实际V5课程快照没有按序完整覆盖S001—S127")
+        slides = []
+
+    expected_batch_specs = [
+        {
+            "batch_id": batch_id,
+            "range": f"S{start:03d}—S{end:03d}",
+            "content": content,
+            "initial_source": f"scripts/meng_v6/audit/{batch_id}_initial.json",
+            "disposition_source": f"scripts/meng_v6/audit/{batch_id}_disposition.json",
+            "page_count": end - start + 1,
+        }
+        for batch_id, start, end, content in SKELETON_BATCHES
+    ]
+    index_batches = as_list(index.get("batches"))
+    if (index.get("schema_version") != "1.0" or index.get("page_count") != 127
+            or index.get("legacy_ids") != expected_ids or len(index_batches) != len(expected_batch_specs)):
+        problems.append("V6审计索引的版本、页集或批次数量错误")
+
+    expected_pages: list[dict[str, Any]] = []
+    merged_initial_pages: list[dict[str, Any]] = []
+    for spec, batch_tuple in zip(expected_batch_specs, SKELETON_BATCHES):
+        batch_id, start, end, content = batch_tuple
+        matching = [item for item in index_batches if isinstance(item, dict) and item.get("batch_id") == batch_id]
+        if len(matching) != 1:
+            problems.append(f"批次{batch_id}在索引中缺失或重复")
+            continue
+        indexed = matching[0]
+        if any(indexed.get(field) != spec[field] for field in spec):
+            problems.append(f"批次{batch_id}的范围、内容、路径或页数与冻结合同不一致")
+        initial, initial_path = load_json(spec["initial_source"], f"批次{batch_id}初诊源")
+        disposition, disposition_path = load_json(spec["disposition_source"], f"批次{batch_id}处置源")
+        if initial is None or initial_path is None or disposition is None or disposition_path is None:
+            continue
+        initial_hash = file_sha256(initial_path)
+        disposition_hash = file_sha256(disposition_path)
+        if indexed.get("initial_sha256") != initial_hash or indexed.get("disposition_sha256") != disposition_hash:
+            problems.append(f"批次{batch_id}源文件SHA-256与索引不一致")
+        if initial.get("schema_version") != "1.0" or initial.get("batch_id") != batch_id:
+            problems.append(f"批次{batch_id}初诊源身份错误")
+        if (initial.get("range") != spec["range"] or initial.get("source_snapshot_sha256") != snapshot_hash
+                or initial.get("status") != "pending_review"):
+            problems.append(f"批次{batch_id}初诊源不是待审且未正确绑定快照")
+        if (disposition.get("schema_version") != "1.0" or disposition.get("batch_id") != batch_id
+                or disposition.get("range") != spec["range"] or disposition.get("status") != "not_started"
+                or disposition.get("closures") != [] or disposition.get("based_on_initial_sha256") != initial_hash):
+            problems.append(f"批次{batch_id}处置源预填结论或未绑定实际初诊源")
+
+        initial_pages = as_list(initial.get("pages"))
+        if len(initial_pages) != spec["page_count"]:
+            problems.append(f"批次{batch_id}初诊页数错误")
+        merged_initial_pages.extend(initial_pages)
+        if slides:
+            for number in range(start, end + 1):
+                slide = slides[number - 1]
+                page_id = f"S{number:03d}"
+                diagnosis_path = spec["initial_source"]
+                disposition_source = spec["disposition_source"]
+                review_record = {"status": "pending", "reviewer": None, "reviewed_at": None, "defect_ids": []}
+                expected_pages.append({
+                    "node_id": page_id,
+                    "page_id": page_id,
+                    "node_type": "page",
+                    "audit_scope": "pending",
+                    "owner_event_id": None,
+                    "source_order": number,
+                    "source_snapshot_path": V5_SNAPSHOT_PATH,
+                    "source_snapshot_sha256": snapshot_hash,
+                    "source_module": slide.get("module"),
+                    "source_phase": slide.get("phase"),
+                    "source_kind": slide.get("kind"),
+                    "source_title": slide.get("title") or slide.get("original") or slide.get("kind"),
+                    "source_visible_text": slide.get("visible", ""),
+                    "source_minutes": slide.get("minutes"),
+                    "legacy_student_visible": slide.get("kind") != "teacher_index",
+                    "batch_id": batch_id,
+                    "batch_range": f"S{start:03d}—S{end:03d}",
+                    "batch_content": content,
+                    "initial_diagnosis_source": diagnosis_path,
+                    "disposition_source": disposition_source,
+                    "content_elements": [
+                        {"element_id": "visible_text", "kind": "text", "source_field": "source_visible_text"},
+                        {"element_id": "page_function", "kind": "function", "source_field": "source_title"},
+                        {"element_id": "layout_identity", "kind": "layout", "source_field": "source_kind"},
+                    ],
+                    "gates": [
+                        {
+                            "gate_id": f"G{gate}", "gate_status": "pending", "evidence_refs": [],
+                            "failure_code": None, "reviewer": None, "reviewed_at": None,
+                        }
+                        for gate in range(1, 7)
+                    ],
+                    "review_status": {
+                        "scope": "legacy_initial_diagnosis",
+                        "self_review": dict(review_record),
+                        "student_reception": dict(review_record),
+                        "visual": dict(review_record),
+                        "consensus": "pending",
+                        "adjudication": None,
+                    },
+                })
+
+    if expected_pages and merged_initial_pages != expected_pages:
+        problems.append("12个初诊源合并后与实际V5快照派生骨架不一致")
+    aggregate = document.get("legacy_initial_audit")
+    if expected_pages and aggregate != expected_pages:
+        problems.append("聚合总表与实际V5快照及24个批次源不一致")
+    if document.get("pages") != aggregate or document.get("legacy_effective_view") != aggregate:
+        problems.append("pages或legacy_effective_view不是初诊骨架的严格镜像")
+    if problems:
+        return [diagnostic(
+            "LEGACY_STAGE_SOURCE_MISMATCH", "legacy_source",
+            "; ".join(dict.fromkeys(problems)),
+        )]
+    return []
 
 
 def current_nodes(document: dict[str, Any]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
@@ -1137,7 +1355,10 @@ def validate_current_layer(document: dict[str, Any], mode: str) -> list[dict[str
 
     terminals = [item for item in events if item.get("terminal_sink") is True]
     max_order = max((item.get("execution_order") for item in all_nodes.values() if isinstance(item.get("execution_order"), int)), default=None)
-    if len(terminals) != 1 or terminals[0].get("execution_order") != max_order:
+    honest_empty_stage = mode == "stage" and not all_nodes
+    if honest_empty_stage:
+        pass
+    elif len(terminals) != 1 or terminals[0].get("execution_order") != max_order:
         errors.append(diagnostic("CURRENT_TERMINAL_INVALID", "current_release_audit.events", "exactly one terminal event must be last"))
     elif as_list(terminals[0].get("next_uses")) or set(terminals[0].get("terminal_use", {})) < {
         "final_artifact", "recipient_or_owner", "post_class_use", "artifact_location",
@@ -1876,7 +2097,36 @@ def validate_audit_document(document: Any, mode: str = "stage") -> list[dict[str
     errors: list[dict[str, str]] = []
     if document.get("schema_version") != "2.0" or document.get("audit_version") != "6.0-page-function-audit":
         errors.append(diagnostic("AUDIT_VERSION_INVALID", "schema_version", "expected schema 2.0 and V6 page-function audit"))
+    status = document.get("document_status")
+    if status not in DOCUMENT_STATUSES:
+        errors.append(diagnostic("AUDIT_DOCUMENT_STATUS_INVALID", "document_status", "document status must be a fixed V6 lifecycle value"))
+    if document.get("claim_boundary") != "desktop_design_scaffold_only":
+        errors.append(diagnostic("AUDIT_CLAIM_BOUNDARY_INVALID", "claim_boundary", "audit may claim desktop design evidence only"))
+    current_audit = document.get("current_release_audit")
+    valid_current_pages, valid_current_events = current_nodes(document)
+    honest_empty_current = not valid_current_pages and not valid_current_events
+    if not isinstance(current_audit, dict):
+        errors.append(diagnostic("CURRENT_AUDIT_CONTAINER_INVALID", "current_release_audit", "current audit must be an object"))
+    else:
+        for field in ("pages", "events"):
+            values = current_audit.get(field)
+            if not isinstance(values, list) or any(not isinstance(item, dict) for item in values):
+                errors.append(diagnostic(
+                    "CURRENT_AUDIT_NODE_TYPE_INVALID", f"current_release_audit.{field}",
+                    "current audit node arrays must contain objects only",
+                ))
+    legacy_items = as_list(document.get("legacy_initial_audit"))
+    if mode == "stage" and honest_empty_current and len(legacy_items) == 127 and status != "legacy_skeleton_pending_review":
+        errors.append(diagnostic(
+            "AUDIT_DOCUMENT_STATUS_SHAPE_INVALID", "document_status",
+            "an empty current structure with 127 legacy pages is the Task 3 legacy skeleton",
+        ))
+    if status == "legacy_skeleton_pending_review" and mode != "stage":
+        errors.append(diagnostic("AUDIT_DOCUMENT_STATUS_MODE_INVALID", "document_status", "legacy skeleton is valid only in stage mode"))
+    if status == "release_ready" and mode != "release":
+        errors.append(diagnostic("AUDIT_DOCUMENT_STATUS_MODE_INVALID", "document_status", "release_ready is valid only in release mode"))
     required = {
+        "document_status", "claim_boundary",
         "legacy_initial_audit", "legacy_event_evidence", "defect_registry", "initial_audit_seals",
         "seal_amendments", "effective_legacy_hash", "legacy_disposition_closure", "structure_manifest",
         "declared_node_inventory", "source_graph_inventory", "structure_assembly_snapshot",
@@ -1884,6 +2134,7 @@ def validate_audit_document(document: Any, mode: str = "stage") -> list[dict[str
     }
     for field in sorted(required - set(document)):
         errors.append(diagnostic("AUDIT_REQUIRED_FIELD", field, "top-level field is missing"))
+    errors.extend(validate_stage_skeleton_sources(document, mode))
     errors.extend(validate_legacy_layer(document, mode))
     errors.extend(validate_dispositions(document, mode))
     errors.extend(validate_current_layer(document, mode))
