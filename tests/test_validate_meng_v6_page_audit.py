@@ -858,6 +858,23 @@ class CurrentGraphTests(unittest.TestCase):
         doc["current_release_audit"]["pages"][0]["gates"][3]["gate_status"] = "na"
         self.assertIn("CURRENT_NA_MISUSE", codes(doc))
 
+    def test_current_carrier_na_must_reference_owning_event_gate(self):
+        doc = valid_freeze_document()
+        page = doc["current_release_audit"]["pages"][0]
+        event = doc["current_release_audit"]["events"][0]
+        page["audit_scope"] = "event_carrier"
+        page["owner_event_id"] = event["event_id"]
+        event["carrier_ids"] = [page["page_id"]]
+        page["gates"][3] = gate("G4", "na")
+        page["gates"][4] = gate("G5", "na")
+        page["gates"][3]["evidence_refs"] = []
+        page["gates"][4]["evidence_refs"] = []
+        self.assertIn("CURRENT_CARRIER_EVENT_EVIDENCE_INVALID", codes(doc))
+
+        page["gates"][3]["evidence_refs"] = [f"{event['event_id']}#gate_4"]
+        page["gates"][4]["evidence_refs"] = [f"{event['event_id']}#gate_5"]
+        self.assertNotIn("CURRENT_CARRIER_EVENT_EVIDENCE_INVALID", codes(doc))
+
     def test_g5_edges_must_be_strictly_forward_and_acyclic(self):
         doc = valid_freeze_document()
         doc["current_release_audit"]["events"][0]["execution_order"] = 1

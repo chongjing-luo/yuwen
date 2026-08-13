@@ -1258,6 +1258,17 @@ def validate_current_layer(document: dict[str, Any], mode: str) -> list[dict[str
                 if gate_id in {"G4", "G5"}:
                     if status not in {"na", "pass"}:
                         errors.append(diagnostic("CURRENT_CARRIER_GATE_INVALID", f"{path}.{gate_id}", "carrier G4/G5 must borrow with na or pass independently"))
+                    elif status == "na" and owner is not None:
+                        event_field = "gate_4" if gate_id == "G4" else "gate_5"
+                        expected_ref = f"{owner_id}#{event_field}"
+                        event_gate = owner.get(event_field)
+                        if (not isinstance(event_gate, dict)
+                                or event_gate.get("gate_status") not in {"pass", "deferred"}
+                                or expected_ref not in as_list(gate.get("evidence_refs"))):
+                            errors.append(diagnostic(
+                                "CURRENT_CARRIER_EVENT_EVIDENCE_INVALID", f"{path}.{gate_id}",
+                                "carrier na must cite its owning event's concrete G4/G5 field",
+                            ))
                 elif status == "na":
                     errors.append(diagnostic("CURRENT_NA_MISUSE", f"{path}.{gate_id}", "only carrier G4/G5 may use na"))
         if strict and (page.get("release_status") != "final" or any(item.get("gate_status") != "pass" for item in gates.values() if not (scope == "event_carrier" and item.get("gate_id") in {"G4", "G5"} and item.get("gate_status") == "na"))):
