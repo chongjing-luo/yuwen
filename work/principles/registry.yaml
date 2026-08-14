@@ -1026,8 +1026,10 @@ principles:
     nodes: [K1]
     anchor: {doc: work/evaluation/三目标实现机制.md, heading: "### K1 教什么先于怎么教（知识界定）"}
     enforcement:
-      - {type: machine_check, checker: scripts/validate_lesson_schema.py, rule: knowledge_refs解析与KP覆盖, status: planned}
-    status: planned
+      - {type: machine_check, checker: scripts/validate_lesson_schema.py, rule: card_refs与kp_scope解析到知识卡且defer有理由}
+      - {type: machine_check, checker: scripts/validate_homework_package.py, rule: 作业题kp_ids解析}
+      - {type: machine_check, checker: scripts/validate_assessment_package.py, rule: 蓝图kp_weights解析与覆盖}
+    status: active
   - id: N-02
     title: 检索与间隔排程
     statement: "核心KP在课堂首答、作业闭卷、单元测评、跨课回投中被至少两次以提取方式激活；单元规划含复现排程表；作业含闭卷检索题。"
@@ -1047,5 +1049,6 @@ principles:
     nodes: [K4]
     anchor: {doc: work/evaluation/三目标实现机制.md, heading: "### K4 知识网络化（纵向贯通）"}
     enforcement:
-      - {type: machine_check, checker: scripts/validate_lesson_schema.py, rule: 关系边解析, status: planned}
-    status: planned
+      - {type: machine_check, checker: scripts/validate_lesson_schema.py, rule: relations关系边解析到真实卡片}
+      - {type: machine_check, checker: scripts/validate_homework_package.py, rule: cross_book_refs跨册边解析}
+    status: active

@@ -25,8 +25,8 @@ class ValidatePrincipleRegistryTest(unittest.TestCase):
     def test_real_registry_passes(self):
         errors, warnings = validate(real_registry())
         self.assertEqual(errors, [], f"注册库应通过自检: {errors}")
-        # K1/K4 的强制在 Phase E 落地，planned 警告是预期状态（K3 已由作业/命题校验器落地）
-        self.assertEqual(len(warnings), 2)
+        # 全部 20 个节点的强制均已落地（K1/K3/K4 于 Phase C/E 激活）
+        self.assertEqual(warnings, [])
 
     def test_real_registry_shape(self):
         registry = real_registry()
