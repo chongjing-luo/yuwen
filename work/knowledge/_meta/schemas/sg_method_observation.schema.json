@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:yuwen:sg-method-observation:0.1",
+  "title": "SG-METHOD Evaluation Observation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "method_id", "status", "deliverables", "queries", "teachers"],
+  "properties": {
+    "schema_version": {"const": "sg-method-observation-0.1"},
+    "method_id": {"const": "SG-METHOD-20260809"},
+    "status": {"enum": ["not_run", "pilot", "complete", "failed"]},
+    "deliverables": {"type": "array", "items": {"$ref": "#/$defs/deliverable"}, "uniqueItems": true},
+    "queries": {"type": "array", "items": {"$ref": "#/$defs/query"}, "maxItems": 12},
+    "teachers": {"type": "array", "items": {"$ref": "#/$defs/teacher"}},
+    "gold_control": {"$ref": "#/$defs/goldControl"}
+  },
+  "$defs": {
+    "count": {"type": "integer", "minimum": 0},
+    "ratio": {"type": "number", "minimum": 0, "maximum": 1},
+    "deliverable": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["deliverable_id", "book_code", "material_type", "facts", "tasks", "kp", "labels", "claim_evidence", "quotes", "relations", "unsupported_claims"],
+      "properties": {
+        "deliverable_id": {"type": "string", "minLength": 1},
+        "gold_id": {"type": "string", "minLength": 1},
+        "gold_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "book_code": {"type": "string", "pattern": "^(B1|B2|X1|X2|X3)$"},
+        "material_type": {"type": "string", "minLength": 1},
+        "facts": {"$ref": "#/$defs/pair"},
+        "tasks": {"$ref": "#/$defs/pair"},
+        "kp": {"$ref": "#/$defs/kp"},
+        "labels": {"$ref": "#/$defs/labels"},
+        "claim_evidence": {"$ref": "#/$defs/accuracy"},
+        "quotes": {"$ref": "#/$defs/accuracy"},
+        "relations": {"type": "object", "additionalProperties": false, "required": ["tp", "fp", "fn"], "properties": {"tp": {"$ref": "#/$defs/count"}, "fp": {"$ref": "#/$defs/count"}, "fn": {"$ref": "#/$defs/count"}}},
+        "unsupported_claims": {"type": "object", "additionalProperties": false, "required": ["count", "total"], "properties": {"count": {"$ref": "#/$defs/count"}, "total": {"$ref": "#/$defs/count"}}}
+      }
+    },
+    "pair": {"type": "object", "additionalProperties": false, "required": ["matched", "gold"], "properties": {"matched": {"$ref": "#/$defs/count"}, "gold": {"$ref": "#/$defs/count"}}},
+    "kp": {"type": "object", "additionalProperties": false, "required": ["tp", "fp", "fn"], "properties": {"tp": {"$ref": "#/$defs/count"}, "fp": {"$ref": "#/$defs/count"}, "fn": {"$ref": "#/$defs/count"}}},
+    "labelCounts": {"type": "object", "additionalProperties": false, "required": ["tp", "fp", "fn"], "properties": {"tp": {"$ref": "#/$defs/count"}, "fp": {"$ref": "#/$defs/count"}, "fn": {"$ref": "#/$defs/count"}}},
+    "labels": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary_dimension", "knowledge_type", "four_layer"],
+      "properties": {
+        "primary_dimension": {"type": "object", "additionalProperties": {"$ref": "#/$defs/labelCounts"}},
+        "knowledge_type": {"type": "object", "additionalProperties": {"$ref": "#/$defs/labelCounts"}},
+        "four_layer": {"type": "object", "additionalProperties": {"$ref": "#/$defs/labelCounts"}}
+      }
+    },
+    "accuracy": {"type": "object", "additionalProperties": false, "required": ["correct", "total"], "properties": {"correct": {"$ref": "#/$defs/count"}, "total": {"$ref": "#/$defs/count"}}},
+    "query": {"type": "object", "additionalProperties": false, "required": ["query_id", "completed", "fact_evidence_correct", "seconds", "evaluator_id"], "properties": {"query_id": {"type": "string", "pattern": "^QRY-[0-9]{2}$"}, "completed": {"type": "boolean"}, "fact_evidence_correct": {"type": "boolean"}, "seconds": {"type": "number", "minimum": 0}, "evaluator_id": {"type": "string", "minLength": 1}}},
+    "teacher": {"type": "object", "additionalProperties": false, "required": ["evaluator_id", "usable_score", "serious_error"], "properties": {"evaluator_id": {"type": "string", "minLength": 1}, "usable_score": {"type": "number", "minimum": 1, "maximum": 5}, "serious_error": {"type": "boolean"}, "comment": {"type": "string"}}}
+    ,"goldControl": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sealed", "manifest_sha256", "annotator_a", "annotator_b", "adjudicator", "krippendorff_alpha", "kp_pair_f1", "contamination_status"],
+      "properties": {
+        "sealed": {"type": "boolean"},
+        "manifest_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "annotator_a": {"type": "string", "minLength": 1},
+        "annotator_b": {"type": "string", "minLength": 1},
+        "adjudicator": {"type": "string", "minLength": 1},
+        "krippendorff_alpha": {"type": "number", "minimum": -1, "maximum": 1},
+        "kp_pair_f1": {"type": "number", "minimum": 0, "maximum": 1},
+        "contamination_status": {"enum": ["clean", "contaminated", "unknown"]}
+      }
+    }
+  }
+}

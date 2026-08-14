@@ -1,0 +1,13 @@
+{
+  "schema_version": "exam-calibration-validation-0.1",
+  "calibration_id": "SG-EXAM-CAL-2008-2024",
+  "result": "passed",
+  "errors": [],
+  "warnings": [],
+  "checks": {
+    "pair_count": true,
+    "raw_hashes": true,
+    "structural_validation": true,
+    "denominators": true
+  }
+}

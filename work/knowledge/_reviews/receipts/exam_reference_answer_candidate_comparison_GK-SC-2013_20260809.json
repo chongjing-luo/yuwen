@@ -1,0 +1,118 @@
+{
+  "schema_version": "exam-reference-answer-candidate-comparison-receipt-0.1",
+  "receipt_id": "EXAM-REFERENCE-ANSWER-CANDIDATE-COMPARISON-GK-SC-2013-20260809",
+  "generated_at": "2026-08-09T12:48:24+08:00",
+  "status": "candidate_only_cross_source_comparison",
+  "exam_id": "GK-SC-2013",
+  "coverage": {
+    "comparison_questions": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "local_questions": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "external_questions": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "external_missing": [
+      21
+    ]
+  },
+  "inputs": {
+    "local": {
+      "path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-SC-2013/answers/local_analysis_candidates.jsonl",
+      "sha256": "e1d9294a50e04937e97c456a4df9a8bd37430e794b7b14e4280c6df1a3f2b45c"
+    },
+    "external": {
+      "path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-SC-2013/answers/reference_answer_candidates.jsonl",
+      "sha256": "2a656850f6e6c2b8d64495f684b2b9a8144c690cddd91a4329df9ff90d8bfd7f"
+    },
+    "main_answer_index": {
+      "path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-SC-2013/answers/answer_index.jsonl",
+      "sha256": "489ba22579be29b0426db2ece4732bc83bc850a903ca8d513c192a510a74289a"
+    }
+  },
+  "output": {
+    "path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-SC-2013/answers/reference_answer_candidate_comparison.jsonl",
+    "sha256": "7c3268fcdb1f702c216aae2a8c526a77ce0da884f5a1cca9636215a009379b05",
+    "rows": 21
+  },
+  "report": {
+    "path": "work/knowledge/高考分析/EXAM-REFERENCE-ANSWER-CANDIDATE-COMPARISON-2013.md",
+    "sha256": "92dcc288a83973a2d9b8b93f1fa6741cf894951f47061f45a4811ef49f71597b"
+  },
+  "counts": {
+    "textually_consistent_unverified": 7,
+    "format_equivalent_unverified": 4,
+    "local_mixed_analysis_no_explicit_answer": 4,
+    "ocr_or_format_difference_requires_review": 1,
+    "text_difference_requires_review": 2,
+    "format_or_label_difference_requires_review": 1,
+    "coverage_difference_requires_review": 1,
+    "both_sources_missing": 1
+  },
+  "source_mutation": false,
+  "answer_index_mutation": false,
+  "scoring_status": "not_available_as_official",
+  "mapping_status": "M0 | kp_id=N/A",
+  "policy": "候选交叉比对仅用于人工复核排队；一致性不等于官方核验，不把第三方答案或本地解析提升为评分标准。"
+}

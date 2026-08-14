@@ -1,0 +1,24 @@
+{
+  "schema_version": "poetry-appreciation-2016-2024-kp-batch-validation-0.1",
+  "result": "passed",
+  "row_count": 15,
+  "year_counts": {
+    "2016": 2,
+    "2017": 2,
+    "2018": 1,
+    "2019": 1,
+    "2020": 1,
+    "2021": 2,
+    "2022": 2,
+    "2023": 2,
+    "2024": 2
+  },
+  "errors": [],
+  "checks": {
+    "coverage": true,
+    "traceability": true,
+    "free_response_gate": true,
+    "shared_scope_gate": true,
+    "m0_boundary": true
+  }
+}

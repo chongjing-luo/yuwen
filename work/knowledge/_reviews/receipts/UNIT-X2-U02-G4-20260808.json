@@ -1,0 +1,39 @@
+{
+  "receipt_id": "RECEIPT-UNIT-X2-U02-G4-20260808",
+  "gate": "DG4-MERGE",
+  "merged_at": "2026-08-08T18:07:00+08:00",
+  "artifact_version": "0.2.2",
+  "content_change": false,
+  "allowed_diff": ["front_matter.status", "front_matter.reviewers", "ledger.status", "ledger.reviewers", "state_transition"],
+  "deliverable": {
+    "deliverable_id": "UNIT-X2-U02",
+    "pre_merge_file_sha256": "cec71ccef119e98c4d1b601bc2f9bf8d960f784ce494aab0dd42a5fc177019be",
+    "post_merge_file_sha256": "99239de9a8a599ed7bd57f366caa6d2068541dcbaafda04090a652ba24bc8d49",
+    "primary_score": 99.0,
+    "secondary_score": 98.5,
+    "primary_review": "unit_x2_u02_primary_review_r2_independent_20260808.md",
+    "secondary_review": "unit_x2_u02_secondary_review_r2_independent_20260808.md"
+  },
+  "review_policy": {
+    "rubric_version": "2.0-textbook",
+    "rubric_sha256": "ab9cc53d57834642e66e568824d1c0c53e128953e15b20b4c7bd04aa30610d43",
+    "taxonomy_sha256": "13e5e23c45c05359a5c91e360ce8bd71dbf2a841c2c6a72f1adca52bef7cbd4b",
+    "r01_r10": "all 0",
+    "p0_p1_p2": "0/0/0"
+  },
+  "validator": {
+    "review_run_id": "VAL-20260808-180309+0800",
+    "post_merge_run_id": "VAL-20260808-180654+0800",
+    "report": "work/knowledge/_meta/validation_reports/archive/unit_x2_u02_graph_validation_g4.json",
+    "report_sha256": "13b8e440cae37b2927d06a06ff47bc4389518138e7947aa733d481971698c101",
+    "result": "passed",
+    "errors": 0
+  },
+  "transition_id": "STATE-20260808-UNIT-X2-U02-G4",
+  "downstream_impact": ["BOOK-X2"],
+  "status": "accepted",
+  "review_file_sha256": {
+    "unit_x2_u02_primary_review_r2_independent_20260808.md": "b78e1ccaf0c6eb3e4b9493f80d80232b10b70480410294352ee8b05e56b37e23",
+    "unit_x2_u02_secondary_review_r2_independent_20260808.md": "305b6eba247ddb378cbe83ce527075de134bbb5413208315378e9beedbb20042"
+  }
+}

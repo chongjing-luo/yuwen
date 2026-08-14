@@ -1,0 +1,22 @@
+{
+  "schema_version": "classical-memorization-kp-batch-validation-0.1",
+  "result": "passed",
+  "row_count": 11,
+  "year_counts": {
+    "2009": 2,
+    "2010": 2,
+    "2011": 2,
+    "2012": 2,
+    "2013": 1,
+    "2014": 1,
+    "2015": 1
+  },
+  "errors": [],
+  "checks": {
+    "coverage": true,
+    "traceability": true,
+    "fill_in_gate": true,
+    "m0_boundary": true,
+    "authority_gate": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "sg-method-observation-0.1",
+  "method_id": "SG-METHOD-20260809",
+  "status": "complete",
+  "deliverables": [
+    {
+      "deliverable_id": "CARD-SYN-ZERO",
+      "book_code": "B1",
+      "material_type": "card",
+      "facts": {"matched": 0, "gold": 0},
+      "tasks": {"matched": 0, "gold": 0},
+      "kp": {"tp": 0, "fp": 0, "fn": 0},
+      "labels": {"primary_dimension": {"人文": {"tp": 0, "fp": 0, "fn": 0}, "语言": {"tp": 0, "fp": 0, "fn": 0}}, "knowledge_type": {"事实": {"tp": 0, "fp": 0, "fn": 0}, "概念": {"tp": 0, "fp": 0, "fn": 0}, "程序": {"tp": 0, "fp": 0, "fn": 0}, "策略": {"tp": 0, "fp": 0, "fn": 0}, "解释": {"tp": 0, "fp": 0, "fn": 0}, "价值辨析": {"tp": 0, "fp": 0, "fn": 0}}, "four_layer": {"必备知识": {"tp": 0, "fp": 0, "fn": 0}, "关键能力": {"tp": 0, "fp": 0, "fn": 0}, "学科素养": {"tp": 0, "fp": 0, "fn": 0}, "核心价值": {"tp": 0, "fp": 0, "fn": 0}}},
+      "claim_evidence": {"correct": 0, "total": 0},
+      "quotes": {"correct": 0, "total": 0},
+      "relations": {"tp": 0, "fp": 0, "fn": 0},
+      "unsupported_claims": {"count": 0, "total": 0}
+    }
+  ],
+  "queries": [],
+  "teachers": []
+}

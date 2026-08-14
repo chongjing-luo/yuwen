@@ -1,0 +1,22 @@
+{
+  "schema_version": "2.0-textbook-eval-1",
+  "matrix_id": "validator-capability-2.0-textbook-eval-1",
+  "validator_baseline": "scripts/validate_knowledge_base.py",
+  "entries": [
+    {"check_id": "VC-STRUCTURE", "domain": "controlled enums, IDs, state transitions", "mode": "automatic", "evidence": "validator run report"},
+    {"check_id": "VC-SOURCE", "domain": "Source/Artifact/upstream existence and canonical SHA", "mode": "automatic", "evidence": "validator run report"},
+    {"check_id": "VC-LEDGER-COUNT", "domain": "ledger identity and 114 textbook denominator", "mode": "automatic", "evidence": "validator run report"},
+    {"check_id": "VC-MARKDOWN", "domain": "Markdown tables, column count and template instance", "mode": "manual_required", "evidence": "semantic lint report"},
+    {"check_id": "VC-FM-LEDGER", "domain": "front matter versus ledger status/version", "mode": "manual_required", "evidence": "semantic lint report + ledger snapshot"},
+    {"check_id": "VC-CLAIM-EVIDENCE", "domain": "Claim/KP/EV binding and formal denominator", "mode": "manual_required", "evidence": "claim register + semantic lint"},
+    {"check_id": "VC-Q-QUOTE", "domain": "Q quote span and locator page-range accuracy", "mode": "manual_required", "evidence": "sealed review observation"},
+    {"check_id": "VC-I-DOUBLE", "domain": "I claim two independent text evidences", "mode": "manual_required", "evidence": "sealed review observation"},
+    {"check_id": "VC-M0-NA", "domain": "M0 and four allowed N/A forms", "mode": "manual_required", "evidence": "semantic lint + constraint register"},
+    {"check_id": "VC-REVIEW-BINDING", "domain": "reviewer role separation and same-SHA binding", "mode": "automatic", "evidence": "review binding validator"},
+    {"check_id": "VC-RUBRIC-SCORE", "domain": "Decimal score recomputation and thresholds", "mode": "automatic", "evidence": "fixed-point score receipt"},
+    {"check_id": "VC-DG4-WHITELIST", "domain": "DG4 content SHA and whitelist diff", "mode": "pending_automation", "evidence": "DG4 receipt; coordinator manual until script is promoted"},
+    {"check_id": "VC-TEACHING-BOUNDARY", "domain": "教材提示/教师用书/项目建议 semantic boundary", "mode": "manual_required", "evidence": "semantic lint report"},
+    {"check_id": "VC-METHOD", "domain": "双审一致性、逃逸率、bootstrap 和教学查询", "mode": "pending_automation", "evidence": "SG-METHOD batch report"}
+  ],
+  "rule": "automatic validator success never substitutes for manual_required checks"
+}

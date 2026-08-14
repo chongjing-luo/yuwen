@@ -1,0 +1,37 @@
+{
+  "schema_version": "exam-reference-answer-candidate-comparison-receipt-0.1",
+  "receipt_id": "EXAM-REFERENCE-ANSWER-CANDIDATE-COMPARISON-GK-NCA-2023-20260809",
+  "generated_at": "2026-08-09T13:03:01+08:00",
+  "exam_id": "GK-NCA-2023",
+  "inputs": {
+    "local": {
+      "path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NCA-2023/answers/local_analysis_group_candidates.jsonl",
+      "sha256": "8fc41891fa7e42867efdcab3a318e713739f8138cefdc4af963c01a361eeee36"
+    },
+    "external": {
+      "path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NCA-2023/answers/reference_answer_candidates.jsonl",
+      "sha256": "ab4eda9ea7bfc488586b61e4c7c41f8e5cbe8c485faa364a608d70e96867286d"
+    }
+  },
+  "output": {
+    "path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NCA-2023/answers/reference_answer_candidate_comparison.jsonl",
+    "sha256": "2a934e0d1f23001de3580822d0c2897fe577a659090cb756d7862ae370f6dadc",
+    "rows": 22
+  },
+  "report": {
+    "path": "work/knowledge/高考分析/EXAM-REFERENCE-ANSWER-CANDIDATE-COMPARISON-2023.md",
+    "sha256": "589f14394a7cc284592a9a2ce9301200d5ff4af70b2fd4d7a6899abeba909af5"
+  },
+  "counts": {
+    "textually_consistent_unverified": 7,
+    "external_source_missing_local_candidate_only": 9,
+    "local_mixed_analysis_no_explicit_answer": 1,
+    "external_missing_local_mixed_analysis": 4,
+    "writing_artifact_no_external": 1
+  },
+  "source_mutation": false,
+  "answer_index_mutation": false,
+  "scoring_status": "not_available_as_official",
+  "mapping_status": "M0 | kp_id=N/A",
+  "policy": "部分外部候选只用于可追溯比对；不把文本一致升级为官方答案或评分标准。"
+}

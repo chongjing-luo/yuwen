@@ -1,0 +1,14 @@
+{
+  "schema_version": "reference-answer-candidate-validation-2024-meipian-0.1",
+  "result": "passed",
+  "rows": 22,
+  "main_index_missing_rows": 22,
+  "errors": [],
+  "checks": {
+    "full_coverage": true,
+    "source_hashes": true,
+    "authority_gate": true,
+    "main_index_unchanged_gate": true,
+    "q22_guidance_label": true
+  }
+}

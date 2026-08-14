@@ -1,0 +1,20 @@
+{
+  "schema_version": "exam-visual-review-receipt-0.1",
+  "receipt_id": "EXAM-VISUAL-GK-SC-2012-20260809",
+  "exam_id": "GK-SC-2012",
+  "generated_at": "2026-08-09T06:58:00+08:00",
+  "status": "passed",
+  "review_scope": "question_pdf_visual_review_and_top_level_score_arbitration",
+  "review_method": {"render": "high_resolution_pdf_render", "pdf_page_count": 7, "pages_checked": [1,2,3,4,5,6,7], "exam_printed_pages": [1,2,3,4,5,6], "blank_watermark_pages": [], "advertising_pages": [7]},
+  "source_policy": {"source_pdf_read_only": true, "mineru_full_md_read_only": true, "clean_md_read_only_during_review": true, "raw_watermark_retained": true, "answer_authority": "candidate_unverified_or_missing", "mapping_boundary": "M0_only"},
+  "source_hashes": {"question_pdf_sha256": "947ec5d9bcca8f7c580260b5b59b9c8bb9d91bfff7b429cd6a4ef9709031ecd9", "mineru_full_md_sha256": "2c360a2570afa249bf36ee06f6dd2517362b92248d9668cbde201833c36975a4"},
+  "findings": [
+    {"scope": "all_pages", "finding": "第1—6页为考试正文，第7页为资料广告页；全卷可见水印。", "decision": "广告页不进入题文清洗正文，原始PDF、MinerU full.md和清洗源保持只读。"},
+    {"scope": "score", "finding": "卷面分值结构可复算为150分；Q13为两个名句分支任选一题，Q11三句翻译和文学阅读分值与题面一致。", "decision": "保留25个派生节点、选择组和双链；答案与评分仍为candidate_unverified。"},
+    {"scope": "ocr", "finding": "Q6存在孤立‘0.’等疑似OCR/版面残片。", "decision": "显式登记，不静默修订原始题段。"}
+  ],
+  "derived_updates": {"script": "scripts/decompose_exam_vertical_slices.py", "output": "work/knowledge/高考分析/GK-SC-2012-response_nodes_vertical_slice.jsonl", "receipt": "work/knowledge/_reviews/receipts/exam_vertical_GK-SC-2012_20260809.json", "content_policy": "仅生成派生节点和回执，未改写原始PDF、MinerU full.md或清洗源段。"},
+  "acceptance": {"visual_boundary": "passed", "score_reconciliation": "150/150", "locator_precision": "page_level_fallback", "answer_and_kp_mapping": "not_claimed; candidate_unverified_or_missing; M0/KP_ID=N/A"},
+  "reviewer": "primary_agent",
+  "reviewed_at": "2026-08-09"
+}

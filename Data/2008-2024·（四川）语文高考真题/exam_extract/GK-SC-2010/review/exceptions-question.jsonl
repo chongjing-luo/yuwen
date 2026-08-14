@@ -1,0 +1,5 @@
+{"action": "remove_inline_noise", "raw_line_start": 116, "raw_text": "译文： V A", "clean_text": "译文： A", "reason": "whitespace-delimited watermark/page-number OCR residue", "exam_id": "GK-SC-2010"}
+{"action": "remove_inline_noise", "raw_line_start": 156, "raw_text": "陆游《书愤》“ 1 X 。”抒发了岁月蹉跎壮志未酬的感慨。", "clean_text": "陆游《书愤》“ X 。”抒发了岁月蹉跎壮志未酬的感慨。", "reason": "whitespace-delimited watermark/page-number OCR residue", "exam_id": "GK-SC-2010"}
+{"action": "isolate_advertisement", "raw_line_start": 224, "reason": "layout page is outside printed exam or promotional marker", "exam_id": "GK-SC-2010"}
+{"source_role": "question", "source_md": "Data/2008-2024·（四川）语文高考真题/mineru_result/2010年高考语文试卷（四川）（空白卷）/full.md", "question_id": 10, "token": "第ⅡI卷", "char_offset": 256, "status": "needs_review", "rule": "OCR candidate; raw text retained and no silent correction", "exam_id": "GK-SC-2010"}
+{"source_role": "question", "source_md": "Data/2008-2024·（四川）语文高考真题/mineru_result/2010年高考语文试卷（四川）（空白卷）/full.md", "question_id": 18, "token": "市景", "char_offset": 113, "status": "source_print_typo_candidate", "rule": "保留原卷字样；疑似原卷印刷/题面问题，不能按OCR静默改正", "exam_id": "GK-SC-2010"}

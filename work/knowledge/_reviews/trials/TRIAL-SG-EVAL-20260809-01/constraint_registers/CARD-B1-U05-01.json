@@ -1,0 +1,29 @@
+{
+  "schema_version": "2.0-textbook-eval-1",
+  "deliverable_id": "CARD-B1-U05-01",
+  "artifact_version": "0.1.0",
+  "constraints": [
+    {
+      "constraint_id": "CON-CARD-B1-U05-01-NO-CANONICAL-WRITE",
+      "kind": "boundary",
+      "statement": "试运行不得修改 canonical 文件。",
+      "source_refs": [
+        "sg_eval_trial_batch_plan_20260809.json"
+      ],
+      "severity": "P0",
+      "checked": true,
+      "failure_action": "Discard snapshot and stop batch."
+    },
+    {
+      "constraint_id": "CON-CARD-B1-U05-01-CLAIM-NOT-SEALED",
+      "kind": "required",
+      "statement": "Claim inventory 在人工分类、证据绑定和双审封存前不得计入正式分母。",
+      "source_refs": [
+        "evaluation_freeze_candidate_20260808_014300.md §7.1"
+      ],
+      "severity": "P1",
+      "checked": true,
+      "failure_action": "DG2 remains blocked."
+    }
+  ]
+}

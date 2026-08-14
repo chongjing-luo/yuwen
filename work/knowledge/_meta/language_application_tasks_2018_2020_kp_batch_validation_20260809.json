@@ -1,0 +1,15 @@
+{
+  "schema_version": "language-application-tasks-2018-2020-kp-batch-validation-0.1",
+  "result": "passed",
+  "manifest_count": 28,
+  "question_manifest_count": 14,
+  "batch_count": 14,
+  "errors": [],
+  "checks": {
+    "coverage": true,
+    "split_traceability": true,
+    "answer_gate": true,
+    "score_gate": true,
+    "m0_boundary": true
+  }
+}

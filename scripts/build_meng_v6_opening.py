@@ -281,6 +281,19 @@ def compile_page(item: dict[str, Any], order: int) -> dict[str, Any]:
         {"legacy_id": legacy_id, "element_id": "page_function", "target_field": "unique_function"}
         for legacy_id in item["legacy_ids"]
     ]
+    consumer_status = "declared" if deferred else "implemented"
+    participation_denominator = {
+        "N002": "全班每人至少一篇个人清单",
+        "N003": "每个四人组4/4开口，4/4留下两项圈选",
+        "N004": "每组一名代表公开；全班每人完成新增或重复核对",
+        "N005": "全班每人先连接命名；至少三名不同学生公开举证；全班每人反馈",
+    }.get(page_id, "全班每人完成本页所列个人或同桌动作")
+    artifact_authorship = {
+        "N002": "个人作者；教师只给检索线索",
+        "N003": "四名组员共同来源；两张贡献卡由全员圈选形成，并标明原提议者号、由原提议者亲写或签认",
+        "N004": "八个小组，各两张卡；个人核对记录归本人",
+        "N005": "每人有个人连接；公开三组由提议学生命名并修订；教师无分类作者权",
+    }.get(page_id, "学生个人或同桌共同作者；教师仅提供必要反馈")
     return {
         "node_id": page_id,
         "page_id": page_id,
@@ -316,6 +329,25 @@ def compile_page(item: dict[str, Any], order: int) -> dict[str, Any]:
         "artifact_location": item["location"],
         "previous_relation": item["previous"],
         "next_relation": item["next"],
+        "previous_artifact_input": item["input"],
+        "unique_transformation": item["function"],
+        "individual_minimum_action": item["action"],
+        "minimum_acceptance_criterion": item["change"][2],
+        "bounded_feedback": item["listener"],
+        "revision_evidence": item["location"],
+        "named_consumer": item["next_event_id"],
+        "consumer_status": consumer_status,
+        "participation_denominator": participation_denominator,
+        "artifact_authorship": artifact_authorship,
+        "student_reception_contract": {
+            "seen": item["visible"],
+            "heard": item.get("teacher_script", "教师组织页面所列动作并给出必要转场"),
+            "action": item["action"],
+            "possible_thought": f"我需要把{item['input']}加工成{item['artifact']}",
+            "artifact": item["artifact"],
+            "observable_change": item["change"][1],
+            "next_use": item["next"],
+        },
         "deletion_loss": item["loss"],
         "merge_test": {
             "result": "cannot_merge", "cannot_merge_reason": item["loss"],

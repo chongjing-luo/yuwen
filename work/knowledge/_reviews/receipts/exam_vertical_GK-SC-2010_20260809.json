@@ -1,0 +1,85 @@
+{
+  "schema_version": "exam-vertical-review-receipt-0.1",
+  "receipt_id": "EXAM-VERTICAL-GK-SC-2010-20260809",
+  "exam_id": "GK-SC-2010",
+  "calibration_id": "SG-EXAM-CAL-2008-2024",
+  "generated_at": "2026-08-09T07:01:24+08:00",
+  "status": "structural_pass",
+  "acceptance": "conditional_review",
+  "scope": "response_node_decomposition_and_score_reconciliation",
+  "source_policy": {
+    "question_pdf_visual_check": "passed_with_source_label_conflict",
+    "source_pdf_read_only": true,
+    "mineru_full_md_read_only": true,
+    "answer_authority": "candidate_unverified_or_missing",
+    "mapping_boundary": "M0_only"
+  },
+  "visual_check": {
+    "pages_checked": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "notes": [
+      "2010 四川自主命题卷；已逐页核对第1—8页考试正文，第9页为资料广告页。PDF首页标题含‘试题解析’字样，文件名虽标‘空白卷’，来源标签冲突已显式登记。",
+      "Q11 两句翻译 4/6 分，Q12 两问 4/4 分；Q13 两个名句分支任选一题。",
+      "第六大题合计 15 分，Q18/Q19/Q20 按 5/6/4 分登记；Q20 题段尾部带作文分节标题，清洗提示中截断。"
+    ]
+  },
+  "visual_review_receipt": "work/knowledge/_reviews/receipts/exam_visual_review_GK-SC-2010_20260809.json",
+  "node_count": 24,
+  "question_count": 21,
+  "score_total": 150,
+  "expected_score_total": 150,
+  "choice_groups": [
+    {
+      "id": "GK-SC-2010-Q013-OPTIONAL",
+      "questions": [
+        13,
+        13
+      ],
+      "scored_branch_count": 1
+    }
+  ],
+  "score_groups": [],
+  "score_notes": {},
+  "missing_answer_source_questions": [],
+  "source_hash_anchors": {
+    "question_pdf": {
+      "1": "412232a35fcea9076e437702918b4f683aef5e076d6f88beb95b1af34182e1ce",
+      "2": "412232a35fcea9076e437702918b4f683aef5e076d6f88beb95b1af34182e1ce",
+      "3": "412232a35fcea9076e437702918b4f683aef5e076d6f88beb95b1af34182e1ce",
+      "4": "412232a35fcea9076e437702918b4f683aef5e076d6f88beb95b1af34182e1ce",
+      "5": "412232a35fcea9076e437702918b4f683aef5e076d6f88beb95b1af34182e1ce",
+      "6": "412232a35fcea9076e437702918b4f683aef5e076d6f88beb95b1af34182e1ce",
+      "7": "412232a35fcea9076e437702918b4f683aef5e076d6f88beb95b1af34182e1ce",
+      "8": "412232a35fcea9076e437702918b4f683aef5e076d6f88beb95b1af34182e1ce",
+      "9": "412232a35fcea9076e437702918b4f683aef5e076d6f88beb95b1af34182e1ce",
+      "10": "412232a35fcea9076e437702918b4f683aef5e076d6f88beb95b1af34182e1ce",
+      "11": "412232a35fcea9076e437702918b4f683aef5e076d6f88beb95b1af34182e1ce",
+      "12": "412232a35fcea9076e437702918b4f683aef5e076d6f88beb95b1af34182e1ce",
+      "13": "412232a35fcea9076e437702918b4f683aef5e076d6f88beb95b1af34182e1ce",
+      "14": "412232a35fcea9076e437702918b4f683aef5e076d6f88beb95b1af34182e1ce",
+      "15": "412232a35fcea9076e437702918b4f683aef5e076d6f88beb95b1af34182e1ce",
+      "16": "412232a35fcea9076e437702918b4f683aef5e076d6f88beb95b1af34182e1ce",
+      "17": "412232a35fcea9076e437702918b4f683aef5e076d6f88beb95b1af34182e1ce",
+      "18": "412232a35fcea9076e437702918b4f683aef5e076d6f88beb95b1af34182e1ce",
+      "19": "412232a35fcea9076e437702918b4f683aef5e076d6f88beb95b1af34182e1ce",
+      "20": "412232a35fcea9076e437702918b4f683aef5e076d6f88beb95b1af34182e1ce",
+      "21": "412232a35fcea9076e437702918b4f683aef5e076d6f88beb95b1af34182e1ce"
+    }
+  },
+  "derived_jsonl": "work/knowledge/高考分析/GK-SC-2010-response_nodes_vertical_slice.jsonl",
+  "errors": [],
+  "warnings": [
+    "Q14 答题占位处保留孤立字符“Y”，疑为 OCR/水印残片；不静默删除。",
+    "截去题段末尾下一节标题；原始题段保持不变。",
+    "截去题段末尾下一节标题；原始题段保持不变。"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:yuwen:sg-method-gold-record:0.1",
+  "title": "SG-METHOD Gold Annotation Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "gold_id", "deliverable_id", "book_code", "material_type", "annotator_role", "annotator_id", "sealed", "sealed_at", "source_content_sha256", "annotation_sha256", "independent_from_production", "facts", "tasks", "kps", "labels", "claim_evidence", "quotes", "relations"],
+  "properties": {
+    "schema_version": {"const": "sg-method-gold-record-0.1"},
+    "gold_id": {"type": "string", "pattern": "^GOLD-[A-Za-z0-9][A-Za-z0-9._-]+$"},
+    "deliverable_id": {"type": "string", "minLength": 1},
+    "book_code": {"type": "string", "pattern": "^(B1|B2|X1|X2|X3)$"},
+    "material_type": {"type": "string", "minLength": 1},
+    "annotator_role": {"enum": ["annotator_a", "annotator_b", "adjudicator"]},
+    "annotator_id": {"type": "string", "minLength": 1},
+    "sealed": {"type": "boolean"},
+    "sealed_at": {"type": ["string", "null"], "format": "date-time"},
+    "source_content_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "annotation_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "independent_from_production": {"type": "boolean"},
+    "facts": {"type": "array", "items": {"$ref": "#/$defs/fact"}},
+    "tasks": {"type": "array", "items": {"$ref": "#/$defs/task"}},
+    "kps": {"type": "array", "items": {"$ref": "#/$defs/kp"}},
+    "labels": {"type": "array", "items": {"$ref": "#/$defs/label"}},
+    "claim_evidence": {"type": "array", "items": {"$ref": "#/$defs/claimEvidence"}},
+    "quotes": {"type": "array", "items": {"$ref": "#/$defs/quote"}},
+    "relations": {"type": "array", "items": {"$ref": "#/$defs/relation"}},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {
+    "fact": {"type": "object", "additionalProperties": false, "required": ["fact_id", "statement", "source_refs"], "properties": {"fact_id": {"type": "string", "minLength": 1}, "statement": {"type": "string", "minLength": 1}, "source_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true}}},
+    "task": {"type": "object", "additionalProperties": false, "required": ["task_id", "obligation", "source_refs"], "properties": {"task_id": {"type": "string", "minLength": 1}, "obligation": {"type": "string", "minLength": 1}, "source_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true}}},
+    "kp": {"type": "object", "additionalProperties": false, "required": ["gold_kp_id", "core_proposition", "object_action", "scope", "evidence_boundary"], "properties": {"gold_kp_id": {"type": "string", "minLength": 1}, "core_proposition": {"type": "string", "minLength": 1}, "object_action": {"type": "string", "minLength": 1}, "scope": {"type": "string", "minLength": 1}, "evidence_boundary": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true}, "merge_group": {"type": ["string", "null"]}}},
+    "label": {"type": "object", "additionalProperties": false, "required": ["gold_kp_id", "primary_dimension", "knowledge_type", "four_layer"], "properties": {"gold_kp_id": {"type": "string", "minLength": 1}, "primary_dimension": {"type": "string", "minLength": 1}, "knowledge_type": {"type": "string", "minLength": 1}, "four_layer": {"type": "string", "minLength": 1}}},
+    "claimEvidence": {"type": "object", "additionalProperties": false, "required": ["claim_id", "evidence_refs", "supported"], "properties": {"claim_id": {"type": "string", "minLength": 1}, "evidence_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}, "supported": {"type": "boolean"}}},
+    "quote": {"type": "object", "additionalProperties": false, "required": ["quote_id", "quote_text", "locator", "exact_match"], "properties": {"quote_id": {"type": "string", "minLength": 1}, "quote_text": {"type": "string", "minLength": 1}, "locator": {"type": "string", "minLength": 1}, "exact_match": {"type": "boolean"}}},
+    "relation": {"type": "object", "additionalProperties": false, "required": ["relation_id", "source_id", "target_id", "relation_type", "supported"], "properties": {"relation_id": {"type": "string", "minLength": 1}, "source_id": {"type": "string", "minLength": 1}, "target_id": {"type": "string", "minLength": 1}, "relation_type": {"type": "string", "minLength": 1}, "supported": {"type": "boolean"}}}
+  }
+}

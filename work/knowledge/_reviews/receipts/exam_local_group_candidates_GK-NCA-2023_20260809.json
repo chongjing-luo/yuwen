@@ -1,0 +1,52 @@
+{
+  "schema_version": "exam-local-group-candidate-receipt-0.1",
+  "receipt_id": "EXAM-LOCAL-GROUP-CANDIDATES-GK-NCA-2023-20260809",
+  "generated_at": "2026-08-09T12:57:26+08:00",
+  "exam_id": "GK-NCA-2023",
+  "input": {
+    "path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NCA-2023/answers/local_analysis_candidates.jsonl",
+    "sha256": "6187fc8394ff5486f280ddd06b303dc35de9c474ffef78cd08d94d2d46e64ed2"
+  },
+  "output": {
+    "path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NCA-2023/answers/local_analysis_group_candidates.jsonl",
+    "sha256": "8fc41891fa7e42867efdcab3a318e713739f8138cefdc4af963c01a361eeee36",
+    "rows": 22
+  },
+  "group_sources": {
+    "3": [
+      1,
+      2,
+      3
+    ],
+    "6": [
+      4,
+      5,
+      6
+    ],
+    "9": [
+      7,
+      8,
+      9
+    ],
+    "15": [
+      14,
+      15
+    ],
+    "21": [
+      17,
+      18,
+      19,
+      20,
+      21
+    ]
+  },
+  "counts": {
+    "candidate_unverified": 16,
+    "candidate_mixed_analysis": 5,
+    "candidate_writing_artifact": 1
+  },
+  "source_mutation": false,
+  "answer_index_mutation": false,
+  "scoring_status": "not_available_as_official",
+  "mapping_status": "M0 | kp_id=N/A"
+}

@@ -1,0 +1,18 @@
+{
+  "binding_version": "2.0-textbook-eval-1",
+  "deliverable_id": "CARD-X3-U01-02",
+  "artifact_version": "0.2.2",
+  "contract_version": "2.0-textbook",
+  "rubric_interpretation_version": "2.0-textbook-eval-1",
+  "content_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "pre_merge_file_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "claim_register_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "rubric_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+  "observation_manifest_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+  "upstream_snapshot_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+  "batch_manifest_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "validator_run_id": "VAL-20260809-100000+0800",
+  "primary_review": {"role": "primary", "reviewer": "alice", "path": "primary.json", "sha256": "1111111111111111111111111111111111111111111111111111111111111111", "decision": "pass", "total_score": 92, "dimension_scores": {"evidence": 25}, "hard_rejections": [], "p0": 0, "p1": 0, "p2": 0, "sealed_at": "2026-08-09T10:00:00+08:00"},
+  "secondary_review": {"role": "secondary", "reviewer": "bob", "path": "secondary.json", "sha256": "2222222222222222222222222222222222222222222222222222222222222222", "decision": "pass", "total_score": 92, "dimension_scores": {"evidence": 25}, "hard_rejections": [], "p0": 0, "p1": 0, "p2": 0, "sealed_at": "2026-08-09T10:01:00+08:00"},
+  "dg3_decision": "pass"
+}

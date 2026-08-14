@@ -26,3 +26,7 @@ Thumbs.db
 # ---- Caches & temp ----
 /tmp/
 *.log
+
+# ---- Local tool state / raw staging ----
+.zcode/
+work/knowledge/_staging/

@@ -1,0 +1,19 @@
+{
+  "schema_version": "reference-answer-candidate-validation-2010-0.1",
+  "result": "passed",
+  "rows": 5,
+  "source_hashes": {
+    "source.html": "aa5d05978a94649f97ee0d1c6affcc13dd0de9977d5e90b96211c0491e226fc7",
+    "answer_bundle.rar": "c0d5f405cd7a09f1f60e68647ceb4b673a03e7f5ab83c2be6e86cdf491939351",
+    "四川语文答案.doc": "ef71c3873a5d4b1e853a3b5fc679a46018001a9b9eae844ac0f87a0ce43fa527",
+    "answer_source.txt": "738e3399626741700f8de1325d907807a8f83572954cc660d71f0cb4eb7da7df"
+  },
+  "main_index_present": false,
+  "errors": [],
+  "checks": {
+    "partial_coverage": true,
+    "source_hashes": true,
+    "authority_gate": true,
+    "main_index_unchanged_gate": true
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "receipt_id": "RECEIPT-BOOK-X1-G4-20260808",
+  "deliverable_id": "BOOK-X1",
+  "gate": "DG4-MERGE",
+  "merged_at": "2026-08-08T17:22:00+08:00",
+  "artifact_version": "0.2.0",
+  "pre_merge_file_sha256": "82c60292b2c459668da944739b80ba50af4e8a63059dd31f70598091d0627747",
+  "post_merge_file_sha256": "2cd9f4018b043b6073c1d9ed6a6cf965811e50f25983533bc2b06be0e4b48868",
+  "content_change": false,
+  "allowed_diff": ["front_matter.status", "front_matter.reviewers", "ledger.status", "ledger.reviewers", "ledger.owner", "ledger.version", "state_transition"],
+  "review_binding": {"rubric_version":"2.0-textbook","rubric_sha256":"ab9cc53d57834642e66e568824d1c0c53e128953e15b20b4c7bd04aa30610d43","taxonomy_sha256":"13e5e23c45c05359a5c91e360ce8bd71dbf2a841c2c6a72f1adca52bef7cbd4b","primary":{"reviewer":"independent_primary_r1","score":95.5,"decision":"pass","review_sha256":"daebc9355eece587d0101d16dea4c97183a06bccccd270bab2dc5b4a1916484f"},"secondary":{"reviewer":"independent_secondary_book_x1_r1","score":98.0,"decision":"pass","review_sha256":"106488b27dced758b81461c44d4d285e4efa9c3ffe1b797fb416e53e26387ad1"},"score_difference":2.5,"r01_r10":"all 0","p0_p1_p2":"0/0/0"},
+  "validator": {"run_id":"VAL-20260808-172132+0800","report":"work/knowledge/_meta/validation_reports/archive/VAL-20260808-172132+0800.json","report_sha256":"0eb8db8938127a49ba09551fdfea36a4c99f0dc045bf8fda126bb13edd72e3f6","result":"passed","errors":0},
+  "transition":"STATE-20260808-BOOK-X1-G4",
+  "downstream_impact":["TEXTBOOK-LOCK"],
+  "status":"accepted"
+}

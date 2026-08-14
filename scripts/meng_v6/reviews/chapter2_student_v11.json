@@ -1,0 +1,298 @@
+{
+  "schema_version": "1.0",
+  "review_type": "student_reception_activity_chain",
+  "review_version": "v11",
+  "review_scope": {
+    "lesson": "《氓》",
+    "chapter": "第二章",
+    "page_ids": [
+      "N022",
+      "N023",
+      "N024",
+      "N025",
+      "N026",
+      "N027",
+      "N028",
+      "N029",
+      "N030"
+    ],
+    "mode": "independent_read_only_review",
+    "review_date": "2026-08-13",
+    "timezone": "Asia/Shanghai"
+  },
+  "candidate": {
+    "pptx": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_2/pptx/04_氓_V6第二章课堂课件.pptx",
+      "sha256": "4b5c41594c6727c0199f6584b43cccc09397c92de609ffccb4d689c26db8c0d5"
+    },
+    "snapshot": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_2/package/06_氓_V6第二章课程数据快照.json",
+      "sha256": "54a6e72cb90bc6fdd4457d4f1f491e7ebf74e002c1c0ca02d15a8314b249fd57"
+    },
+    "rendered_markitdown": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_2/pptx/rendered_v11/markitdown.txt",
+      "sha256": "ca0654de8e4374e08a6d55c685a91cec43f471b6811423ab9f17fbdf13533f4f"
+    },
+    "rendered_slides": {
+      "directory": "work/备课/选择性必修下册/氓/_v6_stage/chapter_2/pptx/rendered_v11",
+      "inspected": [
+        "slide-1.png",
+        "slide-2.png",
+        "slide-3.png",
+        "slide-4.png",
+        "slide-5.png",
+        "slide-6.png",
+        "slide-7.png",
+        "slide-8.png",
+        "slide-9.png"
+      ]
+    },
+    "supporting_channels": [
+      "work/备课/选择性必修下册/氓/_v6_stage/chapter_2/package/03_氓_V6第二章学习单.md",
+      "work/备课/选择性必修下册/氓/_v6_stage/chapter_2/package/04A_氓_V6第二章逐页无生试讲稿.md"
+    ]
+  },
+  "review_method": {
+    "perspective": "A student must be able to understand what to do at first glance, produce a visible artifact before calibration, receive bounded peer feedback, revise from text evidence, and reuse the artifact later in the chapter.",
+    "checks": [
+      "first-glance task clarity",
+      "student action and visible artifact",
+      "peer-feedback boundary",
+      "revision opportunity",
+      "later artifact reuse",
+      "teacher answer leakage",
+      "reasonable student counterexamples",
+      "authentic emotion and participation",
+      "cross-channel consistency",
+      "whole-chapter reconstruction"
+    ],
+    "claim_boundary": "scripted_and_rendered_not_observed_in_a_live_class"
+  },
+  "page_findings": [
+    {
+      "page_id": "N022",
+      "previous_input": "N021章末旁白及第一章确定婚期的信息。",
+      "first_glance_task_clarity": "PASS：屏幕先呈现第二章全文，再要求遇到人物动作轻点、读后写三个最确定的动作；任务入口短而明确。",
+      "student_does_says_writes_draws": "学生完整朗读、以指尖轻点动作、独立写出三个动作并按诗中先后排列。",
+      "visible_artifact": "学习单中的章首三个动作及换笔调序痕迹。",
+      "peer_feedback_boundary": "同桌只检查先后是否倒置，不补完整行动链；有分歧共同回到诗句。",
+      "student_revision": "作者依据原诗换笔调序并重读。",
+      "real_later_use": "N029明确取回这三个动作，与七个关键节点建立联系；未进入七词的合理动作仍被保留。",
+      "teacher_answer_leak": "PASS：屏幕只给类别级提示‘带着感受的动作也可以写’，未展示望、泣、笑等示例答案。",
+      "reasonable_counterexample": "学生写‘望、泣、笑’时，脚本明确承认这些词本身都是动作；只要来自原句且先后正确就保留。",
+      "authentic_emotion_and_participation": "情绪动作不被强行剥离为抽象情绪标签，学生可从自己最确定的三个动作进入全章。",
+      "language_quality": "屏幕与学习单用语简洁；教师补充‘不必先把动作和感受硬分开’，消除分类焦虑。",
+      "first_person_reconstruction": "我先读完整章，自己抓住三个动作，并留下可供章末扩展的初始行动链。",
+      "severity": null,
+      "status": "PASS"
+    },
+    {
+      "page_id": "N023",
+      "previous_input": "N022留下的等待动作脉冲，尤其是‘乘/望’一类章首动作。",
+      "first_glance_task_clarity": "PASS：屏幕用人物站位、视线方向和‘目光/行走路线’三个空白问题界定任务。",
+      "student_does_says_writes_draws": "学生先口译，再画由人物所在处指向复关的视线并判断图示类型。",
+      "visible_artifact": "学习单上的站位、垝垣、目光指向及换笔改图。",
+      "peer_feedback_boundary": "同桌只核对‘乘’与‘望’，判断画的是目光还是行走路线。",
+      "student_revision": "若把人物留在墙下或画到复关，作者回到‘乘/望’换笔修图并沿线回读。",
+      "real_later_use": "该视线条件进入N024的‘不见/既见’对照，并在N030被压回连贯旁白。",
+      "teacher_answer_leak": "PASS：屏幕没有完成的站位图、地图或箭头；定点释义只提供完成空间关系所需词义。",
+      "reasonable_counterexample": "对诗中未给出的村落方位、距离不作实化；合理的不确定性得到保护。",
+      "authentic_emotion_and_participation": "由身体站位和目光动作进入等待，而非先贴‘焦急’标签。",
+      "language_quality": "‘她是在走，还是在望’能直接把误画带回原词。",
+      "first_person_reconstruction": "我能用一条视线说明她站在哪里、望向哪里，并用原句核对。",
+      "severity": null,
+      "status": "PASS"
+    },
+    {
+      "page_id": "N024",
+      "previous_input": "N023形成的视线关系和‘望’的动作理解。",
+      "first_glance_task_clarity": "PASS：两句上下并列，学生先自然口译，再独立填视线条件、人物动作、语势原词三组对照。",
+      "student_does_says_writes_draws": "学生口译两句、抽取原词、纵向对齐，并遮住情绪标签用诗句说明转折。",
+      "visible_artifact": "学习单三组原词对照、两句自然话和原词转折表述。",
+      "peer_feedback_boundary": "同桌不报整套答案，只指出哪一格找不到原词。",
+      "student_revision": "作者换笔补回缺失原词，再连读两句。",
+      "real_later_use": "三组对照为N025朗读谱提供原词依据，并在N030整章复述中承担‘声音怎样转’。",
+      "teacher_answer_leak": "PASS：屏幕保持空格；教师只校准必要词义，不替学生完成三组配对。",
+      "reasonable_counterexample": "学生若只说‘伤心/开心’，可保留其感受，但必须用不见、既见、涟涟、载等原词重新站稳。",
+      "authentic_emotion_and_participation": "情绪体验被文本条件和动作支撑，而非被统一成教师标签。",
+      "language_quality": "‘遮住标签仍能不能说清’是清晰、可执行的证据标准。",
+      "first_person_reconstruction": "我能从两句原词中看见视线、动作和语势怎样共同转向。",
+      "severity": null,
+      "status": "PASS"
+    },
+    {
+      "page_id": "N025",
+      "previous_input": "N024学生自己完成的两句原词对照。",
+      "first_glance_task_clarity": "PASS：‘先写朗读谱，再开口’，屏幕直接要求慢、快、重音/停顿及至少一处原词理由。",
+      "student_does_says_writes_draws": "学生静默设计朗读谱，写依据，轻声试读并检查纸面标记能否真正发声。",
+      "visible_artifact": "个体化快慢、重音、停顿和原词理由。",
+      "peer_feedback_boundary": "本页保持个人生成；提前完成者只检查依据，不向同伴示范答案。",
+      "student_revision": "若标记无法读出或理由只是泛化情绪，学生先修改朗读谱。",
+      "real_later_use": "朗读谱在N026接受盲听检验，未解决项在N030再次验证。",
+      "teacher_answer_leak": "PASS：教师不范读、不请展示，也不设唯一标准读法。",
+      "reasonable_counterexample": "不同速度、停顿和重音方案均可成立，只要能由原词解释并被本人读出。",
+      "authentic_emotion_and_participation": "声音方案由每个学生自己生成，允许真实差异。",
+      "language_quality": "任务语言把主观朗读转为可讨论、可验证的文本选择。",
+      "first_person_reconstruction": "我先决定怎样让转折发声，并写出自己的原词依据。",
+      "severity": null,
+      "status": "PASS"
+    },
+    {
+      "page_id": "N026",
+      "previous_input": "N025个人朗读谱及试读结果。",
+      "first_glance_task_clarity": "PASS：屏幕以读者、闭眼听者、只改一处、第二遍勾选四步清晰组织双人活动。",
+      "student_does_says_writes_draws": "读者按谱连读；听者不看谱，只定位听到变化的原词和未听清处；读者只改一项后再读。",
+      "visible_artifact": "听者回执、单项改动、第二遍‘更清楚/仍需调整’和可选‘△待调整’。",
+      "peer_feedback_boundary": "听者报告可感知的声音位置，不评价笼统的‘有感情/没感情’，也不重写读者方案。",
+      "student_revision": "读者在速度、停顿、重音中只改一处，保留前后可比较痕迹。",
+      "real_later_use": "‘△待调整’不是假闭环；N030完整重读时明确再试并允许继续保留。",
+      "teacher_answer_leak": "PASS：教师不提供示范读法，反馈来自闭眼听者的真实听觉证据。",
+      "reasonable_counterexample": "第二遍仍不清楚是允许的真实结果，不要求学生勾选成功。",
+      "authentic_emotion_and_participation": "活动检验文字是否经声音被同伴听见，而不是表演是否符合教师预设。",
+      "language_quality": "‘只改一处’和‘不必假装成功’建立了可信的迭代边界。",
+      "first_person_reconstruction": "我能从听者回执知道自己的声音转折是否可听见，并据此做一次有限修改。",
+      "severity": null,
+      "status": "PASS"
+    },
+    {
+      "page_id": "N027",
+      "previous_input": "N026留下的声音转折与待调整记录；叙事继续进入卜筮。",
+      "first_glance_task_clarity": "PASS：屏幕先给四个必要文化词义，再要求口译并分写‘此次占问告诉什么/不能替后来什么保证’。",
+      "student_does_says_writes_draws": "学生先写自然话和两句时间边界，经历真实四十五秒静默，再接受同桌越界词核查。",
+      "visible_artifact": "口译、两句边界、同桌圈出的越界词以及另一颜色的修订。",
+      "peer_feedback_boundary": "同桌只圈‘一定、保证、证明’等把时间推远的词，不代写两格答案。",
+      "student_revision": "学生先自行删改越界表达，教师后校准后仍保留前稿并用另一颜色修订。",
+      "real_later_use": "N030复述‘婚事怎样推进’时调用本页的有限叙事作用，并由分支防止把占问说成幸福原因。",
+      "teacher_answer_leak": "PASS：四词文化支架先行，但完整解释和两格边界均在学生生成、互查之后才校准。",
+      "reasonable_counterexample": "学生可保留现代批判，但先要说明卜筮在当时婚前程序中的叙事作用。",
+      "authentic_emotion_and_participation": "文化知识被控制在理解原句所需范围，学生先思考而非听一段背景讲座。",
+      "language_quality": "‘此次’与‘后来’形成清楚的时间边界，能抑制宿命化误读。",
+      "first_person_reconstruction": "我先说明这次占问的结果，再限定它不能替长期相处作保证。",
+      "severity": null,
+      "status": "PASS"
+    },
+    {
+      "page_id": "N028",
+      "previous_input": "N027明确的婚前程序推进及其解释边界。",
+      "first_glance_task_clarity": "PASS：屏幕拆出‘以尔/车/来’与‘以我/贿/迁’，并用四个主体—物件问题引导。",
+      "student_does_says_writes_draws": "学生拆句填写主体、物件、动作，双人对读后再合回原句。",
+      "visible_artifact": "学习单两栏中的主体、物件、动作和换笔修订。",
+      "peer_feedback_boundary": "听者只检查车、嫁妆、迁移主体是否错位。",
+      "student_revision": "错一项即回到‘以尔/以我’换笔，而非只接受笼统的‘他们结婚了’。",
+      "real_later_use": "‘来/迁’动作进入N029行动链保留原则，并在N030承担婚事推进结点。",
+      "teacher_answer_leak": "PASS：屏幕不出现完成译文；‘贿/迁’释义是完成拆句所需的最低支架。",
+      "reasonable_counterexample": "若学生以‘结婚’概括，脚本要求补回车、嫁妆和迁移动作，而非否定其整体理解。",
+      "authentic_emotion_and_participation": "双人对读让两方行动关系可听见，避免单向释义。",
+      "language_quality": "主体—物件—动作问题具体，能直接暴露所有权和迁移方向误读。",
+      "first_person_reconstruction": "我能分清谁带车来、谁带嫁妆迁，再把两方动作合回诗句。",
+      "severity": null,
+      "status": "PASS"
+    },
+    {
+      "page_id": "N029",
+      "previous_input": "N022章首三动作以及N023—N028逐步形成的空间、声音、卜筮和迁嫁理解。",
+      "first_glance_task_clarity": "PASS：屏幕先要求写回章首三步、圈出能对应项并保留未出现动作，再合书独立编号；只有排序完成后才在自己的序列中找声音转折。",
+      "student_does_says_writes_draws": "学生取回旧记录、保留乘/来等合理动作、独立排列七个乱序节点、在自己的序列中圈转折并连住相邻节点。",
+      "visible_artifact": "章首三步、七词编号、一道相邻节点转折线、同桌断点提示和换笔修订。",
+      "peer_feedback_boundary": "同桌只指出顺序断点或所连两项是否相邻，不报完整顺序，也不说正确转折词。",
+      "student_revision": "作者翻诗只定位断点，换笔调序或移动转折线，再合书连说。",
+      "real_later_use": "本页把散点活动接回完整叙事顺序，直接为N030整章旁白做检索准备。",
+      "teacher_answer_leak": "PASS：屏幕以真正乱序展示七词；未预摆正确相对顺序。转折定位严格后置于学生独立排序，教师和同桌均受禁止报答案的边界约束。",
+      "reasonable_counterexample": "章首若写‘乘、来、迁’等，七词缺少‘乘/来’也不得为凑词而删除；完全空白者只获得三处定位支架。",
+      "authentic_emotion_and_participation": "学生先面对自己的记忆和自己的排序，再通过有限反馈返诗修订，认知责任保持在学生一侧。",
+      "language_quality": "‘排完以后，只看你自己的序列’明确切开排序与转折识别两个阶段。",
+      "first_person_reconstruction": "我先自己把七个节点排好，再只在自己的序列中寻找声音转向，并用原诗修复断点。",
+      "severity": null,
+      "status": "PASS"
+    },
+    {
+      "page_id": "N030",
+      "previous_input": "N029复位后的完整行动链，以及N026可能仍标‘△待调整’的朗读谱。",
+      "first_glance_task_clarity": "PASS：屏幕呈现全文，并把终局任务压缩为完整重读、合书三十秒讲三项、回诗补说和一句章意。",
+      "student_does_says_writes_draws": "学生完整重读；待调整者再次试读声音转轴；随后合书讲‘怎样等/怎样转/怎样推进’，返诗补漏并写一句章意。",
+      "visible_artifact": "N026复验勾选或保留的‘待调整’、听者遗漏提醒、补说结果和一句章意。",
+      "peer_feedback_boundary": "同桌只勾声音是否更清楚或保留待调整，并只按三项检查旁白遗漏。",
+      "student_revision": "遗漏者回到相应原句补说；朗读仍未解决时可保留待调整，不制造虚假成功。",
+      "real_later_use": "整章产物收束为可合书复述的行动—声音—婚事链，并用‘桑叶’自然转入下一章。",
+      "teacher_answer_leak": "PASS：终局屏幕只给三项检索框架，不给完成旁白或章意。",
+      "reasonable_counterexample": "旁白若堆活动名或把占卜说成幸福保证，脚本均要求回到人物行动和时间边界；朗读未改善仍可诚实保留。",
+      "authentic_emotion_and_participation": "学生以自己的声音和旁白重新拥有整章，而非复述教师结论。",
+      "language_quality": "三项提示既约束完整性，又保留学生措辞空间。",
+      "first_person_reconstruction": "我能重读全章、合书讲清等待—声音转折—婚事推进，并从原句补回遗漏。",
+      "severity": "P3",
+      "status": "PASS_WITH_P3_OBSERVATION"
+    }
+  ],
+  "special_reverification": {
+    "N022_emotional_actions": {
+      "result": "PASS",
+      "evidence": "课件与学习单均只显示类别级提示‘带着感受的动作也可以写’，未显示例词；教师脚本和快照分支明确保护望、泣、笑等来自原句且顺序正确的合理动作。"
+    },
+    "N029_sort_before_turn": {
+      "result": "PASS",
+      "evidence": "课件写明‘排序完成后，再找声音转折’及‘在自己的七词序列中’；教师要求先独立编号，再圈相邻节点，且禁止同桌报告完整顺序或正确转折词。"
+    },
+    "N026_to_N030_pending_path": {
+      "result": "PASS",
+      "evidence": "N026允许第二遍仍标‘△待调整’；N030完整重读时明确再次验证，同桌可勾更清楚或继续保留待调整。"
+    },
+    "N027_generate_before_calibrate": {
+      "result": "PASS",
+      "evidence": "教师先给四词最低支架，随后真实静默四十五秒，不报两格答案；学生口译、写边界、互查和自改之后，教师才校准，且要求保留前稿。"
+    }
+  },
+  "activity_chain_assessment": {
+    "chain": [
+      "N022完整朗读并抓取三个动作",
+      "N023把‘乘—望’转成可核对的视线",
+      "N024从原词建立不见/既见对照",
+      "N025把对照写成个体朗读谱",
+      "N026用盲听回执检验并有限修订声音",
+      "N027先生成后校准卜筮的时间边界",
+      "N028拆清迎娶双方的主体—物件—动作",
+      "N029取回章首三步、独立复位七节点并修复断点",
+      "N030重读、合书复述、返诗补漏并写章意"
+    ],
+    "artifact_flow": "每页都有学生可见产物；关键产物至少发生一次反馈—修订，章首动作、声音待调整和各局部理解均在后页被真实取回。",
+    "answer_ownership": "PASS：学生在教师校准或同伴反馈前完成核心生成；同伴反馈被限制为定位缺口或可感知结果。",
+    "revision_integrity": "PASS：换笔、保留前稿、只改一处和允许待调整共同保存学习轨迹。",
+    "whole_chapter_coherence": "PASS：活动没有停留在九张独立任务卡，N029和N030完成从局部证据到全章连续叙述的回收。",
+    "result": "PASS"
+  },
+  "cross_channel_consistency": {
+    "result": "PASS",
+    "details": [
+      "课件、markitdown文本、学习单、逐页试讲稿和课程数据快照在九页任务顺序与核心产物上相符。",
+      "N022屏幕和学习单均使用类别级提示；合理情绪动作的保护仅在教师边界中展开，没有变成学生可见答案。",
+      "N029课件、学习单、脚本和快照均将独立排序置于声音转折定位之前，并保留七词之外的原诗动作。",
+      "N026的待调整记录在N030脚本中被明确读取，且不强制闭环成功。",
+      "N027的教师校准明确后置于学生生成、静默等待、同伴圈词和学生自改。",
+      "九张v11渲染图均已逐张检查，没有发现与脚本冲突的完成答案、错误顺序或可见文本截断。"
+    ]
+  },
+  "continuous_chapter_reconstruction": {
+    "result": "PASS",
+    "student_reconstruction": "她登上残墙远望，因不见而泣，既见而笑言；卜筮显示此次无不祥，婚前程序继续，男子以车来，她带嫁妆迁嫁。",
+    "why_it_is_student_owned": "该连续叙述不是屏幕成品；学生须从章首动作、空间图、两句对照、朗读回执、卜筮边界和双方行动中自行检索，并在N029排序和N030合书旁白中重建。"
+  },
+  "observations": [
+    {
+      "id": "C2-V11-P3-N030-TIMEBOX-FIDELITY",
+      "priority": "P3",
+      "page_id": "N030",
+      "finding": "四分钟脚本的显式分配为45+60+35+55+45=240秒，正好耗尽整页时长；同时要容纳待调整朗读的再次验证、双人三十秒旁白、反馈、返诗补说和一句章意，现场转场或个别学生检索稍慢就可能压缩终局修订。",
+      "impact": "不会在设计层面阻断活动链，但可能影响真实课堂中N026待调整路径和N030补说/章意是否按稿完整发生。",
+      "verification": "通过真实排演观察四分钟内各环节是否全部发生，并记录是否需要压缩指令或增加缓冲。",
+      "classification_reason": "书面链条完整且秒数算术成立；风险只能由课堂排演验证，因此为P3而非P2。"
+    }
+  ],
+  "priority_counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 1
+  },
+  "verdict": "PASS",
+  "verdict_rationale": "v11已形成学生先生成、同伴有限反馈、返诗修订、后续真实取回的完整活动链。N022和N029的先前敏感边界在屏幕、学习单、脚本与快照间一致且不泄露答案；N026—N030与N027的延迟校准链也闭合。唯一保留项是N030现场时长忠实度的P3排演风险。",
+  "claim_boundary": "本结论仅覆盖冻结候选文件、支持文本与v11静态渲染所能证明的学生接收和活动链设计；未声称已在真实课堂观察到时间、参与率或学习成效。"
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0-textbook-eval-1",
+  "deliverable_id": "<DELIVERABLE-ID>",
+  "artifact_version": "0.0.0",
+  "content_sha256": "<64-lowercase-hex>",
+  "pre_merge_file_sha256": "<64-lowercase-hex>",
+  "post_merge_file_sha256": "<64-lowercase-hex>",
+  "content_sha_unchanged": true,
+  "whitelist_diff": [],
+  "review_refs": ["<primary-review>", "<secondary-review>"],
+  "transition_id": "TR-<id>",
+  "validator_run_id": "VAL-YYYYMMDD-HHMMSS+0800",
+  "impact_items": []
+}

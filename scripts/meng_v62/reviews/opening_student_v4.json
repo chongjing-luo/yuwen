@@ -1,0 +1,251 @@
+{
+  "schema_version": "1.0",
+  "review_version": "opening_student_v4",
+  "review_type": "independent_read_only_full_student_reception_rereview",
+  "review_date": "2026-08-13",
+  "reviewer_role": "普通高中学生实际接收视角；只使用V4课堂此前真实可见、可听、可拿到的信息",
+  "scope": "V6.2导入V4 O01-O09，33分钟，含PPT、备注、03A/03B/03C真实分发顺序、教学母版、试讲稿、快照及冻结渲染",
+  "independence_statement": "把V4作为新候选全量复审；不自动继承V3结论。先核验manifest及20个文件身份，再按学生真实接收顺序重放33分钟，并复核V3阻断项及视觉回归。",
+  "read_only_statement": "未修改教学文件、源码、PPTX、学习单、快照或渲染；未运行构建、测试或重渲染。唯一写入为本报告。",
+  "reviewed_manifest": {
+    "path": "work/备课/选择性必修下册/氓/_v62_stage/opening/reviews/review_input_v4.json",
+    "reviewed_manifest_sha256": "29a5b1ce3a6f7d06f64db035531ac5e62e0e65932796d629f1063aad580dcde5",
+    "expected_manifest_sha256": "29a5b1ce3a6f7d06f64db035531ac5e62e0e65932796d629f1063aad580dcde5",
+    "identity_status": "pass",
+    "file_count": 20,
+    "all_hashes_and_sizes_match": true
+  },
+  "reviewed_hashes": [
+    {"role":"single_source","path":"scripts/meng_v62/content/opening.js","sha256":"8a341d498944315f8cea7c21de5dc4f11d1611db38b7f95d5f57564cc9c62c6b","bytes":37396,"verified":true},
+    {"role":"teaching_master","path":"work/备课/选择性必修下册/氓/_v62_stage/opening/package/02_氓_V62导入教学母版.md","sha256":"f7600fdfd204841b644da035c7033ba3471909d15c3cbdd6d3bbf3a611dbcb79","bytes":16948,"verified":true},
+    {"role":"literature_recall_sheet_O01","path":"work/备课/选择性必修下册/氓/_v62_stage/opening/package/03A_爱情与婚姻文学回忆单_O01发.md","sha256":"d3d63d6fb3823da4bd1d97d6a1586ff7fd2411006d721ff9b8402b8ef2181615","bytes":593,"verified":true},
+    {"role":"initial_response_card_O07","path":"work/备课/选择性必修下册/氓/_v62_stage/opening/package/03B_氓_V62初听卡_O07发.md","sha256":"d04db42993d4d7cd8d946d2b8f711fab11118236bea85ddc7907f924e4acdf5c","bytes":520,"verified":true},
+    {"role":"question_bookmark_O08","path":"work/备课/选择性必修下册/氓/_v62_stage/opening/package/03C_氓_V62三问阅读书签_O08发.md","sha256":"8e30ce7037f2c164185b0a37cba6cebbecbea6aa9829d6773608c224554a33b3","bytes":686,"verified":true},
+    {"role":"rehearsal_script","path":"work/备课/选择性必修下册/氓/_v62_stage/opening/package/04A_氓_V62导入逐页无生试讲稿.md","sha256":"a1e2127af214ff2c8468a0033c09712e6bab60a57e18b108f16c9ddca811f6af","bytes":17051,"verified":true},
+    {"role":"data_snapshot","path":"work/备课/选择性必修下册/氓/_v62_stage/opening/package/06_氓_V62导入课程数据快照.json","sha256":"478a6094a7e236da66bd57c42771a168e575bc8d05b9182c05f183d240aa4692","bytes":41509,"verified":true},
+    {"role":"pptx","path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/04_氓_V62导入课堂课件.pptx","sha256":"4c0573df3560734c4c8e4b0c0f187de524ecf54937fa8e9c0be568d970d24dd9","bytes":53540,"verified":true},
+    {"role":"pptx_text_and_notes","path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/markitdown_v4.txt","sha256":"3394bf5142648c46cdb61961ab68dbf01831011d4e1f9417221be7772f2e2fe3","bytes":23707,"verified":true},
+    {"role":"rendered_pdf","path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v4/04_氓_V62导入课堂课件.pdf","sha256":"795f0a7031e57332b8fca024d1e67c16c14315eaa364a38e928b50ca2c039cef","bytes":140749,"verified":true},
+    {"role":"visual_contact_sheet","path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v4/contact.jpg","sha256":"6328fbb6c5344485083a75e66c13b138656ab00325605042d3ebf38704e3ba5e","bytes":151378,"verified":true},
+    {"role":"rendered_slide_1","path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v4/slide-1.png","sha256":"cf8ce78bb8f036f78c1b5a4da2d8f189608effd85c1af9f661ad2f46216a8206","bytes":77342,"verified":true},
+    {"role":"rendered_slide_2","path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v4/slide-2.png","sha256":"ea26335765c9e73c4397a22e009362f7ff54cd4a2d43cc3d70714974f5afecfc","bytes":74014,"verified":true},
+    {"role":"rendered_slide_3","path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v4/slide-3.png","sha256":"909e7f0dc72b57740bf8d80840a664c17147ea5ab665d7d85fb597d2bcb3f029","bytes":98295,"verified":true},
+    {"role":"rendered_slide_4","path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v4/slide-4.png","sha256":"427d98d86030538734a176c42d94f44388bdee2003c8225da3e0534ad653bc71","bytes":37043,"verified":true},
+    {"role":"rendered_slide_5","path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v4/slide-5.png","sha256":"791ac432602e9546efe536eca7838608feea63d826cbeb924b3cc33439a845c1","bytes":227837,"verified":true},
+    {"role":"rendered_slide_6","path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v4/slide-6.png","sha256":"2c92d43850ef7564178a607f7e47a411fcfd2a05127d08b88d47e8df0a8569f6","bytes":236871,"verified":true},
+    {"role":"rendered_slide_7","path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v4/slide-7.png","sha256":"2c76ad65e6f5fad82095fd8244905c4eb7498139ca236210b34d3302fc84d167","bytes":54971,"verified":true},
+    {"role":"rendered_slide_8","path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v4/slide-8.png","sha256":"05ad9d31b392212f55dd58f9e1bd63fb2f1102b8569446ef9d60675cae3c868c","bytes":105017,"verified":true},
+    {"role":"rendered_slide_9","path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v4/slide-9.png","sha256":"6ea55459fa1551b4d4aaaebb92da454d54c0a5ce8eb6060d89b85ce8ec194819","bytes":132993,"verified":true}
+  ],
+  "distribution_sequence_verified": [
+    "O01只发03A爱情与婚姻文学回忆单；该纸无《氓》题名、三问、出处链或‘女子回望’",
+    "O01-O04学生只持有03A；O04屏幕首次揭示《氓》",
+    "O05-O06连续完整听读六章；此前未出现三问或悲剧结论",
+    "O07完整听读后才发03B初听卡；学生先写真实个人反应，教师将两三个真实关键词留在黑板右侧",
+    "O08开始仍停留O07并逐项引用真实学生文字；引用后才切到O08，首次发03C三问书签",
+    "O09出处链与讲述者答案不在任何先发纸张上；学生此时才写入教材"
+  ],
+  "prior_blocker_reverification": {
+    "premature_title_and_O09_answer_leak": {
+      "status": "closed",
+      "evidence": "O01发下的03A已改为独立文学回忆单，标题和正文均无《氓》、三问、出处链或‘女子回望’；03B只在O07发初听反应，03C只在O08发三问，O09答案从未预印。"
+    },
+    "three_questions_after_complete_listening_and_personal_response": {
+      "status": "closed",
+      "evidence": "O05-O06完成六章整体听读；O07完成个人书写、同桌表达与真实关键词留板；O08先引用这些真实文字，之后才切页并首次发03C三问。"
+    },
+    "O07_real_text_immediately_reused": {
+      "status": "closed",
+      "evidence": "O08开场明确仍停O07，教师只引用刚才黑板右侧的真实学生文字，逐项指回后才切页；学生产物在下一页开头即时后用。"
+    },
+    "O09_source_chain_narrator_semantics_and_visual_fit": {
+      "status": "closed",
+      "evidence": "《诗经》→风→《卫风》→《氓》的出处链与下方‘一位女子，用第一人称回望自己的婚姻’语义分区清楚；冻结V4原图中绿色‘风’已垂直居中，上下留白安全，无贴压边框、断词或误连。"
+    }
+  },
+  "reception_trace": [
+    {
+      "page_id": "O01",
+      "minutes": 3,
+      "first_glance": "屏幕与刚发的03A都是无新课题名的开放回忆表，不预告《氓》或后续答案。",
+      "actual_action": "独立回忆爱情婚姻文学并写一句自然话。",
+      "participation": "人人有两分钟个人生成；想不起可翻目录或先留空。",
+      "teacher_synthesis": "本页不归纳。",
+      "premature_analysis_or_leak": "无。",
+      "return_to_story": "从自己的文学记忆进入相遇、共同生活与关系变化。",
+      "artifact_and_reuse": "个人清单在O02真实调用。",
+      "attention_experience": "低压、入口清楚，材料与教师口令一致。",
+      "severity": "PASS",
+      "disposition": "keep"
+    },
+    {
+      "page_id": "O02",
+      "minutes": 12,
+      "first_glance": "极简句式《____》写了____，无卡片规则或概念分类。",
+      "actual_action": "按固定座位逐人约十秒说一句，听到新内容补一项。",
+      "participation": "不是自愿举手或代表制；确实无内容可体面说‘这一轮我先听’。",
+      "teacher_synthesis": "只记录原话，不提前分类。",
+      "premature_analysis_or_leak": "无。",
+      "return_to_story": "听见多种人物、处境和结局。",
+      "artifact_and_reuse": "黑板文学长卷在O03逐条引用。",
+      "attention_experience": "动作清楚；十分钟全班接龙的后半注意力和总时长需试教观察。",
+      "severity": "P3",
+      "disposition": "keep",
+      "pilot_observation": "记录真实总时长、说‘先听’人数和后半补写率。"
+    },
+    {
+      "page_id": "O03",
+      "minutes": 4,
+      "first_glance": "先看现场黑板；教师完成真实归纳后才切出‘从相遇，走进共同生活’。",
+      "actual_action": "核对教师引用的现场作品与原话，可指出说窄处。",
+      "participation": "人人可核对，不强迫制造异议。",
+      "teacher_synthesis": "必须引用至少三处现场篇名与原话，抽象责任在教师。",
+      "premature_analysis_or_leak": "无；归纳发生在学生材料生成之后。",
+      "return_to_story": "从相遇自然走向共同生活和一位女子的婚姻。",
+      "artifact_and_reuse": "主题谱在O04立即承接。",
+      "attention_experience": "由逐人说转入教师整理，节奏自然；真实性取决于现场引用纪律。",
+      "severity": "P3",
+      "disposition": "keep",
+      "pilot_observation": "保留归纳逐条指回现场原话及现场改词证据。"
+    },
+    {
+      "page_id": "O04",
+      "minutes": 1,
+      "first_glance": "纯题名《氓》、读音和出处形成真实的第一次揭题停顿。",
+      "actual_action": "注音、翻书、定位第一句。",
+      "participation": "人人完成低门槛定位。",
+      "teacher_synthesis": "只承接主题谱，不讲结局。",
+      "premature_analysis_or_leak": "无；此前学生渠道未出现《氓》题名。",
+      "return_to_story": "把公共文学回忆聚拢到新的故事。",
+      "artifact_and_reuse": "注音与第一句定位在O05立即调用。",
+      "attention_experience": "一页一事，停顿明确。",
+      "severity": "PASS",
+      "disposition": "keep"
+    },
+    {
+      "page_id": "O05",
+      "minutes": 3,
+      "first_glance": "第一至第三章全文和‘眼随声走’，没有三问或悲剧标签。",
+      "actual_action": "连续听读，只在教材某句旁点一点或画问号。",
+      "participation": "人人有个人听读入口；走神可从行首光点重新进入。",
+      "teacher_synthesis": "不总结、不解释。",
+      "premature_analysis_or_leak": "无。",
+      "return_to_story": "开放听见初见、等待、迁嫁和劝诫。",
+      "artifact_and_reuse": "前三章记号在O07转成初听文字。",
+      "attention_experience": "原文清晰但文言密度高，跟读掉队率需试教。",
+      "severity": "P3",
+      "disposition": "keep",
+      "pilot_observation": "记录掉队与借助光点重新进入的比例。"
+    },
+    {
+      "page_id": "O06",
+      "minutes": 3,
+      "first_glance": "第四至第六章接续前页，原诗保持主视觉。",
+      "actual_action": "一直听到末句，静默十五秒后确认停顿或诚实留空。",
+      "participation": "人人听读并保留个人反应；立即评论被暂缓。",
+      "teacher_synthesis": "末句后不讲主题。",
+      "premature_analysis_or_leak": "无。",
+      "return_to_story": "第一次从初见完整听到‘亦已焉哉’。",
+      "artifact_and_reuse": "六章停顿在O07立即书写。",
+      "attention_experience": "故事持续推进；跨页和生词密度仍需观察。",
+      "severity": "P3",
+      "disposition": "keep",
+      "pilot_observation": "记录后半程跟读持续度和末句后真实停顿。"
+    },
+    {
+      "page_id": "O07",
+      "minutes": 3,
+      "first_glance": "大留白、一处引句和‘我看见/我听见/我想问’，不见标准答案。",
+      "actual_action": "此时才收到03B；抄一句、写一句自然话，同桌各说一次，教师只留两三个真实关键词。",
+      "participation": "每人有书面和同桌口头入口；‘尚未找到’或只写情绪也可。",
+      "teacher_synthesis": "不作主题归纳，只保存真实文字。",
+      "premature_analysis_or_leak": "无。",
+      "return_to_story": "保存第一次遇见女子时被哪一句停住。",
+      "artifact_and_reuse": "初听卡与黑板关键词在O08开头立即逐项引用。",
+      "attention_experience": "完整听读后回到个人表达，节奏自然；真实空白率与表达类型需试教。",
+      "severity": "P3",
+      "disposition": "keep",
+      "pilot_observation": "记录真实空白率、反应类型和留板词来源。"
+    },
+    {
+      "page_id": "O08",
+      "minutes": 2,
+      "first_glance": "实际先仍看O07与黑板真实文字；教师引用完才切到三问并首次发03C。",
+      "actual_action": "核对引用确来自同学，再保存三问；此刻不要求完成答案。",
+      "participation": "人人保存书签；抢答只作为可撤回的初步判断。",
+      "teacher_synthesis": "先逐项引用真实初听文字，不补造学生答案。",
+      "premature_analysis_or_leak": "无；三问发生在整体接收与个人回应之后。",
+      "return_to_story": "三问分别追踪经历、具体生活与关系变化。",
+      "artifact_and_reuse": "03C成为后续六章细读书签，O07产物的即时后用已经闭合。",
+      "attention_experience": "两分钟承上启下，负荷可控；执行效果依赖教师先引用后切页的纪律。",
+      "severity": "P3",
+      "disposition": "keep",
+      "pilot_observation": "核对真实学生语言引用率及切页、发纸顺序。"
+    },
+    {
+      "page_id": "O09",
+      "minutes": 2,
+      "first_glance": "出处链《诗经》→风→《卫风》→《氓》与下方讲述者区域语义分开，节点文字全部居中并留有安全内边距。",
+      "actual_action": "此时才在教材写出处链与女子回望，两名学生分别复述后立即进入第一章。",
+      "participation": "人人记录，两人复述，全班只补遗漏。",
+      "teacher_synthesis": "只做最低身份校准，不扩展文学史。",
+      "premature_analysis_or_leak": "无；答案未在先发材料出现。",
+      "return_to_story": "立即回到女子最初见男子。",
+      "artifact_and_reuse": "教材题名旁的出处链与女子回望在第一章立即调用。",
+      "attention_experience": "信息量适中，语义、断行和视觉均稳定。",
+      "severity": "PASS",
+      "disposition": "keep"
+    }
+  ],
+  "thirty_three_minute_experience": {
+    "verdict": "structurally_natural_and_releasable",
+    "timeline": "3分钟个人写→12分钟逐人说→4分钟现场归纳→1分钟首次揭题→6分钟完整听读→3分钟初听表达→2分钟读后三问→2分钟最低路标",
+    "strength": "动作在个人写、公共说、核对现场归纳、整诗听读、个人回应和读后导航之间变化；每个中间产物均有近距离后用，信息只在需要时出现。",
+    "remaining_risk": "未发现确定性学生接收缺陷；O02接龙持续度、O03现场归纳真实性、O05-O06文言跟读、O07真实回应率和O08引用纪律仍属于试教观察项。",
+    "pilot_observations": [
+      "O02真实总时长、说‘先听’人数与后半补写率",
+      "O03归纳逐条指回现场原话及现场改词证据",
+      "O05-O06掉队与重新进入比例",
+      "O07空白率、反应类型及O08真实引用率",
+      "O08先引用、后切页、再发03C的现场顺序"
+    ]
+  },
+  "visual_assessment": {
+    "status": "pass",
+    "general": "独立查看V4九页联系表及O09冻结原图；未见遮挡、裁切、溢出、低对比或阻断性层级问题。O05-O06正文较密但作为完整听读跟随稿可读，不构成确定性P2。",
+    "O09_regression": "绿色‘风’已垂直居中，上下内边距安全；出处链、讲述者区与分隔线均无碰撞。",
+    "fresh_eyes_review": "冻结渲染由主审独立复核；视觉支线结论仅作为交叉校验，不替代主审对20个输入及真实分发顺序的判断。"
+  },
+  "priority_counts": {
+    "counting_method": "按逐页最高严重度计数；P3为试教观察项，不阻断发布；PASS页不计入P0-P3。",
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 6
+  },
+  "issue_register": [
+    {"severity":"P3","scope":["O02"],"issue":"十分钟全班接龙的后半注意力、先听人数和实际时长需实班观察。"},
+    {"severity":"P3","scope":["O03"],"issue":"归纳必须真实引用现场学生原话，需以试教证据核验执行纪律。"},
+    {"severity":"P3","scope":["O05","O06"],"issue":"六章连续听读中的文言跟随、掉队与重新进入比例需实班观察。"},
+    {"severity":"P3","scope":["O07"],"issue":"真实空白率、回应类型和留板关键词来源需实班记录。"},
+    {"severity":"P3","scope":["O08"],"issue":"教师须先引用真实O07文字，再切页并发03C；现场执行顺序需观察。"}
+  ],
+  "hard_gate": {
+    "required": "P0=0 and P1=0 and P2=0",
+    "met": true,
+    "blocking_pages": []
+  },
+  "verdict": "PASS",
+  "verdict_rationale": "V4已把O01、O07、O08学生材料拆分并按真实生成顺序分发：O04前无题名，完整听读与个人回应前无三问，O09前无出处链或讲述者答案；O07真实文字在O08开头立即后用。O09绿色‘风’视觉回归亦已关闭。未发现P0、P1或P2，达到发布门槛。",
+  "necessary_modifications": [],
+  "non_blocking_pilot_requirements": [
+    "保留O02、O03、O05-O08所列课堂观察数据，用于判断节奏与执行质量。",
+    "若未来合并或重命名03A/03B/03C，必须重新做跨渠道分发顺序审查，防止题名、三问或O09答案回流到早发材料。"
+  ],
+  "input_identity_verification_after_review": {
+    "status": "pass",
+    "method": "报告写入并完成JSON语法、9页reception_trace、20项reviewed_hashes及严重度统计一致性校验后，按review_input_v4重新逐项核验20个输入文件的SHA-256与字节数。",
+    "manifest_sha256_after": "29a5b1ce3a6f7d06f64db035531ac5e62e0e65932796d629f1063aad580dcde5",
+    "all_20_identical_before_after": true
+  }
+}

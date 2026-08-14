@@ -1,11 +1,15 @@
 ---
 document_type: lesson_page_function_and_global_rhythm_redesign
 lesson: "《氓》"
-version: "6.5-page-function-global-rhythm"
-status: "user_approved_for_implementation"
+version: "6.5-v4-45-page-continuous-understanding"
+status: "desktop_double_review_passed_for_controlled_trial"
 approved_at: "2026-08-14"
 baseline_pptx: "work/备课/选择性必修下册/氓/_v62_stage/full/pptx/04_氓_V64完整课堂课件_48页逐字稿.pptx"
 baseline_sha256: "bc1528316adbcee7e4492949894f6c2d2dabb0a3e27a9e09ba6e71e533d3d62a"
+current_pptx: "work/备课/选择性必修下册/氓/_v62_stage/v65/pptx/04_氓_V65完整课堂课件_45页无插图逐字稿_V4.pptx"
+current_pptx_sha256: "67120b071b4c2cf2b8183318f380081e200d977bebbd50087b4ab1187b502739"
+current_pages: 45
+current_natural_minutes: 230
 ---
 
 # 《氓》V6.5逐页功能与全课节奏重构
@@ -175,3 +179,19 @@ V6.5因此增加两种旧标准没有充分执行的否决：
 9. 真实试教后依据学生作品、理解断点、课堂负荷和朗读变化继续迭代。
 
 桌面通过只说明“没有已知的设计硬伤”，不能替代真实课堂效果。
+
+## 11. V4实施结果与当前边界
+
+V3固定候选在独立学生接收审查中出现四个P2：遮句页被投影中的前句污染；连续综合活动造成累计疲劳；《诗经》文化身份与核心字词被挤在同一时间盒；末页先出现结句再要求从首句完整终读。V4据此改为45页、230分钟：第20页首屏只显示目标句，第41页先保证四人全员轮说再一组一卡，第42—43页拆分两个知识对象，第45页恢复从首句到末句的视觉与课堂次序。
+
+当前固定哈希候选已完成Office验证、45张1920×1080渲染、文本抽取、构建合同、独立视觉逐页复验和独立学生接收复演。两路审查均为P0=0、P1=0、P2=0，因此只获得“可进入分课时受控试教”的资格；真实投影、现场文字注入、全员开口、230分钟分段执行、后段疲劳和学习结果仍属P3，不能写成已经验证。
+
+V4当前执行依据依次为：
+
+1. `work/备课/选择性必修下册/氓/_v62_stage/16_氓_V65_V4_45页逐页放行总账.md`；
+2. `work/备课/选择性必修下册/氓/_v62_stage/v65/package/02_氓_V65_45页教学母版_V4.md`；
+3. `work/备课/选择性必修下册/氓/_v62_stage/v65/package/04A_氓_V65_45页逐页真实剧本_V4.md`；
+4. `work/备课/选择性必修下册/氓/_v62_stage/v65/17_氓_V65_V4_分课时试教方案与观察表.md`；
+5. `work/备课/选择性必修下册/氓/_v62_stage/v65/18_氓_V65_V4_逐页插图资格与AB计划.md`。
+
+旧44页总账和V1—V3文件只保存决策历史，不再作为课堂执行或插图落页的页码依据。

@@ -1,0 +1,31 @@
+{
+  "schema_version": "exam-source-audit-0.1",
+  "corpus": "Data/2008-2024·（四川）语文高考真题",
+  "coverage": "2008-2024",
+  "manifest_records": 34,
+  "pairing": {
+    "years": 17,
+    "question_papers": 17,
+    "analysis_papers": 17,
+    "mineru_full_md": 34,
+    "pdf_page_counts_match_origin": true,
+    "manifest_pdf_sha256_match": true
+  },
+  "extra_files": [
+    {
+      "path": "Data/2008-2024·（四川）语文高考真题/2017年高考语文试卷（新课标Ⅲ卷）（空白卷）(1).pdf",
+      "sha256": "1a0ce37fa818a3b3ce82d6f2cffc67473691230beb45b9b7e5c9dba3d912d574",
+      "page_count": 9,
+      "disposition": "excluded_unverified_alternate",
+      "reason": "与主版本不同且页数较少，疑似不完整；未运行MinerU"
+    },
+    {
+      "path": "Data/2008-2024·（四川）语文高考真题/2018年高考语文试卷（新课标Ⅲ卷）（空白卷）(1).pdf",
+      "sha256": "116e0bb8262933899f7c7c15becaa483a2a761b6b10a3bc7063bf33ff5c81523",
+      "page_count": 15,
+      "disposition": "excluded_duplicate",
+      "reason": "与无(1)后缀主版本字节级重复"
+    }
+  ],
+  "source_boundary": "所有PDF和解析卷均为unverified_local_provided；在发布主体、原始URL和答案权威性核验前，不称官方原卷/官方答案。"
+}

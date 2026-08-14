@@ -1,0 +1,24 @@
+{
+  "schema_version": "modern-informational-2016-2024-kp-batch-validation-0.1",
+  "result": "passed",
+  "row_count": 21,
+  "year_counts": {
+    "2016": 3,
+    "2017": 3,
+    "2018": 1,
+    "2019": 1,
+    "2020": 1,
+    "2021": 3,
+    "2022": 3,
+    "2023": 3,
+    "2024": 3
+  },
+  "errors": [],
+  "checks": {
+    "coverage": true,
+    "traceability": true,
+    "objective_gate": true,
+    "related_scope_gate": true,
+    "m0_boundary": true
+  }
+}

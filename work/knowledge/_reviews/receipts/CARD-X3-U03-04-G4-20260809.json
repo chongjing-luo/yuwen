@@ -1,0 +1,55 @@
+{
+  "receipt_id": "RECEIPT-CARD-X3-U03-04-G4-20260809",
+  "deliverable_id": "CARD-X3-U03-04",
+  "gate": "DG4-MERGE",
+  "merged_at": "2026-08-09T00:55:53+08:00",
+  "artifact_version": "0.2.1",
+  "pre_merge_file_sha256": "5c2d645511d28566f36ae378c1e6b0b90cbc9274fe39dc7b8878d4cfb7ff6e2c",
+  "post_merge_file_sha256": "b06a7fc6ba021bd6d77c238a847ddda428c13bc009845b02bdd24bb2661300a5",
+  "content_change": false,
+  "allowed_diff": [
+    "front_matter.status",
+    "front_matter.reviewers",
+    "self_check",
+    "version_history",
+    "ledger.status",
+    "ledger.reviewers",
+    "ledger.state_transition_history",
+    "state_transition"
+  ],
+  "review_binding": {
+    "rubric_version": "2.0-textbook",
+    "rubric_sha256": "ab9cc53d57834642e66e568824d1c0c53e128953e15b20b4c7bd04aa30610d43",
+    "taxonomy_sha256": "13e5e23c45c05359a5c91e360ce8bd71dbf2a841c2c6a72f1adca52bef7cbd4b",
+    "ledger_review_snapshot_sha256": "b5852a2f1d60f242cfbed8926a80c06ff43505d53045b552e207442cda4c01f6",
+    "ledger_pre_merge_sha256": "b5852a2f1d60f242cfbed8926a80c06ff43505d53045b552e207442cda4c01f6",
+    "ledger_post_merge_sha256": "f19af79c75e1387752fb29a74aa8e6cc7c4a04679ff582fb400efa4293886302",
+    "primary": {
+      "reviewer": "independent_primary_x3_u03_04_r2",
+      "score": 98.5,
+      "decision": "pass",
+      "review_sha256": "703bdaa2952b9c25ba3f53f84e43198bd3d040d5f21b9ac022966c408a884ea5"
+    },
+    "secondary": {
+      "reviewer": "independent_secondary_x3_u03_04_r2",
+      "score": 99.0,
+      "decision": "pass",
+      "review_sha256": "92ef47ccdbd8121313695b6c31148eda95782419279d1bb94302bb26600081ea"
+    },
+    "score_difference": 0.5,
+    "r01_r10": "all 0",
+    "p0_p1_p2": "0/0/0"
+  },
+  "validator": {
+    "review_run_id": "VAL-20260809-005005+0800",
+    "review_report_sha256": "21200720d7870ee0a0bff852e19a9afcb8e59edd6367f41db20e348c988e566e",
+    "post_validator_run_id": "VAL-20260809-005632+0800",
+    "report": "work/knowledge/_meta/validation_reports/x3_u03_04_post_receipt_validation_20260809.json",
+    "report_sha256": "82809a9fdb18b1a3cd70eab3ec4f205d4ae97dfaf67dcfba2227bfc24702b931",
+    "result": "passed",
+    "errors": 0
+  },
+  "transition_id": "STATE-20260809-CARD-X3-U03-04-G4",
+  "downstream_impact": ["UNIT-X3-U03"],
+  "status": "accepted"
+}

@@ -1,0 +1,48 @@
+{
+  "checks": {
+    "contracts": {
+      "error_count": 0,
+      "result": "passed"
+    },
+    "deliverables": {
+      "error_count": 0,
+      "result": "passed"
+    },
+    "existing_outputs": {
+      "error_count": 0,
+      "result": "passed"
+    },
+    "registry_links": {
+      "error_count": 0,
+      "result": "passed"
+    },
+    "rubrics": {
+      "error_count": 0,
+      "result": "passed"
+    },
+    "taxonomy": {
+      "error_count": 0,
+      "result": "passed"
+    }
+  },
+  "command": "scripts/validate_knowledge_base.py --project-root . --report work/knowledge/_meta/validation_reports/x3_u04_unit_rework_v025_pre_ledger_validation_20260809.json",
+  "counts": {
+    "accepted_deliverables": 109,
+    "artifacts": 1266,
+    "deliverables": 120,
+    "source_relations": 146,
+    "sources": 152,
+    "split_mappings": 144
+  },
+  "errors": [],
+  "hash_verification": true,
+  "project_root": "/home/ubuntu/homes/LuoChongjing/Methods/yuwen",
+  "result": "passed",
+  "run_at": "2026-08-09T02:03:35.297236+08:00",
+  "run_id": "VAL-20260809-020335+0800",
+  "warnings": [
+    "外部评价体系、初中依据、四川政策及官方原卷/评分资料尚未并入教材主注册表；2011—2025候选批次另见Data/reference/gaokao/",
+    "TB2与B2的edition_match仍为unknown",
+    "教材契约已冻结为2.0-textbook；试卷契约仍需在G-TB后另行校准"
+  ]
+}

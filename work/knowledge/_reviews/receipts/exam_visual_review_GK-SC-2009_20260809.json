@@ -1,0 +1,21 @@
+{
+  "schema_version": "exam-visual-review-receipt-0.1",
+  "receipt_id": "EXAM-VISUAL-GK-SC-2009-20260809",
+  "exam_id": "GK-SC-2009",
+  "generated_at": "2026-08-09T06:58:00+08:00",
+  "status": "passed_with_source_label_conflict",
+  "review_scope": "question_pdf_visual_review_and_top_level_score_arbitration",
+  "review_method": {"render": "high_resolution_pdf_render", "pdf_page_count": 9, "pages_checked": [1,2,3,4,5,6,7,8,9], "exam_printed_pages": [1,2,3,4,5,6,7,8], "blank_watermark_pages": [], "advertising_pages": [9]},
+  "source_policy": {"source_pdf_read_only": true, "mineru_full_md_read_only": true, "clean_md_read_only_during_review": true, "raw_watermark_retained": true, "answer_authority": "candidate_unverified_or_missing", "mapping_boundary": "M0_only"},
+  "source_hashes": {"question_pdf_sha256": "497835bd338d819e6dafd7aab67aed9eecbcdb45a3152e741af3d7f245feac2c", "mineru_full_md_sha256": "3e2154eb5ab584fbd3e8ccd618705fb9ed04b9f12a86077ff5990fbbe5fe96c4"},
+  "findings": [
+    {"scope": "all_pages", "finding": "第1—8页为考试正文，第9页为资料广告页；全卷可见水印。", "decision": "广告页不进入题文清洗正文，原始PDF、MinerU full.md和清洗源保持只读。"},
+    {"scope": "source_label", "finding": "文件名标为‘空白卷’，但PDF首页标题含‘解析’字样。", "decision": "将来源标签冲突写入回执；题干仍以题段为准，解析内容不自动升级为权威答案。"},
+    {"scope": "score", "finding": "卷面分值结构可复算为150分；Q13为两个名句分支任选一题。", "decision": "保留24个派生节点、选择组和双链；答案与评分仍为candidate_unverified。"},
+    {"scope": "ocr", "finding": "Q13存在孤立‘CC’等疑似OCR/水印残片。", "decision": "显式登记，不静默修订原始题段。"}
+  ],
+  "derived_updates": {"script": "scripts/decompose_exam_vertical_slices.py", "output": "work/knowledge/高考分析/GK-SC-2009-response_nodes_vertical_slice.jsonl", "receipt": "work/knowledge/_reviews/receipts/exam_vertical_GK-SC-2009_20260809.json", "content_policy": "仅生成派生节点和回执，未改写原始PDF、MinerU full.md或清洗源段。"},
+  "acceptance": {"visual_boundary": "passed", "source_label_arbitration": "passed_with_conflict", "score_reconciliation": "150/150", "locator_precision": "page_level_fallback", "answer_and_kp_mapping": "not_claimed; candidate_unverified_or_missing; M0/KP_ID=N/A"},
+  "reviewer": "primary_agent",
+  "reviewed_at": "2026-08-09"
+}

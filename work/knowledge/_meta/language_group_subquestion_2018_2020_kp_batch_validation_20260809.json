@@ -1,0 +1,25 @@
+{
+  "schema_version": "language-group-subquestion-2018-2020-kp-batch-validation-0.1",
+  "result": "passed",
+  "manifest_count": 9,
+  "row_count": 9,
+  "node_ids": [
+    "GK-NC3-2018-Q007-1",
+    "GK-NC3-2018-Q007-2",
+    "GK-NC3-2018-Q007-3",
+    "GK-NC3-2019-Q007-1",
+    "GK-NC3-2019-Q007-2",
+    "GK-NC3-2019-Q007-3",
+    "GK-NC3-2020-Q007-1",
+    "GK-NC3-2020-Q007-2",
+    "GK-NC3-2020-Q007-3"
+  ],
+  "errors": [],
+  "checks": {
+    "coverage": true,
+    "split_traceability": true,
+    "answer_gate": true,
+    "score_gate": true,
+    "m0_boundary": true
+  }
+}

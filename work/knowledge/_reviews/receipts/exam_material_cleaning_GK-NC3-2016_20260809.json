@@ -1,0 +1,29 @@
+{
+  "schema_version": "exam-material-cleaning-receipt-0.1",
+  "receipt_id": "EXAM-MATERIAL-CLEANING-GK-NC3-2016-20260809",
+  "exam_id": "GK-NC3-2016",
+  "generated_at": "2026-08-09T04:30:00+08:00",
+  "status": "review_clean_copies_ready",
+  "raw_source_policy": "raw_material_segment_read_only",
+  "copies": [
+    {
+      "material_id": "MAT-2016-SC-04",
+      "raw_path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NC3-2016/materials/MAT-2016-SC-04.md",
+      "clean_path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NC3-2016/materials_clean/MAT-2016-SC-04-clean.md",
+      "raw_sha256": "f260bfe29f9129f85f134d02bab9f5efd5637b17029d2ed087bf0eafe2100ad7",
+      "clean_sha256": "4d6c6b81191f876788e900050dc8c524a93c4052290bf18832413717fdcb7475",
+      "actions": ["去除尾部下一节标题", "盯肴电杆→盯着电杆", "酒店挂伤→酒店撞伤"]
+    },
+    {
+      "material_id": "MAT-2016-SC-05",
+      "raw_path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NC3-2016/materials/MAT-2016-SC-05.md",
+      "clean_path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NC3-2016/materials_clean/MAT-2016-SC-05-clean.md",
+      "raw_sha256": "face5a6d234244a886b0490a91da703a1deab3de43fa19fe8cc13ab8f982bf77",
+      "clean_sha256": "143422c2bcfaf7da298e4fa52b95a8b5c39316a3a92ef226a2531954840ae87e",
+      "actions": ["去除尾部下一节标题", "·代通儒顾炎武→一代通儒顾炎武", "肇城志→肇域志", "潘未→潘耒", "隔离推广残片🌙"]
+    }
+  ],
+  "warnings": [
+    "清洗副本不是官方校勘本；修订仅用于后续抽取，仍需独立来源复核。"
+  ]
+}

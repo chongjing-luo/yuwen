@@ -1,0 +1,39 @@
+{
+  "receipt_id": "RECEIPT-CARD-X3-U02-04-G4-R2-20260808",
+  "deliverable_id": "CARD-X3-U02-04",
+  "gate": "DG4-MERGE",
+  "merged_at": "2026-08-08T23:33:52+08:00",
+  "artifact_version": "0.2.1",
+  "pre_merge_file_sha256": "c2f58ee65c5d8161e9751eac65b884675da0ef575766a5d6d718ad626547e8b6",
+  "post_merge_file_sha256": "c56d5511b1a7cd58efc4ab4827b63bb979a6fac48c4b688f719630c3905c3fa7",
+  "content_change": false,
+  "allowed_diff": ["front_matter.status", "front_matter.reviewers", "self_check", "version_history", "ledger.status", "ledger.reviewers", "ledger.state_transition_history", "state_transition"],
+  "review_binding": {
+    "rubric_version": "2.0-textbook",
+    "rubric_sha256": "ab9cc53d57834642e66e568824d1c0c53e128953e15b20b4c7bd04aa30610d43",
+    "taxonomy_sha256": "13e5e23c45c05359a5c91e360ce8bd71dbf2a841c2c6a72f1adca52bef7cbd4b",
+    "ledger_review_snapshot_sha256": "6529cd7994e76a7773c6c2c8d1fc424b345416d1cd021582b15101230933fc02",
+    "ledger_pre_merge_sha256": "6529cd7994e76a7773c6c2c8d1fc424b345416d1cd021582b15101230933fc02",
+    "ledger_post_merge_sha256": "3f51ff4e74b1081d0cb97ed36a5285b9609bb671793a4036101d545cb037d0c3",
+    "primary": {"reviewer": "independent_primary_x3_u02_04_r2", "score": 98.5, "decision": "pass", "review_sha256": "ac862589a0ae07ccd5162bc1d254b56142fae20f20aca4e8fcdeecd7fbcc8054"},
+    "secondary": {"reviewer": "independent_secondary_x3_u02_04_r2", "score": 98.5, "decision": "pass", "review_sha256": "49c3fd5744096eac5027cd041e0c31be9ac2ddc8c4df9294d173ce3fbe7bbaa2"},
+    "score_difference": 0.0,
+    "r01_r10": "all 0",
+    "p0_p1_p2": "0/0/0"
+  },
+  "validator": {
+    "review_run_id": "VAL-20260808-232804+0800",
+    "review_report_sha256": "d3b4e22e2bc3c90205573449a43d308189c917c747f7c781a5a2f22192046968",
+    "post_validator_run_id": "VAL-20260808-233352+0800",
+    "report": "work/knowledge/_meta/validation_reports/archive/VAL-20260808-233352+0800.json",
+    "report_sha256": "bfbafc43530d7e29d1217977561cd3304658d2cf8f055e619e3c7bc4859bb493",
+    "latest_report": "work/knowledge/_meta/validation_reports/latest.json",
+    "latest_report_sha256": "bfbafc43530d7e29d1217977561cd3304658d2cf8f055e619e3c7bc4859bb493",
+    "result": "passed",
+    "errors": 0
+  },
+  "transition": "STATE-20260808-CARD-X3-U02-04-G4-R2",
+  "ledger_sha256": "3f51ff4e74b1081d0cb97ed36a5285b9609bb671793a4036101d545cb037d0c3",
+  "downstream_impact": ["UNIT-X3-U02"],
+  "status": "accepted"
+}

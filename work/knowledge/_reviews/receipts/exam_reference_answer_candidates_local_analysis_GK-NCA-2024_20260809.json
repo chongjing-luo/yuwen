@@ -1,0 +1,62 @@
+{
+  "schema_version": "exam-reference-answer-candidate-receipt-0.3",
+  "receipt_id": "EXAM-REFERENCE-ANSWER-GK-NCA-2024-LOCAL-ANALYSIS-20260809",
+  "generated_at": "2026-08-09T12:33:06+08:00",
+  "exam_id": "GK-NCA-2024",
+  "status": "candidate_only_local_analysis",
+  "source_authority_status": "unverified_local_provided",
+  "coverage": {
+    "candidate_questions": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "writing_artifact_questions": [
+      22
+    ],
+    "boundary_derived_questions": [
+      1,
+      2
+    ],
+    "conflict_questions": [
+      12
+    ],
+    "ocr_review_questions": [
+      8,
+      9,
+      16
+    ]
+  },
+  "source_pdf": "Data/2008-2024·（四川）语文高考真题/2024年高考语文试卷（全国甲卷）（解析卷）.pdf",
+  "source_pdf_sha256": "1d253ae46e3b9cca979d5936ec638c6812edd1d2252be8d142914b4fc1f703bd",
+  "source_mineru_md": "Data/2008-2024·（四川）语文高考真题/mineru_result/2024年高考语文试卷（全国甲卷）（解析卷）/full.md",
+  "source_mineru_md_sha256": "e48e7f510bba0a182b1c2de396cf0794396d817e3e066e6b4b779522e46794a8",
+  "output": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NCA-2024/answers/reference_answer_candidates_local_analysis.jsonl",
+  "output_sha256": "fcc3d73b21a1226c7fdb6938794f50f4f0dd59a212d9c2e20184f2bcca8007f7",
+  "report": "work/knowledge/高考分析/EXAM-REFERENCE-ANSWER-CANDIDATES-2024-LOCAL-ANALYSIS.md",
+  "report_sha256": "2b3fe09b61c497bd972dd65e0b93c71672b292c596e856b1c1d11682f693a77a",
+  "raw_source_mutation": false,
+  "answer_index_mutation": false,
+  "scoring_status": "not_available_as_official",
+  "mapping_status": "M0 | kp_id=N/A",
+  "policy": "本地解析卷仅作为候选层；不覆盖原始 OCR、不提升来源权威、不写回主答案索引。"
+}

@@ -1,0 +1,55 @@
+{
+  "receipt_id": "RECEIPT-BOOK-X2-G4-20260808",
+  "deliverable_id": "BOOK-X2",
+  "gate": "DG4-MERGE",
+  "merged_at": "2026-08-08T20:47:37+08:00",
+  "artifact_version": "0.2.0",
+  "pre_merge_file_sha256": "7f80ad15071213da908856e5ea7b38eaa6bff4bdb219d8040e03b93b92212600",
+  "post_merge_file_sha256": "d5a158f608487c61b46d24dc2c13c9641fb25c64b7841659d159be187a851f27",
+  "content_change": false,
+  "allowed_diff": [
+    "front_matter.status",
+    "front_matter.reviewers",
+    "ledger.status",
+    "ledger.reviewers",
+    "ledger.state_transition",
+    "state_transition"
+  ],
+  "review_binding": {
+    "rubric_version": "2.0-textbook",
+    "rubric_sha256": "ab9cc53d57834642e66e568824d1c0c53e128953e15b20b4c7bd04aa30610d43",
+    "taxonomy_sha256": "13e5e23c45c05359a5c91e360ce8bd71dbf2a841c2c6a72f1adca52bef7cbd4b",
+    "ledger_pre_merge_sha256": "b4f55d67a932224810b6722280ca7cee4b38e828049e515d14c9b53364d83f2e",
+    "ledger_post_merge_sha256": "1bba5ebd0a0b822376098f9f77b0d028e1d27b5fbaae096b9e73214e6353c976",
+    "primary": {
+      "reviewer": "independent_primary_book_x2_final",
+      "score": 96.0,
+      "decision": "pass",
+      "review_sha256": "ff845ba995e07e205ad98e4a4b1c3850209ddc01391dabc16fb0cfbcb843b94f"
+    },
+    "secondary": {
+      "reviewer": "independent_secondary_book_x2_final",
+      "score": 97.5,
+      "decision": "pass",
+      "review_sha256": "9432ad7c19a7074eec7c5a2467579dea1974568778d7a0789c30bb9f55c48bcb"
+    },
+    "score_difference": 1.5,
+    "r01_r10": "all 0",
+    "p0_p1_p2": "0/0/0"
+  },
+  "validator": {
+    "review_run_id": "VAL-20260808-203544+0800",
+    "review_report_sha256": "bfff60376e4a2f1451a7e9fc16692c6eb98224d9a1738c617664d3bd23c13add",
+    "post_validator_run_id": "VAL-20260808-205024+0800",
+    "report": "work/knowledge/_meta/validation_reports/archive/VAL-20260808-205024+0800.json",
+    "report_sha256": "56445c8699c37e6244bf054d0201171793108ddd2b387ebfb54f5cdbfdb5b57b",
+    "latest_report": "work/knowledge/_meta/validation_reports/latest.json",
+    "latest_report_sha256": "56445c8699c37e6244bf054d0201171793108ddd2b387ebfb54f5cdbfdb5b57b",
+    "result": "passed",
+    "errors": 0
+  },
+  "transition": "STATE-20260808-BOOK-X2-G4-CLOSE",
+  "ledger_sha256": "1bba5ebd0a0b822376098f9f77b0d028e1d27b5fbaae096b9e73214e6353c976",
+  "downstream_impact": ["TEXTBOOK-LOCK"],
+  "status": "accepted"
+}

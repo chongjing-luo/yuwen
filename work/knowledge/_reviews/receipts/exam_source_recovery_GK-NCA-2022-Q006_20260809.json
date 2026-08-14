@@ -1,0 +1,37 @@
+{
+  "schema_version": "exam-source-recovery-receipt-0.1",
+  "receipt_id": "EXAM-SOURCE-RECOVERY-GK-NCA-2022-Q006-20260809",
+  "exam_id": "GK-NCA-2022",
+  "question_id": 6,
+  "generated_at": "2026-08-09T04:27:49+08:00",
+  "status": "manual_bbox_verified",
+  "acceptance": "conditional_review",
+  "source_policy": {
+    "source_pdf_read_only": true,
+    "mineru_full_md_read_only": true,
+    "clean_md_read_only": true,
+    "raw_source_text": "MinerU layout 未输出 Q006；未把广告残片作为题文",
+    "answer_authority": "candidate_unverified_or_missing",
+    "mapping_boundary": "M0_only"
+  },
+  "visual_check": {
+    "pdf_page_index": 3,
+    "printed_page_no": 4,
+    "bbox": [50, 443, 490, 461],
+    "text": "6. 杂交水稻培育的成功有什么意义？请根据材料进行概括。",
+    "notes": [
+      "原始 PDF 第4页可见 Q006；其后紧接（三）文学类文本阅读标题。",
+      "MinerU layout/content_list 未输出该行，使用合成手工定位标识 P4-MANUAL-Q006。",
+      "原始 PDF、MinerU full.md、clean_md 未改写；恢复段与三者保持双链。"
+    ]
+  },
+  "derived_segment": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NCA-2022/segments/question/Q006.md",
+  "segment_clean_sha256": "3af262c56fe62c7a4c95628f30de4df239df2e77928e19fdc37e67d8ae46365e",
+  "source_pdf": "Data/2008-2024·（四川）语文高考真题/2022年高考语文试卷（全国甲卷）（空白卷）.pdf",
+  "source_mineru_md": "Data/2008-2024·（四川）语文高考真题/mineru_result/2022年高考语文试卷（全国甲卷）（空白卷）/full.md",
+  "source_clean_md": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NCA-2022/clean_md/question.md",
+  "errors": [],
+  "warnings": [
+    "题文为 PDF 视觉恢复，不代表 MinerU 已成功识别；需在后续题级 bbox 管线中复核。"
+  ]
+}

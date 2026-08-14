@@ -1,0 +1,19 @@
+{
+  "schema_version": "exam-visual-review-receipt-0.1",
+  "receipt_id": "exam_visual_review_GK-SC-2008-Q006_20260809",
+  "status": "confirmed_conditional",
+  "response_node_id": "GK-SC-2008-Q006-TOP",
+  "source_pdf": "Data/2008-2024·（四川）语文高考真题/2008年高考语文试卷（四川）（空白卷）.pdf",
+  "source_pdf_page_index": 1,
+  "printed_page": 2,
+  "review_method": "high_resolution_pdf_render",
+  "finding": "选项 C 的卷面文字确为‘那么可以32%的汽油、21%的柴油和47%的石蜡烃’，句中缺少连接词；不能把该缺词静默补写为‘得到’。",
+  "raw_text_policy": "prompt_text_raw 保持原样；派生提示同样保留卷面文字。",
+  "locator_status": "page_level_fallback",
+  "bbox": null,
+  "answer_boundary": "仍为 candidate_unverified；解析卷答案 C 不是官方答案/评分标准。",
+  "mapping_boundary": "M0 / KP_ID=N/A",
+  "evidence_id": "EV-EXAM-GK-SC-2008-Q006-TOP-PDF-VISUAL-20260809",
+  "reviewer": "primary_agent",
+  "reviewed_at": "2026-08-09"
+}

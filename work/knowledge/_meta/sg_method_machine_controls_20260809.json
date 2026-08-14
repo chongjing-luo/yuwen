@@ -1,0 +1,27 @@
+{
+  "schema_version": "sg-method-machine-controls-0.1",
+  "method_id": "SG-METHOD-20260809",
+  "status": "protocol_ready_not_run",
+  "generated_at": "2026-08-09T00:00:00+08:00",
+  "files": [
+    {"path": "scripts/score_sg_method_metrics.py", "sha256": "6c4f5df2f6b932e57afd949ba783d1e9e01fd3340eaab21039196c39d34dc22d"},
+    {"path": "work/knowledge/_meta/schemas/sg_method_config.schema.json", "sha256": "e602674b1eff5c8b7a67fddc1b6beb35d0e1b41635f00de5346f0f19c6810246"},
+    {"path": "work/knowledge/_meta/schemas/sg_method_gold_record.schema.json", "sha256": "7ccce6b0aa7ba10b52b036e426663367f62f90d38fc722036a067872e9bc43a1"},
+    {"path": "work/knowledge/_meta/schemas/sg_method_query_manifest.schema.json", "sha256": "9316aa4d257259881b0adfd0a35e2c719dc22444bafd7e24d750660b0aabfc15"},
+    {"path": "work/knowledge/_meta/schemas/sg_method_observation.schema.json", "sha256": "4982158bf95b22559cdc8d41de4fceca9ee762c90a044f4848c625592dfe65ed"},
+    {"path": "work/knowledge/_meta/sg_method_config_20260809.json", "sha256": "36da1f6c1ea51576e7d8b444cae5efac4e6538f28be0e754781d196b199b2917"},
+    {"path": "work/knowledge/_meta/sg_method_query_manifest_20260809.json", "sha256": "5eccef8edeab20236ab5f6c372ca8649ed9e1c8279dabd2e235601c8563b1df6"},
+    {"path": "work/knowledge/_meta/sg_method_observation_template.json", "sha256": "7bf5e24b0d399559bd65b142b5ef8d21adaf3c96e2655165fe1d4a63c8c31fe9"},
+    {"path": "work/knowledge/_meta/sg_method_gold_record_template.json", "sha256": "6e427e6415e1ce17af5c84d4f49616a797fb00a506302c4fd4331c129695a46c"},
+    {"path": "work/knowledge/_reviews/SG-METHOD-PROTOCOL-20260809.md", "sha256": "0b6a3ebe46469bc71c3f45b5cc8c88e818c63f5752ec0df1822e3671996d1c33"},
+    {"path": "tests/test_evaluation_controls.py", "sha256": "c931c51ea275dcd1ee2833a9d41fa954572fd4887ac183f690807f498ab90516"},
+    {"path": "work/knowledge/_reviews/SG-METHOD-REVIEW-20260809.md", "sha256": "7e5a1397438f7b36ea09427710a1b8a60629a2508746ef8e00be36500b290545"}
+  ],
+  "regression": {
+    "command": "pytest -q tests/test_evaluation_controls.py",
+    "result": "passed",
+    "tests": 9,
+    "scope": ["SG-METHOD observation and Gold templates", "zero-denominator N/A and F1=0", "query-set completeness/frozen SHA", "sealed sample and Gold controls", "metric/status separation", "label-universe coverage", "unsupported-claim, role-overlap, completion and teacher-count negative boundaries"]
+  },
+  "activation_note": "Controls and synthetic fixtures are ready; no real Gold or observation has been created. Current config remains blocked/pending_new_source and no method pass is asserted."
+}

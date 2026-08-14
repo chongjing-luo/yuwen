@@ -1,0 +1,11 @@
+{
+  "schema_version": "sg-eval-trial-input-audit-0.1",
+  "trial_batch_id": "TRIAL-SG-EVAL-20260809-01",
+  "status": "read_only_snapshot_pending",
+  "inputs": [
+    {"deliverable_id": "CARD-X1-U01-02", "status": "accepted", "version": "0.2.1", "file_sha256": "3d500e86966818096c7a9226b94972a3543bf4aecfd3ef0aefba3727492df1f7", "content_sha256": null, "content_sha_note": "历史文件没有 lifecycle-metadata 区，不能直接套用新算法", "path": "work/knowledge/选择性必修上册/cards/CARD-X1-U01-02.md"},
+    {"deliverable_id": "CARD-B1-U05-01", "status": "accepted", "version": "0.1.0", "file_sha256": "0609b40552df8db6dd59541128724f3dc7bbbb810a39c4069e4621b0ee86b7f3", "content_sha256": null, "content_sha_note": "历史文件没有 lifecycle-metadata 区，不能直接套用新算法", "path": "work/knowledge/必修上册/cards/CARD-B1-U05-01.md"},
+    {"deliverable_id": "UNIT-X1-U01", "status": "accepted", "version": "0.2.0", "file_sha256": "72e11879deb905a2acae150239798318265764ad3f0b211fb577abe0dd0689df", "content_sha256": null, "content_sha_note": "历史文件没有 lifecycle-metadata 区，不能直接套用新算法", "path": "work/knowledge/选择性必修上册/units/UNIT-X1-U01.md"}
+  ],
+  "guard": "Do not edit these canonical files while preparing the candidate trial package."
+}

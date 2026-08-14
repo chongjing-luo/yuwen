@@ -1,0 +1,67 @@
+{
+  "schema_version": "exam-visual-review-receipt-0.1",
+  "receipt_id": "EXAM-VISUAL-GK-NC3-2019-20260809",
+  "exam_id": "GK-NC3-2019",
+  "generated_at": "2026-08-09T06:31:00+08:00",
+  "status": "passed_with_conservative_derivation",
+  "review_scope": "question_pdf_visual_review_and_top_level_score_arbitration",
+  "review_method": {
+    "render": "high_resolution_pdf_render",
+    "pdf_page_count": 13,
+    "pages_checked": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+    "exam_printed_pages": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "blank_watermark_pages": [12],
+    "advertising_pages": [13]
+  },
+  "source_policy": {
+    "source_pdf_read_only": true,
+    "mineru_full_md_read_only": true,
+    "clean_md_read_only_during_review": true,
+    "raw_watermark_retained": true,
+    "answer_authority": "candidate_unverified_or_missing",
+    "mapping_boundary": "M0_only"
+  },
+  "source_hashes": {
+    "question_pdf_sha256": "75ac5621d9b9e24bf29d123e53e8e63fe8a7d32b01f3291d8dbaa3c9d98cdb53",
+    "mineru_full_md_sha256": "a1d885666f1eca7fdca8c6320a5d53050e285f90438943ffa00b462ede0c547e",
+    "q10_cartoon_sha256": "499346e3ca8d0de43dfbbe4c7517af07b88863ee32c1775b460571f3adfbf392"
+  },
+  "findings": [
+    {
+      "scope": "Q1-Q9",
+      "finding": "逐页核对题干、文言断句与翻译、诗歌、语言文字运用边界，未发现需静默纠正的题卷 OCR 残片；解析文本中的广告/答案说明不进入题卷节点。",
+      "decision": "按稳定顶层题号保留原始题段和页级回溯。"
+    },
+    {
+      "scope": "Q10",
+      "finding": "PDF 第11页可见漫画材料；MinerU 图片资源存在。",
+      "decision": "保留图像源路径，不臆补漫画文字、寓意或作文答案。"
+    },
+    {
+      "scope": "score",
+      "finding": "卷面 Q1—Q10 总分分别为 9/12/15/19/9/6/9/6/5/60，总分 150；小问未提供稳定独立分值。",
+      "decision": "先生成十个顶层节点，不虚构小问级分值；待评分来源核验后再细化。"
+    },
+    {
+      "scope": "all_pages",
+      "finding": "PDF 第12页为空白水印页，第13页为资料广告页。",
+      "decision": "不纳入题文清洗正文；原始 PDF 与清洗稿保持双链。"
+    }
+  ],
+  "derived_updates": {
+    "script": "scripts/decompose_exam_vertical_slices.py",
+    "config_change": "GK-NC3-2019 added with visual_check_status=passed and top-level-only conservative scoring",
+    "output": "work/knowledge/高考分析/GK-NC3-2019-response_nodes_vertical_slice.jsonl",
+    "receipt": "work/knowledge/_reviews/receipts/exam_vertical_GK-NC3-2019_20260809.json",
+    "content_policy": "仅生成派生节点和回执；未改写原始 PDF、MinerU full.md 或清洗源段。"
+  },
+  "acceptance": {
+    "visual_boundary": "passed",
+    "score_reconciliation": "150/150",
+    "top_level_only": true,
+    "locator_precision": "page_level_fallback",
+    "answer_and_kp_mapping": "not_claimed; candidate_unverified_or_missing; M0/KP_ID=N/A"
+  },
+  "reviewer": "primary_agent",
+  "reviewed_at": "2026-08-09"
+}

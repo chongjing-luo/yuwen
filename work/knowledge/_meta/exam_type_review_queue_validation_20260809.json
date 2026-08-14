@@ -1,0 +1,15 @@
+{
+  "schema_version": "exam-type-review-queue-validation-0.1",
+  "result": "passed",
+  "queue_rows": 359,
+  "type_count": 30,
+  "errors": [],
+  "checks": {
+    "row_count": true,
+    "unique_ids": true,
+    "m0_boundary": true,
+    "source_traceability": true,
+    "type_page_traceability": true,
+    "type_files": true
+  }
+}

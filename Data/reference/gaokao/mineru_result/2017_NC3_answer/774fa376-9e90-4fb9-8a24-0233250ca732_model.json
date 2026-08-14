@@ -1,0 +1,163 @@
+[
+    {
+        "layout_dets": [
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.5243,
+                "bbox": [
+                    131,
+                    122,
+                    883,
+                    170
+                ],
+                "index": 1
+            },
+            {
+                "cls_id": 7,
+                "label": "figure_title",
+                "score": 0.7553,
+                "bbox": [
+                    542,
+                    217,
+                    1108,
+                    260
+                ],
+                "index": 2
+            },
+            {
+                "cls_id": 21,
+                "label": "table",
+                "score": 0.9864,
+                "bbox": [
+                    125,
+                    288,
+                    1527,
+                    570
+                ],
+                "index": 3,
+                "html": "<table><tr><td rowspan=1 colspan=1>科目</td><td rowspan=1 colspan=2>试题答案</td><td rowspan=1 colspan=1>下载</td><td rowspan=1 colspan=1>科目</td><td rowspan=1 colspan=2>试题答案</td><td rowspan=1 colspan=1>下载</td></tr><tr><td rowspan=1 colspan=1>语文</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td><td rowspan=1 colspan=1>英语</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td></tr><tr><td rowspan=1 colspan=1>理科数学</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td><td rowspan=1 colspan=1>文科数学</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td></tr><tr><td rowspan=1 colspan=1>理科综合</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td><td rowspan=1 colspan=1>文科综合</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td></tr></table>"
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9816,
+                "bbox": [
+                    117,
+                    611,
+                    1533,
+                    769
+                ],
+                "index": 4
+            },
+            {
+                "cls_id": 14,
+                "label": "image",
+                "score": 0.5417,
+                "bbox": [
+                    120,
+                    800,
+                    167,
+                    844
+                ],
+                "index": 5
+            },
+            {
+                "cls_id": 7,
+                "label": "figure_title",
+                "score": 0.9031,
+                "bbox": [
+                    642,
+                    811,
+                    1045,
+                    855
+                ],
+                "index": 6
+            },
+            {
+                "cls_id": 21,
+                "label": "table",
+                "score": 0.9777,
+                "bbox": [
+                    125,
+                    892,
+                    1527,
+                    1229
+                ],
+                "index": 7,
+                "html": "<table><tr><td rowspan=1 colspan=12>2017年高考全国各省市各科试题及答案</td></tr><tr><td rowspan=1 colspan=1>全国卷Ⅰ</td><td rowspan=1 colspan=1>湖北</td><td rowspan=1 colspan=1>福建</td><td rowspan=1 colspan=1>广东</td><td rowspan=1 colspan=1>湖南</td><td rowspan=1 colspan=1>安徽</td><td rowspan=1 colspan=1>山西</td><td rowspan=1 colspan=1>河北</td><td rowspan=1 colspan=1>河南</td><td rowspan=1 colspan=1>江西</td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td></tr><tr><td rowspan=1 colspan=1>全国卷Ⅱ</td><td rowspan=1 colspan=1>甘肃</td><td rowspan=1 colspan=1>青海</td><td rowspan=1 colspan=1>西藏</td><td rowspan=1 colspan=1>黑龙江</td><td rowspan=1 colspan=1>吉林</td><td rowspan=1 colspan=1>辽宁</td><td rowspan=1 colspan=1>宁夏</td><td rowspan=1 colspan=1>新疆</td><td rowspan=1 colspan=1>内蒙古</td><td rowspan=1 colspan=1>陕西</td><td rowspan=1 colspan=1>重庆</td></tr><tr><td rowspan=1 colspan=1>全国卷ⅢⅢ</td><td rowspan=1 colspan=1>云南</td><td rowspan=1 colspan=1>四川</td><td rowspan=1 colspan=1>广西</td><td rowspan=1 colspan=1>贵州</td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td></tr><tr><td rowspan=1 colspan=1>自主命题</td><td rowspan=1 colspan=1>北京</td><td rowspan=1 colspan=1>天津</td><td rowspan=1 colspan=1>江苏</td><td rowspan=1 colspan=1>山东</td><td rowspan=1 colspan=1>上海</td><td rowspan=1 colspan=1>海南</td><td rowspan=1 colspan=1>浙江</td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td></tr></table>"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    138,
+                    130,
+                    874,
+                    162
+                ],
+                "score": 1.0,
+                "text": ""
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    544,
+                    218,
+                    1106,
+                    256
+                ],
+                "score": 1.0,
+                "text": ""
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    196,
+                    619,
+                    1509,
+                    646
+                ],
+                "score": 1.0,
+                "text": ""
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    127,
+                    674,
+                    1525,
+                    706
+                ],
+                "score": 1.0,
+                "text": ""
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    127,
+                    730,
+                    909,
+                    758
+                ],
+                "score": 1.0,
+                "text": ""
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    650,
+                    817,
+                    1037,
+                    851
+                ],
+                "score": 1.0,
+                "text": ""
+            }
+        ],
+        "page_info": {
+            "page_no": 0,
+            "width": 1653,
+            "height": 2339
+        }
+    }
+]

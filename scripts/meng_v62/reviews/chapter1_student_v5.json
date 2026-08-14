@@ -1,0 +1,248 @@
+{
+  "schema_version": "1.0",
+  "review_version": "chapter1_student_v5",
+  "review_type": "independent_read_only_full_student_reception_review",
+  "review_date": "2026-08-13",
+  "reviewer_role": "普通高中学生实际接收视角；只使用V5课堂此前真实可见、可听、可拿到的信息",
+  "scope": "《氓》V6.2第一章V5冻结候选，C101—C105，共27分钟；含单一来源、教学母版、03A/03B、完整逐页剧本、数据快照、PPTX及备注、rendered_v5冻结PDF/联系表/五张PNG和清单所列追溯记录",
+  "read_only_statement": "未修改清单内教学源、PPTX、渲染、学习单、快照或追溯文件；未构建、测试或重渲染。唯一写入为本报告。",
+  "reviewed_manifest_path": "/home/ubuntu/homes/LuoChongjing/Methods/yuwen/work/备课/选择性必修下册/氓/_v62_stage/chapter_1/reviews/review_input_v5.json",
+  "reviewed_manifest_sha256": "59417a4ee8f2c8acaf474aa71a350a760e75a1c071810cd14a3c6a70f406f305",
+  "reviewer_independence": {
+    "independent_from_authoring": true,
+    "prior_verdict_inherited": false,
+    "method": "把V5作为全新候选：先核验唯一manifest及23个文件身份，再完整阅读教学母版、03A、03B、逐页剧本、markitdown_v5和五张rendered_v5，按C101—C105真实接收与相邻页口头时间轴逐页取证。V2/V4失败及处置、V3中止只用于追溯修订来源，不替代本轮判断。",
+    "visual_cross_check": "主审独立查看V5联系表和五张全分辨率PNG；另启动不继承旧结论的只读视觉支线作为交叉校验，最终严重度仍由本报告依据冻结输入独立裁定。",
+    "limitation": "这是桌面设计与可排演脚本复审，不是课堂观察。"
+  },
+  "manifest_identity_verification": {
+    "review_input_id": "MENG_V62_CHAPTER1_REVIEW_V5",
+    "status": "immutable_review_candidate",
+    "expected_manifest_sha256": "59417a4ee8f2c8acaf474aa71a350a760e75a1c071810cd14a3c6a70f406f305",
+    "actual_manifest_sha256": "59417a4ee8f2c8acaf474aa71a350a760e75a1c071810cd14a3c6a70f406f305",
+    "manifest_bytes": 7502,
+    "declared_file_count": 23,
+    "verified_file_count": 23,
+    "hash_mismatch_count": 0,
+    "byte_mismatch_count": 0,
+    "drift_detected": false,
+    "status_result": "PASS"
+  },
+  "reviewed_hashes": [
+    {"role":"single_source","path":"scripts/meng_v62/content/chapter_1.js","sha256":"784c8a4bf96f999fcec9b3828d6edff9a689a8799f2764082f383f6f2d28547b","bytes":38027,"verified":true},
+    {"role":"teaching_master","path":"work/备课/选择性必修下册/氓/_v62_stage/chapter_1/package/02_氓_V62第一章教学母版.md","sha256":"006fc27527d61da4456d1acdea2ff96d3d203771abab36ef6cf366e4b7492529","bytes":16414,"verified":true},
+    {"role":"initial_read_card_C101","path":"work/备课/选择性必修下册/氓/_v62_stage/chapter_1/package/03A_氓_V62第一章初读卡_C101发.md","sha256":"75d552537972c9674e9c81ecbfb2cba7903ae488eff1ae0ee6f322622bad0216","bytes":730,"verified":true},
+    {"role":"close_reading_card_C102","path":"work/备课/选择性必修下册/氓/_v62_stage/chapter_1/package/03B_氓_V62第一章细读与故事轨道_C102发.md","sha256":"77c833ce5eebf4c0e3e689990b18afb02a734c219c17f51d65953386757f631c","bytes":2492,"verified":true},
+    {"role":"rehearsal_script","path":"work/备课/选择性必修下册/氓/_v62_stage/chapter_1/package/04A_氓_V62第一章逐页无生试讲稿.md","sha256":"72941c4ff863dfa189a56ce40b7b3cf898fc425ddc0ff019bb0b333a6ab39a6d","bytes":18986,"verified":true},
+    {"role":"data_snapshot","path":"work/备课/选择性必修下册/氓/_v62_stage/chapter_1/package/06_氓_V62第一章课程数据快照.json","sha256":"ee2d8d1f3d71a7a86c2029dc6827da72ab1c40bac9a2e23dd4ee05adb6a4f030","bytes":40835,"verified":true},
+    {"role":"pptx","path":"work/备课/选择性必修下册/氓/_v62_stage/chapter_1/pptx/04_氓_V62第一章课堂课件.pptx","sha256":"252d3a13d8425f1f52c26acac6a4ecc06473934f122cf64b3107a10bc8143568","bytes":40168,"verified":true},
+    {"role":"pptx_text_and_notes","path":"work/备课/选择性必修下册/氓/_v62_stage/chapter_1/pptx/markitdown_v5.txt","sha256":"d7a04cd3a80ce8aae040b2146a2c6a11acc76b3a747e2541adffdf7495c9ad4d","bytes":21098,"verified":true},
+    {"role":"rendered_pdf","path":"work/备课/选择性必修下册/氓/_v62_stage/chapter_1/pptx/rendered_v5/04_氓_V62第一章课堂课件.pdf","sha256":"508d725d67316d041683c61b56045d5bea16d7f8b3c295bac345d8f3eeb6e19c","bytes":81497,"verified":true},
+    {"role":"visual_contact_sheet","path":"work/备课/选择性必修下册/氓/_v62_stage/chapter_1/pptx/rendered_v5/contact.jpg","sha256":"ef46279de8f3a7ee39b134dcad60525576a9a2b62ddc621befa7ec03052918bd","bytes":96050,"verified":true},
+    {"role":"rendered_slide_1","path":"work/备课/选择性必修下册/氓/_v62_stage/chapter_1/pptx/rendered_v5/slide-1.png","sha256":"f592d50a9dc3055b7d43bcd39a77e093bb7a6d84f31e670104c2e9fcef7c33d5","bytes":168320,"verified":true},
+    {"role":"rendered_slide_2","path":"work/备课/选择性必修下册/氓/_v62_stage/chapter_1/pptx/rendered_v5/slide-2.png","sha256":"04fde57958dab78aa9b414d08563adad1878b6b47398f93bbed7b9f2463492d2","bytes":130260,"verified":true},
+    {"role":"rendered_slide_3","path":"work/备课/选择性必修下册/氓/_v62_stage/chapter_1/pptx/rendered_v5/slide-3.png","sha256":"be373d158dcccdb0c4320d9d4812e3af16bd1391aa02ba3752f49a1d5e8c874a","bytes":108354,"verified":true},
+    {"role":"rendered_slide_4","path":"work/备课/选择性必修下册/氓/_v62_stage/chapter_1/pptx/rendered_v5/slide-4.png","sha256":"d5ce2584fe10b2fd6cfc78e708c7721286576837aaf5147318ba685f1a139d1a","bytes":134291,"verified":true},
+    {"role":"rendered_slide_5","path":"work/备课/选择性必修下册/氓/_v62_stage/chapter_1/pptx/rendered_v5/slide-5.png","sha256":"4e93b88a5d69dda4f69875907eaa6783ac884ee94f6fcca81640f6209f15f0df","bytes":185051,"verified":true},
+    {"role":"internal_first_fix_and_verify_record","path":"work/备课/选择性必修下册/氓/_v62_stage/chapter_1/reviews/internal_visual_qa_v1.md","sha256":"06068b72e9cb1e469ce742ae1ad4dd3eb094fe3d474e28489d75bf1a7efc615a","bytes":1395,"verified":true},
+    {"role":"v2_rejection_and_disposition","path":"work/备课/选择性必修下册/氓/_v62_stage/chapter_1/reviews/v2_independent_review_disposition.md","sha256":"4d93e37973575fae7b25fcb30a2adb46498985c6975c3113dc17bc318c02f9ec","bytes":1376,"verified":true},
+    {"role":"v2_independent_visual_fail","path":"scripts/meng_v62/reviews/chapter1_visual_v2.json","sha256":"8c053d10b8bc1b627733d2fd81fd346aff1955ff0241c3d3a8de6f42c0daa401","bytes":19805,"verified":true},
+    {"role":"v2_independent_student_fail","path":"scripts/meng_v62/reviews/chapter1_student_v2.json","sha256":"a522f1ff09d39df6a0db883ba24138df2093fe0392a11485ab3e5537056b5894","bytes":17990,"verified":true},
+    {"role":"v3_internal_fix_and_verify_record","path":"work/备课/选择性必修下册/氓/_v62_stage/chapter_1/reviews/internal_visual_qa_v3.md","sha256":"e2a4ef69154b1fd1c902c5fce960627e27956f22751122100d1d4cf8e9788e96","bytes":1813,"verified":true},
+    {"role":"v3_review_abort_integrity_record","path":"work/备课/选择性必修下册/氓/_v62_stage/chapter_1/reviews/v3_review_abort_integrity.md","sha256":"71ef3fb5f4cab4934925c11be4169b0b4eed092f2a03dbab9b9de34e196cf2e0","bytes":643,"verified":true},
+    {"role":"v4_rejection_and_disposition","path":"work/备课/选择性必修下册/氓/_v62_stage/chapter_1/reviews/v4_independent_review_disposition.md","sha256":"85d7eed5788c105a854e6d0fa6329ea0f1321391f10ac8c35dd6a3a5abd02d56","bytes":1124,"verified":true},
+    {"role":"v4_independent_visual_fail","path":"scripts/meng_v62/reviews/chapter1_visual_v4.json","sha256":"d477722b1d7f9512101f5e9ce52ab744c56e3b09154241f64e092f2b391a9b8b","bytes":18004,"verified":true}
+  ],
+  "distribution_verification": {
+    "status": "PASS",
+    "sequence": [
+      "C101只发03A；03A只有第一章全文、行动主体圈划、问号和修订空线，无词义、译文、章意、人物定性或后文事实。",
+      "C101完成整章听读、个人圈划、同桌主体核对与回诗修订之后，C102才发03B。",
+      "03B含C102—C105开放字段及空白六章轨道，不含预填词义、完成口译、完成章意、人物标签或后文事实。",
+      "03B虽提前露出后续任务入口，但均为空白问题；C104四小句分类和C105章意仍须学生现场生成。"
+    ]
+  },
+  "verdict": "PASS",
+  "priority_counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 5
+  },
+  "counting_rule": "按逐页最高严重度计数；五页均无确定性P0—P2，各保留一组P3试教观察。P3不阻断发布。",
+  "page_findings": {
+    "C101": {
+      "minutes": 4,
+      "severity": "P3",
+      "status": "PASS_WITH_PILOT_OBSERVATION",
+      "known_unknown_state": "我已从导入知道这是一位女子回望婚姻，但还不知道第一章各词准确含义、人物动机或后来结局怎样解释初见。",
+      "first_glance": "我先看见完整五行原诗；圈他、划她和留问号是下方次级入口，没有完成动作链或人物评价。",
+      "personal_generation": "我完整听读、再读并独立标出两人的行动；生词可以诚实留问号，不必为凑数量乱猜。",
+      "peer_feedback": "同桌只问行动是谁做的，不翻译、不贴人物标签。",
+      "revision": "我只补画漏掉的动作或改回真实主体；仍不懂处保留问号。",
+      "evidence_left": "03A及教材中的行动圈划、问号和一处回诗修订。",
+      "story_return": "我先获得‘有人来、有人送、两人谈婚事’的粗轮廓，而不是一组孤立注释。",
+      "next_use": "C102—C104逐段调用初稿，C105整章重读与旁白再调用人物行动。",
+      "deletion_merge_test": "删除会失去整章未知状态；并入C102会在首次接收前把注意收窄到贸丝—谋婚转折，损失明确。",
+      "program_and_information_boundary": "动作低门槛且只有一轮同桌核对；无完成答案、后文倒灌或伪开放。",
+      "visual_reception": "完整原诗居主位，无重叠、裁切、溢出、断词或核心低对比。",
+      "pilot_observation": "记录未释义时行动主体圈划准确率、问号密度，以及末排能否不靠教师复述读清底部说明。"
+    },
+    "C102": {
+      "minutes": 6,
+      "severity": "P3",
+      "status": "PASS_WITH_PILOT_OBSERVATION",
+      "known_unknown_state": "我已知道男子来、女子在讲述，但还不知道六个古词的准义，也不能把后来结局倒回来当作此刻人格证据。",
+      "first_glance": "两句原诗在同一视野中占主位；三个问题只问先看见什么、随后说明什么、哪个字转弯，没有现代译文或‘欺骗’标签。",
+      "personal_generation": "我先用70秒把两句说成自己的自然话并圈出转折字，教师此时不显示释义。",
+      "peer_feedback": "同桌分读动作与来意，只核对人物、动作、来意和转折是否有原词。",
+      "revision": "听完真实学生表达和教师六词校准后，我只改准一处；原来准确可保留并补原词证据。",
+      "evidence_left": "03B C102自然口译、转折字和校准后修订，教材词旁批注。",
+      "story_return": "故事从眼前贸丝动作转到女子说明的谋婚来意，并守住初见证据边界。",
+      "next_use": "C105旁白必须讲清他怎样来；全文后再比较出场印象与后来行为。",
+      "deletion_merge_test": "旧碎页已在本页合理合并；继续并入C103会混同叙事转折与空间行动两种不同困难。",
+      "program_and_information_boundary": "学生生成先于词义校准；不强迫改错或制造人格结论，无后文倒灌。",
+      "visual_reception": "两句原诗和三个问题均完整单行显示，无重叠、裁切、溢出、孤字或断词。",
+      "pilot_observation": "观察六分钟内发单、70秒个人口译、分读、分享、六词校准和修订是否都能真实完成，以及学生发现‘匪’是否主要来自原词而非题干猜测。"
+    },
+    "C103": {
+      "minutes": 5,
+      "severity": "P3",
+      "status": "PASS_WITH_PILOT_OBSERVATION",
+      "known_unknown_state": "我知道男子来谋婚，但不知道女子送行的空间长度，也不拥有精确方向、里程或完整内心动机。",
+      "first_glance": "原句和相隔的‘送、涉、至’是主对象，没有箭头、地图、路线答案、情绪标签或人物插图。",
+      "personal_generation": "我先用手指走，再用自己的笔迹连接三个原词并补行动主体，最后说成自然话。",
+      "peer_feedback": "同桌只检查主体与三个动作是否齐全，不评价画得好不好。",
+      "revision": "教师只校准涉、淇、顿丘；我补回遗漏动作或改准空间连续性，已有准确自然话可保留。",
+      "evidence_left": "03B C103学生亲手留下的送行线和一句空间叙述。",
+      "story_return": "我把女子回应读成渡淇并一直送到顿丘的一段路，而不是‘她送他’一条扁平信息。",
+      "next_use": "C105旁白调用她怎样送；全文后用原词讨论投入而不把投入变成受害责任。",
+      "deletion_merge_test": "身体/笔迹形成空间连续性的通道不可由C102词义转折或C104话语听辨替代，删除和相邻合并均有明确损失。",
+      "program_and_information_boundary": "程序只有指走、连线、说路、查漏；不虚构地图和情绪。V5跨页转场已中性化为‘接下来，看她怎样把话继续说下去’，没有在C104生成前口头预给解释、安抚、约期。",
+      "visual_reception": "三个原词和原句清楚，无无功能弧线、重叠、裁切、溢出或断词。",
+      "pilot_observation": "观察五分钟投入是否与单句复述增益相称，以及身体/笔迹路线是否真的比普通口译改善空间记忆。"
+    },
+    "C104": {
+      "minutes": 7,
+      "severity": "P3",
+      "status": "PASS_WITH_PILOT_OBSERVATION",
+      "known_unknown_state": "我只知道女子送到顿丘、婚事未当场定下；C103中性转场没有告诉我解释、安抚、约期三层，‘无怒’也不能被后文暴力事实倒灌。",
+      "first_glance": "完整两句、开放问题‘这四小句，各在做什么’和四个空位进入视野；屏幕与03B都没有分类词、译文、标准语气或后来伤害。",
+      "personal_generation": "我先把整轮话说成自然话，再用自己的词逐写四小句功能并尝试合并相连意思，享有90秒独立生成。",
+      "peer_feedback": "一人读、一人听；教师归纳前，听者只说哪一处意思没听清并回原词，不拿预设分类判分。",
+      "revision": "学生分享不同分法之后教师才校准五项词义；我只改准一处，原本准确可保留。教师随后才暂归纳解释、安抚、约期，并允许学生保留更贴原句的措辞。",
+      "evidence_left": "03B C104四小句自己的词与合并理由、停顿或重音、听者真实未听清处、改读处，以及教材‘无怒’旁问号。",
+      "story_return": "我把两句读成婚事没有结束，而是条件说明、关系安抚与秋期约定共同推动故事。",
+      "next_use": "C105旁白调用婚事怎样暂缓又约定；全文后重新打开‘无怒’问号。",
+      "deletion_merge_test": "两句必须作为一轮话语保留；并入C105会混淆生成/校准与撤答检索两个证据状态。",
+      "program_and_information_boundary": "V5全时间轴满足学生先生成、教师后归纳；同伴不是假角色扮演，不强迫二稿变化；‘无怒’只保留为早期信号，不倒灌具体伤害。",
+      "visual_reception": "原诗高于活动支架，四格为空且不编码答案；底部两行完整，无重叠、裁切、溢出、孤字或断词。",
+      "pilot_observation": "观察学生在五项词义校准前能否用自己的词形成有意义的四句分法、读听交换是否维持注意，以及七分钟是否过密或过长。"
+    },
+    "C105": {
+      "minutes": 5,
+      "severity": "P3",
+      "status": "PASS_WITH_PILOT_OBSERVATION",
+      "known_unknown_state": "我已加工三处意义句群，但还不知道撤去全部支架后能否把局部重新讲成连续故事；后文婚姻事实与最终判断仍后置。",
+      "first_glance": "完整原诗先供整章重读，右侧三条只给来、送、暂缓又约定的类别线索，不显示完成章意或人物定性。",
+      "personal_generation": "重读后我在全部支架撤去状态下进行30秒自然旁白，再亲自写故事轨道第一格和回看标记。",
+      "peer_feedback": "听者只在说完后补一个真实遗漏；若已完整可诚实确认，不接管故事、不评精彩。",
+      "revision": "有遗漏者只开教材定位对应原句，立即合书后补说；03A、03B仍背面朝上。随后只翻回03B写自己的章意，03A继续扣住。",
+      "evidence_left": "03B C105遗漏、回到原句与补说记录，六章故事轨道第一格、自然章意和全文后回看原词或问号。",
+      "story_return": "我把男子来谋婚、女子远送、婚事暂缓并约到秋天重新连成第一章故事。",
+      "next_use": "C201直接打开故事轨道第一格；全文后三问和第一章回看读取章意及‘无怒’等标记。",
+      "deletion_merge_test": "删除会使前三个局部活动缺少撤答整合；并入C104会抹掉由有支架生成转为无支架检索的证据状态变化。",
+      "program_and_information_boundary": "教材、03A、03B与投影全部受控，恢复顺序只服务查漏和个人写作；教师共同事件整理发生在两人检索与个人写章意之后，不覆盖学生措辞。口头三类线索是检索范围，不是事件答案。",
+      "blackout_and_material_control": {
+        "ordered_steps": [
+          "屏幕和教材保留原诗，完整重读第一章",
+          "合上教材",
+          "03A初读卡和03B细读单同时翻到背面并压在桌角",
+          "同桌互查桌面不再露出原诗，教师等待纸面支架全部撤去",
+          "教师按B键熄暗屏幕",
+          "在教材、03A、03B、投影全部撤答后进行30秒旁白与同伴查漏",
+          "只暂开教材定位遗漏句，找到后立即合书，再补说；03A和03B仍扣住",
+          "只翻回03B写故事轨道；03A仍扣住，投影不恢复答案"
+        ],
+        "textbook_removed_before_retrieval": true,
+        "initial_read_card_03A_removed_before_retrieval": true,
+        "close_reading_sheet_03B_removed_before_retrieval": true,
+        "projector_blackout_before_retrieval": true,
+        "peer_surface_check_before_blackout": true,
+        "restoration_is_bounded_and_ordered": true,
+        "genuine_closed_support_retrieval_scripted": true
+      },
+      "visual_reception": "静态页是熄屏前的完整重读状态；双栏层级清楚，轨道从属，无重叠、裁切、溢出或断词。",
+      "pilot_observation": "观察教师是否严格在材料互查后才按B、两轮30秒是否自然连贯、口头线索在黑屏后是否被稳定记住，以及故事轨道末排可见性。"
+    }
+  },
+  "global_findings": [
+    {
+      "id": "GLOBAL-STORY-CHAIN",
+      "priority": "PASS",
+      "finding": "五页构成完整接收链：整章与行动主体→贸丝到谋婚的叙事转折→送涉至的空间回应→四小句的一轮话语→撤去全部支架后的整章重建。每页具有可说明的删除损失，相邻合并不会无损。"
+    },
+    {
+      "id": "GLOBAL-GENERATION-BEFORE-CALIBRATION",
+      "priority": "PASS",
+      "finding": "C102、C103、C104均先有个人生成与受限同伴反馈，再有教师词义校准；C103→C104转场在V5中保持中性，C104三层归纳确实发生于个人四句概括、读听轮换和学生分享之后。"
+    },
+    {
+      "id": "GLOBAL-INFORMATION-BOUNDARY",
+      "priority": "PASS",
+      "finding": "03A、03B及五页前台无完成章意、人物终局标签或后文婚姻事实；初见判断被限定为当下证据，‘无怒’作为问号保留而非被倒灌成具体暴力。"
+    },
+    {
+      "id": "GLOBAL-FEEDBACK-AND-REVISION",
+      "priority": "PASS",
+      "finding": "同伴任务依次为核主体、核动作与来意、查漏三个动作、指出没听清处、补一个故事断点；均允许原作准确时保留或诚实确认完整，不以强迫差异制造修订。"
+    },
+    {
+      "id": "GLOBAL-INTERACTION-LOAD",
+      "priority": "PASS_WITH_P3_OBSERVATION",
+      "finding": "通道在圈划、自然口译、身体/笔迹、读听话语、黑屏旁白之间变化，程序总体服务诗与故事；27分钟内多次生成—反馈—修订的真实完成率仍须试教计时。"
+    },
+    {
+      "id": "GLOBAL-RETRIEVAL-VALIDITY",
+      "priority": "PASS",
+      "finding": "C105明确控制教材、03A、03B和投影，并用同桌互查锁定撤答时点；检索后只逐项恢复教材定位和03B写轨道，因此闭卷旁白的脚本证据合同成立。"
+    },
+    {
+      "id": "GLOBAL-VISUAL-RECEPTION",
+      "priority": "PASS",
+      "finding": "五张V5冻结PNG与联系表一致；原诗保持首眼主位，未见重叠、越界裁切、文本框溢出、异常断词、孤字或核心低对比，程序UI没有整体压过文学对象。"
+    }
+  ],
+  "p3_pilot_observations": [
+    "C101未释义行动圈划的准确率、问号密度和末排说明可读性。",
+    "C102六分钟内个人生成先于公开答案的完成率，以及‘匪’的真实发现路径。",
+    "C103身体/笔迹路线对空间复述的增益及五分钟投入比例。",
+    "C104学生自主四句概括质量、读听交换注意力与七分钟节奏。",
+    "C105材料互查和B键时点执行率、30秒旁白连贯度、口头支架记忆及故事轨道可见性。"
+  ],
+  "release_gate": {
+    "declared_rule": "P0=0 and P1=0 and P2=0 in both independent reviews",
+    "this_review_counts": {"P0":0,"P1":0,"P2":0,"P3":5},
+    "this_review_passes": true,
+    "decision": "PASS_THIS_INDEPENDENT_STUDENT_RECEPTION_GATE",
+    "qualification": "本报告只通过本路学生接收桌面门禁；最终冻结仍须另一独立审查也达到P0=P1=P2=0，并保留试教观察边界。"
+  },
+  "post_review_input_identity_verification": {
+    "performed_after_report_write": true,
+    "method": "报告写入后重新读取manifest所列23个输入，逐项计算SHA-256与字节数并与冻结声明比较。",
+    "verified_file_count": 23,
+    "hash_mismatch_count": 0,
+    "byte_mismatch_count": 0,
+    "drift_detected": false,
+    "status": "PASS"
+  },
+  "claim_boundary": {
+    "review_claim": "desktop_design_scaffold_only",
+    "statement": "本报告只确认冻结V5在桌面设计、真实接收顺序、信息边界和可排演脚本上未发现确定性P0—P2缺陷。",
+    "not_claimed": [
+      "不声称真实学生已经理解、参与、保持或迁移学习。",
+      "不声称27分钟节奏、末排投影可读性、同伴反馈质量或检索表现已经经试教验证。",
+      "不声称B键熄屏、材料互查和按序恢复已在真实课堂中被观察。"
+    ]
+  }
+}

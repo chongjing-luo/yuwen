@@ -1,0 +1,40 @@
+{
+  "receipt_id": "RECEIPT-UNIT-X1-U03-G4-20260808",
+  "deliverable_id": "UNIT-X1-U03",
+  "gate": "DG4-MERGE",
+  "merged_at": "2026-08-08T16:14:00+08:00",
+  "artifact_version": "0.2.2",
+  "pre_merge_file_sha256": "f4dcefa2dfef5d0fa1bed6c17506d98f4e099ae4889a27023993b87a900d74da",
+  "post_merge_file_sha256": "d3eb0f7a75ad4e899276337f5349d733dd65a07b7166c1ae02b5978fc0f05481",
+  "content_change": false,
+  "allowed_diff": ["front_matter.status", "front_matter.reviewers", "ledger.status", "ledger.reviewers", "state_transition"],
+  "review_binding": {
+    "rubric_version": "2.0-textbook",
+    "rubric_sha256": "ab9cc53d57834642e66e568824d1c0c53e128953e15b20b4c7bd04aa30610d43",
+    "taxonomy_sha256": "13e5e23c45c05359a5c91e360ce8bd71dbf2a841c2c6a72f1adca52bef7cbd4b",
+    "review_sha256": {
+      "unit_x1_u03_primary_review_r3_independent_20260808.md": "b813e77b87b18d9456061e54ae05954c4b820b66ac521588583cecaf7e8bcc4a",
+      "unit_x1_u03_secondary_review_r3_independent_20260808.md": "a64099cf884844d54058bb0a65c820b6909e15d5c8cd05ad528599e02f1a9fdb"
+    },
+    "primary": {"reviewer": "independent_primary_r3", "score": 100.0, "decision": "pass", "r": "R01-R10=0", "p": "P0/P1/P2=0/0/0"},
+    "secondary": {"reviewer": "independent_secondary_r3", "score": 99.0, "decision": "pass", "r": "R01-R10=0", "p": "P0/P1/P2=0/0/0"}
+  },
+  "review_validator": {
+    "run_id": "VAL-20260808-160630+0800",
+    "report": "work/knowledge/_meta/validation_reports/archive/VAL-20260808-160630+0800.json",
+    "report_sha256": "a337f2f6e7391de8f48fbd29a45a34ab63c56d81631d66805d3ff3dd82c8535a",
+    "result": "passed",
+    "errors": 0
+  },
+  "validator": {
+    "run_id": "VAL-20260808-161438+0800",
+    "report": "work/knowledge/_meta/validation_reports/archive/VAL-20260808-161438+0800.json",
+    "report_sha256": "73a1a22b7140c30d972e617f18404c4842d444f9e2b6a31b4d52e7d493e120cb",
+    "result": "passed",
+    "errors": 0
+  },
+  "upstream_snapshot": ["CARD-X1-U03-01", "CARD-X1-U03-02", "CARD-X1-U03-03", "CARD-X1-U03-04"],
+  "downstream_impact": ["BOOK-X1"],
+  "transition": "STATE-20260808-UNIT-X1-U03-G4",
+  "status": "accepted"
+}

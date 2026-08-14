@@ -1,0 +1,20 @@
+{
+  "schema_version": "sg-method-query-manifest-0.1",
+  "query_set_id": "SG-METHOD-QUERIES-12-20260809",
+  "frozen": true,
+  "time_limit_seconds": 120,
+  "queries": [
+    {"query_id": "QRY-01", "category": "single_lesson_fact", "prompt": "在《长征胜利万岁 / 大战中的插曲》卡中，分别列出两篇回忆录的作者、正文边界和一个核心事件，并给出 EV-ID。", "target_artifact_ids": ["CARD-X1-U01-02"], "required_outputs": ["两篇作者", "两篇正文边界", "核心事件", "EV-ID"], "success_rule": "所有事实和证据均可回到同一张 canonical 卡。"},
+    {"query_id": "QRY-02", "category": "single_lesson_fact", "prompt": "《乡土中国》整本阅读包把哪些内容列为阅读入口？请区分教材明确内容与项目解释。", "target_artifact_ids": ["CARD-B1-U05-01"], "required_outputs": ["教材栏目", "阅读入口", "边界说明"], "success_rule": "不得把全书正文或网络解析冒充教材包证据。"},
+    {"query_id": "QRY-03", "category": "text_interpretation", "prompt": "比较两篇革命回忆录如何把具体场面或材料与历史意义连接起来，至少各给一条 KP—EV 证据链。", "target_artifact_ids": ["CARD-X1-U01-02"], "required_outputs": ["两篇比较", "KP-ID", "EV-ID", "解释边界"], "success_rule": "比较保留两篇差异，不以共同主题替代文本证据。"},
+    {"query_id": "QRY-04", "category": "language_method", "prompt": "为《长征胜利万岁 / 大战中的插曲》生成一份‘材料—形式—判断’阅读表，说明书信、场面或叙议结合的作用。", "target_artifact_ids": ["CARD-X1-U01-02"], "required_outputs": ["材料", "形式", "判断", "EV-ID"], "success_rule": "每条判断有适配的文本证据。"},
+    {"query_id": "QRY-05", "category": "unit_task", "prompt": "从选择性必修上册 U01 图谱中回查‘家乡的英雄’调查写作任务：列出任务义务、成果和核验要求。", "target_artifact_ids": ["UNIT-X1-U01"], "required_outputs": ["TASK-ID", "成果", "核验要求", "上游回链"], "success_rule": "任务义务和评价证据均能回链上游卡/课标。"},
+    {"query_id": "QRY-06", "category": "unit_task", "prompt": "一个活动型或整本书阅读特殊内容包的任务应如何与普通课文 KP 区分？请使用当前特殊内容卡说明。", "target_artifact_ids": ["CARD-B1-U05-01"], "required_outputs": ["特殊内容边界", "任务类型", "不得扩写的内容"], "success_rule": "不把完整著作或外部教师用书内容写入教材包。"},
+    {"query_id": "QRY-07", "category": "cross_text_compare", "prompt": "跨课比较 U01 中回忆录、消息或通讯的材料组织方式，列出一个共同阅读动作和两个不可混同的文体差异。", "target_artifact_ids": ["UNIT-X1-U01"], "required_outputs": ["共同动作", "两个差异", "CAND/REL-ID", "证据"], "success_rule": "关系类型和差异说明均有上游证据。"},
+    {"query_id": "QRY-08", "category": "unit_progression", "prompt": "回查 U01 图谱的前后递进字段；若没有可靠前序或后续边，应如何报告 N/A？", "target_artifact_ids": ["UNIT-X1-U01"], "required_outputs": ["候选范围", "N/A理由", "重开条件"], "success_rule": "不强造关系，使用允许的结构化 N/A。"},
+    {"query_id": "QRY-09", "category": "book_progression", "prompt": "从一份册级总表中查找一个跨单元递进例子，并列出源单元、目标单元、关系类型和双方证据。", "target_artifact_ids": ["BOOK-X1"], "required_outputs": ["源单元", "目标单元", "关系", "双方证据"], "success_rule": "只消费 accepted 上游，关系不可由题型相似性推断。"},
+    {"query_id": "QRY-10", "category": "evidence_backtrack", "prompt": "给定一个 KP-ID，打开 canonical Artifact 并回查其正文短引、物理页/切分页 locator、Source 和 Artifact。", "target_artifact_ids": ["CARD-X1-U01-02", "CARD-B1-U05-01"], "required_outputs": ["KP-ID", "EV-ID", "Source", "Artifact", "locator"], "success_rule": "120秒内完成逐字和页位核对。"},
+    {"query_id": "QRY-11", "category": "source_boundary", "prompt": "当前没有已登记同版教师用书时，卡片中教师用书栏应如何报告？请给出 edition_match 和禁止行为。", "target_artifact_ids": ["CARD-X1-U01-02", "CARD-B1-U05-01"], "required_outputs": ["edition_match", "N/A/unknown", "边界"], "success_rule": "不以教师用书缺口填补正文事实或课标结论。"},
+    {"query_id": "QRY-12", "category": "evidence_backtrack", "prompt": "在教材尚未与真题建立正式双向证据时，如何解释 M0？列出必须为 N/A 的字段和重新开放条件。", "target_artifact_ids": ["CARD-X1-U01-02", "UNIT-X1-U01"], "required_outputs": ["M0", "N/A字段", "重开条件"], "success_rule": "不得携带真题小问、KP、能力动作或真题证据。"}
+  ]
+}

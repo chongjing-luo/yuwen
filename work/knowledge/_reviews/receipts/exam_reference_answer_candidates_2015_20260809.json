@@ -1,0 +1,66 @@
+{
+  "schema_version": "exam-reference-answer-candidate-receipt-0.2",
+  "receipt_id": "EXAM-REFERENCE-ANSWER-GK-SC-2015-20260809",
+  "generated_at": "2026-08-09T13:15:37+08:00",
+  "exam_id": "GK-SC-2015",
+  "source_registry_id": "SRC-GK-2015-SC-GAOKAO-ANSWER-CANDIDATE",
+  "source_authority_status": "unverified_third_party_reprint",
+  "coverage": {
+    "candidate_questions": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "missing_questions": []
+  },
+  "inputs": {
+    "answer_source.txt": {
+      "path": "Data/reference/gaokao/external/2015_gaokao_answer/answer_source.txt",
+      "sha256": "b23a90b105a34c2e8b40da381a502a040eb4e970f9a06aebda1a1d092af4388b"
+    },
+    "source.html": {
+      "path": "Data/reference/gaokao/external/2015_gaokao_answer/source.html",
+      "sha256": "b32de66d24b0987d01f1b75bc4dbd06ccdcdb8f0e8b3a6c89b3ea237e252929b"
+    },
+    "answer_bundle.zip": {
+      "path": "Data/reference/gaokao/external/2015_gaokao_answer/answer_bundle.zip",
+      "sha256": "2ec4ac8fdf0bd3da210e9ae2ddad4fcc6ec7689d9114d899627438cb8cfb517a"
+    },
+    "2015╦─┤и╕▀┐╝╙я╬─╩╘╠т╝░┤Ё░╕╜т╬Ў.doc": {
+      "path": "Data/reference/gaokao/external/2015_gaokao_answer/2015╦─┤и╕▀┐╝╙я╬─╩╘╠т╝░┤Ё░╕╜т╬Ў.doc",
+      "sha256": "1e9dd88d164d0967994c7cfba45806b134f5547fe5141a3db9a2d6172d7c79de"
+    }
+  },
+  "output": {
+    "path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-SC-2015/answers/reference_answer_candidates.jsonl",
+    "sha256": "6971d0db6727f1648ac4047e0699ebef4fc394debe47d5b59f3a77b72c372df6",
+    "rows": 21
+  },
+  "report": {
+    "path": "work/knowledge/高考分析/EXAM-REFERENCE-ANSWER-CANDIDATES-2015.md",
+    "sha256": "c56cabac2493bd857796507dccc5bfb49390c8ebe3d5a0877561c069a346e480"
+  },
+  "raw_source_mutation": false,
+  "answer_index_mutation": false,
+  "scoring_status": "not_available_as_official",
+  "mapping_status": "M0 | kp_id=N/A",
+  "policy": "第三方答案/解析附件只登记为候选；作文指导、示例和解析不得升级为官方评分标准。"
+}

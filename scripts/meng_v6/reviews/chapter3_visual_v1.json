@@ -1,0 +1,297 @@
+{
+  "schema_version": "1.1",
+  "review_version": "chapter3_visual_v1",
+  "review_scope": "chapter_3_final_frozen_candidate_independent_visual_and_page_function_review",
+  "reviewer": "ppt_visual_qa",
+  "reviewed_at": "2026-08-13",
+  "protocol": {
+    "path": "work/备课/逐页功能审计与放行协议.md",
+    "version": "1.1",
+    "hard_gate": "任一P0/P1/P2即FAIL"
+  },
+  "read_only_statement": "只读取候选PPTX、课程快照、rendered_v4图像与markitdown、教学母版、学习单、逐页试讲稿和放行协议；未运行构建、测试或Office重渲染，未修改任何教学源码、PPTX、课程快照、正式渲染或教学材料。唯一写入为本审查报告。",
+  "frozen_artifacts": {
+    "candidate_pptx": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_3/pptx/04_氓_V6第三章课堂课件.pptx",
+      "sha256": "8279c55a0910227c145dcad405b3b89f0e57bbc656ae3d78aec5b8bf34b6f04d",
+      "size_bytes": 51077,
+      "mtime": "2026-08-13 18:47:03.256680755 +0800",
+      "inode": 13124716,
+      "zip_integrity": "pass"
+    },
+    "source_snapshot": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_3/package/06_氓_V6第三章课程数据快照.json",
+      "sha256": "a759c5512062450d589a53a941282e9f15f51db02f22d8592643ec2831f1402f",
+      "size_bytes": 43223,
+      "mtime": "2026-08-13 18:47:03.028680805 +0800",
+      "inode": 13059368
+    },
+    "render_contact": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_3/pptx/rendered_v4/contact.jpg",
+      "sha256": "a7495fdaecdca001dcf90ca7a0e47b83b52877d5f835d94b4299cbefd83cb4a1"
+    },
+    "render_markitdown": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_3/pptx/rendered_v4/markitdown.txt",
+      "sha256": "5e7df7db18c639460530115ec09b662529d38c2e1bdfd869b2a61c7eb41366c2"
+    },
+    "slide_image_sha256": {
+      "slide-1.png": "8f4ae71e5aefed976dcaf2d9d7313ba59dfc419b98564127ea6207d6ca072c9d",
+      "slide-2.png": "598ed4d2dbb830e8f238818b792d4899a9021f64252bb37026927e3b6cb0e66f",
+      "slide-3.png": "d3a8b2f60f02da8ea66b6d0c5e1ad6d72548b033bf7e8e8063585a185f4dd889",
+      "slide-4.png": "7ba32fcf178fea6d7a797f8e931475f0c228a965a39194b1576a515bc31fc5bb",
+      "slide-5.png": "865d11106ced25669187131abf64b5fc2fa4360c9ae243cb7c2fb4291b581fb0",
+      "slide-6.png": "5839346f60d1bd32ce680ff4e7fd5cfb7e3e4b4635536da965d8c85d515e1d86",
+      "slide-7.png": "da63a11bea7836e458cab045adf1a919b9f2b80119e748c49e4b55e313d763ea",
+      "slide-8.png": "1e369f0ee5a04a1d2fe55953c6f48985934abd834a287b480963193192021705"
+    }
+  },
+  "artifact_identity_verification": {
+    "initial_two_read_checks": "pass",
+    "initial_finding": "PPTX与snapshot的SHA-256、大小、mtime和inode连续两次只读核验一致；PPTX ZIP完整性无错误。",
+    "final_check": "pass",
+    "final_finding": "报告写入后再次核验PPTX与snapshot；SHA-256、大小、mtime和inode均未变化。"
+  },
+  "page_reviews": {
+    "N031": {
+      "title": "第三章｜故事刚走到迁嫁，声音为什么忽然停下",
+      "unique_function_assessment": "未充分实现。故事轨道和整章原文确实恢复了跨章位置，但学生本应从完整初读中发现的叙事暂停、换镜与呼告变化，在作答前已由标题、操作提示、页脚和教师台词预先说明。",
+      "first_glance": "第一眼先看到大标题‘声音为什么忽然停下’，再看到故事轨道和第三章全文；底部同时出现‘换镜或换了呼告对象，轻停半拍’及‘一片桑叶先进入眼帘，两声叹息随之而来’。",
+      "observed_receive": "我知道上一章已经迁嫁；屏幕已经告诉我这一章让叙事停下、先看见桑叶并出现两声叹息。我接下来只需从原句把劝鸠、劝女补进三格，而不是先完整读后自己察觉声音怎样转。",
+      "input_action_artifact_feedback_revision_next_use": {
+        "input": "前两章章意与等待迁嫁的故事位置清楚。",
+        "action": "恢复前两章、完整朗读、轻停、写三处落点。",
+        "artifact": "学习单第三章三处镜头落点与故事轨道。",
+        "feedback": "同桌只查人和物是否来自原句。",
+        "revision": "回原句换笔改人、物或对象并调序。",
+        "next_use": "N036取回三处落点扩展为四级声音阶梯。",
+        "chain_status": "结构字段齐全，但生成前信息状态破坏核心发现。"
+      },
+      "answer_state": "fail_pre_exposure",
+      "frontstage_backend_separation": "fail。‘换镜或换了呼告对象’是指导教师如何提示停顿的分析性控制语；页脚自然话又直接给出第一空‘桑叶’及两次感叹的总体结构。",
+      "story_visibility": "故事轨道有效，原文为视觉主体；但学生对故事变化的发现被屏幕结论替代。",
+      "language_quality": "标题与页脚有语文质地，但在问题态承担了答案态功能。",
+      "visual_quality": "原文、故事轨道、三空与标题层级清楚；无重叠、溢出、裁切、低对比或边距不足。信息密度可控。",
+      "verdict": "fail",
+      "issues": [
+        {
+          "severity": "P1",
+          "evidence": "学生生成三处落点之前，学生可见区已经显示‘换镜或换了呼告对象’与‘一片桑叶先进入眼帘，两声叹息随之而来’；教师开场还先说‘人物的生活似乎没有继续往前讲’。这些话直接给出本页唯一功能所要求学生发现的叙事暂停、首个物象与声音结构。",
+          "fix_required": "把问题态恢复为整章原文、前两章故事轨道和不含解释的朗读入口；删除学生屏幕上的‘换镜/呼告对象’分析语及页脚结论。教师只可要求‘读到你感觉说话方式变化处，自己轻停’，待学生写出三处落点并核对后，再在回收态命名换镜、呼告和两声叹息。"
+        }
+      ]
+    },
+    "N032": {
+      "title": "桑之未落，其叶沃若",
+      "unique_function_assessment": "实现。学生先依据沃若生成感官词，再提出两种可保留的联想，没有把桑叶预制成青春或爱情的唯一象征。",
+      "first_glance": "原句和沃若释义居于最高层级，随后是一个感官入口与两个对称假设卡。",
+      "observed_receive": "我先把沃若理解为润泽，从色泽、质地或生命感写词，再提出两种可能联想；我的联想必须有感官依据，第四章黄而陨出现后还要重看。",
+      "input_action_artifact_feedback_revision_next_use": {
+        "input": "N031已初步注意桑叶是第三章最先出现的物象。",
+        "action": "口译、静默感受、写两项感官词和两种可能联想。",
+        "artifact": "学习单桑叶假设卡。",
+        "feedback": "同桌只追问联想来自沃若哪种感受。",
+        "revision": "无依据者删去或弱化断言，以可能句换笔重写。",
+        "next_use": "第四章黄而陨出现时重新打开假设卡筛选。",
+        "chain_status": "pass"
+      },
+      "answer_state": "pass_open_hypothesis",
+      "frontstage_backend_separation": "pass。延后筛选说明直接关系到学生保存当前产物和后续使用。",
+      "story_visibility": "本页允许叙事暂时停留于物象，并已明确后续回到第四章对照。",
+      "language_quality": "‘一片沃若的桑叶，唤起了怎样的感觉’自然、开放。",
+      "visual_quality": "原句、释义、问题与三栏作答关系清楚；字号、断行、对比、留白和边距通过，无答案图示。",
+      "verdict": "pass_with_p3",
+      "issues": [
+        {
+          "severity": "P3",
+          "evidence": "教师要求学生‘闭口看这片叶子十秒’，页面没有实际桑叶图像，只提供原句和沃若释义。学生能否从词语本身稳定生成色泽、质地与生命感，依赖真实班级的想象经验。",
+          "fix_required": "不要求桌面返工；试教时记录十秒后空白人数、只复述‘润泽’人数及能写出有原词依据感官词的人数。若大量空白，再判断是否需要真实桑叶观察物或一句更具体但不泄答的感官支架。"
+        }
+      ]
+    },
+    "N033": {
+      "title": "两声‘于嗟’，劝告从斑鸠转向谁",
+      "unique_function_assessment": "部分实现。两句并列、词义支架和对读能够支持发现反复及对象变化，但学生填写三格之前，屏幕底部已经命名‘由物及人’，抢先给出本页最终关系。",
+      "first_glance": "两句诗是主焦点，必要注释位于中部，下方三格要求写反复声音、改变对象和改变劝告；页底流程末端直接写‘用自然话说由物及人’。",
+      "observed_receive": "我能看出两声于嗟从鸠句转到女句，也能对读；但屏幕已经告诉我要得出‘由物及人’，所以三格更像为这个结论找词。",
+      "input_action_artifact_feedback_revision_next_use": {
+        "input": "N032保留了桑叶的开放感受，下一句斑鸠进入。",
+        "action": "口译、圈重复、框变化、同节拍对读并交换角色。",
+        "artifact": "学习单两声于嗟回声记录和一句由物及人。",
+        "feedback": "同桌只指出无原词依据的一格。",
+        "revision": "补回于嗟、鸠/女、食桑葚/与士耽后重读。",
+        "next_use": "N036将劝鸠、劝女放回声音阶梯，N037旁白调用劝告转向。",
+        "chain_status": "产物与后用成立，但生成前的概念泄答削弱任务真实性。"
+      },
+      "answer_state": "fail_partial_pre_exposure",
+      "frontstage_backend_separation": "fail。‘由物及人’应是两轮对读和三格比较后的共同发现，不应预先成为屏幕流程指令。",
+      "story_visibility": "活动能够回到劝告对象从斑鸠到女子的变化，但预贴概念使学生更易记术语。",
+      "language_quality": "页面主体问题自然；‘用自然话说由物及人’混合了术语与生成结论。",
+      "visual_quality": "深色页对比稳定；两句、注释、三格与流程均清晰，无重叠、溢出、裁切或过密。",
+      "verdict": "fail",
+      "issues": [
+        {
+          "severity": "P2",
+          "evidence": "学生尚未填写‘改变的对象/改变的劝告’，学生可见流程已显示‘用自然话说由物及人’；这把本页比较后应生成的关系预先变成结论提示。",
+          "fix_required": "问题态删除‘由物及人’，改成不含答案的‘合读后，用一句自然话说两声劝告怎样接过去’。学生三格完成并用鸠、女、桑葚、耽讲清以后，才在答案态或教师后置收束中命名‘由物及人’。"
+        }
+      ]
+    },
+    "N034": {
+      "title": "同是‘耽’，为何一边可说，一边不可说",
+      "unique_function_assessment": "实现。页面让学生从同词与异词形成处境差异，并明确把原因留到婚后事实，而未把女子投入归为伤害原因。",
+      "first_glance": "两句正面对照是第一主焦点；说的通假义、同词/异词空格和处境问题依次向下。",
+      "observed_receive": "我能从士/女、犹可/不可读出两种不同脱身处境，但第三章还不能说明为什么；若写成天生、活该或女子导致男子伤害，需要删改。",
+      "input_action_artifact_feedback_revision_next_use": {
+        "input": "N033已读出劝告转向女子与情爱。",
+        "action": "口译、圈同词、框异词、写无归因对照句。",
+        "artifact": "学习单可说/不可说处境对照与后文待证栏。",
+        "feedback": "同桌只圈越界归因词。",
+        "revision": "作者删去越界词，改成诗中明写的处境差异。",
+        "next_use": "第四、五章以婚后事实检验原因。",
+        "chain_status": "pass"
+      },
+      "answer_state": "pass_student_generated_with_boundary",
+      "frontstage_backend_separation": "pass。‘仍待追问’是学生需要保存的证据边界。",
+      "story_visibility": "语言比较最终回到女子所见的不对等处境，并把因果推迟到后章。",
+      "language_quality": "标题、问题和待证句自然、克制。",
+      "visual_quality": "两句对照、注释和三个作答层级清楚；长标题仍在安全边距内，字号、断行、对比和密度通过。",
+      "verdict": "pass",
+      "issues": []
+    },
+    "N035": {
+      "title": "若诗直接从‘于嗟女兮’开始，会失去什么",
+      "unique_function_assessment": "实现。删句前后两种真实文本状态支持学生先听见差异，再后置命名比兴。",
+      "first_glance": "A原诗三句与B删改单句构成明确比较；下方只提供可选择的感受维度和原词证据入口。",
+      "observed_receive": "我分别听原诗和删改句，比较画面、声音、铺垫或直接程度；我可以偏好任一写法，但必须用原词说明，之后才把经验命名为比兴。",
+      "input_action_artifact_feedback_revision_next_use": {
+        "input": "N032—N034已经分别经历桑叶、两声呼告和处境对照。",
+        "action": "两组分别读A/B，其余闭眼听，个人写差异和原词依据。",
+        "artifact": "学习单删句听读比较。",
+        "feedback": "同桌只问删去哪句后什么画面或声音真实消失。",
+        "revision": "只报术语者补可感效果；无关效果回原词重写。",
+        "next_use": "N036撤答复位，N038后置收纳比兴。",
+        "chain_status": "pass"
+      },
+      "answer_state": "pass_experience_before_naming",
+      "frontstage_backend_separation": "pass。复选维度是完成听辨所需的开放支架，不强定单一答案。",
+      "story_visibility": "本页短暂停留写法体验，但转场明确要求把比兴重新接回劝诫到来的方式。",
+      "language_quality": "‘劝诫怎样来到耳边’‘请让原词替你说话’有语文质地。",
+      "visual_quality": "左右文本对照鲜明，底部作答框清楚；无低对比、遮挡、溢出或不合理断行。",
+      "verdict": "pass",
+      "issues": []
+    },
+    "N036": {
+      "title": "把章首三处落点接成四级声音阶梯",
+      "unique_function_assessment": "实现。撤去全文后取回旧产物、乱序复位、补原词并立即用人物处境写故事旁白，防止活动遮蔽故事。",
+      "first_glance": "标题与‘取回章首三处落点→合上书’清楚指向检索；四张乱序卡均留序号和原词空位；故事旁白独立位于底部。",
+      "observed_receive": "我先取回章首三处落点，合书给四项排序并补原词；同桌只指出声音断层，我自己翻诗修订，最后不用活动名称说清女子迁嫁后为何停下叙事并转入劝诫。",
+      "input_action_artifact_feedback_revision_next_use": {
+        "input": "N031三处初读落点与N032—N035逐句体验。",
+        "action": "取回、合书排序、补原词、找断层、翻诗换笔、写旁白。",
+        "artifact": "学习单四级声音阶梯和一句故事旁白。",
+        "feedback": "同桌只报哪一级以后断层或缺原词。",
+        "revision": "作者翻诗调序、补词并把活动话改成人物处境话。",
+        "next_use": "N037将阶梯与旁白压缩成整章三十秒复述。",
+        "chain_status": "pass"
+      },
+      "answer_state": "pass_scrambled_retrieval",
+      "frontstage_backend_separation": "pass。合书、同桌反馈和换笔修订是学生完成任务的必要操作。",
+      "story_visibility": "通过底部故事旁白硬性回译到人物和处境，活动不遮蔽故事。",
+      "language_quality": "‘四级声音阶梯’略具设计感，但卡片内容与故事旁白使含义可理解，不构成研发腔硬门。",
+      "visual_quality": "四卡横向等距、序号与原词空位可辨；底部旁白区与操作区分层明确，无泄露正确排序。",
+      "verdict": "pass",
+      "issues": []
+    },
+    "N037": {
+      "title": "让第三章成为回望中的一段话",
+      "unique_function_assessment": "实现。整章原诗重新成为主焦点，局部体验通过三项旁白和跨章故事轨道收束为连续理解。",
+      "first_glance": "完整原文占页面上半部；重读—合书讲30秒和三项检核置于中部；听者边界与故事轨道置于下方。",
+      "observed_receive": "我完整重读后合书讲清叙事为何停下、劝告怎样从物到人、诗看见何种脱身差异；听者只报漏项，我回诗补说，再把章意接在初见议婚与等待迁嫁之后。",
+      "input_action_artifact_feedback_revision_next_use": {
+        "input": "N036已经复位四级声音阶梯并写一句故事旁白。",
+        "action": "整章重读、合书旁白、听者查漏、回诗补说、写轨道。",
+        "artifact": "学习单第三章三十秒旁白和故事轨道第三格。",
+        "feedback": "听者只按叙事停顿、由物及人、处境差异三项报漏项。",
+        "revision": "讲述者本人回原句补说；方法标签改为人物和声音的自然话。",
+        "next_use": "第四章用黄而陨和婚后事实调用第三格、桑叶假设及处境问题。",
+        "chain_status": "pass"
+      },
+      "answer_state": "pass_reconstruction_before_written_consolidation",
+      "frontstage_backend_separation": "pass。三项是检索框架而非成品章意。",
+      "story_visibility": "跨章公共轨道明确出现，第三章不被保存为孤立知识块。",
+      "language_quality": "‘成为回望中的一段话’与‘回到诗中，把它补上’自然。",
+      "visual_quality": "原文后排可读，三项检核色彩区分明确，轨道空格足够；无重叠、溢出、裁切或低对比。",
+      "verdict": "pass_with_p3",
+      "issues": [
+        {
+          "severity": "P3",
+          "evidence": "五分钟内包含完整重读、双向三十秒旁白、听者反馈、回诗补说、写故事轨道及连说前三章；桌面时间盒相加成立，但翻书和角色转换可能挤压最后连说。",
+          "fix_required": "不要求桌面返工；试教逐项记录实际起止、未完成轨道人数与未能连说前三章人数。"
+        }
+      ]
+    },
+    "N038": {
+      "title": "把第三章收进书页",
+      "unique_function_assessment": "实现。知识收纳在学生生成、删句体验、撤答和章末旁白之后出现，且要求只星标一项并回诗补证。",
+      "first_glance": "字词、声音、手法、待证、责任五条横向带按颜色分层，底部是唯一学生动作。",
+      "observed_receive": "我用自己的记录核对字词、声音、手法和边界，只给不稳的一项加星，再回原句补证；桑叶、男女处境原因和责任边界被清楚分开。",
+      "input_action_artifact_feedback_revision_next_use": {
+        "input": "N037已完成第三章自然章意和故事轨道。",
+        "action": "对照学习单、星标一项、回原句补证。",
+        "artifact": "学习单知识收纳星标与原句证据。",
+        "feedback": "同桌只听星标项的第三章原句证据。",
+        "revision": "补证不稳者回原句或假设卡修改，允许保留星标。",
+        "next_use": "第四章带入桑叶假设、脱身问题和星标。",
+        "chain_status": "pass"
+      },
+      "answer_state": "pass_teacher_consolidated_after_generation",
+      "frontstage_backend_separation": "pass。五条均为学生复习所需内容与解释边界，底部操作直接服务核验。",
+      "story_visibility": "知识收纳位于章意之后，不替代故事；待证栏明确将解释继续交给婚后事实。",
+      "language_quality": "标签化程度符合知识收纳页用途；责任句准确、无受害者归责。",
+      "visual_quality": "信息密度为全章最高但五条分带清楚；正文、标签和底部动作均可读，无碰撞、裁切或对比不足。",
+      "verdict": "pass",
+      "issues": []
+    }
+  },
+  "module_assessment": {
+    "continuous_story_chain": "前两章故事轨道→第三章整读→桑叶开放假设→两声呼告→脱身处境对照→删句体验→撤答声音阶梯与故事回译→整章旁白与第三格→后置知识收纳。整体原文脊柱和跨章故事轨道成立，但N031、N033生成前泄答破坏两个关键发现节点。",
+    "activity_story_balance": "N035的听读比较、N036的排序和N037的旁白均能回到故事；未发现只记活动而不能说人物处境的独立活动岛。",
+    "answer_state_separation": "fail。N031问题态已显示核心换镜结论；N033问题态已显示关系结论‘由物及人’。",
+    "frontstage_backend_separation": "fail at N031 and N033。其余页学生前台以原文、问题、必要动作与产物为主。",
+    "visual_regression": "八页均未见重叠、文本溢出、裁切、低对比、异常断行、边距不足或版式漂移；视觉本身稳定。",
+    "deletion_test": "八页均有可辨认的删除损失；N031、N033的问题不是页面无存在资格，而是核心功能被过早答案化。",
+    "verdict": "FAIL"
+  },
+  "priority_counts": {
+    "P0": 0,
+    "P1": 1,
+    "P2": 1,
+    "P3": 2
+  },
+  "blocking_findings": [
+    {
+      "page_id": "N031",
+      "severity": "P1",
+      "summary": "初读生成前，学生前台与教师开场已给出叙事暂停、换镜/呼告、桑叶和两声叹息等核心发现。"
+    },
+    {
+      "page_id": "N033",
+      "severity": "P2",
+      "summary": "完成三格比较前，学生前台预先命名最终关系‘由物及人’。"
+    }
+  ],
+  "p3_trial_observations": [
+    {
+      "page_id": "N032",
+      "observation": "无桑叶实物或图像时，学生能否只凭沃若稳定生成感官词。",
+      "method": "记录十秒后空白、只复述释义和能写有原词依据感官词的人数。"
+    },
+    {
+      "page_id": "N037",
+      "observation": "五分钟是否足以完成重读、双向旁白、反馈、补说、写轨道及连说前三章。",
+      "method": "记录各环节实际起止、未完成轨道人数和未连说完人数。"
+    }
+  ],
+  "verdict": "FAIL",
+  "claim_boundary": "本结论是静止候选的独立桌面视觉与逐页功能审查；P1/P2是当前材料中可确定的硬门失败，不能由整体故事链或视觉美观抵消。P3仅登记真实试教观察。"
+}

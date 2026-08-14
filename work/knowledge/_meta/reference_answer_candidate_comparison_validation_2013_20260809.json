@@ -1,0 +1,14 @@
+{
+  "schema_version": "reference-answer-candidate-comparison-validation-2013-0.1",
+  "result": "passed",
+  "rows": 21,
+  "errors": [],
+  "checks": {
+    "coverage": true,
+    "candidate_links": true,
+    "authority_and_scoring_gate": true,
+    "no_silent_adjudication": true,
+    "main_answer_index_unchanged": true,
+    "m0_gate": true
+  }
+}

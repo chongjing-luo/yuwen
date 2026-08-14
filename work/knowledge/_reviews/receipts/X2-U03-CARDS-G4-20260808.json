@@ -1,0 +1,75 @@
+{
+  "receipt_id": "RECEIPT-X2-U03-CARDS-G4-20260808",
+  "gate": "DG4-MERGE",
+  "merged_at": "2026-08-08T19:16:00+08:00",
+  "artifact_version": "CARD-X2-U03-01 v0.2.3; CARD-X2-U03-02/03 v0.2.4",
+  "content_change": false,
+  "allowed_diff": ["front_matter.status", "front_matter.reviewers", "self_check", "version_history", "ledger.status", "ledger.reviewers", "state_transition"],
+  "deliverables": [
+    {
+      "deliverable_id": "CARD-X2-U03-01",
+      "artifact_version": "0.2.3",
+      "pre_merge_file_sha256": "0fbc2b3037f9c59167535bf005bac217209f8f0abf119d9e30f6ae8f463c1d83",
+      "post_merge_file_sha256": "0d6a0e46d3a2ec0521eff31d363a63de3b3914336d4a47921756114b05bb5ce4",
+      "primary_score": 98.5,
+      "secondary_score": 98.5,
+      "primary_review": "card_x2_u03_01_primary_review_final_r3_20260808.md",
+      "secondary_review": "card_x2_u03_01_secondary_review_final_r3_20260808.md"
+    },
+    {
+      "deliverable_id": "CARD-X2-U03-02",
+      "artifact_version": "0.2.4",
+      "pre_merge_file_sha256": "1216329ef1325b0e474b7a1e4aa7cbd53061a24e9732bd26740ebee56d7d6a61",
+      "post_merge_file_sha256": "74459ad46c63cdd78b74c6d4d5434ba8cb157e228f29a38e3435b9498a2f49f6",
+      "primary_score": 98.5,
+      "secondary_score": 98.5,
+      "primary_review": "card_x2_u03_02_primary_review_final_r3_20260808.md",
+      "secondary_review": "card_x2_u03_02_secondary_review_final_r3_20260808.md"
+    },
+    {
+      "deliverable_id": "CARD-X2-U03-03",
+      "artifact_version": "0.2.4",
+      "pre_merge_file_sha256": "d5b752c25696bdc156c11fd61c7ba9c39fc210b4071c0d5194a10daaa4536416",
+      "post_merge_file_sha256": "6ee9e835dded3cb1a47aae0481735d94eb2d9cac63e379ed445ec99d1902b035",
+      "primary_score": 98.5,
+      "secondary_score": 98.5,
+      "primary_review": "card_x2_u03_03_primary_review_final_r3_20260808.md",
+      "secondary_review": "card_x2_u03_03_secondary_review_final_r3_20260808.md"
+    }
+  ],
+  "review_policy": {
+    "rubric_version": "2.0-textbook",
+    "rubric_sha256": "ab9cc53d57834642e66e568824d1c0c53e128953e15b20b4c7bd04aa30610d43",
+    "taxonomy_sha256": "13e5e23c45c05359a5c91e360ce8bd71dbf2a841c2c6a72f1adca52bef7cbd4b",
+    "ledger_pre_merge_sha256": "912815ed8d893092be0e9f9af8a605392713e1da9268c71a0b0a72f06e2c35cc",
+    "ledger_post_merge_sha256": "33db8c791a16ded33b7f802effe3a0bde5dab7f82e03357a98f3d84ec3b38ddd",
+    "r01_r10": "all 0",
+    "p0_p1_p2": "0/0/0"
+  },
+  "validator": {
+    "review_run_id": "VAL-20260808-185028+0800",
+    "review_report_sha256": "6e644c22fc95a1459047114a9f00946aacfaf0efdf30ca4ae5ca9c8193171ce5",
+    "post_merge_run_id": "VAL-20260808-185624+0800",
+    "report": "work/knowledge/_meta/validation_reports/archive/x2_u03_cards_validation_20260808_g4.json",
+    "report_sha256": "bdca02e4440138a6a82a657b97faccd28e46d8ff2fade62676bf7ce21c72a184",
+    "latest_report": "work/knowledge/_meta/validation_reports/latest.json",
+    "latest_report_sha256": "1383ac0f59a738dfe2d3a095718b93d7d20e2c95b71c2af304b56081bb8e04e1",
+    "result": "passed",
+    "errors": 0
+  },
+  "transition_ids": [
+    "STATE-20260808-CARD-X2-U03-01-G4",
+    "STATE-20260808-CARD-X2-U03-02-G4",
+    "STATE-20260808-CARD-X2-U03-03-G4"
+  ],
+  "review_file_sha256": {
+    "card_x2_u03_01_primary_review_final_r3_20260808.md": "1c6927d3a6715bbee06790bebe9e6fb722dd80aa90bf989d28b3f69734e49e5a",
+    "card_x2_u03_01_secondary_review_final_r3_20260808.md": "ace4e057c740ff14933a946b9cc95831963e97f9461362709be81f22b83692ca",
+    "card_x2_u03_02_primary_review_final_r3_20260808.md": "943bf99fdeaa52f7ef348e6edf65b434850ed550d1a28fac9170f00e55de13a2",
+    "card_x2_u03_02_secondary_review_final_r3_20260808.md": "5e3992c32803c278934d531139242119019bbe36c359d4af6d6a6e512ed80143",
+    "card_x2_u03_03_primary_review_final_r3_20260808.md": "94ae78f1b58fd742a36d3bc5e90d45d9092708234e49904ab8076dfc7ba2c8d4",
+    "card_x2_u03_03_secondary_review_final_r3_20260808.md": "a296f3168d443930e7b26089183aae4f36b53972290bdf8f1efe1e4598c78aff"
+  },
+  "downstream_impact": ["UNIT-X2-U03"],
+  "status": "accepted"
+}

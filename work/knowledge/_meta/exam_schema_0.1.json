@@ -1,0 +1,38 @@
+{
+  "schema_version": "exam-schema-0.1",
+  "status": "candidate_structural_freeze",
+  "upstream": "SG-EXAM-CAL-2008-2024",
+  "identity": {
+    "exam_id": "GK-{paper_code}-{year}",
+    "question_id": "{exam_id}-Q{top_level:03d}",
+    "response_node_id": "{question_id}-{subquestion_code}",
+    "material_id": "MAT-{year}-{paper_code}-{sequence:02d}"
+  },
+  "document_roles": ["question", "analysis", "answer_scoring_candidate"],
+  "question_record_required": [
+    "canonical_question_id", "exam_id", "year", "paper_code", "question_id", "source_role",
+    "section_id", "question_type_l1", "question_type_l2", "source_pdf", "source_mineru_md",
+    "source_clean_md", "source_pdf_page_index_start", "source_pdf_page_index_end",
+    "source_block_ids", "source_locator_status", "segment_clean_sha256", "raw_segment_sha256",
+    "segmentation_status", "review_status"
+  ],
+  "response_node_required": [
+    "response_node_id", "question_id", "subquestion_code", "prompt_text", "score",
+    "ability_action", "four_layer", "four_wings", "context_type", "atomic_exam_point",
+    "answer_source_status", "evidence_ids", "decomposition_status"
+  ],
+  "controlled_values": {
+    "source_locator_status": ["page_level_fallback", "manual_bbox_verified", "missing_source_marker"],
+    "decomposition_status": ["top_level_only", "response_nodes_derived", "missing_source_marker", "needs_manual_review"],
+    "answer_source_status": ["candidate_unverified", "official_verified", "missing", "conflict"],
+    "m_mapping": ["M0", "M1", "M2", "M3"],
+    "na_policy": "M0 records must use KP_ID=N/A and provide na_reason; N/A cannot conceal an unreviewed missing node"
+  },
+  "provenance_policy": {
+    "raw_full_md_read_only": true,
+    "source_pdf_read_only": true,
+    "derived_clean_copy_required": true,
+    "ocr_correction": "record_only_no_silent_revision",
+    "official_claim_requires": ["verified source artifact", "independent locator check", "answer/scoring source separation"]
+  }
+}

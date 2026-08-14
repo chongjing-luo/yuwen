@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:yuwen:sg-method-query-manifest:0.1",
+  "title": "SG-METHOD Fixed Teaching Query Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "query_set_id", "frozen", "time_limit_seconds", "queries"],
+  "properties": {
+    "schema_version": {"const": "sg-method-query-manifest-0.1"},
+    "query_set_id": {"const": "SG-METHOD-QUERIES-12-20260809"},
+    "frozen": {"type": "boolean"},
+    "time_limit_seconds": {"const": 120},
+    "queries": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"$ref": "#/$defs/query"}}
+  },
+  "$defs": {
+    "query": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["query_id", "category", "prompt", "target_artifact_ids", "required_outputs", "success_rule"],
+      "properties": {
+        "query_id": {"type": "string", "pattern": "^QRY-[0-9]{2}$"},
+        "category": {"enum": ["single_lesson_fact", "text_interpretation", "language_method", "unit_task", "cross_text_compare", "unit_progression", "book_progression", "evidence_backtrack", "source_boundary"]},
+        "prompt": {"type": "string", "minLength": 10},
+        "target_artifact_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true},
+        "required_outputs": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true},
+        "success_rule": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

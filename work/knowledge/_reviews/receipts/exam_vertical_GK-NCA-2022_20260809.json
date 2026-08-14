@@ -1,0 +1,142 @@
+{
+  "schema_version": "exam-vertical-review-receipt-0.1",
+  "receipt_id": "EXAM-VERTICAL-GK-NCA-2022-20260809",
+  "exam_id": "GK-NCA-2022",
+  "calibration_id": "SG-EXAM-CAL-2008-2024",
+  "generated_at": "2026-08-09T06:42:23+08:00",
+  "status": "structural_pass",
+  "acceptance": "conditional_review",
+  "scope": "response_node_decomposition_and_score_reconciliation",
+  "source_policy": {
+    "question_pdf_visual_check": "passed",
+    "source_pdf_read_only": true,
+    "mineru_full_md_read_only": true,
+    "answer_authority": "candidate_unverified_or_missing",
+    "mapping_boundary": "M0_only"
+  },
+  "visual_check": {
+    "pages_checked": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "notes": [
+      "2022 全国甲卷空白卷共12页；考试正文为第1—10页，第11页为空白水印页，第12页为广告页。",
+      "卷面分区总分稳定为现代文36、古代诗文34、语言文字运用20、作文60，共150分。",
+      "实用类阅读Q4—Q6题组总分12，文学类阅读Q7—Q9题组总分15；采用3/4/5与3/6/6作为结构候选并显式标记。",
+      "语言文字运用分为Q17—Q19（11分）与Q20—Q21（9分）；仅保留组总分，Q18/Q19/Q21节点记0分占位，禁止把0解释为正式小题分值。",
+      "Q4图示已与PDF核对；原始水印、空白页和广告页不进入题文清洗正文。"
+    ]
+  },
+  "visual_review_receipt": "work/knowledge/_reviews/receipts/exam_visual_review_GK-NCA-2022_20260809.json",
+  "node_count": 22,
+  "question_count": 22,
+  "score_total": 150,
+  "expected_score_total": 150,
+  "choice_groups": [],
+  "score_groups": [
+    {
+      "id": "GK-NCA-2022-Q004-Q006",
+      "questions": [
+        4,
+        5,
+        6
+      ],
+      "total": 12,
+      "allocation": "candidate_3_4_5"
+    },
+    {
+      "id": "GK-NCA-2022-Q007-Q009",
+      "questions": [
+        7,
+        8,
+        9
+      ],
+      "total": 15,
+      "allocation": "candidate_3_6_6"
+    },
+    {
+      "id": "GK-NCA-2022-Q017-Q019",
+      "questions": [
+        17,
+        18,
+        19
+      ],
+      "total": 11,
+      "allocation": "aggregate_only",
+      "lead_question": 17
+    },
+    {
+      "id": "GK-NCA-2022-Q020-Q021",
+      "questions": [
+        20,
+        21
+      ],
+      "total": 9,
+      "allocation": "aggregate_only",
+      "lead_question": 20
+    }
+  ],
+  "score_notes": {
+    "aggregate_only": "语言文字运用子组分值仅登记在组首节点；同组其余节点为结构占位(score=0)，不构成正式评分分配。",
+    "candidate_allocation": "Q4—Q6、Q7—Q9的分配用于总分复算和检索排序，待正式评分资料核验。"
+  },
+  "missing_answer_source_questions": [],
+  "source_hash_anchors": {
+    "question_pdf": {
+      "1": "d2b4f2080967e625fac8afa8c8830aa3f4c33ffdc43de98be7bcfa29a42a4f26",
+      "2": "d2b4f2080967e625fac8afa8c8830aa3f4c33ffdc43de98be7bcfa29a42a4f26",
+      "3": "d2b4f2080967e625fac8afa8c8830aa3f4c33ffdc43de98be7bcfa29a42a4f26",
+      "4": "d2b4f2080967e625fac8afa8c8830aa3f4c33ffdc43de98be7bcfa29a42a4f26",
+      "5": "d2b4f2080967e625fac8afa8c8830aa3f4c33ffdc43de98be7bcfa29a42a4f26",
+      "6": "d2b4f2080967e625fac8afa8c8830aa3f4c33ffdc43de98be7bcfa29a42a4f26",
+      "7": "d2b4f2080967e625fac8afa8c8830aa3f4c33ffdc43de98be7bcfa29a42a4f26",
+      "8": "d2b4f2080967e625fac8afa8c8830aa3f4c33ffdc43de98be7bcfa29a42a4f26",
+      "9": "d2b4f2080967e625fac8afa8c8830aa3f4c33ffdc43de98be7bcfa29a42a4f26",
+      "10": "d2b4f2080967e625fac8afa8c8830aa3f4c33ffdc43de98be7bcfa29a42a4f26",
+      "11": "d2b4f2080967e625fac8afa8c8830aa3f4c33ffdc43de98be7bcfa29a42a4f26",
+      "12": "d2b4f2080967e625fac8afa8c8830aa3f4c33ffdc43de98be7bcfa29a42a4f26",
+      "13": "d2b4f2080967e625fac8afa8c8830aa3f4c33ffdc43de98be7bcfa29a42a4f26",
+      "14": "d2b4f2080967e625fac8afa8c8830aa3f4c33ffdc43de98be7bcfa29a42a4f26",
+      "15": "d2b4f2080967e625fac8afa8c8830aa3f4c33ffdc43de98be7bcfa29a42a4f26",
+      "16": "d2b4f2080967e625fac8afa8c8830aa3f4c33ffdc43de98be7bcfa29a42a4f26",
+      "17": "d2b4f2080967e625fac8afa8c8830aa3f4c33ffdc43de98be7bcfa29a42a4f26",
+      "18": "d2b4f2080967e625fac8afa8c8830aa3f4c33ffdc43de98be7bcfa29a42a4f26",
+      "19": "d2b4f2080967e625fac8afa8c8830aa3f4c33ffdc43de98be7bcfa29a42a4f26",
+      "20": "d2b4f2080967e625fac8afa8c8830aa3f4c33ffdc43de98be7bcfa29a42a4f26",
+      "21": "d2b4f2080967e625fac8afa8c8830aa3f4c33ffdc43de98be7bcfa29a42a4f26",
+      "22": "d2b4f2080967e625fac8afa8c8830aa3f4c33ffdc43de98be7bcfa29a42a4f26"
+    }
+  },
+  "derived_jsonl": "work/knowledge/高考分析/GK-NCA-2022-response_nodes_vertical_slice.jsonl",
+  "errors": [],
+  "warnings": [
+    "Q2选项B末尾出现孤立字符‘传V播’，疑为OCR/水印残片；不静默改写。",
+    "Q10选项存在‘诺/诸’等OCR异文，保留清洗源原样，待独立来源复核。",
+    "Q13译文题中‘日/曰’等OCR异文保留，不静默改写。",
+    "该语言文字运用题组仅有卷面组总分；本节点分值为组首登记或0分结构占位，不代表正式小题分值。",
+    "该语言文字运用题组仅有卷面组总分；本节点分值为组首登记或0分结构占位，不代表正式小题分值。",
+    "该语言文字运用题组仅有卷面组总分；本节点分值为组首登记或0分结构占位，不代表正式小题分值。",
+    "该语言文字运用题组仅有卷面组总分；本节点分值为组首登记或0分结构占位，不代表正式小题分值。",
+    "该语言文字运用题组仅有卷面组总分；本节点分值为组首登记或0分结构占位，不代表正式小题分值。",
+    "截去题段末尾下一节标题；原始题段保持不变。",
+    "截去题段末尾下一节标题；原始题段保持不变。",
+    "截去题段末尾下一节标题；原始题段保持不变。",
+    "截去题段末尾下一节标题；原始题段保持不变。",
+    "截去题段末尾下一节标题；原始题段保持不变。",
+    "截去题段末尾下一节标题；原始题段保持不变。",
+    "截去题段末尾下一节标题；原始题段保持不变。",
+    "截去题段末尾下一节标题；原始题段保持不变。",
+    "语言文字运用子组分值仅登记在组首节点；同组其余节点为结构占位(score=0)，不构成正式评分分配。",
+    "Q4—Q6、Q7—Q9的分配用于总分复算和检索排序，待正式评分资料核验。"
+  ]
+}

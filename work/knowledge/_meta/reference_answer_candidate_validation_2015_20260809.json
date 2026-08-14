@@ -1,0 +1,19 @@
+{
+  "schema_version": "reference-answer-candidate-validation-2015-0.1",
+  "result": "passed",
+  "rows": 21,
+  "source_hashes": {
+    "answer_source.txt": "b23a90b105a34c2e8b40da381a502a040eb4e970f9a06aebda1a1d092af4388b",
+    "source.html": "b32de66d24b0987d01f1b75bc4dbd06ccdcdb8f0e8b3a6c89b3ea237e252929b",
+    "answer_bundle.zip": "2ec4ac8fdf0bd3da210e9ae2ddad4fcc6ec7689d9114d899627438cb8cfb517a",
+    "2015╦─┤и╕▀┐╝╙я╬─╩╘╠т╝░┤Ё░╕╜т╬Ў.doc": "1e9dd88d164d0967994c7cfba45806b134f5547fe5141a3db9a2d6172d7c79de"
+  },
+  "main_index_present": false,
+  "errors": [],
+  "checks": {
+    "full_candidate_coverage": true,
+    "source_hashes": true,
+    "authority_gate": true,
+    "main_index_unchanged_gate": true
+  }
+}

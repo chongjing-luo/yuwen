@@ -1,0 +1,20 @@
+{
+  "schema_version": "classical-translation-2021-2024-kp-batch-validation-0.1",
+  "result": "passed",
+  "row_count": 5,
+  "year_counts": {
+    "2021": 1,
+    "2022": 1,
+    "2023": 1,
+    "2024": 2
+  },
+  "errors": [],
+  "checks": {
+    "coverage": true,
+    "traceability": true,
+    "free_response_gate": true,
+    "shared_scope_gate": true,
+    "m0_boundary": true,
+    "answer_marker_boundary": true
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "exam-reference-answer-candidate-receipt-0.1",
+  "receipt_id": "EXAM-REFERENCE-ANSWER-GK-SC-2013-20260809",
+  "exam_id": "GK-SC-2013",
+  "source_registry_id": "SRC-GK-2013-SC-SINA-IMAGE-ANSWER",
+  "source_authority_status": "unverified_third_party_reprint",
+  "coverage": {
+    "candidate_questions": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "missing_questions": [
+      21
+    ]
+  },
+  "source_gallery_html": "Data/reference/gaokao/external/2013_sina_images/index.html",
+  "source_gallery_html_sha256": "37d1a972d6726959f57b274b62fdb370a3a09ebb8a613f209d66df840841b92d",
+  "source_images": {
+    "q1_q13": {
+      "path": "Data/reference/gaokao/external/2013_sina_images/43271_112214_466277.jpg",
+      "sha256": "23d17cbbf1c6b0b77986be5189820de1d27ed0a49a277da2f74fd545148accc1"
+    },
+    "q14_q20": {
+      "path": "Data/reference/gaokao/external/2013_sina_images/43271_112216_217968.jpg",
+      "sha256": "d9f759ade79fddcae4e29aa430d03b1965db22ae9b8a501ec126f498cf4e4cb1"
+    }
+  },
+  "output": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-SC-2013/answers/reference_answer_candidates.jsonl",
+  "output_sha256": "2a656850f6e6c2b8d64495f684b2b9a8144c690cddd91a4329df9ff90d8bfd7f",
+  "report": "work/knowledge/高考分析/EXAM-REFERENCE-ANSWER-CANDIDATES-2013.md",
+  "raw_source_mutation": false,
+  "answer_index_mutation": false,
+  "scoring_status": "not_available_as_official",
+  "mapping_status": "M0 | kp_id=N/A",
+  "policy": "图像转录仅作独立候选，须与题卷、其他来源和评分材料交叉复核后方可用于知识点映射。"
+}

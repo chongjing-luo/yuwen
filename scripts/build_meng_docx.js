@@ -38,6 +38,7 @@ const {
 
 const ROOT = path.resolve(__dirname, "..");
 const LESSON_DIR = path.join(ROOT, "work", "备课", "选择性必修下册", "氓");
+const { slides, totalMinutes } = require("./meng_v5_lesson");
 
 const COLORS = {
   ink: "2B2118",
@@ -63,6 +64,7 @@ function stripFrontMatter(markdown) {
 
 function plainText(text) {
   return text
+    .replace(/<br\s*\/?>/gi, "　")
     .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
     .replace(/\*\*([^*]+)\*\*/g, "$1")
     .replace(/`([^`]+)`/g, "$1")
@@ -71,7 +73,9 @@ function plainText(text) {
 }
 
 function inlineRuns(text, opts = {}) {
-  const normalized = text.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+  const normalized = text
+    .replace(/<br\s*\/?>/gi, "　")
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
   const pattern = /(\*\*[^*]+\*\*|`[^`]+`|\*[^*]+\*)/g;
   const parts = normalized.split(pattern).filter(Boolean);
   return parts.map((part) => {
@@ -299,7 +303,7 @@ function markdownToDocxChildren(markdown, options) {
   return children;
 }
 
-function coverPage() {
+function coverPage({ descriptor, focus, version }) {
   return [
     new Paragraph({ spacing: { before: 780, after: 140 }, alignment: AlignmentType.CENTER, children: [
       new TextRun({ text: "氓", font: FONT_SERIF, size: 72, bold: true, color: COLORS.ink }),
@@ -311,16 +315,16 @@ function coverPage() {
       alignment: AlignmentType.CENTER,
       border: { bottom: { style: BorderStyle.SINGLE, size: 14, color: COLORS.gold, space: 12 } },
       spacing: { after: 260 },
-      children: [new TextRun({ text: "2个核心课时 + 1个可选拓展课时", font: FONT_SANS, size: 24, bold: true, color: COLORS.leaf })],
+      children: [new TextRun({ text: descriptor, font: FONT_SANS, size: 24, bold: true, color: COLORS.leaf })],
     }),
     new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 180 }, children: [
-      new TextRun({ text: "承诺、关系变化与主体选择如何被诗歌语言看见", font: FONT_SERIF, size: 30, bold: true, color: COLORS.ink }),
+      new TextRun({ text: focus, font: FONT_SERIF, size: 30, bold: true, color: COLORS.ink }),
     ] }),
     new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 260, after: 80 }, children: [
       new TextRun({ text: "选择性必修下册 · 第一单元 · 文学阅读与写作", font: FONT_SANS, size: 20, color: COLORS.gray }),
     ] }),
     new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 60 }, children: [
-      new TextRun({ text: "教学包版本 0.2 · 2026年8月10日", font: FONT_SANS, size: 18, color: COLORS.gray }),
+      new TextRun({ text: version, font: FONT_SANS, size: 18, color: COLORS.gray }),
     ] }),
     new Paragraph({ children: [new PageBreak()] }),
   ];
@@ -363,7 +367,7 @@ function documentStyles() {
 }
 
 function numberingConfig() {
-  const numberReferences = ["lesson-numbers", "worksheet-numbers"].flatMap((prefix) =>
+  const numberReferences = ["lesson-numbers", "worksheet-numbers", "script-numbers"].flatMap((prefix) =>
     Array.from({ length: 32 }, (_, index) => ({
       reference: `${prefix}-${index + 1}`,
       levels: [{ level: 0, format: LevelFormat.DECIMAL, text: "%1.", alignment: AlignmentType.LEFT,
@@ -380,15 +384,19 @@ function numberingConfig() {
 }
 
 async function buildLessonDocx() {
-  const input = path.join(LESSON_DIR, "02_氓_2+1课时教案.md");
-  const output = path.join(LESSON_DIR, "02_氓_2+1课时教案.docx");
+  const input = path.join(LESSON_DIR, "02_氓_V5全文逐句教学母版.md");
+  const output = path.join(LESSON_DIR, "02_氓_V5全文逐句教学母版.docx");
   const markdown = fs.readFileSync(input, "utf8");
   const pageWidth = 16838;
   const marginLeft = 780;
   const marginRight = 780;
   const contentWidth = pageWidth - marginLeft - marginRight;
   const children = [
-    ...coverPage(),
+    ...coverPage({
+      descriptor: `六章逐句教学 · 五个同源模块 · 自然时长${totalMinutes}分钟`,
+      focus: "沿原文走完整个故事，让学生讲述、还原生活并形成判断",
+      version: "全文逐句教学母版 V5.3 · 2026年8月11日",
+    }),
     ...markdownToDocxChildren(markdown, {
       contentWidth,
       compactTables: true,
@@ -399,8 +407,8 @@ async function buildLessonDocx() {
   ];
   const doc = new Document({
     creator: "语文备课系统",
-    title: "《氓》2+1课时教学设计",
-    description: "选择性必修下册第一单元；证据驱动的课堂教学设计",
+    title: "《氓》V5全文逐句教学母版",
+    description: "选择性必修下册第一单元；六章逐句讲授、体验活动与三问综合",
     styles: documentStyles(),
     numbering: numberingConfig(),
     sections: [{
@@ -410,8 +418,8 @@ async function buildLessonDocx() {
           margin: { top: 760, right: marginRight, bottom: 760, left: marginLeft, header: 360, footer: 360 },
         },
       },
-      headers: { default: header("《氓》2+1课时教学设计｜选择性必修下册·第一单元") },
-      footers: { default: footer("证据驱动教学包") },
+      headers: { default: header(`《氓》V5全文逐句教学母版｜五模块·${totalMinutes}分钟`) },
+      footers: { default: footer("原文主线·真实参与·语文表达") },
       children,
     }],
   });
@@ -420,8 +428,8 @@ async function buildLessonDocx() {
 }
 
 async function buildWorksheetDocx() {
-  const input = path.join(LESSON_DIR, "03_学生学习单.md");
-  const output = path.join(LESSON_DIR, "03_学生学习单.docx");
+  const input = path.join(LESSON_DIR, "03_氓_V5学生学习单.md");
+  const output = path.join(LESSON_DIR, "03_氓_V5学生学习单.docx");
   const markdown = fs.readFileSync(input, "utf8");
   const pageWidth = 11906;
   const marginLeft = 850;
@@ -436,8 +444,8 @@ async function buildWorksheetDocx() {
   });
   const doc = new Document({
     creator: "语文备课系统",
-    title: "《氓》学生学习单",
-    description: "两个核心课时与一个可选比较课时的学生学习证据工具",
+    title: "《氓》V5学生学习单",
+    description: "保存逐句口译、六章行动、接力讲述、生活镜头、婚姻讨论与理解修订",
     styles: documentStyles(),
     numbering: numberingConfig(),
     sections: [{
@@ -447,8 +455,52 @@ async function buildWorksheetDocx() {
           margin: { top: 760, right: marginRight, bottom: 760, left: marginLeft, header: 340, footer: 340 },
         },
       },
-      headers: { default: header("《氓》学生学习单｜主张—诗句—形式—判断") },
+      headers: { default: header("《氓》V5学生学习单｜原句·口译·行动·证据·修订") },
       footers: { default: footer("选择性必修下册·第一单元") },
+      children,
+    }],
+  });
+  fs.writeFileSync(output, await Packer.toBuffer(doc));
+  return output;
+}
+
+async function buildScriptDocx() {
+  const input = path.join(LESSON_DIR, "04A_氓_V5逐页无生试讲稿.md");
+  const output = path.join(LESSON_DIR, "04A_氓_V5逐页无生试讲稿.docx");
+  const markdown = fs.readFileSync(input, "utf8");
+  const pageWidth = 11906;
+  const marginLeft = 850;
+  const marginRight = 850;
+  const contentWidth = pageWidth - marginLeft - marginRight;
+  const children = [
+    ...coverPage({
+      descriptor: `${slides.length}页母版连续课堂剧本 · 与五个模块备注同源`,
+      focus: "逐页可直接演出的教师原话、等待、回应与切页",
+      version: "全文逐句教学母版 V5.3 · 2026年8月11日",
+    }),
+    ...markdownToDocxChildren(markdown, {
+      contentWidth,
+      compactTables: false,
+      skipFirstH1: true,
+      headingOnePageBreak: false,
+      numberingPrefix: "script-numbers",
+    }),
+  ];
+  const doc = new Document({
+    creator: "语文备课系统",
+    title: "《氓》V5逐页无生试讲稿",
+    description: "与V5完整母版及五模块PPT讲者备注同源的逐页连续课堂剧本",
+    styles: documentStyles(),
+    numbering: numberingConfig(),
+    sections: [{
+      properties: {
+        page: {
+          size: { width: 11906, height: 16838 },
+          margin: { top: 760, right: marginRight, bottom: 760, left: marginLeft, header: 340, footer: 340 },
+        },
+      },
+      headers: { default: header(`《氓》V5逐页无生试讲稿｜${slides.length}页母版连续课堂剧本`) },
+      footers: { default: footer("与PPT讲者备注同源") },
       children,
     }],
   });
@@ -459,7 +511,8 @@ async function buildWorksheetDocx() {
 async function main() {
   const lesson = await buildLessonDocx();
   const worksheet = await buildWorksheetDocx();
-  for (const output of [lesson, worksheet]) {
+  const script = await buildScriptDocx();
+  for (const output of [lesson, worksheet, script]) {
     console.log(`${path.relative(ROOT, output)}\t${fs.statSync(output).size} bytes`);
   }
 }

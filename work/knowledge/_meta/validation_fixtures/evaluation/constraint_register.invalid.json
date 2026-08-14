@@ -1,0 +1,12 @@
+{
+  "schema_version": "2.0-textbook-eval-1",
+  "deliverable_id": "CARD-X3-U01-02",
+  "artifact_version": "0.2.2",
+  "constraints": [
+    {
+      "constraint_id": "BAD",
+      "kind": "required",
+      "statement": "缺少 source_refs、severity 和 checked。"
+    }
+  ]
+}

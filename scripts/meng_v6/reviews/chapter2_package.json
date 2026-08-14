@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "review_scope": "chapter_2_actual_package_desktop_only",
+  "page_ids": [
+    "N022",
+    "N023",
+    "N024",
+    "N025",
+    "N026",
+    "N027",
+    "N028",
+    "N029",
+    "N030"
+  ],
+  "iterations": [
+    {
+      "candidate_pptx_sha256": "da2468967095f3dd80986540b6e299e629b3caab9de0dbb7a8b2ffb5e79a1c1c",
+      "candidate_snapshot_sha256": "d3ebab7dfc2b512e53a8c1fc10cf3164b823d90b9acad6469826085b79d743cc",
+      "candidate_render_contact_sha256": "c365dc01d6c1f31d9232779e33003eb4eb4b6f1eb06cd002a8e90da105427261",
+      "student_reception_status": "pass",
+      "visual_status": "fail",
+      "defects": [
+        {
+          "defect_id": "C2-VIS-N023-STATION-001",
+          "severity": "P1",
+          "page_id": "N023",
+          "finding": "实际主视觉把女子放在垝垣左下，并让视线在中途穿过垝垣，第一眼暗示女子仍在墙下，与‘乘彼垝垣’矛盾；底部‘不画成行走路线’不能抵消站位错误",
+          "closure": "先增加失败测试，再把人物与视线起点置于垝垣顶端，由墙顶直接望向复关；同步修正课程源、方法库、教师逐字稿和物理PPT，重建后由原审查者复验"
+        }
+      ],
+      "status": "fail"
+    },
+    {
+      "candidate_pptx_sha256": "e8f1735371750a13534c92beccfb391c07f591c87e63ae84cf4d5c413fd14d44",
+      "candidate_snapshot_sha256": "c136a8bf50908245e19e98999e265950730dd840595d86b2ae93be73f49d628a",
+      "candidate_render_contact_sha256": "0a23bb845026bba280f7e2314c757010585e76539b86e35dcd144d1ee8dc3260",
+      "student_reception_status": "pass",
+      "visual_status": "pass",
+      "main_review_status": "pass",
+      "closed_defects": [
+        "C2-VIS-N023-STATION-001"
+      ],
+      "status": "pass"
+    },
+    {
+      "candidate_pptx_sha256": "6cd5a39e0dfce09d172e381c2f0d60e28fe9345933e5eeaaedc9dd7eee094c08",
+      "candidate_snapshot_sha256": "5eb626aaab8cc4563b543caa34544b9531328febf02ec7364f511bac7a8bda0b",
+      "candidate_render_contact_sha256": "c9dd37a5ba5809c487b26e5dbe4faf7f9801747727b1130ec63f5f4e548dbbf0",
+      "student_reception_status": "pass",
+      "visual_status": "pass",
+      "joint_module_status": "pass",
+      "defects_closed": [
+        {
+          "defect_id": "C2-JOINT-N023-ANSWER-LEAK-001",
+          "severity": "P1",
+          "finding": "N023要求学生生成视线关系，旧主视觉却在生成前显示完整人物站位和指向复关的箭头，使活动退化为临摹",
+          "closure": "先增加课程、学习单和PPT失败测试，再撤去人物、墙体、站位答案和完整箭头，只保留人物站位、视线方向、目光/路线三个生成空框；教师仅给词义支架，同桌仅核对‘乘/望’；双独审与联合回归通过"
+        },
+        {
+          "defect_id": "C2-JOINT-N024-ANSWER-LEAK-001",
+          "severity": "P1",
+          "finding": "N024要求学生自行对齐三组原词，旧主视觉和学习单却预填三组完整答案，使独立生成、同伴核查和错误诊断失去实质",
+          "closure": "先增加课程、学习单和PPT失败测试，再将PPT与学习单改为视线条件、人物动作、语势原词三组空槽；教师只校准必要词义，同桌只指出无原词依据的一格；双独审与联合回归通过"
+        }
+      ],
+      "status": "pass"
+    }
+  ],
+  "student_reception": {
+    "reviewer": "student_reception_qa",
+    "reviewed_at": "2026-08-13",
+    "status": "pass",
+    "page_matrix": {
+      "N022": "pass",
+      "N023": "pass",
+      "N024": "pass",
+      "N025": "pass",
+      "N026": "pass_with_p3",
+      "N027": "pass",
+      "N028": "pass",
+      "N029": "pass",
+      "N030": "pass_with_deferred_use"
+    },
+    "evidence": "逐页核对学生所见、教师所说、个人动作、听者任务、作品位置、反馈修订、回诗和后用；N023/N024生成前答案已撤去且必要词义支架仍在；确认N025生成个人朗读谱、N026盲听验证并改读，功能不重复；N027解释边界准确；N029真实撤答；N030完成章内连续复述"
+  },
+  "visual": {
+    "reviewer": "ppt_visual_qa",
+    "reviewed_at": "2026-08-13",
+    "status": "pass",
+    "page_matrix": {
+      "N022": "pass",
+      "N023": "pass",
+      "N024": "pass",
+      "N025": "pass",
+      "N026": "pass",
+      "N027": "pass",
+      "N028": "pass",
+      "N029": "pass",
+      "N030": "pass"
+    },
+    "evidence": "最终N023首态只保留三个生成空框，N024只保留两句原诗和三组比较空槽；均不泄答且远距可读；九页与三模块两处接点回归未发现孤字、异常换行、遮挡、裁切、低对比、拥挤、多主视觉争抢或上下文误导"
+  },
+  "p0": 0,
+  "p1": 0,
+  "p2": 0,
+  "p3_observations": [
+    {
+      "observation_id": "C2-P3-BLIND-LISTENING-NOISE",
+      "scope": [
+        "N026"
+      ],
+      "observation": "闭眼双人盲听在真实班级噪声中能否稳定辨认声音转折，仍须试教观察",
+      "closure_target": "classroom_rehearsal_or_pilot"
+    },
+    {
+      "observation_id": "C2-P3-DEFERRED-LIFE-RELAY",
+      "scope": [
+        "N030"
+      ],
+      "observation": "第二章一句章意已登记E_Q1_LIFE_RELAY，但目标事件尚未物理实现",
+      "closure_target": "question_1_life_relay"
+    },
+    {
+      "observation_id": "C2-P3-JOINT-TIMING-AND-FATIGUE",
+      "scope": [
+        "N022",
+        "N023",
+        "N024",
+        "N025",
+        "N026",
+        "N027",
+        "N028",
+        "N029",
+        "N030"
+      ],
+      "observation": "导入、第一章、第二章合计108分钟；真实分课、疲劳、材料管理及N026班级噪声中的盲听可靠性需试教观察。桌面演算可在累计43分钟N015后和86分钟N025后自然停课，不切断学生动作",
+      "closure_target": "classroom_rehearsal_or_pilot"
+    }
+  ],
+  "automated_verification": {
+    "command": "python -m unittest tests/test_build_meng_v6_chapter1.py tests/test_build_meng_v6_chapter1_markdown.py tests/test_build_meng_v6_chapter1_pptx.py tests/test_build_meng_v6_chapter2.py tests/test_build_meng_v6_chapter2_markdown.py tests/test_build_meng_v6_chapter2_pptx.py",
+    "tests_run": 51,
+    "status": "pass",
+    "office_validation": "pass",
+    "required_fix_and_reverify_cycle": "pass"
+  },
+  "status": "pass",
+  "claim_boundary": "desktop_design_has_an_executable_learning_path; classroom_effect_not_observed; whole_lesson_incomplete_after_chapter_2"
+}

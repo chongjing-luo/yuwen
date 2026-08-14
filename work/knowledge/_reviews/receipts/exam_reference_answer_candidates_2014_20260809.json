@@ -1,0 +1,58 @@
+{
+  "schema_version": "exam-reference-answer-candidate-receipt-0.2",
+  "receipt_id": "EXAM-REFERENCE-ANSWER-GK-SC-2014-20260809",
+  "generated_at": "2026-08-09T13:19:47+08:00",
+  "exam_id": "GK-SC-2014",
+  "source_registry_id": "SRC-GK-2014-SC-GAOKAO-IMAGE-ANSWER-CANDIDATE",
+  "source_authority_status": "unverified_third_party_reprint",
+  "coverage": {
+    "candidate_questions": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "missing_questions": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ]
+  },
+  "inputs": {
+    "html": {
+      "path": "Data/reference/gaokao/external/2014_gaokao_answer/source.html",
+      "sha256": "ef4e7002273c670fbf3b613c471b484eba688d3d669df0b9c5922b7cac111a6a"
+    },
+    "image": {
+      "path": "Data/reference/gaokao/external/2014_gaokao_answer/page1.jpg",
+      "sha256": "fbdec37d30f6156804815d697ac6040d417726100c518340a68330e10638e37e"
+    }
+  },
+  "output": {
+    "path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-SC-2014/answers/reference_answer_candidates.jsonl",
+    "sha256": "a5e5d3c0c46231f2e75d6342b490bd7881543b46515d3326428b3566507065f5",
+    "rows": 9
+  },
+  "report": {
+    "path": "work/knowledge/高考分析/EXAM-REFERENCE-ANSWER-CANDIDATES-2014.md",
+    "sha256": "03ad948644191491b9d9bb9f4914005812eb9e06934135b1cfaf08f2d95154b9"
+  },
+  "raw_source_mutation": false,
+  "answer_index_mutation": false,
+  "scoring_status": "not_available_as_official",
+  "mapping_status": "M0 | kp_id=N/A"
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "language-application-2021-2024-kp-batch-validation-0.1",
+  "result": "passed",
+  "row_count": 20,
+  "node_ids": [
+    "GK-NCA-2021-Q017-TOP",
+    "GK-NCA-2021-Q018-TOP",
+    "GK-NCA-2021-Q019-TOP",
+    "GK-NCA-2021-Q020-TOP",
+    "GK-NCA-2021-Q021-TOP",
+    "GK-NCA-2022-Q017-TOP",
+    "GK-NCA-2022-Q018-TOP",
+    "GK-NCA-2022-Q019-TOP",
+    "GK-NCA-2022-Q020-TOP",
+    "GK-NCA-2022-Q021-TOP",
+    "GK-NCA-2023-Q017-TOP",
+    "GK-NCA-2023-Q018-TOP",
+    "GK-NCA-2023-Q019-TOP",
+    "GK-NCA-2023-Q020-TOP",
+    "GK-NCA-2023-Q021-TOP",
+    "GK-NCA-2024-Q017-TOP",
+    "GK-NCA-2024-Q018-TOP",
+    "GK-NCA-2024-Q019-TOP",
+    "GK-NCA-2024-Q020-TOP",
+    "GK-NCA-2024-Q021-TOP"
+  ],
+  "errors": [],
+  "checks": {
+    "coverage": true,
+    "traceability": true,
+    "answer_gate": true,
+    "m0_boundary": true,
+    "authority_gate": true
+  }
+}

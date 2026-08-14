@@ -1,0 +1,28 @@
+{
+  "receipt_id": "RECEIPT-CARD-X3-U04-01-G4-20260809",
+  "deliverable_id": "CARD-X3-U04-01",
+  "gate": "DG4-MERGE",
+  "merged_at": "2026-08-09T01:30:58+08:00",
+  "artifact_version": "0.2.1",
+  "pre_merge_file_sha256": "51e4601579ab0033e14fced1a0b0edb0001789bf240378933a02b9ca7e2fe5ea",
+  "post_merge_file_sha256": "7919991d1737f5cbdcca0c67341aa42119a22a6f5b6cb240274bda3f12b9c15b",
+  "content_change": false,
+  "allowed_diff": ["front_matter.status", "front_matter.reviewers", "self_check", "version_history", "ledger.status", "ledger.reviewers", "ledger.state_transition_history", "state_transition"],
+  "review_binding": {
+    "rubric_version": "2.0-textbook",
+    "rubric_sha256": "ab9cc53d57834642e66e568824d1c0c53e128953e15b20b4c7bd04aa30610d43",
+    "taxonomy_sha256": "13e5e23c45c05359a5c91e360ce8bd71dbf2a841c2c6a72f1adca52bef7cbd4b",
+    "ledger_review_snapshot_sha256": "26e5895e32afb3ed0b925de0ec173ce3290f8b60f717c80f792402fa4155a152",
+    "ledger_pre_merge_sha256": "26e5895e32afb3ed0b925de0ec173ce3290f8b60f717c80f792402fa4155a152",
+    "ledger_post_merge_sha256": "a694864f06d864e87d9794777c91a4cbbe6f6334d8599a67b06ed5d0b236c5af",
+    "primary": {"reviewer": "independent_primary_unit_x3_u03_r1", "score": 98.5, "decision": "pass", "review_sha256": "41853e55df4711ac39ec3615a1d8ffaea6e796a3a394d6807d5f095dc09b193b"},
+    "secondary": {"reviewer": "independent_secondary_x3_u04_01_r1", "score": 98.5, "decision": "pass", "review_sha256": "fd64abfec0d0a681ebac4b3872b390ae6e4f8632fc7b653e845722fc1bb055d1"},
+    "score_difference": 0.0,
+    "r01_r10": "all 0",
+    "p0_p1_p2": "0/0/0"
+  },
+  "validator": {"review_run_id": "VAL-20260809-011930+0800", "review_report_sha256": "655d84576d4290d7794fd4ee3f36d137636b875d6df1d21c0af5f514e0b8a4f1", "post_validator_run_id": "VAL-20260809-013149+0800", "report": "work/knowledge/_meta/validation_reports/x3_u04_cards_post_receipt_validation_20260809.json", "report_sha256": "e5858825d7eb38aacae228392663fd409cf89dd60b5db7c4cb98eb4b1f4b4b20", "result": "passed", "errors": 0},
+  "transition_id": "STATE-20260809-CARD-X3-U04-01-G4",
+  "downstream_impact": ["UNIT-X3-U04"],
+  "status": "accepted"
+}

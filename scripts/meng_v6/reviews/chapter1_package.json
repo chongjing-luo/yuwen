@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.0",
+  "review_scope": "chapter_1_actual_package_desktop_only",
+  "page_ids": [
+    "N013",
+    "N014",
+    "N015",
+    "N016",
+    "N017",
+    "N018",
+    "N019",
+    "N020",
+    "N021"
+  ],
+  "iterations": [
+    {
+      "candidate_pptx_sha256": "e11e3cea2ae827d61776a256b49bb897c3af5264bc9ef00b0cc69e89812289cb",
+      "candidate_render_contact_sha256": "96e951a9843851465e76df324ab6c1836aae5160556395a30e71d8ea1c2518e2",
+      "student_reception_status": "pass",
+      "visual_status": "fail",
+      "defects": [
+        {
+          "defect_id": "C1-VIS-N018-ORPHAN-001",
+          "severity": "P2",
+          "page_id": "N018",
+          "finding": "任务条中的‘停顿’发生孤字换行，三段操作关系被破坏",
+          "closure": "把三项操作拆为独立文本框，重建并复验"
+        }
+      ],
+      "status": "fail"
+    },
+    {
+      "candidate_pptx_sha256": "e7c904dcc66c1806647a67b94e1b61a61a871ab54a3ab68d2ef702358c611405",
+      "candidate_render_contact_sha256": "ec447430a8e1a96b3998d189a0e259d58b64bafdd76142c3b58881e4d98b3342",
+      "student_reception_status": "pass",
+      "visual_status": "pass",
+      "main_review_status": "fail",
+      "defects": [
+        {
+          "defect_id": "C1-AUD-VISUAL-DUTY-001",
+          "severity": "P2",
+          "page_ids": ["N013", "N019", "N020", "N021"],
+          "finding": "课程快照把九页主视觉职责机械登记为‘原文批注’，与整读页和活动页的实际功能不符",
+          "closure": "按页面真实第一视觉和唯一功能改为全文/章内整读、原文批注或活动界面，并增加失败测试"
+        }
+      ],
+      "status": "fail"
+    },
+    {
+      "candidate_pptx_sha256": "7cf1dd723962abf7e40734a41030ccca586ef0117a699ced290308f37447621c",
+      "candidate_snapshot_sha256": "a069f5cef6ea0f2e76fd1aac883e998031a3c2335f8ccc7dd39b7cbf843ad0e5",
+      "candidate_render_contact_sha256": "ec447430a8e1a96b3998d189a0e259d58b64bafdd76142c3b58881e4d98b3342",
+      "student_reception_status": "pass",
+      "visual_status": "pass",
+      "main_review_status": "pass",
+      "status": "pass"
+    },
+    {
+      "candidate_pptx_sha256": "7df9dca5c66bae03b6d0c5b36003268c1870e7a2fa6f9e829020228d79846016",
+      "candidate_snapshot_sha256": "256ae7cf7947521da132f0c4829e913498f398df010addcb7544b467e84a78a3",
+      "candidate_render_contact_sha256": "19452f6749a594b058a059ad5e3ead46224dba0643f1f502612ad77a74a810c1",
+      "student_reception_status": "pass",
+      "visual_status": "pass",
+      "joint_module_status": "pass",
+      "defects_closed": [
+        {
+          "defect_id": "C1-JOINT-N015-DECEPTION-FRAME-001",
+          "severity": "P2",
+          "finding": "在学生已听见失败婚姻结局的联合语境中，N015主视觉‘表面上/实际上’会提前编码为伪装/欺骗，课后口头边界不能抵消第一眼框架",
+          "closure": "先增加课程、学习单和PPT三类失败测试，再统一改为‘诗句先写的动作/女子随后说明的来意’，保留‘匪’的否定转折并明确单凭本句不能断言伪装或欺骗；原联合视觉审查者与学生接收审查者复验通过"
+        }
+      ],
+      "status": "pass"
+    }
+  ],
+  "student_reception": {
+    "reviewer": "student_reception_qa",
+    "reviewed_at": "2026-08-13",
+    "status": "pass",
+    "page_matrix": {
+      "N013": "pass",
+      "N014": "pass",
+      "N015": "pass",
+      "N016": "pass",
+      "N017": "pass",
+      "N018": "pass",
+      "N019": "pass",
+      "N020": "pass_with_p3",
+      "N021": "pass"
+    },
+    "evidence": "九页逐项复核学生所见、教师所说、个人动作、听者任务、作品位置、反馈修订、回诗和后用；N015联合语境重写后仍完成‘匪’的否定转折，且不预置欺骗判断；与导入和第二章两处接点通过"
+  },
+  "visual": {
+    "reviewer": "ppt_visual_qa",
+    "reviewed_at": "2026-08-13",
+    "status": "pass",
+    "page_matrix": {
+      "N013": "pass",
+      "N014": "pass",
+      "N015": "pass",
+      "N016": "pass",
+      "N017": "pass",
+      "N018": "pass",
+      "N019": "pass",
+      "N020": "pass",
+      "N021": "pass"
+    },
+    "evidence": "逐页核对登记职责与实际第一视觉；N015用中性的文本次序框架替换表面/实际且长标签远距可读；全文/章内整读、原文批注和活动界面均匹配，无孤字、裁切、重叠、低对比或多主视觉争抢"
+  },
+  "p0": 0,
+  "p1": 0,
+  "p2": 0,
+  "p3_observations": [
+    {
+      "observation_id": "C1-P3-RHYTHM-FATIGUE",
+      "scope": ["N014", "N015", "N016", "N017", "N018"],
+      "observation": "五张逐句页的认知方法不同，但个人处理—同桌核对—教师定点释义—修订—回诗的节奏相似；是否造成真实课堂疲劳须在试教中观察",
+      "closure_target": "classroom_rehearsal_or_pilot"
+    },
+    {
+      "observation_id": "C1-P3-DEFERRED-RETURN",
+      "scope": ["N020"],
+      "observation": "第一章初见档案已登记全文后的回看目标，但E_CHAPTER1_RETURN尚未物理实现",
+      "closure_target": "question_3_and_chapter_1_return"
+    }
+  ],
+  "automated_verification": {
+    "command": "python -m unittest tests/test_build_meng_v6_chapter1.py tests/test_build_meng_v6_chapter1_markdown.py tests/test_build_meng_v6_chapter1_pptx.py",
+    "tests_run": 51,
+    "status": "pass",
+    "office_validation": "pass"
+  },
+  "status": "pass",
+  "claim_boundary": "desktop_design_has_an_executable_learning_path; classroom_effect_not_observed; whole_lesson_incomplete_after_chapter_2"
+}

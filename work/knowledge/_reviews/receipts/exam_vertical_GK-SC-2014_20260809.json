@@ -1,0 +1,82 @@
+{
+  "schema_version": "exam-vertical-review-receipt-0.1",
+  "receipt_id": "EXAM-VERTICAL-GK-SC-2014-20260809",
+  "exam_id": "GK-SC-2014",
+  "calibration_id": "SG-EXAM-CAL-2008-2024",
+  "generated_at": "2026-08-09T07:01:25+08:00",
+  "status": "structural_pass",
+  "acceptance": "conditional_review",
+  "scope": "response_node_decomposition_and_score_reconciliation",
+  "source_policy": {
+    "question_pdf_visual_check": "passed",
+    "source_pdf_read_only": true,
+    "mineru_full_md_read_only": true,
+    "answer_authority": "candidate_unverified_or_missing",
+    "mapping_boundary": "M0_only"
+  },
+  "visual_check": {
+    "pages_checked": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "notes": [
+      "2014 四川自主命题卷；已逐页核对第1—7页考试正文，第8页为资料广告页。",
+      "Q13 两问 3/5 分；Q14 限选 6 小题；Q15—Q18 文学阅读与开放题按题面分值登记。"
+    ]
+  },
+  "visual_review_receipt": "work/knowledge/_reviews/receipts/exam_visual_review_GK-SC-2014_20260809.json",
+  "node_count": 22,
+  "question_count": 21,
+  "score_total": 150,
+  "expected_score_total": 150,
+  "choice_groups": [
+    {
+      "id": "GK-SC-2014-Q014-OPTIONAL",
+      "questions": [
+        14
+      ],
+      "branch_count": 8,
+      "scored_branch_count": 6
+    }
+  ],
+  "score_groups": [],
+  "score_notes": {},
+  "missing_answer_source_questions": [],
+  "source_hash_anchors": {
+    "question_pdf": {
+      "1": "2e1c14118d4ca5d48aad3b541eb88c0820e2cf45b19af1fcb6cdd55106512b98",
+      "2": "2e1c14118d4ca5d48aad3b541eb88c0820e2cf45b19af1fcb6cdd55106512b98",
+      "3": "2e1c14118d4ca5d48aad3b541eb88c0820e2cf45b19af1fcb6cdd55106512b98",
+      "4": "2e1c14118d4ca5d48aad3b541eb88c0820e2cf45b19af1fcb6cdd55106512b98",
+      "5": "2e1c14118d4ca5d48aad3b541eb88c0820e2cf45b19af1fcb6cdd55106512b98",
+      "6": "2e1c14118d4ca5d48aad3b541eb88c0820e2cf45b19af1fcb6cdd55106512b98",
+      "7": "2e1c14118d4ca5d48aad3b541eb88c0820e2cf45b19af1fcb6cdd55106512b98",
+      "8": "2e1c14118d4ca5d48aad3b541eb88c0820e2cf45b19af1fcb6cdd55106512b98",
+      "9": "2e1c14118d4ca5d48aad3b541eb88c0820e2cf45b19af1fcb6cdd55106512b98",
+      "10": "2e1c14118d4ca5d48aad3b541eb88c0820e2cf45b19af1fcb6cdd55106512b98",
+      "11": "2e1c14118d4ca5d48aad3b541eb88c0820e2cf45b19af1fcb6cdd55106512b98",
+      "12": "2e1c14118d4ca5d48aad3b541eb88c0820e2cf45b19af1fcb6cdd55106512b98",
+      "13": "2e1c14118d4ca5d48aad3b541eb88c0820e2cf45b19af1fcb6cdd55106512b98",
+      "14": "2e1c14118d4ca5d48aad3b541eb88c0820e2cf45b19af1fcb6cdd55106512b98",
+      "15": "2e1c14118d4ca5d48aad3b541eb88c0820e2cf45b19af1fcb6cdd55106512b98",
+      "16": "2e1c14118d4ca5d48aad3b541eb88c0820e2cf45b19af1fcb6cdd55106512b98",
+      "17": "2e1c14118d4ca5d48aad3b541eb88c0820e2cf45b19af1fcb6cdd55106512b98",
+      "18": "2e1c14118d4ca5d48aad3b541eb88c0820e2cf45b19af1fcb6cdd55106512b98",
+      "19": "2e1c14118d4ca5d48aad3b541eb88c0820e2cf45b19af1fcb6cdd55106512b98",
+      "20": "2e1c14118d4ca5d48aad3b541eb88c0820e2cf45b19af1fcb6cdd55106512b98",
+      "21": "2e1c14118d4ca5d48aad3b541eb88c0820e2cf45b19af1fcb6cdd55106512b98"
+    }
+  },
+  "derived_jsonl": "work/knowledge/高考分析/GK-SC-2014-response_nodes_vertical_slice.jsonl",
+  "errors": [],
+  "warnings": [
+    "Q15 选项末尾出现孤立字符“人”，疑为 OCR/版面残片；不静默删除。",
+    "截去题段末尾下一节标题；原始题段保持不变。"
+  ]
+}

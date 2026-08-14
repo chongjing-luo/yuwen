@@ -1,0 +1,22 @@
+{
+  "source_id": "SRC-GK-2013-SC-SINA-IMAGE-ANSWER",
+  "artifact_id": "ART-GK-2013-SC-SINA-IMAGE-ANSWER",
+  "document_role": "answer_candidate",
+  "source_kind": "gaokao_answer_candidate",
+  "publisher_or_channel": "新浪教育/新浪高清图集（第三方转载图像）",
+  "original_url": "http://slide.edu.sina.com.cn/slide_11_43271_17944.html",
+  "authenticity_status": "unverified",
+  "status": "acquired_unverified_candidate",
+  "local_path": "Data/reference/gaokao/external/2013_sina_images",
+  "source_gallery_html_sha256": "37d1a972d6726959f57b274b62fdb370a3a09ebb8a613f209d66df840841b92d",
+  "image_sha256": {
+    "43271_112214_466277.jpg": "23d17cbbf1c6b0b77986be5189820de1d27ed0a49a277da2f74fd545148accc1",
+    "43271_112216_217968.jpg": "d9f759ade79fddcae4e29aa430d03b1965db22ae9b8a501ec126f498cf4e4cb1"
+  },
+  "relation": {
+    "type": "answer_candidate_of",
+    "target_source_id": "SRC-GK-2013-SC-QUESTION",
+    "status": "candidate_only"
+  },
+  "policy": "第三方水印图像；仅用于候选转录，不视为官方答案或评分标准。"
+}

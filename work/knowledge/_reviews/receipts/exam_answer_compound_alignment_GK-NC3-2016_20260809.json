@@ -1,0 +1,35 @@
+{
+  "schema_version": "exam-answer-compound-alignment-receipt-0.1",
+  "receipt_id": "EXAM-ANSWER-COMPOUND-GK-NC3-2016-Q005-Q006-20260809",
+  "generated_at": "2026-08-09T14:32:29+08:00",
+  "status": "resolved_in_derived_layer",
+  "source_mutation": false,
+  "scoring_status": "not_available_as_official",
+  "mapping_status": "M0 | kp_id=N/A",
+  "resolutions": [
+    {
+      "parent_answer_pair_id": "GK-NC3-2016-Q005",
+      "child_answer_pair_id": "GK-NC3-2016-Q006",
+      "boundary_marker": "## 四、实用类文本阅读",
+      "sections": [
+        {
+          "ordinal": 1,
+          "source_question_id": 5,
+          "source_offset_start": 0,
+          "source_offset_end": 3530,
+          "source_excerpt_sha256": "0d1131f69c1f4be84c80f69addbc4be70bed764c801c160e3b1137db7ae46a3c"
+        },
+        {
+          "ordinal": 2,
+          "source_question_id": 6,
+          "source_offset_start": 3530,
+          "source_offset_end": 6182,
+          "source_excerpt_sha256": "90e2bf96f87177314755c9a4e21b8336a9c35c900005d3ea803cd728decbe479"
+        }
+      ],
+      "parent_source_answer_text_sha256": "cbc158da89c6ce6fbe04c3b605024808a0bf79f9cdf4b37b61eb6507af055fc8",
+      "decision": "Q005 source ends immediately before the explicit next-section heading; Q006 is linked to the remaining source interval. No Q006 answer is inferred."
+    }
+  ],
+  "policy": "仅确认源字段的题号/偏移边界；不从 Q005 复合字段推断 Q006 答案，不修改原始答案索引、PDF 或 MinerU full.md。"
+}

@@ -1,0 +1,40 @@
+{
+  "receipt_id": "RECEIPT-CARD-X3-U02-02-G4-20260808",
+  "deliverable_id": "CARD-X3-U02-02",
+  "gate": "DG4-MERGE",
+  "merged_at": "2026-08-08T23:03:36+08:00",
+  "artifact_version": "0.2.0",
+  "pre_merge_file_sha256": "b72bf3f6672b462d6dda32b9ea8712edc98fe36eed37368726afcfce3448b423",
+  "post_merge_file_sha256": "1ad573c3d1cfb97876d604970e55129ca18e10e3147c08703bde6f43755c0715",
+  "content_change": false,
+  "allowed_diff": ["front_matter.status", "front_matter.reviewers", "self_check", "version_history", "ledger.status", "ledger.reviewers", "ledger.state_transition_history", "state_transition"],
+  "review_binding": {
+    "rubric_version": "2.0-textbook",
+    "rubric_sha256": "ab9cc53d57834642e66e568824d1c0c53e128953e15b20b4c7bd04aa30610d43",
+    "taxonomy_sha256": "13e5e23c45c05359a5c91e360ce8bd71dbf2a841c2c6a72f1adca52bef7cbd4b",
+    "ledger_review_snapshot_sha256": "407039cf98a2e822fa3092e25d1dba2761a87dd44597b980a5208f8e49d9d28b",
+    "ledger_pre_merge_sha256": "1bf6a78126b164635d11934cc41084e3d2b986f14dcf497d42844f4647f822dc",
+    "ledger_post_merge_sha256": "c36568758b999271f0c95ff5e6b6a48b08f4fd895bd0f33ca193623790aa52b5",
+    "ledger_snapshot_note": "两份评审均锁定407039快照；U02-03 REBUILD在评审期间追加到共享账本，DG4按当前1bf6前置账本合并，内容与评审对象未变。",
+    "primary": {"reviewer": "independent_primary_x3_u02_02_r1", "score": 98.0, "decision": "pass", "review_sha256": "d3fd5a389822f843e7cf990c5fc741d8bbb5bbdd7de2208cbd078c24f5d10ce9"},
+    "secondary": {"reviewer": "independent_secondary_x3_u02_02_r1", "score": 98.5, "decision": "pass", "review_sha256": "8c0c71cfda22055cb168cc2b542e453982fbf19575845020be8997e445e69a42"},
+    "score_difference": 0.5,
+    "r01_r10": "all 0",
+    "p0_p1_p2": "0/0/0"
+  },
+  "validator": {
+    "review_run_id": "VAL-20260808-225747+0800",
+    "review_report_sha256": "559dacca36d73563e44c1e6e019b148aea18d7c8cbc2a2f331268c7812a23fea",
+    "post_validator_run_id": "VAL-20260808-230336+0800",
+    "report": "work/knowledge/_meta/validation_reports/archive/VAL-20260808-230336+0800.json",
+    "report_sha256": "1828d16c3aba55e032f17762225bc3970c23cddbe0aebf3c1f7d6173b4f2ce3d",
+    "latest_report": "work/knowledge/_meta/validation_reports/latest.json",
+    "latest_report_sha256": "1828d16c3aba55e032f17762225bc3970c23cddbe0aebf3c1f7d6173b4f2ce3d",
+    "result": "passed",
+    "errors": 0
+  },
+  "transition": "STATE-20260808-CARD-X3-U02-02-G4",
+  "ledger_sha256": "c36568758b999271f0c95ff5e6b6a48b08f4fd895bd0f33ca193623790aa52b5",
+  "downstream_impact": ["UNIT-X3-U02"],
+  "status": "accepted"
+}

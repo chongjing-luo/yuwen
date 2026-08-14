@@ -1,0 +1,57 @@
+{
+  "receipt_id": "RECEIPT-CARD-X3-U03-02-G4-20260809",
+  "deliverable_id": "CARD-X3-U03-02",
+  "gate": "DG4-MERGE",
+  "merged_at": "2026-08-09T00:33:20+08:00",
+  "artifact_version": "0.2.5",
+  "pre_merge_file_sha256": "eb45259d09293e4fa46a86c3665075ffbba9ee04ef5c7f0a6a45c7ad61d580c5",
+  "post_merge_file_sha256": "a76887a6e7382e45ffc12d5f6466d154b1adaf03b68306bc8a39f3c03f8d28ab",
+  "content_change": false,
+  "allowed_diff": [
+    "front_matter.status",
+    "front_matter.reviewers",
+    "self_check",
+    "version_history",
+    "ledger.status",
+    "ledger.reviewers",
+    "ledger.owner",
+    "ledger.version",
+    "ledger.state_transition_history",
+    "state_transition"
+  ],
+  "review_binding": {
+    "rubric_version": "2.0-textbook",
+    "rubric_sha256": "ab9cc53d57834642e66e568824d1c0c53e128953e15b20b4c7bd04aa30610d43",
+    "taxonomy_sha256": "13e5e23c45c05359a5c91e360ce8bd71dbf2a841c2c6a72f1adca52bef7cbd4b",
+    "ledger_review_snapshot_sha256": "6c73ae0d81312eb2a85deb399665aa8b9e953ef17be682c18db78ecbf0c0df7c",
+    "ledger_pre_merge_sha256": "6c73ae0d81312eb2a85deb399665aa8b9e953ef17be682c18db78ecbf0c0df7c",
+    "ledger_post_merge_sha256": "15a6a781fc51a69012ddc7287af1fe004b710a3675da1c69b2ca1717b4c08f31",
+    "primary": {
+      "reviewer": "independent_primary_x3_u03_02_r4",
+      "score": 98.0,
+      "decision": "pass",
+      "review_sha256": "8a31e1d5b1e6e0f3489aa0670df61ce3863eb65920be5006d4f4b4274d2924b1"
+    },
+    "secondary": {
+      "reviewer": "independent_secondary_x3_u03_02_r2",
+      "score": 99.0,
+      "decision": "pass",
+      "review_sha256": "f228ce02ab0671512d7ff886df0fbf93fef9d1ea739ad8a00efd7c3ebb5daa01"
+    },
+    "score_difference": 1.0,
+    "r01_r10": "all 0",
+    "p0_p1_p2": "0/0/0"
+  },
+  "validator": {
+    "review_run_id": "VAL-20260809-002353+0800",
+    "review_report_sha256": "a6ac7c8ade540b805cdb57ec220b144660b7a06e5a33b83d4107dd2aefe90c85",
+    "post_validator_run_id": "VAL-20260809-003320+0800",
+    "report": "work/knowledge/_meta/validation_reports/x3_u03_02_g4_validation_20260809.json",
+    "report_sha256": "b223d2d64b91703f5a79d20d8f1282ddaba43c666ec79d643b247318476f221c",
+    "result": "passed",
+    "errors": 0
+  },
+  "transition_id": "STATE-20260809-CARD-X3-U03-02-G4",
+  "downstream_impact": ["UNIT-X3-U03"],
+  "status": "accepted"
+}

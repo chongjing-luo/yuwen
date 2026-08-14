@@ -1,0 +1,67 @@
+{
+  "schema_version": "sg-eval-batch-report-0.1",
+  "trial_batch_id": "TRIAL-SG-EVAL-20260809-01",
+  "result": "blocked",
+  "automatic_checks": [
+    {
+      "check_id": "AUTO-SNAPSHOT-INTEGRITY",
+      "result": "pass",
+      "message": "All three snapshot files and content SHA values were generated."
+    },
+    {
+      "check_id": "AUTO-FRONT-LEDGER",
+      "result": "pass",
+      "message": "ID/status/version/reviewer comparison against the ledger."
+    },
+    {
+      "check_id": "AUTO-CANONICAL-WRITE-GUARD",
+      "result": "pass",
+      "message": "Canonical input byte SHA values match the read-only input audit."
+    },
+    {
+      "check_id": "AUTO-CLAIM-CONSTRAINT-SCHEMA",
+      "result": "pass",
+      "message": "Claim and constraint registers passed JSON Schema validation before this lint run."
+    },
+    {
+      "check_id": "AUTO-SEMANTIC-LINT",
+      "result": "pass",
+      "message": "Markdown tables, lifecycle block, front matter/ledger and EV references."
+    }
+  ],
+  "manual_checks": [
+    {
+      "check_id": "MANUAL-MARKDOWN-TABLES",
+      "result": "not_checked",
+      "owner": "trial-reviewer",
+      "message": "Column count, row grouping and special-content completeness."
+    },
+    {
+      "check_id": "MANUAL-CLAIM-EVIDENCE",
+      "result": "not_checked",
+      "owner": "trial-reviewer",
+      "message": "Formal Claim classification, evidence binding and denominator sealing."
+    },
+    {
+      "check_id": "MANUAL-Q-LOCATOR",
+      "result": "not_checked",
+      "owner": "trial-reviewer",
+      "message": "Q quote span and canonical locator visual verification."
+    },
+    {
+      "check_id": "MANUAL-M0-NA",
+      "result": "not_checked",
+      "owner": "trial-reviewer",
+      "message": "M0/N/A semantics and no fabricated relation."
+    },
+    {
+      "check_id": "MANUAL-ROLE-SEPARATION",
+      "result": "not_checked",
+      "owner": "coordinator",
+      "message": "Producer/primary/secondary/coordinator assignment and independent sealing."
+    }
+  ],
+  "warnings": [
+    "Manual checks are not validator passes; DG0-DG2 remain blocked."
+  ]
+}

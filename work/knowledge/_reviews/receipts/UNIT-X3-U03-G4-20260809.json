@@ -1,0 +1,56 @@
+{
+  "receipt_id": "RECEIPT-UNIT-X3-U03-G4-20260809",
+  "deliverable_id": "UNIT-X3-U03",
+  "gate": "DG4-MERGE",
+  "merged_at": "2026-08-09T01:09:54+08:00",
+  "artifact_version": "0.2.0",
+  "pre_merge_file_sha256": "c35abc0f7948228d85ef713db950f1573712d2e6207fc21cf1490cbe6aca7fa8",
+  "post_merge_file_sha256": "2b2394ca482abedb9a8d5139f2eed28aa4075d629deaaa95dd0655999d14b687",
+  "content_change": false,
+  "allowed_diff": [
+    "front_matter.status",
+    "front_matter.reviewers",
+    "self_check",
+    "issue_status",
+    "version_history",
+    "ledger.status",
+    "ledger.reviewers",
+    "ledger.state_transition_history",
+    "state_transition"
+  ],
+  "review_binding": {
+    "rubric_version": "2.0-textbook",
+    "rubric_sha256": "ab9cc53d57834642e66e568824d1c0c53e128953e15b20b4c7bd04aa30610d43",
+    "taxonomy_sha256": "13e5e23c45c05359a5c91e360ce8bd71dbf2a841c2c6a72f1adca52bef7cbd4b",
+    "ledger_review_snapshot_sha256": "576559a66d61bcd5690eddfa8262ab6ca865694df0d5a402b33820d37e488468",
+    "ledger_pre_merge_sha256": "576559a66d61bcd5690eddfa8262ab6ca865694df0d5a402b33820d37e488468",
+    "ledger_post_merge_sha256": "88beced08b193ae2ed43dbbe3c6102e590932805a82e65e3ec9279e0bb3145d7",
+    "primary": {
+      "reviewer": "independent_primary_unit_x3_u03_r1",
+      "score": 99.0,
+      "decision": "pass",
+      "review_sha256": "e527713050780312dae65bc6ddcb7dcbba58a59a992690a5a0f4c2e2e7058722"
+    },
+    "secondary": {
+      "reviewer": "independent_secondary_unit_x3_u03_r2",
+      "score": 98.5,
+      "decision": "pass",
+      "review_sha256": "0cc6a64e3ce092815ff0bb7a00ec79da33aa9692637cae87422fff4a92a88543"
+    },
+    "score_difference": 0.5,
+    "r01_r10": "all 0",
+    "p0_p1_p2": "0/0/0"
+  },
+  "validator": {
+    "review_run_id": "VAL-20260809-010448+0800",
+    "review_report_sha256": "fecc270afc6d0d56e08dce237732edbd1c0ea0cddecc0f9262fe01ef7b9cde45",
+    "post_validator_run_id": "VAL-20260809-011027+0800",
+    "report": "work/knowledge/_meta/validation_reports/x3_u03_unit_post_receipt_validation_20260809.json",
+    "report_sha256": "c004e206a21f59a76646e2936606ac8d4d4afaf07f05b7d7b71e347ba05333fa",
+    "result": "passed",
+    "errors": 0
+  },
+  "transition_id": "STATE-20260809-UNIT-X3-U03-G4",
+  "downstream_impact": ["BOOK-X3"],
+  "status": "accepted"
+}

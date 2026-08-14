@@ -1,0 +1,20 @@
+{
+  "source_id": "SRC-GK-2015-SC-GAOKAO-ANSWER-CANDIDATE",
+  "artifact_id": "ART-GK-2015-SC-GAOKAO-ANSWER-CANDIDATE",
+  "document_role": "answer_candidate",
+  "source_kind": "gaokao_answer_candidate",
+  "publisher_or_channel": "高考网转载/新东方优能中学教育教研组附件（第三方）",
+  "original_url": "https://www.gaokao.com/e/20150613/557bec4d3943a.shtml",
+  "attachment_url": "https://files.eduuu.com/ohr/2015/06/13/163913_557bec3147bf1.zip",
+  "authenticity_status": "unverified",
+  "status": "acquired_unverified_candidate",
+  "local_path": "Data/reference/gaokao/external/2015_gaokao_answer",
+  "candidate_jsonl": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-SC-2015/answers/reference_answer_candidates.jsonl",
+  "coverage": "GK-SC-2015 Q1-Q20 answer/reference/guidance candidates; Q21 essay guidance only",
+  "relation": {
+    "type": "answer_candidate_of",
+    "target_source_id": "SRC-GK-2015-SC-QUESTION",
+    "status": "candidate_only"
+  },
+  "policy": "第三方教研附件；只作候选转录和检索，不视为官方答案或评分标准。"
+}

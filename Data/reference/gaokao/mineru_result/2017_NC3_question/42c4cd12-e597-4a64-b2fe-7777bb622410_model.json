@@ -1,0 +1,2865 @@
+[
+    {
+        "layout_dets": [
+            {
+                "cls_id": 14,
+                "label": "image",
+                "score": 0.4858,
+                "bbox": [
+                    120,
+                    1257,
+                    167,
+                    1304
+                ],
+                "index": 1
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.5413,
+                "bbox": [
+                    131,
+                    121,
+                    883,
+                    170
+                ],
+                "index": 2
+            },
+            {
+                "cls_id": 7,
+                "label": "figure_title",
+                "score": 0.7561,
+                "bbox": [
+                    542,
+                    217,
+                    1108,
+                    260
+                ],
+                "index": 3
+            },
+            {
+                "cls_id": 21,
+                "label": "table",
+                "score": 0.9852,
+                "bbox": [
+                    125,
+                    288,
+                    1527,
+                    570
+                ],
+                "index": 4,
+                "html": "<table><tr><td rowspan=1 colspan=1>科目</td><td rowspan=1 colspan=2>试题答案</td><td rowspan=1 colspan=1>下载</td><td rowspan=1 colspan=1>科目</td><td rowspan=1 colspan=2>试题答案</td><td rowspan=1 colspan=1>下载</td></tr><tr><td rowspan=1 colspan=1>语文</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td><td rowspan=1 colspan=1>英语</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td></tr><tr><td rowspan=1 colspan=1>理科数学</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td><td rowspan=1 colspan=1>文科数学</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td></tr><tr><td rowspan=1 colspan=1>理科综合</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td><td rowspan=1 colspan=1>文科综合</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td></tr></table>"
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9806,
+                "bbox": [
+                    117,
+                    611,
+                    1533,
+                    769
+                ],
+                "index": 5
+            },
+            {
+                "cls_id": 14,
+                "label": "image",
+                "score": 0.5103,
+                "bbox": [
+                    120,
+                    800,
+                    167,
+                    845
+                ],
+                "index": 6
+            },
+            {
+                "cls_id": 7,
+                "label": "figure_title",
+                "score": 0.8996,
+                "bbox": [
+                    642,
+                    811,
+                    1045,
+                    855
+                ],
+                "index": 7
+            },
+            {
+                "cls_id": 21,
+                "label": "table",
+                "score": 0.9799,
+                "bbox": [
+                    125,
+                    892,
+                    1527,
+                    1229
+                ],
+                "index": 8,
+                "html": "<table><tr><td rowspan=1 colspan=12>2017年高考全国各省市各科试题及答案</td></tr><tr><td rowspan=1 colspan=1>全国卷Ⅰ</td><td rowspan=1 colspan=1>湖北</td><td rowspan=1 colspan=1>福建</td><td rowspan=1 colspan=1>广东</td><td rowspan=1 colspan=1>湖南</td><td rowspan=1 colspan=1>安徽</td><td rowspan=1 colspan=1>山西</td><td rowspan=1 colspan=1>河北</td><td rowspan=1 colspan=1>河南</td><td rowspan=1 colspan=1>江西</td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td></tr><tr><td rowspan=1 colspan=1>全国卷Ⅱ</td><td rowspan=1 colspan=1>甘肃</td><td rowspan=1 colspan=1>青海</td><td rowspan=1 colspan=1>西藏</td><td rowspan=1 colspan=1>黑龙江</td><td rowspan=1 colspan=1>吉林</td><td rowspan=1 colspan=1>辽宁</td><td rowspan=1 colspan=1>宁夏</td><td rowspan=1 colspan=1>新疆</td><td rowspan=1 colspan=1>内蒙古</td><td rowspan=1 colspan=1>陕西</td><td rowspan=1 colspan=1>重庆</td></tr><tr><td rowspan=1 colspan=1>全国卷ⅢⅢ</td><td rowspan=1 colspan=1>云南</td><td rowspan=1 colspan=1>四川</td><td rowspan=1 colspan=1>广西</td><td rowspan=1 colspan=1>贵州</td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td></tr><tr><td rowspan=1 colspan=1>自主命题</td><td rowspan=1 colspan=1>北京</td><td rowspan=1 colspan=1>天津</td><td rowspan=1 colspan=1>江苏</td><td rowspan=1 colspan=1>山东</td><td rowspan=1 colspan=1>上海</td><td rowspan=1 colspan=1>海南</td><td rowspan=1 colspan=1>浙江</td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td></tr></table>"
+            },
+            {
+                "cls_id": 14,
+                "label": "image",
+                "score": 0.5009,
+                "bbox": [
+                    120,
+                    1323,
+                    167,
+                    1372
+                ],
+                "index": 9
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    137,
+                    129,
+                    874,
+                    161
+                ],
+                "score": 0.996,
+                "text": "全国III卷试题适用地区：云南、四川、广西、贵州"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    544,
+                    218,
+                    1106,
+                    256
+                ],
+                "score": 0.994,
+                "text": "2017年高考全国卷Ⅲ各科试题及答案汇总"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    196,
+                    619,
+                    1509,
+                    646
+                ],
+                "score": 1.0,
+                "text": "中国教育在线讯2017高考于6月7日开始，中国教育在线在考试后及时公布高考试题、答案"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    127,
+                    674,
+                    1525,
+                    706
+                ],
+                "score": 0.999,
+                "text": "和高考作文，并提供高考试题下载以及高考试题的专家点评。请广大考生家长及时关注，同时祝"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    127,
+                    730,
+                    909,
+                    758
+                ],
+                "score": 0.986,
+                "text": "广大考生在2017高考中发挥出最佳水平，考出好成绩！"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    650,
+                    817,
+                    1037,
+                    851
+                ],
+                "score": 1.0,
+                "text": "2017全国卷3高考语文试题"
+            }
+        ],
+        "page_info": {
+            "page_no": 0,
+            "width": 1653,
+            "height": 2339
+        }
+    },
+    {
+        "layout_dets": [
+            {
+                "cls_id": 13,
+                "label": "header_image",
+                "score": 0.7171,
+                "bbox": [
+                    482,
+                    94,
+                    720,
+                    154
+                ],
+                "index": 1
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9551,
+                "bbox": [
+                    473,
+                    138,
+                    1202,
+                    440
+                ],
+                "index": 2
+            },
+            {
+                "cls_id": 17,
+                "label": "paragraph_title",
+                "score": 0.5193,
+                "bbox": [
+                    514,
+                    439,
+                    738,
+                    481
+                ],
+                "index": 3
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9672,
+                "bbox": [
+                    476,
+                    480,
+                    1195,
+                    642
+                ],
+                "index": 4
+            },
+            {
+                "cls_id": 7,
+                "label": "figure_title",
+                "score": 0.6236,
+                "bbox": [
+                    597,
+                    651,
+                    1044,
+                    678
+                ],
+                "index": 5
+            },
+            {
+                "cls_id": 3,
+                "label": "chart",
+                "score": 0.8472,
+                "bbox": [
+                    529,
+                    676,
+                    1064,
+                    915
+                ],
+                "index": 6
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.6091,
+                "bbox": [
+                    547,
+                    925,
+                    1084,
+                    957
+                ],
+                "index": 7
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.905,
+                "bbox": [
+                    513,
+                    957,
+                    1184,
+                    1040
+                ],
+                "index": 8
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9226,
+                "bbox": [
+                    480,
+                    1047,
+                    1216,
+                    1238
+                ],
+                "index": 9
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.8793,
+                "bbox": [
+                    717,
+                    1231,
+                    946,
+                    1267
+                ],
+                "index": 10
+            },
+            {
+                "cls_id": 8,
+                "label": "footer",
+                "score": 0.5534,
+                "bbox": [
+                    1017,
+                    1303,
+                    1102,
+                    1330
+                ],
+                "index": 11
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    478,
+                    89,
+                    723,
+                    159
+                ],
+                "score": 1.0,
+                "text": "学科网"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    479,
+                    172,
+                    971,
+                    214
+                ],
+                "score": 0.961,
+                "text": "年间增长了8倍，对于青少年而言，博物馆逐渐成为学校"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    478,
+                    277,
+                    975,
+                    309
+                ],
+                "score": 0.925,
+                "text": "至也非常半富，针对藏品的研究，需要整合学校和研究机构的"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    475,
+                    310,
+                    978,
+                    342
+                ],
+                "score": 0.944,
+                "text": "社会成为一个地区的文史研究中心，同时，博物馆连渐成为"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    478,
+                    344,
+                    1001,
+                    374
+                ],
+                "score": 0.936,
+                "text": "开城市文化品牌价值的重要载体，2010年，西安市委，市政府正"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    478,
+                    376,
+                    1005,
+                    407
+                ],
+                "score": 0.895,
+                "text": "物惊之城”的战略目标，随后广州，济南等城市也纷给提出建设"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    475,
+                    410,
+                    1046,
+                    439
+                ],
+                "score": 0.784,
+                "text": "以此反开本的念牛力、（摘编自刘世锦主编《中国文化遗"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    480,
+                    213,
+                    969,
+                    242
+                ],
+                "score": 0.924,
+                "text": "互动性、体验性、趋味性方面发挥着独特的优势。2014年，"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    480,
+                    245,
+                    971,
+                    275
+                ],
+                "score": 0.874,
+                "text": "许（套）藏品，银托送些藏品在历史。文化，考古等领域开展"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    511,
+                    437,
+                    739,
+                    482
+                ],
+                "score": 0.939,
+                "text": "子网"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    515,
+                    483,
+                    1076,
+                    511
+                ],
+                "score": 0.918,
+                "text": "2008年起，中国文化天物系统的博物馆开始全面免费开藏，北后博物"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    476,
+                    577,
+                    1190,
+                    607
+                ],
+                "score": 0.89,
+                "text": "销售，文物巡展，社会文物鉴定及咨询等）而增和的价值总和。2001-2014年全国终物"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    476,
+                    612,
+                    742,
+                    640
+                ],
+                "score": 0.943,
+                "text": "综事业增加值变化情况如下图："
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    475,
+                    510,
+                    1188,
+                    545
+                ],
+                "score": 0.862,
+                "text": "重献逐渐弱化。因此，只能通过博物馆事业增加值来街量博物馆对国氏程济的直接资献。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    477,
+                    543,
+                    1190,
+                    575
+                ],
+                "score": 0.947,
+                "text": "博物综事业增加值即文化文物系统内的博物馆向社会提供产品成及务（如文化创意产品"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    595,
+                    654,
+                    1043,
+                    674
+                ],
+                "score": 0.651,
+                "text": "增加值（教造年价格计算）增加值（核200车可试价操计算）"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    544,
+                    925,
+                    1085,
+                    959
+                ],
+                "score": 0.892,
+                "text": "(撕编自苏析等主编《中国文化遗产事业发展报告（2015~2016)》）"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    547,
+                    1014,
+                    886,
+                    1035
+                ],
+                "score": 0.794,
+                "text": "时期进行西史对比，以成察国民经莎的况辅情况"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    521,
+                    1076,
+                    891,
+                    1108
+                ],
+                "score": 0.922,
+                "text": "要真正了解或融入一个城市与国家，最直8"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    484,
+                    1114,
+                    757,
+                    1139
+                ],
+                "score": 0.803,
+                "text": "京每年福待的上亿游客中，相当一"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    819,
+                    1139,
+                    886,
+                    1153
+                ],
+                "score": 0.596,
+                "text": "作双化的"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    946,
+                    1157,
+                    1177,
+                    1210
+                ],
+                "score": 0.822,
+                "text": "是情他信对国民经济的间接资"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    487,
+                    1179,
+                    625,
+                    1205
+                ],
+                "score": 0.744,
+                "text": "开和技神社心的"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    714,
+                    1234,
+                    946,
+                    1263
+                ],
+                "score": 0.911,
+                "text": "语文试题第5页（共10页）"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    1015,
+                    1301,
+                    1104,
+                    1328
+                ],
+                "score": 0.828,
+                "text": "www.."
+            }
+        ],
+        "page_info": {
+            "page_no": 1,
+            "width": 1653,
+            "height": 2339
+        }
+    },
+    {
+        "layout_dets": [
+            {
+                "cls_id": 13,
+                "label": "header_image",
+                "score": 0.458,
+                "bbox": [
+                    410,
+                    99,
+                    709,
+                    185
+                ],
+                "index": 1
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.7424,
+                "bbox": [
+                    459,
+                    154,
+                    1224,
+                    242
+                ],
+                "index": 2
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.8358,
+                "bbox": [
+                    466,
+                    228,
+                    1226,
+                    332
+                ],
+                "index": 3
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.8625,
+                "bbox": [
+                    466,
+                    299,
+                    1227,
+                    398
+                ],
+                "index": 4
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.923,
+                "bbox": [
+                    468,
+                    370,
+                    1227,
+                    466
+                ],
+                "index": 5
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.8508,
+                "bbox": [
+                    410,
+                    462,
+                    1274,
+                    542
+                ],
+                "index": 6
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.5643,
+                "bbox": [
+                    507,
+                    542,
+                    852,
+                    574
+                ],
+                "index": 7
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9357,
+                "bbox": [
+                    470,
+                    561,
+                    1227,
+                    642
+                ],
+                "index": 8
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9495,
+                "bbox": [
+                    472,
+                    633,
+                    1227,
+                    709
+                ],
+                "index": 9
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.961,
+                "bbox": [
+                    473,
+                    703,
+                    1227,
+                    776
+                ],
+                "index": 10
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9621,
+                "bbox": [
+                    473,
+                    774,
+                    1228,
+                    843
+                ],
+                "index": 11
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.6352,
+                "bbox": [
+                    444,
+                    847,
+                    1004,
+                    891
+                ],
+                "index": 12
+            },
+            {
+                "cls_id": 17,
+                "label": "paragraph_title",
+                "score": 0.5793,
+                "bbox": [
+                    445,
+                    891,
+                    842,
+                    952
+                ],
+                "index": 13
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.5355,
+                "bbox": [
+                    492,
+                    958,
+                    868,
+                    994
+                ],
+                "index": 14
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.8929,
+                "bbox": [
+                    492,
+                    993,
+                    824,
+                    1029
+                ],
+                "index": 15
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.8867,
+                "bbox": [
+                    449,
+                    1038,
+                    1266,
+                    1342
+                ],
+                "index": 16
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    401,
+                    93,
+                    717,
+                    192
+                ],
+                "score": 0.995,
+                "text": "学科网"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    501,
+                    163,
+                    840,
+                    192
+                ],
+                "score": 0.714,
+                "text": "www.xkicgm，不正硕的"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    470,
+                    232,
+                    696,
+                    258
+                ],
+                "score": 0.86,
+                "text": "年、最高的年份是20"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    507,
+                    298,
+                    779,
+                    326
+                ],
+                "score": 0.891,
+                "text": "与靠一年相比构至现上升态势"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    461,
+                    305,
+                    1232,
+                    368
+                ],
+                "score": 0.937,
+                "text": "C 2001年可比价都计算，十几年间全国博物馆事业增加值大体上保持了较好的"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    462,
+                    378,
+                    1229,
+                    434
+                ],
+                "score": 0.9,
+                "text": "3.套些年价基计集出的增加值与按可比价格计算出的增加值相比，二者差距最大的"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    506,
+                    543,
+                    851,
+                    573
+                ],
+                "score": 0.913,
+                "text": "科形式可以丰富大众的精神文化生活。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    580,
+                    613,
+                    764,
+                    635
+                ],
+                "score": 0.803,
+                "text": "特点的方式，重励青"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    467,
+                    565,
+                    1229,
+                    610
+                ],
+                "score": 0.904,
+                "text": "3.博物馆通重或为学校教育的“第二课堂”，它通过独特的学习资源，以适应青少"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    518,
+                    681,
+                    759,
+                    703
+                ],
+                "score": 0.83,
+                "text": "元要，进以此构建城市文化"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    469,
+                    634,
+                    1229,
+                    678
+                ],
+                "score": 0.938,
+                "text": "C.西安。广州等城形越来越重批利用博物馆来展现坡市历史中最有深度和吸引力的"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    479,
+                    748,
+                    832,
+                    771
+                ],
+                "score": 0.788,
+                "text": "面骨博物惊对国民校济的全部页赋。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    471,
+                    704,
+                    1227,
+                    744
+                ],
+                "score": 0.898,
+                "text": "D. 需物理先费开放会使其经济卖献逐渐弱化，因此需要通过博物馆事业增加值来"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    472,
+                    772,
+                    1227,
+                    812
+                ],
+                "score": 0.9,
+                "text": "三.需物理对能差经济的提动是非常重要的贡献，这也是提升博物馆诸如宣传和教育"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    511,
+                    814,
+                    729,
+                    839
+                ],
+                "score": 0.822,
+                "text": "等其他花能的关键所在。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    442,
+                    847,
+                    1003,
+                    887
+                ],
+                "score": 0.789,
+                "text": "相4济，根括说喷博物馆在科研方面的作用，(4分）"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    650,
+                    889,
+                    837,
+                    935
+                ],
+                "score": 0.991,
+                "text": "xxk.com"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    445,
+                    917,
+                    690,
+                    945
+                ],
+                "score": 0.833,
+                "text": "二、吉代诗文阅录（35分"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    490,
+                    959,
+                    867,
+                    993
+                ],
+                "score": 0.815,
+                "text": "（一）文言文阅读（本题共4小题，19分）"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    489,
+                    995,
+                    824,
+                    1026
+                ],
+                "score": 0.875,
+                "text": "痴津下面的文言文。完成10~13题。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    480,
+                    1029,
+                    1231,
+                    1090
+                ],
+                "score": 0.775,
+                "text": "许些学冲无。猛州国人，季进士第一。种宗召对，毕集贤校理，同知北院，编修中"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    450,
+                    1182,
+                    954,
+                    1218
+                ],
+                "score": 0.687,
+                "text": "新之。则伤期体。”进命将诺柜密院词文书，及二"
+            }
+        ],
+        "page_info": {
+            "page_no": 2,
+            "width": 1653,
+            "height": 2339
+        }
+    },
+    {
+        "layout_dets": [
+            {
+                "cls_id": 12,
+                "label": "header",
+                "score": 0.5694,
+                "bbox": [
+                    470,
+                    97,
+                    682,
+                    171
+                ],
+                "index": 1
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.959,
+                "bbox": [
+                    471,
+                    162,
+                    1172,
+                    447
+                ],
+                "index": 2
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.6648,
+                "bbox": [
+                    480,
+                    434,
+                    1166,
+                    684
+                ],
+                "index": 3
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.678,
+                "bbox": [
+                    507,
+                    679,
+                    1165,
+                    759
+                ],
+                "index": 4
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.8574,
+                "bbox": [
+                    459,
+                    751,
+                    1163,
+                    932
+                ],
+                "index": 5
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.8498,
+                "bbox": [
+                    437,
+                    926,
+                    1224,
+                    1267
+                ],
+                "index": 6
+            },
+            {
+                "cls_id": 8,
+                "label": "footer",
+                "score": 0.8005,
+                "bbox": [
+                    711,
+                    1251,
+                    936,
+                    1301
+                ],
+                "index": 7
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    462,
+                    91,
+                    688,
+                    174
+                ],
+                "score": 0.972,
+                "text": "学利网"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    479,
+                    178,
+                    663,
+                    216
+                ],
+                "score": 0.914,
+                "text": "老叹日：“自王浙公后"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    489,
+                    213,
+                    633,
+                    247
+                ],
+                "score": 0.934,
+                "text": "其俗自息，召为兵"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    474,
+                    391,
+                    692,
+                    429
+                ],
+                "score": 0.676,
+                "text": "自《宋史·等》网"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    543,
+                    645,
+                    936,
+                    682
+                ],
+                "score": 0.859,
+                "text": "/将奏要南曹/辟公会以待来诉者/士无审难/"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    478,
+                    438,
+                    964,
+                    479
+                ],
+                "score": 0.935,
+                "text": "10. 下列对文中面波浪线部分的断句，正确的一项是（3分）"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    504,
+                    475,
+                    1166,
+                    519
+                ],
+                "score": 0.91,
+                "text": "A. 初/选人调拟/先南普/次考功/综核无法/支得缘文为好选者/又不得诉长"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    542,
+                    511,
+                    952,
+                    545
+                ],
+                "score": 0.852,
+                "text": "吏/将奏婴南曹/骗公舍以待来诉者/士无重难/"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    506,
+                    543,
+                    1165,
+                    583
+                ],
+                "score": 0.961,
+                "text": "B. 初选人调拟/先南曹/次考功/综核无法/吏得缘文为好选者/又不得诉长变"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    548,
+                    579,
+                    935,
+                    612
+                ],
+                "score": 0.87,
+                "text": "/将卖婴南曹/群公会以特来诉者/士无留难/"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    507,
+                    611,
+                    1165,
+                    648
+                ],
+                "score": 0.953,
+                "text": "C. 初选人调拟/先南曹/次考功/综核无法/更得缘文为奸/选者又不善诉长变"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    824,
+                    717,
+                    997,
+                    743
+                ],
+                "score": 0.773,
+                "text": "/土无面难"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    460,
+                    753,
+                    1095,
+                    796
+                ],
+                "score": 0.943,
+                "text": "11下列对文中加点可语的相关内容的解说，不正确的一项是（3分"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    507,
+                    788,
+                    1155,
+                    825
+                ],
+                "score": 0.96,
+                "text": "A.状元是我国古代科举制度中一种称号，指在最高级别的级试中获得第一名的人。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    507,
+                    822,
+                    1159,
+                    859
+                ],
+                "score": 0.991,
+                "text": "B.上元是我国传统节日，即农历正月十五日元宵节，是春节后第一个重要节日。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    506,
+                    856,
+                    1162,
+                    892
+                ],
+                "score": 0.896,
+                "text": "C.近待是指接近并随待帝王左右的人，他们不仅职位很高，对帝王的影响也很大。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    505,
+                    890,
+                    1159,
+                    924
+                ],
+                "score": 0.903,
+                "text": "D. 告老本指古代社会官员因年老游去职务、有时也是官员因故那职验一种借口。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    441,
+                    903,
+                    1241,
+                    1031
+                ],
+                "score": 0.904,
+                "text": "学科网首发试者"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    543,
+                    998,
+                    1124,
+                    1036
+                ],
+                "score": 0.877,
+                "text": "宋朝割让代州，蓄意执料。他坚决予以反击，使对方未占得便宜而返回"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    505,
+                    1032,
+                    1168,
+                    1072
+                ],
+                "score": 0.878,
+                "text": "B. 许将善兽于沧理，境内牢狱皆空。他在聊州任上，因治理养注、当地没有起法之"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    541,
+                    1066,
+                    1144,
+                    1104
+                ],
+                "score": 0.869,
+                "text": "人，当地士人爱好议论官政，他未加禁止，而是宽检应对、此您告然止息。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    500,
+                    1096,
+                    1173,
+                    1144
+                ],
+                "score": 0.882,
+                "text": "C.许数任职兵部，熟添兵部事务。他损任兵那待都对上硬提出，给兵之道在于关"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    509,
+                    1130,
+                    1133,
+                    1176
+                ],
+                "score": 0.809,
+                "text": "话道词计西磁到万众犹如一人。神宗问及共马之教，他也助作出回答。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    708,
+                    1260,
+                    935,
+                    1291
+                ],
+                "score": 0.891,
+                "text": "语文试题第7页（共10页》"
+            }
+        ],
+        "page_info": {
+            "page_no": 3,
+            "width": 1653,
+            "height": 2339
+        }
+    },
+    {
+        "layout_dets": [
+            {
+                "cls_id": 16,
+                "label": "number",
+                "score": 0.4598,
+                "bbox": [
+                    693,
+                    1270,
+                    937,
+                    1295
+                ],
+                "index": 1
+            },
+            {
+                "cls_id": 13,
+                "label": "header_image",
+                "score": 0.6711,
+                "bbox": [
+                    469,
+                    95,
+                    682,
+                    154
+                ],
+                "index": 2
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.5125,
+                "bbox": [
+                    467,
+                    135,
+                    901,
+                    164
+                ],
+                "index": 3
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9284,
+                "bbox": [
+                    500,
+                    169,
+                    1046,
+                    200
+                ],
+                "index": 4
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9405,
+                "bbox": [
+                    501,
+                    205,
+                    1051,
+                    237
+                ],
+                "index": 5
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.7702,
+                "bbox": [
+                    501,
+                    263,
+                    882,
+                    294
+                ],
+                "index": 6
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.8335,
+                "bbox": [
+                    501,
+                    301,
+                    817,
+                    331
+                ],
+                "index": 7
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9478,
+                "bbox": [
+                    515,
+                    345,
+                    1176,
+                    527
+                ],
+                "index": 8
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9709,
+                "bbox": [
+                    490,
+                    537,
+                    1194,
+                    640
+                ],
+                "index": 9
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.8973,
+                "bbox": [
+                    452,
+                    663,
+                    1196,
+                    881
+                ],
+                "index": 10
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.5342,
+                "bbox": [
+                    455,
+                    902,
+                    1222,
+                    996
+                ],
+                "index": 11
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.7151,
+                "bbox": [
+                    454,
+                    1010,
+                    826,
+                    1040
+                ],
+                "index": 12
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9503,
+                "bbox": [
+                    489,
+                    1048,
+                    1194,
+                    1119
+                ],
+                "index": 13
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9533,
+                "bbox": [
+                    490,
+                    1128,
+                    1195,
+                    1236
+                ],
+                "index": 14
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    693,
+                    1270,
+                    936,
+                    1293
+                ],
+                "score": 0.955,
+                "text": "语文试题第8页（共10页）"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    464,
+                    91,
+                    685,
+                    157
+                ],
+                "score": 1.0,
+                "text": "学科网"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    467,
+                    135,
+                    900,
+                    163
+                ],
+                "score": 0.941,
+                "text": "13翻译成现代汉语。（10分）"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    498,
+                    168,
+                    1046,
+                    200
+                ],
+                "score": 0.963,
+                "text": "(1）将曰：“此事，申饬边臣岂不可，何以使为？”禧惭不能对。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    500,
+                    203,
+                    1050,
+                    236
+                ],
+                "score": 0.957,
+                "text": "(2)章惇为相，与蔡卞同肆罗织，贬请元祐诸臣，奏发司马光墓。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    500,
+                    263,
+                    881,
+                    294
+                ],
+                "score": 0.97,
+                "text": "（二）古代诗歌阅读（本题共2小题，11分）"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    501,
+                    302,
+                    816,
+                    329
+                ],
+                "score": 0.988,
+                "text": "阅读下面这首唐诗，完成14~15题。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    516,
+                    342,
+                    1134,
+                    379
+                ],
+                "score": 0.965,
+                "text": "遍集拙诗，成一十五卷，因题卷末，戏赠元九、李二十白居易"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    559,
+                    377,
+                    699,
+                    434
+                ],
+                "score": 0.992,
+                "text": "学科网"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    675,
+                    421,
+                    991,
+                    451
+                ],
+                "score": 0.961,
+                "text": "每被老元偷格律，苦教短李伏歌行。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    681,
+                    456,
+                    983,
+                    489
+                ],
+                "score": 0.953,
+                "text": "世间富责应无分，身后文章合有名。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    681,
+                    494,
+                    982,
+                    526
+                ],
+                "score": 0.958,
+                "text": "莫怪气租言语大，新排十五卷诗成。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    562,
+                    424,
+                    680,
+                    444
+                ],
+                "score": 0.68,
+                "text": "www.zxtk.c0"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    491,
+                    538,
+                    1189,
+                    563
+                ],
+                "score": 0.922,
+                "text": "[注]①元九、李二十：分指作者的前友元稹、李坤，即诗中的“老元”“短李”。李牌身材矮小。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    523,
+                    574,
+                    1189,
+                    600
+                ],
+                "score": 0.957,
+                "text": "时称“短李”。②长恨：指作者的长诗《长恨歌》，③秦吟：指作者的讽喻组诗《秦中吟》。正"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    521,
+                    612,
+                    752,
+                    638
+                ],
+                "score": 0.932,
+                "text": "声：雅正的诗算。④伏：服气。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    452,
+                    662,
+                    931,
+                    689
+                ],
+                "score": 0.966,
+                "text": "14. 以下对本诗的理解和分析，不正确的两项是（5分）"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    490,
+                    692,
+                    1190,
+                    735
+                ],
+                "score": 0.927,
+                "text": "A.《长情以4》都是白居易的得意之作，能够作为其诗歌创作的代表。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    493,
+                    734,
+                    1189,
+                    765
+                ],
+                "score": 0.952,
+                "text": "B.元稹常常私下对自居易的诗款进行模仿，这从侧面说明了白铸较高的创作水准。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    494,
+                    773,
+                    1170,
+                    802
+                ],
+                "score": 0.965,
+                "text": "C. 白居易在诗中称呼李缔为“短李”，也隐含着不太认可李绅诗歌创作的意思。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    494,
+                    811,
+                    1190,
+                    840
+                ],
+                "score": 0.992,
+                "text": "D. 作者坚信自己必将因文学成就而名扬后世，因此并不介意在当时是否得到认可。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    491,
+                    847,
+                    1191,
+                    880
+                ],
+                "score": 0.997,
+                "text": "E.在诗的最后两句中，白居易称，自己新编出的诗集可以成为自我炫耀的资本。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    454,
+                    899,
+                    1031,
+                    935
+                ],
+                "score": 0.959,
+                "text": "15. 请从“戏赠”入手，结合全诗，分析作者表达的情感态度。（6"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    446,
+                    920,
+                    1217,
+                    994
+                ],
+                "score": 0.826,
+                "text": "算名本类学科网首发试"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    453,
+                    1010,
+                    826,
+                    1040
+                ],
+                "score": 0.944,
+                "text": "16. 补写出下列句子中的空缺部分，(5分）"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    487,
+                    1046,
+                    1193,
+                    1080
+                ],
+                "score": 0.95,
+                "text": "《1》《苟子·劝学》中强调了积累的重要。以积土成山、积水成渊可以兴风雨、生"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    525,
+                    1082,
+                    685,
+                    1117
+                ],
+                "score": 0.876,
+                "text": "较龙没喻，引出“"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    1114,
+                    1087,
+                    1189,
+                    1113
+                ],
+                "score": 0.989,
+                "text": "的观点。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    489,
+                    1127,
+                    806,
+                    1166
+                ],
+                "score": 0.813,
+                "text": "(2)杜用。基星为秋风所破歌》中，"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    524,
+                    1161,
+                    1192,
+                    1201
+                ],
+                "score": 0.882,
+                "text": "狂风签之会星变得墨果，天色马上暗下来，引出下交多遭连夜雨"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    532,
+                    1203,
+                    609,
+                    1235
+                ],
+                "score": 1.0,
+                "text": "的境况。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    945,
+                    1151,
+                    1018,
+                    1175
+                ],
+                "score": 0.997,
+                "text": "www.z"
+            }
+        ],
+        "page_info": {
+            "page_no": 4,
+            "width": 1653,
+            "height": 2339
+        }
+    },
+    {
+        "layout_dets": [
+            {
+                "cls_id": 13,
+                "label": "header_image",
+                "score": 0.4545,
+                "bbox": [
+                    492,
+                    97,
+                    724,
+                    169
+                ],
+                "index": 1
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.878,
+                "bbox": [
+                    486,
+                    171,
+                    1202,
+                    276
+                ],
+                "index": 2
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.8922,
+                "bbox": [
+                    497,
+                    271,
+                    1199,
+                    348
+                ],
+                "index": 3
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.8688,
+                "bbox": [
+                    491,
+                    343,
+                    1198,
+                    414
+                ],
+                "index": 4
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.893,
+                "bbox": [
+                    489,
+                    412,
+                    1197,
+                    487
+                ],
+                "index": 5
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9122,
+                "bbox": [
+                    486,
+                    484,
+                    1195,
+                    552
+                ],
+                "index": 6
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.7106,
+                "bbox": [
+                    485,
+                    554,
+                    1194,
+                    625
+                ],
+                "index": 7
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.6096,
+                "bbox": [
+                    515,
+                    626,
+                    944,
+                    699
+                ],
+                "index": 8
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.4779,
+                "bbox": [
+                    483,
+                    696,
+                    1210,
+                    1006
+                ],
+                "index": 9
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.7117,
+                "bbox": [
+                    466,
+                    1018,
+                    1134,
+                    1215
+                ],
+                "index": 10
+            },
+            {
+                "cls_id": 16,
+                "label": "number",
+                "score": 0.6971,
+                "bbox": [
+                    693,
+                    1209,
+                    921,
+                    1241
+                ],
+                "index": 11
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    483,
+                    91,
+                    731,
+                    171
+                ],
+                "score": 0.939,
+                "text": "学科网"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    539,
+                    170,
+                    1003,
+                    215
+                ],
+                "score": 0.985,
+                "text": "下列各句中加点成语的使用，全都不正确的一项是（3分）"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    499,
+                    235,
+                    603,
+                    265
+                ],
+                "score": 0.994,
+                "text": "行之有效的"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    526,
+                    267,
+                    1205,
+                    317
+                ],
+                "score": 0.964,
+                "text": "②小庄从小就对机器人玩具特则感兴趣，上学后喜欢收集机器人模型，通过各种途"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    497,
+                    309,
+                    910,
+                    343
+                ],
+                "score": 0.93,
+                "text": "径得到的模型已经行牛充栋，整整一同屋都摆满了。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    523,
+                    339,
+                    1200,
+                    383
+                ],
+                "score": 0.954,
+                "text": "③的输进的学术方法虽比较新颖，但其学术成果得到学术界公认的却不是很多，再"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    494,
+                    368,
+                    611,
+                    401
+                ],
+                "score": 0.644,
+                "text": "加上其速越者"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    521,
+                    406,
+                    1198,
+                    462
+                ],
+                "score": 0.798,
+                "text": "张家界独特的有然学观被列入《世界自然遗产名录》，挑洋其间，译出至所"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    491,
+                    443,
+                    778,
+                    481
+                ],
+                "score": 0.896,
+                "text": "坚幽深，溪流澄碧，让人乐不思勇。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    519,
+                    478,
+                    1195,
+                    530
+                ],
+                "score": 0.924,
+                "text": "⑤近年来，有关部门采取了一系列接施强化虚假广告的监管，使得温等充数的广告"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    488,
+                    517,
+                    679,
+                    546
+                ],
+                "score": 0.991,
+                "text": "得到了一定程度的通制"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    517,
+                    548,
+                    1195,
+                    604
+                ],
+                "score": 0.935,
+                "text": "⑧丹·罗斯嘉德发明的“雾鑫塔”是一种利用静电吸附空粒原理的环保装置，脏空"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    484,
+                    589,
+                    898,
+                    621
+                ],
+                "score": 0.923,
+                "text": "气滔滔不绝地从塔顶进入后。能在塔中同得到净化。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    517,
+                    627,
+                    613,
+                    653
+                ],
+                "score": 0.78,
+                "text": "A. ①③③"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    842,
+                    630,
+                    942,
+                    669
+                ],
+                "score": 0.691,
+                "text": "B. ①0⑥"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    846,
+                    672,
+                    938,
+                    694
+                ],
+                "score": 0.839,
+                "text": "D. ②③⑥"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    541,
+                    770,
+                    780,
+                    802
+                ],
+                "score": 0.942,
+                "text": "为中国古代雕刻艺术的宝库。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    541,
+                    838,
+                    778,
+                    870
+                ],
+                "score": 0.98,
+                "text": "露他的性格特点和教养情况。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    487,
+                    919,
+                    1211,
+                    1007
+                ],
+                "score": 0.884,
+                "text": "学科网首发试"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    477,
+                    693,
+                    843,
+                    750
+                ],
+                "score": 0.862,
+                "text": "is.wwww.zxxk.com分)"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    512,
+                    743,
+                    1189,
+                    776
+                ],
+                "score": 0.928,
+                "text": "A. 今天参观的石窟造像群气势宏伟，内容半富，堪称当时的石刻艺术之冠，被誉"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    506,
+                    808,
+                    1186,
+                    848
+                ],
+                "score": 0.988,
+                "text": "B. 传统文化中的餐桌礼仪是很受重视的，老人常说，看一个人的吃相，往往会暴"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    504,
+                    875,
+                    1186,
+                    919
+                ],
+                "score": 0.956,
+                "text": "C. 在那些父母性格温和。情绪平和的孩子身上，往往笑容更多，幸福感更强，抗"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    536,
+                    907,
+                    868,
+                    941
+                ],
+                "score": 0.971,
+                "text": "挫折能力更突出，看待世界也更加宽容"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    465,
+                    1017,
+                    829,
+                    1051
+                ],
+                "score": 0.953,
+                "text": "19. 下列各句中，表达得体的一句是（3分）"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    485,
+                    1152,
+                    1064,
+                    1208
+                ],
+                "score": 0.778,
+                "text": "D. 当于路用单氧，我赶到的定地点的时候，对方早已x"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    960,
+                    1168,
+                    1126,
+                    1197
+                ],
+                "score": 1.0,
+                "text": "www.zxxk.com"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    691,
+                    1205,
+                    922,
+                    1243
+                ],
+                "score": 0.974,
+                "text": "语文试题第9页（共10页）"
+            }
+        ],
+        "page_info": {
+            "page_no": 5,
+            "width": 1653,
+            "height": 2339
+        }
+    },
+    {
+        "layout_dets": [
+            {
+                "cls_id": 13,
+                "label": "header_image",
+                "score": 0.5165,
+                "bbox": [
+                    464,
+                    94,
+                    676,
+                    163
+                ],
+                "index": 1
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.7988,
+                "bbox": [
+                    527,
+                    140,
+                    1206,
+                    223
+                ],
+                "index": 2
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9171,
+                "bbox": [
+                    484,
+                    203,
+                    1206,
+                    399
+                ],
+                "index": 3
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.5067,
+                "bbox": [
+                    481,
+                    382,
+                    1167,
+                    447
+                ],
+                "index": 4
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9246,
+                "bbox": [
+                    479,
+                    433,
+                    1205,
+                    606
+                ],
+                "index": 5
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.8891,
+                "bbox": [
+                    520,
+                    596,
+                    796,
+                    635
+                ],
+                "index": 6
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.6305,
+                "bbox": [
+                    508,
+                    677,
+                    778,
+                    754
+                ],
+                "index": 7
+            },
+            {
+                "cls_id": 17,
+                "label": "paragraph_title",
+                "score": 0.9035,
+                "bbox": [
+                    475,
+                    765,
+                    649,
+                    798
+                ],
+                "index": 8
+            },
+            {
+                "cls_id": 17,
+                "label": "paragraph_title",
+                "score": 0.9125,
+                "bbox": [
+                    472,
+                    821,
+                    882,
+                    855
+                ],
+                "index": 9
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9689,
+                "bbox": [
+                    469,
+                    859,
+                    1237,
+                    1020
+                ],
+                "index": 10
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9332,
+                "bbox": [
+                    470,
+                    1009,
+                    1196,
+                    1108
+                ],
+                "index": 11
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.6595,
+                "bbox": [
+                    496,
+                    1124,
+                    689,
+                    1209
+                ],
+                "index": 12
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9379,
+                "bbox": [
+                    930,
+                    1147,
+                    1104,
+                    1205
+                ],
+                "index": 13
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    458,
+                    89,
+                    680,
+                    169
+                ],
+                "score": 0.973,
+                "text": "学利网"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    601,
+                    153,
+                    1203,
+                    196
+                ],
+                "score": 0.911,
+                "text": "产横线处补写恰当的语句，使整段文字语意完整述营，内容贴切，逻"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    530,
+                    172,
+                    850,
+                    208
+                ],
+                "score": 0.968,
+                "text": "辑严密，每处不超过16个字。(6分)"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    486,
+                    337,
+                    630,
+                    385
+                ],
+                "score": 0.919,
+                "text": "统发电更经济。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    533,
+                    221,
+                    1201,
+                    260
+                ],
+                "score": 0.932,
+                "text": "太阳能与风临①遗常白天阳光强而风小，夜晚光照变得很弱而风力加强；"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    492,
+                    236,
+                    710,
+                    270
+                ],
+                "score": 0.968,
+                "text": "夏季阳光强度大而风小，"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    707,
+                    266,
+                    1201,
+                    304
+                ],
+                "score": 0.958,
+                "text": "②这种互补性使风光互补发电系统在资源上具有银"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    487,
+                    291,
+                    1201,
+                    333
+                ],
+                "score": 0.961,
+                "text": "好的西配性，常见的风光至补发电系统有两套发电设备，夜间和阴天由风力发电装置发"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    617,
+                    331,
+                    1202,
+                    374
+                ],
+                "score": 0.946,
+                "text": "在既有风义有太阳的情况下，二者同时发挥作用，比单用风力或大阳"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    484,
+                    396,
+                    599,
+                    432
+                ],
+                "score": 0.809,
+                "text": "21下面交"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    900,
+                    388,
+                    1163,
+                    427
+                ],
+                "score": 1.0,
+                "text": "www.zxxk.com"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    533,
+                    455,
+                    1199,
+                    495
+                ],
+                "score": 0.962,
+                "text": "“爆竹声声除旧岁”，说的是欢度春节时的传统习俗。春节燃放烟花爆竹虽然喜庆。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    947,
+                    434,
+                    1167,
+                    467
+                ],
+                "score": 0.953,
+                "text": "说明另外两处问题。(5分)"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    481,
+                    489,
+                    1203,
+                    531
+                ],
+                "score": 0.929,
+                "text": "但食带来空气、噪声等环境污染问题，还可能引发大灾，一三引发大灾，势必造成人身"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    482,
+                    529,
+                    1202,
+                    568
+                ],
+                "score": 0.932,
+                "text": "伤亡和财产损失，现在很多城市已经限制燃放，这样就可以避免发生大灾，而且只要限"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    483,
+                    560,
+                    940,
+                    599
+                ],
+                "score": 0.946,
+                "text": "制燃放，就能避免环境污染，让空气断鲜、环境优美。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    519,
+                    594,
+                    797,
+                    637
+                ],
+                "score": 0.986,
+                "text": "①火灾不一定会造成人身伤亡。"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    510,
+                    690,
+                    774,
+                    736
+                ],
+                "score": 1.0,
+                "text": "www.zxxk.com"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    474,
+                    764,
+                    650,
+                    799
+                ],
+                "score": 0.977,
+                "text": "四、写作（60分）"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    472,
+                    821,
+                    880,
+                    854
+                ],
+                "score": 0.946,
+                "text": "22.阅读下面的材料，根据要求写作。(60分)"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    518,
+                    865,
+                    1200,
+                    892
+                ],
+                "score": 0.888,
+                "text": "今年是我国恢复高考40周年、40年未，高考为国选材，推动了教育改革与社会进"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    475,
+                    906,
+                    625,
+                    938
+                ],
+                "score": 0.952,
+                "text": "步，取得了举世"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    635,
+                    903,
+                    1153,
+                    929
+                ],
+                "score": 0.882,
+                "text": "日的或就，4的0年来，高考激扬梦想，硬聚看几代青平的集体记值"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    471,
+                    989,
+                    716,
+                    1013
+                ],
+                "score": 0.711,
+                "text": "的扔点：意今天，饮正点"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    1061,
+                    921,
+                    1229,
+                    993
+                ],
+                "score": 1.0,
+                "text": "发试卷"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    500,
+                    1010,
+                    1199,
+                    1062
+                ],
+                "score": 0.954,
+                "text": "请以“我看高考”或“我的高考”为副标题，写一员文章，要求选好角度，确定立意"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    468,
+                    1055,
+                    977,
+                    1101
+                ],
+                "score": 0.885,
+                "text": "明确文体、自拟标题，不要套作，不得抄表：不少于800字"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    496,
+                    1129,
+                    689,
+                    1200
+                ],
+                "score": 0.972,
+                "text": "学科网"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    932,
+                    1162,
+                    1099,
+                    1191
+                ],
+                "score": 1.0,
+                "text": "www.zxxk.com"
+            }
+        ],
+        "page_info": {
+            "page_no": 6,
+            "width": 1653,
+            "height": 2339
+        }
+    }
+]

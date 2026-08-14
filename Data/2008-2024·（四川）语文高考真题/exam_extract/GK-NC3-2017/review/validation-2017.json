@@ -1,0 +1,20 @@
+{
+  "schema_version": "exam-extract-validation-0.2",
+  "exam_id": "GK-NC3-2017",
+  "year": 2017,
+  "result": "passed",
+  "errors": [],
+  "warnings": [],
+  "checks": {
+    "raw_hashes": true,
+    "question_coverage": true,
+    "provenance": true,
+    "materials": true,
+    "segment_hashes": true,
+    "answers": {
+      "artifacts_present": null,
+      "index_coverage": null,
+      "missing_source_explicit": null
+    }
+  }
+}

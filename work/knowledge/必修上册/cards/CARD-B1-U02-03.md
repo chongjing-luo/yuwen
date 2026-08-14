@@ -1,7 +1,7 @@
 ---
 schema_version: "2.0-candidate"
 card_id: "CARD-B1-U02-03"
-status: "drafted"
+status: "accepted"
 book: "必修上册"
 unit: "U02"
 material_type: "lesson"
@@ -21,7 +21,7 @@ subtext_ids:
   - "SUBTEXT-CARD-B1-U02-03-01"
   - "SUBTEXT-CARD-B1-U02-03-02"
 producer: "execution_design"
-reviewers: []
+reviewers: ["review_primary_textbook", "review_secondary_textbook"]
 version: "0.1.0"
 ---
 

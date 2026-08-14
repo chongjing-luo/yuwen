@@ -13,7 +13,8 @@ OUTPUT = PROJECT_ROOT / "work" / "备课" / "选择性必修下册" / "氓" / "_
 
 def build() -> subprocess.CompletedProcess[str]:
     return subprocess.run(
-        ["python", str(BUILD)], cwd=PROJECT_ROOT, text=True, capture_output=True, check=False,
+        ["python", str(BUILD), "--allow-pending-review"], cwd=PROJECT_ROOT,
+        text=True, capture_output=True, check=False,
     )
 
 
@@ -55,10 +56,17 @@ class MengV6OpeningAuditTests(unittest.TestCase):
 
     def test_current_opening_is_broad_recall_then_text_not_three_prefilled_examples(self):
         pages = self.document["current_release_audit"]["pages"]
+        self.assertEqual(
+            ["N002", "N003", "N004", "N005", "N001", "N007", "N008", "N009", "N010", "N011", "N012"],
+            [page["page_id"] for page in pages],
+        )
         visible = "\n".join(str(page.get("student_visible_text", "")) for page in pages)
-        self.assertIn("写下1—3篇", visible)
+        self.assertIn("尽量多写，至少一篇", visible)
         self.assertIn("轮到我｜15—20秒", visible)
-        self.assertIn("贡献一篇尚未出现的作品", visible)
+        self.assertIn("全组留下｜两张不同的", visible)
+        self.assertIn("每组先贴两张卡", visible)
+        self.assertIn("卡墙还没有", visible)
+        self.assertIn("卡墙已有相同内容", visible)
         question_page = next(page for page in pages if page["page_id"] == "N007")
         self.assertIn("今天再读一个更早的故事", question_page["previous_relation"])
         self.assertNotIn("今天再读一个更早的故事", visible)
@@ -66,6 +74,47 @@ class MengV6OpeningAuditTests(unittest.TestCase):
         self.assertNotIn("幸福或困境，取决于什么", visible)
         self.assertNotIn("相遇的欣悦，需要真实了解", visible)
         self.assertNotIn("婚姻的选择，需要尊重与行动", visible)
+
+    def test_n005_theme_map_is_student_authored_and_teacher_cannot_supply_fixed_categories(self):
+        pages = {page["page_id"]: page for page in self.document["current_release_audit"]["pages"]}
+        n005 = pages["N005"]
+        visible = n005["student_visible_text"]
+        teacher = n005["channel_split"]["teacher"]
+        self.assertIn("每人先连一组", visible)
+        self.assertIn("三位同学上台", visible)
+        self.assertIn("临时命名", visible)
+        self.assertIn("保留／改名／移回", visible)
+        self.assertIn("只复述现场已经出现", teacher)
+        self.assertIn("如果现场只有两条", teacher)
+        for prewritten_category in ("相遇的欢喜", "等待、错过、阻隔、相守与破裂"):
+            self.assertNotIn(prewritten_category, teacher)
+        self.assertIn("三名学生", n005["student_action"]["action"])
+        self.assertIn("卡号", n005["artifact_location"])
+
+    def test_every_opening_page_exposes_the_non_negotiable_value_chain_contract(self):
+        for page in self.document["current_release_audit"]["pages"]:
+            self.assertTrue(page["previous_artifact_input"], page["page_id"])
+            self.assertTrue(page["unique_transformation"], page["page_id"])
+            self.assertTrue(page["individual_minimum_action"], page["page_id"])
+            self.assertTrue(page["minimum_acceptance_criterion"], page["page_id"])
+            self.assertTrue(page["bounded_feedback"], page["page_id"])
+            self.assertTrue(page["revision_evidence"], page["page_id"])
+            self.assertTrue(page["named_consumer"], page["page_id"])
+            self.assertIn(page["consumer_status"], {"implemented", "declared"}, page["page_id"])
+            self.assertTrue(page["participation_denominator"], page["page_id"])
+            self.assertTrue(page["artifact_authorship"], page["page_id"])
+            self.assertIn("seen", page["student_reception_contract"])
+            self.assertIn("heard", page["student_reception_contract"])
+            self.assertIn("action", page["student_reception_contract"])
+            self.assertIn("artifact", page["student_reception_contract"])
+            self.assertIn("next_use", page["student_reception_contract"])
+
+    def test_deferred_consumers_are_declared_not_misrepresented_as_verified(self):
+        pages = {page["page_id"]: page for page in self.document["current_release_audit"]["pages"]}
+        for page_id in ("N005", "N010", "N012"):
+            self.assertEqual("declared", pages[page_id]["consumer_status"])
+            self.assertEqual("provisional", pages[page_id]["release_status"])
+        self.assertEqual("implemented", pages["N003"]["consumer_status"])
 
     def test_participation_events_have_all_student_entry_listener_work_and_saved_reuse(self):
         events = {event["event_id"]: event for event in self.document["current_release_audit"]["events"]}
@@ -78,21 +127,25 @@ class MengV6OpeningAuditTests(unittest.TestCase):
             self.assertTrue(event["artifact_locations"])
             self.assertTrue(event["next_uses"])
         self.assertIn("每人", " ".join(events["E_RECALL_GROUP"]["actions"]))
-        self.assertIn("共5分钟", " ".join(events["E_RECALL_CLASS"]["actions"]))
+        self.assertIn("共6分钟", " ".join(events["E_RECALL_CLASS"]["actions"]))
 
     def test_visual_review_failures_were_removed_not_downgraded(self):
         pages = {page["page_id"]: page for page in self.document["current_release_audit"]["pages"]}
         self.assertNotIn("N006", pages)
-        self.assertIn("只写篇名的提示条", pages["N002"]["student_visible_text"])
-        self.assertIn("先贴一张卡", pages["N004"]["student_visible_text"])
-        self.assertIn("5分钟", pages["N004"]["student_visible_text"])
-        self.assertIn("移动一张卡", pages["N005"]["student_visible_text"])
+        self.assertNotIn("提示条", pages["N002"]["student_visible_text"])
+        self.assertIn("卡墙还没有", pages["N004"]["student_visible_text"])
+        self.assertIn("卡墙已有相同内容", pages["N004"]["student_visible_text"])
+        self.assertIn("6分钟", pages["N004"]["student_visible_text"])
+        self.assertIn("三位同学上台｜移动卡片", pages["N005"]["student_visible_text"])
+        self.assertIn("原提议者当场保留／改名／移回", pages["N005"]["student_visible_text"])
+        self.assertIn("原提议者号", pages["N003"]["student_visible_text"])
+        self.assertIn("原提议者书写或签认", pages["N003"]["supporting_move"])
         self.assertNotIn("教师据此", pages["N005"]["student_visible_text"])
         self.assertEqual("信息路标", pages["N011"]["primary_visual_duty"])
-        self.assertIn("教材第一章开头的无斜线原句", pages["N012"]["student_visible_text"])
+        self.assertIn("第一章开头的无斜线原句", pages["N012"]["student_visible_text"])
         self.assertIn("听者问", pages["N012"]["student_visible_text"])
         self.assertIn("读者带着完整动作再读", pages["N012"]["student_visible_text"])
-        self.assertEqual(4, pages["N005"]["time_value"]["minutes"])
+        self.assertEqual(7, pages["N005"]["time_value"]["minutes"])
         self.assertNotIn("赋、比、兴", pages["N012"]["student_visible_text"])
 
     def test_cover_borrows_event_change_and_transition_is_actually_heard(self):
@@ -105,10 +158,11 @@ class MengV6OpeningAuditTests(unittest.TestCase):
         cover_gates = {gate["gate_id"]: gate for gate in cover["gates"]}
         self.assertEqual("na", cover_gates["G4"]["gate_status"])
         self.assertEqual("na", cover_gates["G5"]["gate_status"])
-        teacher_script = pages["N007"]["channel_split"]["teacher"]
-        self.assertIn("今天再读一个更早的故事", teacher_script)
-        self.assertIn("一位女子回望婚后的日子", teacher_script)
-        self.assertIn("先别急着回答", teacher_script)
+        title_script = pages["N001"]["channel_split"]["teacher"]
+        question_script = pages["N007"]["channel_split"]["teacher"]
+        self.assertIn("更早的讲述者", title_script)
+        self.assertIn("《诗经·卫风》", title_script)
+        self.assertIn("不要抢答", question_script)
 
     def test_event_g5_points_to_real_target_input_or_stays_deferred(self):
         events = {event["event_id"]: event for event in self.document["current_release_audit"]["events"]}
@@ -141,8 +195,8 @@ class MengV6OpeningAuditTests(unittest.TestCase):
         pages = {page["page_id"]: page for page in self.document["current_release_audit"]["pages"]}
         self.assertIn("1 → 2 → 3 → 4", pages["N003"]["student_visible_text"])
         self.assertIn("听见新内容就勾", pages["N003"]["student_visible_text"])
-        self.assertIn("暂无新增，从作品谱圈一项", pages["N003"]["student_visible_text"])
-        self.assertIn("尚未找到", pages["N010"]["channel_split"]["teacher"])
+        self.assertIn("暂无新增，也从作品谱选两项", pages["N003"]["student_visible_text"])
+        self.assertIn("尚未找到", pages["N010"]["student_visible_text"])
         self.assertIn("谁在回望什么", pages["N011"]["student_visible_text"])
         self.assertIn("谁做什么", pages["N012"]["student_visible_text"])
         self.assertIn("不可说也", pages["N008"]["channel_split"]["teacher"])
@@ -151,13 +205,34 @@ class MengV6OpeningAuditTests(unittest.TestCase):
         self.assertIn("第一章", pages["N008"]["student_visible_text"])
         self.assertIn("第六章", pages["N009"]["student_visible_text"])
         self.assertIn("看教材", pages["N012"]["student_visible_text"])
-        self.assertIn("教材第一章开头", pages["N012"]["student_visible_text"])
+        self.assertIn("第一章开头", pages["N012"]["student_visible_text"])
 
-    def test_title_is_reused_when_the_class_returns_from_prior_works_to_meng(self):
+    def test_n004_gives_listeners_an_equal_honest_route_when_nothing_is_new(self):
+        pages = {page["page_id"]: page for page in self.document["current_release_audit"]["pages"]}
+        events = {event["event_id"]: event for event in self.document["current_release_audit"]["events"]}
+        visible = pages["N004"]["student_visible_text"]
+        teacher = pages["N004"]["channel_split"]["teacher"]
+        listener = pages["N004"]["listener_task"]["task"]
+        self.assertIn("有新增", visible)
+        self.assertIn("暂无新增", visible)
+        self.assertIn("核对一张重复卡", visible)
+        self.assertIn("暂无新增", listener)
+        self.assertIn("核对一张重复卡", teacher)
+        event_listener = events["E_RECALL_CLASS"]["participation_contract"]["listener_task"]
+        self.assertIn("暂无新增", event_listener)
+        self.assertIn("核对", event_listener)
+
+    def test_title_is_revealed_only_after_the_live_theme_map(self):
         events = {event["event_id"]: event for event in self.document["current_release_audit"]["events"]}
         title_use = events["E_TITLE"]["next_use_contracts"][0]
         self.assertEqual("E_QUESTIONS", title_use["target_event_id"])
         self.assertIn("E_QUESTIONS#inputs", events["E_TITLE"]["gate_5"]["evidence_refs"])
+        pages = self.document["current_release_audit"]["pages"]
+        title_index = next(index for index, page in enumerate(pages) if page["page_id"] == "N001")
+        self.assertEqual(4, title_index)
+        for page in pages[:title_index]:
+            self.assertNotIn("《氓》", page["student_visible_text"])
+            self.assertNotIn("《氓》", page["channel_split"]["teacher"])
 
     def test_listening_has_two_carriers_one_event_and_word_dump_is_removed(self):
         pages = {page["page_id"]: page for page in self.document["current_release_audit"]["pages"]}
@@ -192,16 +267,24 @@ class MengV6OpeningAuditTests(unittest.TestCase):
             for gate in page["gates"]
         ))
 
-    def test_current_slice_is_bound_to_two_independent_zero_defect_reviews(self):
-        receipt = self.document["independent_structure_review"]
-        self.assertEqual("pass", receipt["status"])
-        self.assertEqual((0, 0, 0), (receipt["p0"], receipt["p1"], receipt["p2"]))
+    def test_current_review_receipt_is_applied_only_to_the_matching_slice(self):
+        review = self.document["independent_structure_review"]
+        if review is None:
+            for collection in ("pages", "events"):
+                for item in self.document["current_release_audit"][collection]:
+                    review_status = item["review_status"]
+                    self.assertEqual("pending", review_status["consensus"])
+                    self.assertEqual("pending", review_status["student_reception"]["status"])
+                    self.assertEqual("pending", review_status["visual"]["status"])
+            return
+        self.assertEqual("pass", review["status"])
+        self.assertEqual(0, review["p0"] + review["p1"] + review["p2"])
         for collection in ("pages", "events"):
             for item in self.document["current_release_audit"][collection]:
-                review = item["review_status"]
-                self.assertEqual("passed", review["consensus"])
-                self.assertEqual("student_reception_qa", review["student_reception"]["reviewer"])
-                self.assertEqual("ppt_visual_qa", review["visual"]["reviewer"])
+                review_status = item["review_status"]
+                self.assertEqual("passed", review_status["consensus"])
+                self.assertEqual("pass", review_status["student_reception"]["status"])
+                self.assertEqual("pass", review_status["visual"]["status"])
 
 
 if __name__ == "__main__":

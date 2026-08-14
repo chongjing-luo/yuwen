@@ -1,0 +1,73 @@
+{
+  "schema_version": "exam-vertical-review-receipt-0.1",
+  "receipt_id": "EXAM-VERTICAL-GK-NC3-2019-20260809",
+  "exam_id": "GK-NC3-2019",
+  "calibration_id": "SG-EXAM-CAL-2008-2024",
+  "generated_at": "2026-08-09T06:20:24+08:00",
+  "status": "structural_pass",
+  "acceptance": "conditional_review",
+  "scope": "response_node_decomposition_and_score_reconciliation",
+  "source_policy": {
+    "question_pdf_visual_check": "passed",
+    "source_pdf_read_only": true,
+    "mineru_full_md_read_only": true,
+    "answer_authority": "candidate_unverified_or_missing",
+    "mapping_boundary": "M0_only"
+  },
+  "visual_check": {
+    "pages_checked": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "notes": [
+      "2019 新课标Ⅲ卷；已对空白卷 13 页逐页完成高分辨率 PDF 视觉复核，考试正文为印刷第1—11页，PDF 第12页为空白水印页，第13页为广告页。",
+      "卷面稳定总分为 Q1—Q10：9/12/15/19/9/6/9/6/5/60，共 150 分；当前保持十个顶层节点，不把未印独立小问分值的题组虚拆。",
+      "Q1—Q9 题干、文言断句/翻译、诗歌与语言文字运用边界均与 PDF 一致，未发现需静默修正的题卷 OCR 残片。",
+      "Q10 漫画材料已在 PDF 第11页确认，节点保留 MinerU 图片源路径，不臆补漫画文字或寓意答案。",
+      "原始 PDF 考试页可见资料站水印；空白水印页与广告页不进入题文清洗正文。"
+    ]
+  },
+  "visual_review_receipt": "work/knowledge/_reviews/receipts/exam_visual_review_GK-NC3-2019_20260809.json",
+  "node_count": 10,
+  "question_count": 10,
+  "score_total": 150,
+  "expected_score_total": 150,
+  "choice_groups": [],
+  "missing_answer_source_questions": [],
+  "source_hash_anchors": {
+    "question_pdf": {
+      "1": "75ac5621d9b9e24bf29d123e53e8e63fe8a7d32b01f3291d8dbaa3c9d98cdb53",
+      "2": "75ac5621d9b9e24bf29d123e53e8e63fe8a7d32b01f3291d8dbaa3c9d98cdb53",
+      "3": "75ac5621d9b9e24bf29d123e53e8e63fe8a7d32b01f3291d8dbaa3c9d98cdb53",
+      "4": "75ac5621d9b9e24bf29d123e53e8e63fe8a7d32b01f3291d8dbaa3c9d98cdb53",
+      "5": "75ac5621d9b9e24bf29d123e53e8e63fe8a7d32b01f3291d8dbaa3c9d98cdb53",
+      "6": "75ac5621d9b9e24bf29d123e53e8e63fe8a7d32b01f3291d8dbaa3c9d98cdb53",
+      "7": "75ac5621d9b9e24bf29d123e53e8e63fe8a7d32b01f3291d8dbaa3c9d98cdb53",
+      "8": "75ac5621d9b9e24bf29d123e53e8e63fe8a7d32b01f3291d8dbaa3c9d98cdb53",
+      "9": "75ac5621d9b9e24bf29d123e53e8e63fe8a7d32b01f3291d8dbaa3c9d98cdb53",
+      "10": "75ac5621d9b9e24bf29d123e53e8e63fe8a7d32b01f3291d8dbaa3c9d98cdb53"
+    }
+  },
+  "derived_jsonl": "work/knowledge/高考分析/GK-NC3-2019-response_nodes_vertical_slice.jsonl",
+  "errors": [],
+  "warnings": [
+    "Q10 漫画材料已在 PDF 第11页视觉确认；保留 MinerU 图片源路径，不将图像内容臆转写为答案。",
+    "截去题段末尾下一节标题；原始题段保持不变。",
+    "截去题段末尾下一节标题；原始题段保持不变。",
+    "截去题段末尾下一节标题；原始题段保持不变。",
+    "截去题段末尾下一节标题；原始题段保持不变。",
+    "截去题段末尾下一节标题；原始题段保持不变。",
+    "截去题段末尾下一节标题；原始题段保持不变。"
+  ]
+}

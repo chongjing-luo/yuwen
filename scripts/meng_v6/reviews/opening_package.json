@@ -1,26 +1,28 @@
 {
   "schema_version": "1.0",
   "review_scope": "opening_actual_markdown_package_desktop_only",
-  "reviewed_package_sha256": "8d93e333c0b9ffafc0685f6d35919bee47880538353177f40f55b5fed68d44dd",
+  "reviewed_package_sha256": "0090c3fe0c893ef7c96099025d37cc33dc78624b145f16689e189eecab4ec6ec",
+  "reviewed_pptx_sha256": "b45be280b7f2738090600c7dedf69ed0b3c683754c5f5fdd2f56337bf8c894ff",
+  "reviewed_render_contact_sha256": "4e4faf12f4ae9056a184013abd5751ca0b898c98aa1b309a64b01fbcdedb5ffe",
+  "reviewed_markitdown_sha256": "15809d29740d3231a71de56f9c18743a11969077190f65da43d2bd999c4c8c22",
   "student_reception": {
     "reviewer": "student_reception_qa",
-    "reviewed_at": "2026-08-13T11:43:15+08:00",
+    "reviewed_at": "2026-08-13T17:13:00+08:00",
     "status": "pass",
-    "evidence": "11 pages / 15 events; lesson master, worksheet A/B, rehearsal script and snapshot rechecked; N003 has three note slots plus honest no-new-content branch; N008 leaves a permanent textbook mark; N012 writes a rhythm revision"
+    "evidence": "11 logical pages / 12 physical slides; PPTX, notes, 03A/03D, snapshot and markitdown cross-checked; N003 proposer authorship, N010 sentence stems, N011 answer withdrawal and N012 reading paths passed with P0-P2 zero"
   },
   "visual": {
     "reviewer": "ppt_visual_qa",
-    "reviewed_at": "2026-08-13T11:43:15+08:00",
+    "reviewed_at": "2026-08-13T17:13:00+08:00",
     "status": "pass",
-    "evidence": "11-page package and rendered prototype duties rechecked; no character illustration admitted; N002/N004/N008/N009 physical-room risks remain explicitly P3"
+    "evidence": "rendered_v15 all 12 slides inspected at original size and passed; old P2 defects on slides 1, 3, 9, 10 and 12 closed; no character illustration admitted"
   },
   "p0": 0,
   "p1": 0,
   "p2": 0,
   "p3_observations": [
-    "N002 animation/static fallback typography requires rendered prototype QA",
-    "N004 projection and physical magnetic-board sightline requires classroom-space QA",
-    "N008/N009 rear-seat legibility requires rendered prototype and later physical-room QA"
+    "N004/N005 real card-wall rear-seat legibility, exchange tempo and archive-photo readability require classroom QA",
+    "N008/N009 continuous listening and rear-seat poem tracking plus N012 paired listening require classroom QA"
   ],
   "status": "pass",
   "claim_boundary": "desktop_design_scaffold_only"

@@ -1,0 +1,17 @@
+{
+  "schema_version": "sichuan-exam-expectations-0.1",
+  "source_status": "unverified_local_provided",
+  "top_level_question_count": 21,
+  "question_ids": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
+  "response_unit_count": 24,
+  "choice_group_count": 1,
+  "years": {
+    "2009": {"section_ranges": {"一": [1, 4], "二": [5, 7], "三": [8, 10], "四": [11, 13], "五": [14, 17], "六": [18, 20], "七": [21, 21]}, "answer_mode": "repeat_title_then_inline", "required_material_groups": [[5, 7], [8, 11], [12, 12], [14, 17]]},
+    "2010": {"section_ranges": {"一": [1, 4], "二": [5, 7], "三": [8, 10], "四": [11, 13], "五": [14, 17], "六": [18, 20], "七": [21, 21]}, "answer_mode": "repeat_title_then_inline", "required_material_groups": [[5, 7], [8, 11], [12, 12], [14, 17]]},
+    "2011": {"section_ranges": {"一": [1, 4], "二": [5, 7], "三": [8, 10], "四": [11, 13], "五": [14, 17], "六": [18, 20], "七": [21, 21]}, "answer_mode": "global_heading", "answer_heading": "语文试题答案及评分参考", "required_material_groups": [[5, 7], [8, 11], [12, 12], [14, 17]]},
+    "2012": {"section_ranges": {"一": [1, 4], "二": [5, 7], "三": [8, 10], "四": [11, 13], "五": [14, 17], "六": [18, 20], "七": [21, 21]}, "answer_mode": "global_heading", "answer_heading": "试题答案", "required_material_groups": [[5, 7], [8, 11], [12, 12], [14, 17]]},
+    "2013": {"section_ranges": {"一": [1, 4], "二": [5, 7], "三": [8, 9], "四": [10, 14], "五": [15, 18], "六": [19, 20], "七": [21, 21]}, "answer_mode": "inline_per_question", "required_material_groups": [[5, 7], [8, 12], [13, 13], [15, 18]]},
+    "2014": {"section_ranges": {"一": [1, 4], "二": [5, 7], "三": [8, 9], "四": [10, 14], "五": [15, 18], "六": [19, 20], "七": [21, 21]}, "answer_mode": "inline_per_question", "required_material_groups": [[5, 7], [8, 12], [13, 13], [15, 18]]},
+    "2015": {"section_ranges": {"一": [1, 4], "二": [5, 7], "三": [8, 9], "四": [10, 14], "五": [15, 18], "六": [19, 20], "七": [21, 21]}, "answer_mode": "inline_per_question", "required_material_groups": [[5, 7], [8, 12], [13, 13], [15, 18]]}
+  }
+}

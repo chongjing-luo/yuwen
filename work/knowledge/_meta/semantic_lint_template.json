@@ -1,0 +1,17 @@
+{
+  "schema_version": "2.0-textbook-eval-1",
+  "deliverable_id": "<DELIVERABLE-ID>",
+  "artifact_version": "0.0.0",
+  "result": "not_run",
+  "checks": [
+    {"check_id": "SL-MARKDOWN-TABLES", "domain": "markdown_table", "mode": "manual_required", "result": "not_checked", "message": "每张正式 Markdown 表的列数、表头和空值已目视核对。", "evidence_refs": [], "owner": "<reviewer>"},
+    {"check_id": "SL-FRONT-LEDGER", "domain": "front_matter_ledger", "mode": "manual_required", "result": "not_checked", "message": "front matter 的 ID、版本、状态与 ledger 一致。", "evidence_refs": [], "owner": "<reviewer>"},
+    {"check_id": "SL-CLAIM-KP-EV", "domain": "claim_kp_ev", "mode": "manual_required", "result": "not_checked", "message": "正式 Claim 均绑定 KP/EV，问题清单不进入正式分母。", "evidence_refs": [], "owner": "<reviewer>"},
+    {"check_id": "SL-Q-LOCATOR", "domain": "q_locator", "mode": "manual_required", "result": "not_checked", "message": "Q 类引文逐字核对，locator 落在 canonical artifact 页范围。", "evidence_refs": [], "owner": "<reviewer>"},
+    {"check_id": "SL-M0-NA", "domain": "m0_na", "mode": "manual_required", "result": "not_checked", "message": "M0/N/A 结构合法，未携带 KP、小问、能力动作或证据。", "evidence_refs": [], "owner": "<reviewer>"},
+    {"check_id": "SL-TEACHING-PROMPT", "domain": "teaching_prompt", "mode": "manual_required", "result": "not_checked", "message": "教材提示、教师用书意见和项目建议三类内容分离。", "evidence_refs": [], "owner": "<reviewer>"},
+    {"check_id": "SL-SOURCE-BOUNDARY", "domain": "source_boundary", "mode": "manual_required", "result": "not_checked", "message": "来源等级、版次和未核验材料边界明确。", "evidence_refs": [], "owner": "<reviewer>"},
+    {"check_id": "SL-VERSION-HISTORY", "domain": "version_history", "mode": "manual_required", "result": "not_checked", "message": "版本记录、上游 SHA 和返工原因完整。", "evidence_refs": [], "owner": "<reviewer>"}
+  ],
+  "warnings": []
+}

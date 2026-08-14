@@ -1,0 +1,67 @@
+{
+  "schema_version": "exam-reference-answer-candidate-receipt-0.2",
+  "receipt_id": "EXAM-REFERENCE-ANSWER-GK-SC-2009-20260809",
+  "generated_at": "2026-08-09T14:25:02+08:00",
+  "exam_id": "GK-SC-2009",
+  "source_registry_id": "SRC-GK-2009-SC-DFZ-JYEEO-ANSWER-CANDIDATE",
+  "source_authority_status": "unverified_third_party_reprint",
+  "coverage": {
+    "candidate_questions": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "missing_questions": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ]
+  },
+  "inputs": {
+    "scdfz_source.html": {
+      "path": "Data/reference/gaokao/external/2009_gaokao_answer/scdfz_source.html",
+      "sha256": "8cba1b4e241208900db97359aeb190418c394e887493a43f8df8905ac17919ab"
+    },
+    "scdfz_answer.pdf": {
+      "path": "Data/reference/gaokao/external/2009_gaokao_answer/scdfz_answer.pdf",
+      "sha256": "8cf78afe5b11abeedfbd293de22c80120741e3ffeffcc2a2c51ae21aec839881"
+    },
+    "source.html": {
+      "path": "Data/reference/gaokao/external/2009_gaokao_answer/source.html",
+      "sha256": "2df004b90a9b508ca55bfcb5d99ad4e288385e60d814d5700705db1ee1b0e325"
+    },
+    "acquisition_manifest.json": {
+      "path": "Data/reference/gaokao/external/2009_gaokao_answer/acquisition_manifest.json",
+      "sha256": "0c3b543284e4caee72c0cdee381faa0cf5b198314df183cf221e48681c7757f1"
+    }
+  },
+  "output": {
+    "path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-SC-2009/answers/reference_answer_candidates.jsonl",
+    "sha256": "834d2055db8aaffbd68a3b0c158ccf87de798b512bfd82f4bba04a27fd3d288b",
+    "rows": 6
+  },
+  "report": {
+    "path": "work/knowledge/高考分析/EXAM-REFERENCE-ANSWER-CANDIDATES-2009.md",
+    "sha256": "7bda98027bc288472630297f3717df209d3c511a3af6429ee4cb421af4e83361"
+  },
+  "raw_source_mutation": false,
+  "answer_index_mutation": false,
+  "scoring_status": "not_available_as_official",
+  "mapping_status": "M0 | kp_id=N/A",
+  "policy": "仅从独立转载页面中明确答案键建立候选；不补缺失题号、不生成官方评分标准。"
+}

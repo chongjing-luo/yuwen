@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0",
+  "review_version": "chapter2_visual_v11",
+  "review_scope": "chapter_2_v11_frozen_candidate_independent_read_only_visual_function_review",
+  "reviewer": "ppt_visual_qa",
+  "reviewed_at": "2026-08-13",
+  "independence_statement": "将v11新哈希作为全新静止候选重新审查；只读取PPTX、snapshot、rendered_v11图像与markitdown，不运行构建或测试，不修改教学对象。",
+  "frozen_artifacts": {
+    "candidate_pptx": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_2/pptx/04_氓_V6第二章课堂课件.pptx",
+      "candidate_sha256": "4b5c41594c6727c0199f6584b43cccc09397c92de609ffccb4d689c26db8c0d5",
+      "size_bytes": 54099,
+      "mtime": "2026-08-13 18:15:37.167096965 +0800",
+      "inode": 12790129
+    },
+    "source_snapshot": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_2/package/06_氓_V6第二章课程数据快照.json",
+      "sha256": "54a6e72cb90bc6fdd4457d4f1f491e7ebf74e002c1c0ca02d15a8314b249fd57",
+      "size_bytes": 43544,
+      "mtime": "2026-08-13 18:15:36.932097018 +0800",
+      "inode": 12790126
+    },
+    "render_contact": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_2/pptx/rendered_v11/contact.jpg",
+      "sha256": "773c660200e0b9d357f9aaafc46957c30fe3bb4a5a381d420c58c84ba98b7323"
+    },
+    "render_markitdown": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_2/pptx/rendered_v11/markitdown.txt",
+      "sha256": "ca0654de8e4374e08a6d55c685a91cec43f471b6811423ab9f17fbdf13533f4f"
+    }
+  },
+  "artifact_identity_verification": {
+    "status": "pass",
+    "finding": "PPTX与snapshot的SHA-256、大小、mtime和inode连续两次只读核验稳定；PPTX ZIP完整性检查无错误。",
+    "pptx_hash_matches_requested_candidate": true,
+    "snapshot_hash_matches_requested_candidate": true,
+    "zip_integrity": "pass"
+  },
+  "page_ids": [
+    "N022",
+    "N023",
+    "N024",
+    "N025",
+    "N026",
+    "N027",
+    "N028",
+    "N029",
+    "N030"
+  ],
+  "page_findings": {
+    "N022": {
+      "function": "整章初读并独立留下三个最确定动作。",
+      "visual_finding": "第二章全文为第一主焦点，动作轻点与三个空槽形成清楚的两阶段路径；版面无重叠、溢出或过密。",
+      "generation_state_finding": "旧P2关闭。屏幕只显示‘带着感受的动作也可以写’，不出现望、泣、笑或任意三个可直接抄写的现成动作；备注虽在现场分支解释合理答案口径，但教师逐字稿在学生生成前同样不报三个原词。",
+      "status": "pass",
+      "severity": null
+    },
+    "N023": {
+      "function": "把乘、垝垣、望、复关组织成站位与视线关系。",
+      "visual_finding": "原句、问题和三个作答区层级明确；箭头仅为待填写关系骨架，没有人物、墙体或完成路线泄答；字号、对比与留白良好。",
+      "generation_state_finding": "教师只给必要词义并用问题纠错，不预画成品视线。",
+      "status": "pass",
+      "severity": null
+    },
+    "N024": {
+      "function": "比较不见与既见两句的视线条件、人物动作和语势原词。",
+      "visual_finding": "两句上下并列且明显占据主视觉；三组空格等距、可辨，无预填配对，无表情图替学生命名情绪。",
+      "generation_state_finding": "备注先让学生口译，再校准词义；三组核心答案仍由学生生成。",
+      "status": "pass",
+      "severity": null
+    },
+    "N025": {
+      "function": "把文本转折转成个人朗读谱。",
+      "visual_finding": "深色页面突出两句原文和三个异色作答卡，主次清楚；无低对比、裁切或拥挤，原词理由要求可见。",
+      "generation_state_finding": "教师不范读、不提供标准速度或重音，保留多种有依据读法。",
+      "status": "pass",
+      "severity": null
+    },
+    "N026": {
+      "function": "以闭眼听辨检验朗读谱并形成单项修订。",
+      "visual_finding": "四步纵向流程、角色和动作一眼可分；行距与卡片间距充足，第二遍允许‘仍需调整’清楚可见。",
+      "generation_state_finding": "页面不预示正确转轴词或标准声音，听者必须依据实际听见作答。",
+      "status": "pass",
+      "severity": null
+    },
+    "N027": {
+      "function": "用最小文化支架口译卜筮并区分此次结果与长期保证。",
+      "visual_finding": "四个词义卡后排可读，两个问题在下方明确分开；整体平衡，无过度背景材料挤压原句。",
+      "generation_state_finding": "词义是完成口译的必要支架；‘此次告诉什么/不能保证什么’的完整答案在学生生成与互查后才由教师校准。",
+      "status": "pass",
+      "severity": null
+    },
+    "N028": {
+      "function": "沿以尔/以我拆分两个人的主体、物件和动作。",
+      "visual_finding": "左右两栏清楚对称，原句为第一主焦点；未显示成品译文，版面宽松、可读。",
+      "generation_state_finding": "必要的贿、迁词义由教师定点说明，主体和行动关系仍需学生拆解。",
+      "status": "pass",
+      "severity": null
+    },
+    "N029": {
+      "function": "由章首三步扩展七个关键节点，并在自己的排序中定位声音转折。",
+      "visual_finding": "七词横向乱序、序号槽清楚；转折任务在下方独立框中标明‘排序完成后’，没有正确顺序连线、箭头或颜色暗示。页面信息较多但仍在安全边距内，主任务可辨。",
+      "generation_state_finding": "旧P2关闭。屏幕与教师逐字稿均不再显示‘不见—既见’的正确相对顺序；只要求学生在自己的七词序列中找两个相邻节点，同桌也被限制为不报完整顺序和正确转折词。",
+      "status": "pass",
+      "severity": null
+    },
+    "N030": {
+      "function": "完整重读并把局部理解重构为等待—声音转折—婚事推进的连续章意。",
+      "visual_finding": "第二章全文仍为第一主焦点，三项旁白框架和反馈链置于下方，不遮挡原文；字号、对比、边距和对齐均通过。",
+      "generation_state_finding": "三项仅为检索框架，不提供成品旁白或标准章意；漏项须回诗补说。",
+      "status": "pass_with_p3",
+      "severity": "P3"
+    }
+  },
+  "regression_summary": {
+    "layout": "九页未见元素重叠、文本溢出、裁切、异常换行、边距不足或对齐漂移。",
+    "readability": "主要原文、任务标题、作答区与流程提示均具备稳定对比和后排可辨的视觉层级。",
+    "function": "各页第一主焦点与唯一功能一致；N022、N029的生成前状态与备注话语同步修复，未在其余七页引入新泄答。",
+    "answer_state_separation": "pass",
+    "nine_pages_regression": "pass"
+  },
+  "closed_focus_findings": [
+    {
+      "page_id": "N022",
+      "old_issue": "三个现成动作原词构成填空式泄答",
+      "v11_status": "closed",
+      "evidence": "学生可见区只保留分类提示‘带着感受的动作也可以写’，三个槽为空；教师主台词不报原词。"
+    },
+    {
+      "page_id": "N029",
+      "old_issue": "排序前显示不见—既见的正确相对顺序及转折位置",
+      "v11_status": "closed",
+      "evidence": "七词乱序；转折任务明确在排序完成后进行，只在学生自己的序列中圈相邻节点；教师不说正确转折词。"
+    }
+  ],
+  "p3_observations": [
+    {
+      "observation_id": "C2-V11-P3-N030-TIMEBOX",
+      "severity": "P3",
+      "page_id": "N030",
+      "finding": "四分钟内同时安排待调整者朗读复验、全章重读、双人旁白、反馈、回诗补说和一句章意，桌面结构成立，但真实课堂转换时间可能挤压最后书写。",
+      "closure_target": "classroom_pilot",
+      "blocks_pass": false
+    }
+  ],
+  "priority_counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 1
+  },
+  "verdict": "PASS",
+  "claim_boundary": "结论只确认v11静止候选在视觉、逐页功能与生成前信息状态上的桌面质量；真实课堂节奏仍须试教验证。"
+}

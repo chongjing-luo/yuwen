@@ -1,0 +1,78 @@
+{
+  "schema_version": "exam-vertical-review-receipt-0.1",
+  "receipt_id": "EXAM-VERTICAL-GK-SC-2013-20260809",
+  "exam_id": "GK-SC-2013",
+  "calibration_id": "SG-EXAM-CAL-2008-2024",
+  "generated_at": "2026-08-09T04:53:12+08:00",
+  "status": "structural_pass",
+  "acceptance": "conditional_review",
+  "scope": "response_node_decomposition_and_score_reconciliation",
+  "source_policy": {
+    "question_pdf_visual_check": "passed",
+    "source_pdf_read_only": true,
+    "mineru_full_md_read_only": true,
+    "answer_authority": "candidate_unverified_or_missing",
+    "mapping_boundary": "M0_only"
+  },
+  "visual_check": {
+    "pages_checked": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "notes": [
+      "第I卷页眉列明一至三题分值为12、9、6；第II卷列明非选择题123分。",
+      "Q10两句各4分，Q11 5分；Q12限划9处4分；Q13两问各4分；Q14限选6小题共6分。",
+      "原卷存在可见水印，清洗稿与原卷保持双链，未改写原始内容。"
+    ]
+  },
+  "node_count": 23,
+  "question_count": 21,
+  "score_total": 150,
+  "expected_score_total": 150,
+  "choice_groups": [
+    {
+      "id": "GK-SC-2013-Q014-OPTIONAL",
+      "questions": [
+        14
+      ],
+      "branch_count": 8,
+      "scored_branch_count": 6
+    }
+  ],
+  "missing_answer_source_questions": [],
+  "source_hash_anchors": {
+    "question_pdf": {
+      "1": "8282704e26fadb8c04339f1b83b90a4ea9338f591641864d153100e150371496",
+      "2": "8282704e26fadb8c04339f1b83b90a4ea9338f591641864d153100e150371496",
+      "3": "8282704e26fadb8c04339f1b83b90a4ea9338f591641864d153100e150371496",
+      "4": "8282704e26fadb8c04339f1b83b90a4ea9338f591641864d153100e150371496",
+      "5": "8282704e26fadb8c04339f1b83b90a4ea9338f591641864d153100e150371496",
+      "6": "8282704e26fadb8c04339f1b83b90a4ea9338f591641864d153100e150371496",
+      "7": "8282704e26fadb8c04339f1b83b90a4ea9338f591641864d153100e150371496",
+      "8": "8282704e26fadb8c04339f1b83b90a4ea9338f591641864d153100e150371496",
+      "9": "8282704e26fadb8c04339f1b83b90a4ea9338f591641864d153100e150371496",
+      "10": "8282704e26fadb8c04339f1b83b90a4ea9338f591641864d153100e150371496",
+      "11": "8282704e26fadb8c04339f1b83b90a4ea9338f591641864d153100e150371496",
+      "12": "8282704e26fadb8c04339f1b83b90a4ea9338f591641864d153100e150371496",
+      "13": "8282704e26fadb8c04339f1b83b90a4ea9338f591641864d153100e150371496",
+      "14": "8282704e26fadb8c04339f1b83b90a4ea9338f591641864d153100e150371496",
+      "15": "8282704e26fadb8c04339f1b83b90a4ea9338f591641864d153100e150371496",
+      "16": "8282704e26fadb8c04339f1b83b90a4ea9338f591641864d153100e150371496",
+      "17": "8282704e26fadb8c04339f1b83b90a4ea9338f591641864d153100e150371496",
+      "18": "8282704e26fadb8c04339f1b83b90a4ea9338f591641864d153100e150371496",
+      "19": "8282704e26fadb8c04339f1b83b90a4ea9338f591641864d153100e150371496",
+      "20": "8282704e26fadb8c04339f1b83b90a4ea9338f591641864d153100e150371496",
+      "21": "8282704e26fadb8c04339f1b83b90a4ea9338f591641864d153100e150371496"
+    }
+  },
+  "derived_jsonl": "work/knowledge/高考分析/GK-SC-2013-response_nodes_vertical_slice.jsonl",
+  "errors": [],
+  "warnings": [
+    "Q14 第(3)处出现孤立字符“Y”，疑为水印/OCR残片；不静默改写，待回看原卷留证。",
+    "将孤立字符 Y 显式标记为 OCR/水印疑点，不作语义纠正。"
+  ]
+}

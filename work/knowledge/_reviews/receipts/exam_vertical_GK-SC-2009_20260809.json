@@ -1,0 +1,85 @@
+{
+  "schema_version": "exam-vertical-review-receipt-0.1",
+  "receipt_id": "EXAM-VERTICAL-GK-SC-2009-20260809",
+  "exam_id": "GK-SC-2009",
+  "calibration_id": "SG-EXAM-CAL-2008-2024",
+  "generated_at": "2026-08-09T07:01:23+08:00",
+  "status": "structural_pass",
+  "acceptance": "conditional_review",
+  "scope": "response_node_decomposition_and_score_reconciliation",
+  "source_policy": {
+    "question_pdf_visual_check": "passed_with_source_label_conflict",
+    "source_pdf_read_only": true,
+    "mineru_full_md_read_only": true,
+    "answer_authority": "candidate_unverified_or_missing",
+    "mapping_boundary": "M0_only"
+  },
+  "visual_check": {
+    "pages_checked": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "notes": [
+      "2009 四川自主命题卷；已逐页核对第1—8页考试正文，第9页为资料广告页。PDF首页标题含‘解析’字样，文件名虽标‘空白卷’，来源标签冲突已显式登记。",
+      "Q11 两句翻译 4/6 分，Q12 两问 2/6 分；Q13 两个名句分支任选一题。",
+      "Q14—Q17 的题干集中出现在 Q17 题段；派生节点保留 canonical_question_segment 与 source_prompt_segment 双链。"
+    ]
+  },
+  "visual_review_receipt": "work/knowledge/_reviews/receipts/exam_visual_review_GK-SC-2009_20260809.json",
+  "node_count": 24,
+  "question_count": 21,
+  "score_total": 150,
+  "expected_score_total": 150,
+  "choice_groups": [
+    {
+      "id": "GK-SC-2009-Q013-OPTIONAL",
+      "questions": [
+        13,
+        13
+      ],
+      "scored_branch_count": 1
+    }
+  ],
+  "score_groups": [],
+  "score_notes": {},
+  "missing_answer_source_questions": [],
+  "source_hash_anchors": {
+    "question_pdf": {
+      "1": "497835bd338d819e6dafd7aab67aed9eecbcdb45a3152e741af3d7f245feac2c",
+      "2": "497835bd338d819e6dafd7aab67aed9eecbcdb45a3152e741af3d7f245feac2c",
+      "3": "497835bd338d819e6dafd7aab67aed9eecbcdb45a3152e741af3d7f245feac2c",
+      "4": "497835bd338d819e6dafd7aab67aed9eecbcdb45a3152e741af3d7f245feac2c",
+      "5": "497835bd338d819e6dafd7aab67aed9eecbcdb45a3152e741af3d7f245feac2c",
+      "6": "497835bd338d819e6dafd7aab67aed9eecbcdb45a3152e741af3d7f245feac2c",
+      "7": "497835bd338d819e6dafd7aab67aed9eecbcdb45a3152e741af3d7f245feac2c",
+      "8": "497835bd338d819e6dafd7aab67aed9eecbcdb45a3152e741af3d7f245feac2c",
+      "9": "497835bd338d819e6dafd7aab67aed9eecbcdb45a3152e741af3d7f245feac2c",
+      "10": "497835bd338d819e6dafd7aab67aed9eecbcdb45a3152e741af3d7f245feac2c",
+      "11": "497835bd338d819e6dafd7aab67aed9eecbcdb45a3152e741af3d7f245feac2c",
+      "12": "497835bd338d819e6dafd7aab67aed9eecbcdb45a3152e741af3d7f245feac2c",
+      "13": "497835bd338d819e6dafd7aab67aed9eecbcdb45a3152e741af3d7f245feac2c",
+      "14": "497835bd338d819e6dafd7aab67aed9eecbcdb45a3152e741af3d7f245feac2c",
+      "15": "497835bd338d819e6dafd7aab67aed9eecbcdb45a3152e741af3d7f245feac2c",
+      "16": "497835bd338d819e6dafd7aab67aed9eecbcdb45a3152e741af3d7f245feac2c",
+      "17": "497835bd338d819e6dafd7aab67aed9eecbcdb45a3152e741af3d7f245feac2c",
+      "18": "497835bd338d819e6dafd7aab67aed9eecbcdb45a3152e741af3d7f245feac2c",
+      "19": "497835bd338d819e6dafd7aab67aed9eecbcdb45a3152e741af3d7f245feac2c",
+      "20": "497835bd338d819e6dafd7aab67aed9eecbcdb45a3152e741af3d7f245feac2c",
+      "21": "497835bd338d819e6dafd7aab67aed9eecbcdb45a3152e741af3d7f245feac2c"
+    }
+  },
+  "derived_jsonl": "work/knowledge/高考分析/GK-SC-2009-response_nodes_vertical_slice.jsonl",
+  "errors": [],
+  "warnings": [
+    "Q13 第二个名句分支末尾出现孤立字符“CC”，疑为 OCR/版面残片；不静默删除。",
+    "Q13 第二个名句分支末尾出现孤立字符“CC”，疑为 OCR/版面残片；不静默删除。",
+    "截去题段末尾下一节标题；原始题段保持不变。"
+  ]
+}

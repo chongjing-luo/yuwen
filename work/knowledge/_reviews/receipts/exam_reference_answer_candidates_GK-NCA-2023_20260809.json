@@ -1,0 +1,64 @@
+{
+  "schema_version": "exam-reference-answer-candidate-receipt-0.2",
+  "receipt_id": "EXAM-REFERENCE-ANSWER-GK-NCA-2023-20260809",
+  "generated_at": "2026-08-09T13:03:01+08:00",
+  "exam_id": "GK-NCA-2023",
+  "source_registry_id": "SRC-GK-2023-NCA-ANSWER",
+  "source_authority_status": "unverified_third_party_reprint",
+  "coverage": {
+    "candidate_questions": [
+      1,
+      2,
+      3,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "missing_questions": [
+      4,
+      5,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ]
+  },
+  "inputs": {
+    "pdf": {
+      "path": "Data/reference/gaokao/pdf/2023/2023_NCA_answer.pdf",
+      "sha256": "320a22f63591b74593516ca323a56784af7cbd4e31c28289eb719898d908f589"
+    },
+    "html": {
+      "path": "Data/reference/gaokao/html/2023/answer.html",
+      "sha256": "edcf29d9e0714c66289e2e62ab8f311334e255c85b418163275931b077aca586"
+    },
+    "mineru_full_md": {
+      "path": "Data/reference/gaokao/mineru_result/2023_NCA_answer/full.md",
+      "sha256": "cd342fa07423f637b38d3320411f2f0c9d327c6f26d4584cae4a5f1ee8fceb4b"
+    }
+  },
+  "output": {
+    "path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NCA-2023/answers/reference_answer_candidates.jsonl",
+    "sha256": "ab4eda9ea7bfc488586b61e4c7c41f8e5cbe8c485faa364a608d70e96867286d",
+    "rows": 8
+  },
+  "report": {
+    "path": "work/knowledge/高考分析/EXAM-REFERENCE-ANSWER-CANDIDATES-2023.md",
+    "sha256": "cc077b23fd50bfa17bf86acd1cb6e14bebe4db7f5d84c6c8c1d16ad2c4d06447"
+  },
+  "raw_source_mutation": false,
+  "answer_index_mutation": false,
+  "scoring_status": "not_available_as_official",
+  "mapping_status": "M0 | kp_id=N/A",
+  "policy": "第三方答案快照仅作部分候选；未覆盖题号保持缺失，不从候选文本推导官方答案或评分标准。"
+}

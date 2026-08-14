@@ -1,0 +1,27 @@
+{
+  "schema_version": "2.0-textbook-eval-1",
+  "deliverable_id": "CARD-X3-U01-02",
+  "artifact_version": "0.2.2",
+  "claims": [
+    {
+      "claim_id": "CLM-CARD-X3-U01-02-001",
+      "target_id": "KP-CARD-X3-U01-02-004",
+      "field_path": "/knowledge_points/004/statement",
+      "claim_class": "I",
+      "formal": true,
+      "text": "承诺与现实压力发生错位。",
+      "evidence_refs": ["EV-CARD-X3-U01-02-003", "EV-CARD-X3-U01-02-004"],
+      "locator_refs": ["PDF物理页13—15"]
+    },
+    {
+      "claim_id": "CLM-CARD-X3-U01-02-002",
+      "target_id": "KP-CARD-X3-U01-02-016",
+      "field_path": "/teaching/teacher_guide",
+      "claim_class": "D",
+      "formal": true,
+      "text": "当前未登记匹配版教师用书。",
+      "evidence_refs": ["EV-CARD-X3-U01-02-012"],
+      "locator_refs": ["registry:teacher-guide"]
+    }
+  ]
+}

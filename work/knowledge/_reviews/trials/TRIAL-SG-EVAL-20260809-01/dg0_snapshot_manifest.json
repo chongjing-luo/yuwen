@@ -1,0 +1,103 @@
+{
+  "schema_version": "2.0-textbook-eval-1",
+  "batch_type": "sg-eval-trial",
+  "trial_batch_id": "TRIAL-SG-EVAL-20260809-01",
+  "status": "snapshot_created",
+  "created_at": "2026-08-09T15:52:32+08:00",
+  "candidate": "2.0-textbook-eval-1",
+  "coordinator_approval": false,
+  "canonical_write": false,
+  "control_files": {
+    "candidate_path": "dev/knowledge-extraction-foundation/04_execution/evaluation_freeze_candidate_20260808_014300.md",
+    "candidate_sha256": "73b2bb5da0723c62e1072939f41a37d8b1719cf1a96c09770e6182cb0b209a6f",
+    "rubric_path": "work/knowledge/_meta/rubrics.json",
+    "rubric_sha256": "ab9cc53d57834642e66e568824d1c0c53e128953e15b20b4c7bd04aa30610d43",
+    "observation_manifest_path": "work/knowledge/_meta/rubric_observations_2.0-textbook-eval-1.json",
+    "observation_manifest_sha256": "77727f3d1346b3da679e9acd8cc46d0a55442223da58fe7eb4fe085bc67e46c4",
+    "ledger_path": "work/knowledge/_meta/deliverables.jsonl",
+    "ledger_sha256": "63a2974acd668e6b9a4b55f4c0a12b4adc42fb9e4df806e0a0a2d336fb723baa",
+    "upstream_snapshot_sha256": "5712624a08e7b54c90ae7564841109c950c96c88a7ffcd5bfdef1207a045ca53",
+    "plan_path": "work/knowledge/_meta/sg_eval_trial_batch_plan_20260809.json",
+    "plan_sha256": "5d2baaa6acb6db7adcca4ee78c35fe43b0f111307864bbe26e095493aa2b27aa"
+  },
+  "roles": {
+    "producer": null,
+    "primary_reviewer": null,
+    "secondary_reviewer": null,
+    "coordinator": null,
+    "role_separation": "not_assigned"
+  },
+  "artifacts": [
+    {
+      "deliverable_id": "CARD-X1-U01-02",
+      "artifact_type": "knowledge_card",
+      "case": "dual_text",
+      "canonical_path": "work/knowledge/选择性必修上册/cards/CARD-X1-U01-02.md",
+      "snapshot_path": "work/knowledge/_reviews/trials/TRIAL-SG-EVAL-20260809-01/snapshots/CARD-X1-U01-02.md",
+      "canonical_file_sha256": "3d500e86966818096c7a9226b94972a3543bf4aecfd3ef0aefba3727492df1f7",
+      "snapshot_file_sha256": "6a873913460c254aeed12d6477825e3a4d846a9ff94428f3c46517dce60a6a7c",
+      "snapshot_content_sha256": "23069405aaa45d189ef3028bc407807c36499e5e7c37fb994b6625ad947d748f",
+      "ledger_status": "accepted",
+      "ledger_version": "0.2.1",
+      "front_matter_ledger_match": true,
+      "claim_register_path": "work/knowledge/_reviews/trials/TRIAL-SG-EVAL-20260809-01/claim_registers/CARD-X1-U01-02.json",
+      "claim_register_sha256": "77283c669dc0861f03327533b60da25f08deb487d6dbe63a9b693ec8c76572ef",
+      "constraint_register_path": "work/knowledge/_reviews/trials/TRIAL-SG-EVAL-20260809-01/constraint_registers/CARD-X1-U01-02.json",
+      "constraint_register_sha256": "9c4e8da2106d208947c2cca14ea90f97cea4b9dbc2bd84d3a2dd07aa26c2a7dd",
+      "semantic_lint_path": "work/knowledge/_reviews/trials/TRIAL-SG-EVAL-20260809-01/semantic_lint/CARD-X1-U01-02.json",
+      "semantic_lint_sha256": "603fd230014b41c4cc235c6cb922f641381f72d5b4d97efb1a13ace01a2e33ba"
+    },
+    {
+      "deliverable_id": "CARD-B1-U05-01",
+      "artifact_type": "knowledge_card",
+      "case": "special_content",
+      "canonical_path": "work/knowledge/必修上册/cards/CARD-B1-U05-01.md",
+      "snapshot_path": "work/knowledge/_reviews/trials/TRIAL-SG-EVAL-20260809-01/snapshots/CARD-B1-U05-01.md",
+      "canonical_file_sha256": "0609b40552df8db6dd59541128724f3dc7bbbb810a39c4069e4621b0ee86b7f3",
+      "snapshot_file_sha256": "4a4e73d6379fd32c80db063b056e6853a170bd75aa08eb49102384ba7a8c0ab2",
+      "snapshot_content_sha256": "aa0d672c21bc9bebdd7178bb71a90eafe302ac0b961144def0e73034157a1adf",
+      "ledger_status": "accepted",
+      "ledger_version": "0.1.0",
+      "front_matter_ledger_match": true,
+      "claim_register_path": "work/knowledge/_reviews/trials/TRIAL-SG-EVAL-20260809-01/claim_registers/CARD-B1-U05-01.json",
+      "claim_register_sha256": "ef920d1501aafb0cbef0fba1b14b8d7cb48a2dbce2a7cd3ca6287954db9adb98",
+      "constraint_register_path": "work/knowledge/_reviews/trials/TRIAL-SG-EVAL-20260809-01/constraint_registers/CARD-B1-U05-01.json",
+      "constraint_register_sha256": "d190d7d8e26ba5f3cd6a08d19a1dea742de64fa03399cdde8bd7c58d7f0719bc",
+      "semantic_lint_path": "work/knowledge/_reviews/trials/TRIAL-SG-EVAL-20260809-01/semantic_lint/CARD-B1-U05-01.json",
+      "semantic_lint_sha256": "3e9ae807a5c01e223920e5ed87a9a117d7dcbd5ee16cd0caeaca11c3569671fc"
+    },
+    {
+      "deliverable_id": "UNIT-X1-U01",
+      "artifact_type": "unit_graph",
+      "case": "unit_graph",
+      "canonical_path": "work/knowledge/选择性必修上册/units/UNIT-X1-U01.md",
+      "snapshot_path": "work/knowledge/_reviews/trials/TRIAL-SG-EVAL-20260809-01/snapshots/UNIT-X1-U01.md",
+      "canonical_file_sha256": "72e11879deb905a2acae150239798318265764ad3f0b211fb577abe0dd0689df",
+      "snapshot_file_sha256": "11eea9943bb111f77f38b4349f75335bb9a717a19a472af98c483889a1ddea4d",
+      "snapshot_content_sha256": "7a0b5e164869cefefe335e79b7642ba07f4eef4f6a687aebcdcc65df2a6e9220",
+      "ledger_status": "accepted",
+      "ledger_version": "0.2.0",
+      "front_matter_ledger_match": true,
+      "claim_register_path": "work/knowledge/_reviews/trials/TRIAL-SG-EVAL-20260809-01/claim_registers/UNIT-X1-U01.json",
+      "claim_register_sha256": "764549e7f90d51a4fdb9ed8d8abdefa0ac125585ed2f9fd71294cc6fb77d70f7",
+      "constraint_register_path": "work/knowledge/_reviews/trials/TRIAL-SG-EVAL-20260809-01/constraint_registers/UNIT-X1-U01.json",
+      "constraint_register_sha256": "e108ec0bfe97bd66598b8b2b5bbf4d4d046eefceccb534803dfc67ccbef85296",
+      "semantic_lint_path": "work/knowledge/_reviews/trials/TRIAL-SG-EVAL-20260809-01/semantic_lint/UNIT-X1-U01.json",
+      "semantic_lint_sha256": "944173ab35c18bade40c89f66a3bd9a7bdd0e29a1bc979dd5ab611207c6cd8b9"
+    }
+  ],
+  "snapshot_integrity": "pass",
+  "gate_results": {
+    "DG0": "blocked_coordinator_or_roles",
+    "DG1": "blocked",
+    "DG2": "blocked",
+    "DG3": "not_started",
+    "DG4": "not_started"
+  },
+  "blocking_errors": [],
+  "blocking_reasons": [
+    "当前候选尚未批准/激活",
+    "历史 accepted 文件不是前向 lifecycle-template 产物，不能直接套用新 content SHA 写回",
+    "尚无两份新的独立封存评审、DG4 receipt 或 green batch evidence"
+  ]
+}

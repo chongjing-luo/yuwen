@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:yuwen:sg-method-config:0.1",
+  "title": "SG-METHOD Evaluation Configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "method_id", "status", "protocol_version", "sampling", "label_dimensions", "label_universe", "gold_manifest_sha256", "query_manifest_sha256", "thresholds", "bootstrap", "roles", "contamination_boundary"],
+  "properties": {
+    "schema_version": {"const": "sg-method-config-0.1"},
+    "method_id": {"const": "SG-METHOD-20260809"},
+    "status": {"enum": ["protocol_ready_not_run", "pilot", "passed", "failed", "blocked"]},
+    "protocol_version": {"type": "string", "pattern": "^2\\.0-textbook-eval-1/SG-METHOD-[0-9]+$"},
+    "sampling": {"$ref": "#/$defs/sampling"},
+    "label_dimensions": {"const": ["primary_dimension", "knowledge_type", "four_layer"]},
+    "label_universe": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary_dimension", "knowledge_type", "four_layer"],
+      "properties": {
+        "primary_dimension": {"const": ["人文", "语言"]},
+        "knowledge_type": {"const": ["事实", "概念", "程序", "策略", "解释", "价值辨析"]},
+        "four_layer": {"const": ["必备知识", "关键能力", "学科素养", "核心价值"]}
+      }
+    },
+    "gold_manifest_sha256": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+    "query_manifest_sha256": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+    "thresholds": {"$ref": "#/$defs/thresholds"},
+    "bootstrap": {"$ref": "#/$defs/bootstrap"},
+    "roles": {"$ref": "#/$defs/roles"},
+    "contamination_boundary": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true},
+    "source_refs": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true}
+  },
+  "$defs": {
+    "sampling": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stratification", "card_count", "unit_graph_count", "book_summary_count", "selection_status"],
+      "allOf": [
+        {"if": {"properties": {"selection_status": {"const": "sealed"}}}, "then": {"required": ["candidate_ids"], "properties": {"candidate_ids": {"minItems": 17}}}}
+      ],
+      "properties": {
+        "stratification": {"const": "book_code × material_type"},
+        "card_count": {"const": 12},
+        "unit_graph_count": {"const": 4},
+        "book_summary_count": {"const": 1},
+        "selection_status": {"enum": ["pending_new_source", "sealed", "contaminated_existing_output"]},
+        "seed": {"type": ["integer", "null"], "minimum": 0},
+        "candidate_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      }
+    },
+    "thresholds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key_fact_task_recall", "kp_precision", "kp_recall", "kp_f1", "label_macro_f1", "claim_evidence_accuracy", "quote_locator_accuracy", "relation_precision", "unsupported_claim_rate", "query_completion", "query_fact_evidence_accuracy", "query_under_120_seconds", "teacher_usability_median", "teacher_serious_error_count"],
+      "properties": {
+        "key_fact_task_recall": {"const": 1.0},
+        "kp_precision": {"const": 0.9},
+        "kp_recall": {"const": 0.9},
+        "kp_f1": {"const": 0.9},
+        "label_macro_f1": {"const": 0.85},
+        "claim_evidence_accuracy": {"const": 1.0},
+        "quote_locator_accuracy": {"const": 1.0},
+        "relation_precision": {"const": 0.9},
+        "unsupported_claim_rate": {"const": 0.0},
+        "query_completion": {"const": 0.9},
+        "query_fact_evidence_accuracy": {"const": 1.0},
+        "query_under_120_seconds": {"const": 11},
+        "teacher_usability_median": {"const": 4.0},
+        "teacher_serious_error_count": {"const": 0}
+      }
+    },
+    "bootstrap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["iterations", "seed", "unit", "stratified", "cluster_field"],
+      "properties": {
+        "iterations": {"const": 10000},
+        "seed": {"type": "integer", "minimum": 0},
+        "unit": {"const": "deliverable"},
+        "stratified": {"const": true},
+        "cluster_field": {"const": "deliverable_id"}
+      }
+    },
+    "roles": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gold_annotator_a", "gold_annotator_b", "adjudicator", "query_evaluators", "external_teachers"],
+      "properties": {
+        "gold_annotator_a": {"type": ["string", "null"]},
+        "gold_annotator_b": {"type": ["string", "null"]},
+        "adjudicator": {"type": ["string", "null"]},
+        "query_evaluators": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "external_teachers": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      }
+    }
+  }
+}

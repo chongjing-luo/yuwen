@@ -1,0 +1,45 @@
+{
+  "receipt_id": "RECEIPT-CARD-X2-REC-01-G4-20260808",
+  "gate": "DG4-MERGE",
+  "merged_at": "2026-08-08T20:22:00+08:00",
+  "artifact_version": "CARD-X2-REC-01 v0.2.0",
+  "content_change": false,
+  "allowed_diff": ["front_matter.status", "front_matter.reviewers", "self_check", "version_history", "ledger.status", "ledger.reviewers", "ledger.state_transition_history", "state_transition"],
+  "deliverable": {
+    "deliverable_id": "CARD-X2-REC-01",
+    "artifact_version": "0.2.0",
+    "pre_merge_file_sha256": "dc1577a29150ca5cf09511068586a4a02c5881725897897fa38e7aec28c92ef0",
+    "post_merge_file_sha256": "7b6aaf24bd5b5ea660c2e467b9963f58f205fa1677d734fff5270688ed500a48",
+    "primary_score": 98.5,
+    "secondary_score": 98.0,
+    "primary_review": "card_x2_rec_01_primary_review_final_20260808.md",
+    "secondary_review": "card_x2_rec_01_secondary_review_final_20260808.md"
+  },
+  "review_policy": {
+    "rubric_version": "2.0-textbook",
+    "rubric_sha256": "ab9cc53d57834642e66e568824d1c0c53e128953e15b20b4c7bd04aa30610d43",
+    "taxonomy_sha256": "13e5e23c45c05359a5c91e360ce8bd71dbf2a841c2c6a72f1adca52bef7cbd4b",
+    "ledger_pre_merge_sha256": "f87e72cdd14a5059ed1854a77a3eacb68374207eca7918de06fedc0932e21f6f",
+    "ledger_post_merge_sha256": "3bb884b2ec2bf1c77e6c35ed06a5cfa13ee993d46cef9754e41329061051268e",
+    "r01_r10": "all 0",
+    "p0_p1_p2": "0/0/0"
+  },
+  "validator": {
+    "review_run_id": "VAL-20260808-201123+0800",
+    "review_report_sha256": "9cb58bfb9a3b9c39fa7ddc17f6851b5c6dd38eb61f7fcc2c7627b23530a4f441",
+    "post_validator_run_id": "VAL-20260808-202336+0800",
+    "report": "work/knowledge/_meta/validation_reports/archive/VAL-20260808-202336+0800.json",
+    "report_sha256": "8106d54cab402e7ef40545bc288739ad10efa3e493b008001f9b6be2aa87bb14",
+    "latest_report": "work/knowledge/_meta/validation_reports/latest.json",
+    "latest_report_sha256": "8106d54cab402e7ef40545bc288739ad10efa3e493b008001f9b6be2aa87bb14",
+    "result": "passed",
+    "errors": 0
+  },
+  "review_file_sha256": {
+    "card_x2_rec_01_primary_review_final_20260808.md": "5867f6933b0679517881ef31312e3748b3654953ac2b7b2ce42583a1fd76809f",
+    "card_x2_rec_01_secondary_review_final_20260808.md": "a49461b753f1dc30c9e859ef8420e066fa69331996542e36da3deca02eb84d9d"
+  },
+  "transition_id": "STATE-20260808-CARD-X2-REC-01-G4",
+  "downstream_impact": ["BOOK-X2"],
+  "status": "accepted"
+}

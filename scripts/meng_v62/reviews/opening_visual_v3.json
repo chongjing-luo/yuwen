@@ -1,0 +1,124 @@
+{
+  "report_id": "MENG_V62_OPENING_VISUAL_V3",
+  "review_type": "independent_read_only_visual_review",
+  "review_date": "2026-08-13",
+  "reviewed_manifest_path": "work/备课/选择性必修下册/氓/_v62_stage/opening/reviews/review_input_v3.json",
+  "reviewed_manifest_sha256": "e03c9e39a9b72ae113d284de58b949f7e6b2cd96d14194611633888eead63cd7",
+  "manifest_integrity": "PASS_ALL_19_FILES",
+  "reviewed_file_hashes": [
+    {"path":"scripts/meng_v62/content/opening.js","sha256":"24c09203ab98676e95cd193e2fa213be05636abfd566ec6ed04f0748ef0a3948"},
+    {"path":"work/备课/选择性必修下册/氓/_v62_stage/opening/package/02_氓_V62导入教学母版.md","sha256":"cfcc7804691e960b959baf6fb7b8f8a509ef1eb823444a45917b7a55aa195cf9"},
+    {"path":"work/备课/选择性必修下册/氓/_v62_stage/opening/package/03A_氓_V62导入学习单_初听以前.md","sha256":"76541e1445a12c4992afbec5380643c7c7c5a2938b65d0b8975e3015ead9b4cf"},
+    {"path":"work/备课/选择性必修下册/氓/_v62_stage/opening/package/03B_氓_V62三问阅读书签_完整听读后发.md","sha256":"8e30ce7037f2c164185b0a37cba6cebbecbea6aa9829d6773608c224554a33b3"},
+    {"path":"work/备课/选择性必修下册/氓/_v62_stage/opening/package/04A_氓_V62导入逐页无生试讲稿.md","sha256":"0a8a032c27def041c3b3bdd547f09235b7cac720487afcab3dc46ba8c5e426e6"},
+    {"path":"work/备课/选择性必修下册/氓/_v62_stage/opening/package/06_氓_V62导入课程数据快照.json","sha256":"3c79654ad33f806994f47eef09d993ffd77b8a261cb5b0101da55b1654252689"},
+    {"path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/04_氓_V62导入课堂课件.pptx","sha256":"45dd46f4dbe3c58432b81dc796163d7fe469774d66fcdaa67e3638df1f813353"},
+    {"path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/markitdown_v3.txt","sha256":"78b338d5dbba28c53d28c2ada14526a1668ec70bd85d71ef5824b5f44c07688f"},
+    {"path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v3/04_氓_V62导入课堂课件.pdf","sha256":"9a1746ae68a9ddd4f77662b35ad4a399b6a18f695cb7933c5fb374dad5900f6d"},
+    {"path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v3/contact.jpg","sha256":"9d32c54e3f98b2c46176f43c71a6cee35e92af078353658b43f5645ed7caa083"},
+    {"path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v3/slide-1.png","sha256":"cf8ce78bb8f036f78c1b5a4da2d8f189608effd85c1af9f661ad2f46216a8206"},
+    {"path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v3/slide-2.png","sha256":"ea26335765c9e73c4397a22e009362f7ff54cd4a2d43cc3d70714974f5afecfc"},
+    {"path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v3/slide-3.png","sha256":"909e7f0dc72b57740bf8d80840a664c17147ea5ab665d7d85fb597d2bcb3f029"},
+    {"path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v3/slide-4.png","sha256":"427d98d86030538734a176c42d94f44388bdee2003c8225da3e0534ad653bc71"},
+    {"path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v3/slide-5.png","sha256":"791ac432602e9546efe536eca7838608feea63d826cbeb924b3cc33439a845c1"},
+    {"path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v3/slide-6.png","sha256":"2c92d43850ef7564178a607f7e47a411fcfd2a05127d08b88d47e8df0a8569f6"},
+    {"path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v3/slide-7.png","sha256":"2c76ad65e6f5fad82095fd8244905c4eb7498139ca236210b34d3302fc84d167"},
+    {"path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v3/slide-8.png","sha256":"05ad9d31b392212f55dd58f9e1bd63fb2f1102b8569446ef9d60675cae3c868c"},
+    {"path":"work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v3/slide-9.png","sha256":"a9ff1af8f2b5a164aa6e678c669693466ebb408b2861e490dd6f9de2499424a1"}
+  ],
+  "pages": [
+    {
+      "page_id": "O01",
+      "slide_index": 1,
+      "verdict": "PASS",
+      "severity": "none",
+      "visual_function": "承载个人爱情与婚姻文学记忆检索。",
+      "findings": ["文学对象和‘篇名—它写了什么’第一眼可见。", "开放行线、对齐和留白清楚，流程未遮蔽内容。", "无裁切、溢出、碰撞或低对比。"],
+      "required_changes": []
+    },
+    {
+      "page_id": "O02",
+      "slide_index": 2,
+      "verdict": "PASS",
+      "severity": "none",
+      "visual_function": "为全班逐人文学接龙提供一句自然表达支架。",
+      "findings": ["屏幕主体是‘《____》写了____’，呈现为真实文学交流入口而非表格。", "补充说明降为次级层次，无编号、卡片、轮次或管理流程抢占主视觉。", "深色页对比、边距和留白合格，无裁切或溢出。"],
+      "required_changes": []
+    },
+    {
+      "page_id": "O03",
+      "slide_index": 3,
+      "verdict": "PASS",
+      "severity": "none",
+      "visual_function": "在教师引用现场学生原话完成归纳后，作从相遇到共同生活的审美转场。",
+      "findings": ["两句文学判断是唯一主视觉，未伪造现场作品分类。", "备注、母版与试讲稿一致规定先关闭或弱化投影、引用和修正黑板真实内容，之后才切本页。", "弧线和散点只组织视线，不遮字；对比、留白、对齐及边距合格。"],
+      "required_changes": []
+    },
+    {
+      "page_id": "O04",
+      "slide_index": 4,
+      "verdict": "PASS",
+      "severity": "none",
+      "visual_function": "揭题、正音和聚焦新文本。",
+      "findings": ["‘氓’、读音、出处依教学顺序形成清晰层级。", "极简构图提供有效揭题停顿，无裁切、溢出或对齐问题。"],
+      "required_changes": []
+    },
+    {
+      "page_id": "O05",
+      "slide_index": 5,
+      "verdict": "PASS",
+      "severity": "none",
+      "visual_function": "连续呈现第一至第三章原诗，支持第一次开放听读。",
+      "findings": ["原诗占据主视觉，只有‘眼随声走’作为次级入口。", "三章分区、原文字号、行距和对比均清晰，未见断词、裁切、溢出或碰撞。"],
+      "required_changes": []
+    },
+    {
+      "page_id": "O06",
+      "slide_index": 6,
+      "verdict": "PASS",
+      "severity": "none",
+      "visual_function": "无缝接续第四至第六章并完成全诗听读。",
+      "findings": ["页面语法与O05连续，后三章原诗是唯一内容主体。", "后排阅读所需字号、行距、章间分隔和对比合格；无裁切、溢出、重叠或断词。"],
+      "required_changes": []
+    },
+    {
+      "page_id": "O07",
+      "slide_index": 7,
+      "verdict": "PASS",
+      "severity": "none",
+      "visual_function": "保存学生完整听读后的个人停顿句和自然反应。",
+      "findings": ["引句区和‘我看见／我听见／我想问’构成直接书写入口。", "大面积留白服务静默书写，没有流程文本干扰；线条、引号、标题无裁切或错位。"],
+      "required_changes": []
+    },
+    {
+      "page_id": "O08",
+      "slide_index": 8,
+      "verdict": "PASS",
+      "severity": "none",
+      "visual_function": "在完整听读和真实初听文字之后，清晰提出贯穿六章的三个核心问题。",
+      "findings": ["标题直接说明‘读懂六章，我们要回答什么’，与当前学习阶段匹配。", "一、二、三三个编号、卡片颜色和问题次序清楚；每题字号充足，第二问换行自然，没有断词或行间拥挤。", "三卡同级但色彩可辨，既不泄露答案也不显示分析流程。", "跨材料核对确认本页切出前先引用O07真实初听文字，并在此时才发三问书签；视觉没有初听前悲剧预设。", "无裁切、溢出、碰撞、低对比或边距不足。"],
+      "required_changes": []
+    },
+    {
+      "page_id": "O09",
+      "slide_index": 9,
+      "verdict": "PASS",
+      "severity": "none",
+      "visual_function": "分别呈现作品出处从属链和《氓》中的讲述者关系。",
+      "findings": ["上半部用同一方向实线箭头明确表达《诗经》→风→《卫风》→《氓》，链条完整且无错误箭头。", "下半部经水平分隔线、独立问句‘诗中谁在说话？’和独立红色说明框呈现讲述者；没有从《卫风》或出处链指向女子。", "‘这是《氓》里的讲述声音’明确把女子第一人称关系绑定到《氓》，出处从属与叙述声音两种语义已分开。", "所有关键词完整呈现，无断词、裁切、溢出或碰撞；层级、对比和留白足以第一眼区分两类路标。", "绿色‘风’字在框内位置略低，但完整可读且不改变箭头链和关系判断，不构成功能缺陷。"],
+      "required_changes": []
+    }
+  ],
+  "severity_counts": {"P0":0,"P1":0,"P2":0,"P3":0},
+  "total_verdict": "PASS_RELEASE_GATE",
+  "release_gate_passed": true,
+  "necessary_modifications": [],
+  "regression_summary": {
+    "slides_reviewed": 9,
+    "clipping_or_overflow": 0,
+    "overlap_or_collision": 0,
+    "wrong_or_ambiguous_arrows": 0,
+    "broken_words": 0,
+    "content_obscured_by_process": 0
+  }
+}

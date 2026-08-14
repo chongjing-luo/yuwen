@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:yuwen:semantic-lint:2.0-textbook-eval-1",
+  "title": "Semantic Lint Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "deliverable_id", "artifact_version", "result", "checks"],
+  "properties": {
+    "schema_version": {"const": "2.0-textbook-eval-1"},
+    "deliverable_id": {"type": "string", "minLength": 1},
+    "artifact_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "result": {"enum": ["passed", "failed", "blocked", "not_run"]},
+    "checks": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/check"},
+      "minItems": 1
+    },
+    "warnings": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "generated_at": {"type": "string", "format": "date-time"}
+  },
+  "$defs": {
+    "check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["check_id", "domain", "mode", "result", "message"],
+      "properties": {
+        "check_id": {"type": "string", "pattern": "^SL-[A-Z0-9][A-Z0-9._-]+$"},
+        "domain": {"enum": ["markdown_table", "front_matter_ledger", "claim_kp_ev", "q_locator", "m0_na", "teaching_prompt", "source_boundary", "version_history"]},
+        "mode": {"enum": ["automatic", "manual_required", "pending_automation"]},
+        "result": {"enum": ["pass", "fail", "na", "warning", "not_checked"]},
+        "message": {"type": "string", "minLength": 1},
+        "evidence_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "owner": {"type": "string", "minLength": 1},
+        "closed_at": {"type": ["string", "null"], "format": "date-time"}
+      }
+    }
+  }
+}

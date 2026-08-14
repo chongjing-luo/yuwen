@@ -1,0 +1,81 @@
+{
+  "schema_version": "exam-vertical-review-receipt-0.1",
+  "receipt_id": "EXAM-VERTICAL-GK-SC-2012-20260809",
+  "exam_id": "GK-SC-2012",
+  "calibration_id": "SG-EXAM-CAL-2008-2024",
+  "generated_at": "2026-08-09T07:01:25+08:00",
+  "status": "structural_pass",
+  "acceptance": "conditional_review",
+  "scope": "response_node_decomposition_and_score_reconciliation",
+  "source_policy": {
+    "question_pdf_visual_check": "passed",
+    "source_pdf_read_only": true,
+    "mineru_full_md_read_only": true,
+    "answer_authority": "candidate_unverified_or_missing",
+    "mapping_boundary": "M0_only"
+  },
+  "visual_check": {
+    "pages_checked": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "notes": [
+      "2012 四川自主命题卷；已逐页核对第1—6页考试正文，第7页为资料广告页。",
+      "Q11 三句翻译 3/3/4 分，Q12 两问 3/5 分；Q13 两个名句分支任选一题。",
+      "Q14—Q17 文学阅读按 5/6/5/6 分登记，第六大题 Q18/Q19/Q20 按 4/5/6 分登记。"
+    ]
+  },
+  "visual_review_receipt": "work/knowledge/_reviews/receipts/exam_visual_review_GK-SC-2012_20260809.json",
+  "node_count": 25,
+  "question_count": 21,
+  "score_total": 150,
+  "expected_score_total": 150,
+  "choice_groups": [
+    {
+      "id": "GK-SC-2012-Q013-OPTIONAL",
+      "questions": [
+        13,
+        13
+      ],
+      "scored_branch_count": 1
+    }
+  ],
+  "score_groups": [],
+  "score_notes": {},
+  "missing_answer_source_questions": [],
+  "source_hash_anchors": {
+    "question_pdf": {
+      "1": "947ec5d9bcca8f7c580260b5b59b9c8bb9d91bfff7b429cd6a4ef9709031ecd9",
+      "2": "947ec5d9bcca8f7c580260b5b59b9c8bb9d91bfff7b429cd6a4ef9709031ecd9",
+      "3": "947ec5d9bcca8f7c580260b5b59b9c8bb9d91bfff7b429cd6a4ef9709031ecd9",
+      "4": "947ec5d9bcca8f7c580260b5b59b9c8bb9d91bfff7b429cd6a4ef9709031ecd9",
+      "5": "947ec5d9bcca8f7c580260b5b59b9c8bb9d91bfff7b429cd6a4ef9709031ecd9",
+      "6": "947ec5d9bcca8f7c580260b5b59b9c8bb9d91bfff7b429cd6a4ef9709031ecd9",
+      "7": "947ec5d9bcca8f7c580260b5b59b9c8bb9d91bfff7b429cd6a4ef9709031ecd9",
+      "8": "947ec5d9bcca8f7c580260b5b59b9c8bb9d91bfff7b429cd6a4ef9709031ecd9",
+      "9": "947ec5d9bcca8f7c580260b5b59b9c8bb9d91bfff7b429cd6a4ef9709031ecd9",
+      "10": "947ec5d9bcca8f7c580260b5b59b9c8bb9d91bfff7b429cd6a4ef9709031ecd9",
+      "11": "947ec5d9bcca8f7c580260b5b59b9c8bb9d91bfff7b429cd6a4ef9709031ecd9",
+      "12": "947ec5d9bcca8f7c580260b5b59b9c8bb9d91bfff7b429cd6a4ef9709031ecd9",
+      "13": "947ec5d9bcca8f7c580260b5b59b9c8bb9d91bfff7b429cd6a4ef9709031ecd9",
+      "14": "947ec5d9bcca8f7c580260b5b59b9c8bb9d91bfff7b429cd6a4ef9709031ecd9",
+      "15": "947ec5d9bcca8f7c580260b5b59b9c8bb9d91bfff7b429cd6a4ef9709031ecd9",
+      "16": "947ec5d9bcca8f7c580260b5b59b9c8bb9d91bfff7b429cd6a4ef9709031ecd9",
+      "17": "947ec5d9bcca8f7c580260b5b59b9c8bb9d91bfff7b429cd6a4ef9709031ecd9",
+      "18": "947ec5d9bcca8f7c580260b5b59b9c8bb9d91bfff7b429cd6a4ef9709031ecd9",
+      "19": "947ec5d9bcca8f7c580260b5b59b9c8bb9d91bfff7b429cd6a4ef9709031ecd9",
+      "20": "947ec5d9bcca8f7c580260b5b59b9c8bb9d91bfff7b429cd6a4ef9709031ecd9",
+      "21": "947ec5d9bcca8f7c580260b5b59b9c8bb9d91bfff7b429cd6a4ef9709031ecd9"
+    }
+  },
+  "derived_jsonl": "work/knowledge/高考分析/GK-SC-2012-response_nodes_vertical_slice.jsonl",
+  "errors": [],
+  "warnings": [
+    "Q6 题段中出现孤立字符“0.”，疑为 OCR/版面残片；不静默删除。"
+  ]
+}

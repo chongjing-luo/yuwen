@@ -1,0 +1,301 @@
+{
+  "schema_version": "1.0",
+  "review_version": "chapter1_student_v8",
+  "review_scope": "chapter_1_v8_frozen_candidate_student_reception_and_activity_chain_desktop_only",
+  "reviewer": "student_reception_qa",
+  "reviewed_at": "2026-08-13",
+  "independence_statement": "本报告为全新、独立、只读复验；未沿用v7结论，未读取其他审查者报告。",
+  "frozen_artifacts": {
+    "candidate_pptx": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_1/pptx/04_氓_V6第一章课堂课件.pptx",
+      "sha256": "4284ab0418afcfd2280242edbd6d24ebde1e7f6c3e656836a12d455fa7cc41ed"
+    },
+    "source_snapshot": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_1/package/06_氓_V6第一章课程数据快照.json",
+      "sha256": "f4e7459ea75bca08a9848603c2c00ebce6f93d3d3c9807904f7afb695bc89427"
+    },
+    "render_contact": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_1/pptx/rendered_v8/contact.jpg",
+      "sha256": "9425b12a1cfdf82d6655ca6b2e7db207eb839e31374e93aae0b052630d0728a3"
+    },
+    "render_markitdown": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_1/pptx/rendered_v8/markitdown.txt",
+      "sha256": "77bc88a9197391d51302ca22e75f1377f6a4fe7f7b26b23dc247508c9cd99340"
+    }
+  },
+  "artifact_identity_verification": {
+    "status": "pass",
+    "finding": "最终静止PPTX重新抽取的屏幕文字与全部speaker notes和冻结markitdown逐字节相同；以LibreOffice重新导出并按180 dpi渲染的九张页面与rendered_v8对应原图逐像素相同。",
+    "pptx_hash_note": "本报告记录最终静止候选的实际PPTX哈希4284ab04…；该哈希连续两次只读计算一致，并与同目录pptx manifest当前登记值一致。",
+    "verification_side_effect_incident": "复验过程中运行既有chapter1单元测试时，测试夹具意外重建了PPTX及其manifest，使PPTX ZIP容器哈希从测试前24c07964…变为测试后4284ab04…。发现后立即停止所有构建与测试；未手工编辑课件。对最终静止PPTX重新进行只读身份核验，确认抽取文本与冻结markitdown逐字节相同、九页180 dpi渲染与rendered_v8逐像素相同。",
+    "render_text_byte_identical": true,
+    "nine_slide_renders_pixel_identical": true
+  },
+  "page_ids": [
+    "N013",
+    "N014",
+    "N015",
+    "N016",
+    "N017",
+    "N018",
+    "N019",
+    "N020",
+    "N021"
+  ],
+  "page_reviews": {
+    "N013": {
+      "previous_input": "承接N012的节奏互读；学生已进入诗歌声音，但尚未形成第一章两个人物的行动轮廓。",
+      "unique_function": "先完整朗读第一章并区分行动主体，为后续逐句理解建立人物—动作轮廓。",
+      "first_glance": "第一章五句全文居中，底部只有‘圈男子动作｜划女子动作｜同桌只问：这是谁做的？’。",
+      "exact_hearing": "教师要求先完整读，不判断人物好坏；圈男子动作、划女子动作，同桌只问‘这是谁做的’，有分歧即回原句并换笔改。",
+      "thinking": "借称谓、叙述人称与动词判断行动主体；被生词卡住时允许保留问号而不中断整章阅读。",
+      "action": "个人朗读并圈划人物动作；同桌逐项核对主体；回诗定位后修订并再次连读。",
+      "visible_artifact": "教材第一章原句旁的两类圈划与换笔痕迹。",
+      "wait_and_bounded_feedback": "个人朗读圈划70秒，同桌核对45秒；同桌反馈严格限定为行动主体，不先报章意。",
+      "visible_revision": "主体混淆处由学生换笔改正，随后用连读检验修订。",
+      "next_use": "N014—N018逐句页继续细化每个动作与对话；N019、N021调用整章行动轮廓。",
+      "first_person_reconstruction": "我先看见两个人在行动，但还不急着评价他们。",
+      "severity": null,
+      "status": "pass"
+    },
+    "N014": {
+      "previous_input": "调用N013中男子出场动作的初步圈划。",
+      "unique_function": "从‘氓、蚩蚩、抱、贸’形成男子出场的自然口译，同时守住‘眼前所见不等于终身品格’的判断边界。",
+      "first_glance": "放大第一句并呈现‘谁／怎样／拿什么／做什么’四格，页面不展示成品翻译。",
+      "exact_hearing": "教师先让学生借注释自己说给同桌听；待个人处理后才校准‘氓、蚩蚩、贸’，并提醒‘看起来忠厚’不是一生品格证明。",
+      "thinking": "把逐词注释组织成有主体、有神态、有持物、有动作的自然话，并区分文本眼前事实和后来人格判断。",
+      "action": "个人口译；同桌按四项核对；教师定点释义；学生换笔修订并回读原句。",
+      "visible_artifact": "学习单L001四格札记及换笔修订。",
+      "wait_and_bounded_feedback": "个人口译45秒、同桌核对35秒；听者只查男子、样子、布、交换动作是否齐全。",
+      "visible_revision": "学生依据定点释义改一处不准确表达；‘装老实’等倒灌判断移至‘尚不能断言’。",
+      "next_use": "N015用‘匪’把表面贸丝动作转向女子随后说明的议婚来意。",
+      "first_person_reconstruction": "男子看起来忠厚，抱布来贸丝；我的依据是‘蚩蚩、抱、贸’，但这还不能证明他一生的品格。",
+      "severity": null,
+      "status": "pass"
+    },
+    "N015": {
+      "previous_input": "承接N014‘抱布贸丝’的出场动作。",
+      "unique_function": "识别‘匪’造成的否定转折，区分诗句先写的贸丝动作与女子随后说明的议婚来意。",
+      "first_glance": "原句下方只有‘诗句先写的动作／女子随后说明的来意’两格与圈转折字任务，没有‘伪装／欺骗’预设。",
+      "exact_hearing": "教师先让学生补两格并圈字，再解释‘匪、即、谋’，要求用‘不是……而是……’复述，并明确单凭此句不能断言伪装或欺骗。",
+      "thinking": "用‘匪’辨认句意转折，把可证的动作和来意同越界的人格推断分开。",
+      "action": "独立补写两格、圈‘匪’；同桌核对原词；接受词义校准；口头复述并删除越界词。",
+      "visible_artifact": "学习单L002的动作格、来意格、‘匪’圈记及边界修订。",
+      "wait_and_bounded_feedback": "独立补写55秒、同桌核对40秒；同桌只查‘贸丝、谋婚、匪’的对应，不替对方贴人物标签。",
+      "visible_revision": "两格重复者回到‘匪’重写；‘有预谋欺骗’等证据不足表述被改为动作—来意转折。",
+      "next_use": "N016转入女子送行的空间行动；N020再把事实、感觉、不可断言分栏。",
+      "first_person_reconstruction": "诗先写贸丝，女子随后说明议婚来意，依据‘匪……来即我谋’；我不能据此断言欺骗。",
+      "severity": null,
+      "status": "pass"
+    },
+    "N016": {
+      "previous_input": "承接N015已经明确的议婚来意，追踪女子随后的行动。",
+      "unique_function": "用‘送—涉—至’的空间路线感受送行投入，同时不虚构诗中未写的地理信息。",
+      "first_glance": "放大原句与‘送→涉→至’路线骨架，并只追问行动主体和终点。",
+      "exact_hearing": "教师要求沿三个动作画线、补人物和终点；释义后说成自然话，再把三个动作一口气读到‘顿丘’。",
+      "thinking": "从连续动词建立行动路径，区分诗中明确的渡淇、至顿丘与未写明的出发地、距离、方向。",
+      "action": "个人画行动线并补主体、终点；同桌找断点；教师定点释义；学生连说并回读。",
+      "visible_artifact": "学习单上的‘送—涉—至’路线、主体与终点标注。",
+      "wait_and_bounded_feedback": "个人画线45秒、同桌核对35秒；听者只指出漏掉渡淇或终点的断点，不代画。",
+      "visible_revision": "遗漏动作或终点者补回；虚构村落、距离、方向者删去无文本依据内容；回读重新连贯。",
+      "next_use": "N017解释为何送至顿丘却没有立刻成婚；N019把该行动放回五步链。",
+      "first_person_reconstruction": "女子送他渡过淇水到顿丘；我的依据是‘送—涉—至’。",
+      "severity": null,
+      "status": "pass"
+    },
+    "N017": {
+      "previous_input": "承接N016送至顿丘但尚未成婚的情节悬点。",
+      "unique_function": "在两个未标答案的读法中，用原词判断女子是在拒婚还是说明当前成婚条件未具备。",
+      "first_glance": "页面并列‘拒绝这门婚事／说明此刻不能成婚的条件’两种读法，不标正确项，并留出抄原词的空线。",
+      "exact_hearing": "教师明确‘先不听我的解释’，停45秒让学生圈选并抄证据；同桌核对后才校准‘愆期、良媒’，再要求换笔改写和解释语气重读。",
+      "thinking": "比较两种解释，用‘匪我愆期、子无良媒’判断否定对象和条件原因，避免拒婚与责女拖延的误读。",
+      "action": "个人圈选并抄原词；同桌说明证据；教师定点释义；学生用‘不是……而是……’改写并重读。",
+      "visible_artifact": "学习单L004的选择、原词证据与换笔改写。",
+      "wait_and_bounded_feedback": "教师真实停45秒且不报答案；同桌核对40秒，只查选择由哪个词托住。",
+      "visible_revision": "把‘拒婚’或‘女子拖延’改为‘不是我拖延，而是你没有良媒／条件尚未具备’，修订可见。",
+      "next_use": "N018继续处理她如何安抚对方并明确秋期；N021旁白须补回媒人条件。",
+      "first_person_reconstruction": "她不是拒婚，而是在说明此刻缺少良媒；依据是‘匪我愆期，子无良媒’。",
+      "severity": null,
+      "status": "pass"
+    },
+    "N018": {
+      "previous_input": "承接N017的媒人条件，继续听女子如何维持对话并给出婚期。",
+      "unique_function": "先完成两层口译，再借朗读谱听见请求安抚与明确约期并存。",
+      "first_glance": "页面只给‘她先在劝什么／她又把什么定下来’两层空格和‘再标重音和停顿’，不展示答案。",
+      "exact_hearing": "教师只先正音‘将qiāng’，明确停45秒；学生分层并同桌比较后，教师才解释‘将、无、以……为期’，随后进行听者反馈和重读。",
+      "thinking": "用词义拆分‘无怒’与‘秋以为期’两层话，通过重音停顿检验两层是否都被听见，并限制对‘怒’的越界推断。",
+      "action": "个人借注释写两层话；同桌比较；接受释义校准；标重音与停顿；互读、反馈、调整重读。",
+      "visible_artifact": "学习单L005的两层释义、重音停顿标记与换笔修订。",
+      "wait_and_bounded_feedback": "个人口译45秒且教师不报答案；听者只依据‘将、无怒、秋、期’说实际听见哪一层，不用情绪标签打分。",
+      "visible_revision": "混层或漏层者换笔修正；读者根据听者反馈调整朗读后再读一次。",
+      "next_use": "N019把该句作为五步链的终点；N021旁白要说清婚期怎样定。",
+      "first_person_reconstruction": "她一面劝他别生气，一面把秋天定为婚期；依据是‘将子无怒，秋以为期’。",
+      "severity": null,
+      "status": "pass"
+    },
+    "N019": {
+      "previous_input": "调用N014—N018已经逐句形成并修订的五个理解单元。",
+      "unique_function": "撤去答案，检验逐句理解能否被学生自主重建为连续事件。",
+      "first_glance": "五个空白编号构成撤答界面，屏幕明确‘独立写五步／同桌只找断点／翻书定位，换笔修订，再合书连说’。",
+      "exact_hearing": "教师要求合书独立写谁做了什么；听者只找跳步或主体变化，不报完整答案；作者本人翻书定位、换笔补回或调序。",
+      "thinking": "从记忆重建事件顺序，利用断点诊断遗漏或主体混乱，再以原文作最小定位修复。",
+      "action": "合书独立写五步；交换找断点；本人翻书定位；换笔修订；再次合书连说。",
+      "visible_artifact": "学习单第一章五步行动链及另一颜色的补回、调序痕迹。",
+      "wait_and_bounded_feedback": "独立重建75秒、同桌找断点45秒；反馈被限制为‘少一步／主体变了’，修订权保留给作者。",
+      "visible_revision": "作者回诗后以换笔补漏或调序，再用合书连说验证链条。",
+      "next_use": "N020在连续事件基础上登记初见判断；N021进一步压缩成三项旁白和一句章意。",
+      "first_person_reconstruction": "我能合书把相遇重建为五步，并在断点处回诗修正。",
+      "severity": null,
+      "status": "pass"
+    },
+    "N020": {
+      "previous_input": "承接N019完整的第一章事件链，但刻意不调用后五章结局。",
+      "unique_function": "把诗中事实、初读感觉与当前不能断言的判断分开，保存未被结局倒灌的初见档案。",
+      "first_glance": "三栏标题为‘诗里写着／初读时我觉得／现在还说不准’，前两栏要求原词，页面没有预制人物结论。",
+      "exact_hearing": "教师要求三栏各写一条，前两栏各补第一章原词；同桌质询判断强度，作者可保留、说轻一点或移栏，并保存到全文后回看。",
+      "thinking": "判断一句话属于文本明写、个人印象还是证据不足；控制推断强度并抵抗以后结局的倒灌。",
+      "action": "独立填写三栏并补原词；同桌质询一条；作者保留、弱化或移栏；保存札记。",
+      "visible_artifact": "学习单第一章初见档案的三栏记录、原词证据及修订去向。",
+      "wait_and_bounded_feedback": "个人填写105秒、同桌质询60秒；反馈只问‘诗里写着还是此刻感觉／是否比原词更满’，不提供标准人物评价。",
+      "visible_revision": "作者把证据不足的判断说轻或移到‘现在还说不准’，保留决定也必须经质询。",
+      "next_use": "已登记全文后的E_CHAPTER1_RETURN回看；该未来物理页面不在本章冻结模块内。",
+      "first_person_reconstruction": "我能区分诗中事实、初读感觉和现在不能断言的判断，并用第一章原词控制判断强度。",
+      "severity": "P3",
+      "status": "pass_with_p3"
+    },
+    "N021": {
+      "previous_input": "汇总N014—N018逐句理解、N019行动链与N020证据边界。",
+      "unique_function": "让第一章重新成为完整声音和可连续表达的三十秒旁白，并以一句章意收束。",
+      "first_glance": "第一章全文占左侧主要区域，右侧明确‘完整重读→合书讲30秒’，并列三项检核：男子怎样来、女子怎样回应、婚期怎样定。",
+      "exact_hearing": "教师先要求全文完整重读，再合书讲清三件事；听者只按三项找遗漏，讲述者回原句定位、补说，最后写一句自然章意。",
+      "thinking": "把零散字词重新组织为行动与对话，检查议婚来意、媒人条件和秋期是否构成连贯事件。",
+      "action": "全班完整重读；个人合书旁白；听者查三项；讲述者回诗补说；写一句章意。",
+      "visible_artifact": "同桌口头旁白的补说结果与学习单上的一句章意。",
+      "wait_and_bounded_feedback": "完整重读45秒、首轮旁白60秒、反馈35秒；听者只检查三项齐全，不代说完整答案。",
+      "visible_revision": "漏项者回到原句定位后补说；只报字词者改用人物行动与对话叙述；最终章意写下修订后的整体理解。",
+      "next_use": "自然转入第二章‘约定婚期以后，等待真正开始’，为后续情节建立可调用的第一章基线。",
+      "first_person_reconstruction": "我能说清男子怎样来、女子怎样回应、婚期怎样定，并在遗漏时回诗补说。",
+      "severity": null,
+      "status": "pass"
+    }
+  },
+  "activity_chain_assessment": {
+    "status": "pass",
+    "chain": [
+      "整章圈划人物动作",
+      "四格自然口译",
+      "否定转折辨析",
+      "空间路线重建",
+      "两读法证据选择",
+      "两层口译与朗读谱",
+      "撤答五步链",
+      "事实／感觉／不可断言分栏",
+      "完整重读与三十秒旁白"
+    ],
+    "finding": "九页均存在可执行的个人动作、限定的同伴反馈、可见产物、回诗定位与修订闭环；N014、N017、N018不再由教师提前泄漏核心答案，N019和N021形成真实撤答与整体重建。"
+  },
+  "heterogeneity_assessment": {
+    "status": "pass",
+    "finding": "九页不是同一填空模板的机械重复；认知方法依次变化为主体圈划、四格口译、否定转折、空间路线、证据选择、朗读谱、撤答链、判断分栏、整章旁白。",
+    "remaining_observation": "N014—N018虽方法异质，但仍共享个人处理—同桌核对—教师定点释义—修订—回诗的宏观节拍，课堂疲劳风险只能通过试教观察。"
+  },
+  "source_gloss_form_assessment": {
+    "status": "pass",
+    "source_sequence": [
+      "氓、蚩蚩、贸",
+      "匪、即、谋",
+      "涉、淇、顿丘",
+      "愆期、良媒",
+      "将、无、以……为期"
+    ],
+    "form_sequence": [
+      "否定转折",
+      "动作连续",
+      "对话条件",
+      "请求、安抚与约期的声音层次"
+    ],
+    "finding": "原文、词义与语言形式沿句生成；无预贴术语清单，教师定点释义均安排在学生初次处理之后，未以教师分析替代核心语言体验。"
+  },
+  "cross_channel_consistency": {
+    "status": "pass",
+    "channels_checked": [
+      "PPT屏幕",
+      "PPT speaker notes",
+      "教学母版",
+      "学习单",
+      "逐页无生试讲稿",
+      "课程数据快照",
+      "PPTX manifest",
+      "package manifest"
+    ],
+    "finding": "重点活动的任务 wording、产物位置、等待时间、反馈边界、修订方式与后用关系一致；N014四格、N017两读法、N018两层话、N020三栏、N021全文回读均跨通道闭合。"
+  },
+  "priority_counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 2
+  },
+  "p3_observations": [
+    {
+      "observation_id": "C1-V8-P3-RHYTHM-FATIGUE",
+      "severity": "P3",
+      "scope": [
+        "N014",
+        "N015",
+        "N016",
+        "N017",
+        "N018"
+      ],
+      "observation": "五张逐句页的认知方法真实异质，但共享‘个人处理→同桌核对→教师定点释义→修订→回诗’的宏观节拍；是否造成真实课堂疲劳须在试教中观察。",
+      "closure_target": "classroom_rehearsal_or_pilot",
+      "blocks_pass": false
+    },
+    {
+      "observation_id": "C1-V8-P3-DEFERRED-RETURN",
+      "severity": "P3",
+      "scope": [
+        "N020"
+      ],
+      "observation": "第一章初见札记已登记全文后的E_CHAPTER1_RETURN，但该未来物理页面不在当前第一章冻结模块中；这是延期调用，不是当前活动链缺陷。",
+      "closure_target": "whole_text_return_stage",
+      "blocks_pass": false
+    }
+  ],
+  "closed_v8_focus_findings": [
+    {
+      "page_id": "N014",
+      "status": "closed",
+      "finding": "四格观察、45秒学生先口译、教师后置定点释义与学习单完全同步，旧抢答风险关闭。"
+    },
+    {
+      "page_id": "N017",
+      "status": "closed",
+      "finding": "两种读法不标答案，学生先圈选抄原词并同桌核对，教师明确等待45秒后才释义，旧答案泄漏与假活动关闭。"
+    },
+    {
+      "page_id": "N018",
+      "status": "closed",
+      "finding": "教师只先正音，学生先写两层话，之后才校准词义并经朗读反馈重读，旧抢答关闭。"
+    },
+    {
+      "page_id": "N020",
+      "status": "closed",
+      "finding": "三栏采用学生可理解的‘诗里写着／初读时我觉得／现在还说不准’，PPT、学习单与notes一致。"
+    },
+    {
+      "page_id": "N021",
+      "status": "closed",
+      "finding": "全文成为左侧主要阅读区，右侧清楚呈现完整重读、合书讲30秒和三项检核，后排回读源问题关闭。"
+    }
+  ],
+  "automated_verification": {
+    "command": "python -m unittest tests/test_build_meng_v6_chapter1.py tests/test_build_meng_v6_chapter1_markdown.py tests/test_build_meng_v6_chapter1_pptx.py",
+    "tests_run": 28,
+    "status": "pass_with_build_fixture_side_effect",
+    "result": "Ran 28 tests; OK",
+    "side_effect": "测试夹具重建了PPTX与pptx manifest；最终对象身份已按artifact_identity_verification重新只读核验。"
+  },
+  "overall_status": "pass",
+  "claim_boundary": "本结论只确认冻结候选在桌面设计层面具有可执行、可反馈、可修订、可后用的学生接收与活动链；未观察真实课堂，不声称真实学生已理解、参与或学会。"
+}

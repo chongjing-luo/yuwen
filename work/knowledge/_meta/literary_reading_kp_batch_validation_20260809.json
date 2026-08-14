@@ -1,0 +1,22 @@
+{
+  "schema_version": "literary-reading-kp-batch-validation-0.1",
+  "result": "passed",
+  "row_count": 28,
+  "year_counts": {
+    "2009": 4,
+    "2010": 4,
+    "2011": 4,
+    "2012": 4,
+    "2013": 4,
+    "2014": 4,
+    "2015": 4
+  },
+  "errors": [],
+  "checks": {
+    "coverage": true,
+    "traceability": true,
+    "free_response_gate": true,
+    "m0_boundary": true,
+    "authority_gate": true
+  }
+}

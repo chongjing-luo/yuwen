@@ -100,8 +100,8 @@ def validate_taxonomy(taxonomy):
     numbers = tuple(item.get("number") for item in taxonomy.get("task_groups", []))
     if names != TASK_GROUPS or numbers != tuple(range(1, 19)):
         errors.append("任务群必须严格等于课标18个规范名称及1—18编号")
-    if taxonomy.get("contract_status") != "candidate":
-        errors.append("G2前taxonomy contract_status必须为candidate")
+    if taxonomy.get("contract_status") not in {"candidate", "frozen"}:
+        errors.append("taxonomy contract_status必须为candidate或frozen")
     statuses = taxonomy.get("deliverable_statuses", [])
     if len(statuses) != len(set(statuses)):
         errors.append("deliverable_statuses存在重复值")
@@ -348,9 +348,9 @@ def run_validation(project_root, report_path, verify_hashes=True):
         "checks": {name: {"result": "passed" if not group else "failed", "error_count": len(group)} for name, group in checks.items()},
         "errors": errors,
         "warnings": [
-            "外部评价体系、初中依据、四川政策和四年真题尚未完整登记",
+            "外部评价体系、初中依据、四川政策及官方原卷/评分资料尚未并入教材主注册表；2011—2025候选批次另见Data/reference/gaokao/",
             "TB2与B2的edition_match仍为unknown",
-            "契约状态为candidate，须经G2校准后冻结",
+            "教材契约已冻结为2.0-textbook；试卷契约仍需在G-TB后另行校准",
         ],
     }
     _write_json_atomic(report_path, report)

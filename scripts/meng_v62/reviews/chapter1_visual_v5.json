@@ -1,0 +1,305 @@
+{
+  "schema_version": "1.0",
+  "review_type": "independent_visual_and_literary_function_review",
+  "reviewed_manifest_path": "/home/ubuntu/homes/LuoChongjing/Methods/yuwen/work/备课/选择性必修下册/氓/_v62_stage/chapter_1/reviews/review_input_v5.json",
+  "reviewed_manifest_sha256": "59417a4ee8f2c8acaf474aa71a350a760e75a1c071810cd14a3c6a70f406f305",
+  "manifest_identity_verified": true,
+  "manifest_file_integrity": {
+    "declared_file_count": 23,
+    "verified_file_count": 23,
+    "hash_mismatch_count": 0,
+    "byte_mismatch_count": 0,
+    "drift_detected": false,
+    "method": "Before content review, every manifest-listed path was read as bytes and its actual SHA-256 and byte length were compared with the immutable review_input_v5.json declaration. All 23 files matched."
+  },
+  "reviewer_independence": {
+    "role": "independent_visual_function_reviewer",
+    "independent_from_authoring": true,
+    "independent_from_internal_fix_decision": true,
+    "prior_release_inherited": false,
+    "v4_conclusion_inherited": false,
+    "method": "Reviewed the immutable V5 candidate anew from all five rendered_v5 full-resolution PNGs, rendered PDF and layout text, PPTX frontstage extraction and all notes, teaching master, 03A, 03B, complete rehearsal script, data snapshot and manifest. V4 was consulted only for repair traceability; its verdict was not carried forward.",
+    "write_scope": "Only this review JSON was created. No manifest-listed teaching source, PPTX, PDF, render, student material, script, snapshot or review input was modified."
+  },
+  "verdict": "PASS",
+  "priority_counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 3
+  },
+  "counting_rule": "Counts represent distinct issue classes, not every page occurrence. P3 items are empirical classroom checks and do not block this desktop release gate; any P0, P1 or P2 would block release.",
+  "page_findings": {
+    "C101": {
+      "status": "PASS_WITH_P3_OBSERVATION",
+      "unique_visual_duty": "Let students receive the complete first chapter before segmentation, track who performs each action and preserve genuine lexical uncertainty for later close reading.",
+      "duty_established": true,
+      "student_reception_state": {
+        "receives": "The entire first chapter as one continuous event, plus only two actor-marking operations and permission to mark unknown words.",
+        "participates_in": "Silent whole-text reading, circling his actions, underlining her actions, marking uncertainty and peer-checking only the action subject.",
+        "can_reason_toward": "The encounter already contains two distinguishable action chains, while some word meanings remain unresolved and worth returning to.",
+        "does_not_yet_receive": "No gloss list, modern translation, personality verdict, chapter summary or later marriage outcome."
+      },
+      "first_glance": "The complete five-line original is the dominant central object at 31 pt. The two action prompts remain secondary; no completed markings or explanatory labels overwrite the student's first reading.",
+      "evidence": [
+        "rendered_v5/slide-1.png presents all five original lines in one high-contrast field.",
+        "03A reproduces the complete original with open actor-marking and question-mark tasks, but no answer key.",
+        "The teaching master and rehearsal script delay precise lexical calibration and restrict peer feedback to checking who performs an action."
+      ],
+      "technical_qa": {
+        "overlap": false,
+        "clipping": false,
+        "overflow": false,
+        "missing_glyph": false,
+        "orphaned_character_or_line": false,
+        "low_contrast_core_text": false,
+        "original_text_size_pt": 31,
+        "desktop_readability": "pass"
+      },
+      "generation_before_calibration": true,
+      "completed_answer_or_later_fact_frontstage": false,
+      "graphic_function": "The large unmarked poem maintains the whole-event field; color-separated prompt marks encode the two actor-tracking actions without supplying the completed action chains.",
+      "deletion_and_merge_test": "Credible deletion loss. Removing C101 or merging it into C102 would erase the whole-chapter unknown state and make students encounter only the proposal turn before they have a continuous first impression.",
+      "picture_script_consistency": "Consistent: neither screen nor sheet projects completed actor colors, and the script does not smuggle in later interpretation.",
+      "findings": [],
+      "remaining_P3": "P3-01 classroom readability: verify that the 19.5-23 pt lower instructions remain independently readable from the last row and that unresolved vocabulary does not stall actor marking."
+    },
+    "C102": {
+      "status": "PASS_WITH_P3_OBSERVATION",
+      "unique_visual_duty": "Make students discover the narrative turn from the visible trade action to the disclosed marriage purpose by comparing the first two lines, while withholding retrospective character judgment.",
+      "duty_established": true,
+      "student_reception_state": {
+        "receives": "Two adjacent original lines in which '贸丝' can be compared across the apparent action and the later disclosure, followed by three locating questions rather than a paraphrase.",
+        "participates_in": "Writing a natural paraphrase, locating the turn word, sharing evidence and only then receiving precise glosses.",
+        "can_reason_toward": "What first looks like a silk transaction is re-described as a marriage proposal, and that inference must be tied to a word in the original.",
+        "does_not_yet_receive": "No model translation, highlighted '匪', fixed motive judgment or later relationship fact."
+      },
+      "first_glance": "The paired source lines dominate at 39 pt. Three 20.5 pt question cards structure observation, disclosure and textual turn without printing the answer.",
+      "evidence": [
+        "rendered_v5/slide-2.png keeps both source lines in one field so repeated wording and the turn can be compared directly.",
+        "03B asks for the student's own natural-language paraphrase and turn word before calibration.",
+        "PPTX notes and the rehearsal script place the six lexical glosses after individual generation and prohibit completed personality judgment."
+      ],
+      "technical_qa": {
+        "overlap": false,
+        "clipping": false,
+        "overflow": false,
+        "missing_glyph": false,
+        "orphaned_character_or_line": false,
+        "low_contrast_core_text": false,
+        "original_text_size_pt": 39,
+        "question_text_size_pt": 20.5,
+        "desktop_readability": "pass"
+      },
+      "generation_before_calibration": true,
+      "completed_answer_or_later_fact_frontstage": false,
+      "graphic_function": "The paired text field enables lexical comparison; the three lower cards sequence evidence-seeking rather than illustrate a completed scene.",
+      "deletion_and_merge_test": "Credible. The old fragmented line pages are already merged here. Deletion removes the proposal-purpose turn; merging into C103 would conflate lexical/narrative reversal with bodily spatial action.",
+      "picture_script_consistency": "Consistent: the image, 03B and executable script all preserve the answer until after the student's paraphrase and locating attempt.",
+      "findings": [],
+      "remaining_P3": "P3-02 task authenticity and load: observe whether real students actually discover '匪' from the paired lines rather than infer it from the third prompt."
+    },
+    "C103": {
+      "status": "PASS",
+      "unique_visual_duty": "Make '送-涉-至' function as one continuous spatial action through body and pen movement instead of remaining a flat place-name translation.",
+      "duty_established": true,
+      "student_reception_state": {
+        "receives": "The original line and three separated action verbs, with no completed route or emotional explanation.",
+        "participates_in": "Tracing the sequence by finger and pen, reconstructing the movement in natural language and returning to the exact original line.",
+        "can_reason_toward": "Her response is not a static location statement but an extended sequence of accompanying, crossing and arriving.",
+        "does_not_yet_receive": "No invented map, distance, direction, completed arrow, emotional label or C104 speech-act category."
+      },
+      "first_glance": "The original line at 44 pt and three separated 49 pt verbs form the page's visual action. Their open spacing invites connection without displaying a finished route.",
+      "evidence": [
+        "rendered_v5/slide-3.png contains no completed arrows or decorative route that could substitute for student action.",
+        "03B supplies the same three words and an open connection area while forbidding invented geographic detail.",
+        "The V5 cut line is neutral: '她一直送到顿丘，婚事却没有当场定下。接下来，看她怎样把话继续说下去。' It does not say '解释、安抚、约期/约定' or equivalents before C104."
+      ],
+      "technical_qa": {
+        "overlap": false,
+        "clipping": false,
+        "overflow": false,
+        "missing_glyph": false,
+        "orphaned_character_or_line": false,
+        "low_contrast_core_text": false,
+        "original_text_size_pt": 44,
+        "target_verb_size_pt": 49,
+        "desktop_readability": "pass"
+      },
+      "generation_before_calibration": true,
+      "completed_answer_or_later_fact_frontstage": false,
+      "graphic_function": "The three spatially separated circles are positions to be connected by student gesture and mark; the geometry carries the sequence rather than decorating an answer.",
+      "deletion_and_merge_test": "Credible. The bodily and pen-trace channel cannot be replaced by C102's word-turn comparison or C104's clause-function listening; deletion would flatten '送-涉-至' into paraphrase.",
+      "picture_script_consistency": "Consistent. The screen withholds the route, the activity lets students construct it, and the transition preserves C104's unknown entry state.",
+      "findings": []
+    },
+    "C104": {
+      "status": "PASS_WITH_P3_OBSERVATION",
+      "unique_visual_duty": "Let students hear the two lines as one speech turn, name in their own language what each clause is doing, choose a grouping, and only afterward calibrate toward explanation, appeasement and appointment while preserving the evidence boundary around '无怒'.",
+      "duty_established": true,
+      "student_reception_state": {
+        "receives": "Both original lines, the neutral question '这四小句，各在做什么？' and four unnamed answer positions.",
+        "participates_in": "Continuous reading, natural paraphrase, 90-second independent clause-function naming, self-chosen grouping, comparison of different groupings, listener gap-check and post-generation lexical/functional calibration.",
+        "can_reason_toward": "The utterance performs several linked actions that move the marriage negotiation forward; different initial groupings can be tested against the exact clauses before a shared synthesis is introduced.",
+        "does_not_yet_receive": "No preprinted or pre-spoken '解释、安抚、约期', no model grouping and no later marital outcome before generation."
+      },
+      "first_glance": "The two source lines remain prominent at 38 pt. The central prompt and four colored but unnamed spaces visibly require student language; none contains a completed interpretive category.",
+      "evidence": [
+        "rendered_v5/slide-4.png and 03B both show four open positions rather than three answer-bearing category cards.",
+        "The immediately preceding V5 transition is neutral and therefore does not cognitively label the four positions on entry.",
+        "The complete rehearsal script requires students first to write what each small clause is doing, decide what to combine, share competing divisions and only then receive gloss and the explanation/appeasement/appointment synthesis.",
+        "The full-resolution render has no clipping, overflow or isolated terminal character in the lower protocol text."
+      ],
+      "technical_qa": {
+        "overlap": false,
+        "clipping": false,
+        "overflow": false,
+        "missing_glyph": false,
+        "orphaned_character_or_line": false,
+        "low_contrast_core_text": false,
+        "original_text_size_pt": 38,
+        "prompt_text_size_pt": 28,
+        "lower_instruction_sizes_pt": [21, 21.5],
+        "desktop_readability": "pass"
+      },
+      "generation_before_calibration": true,
+      "completed_answer_or_later_fact_frontstage": false,
+      "answer_leak_channel": null,
+      "graphic_function": "The four colored empty positions correspond to the four small clauses and receive student-generated language. They make alternate groupings inspectable without pre-completing the literary classification.",
+      "deletion_and_merge_test": "Credible. The two source lines need to remain together as one utterance and should not be split. Deleting the page removes the chapter's speech-action reasoning; merging it with C105 would collapse supported interpretation into unsupported retrieval.",
+      "picture_script_consistency": "Consistent across entry state, foreground, 03B and the full executable sequence. The V4 spoken-answer leak is absent in V5.",
+      "findings": [],
+      "remaining_P3": "P3-02 task authenticity and load: live-test whether four-clause open naming and self-grouping are accessible to the actual class without excessive abstraction, and whether listener comments identify a genuinely missed meaning rather than generic reading advice."
+    },
+    "C105": {
+      "status": "PASS_WITH_P3_OBSERVATION",
+      "unique_visual_duty": "After complete rereading, withdraw all local supports, test continuous chapter reconstruction, permit one bounded evidence repair and create the first cell of the six-chapter story rail.",
+      "duty_established": true,
+      "student_reception_state": {
+        "receives": "Before blackout, the complete chapter and three story prompts; after blackout, no visible original or paper scaffold during the first retelling.",
+        "participates_in": "Whole-chapter rereading, explicit material withdrawal and peer verification, 30-second closed-support retelling, peer gap check, one-line textbook repair, immediate re-closing and personal story-rail writing.",
+        "can_reason_toward": "The separate lexical, spatial and speech discoveries belong to one continuous encounter-and-negotiation story that can be retrieved, repaired from textual evidence and compressed as chapter one of a larger arc.",
+        "does_not_yet_receive": "No completed chapter summary, no filled story-rail model and no later chapter fact."
+      },
+      "first_glance": "Before support removal, the complete original at 29 pt, three retrieval prompts and the six-chapter rail expose the assessment structure but not its answer.",
+      "evidence": [
+        "The V5 script orders a complete reread, textbook closure, 03A and 03B both turned face down and pressed at the desk corner, peer verification that no original remains visible, teacher wait, then B-key projector blackout.",
+        "During repair, only the textbook opens to locate one omitted line and closes again before supplementary retelling; 03A and 03B remain face down.",
+        "Only 03B is later restored for the personal story-rail entry, while 03A remains face down.",
+        "03B prints the same support-withdrawal contract, so the routine does not depend on an unspoken teacher assumption.",
+        "rendered_v5/slide-5.png contains no model story answer or later event."
+      ],
+      "technical_qa": {
+        "overlap": false,
+        "clipping": false,
+        "overflow": false,
+        "missing_glyph": false,
+        "orphaned_character_or_line": false,
+        "low_contrast_core_text": false,
+        "original_text_size_pt": 29,
+        "story_rail_size_range_pt": [14, 17.5],
+        "desktop_readability": "pass"
+      },
+      "generation_before_calibration": true,
+      "completed_answer_or_later_fact_frontstage": false,
+      "blackout_and_material_control_executable": true,
+      "ordered_support_state": [
+        "Complete chapter reread with screen and textbook available",
+        "Textbook closed",
+        "03A and 03B both turned face down and pressed at the desk corner",
+        "Desk partner checks that no original text remains visible",
+        "Teacher waits until paper support is withdrawn",
+        "Teacher presses B to black out projection",
+        "Thirty-second closed-support narration and peer gap check",
+        "Only textbook opens to locate one missing line, then closes before supplementary narration",
+        "03A and 03B stay face down during the oral repair",
+        "Only 03B turns back for story-rail writing; 03A remains face down"
+      ],
+      "graphic_function": "The source-to-story layout establishes a visible transition from rereading to retrieval, and the six-part rail makes this chapter the first cumulative unit rather than a collection of isolated knowledge points.",
+      "deletion_and_merge_test": "Credible. Without C105, C102-C104 remain local fragments with no proof that students can reconstruct the event. Merging it into C104 would destroy the deliberate evidence-state change from supported interpretation to unsupported retrieval.",
+      "picture_script_consistency": "Consistent and executable at desktop-script level. Projector, textbook, 03A and 03B are all explicitly controlled and restored in a bounded order.",
+      "findings": [],
+      "remaining_P3": "P3-03 classroom orchestration: verify that the multi-object withdrawal, peer check, blackout, 30-second retelling and ordered restoration fit the timebox without procedural attention overtaking the story; also test last-row legibility of the subdued 14-17.5 pt rail."
+    }
+  },
+  "global_findings": [
+    {
+      "id": "GLOBAL-STUDENT-INFORMATION-CHAIN",
+      "priority": "PASS",
+      "finding": "The five-page sequence now gives a coherent student reception path rather than knowledge fragments: complete event and actors (C101), proposal-purpose turn (C102), spatial response (C103), clause-by-clause speech action (C104), then unsupported whole-event reconstruction and chapter-rail compression (C105). Each local page returns to the same chapter story, and C105 tests whether the parts have become one retrievable account."
+    },
+    {
+      "id": "GLOBAL-GENERATION-BEFORE-CALIBRATION",
+      "priority": "PASS",
+      "finding": "All five pages preserve student work before teacher synthesis. In particular, V5 removes the C103-to-C104 oral leak: the cut line asks only how she continues speaking, while C104 and 03B retain four unnamed positions until students generate and compare their own clause functions."
+    },
+    {
+      "id": "GLOBAL-RETRIEVAL-VALIDITY",
+      "priority": "PASS_DESKTOP",
+      "finding": "C105 explicitly controls every visible support: textbook, 03A, 03B and projector. Peer verification occurs before blackout, repair access is limited to one textbook lookup followed by re-closing, and only 03B returns for story-rail writing. The written procedure therefore supports a genuine closed-support retrieval claim."
+    },
+    {
+      "id": "GLOBAL-DELETION-MERGE",
+      "priority": "PASS",
+      "finding": "No page is redundant under the declared learning chain. C101 supplies whole-before-part reception; C102 supplies the lexical narrative turn; C103 supplies embodied spatial continuity; C104 supplies open speech-act construction; C105 changes the evidence state and tests integrated retrieval. Adjacent merging would erase at least one of those distinct cognitive or evidence states."
+    },
+    {
+      "id": "GLOBAL-VISUAL-VARIETY_AND_FUNCTION",
+      "priority": "PASS",
+      "finding": "The page family is coherent without becoming a five-page template loop: whole-poem field, paired-line questions, spatial verb positions, four open clause slots and source-to-story retrieval rail each give graphics a different literary or cognitive duty. No character illustration has been added before function freeze."
+    },
+    {
+      "id": "GLOBAL-TECHNICAL-VISUAL",
+      "priority": "PASS",
+      "finding": "Across all five full-resolution PNGs, PDF and extracted PPTX text, no overlap, clipping, overflow, missing glyph, placeholder, low-contrast core original or isolated broken character was found. Core original sizes are C101 31 pt, C102 39 pt, C103 44 pt, C104 38 pt and C105 29 pt."
+    },
+    {
+      "id": "GLOBAL-P3-EMPIRICAL-CHECKS",
+      "priority": "P3",
+      "finding": "Three non-blocking classes remain for live validation: back-row readability of smaller support text and rail; authenticity/cognitive load of C102 discovery and C104 open classification; and timing/naturalness of C105 material-control and retrieval choreography."
+    }
+  ],
+  "release_gate": {
+    "declared_rule": "P0=0 and P1=0 and P2=0 in both independent reviews",
+    "this_review_passes": true,
+    "blocking_counts": {
+      "P0": 0,
+      "P1": 0,
+      "P2": 0
+    },
+    "decision": "VISUAL_REVIEW_PASS / ELIGIBLE_FOR_FREEZE_ONLY_IF_THE_SEPARATE_INDEPENDENT_STUDENT_REVIEW_ALSO_PASSES",
+    "conditions": [
+      "Do not substitute this visual review for the separately required independent student-reception review.",
+      "Freeze only the exact 23-file immutable candidate identified by review_input_v5.json and its hashes.",
+      "Any content, script, note, student-material, PPTX or render change invalidates this verdict and requires a new manifest and fresh reviews.",
+      "Carry the three P3 observations into rehearsal or classroom validation; they do not block the current desktop gate."
+    ]
+  },
+  "claim_boundary": {
+    "review_claim": "This is a desktop, sequence-aware visual and literary-function review of the exact immutable V5 package. It establishes that the written and rendered candidate presents a coherent original-text-led information chain, withholds core interpretations until student generation, and scripts a genuine support-removal retrieval event.",
+    "not_claimed": [
+      "No claim that real students have completed, understood, retained or transferred the lesson.",
+      "No claim that last-row readability has been measured in the actual classroom or on the actual projector.",
+      "No claim that C102 discovery, C104 open classification or peer-listening quality has been empirically observed.",
+      "No claim that the C105 withdrawal and restoration routine fits the stated timebox until rehearsed or taught live.",
+      "No authorization to freeze unless the separate independent student-reception review also satisfies the declared P0/P1/P2 gate."
+    ],
+    "remaining_P3_observations": [
+      {
+        "id": "P3-01",
+        "class": "back_row_readability",
+        "scope": "C101 lower 19.5-23 pt instructions, C102 20.5 pt questions, C104 21-21.5 pt lower instructions and C105 14-17.5 pt story rail."
+      },
+      {
+        "id": "P3-02",
+        "class": "task_authenticity_and_cognitive_load",
+        "scope": "Whether C102 elicits genuine textual discovery of '匪' and whether C104's four-clause open naming/grouping remains accessible while producing substantive listener feedback."
+      },
+      {
+        "id": "P3-03",
+        "class": "classroom_orchestration_and_timing",
+        "scope": "Whether C105 material withdrawal, peer verification, blackout, 30-second narration, bounded lookup and ordered restoration run naturally without procedure displacing narrative thought."
+      }
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "schema_version": "exam-visual-review-receipt-0.1",
+  "receipt_id": "EXAM-VISUAL-GK-NC3-2018-20260809",
+  "exam_id": "GK-NC3-2018",
+  "generated_at": "2026-08-09T06:24:00+08:00",
+  "status": "passed_with_conservative_derivation",
+  "review_scope": "question_pdf_visual_review_and_top_level_score_arbitration",
+  "review_method": {
+    "render": "high_resolution_pdf_render",
+    "pdf_page_count": 15,
+    "pages_checked": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    "exam_printed_pages": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "blank_watermark_pages": [13, 14],
+    "advertising_pages": [15]
+  },
+  "source_policy": {
+    "source_pdf_read_only": true,
+    "mineru_full_md_read_only": true,
+    "clean_md_read_only_during_review": true,
+    "raw_watermark_retained": true,
+    "answer_authority": "candidate_unverified_or_missing",
+    "mapping_boundary": "M0_only"
+  },
+  "source_hashes": {
+    "question_pdf_sha256": "116e0bb8262933899f7c7c15becaa483a2a761b6b10a3bc7063bf33ff5c81523",
+    "mineru_full_md_sha256": "05c3b046afa08d4334e19338fd21786d2a6d3ca79fb9303835bedb23426e6c03",
+    "q3_chart_1_sha256": "4b9f206cbc2d5c9ea445a156f9d723540631f80b0aaddf41950af5dd462de015",
+    "q9_framework_sha256": "ced58f0967620a1ed0b73c611eed2cadf2de1809a22d9456c583eaf587356ee7"
+  },
+  "findings": [
+    {
+      "scope": "Q1",
+      "finding": "原始 exceptions 中 BA/公/WD 等行间残片在 PDF 卷面不存在；题干和四个选项边界清晰。",
+      "decision": "清洗副本沿用已登记的残片隔离；原始 full.md 与 PDF 不改写。"
+    },
+    {
+      "scope": "Q3",
+      "finding": "两幅图表在 PDF 第6页可见，和 MinerU 图片资源相符；图中数值未出现可安全的题文转写需求。",
+      "decision": "保留两幅图片的源路径，不臆补图中文字或答案。"
+    },
+    {
+      "scope": "Q5",
+      "finding": "小问末尾孤立字符‘1’在 PDF 卷面不存在，属于已登记的 OCR/水印残片。",
+      "decision": "清洗副本隔离残片，原始题段保持只读。"
+    },
+    {
+      "scope": "Q7",
+      "finding": "PDF 以题组形式给出语言文字运用 20 分，三个内部任务没有稳定独立印刷分值；Q8/Q9 分别明确为 4/6 分。",
+      "decision": "按 Q7 顶层 20 分保留一个节点，不虚构内部 3/3/4 或其他分配；总分按 Q1—Q10 复算为 150。"
+    },
+    {
+      "scope": "Q9",
+      "finding": "PDF 第12页可见拒绝反应构思框架图。",
+      "decision": "保留 MinerU 图像源路径，后续小问知识点抽取须回看图示，不把 OCR/模型臆读当作答案。"
+    },
+    {
+      "scope": "all_pages",
+      "finding": "PDF 第13—14页为空白水印页，第15页为资料广告页。",
+      "decision": "不纳入题文清洗正文；原始 PDF 与清洗稿通过双链保留回溯。"
+    }
+  ],
+  "derived_updates": {
+    "script": "scripts/decompose_exam_vertical_slices.py",
+    "config_change": "GK-NC3-2018 added with visual_check_status=passed and top-level-only conservative scoring",
+    "output": "work/knowledge/高考分析/GK-NC3-2018-response_nodes_vertical_slice.jsonl",
+    "receipt": "work/knowledge/_reviews/receipts/exam_vertical_GK-NC3-2018_20260809.json",
+    "content_policy": "仅生成派生节点和回执；未改写原始 PDF、MinerU full.md 或清洗源段。"
+  },
+  "acceptance": {
+    "visual_boundary": "passed",
+    "ocr_arbitration": "passed_with_explicit_residuals",
+    "score_reconciliation": "150/150",
+    "q7_internal_split": "deferred_conservatively",
+    "locator_precision": "page_level_fallback",
+    "answer_and_kp_mapping": "not_claimed; candidate_unverified_or_missing; M0/KP_ID=N/A"
+  },
+  "reviewer": "primary_agent",
+  "reviewed_at": "2026-08-09"
+}

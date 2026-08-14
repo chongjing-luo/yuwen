@@ -1,0 +1,34 @@
+{
+  "schema_version": "2.0-textbook-eval-1",
+  "register_id": "warning-register-2.0-textbook-eval-1",
+  "warnings": [
+    {
+      "warning_id": "W-EVAL-001",
+      "owner": "coordinator",
+      "impact": "V2.4 candidate has not been approved; old and new evaluation rules could be mixed.",
+      "action": "Keep all current in-flight work on 2.0-textbook and block new cutover-only fields until a unique batch is approved.",
+      "close_condition": "PROJECT_INDEX records coordinator approval, machine-file SHAs and cutover_batch_id."
+    },
+    {
+      "warning_id": "W-EVAL-002",
+      "owner": "exam-calibration",
+      "impact": "Third-party answer/analysis candidates are not official scoring evidence.",
+      "action": "Retain candidate status and M0/kp_id=N/A; do not write deterministic answers or mappings.",
+      "close_condition": "Official or otherwise contract-approved answer and scoring artifacts are registered and independently verified."
+    },
+    {
+      "warning_id": "W-EVAL-003",
+      "owner": "textbook-method",
+      "impact": "Current 81 cards are historical accepted outputs, not a fully blind prospective holdout.",
+      "action": "Report the contamination boundary and build a separately sealed evaluation set before SG-METHOD claims.",
+      "close_condition": "12 cards, 4 unit graphs and 1 book summary are independently gold-labelled and sealed."
+    },
+    {
+      "warning_id": "W-EVAL-004",
+      "owner": "registry-maintainer",
+      "impact": "Six legacy drafted ledger rows can be mistaken for active exam/global deliverables.",
+      "action": "Keep rows unchanged but link the legacy audit; prohibit downstream consumption until an explicit scope decision.",
+      "close_condition": "Coordinator records an explicit supersede or re-admission transition with evidence."
+    }
+  ]
+}

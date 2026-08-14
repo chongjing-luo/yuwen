@@ -1,0 +1,32 @@
+{
+  "schema_version": "language-application-2016-2017-kp-batch-validation-0.1",
+  "result": "passed",
+  "row_count": 10,
+  "subtype_counts": {
+    "idiom_usage": 2,
+    "sentence_error": 2,
+    "discourse_connective_selection": 2,
+    "completion": 2,
+    "constructed_language_response": 2
+  },
+  "node_ids": [
+    "GK-NC3-2016-Q007-TOP",
+    "GK-NC3-2016-Q008-TOP",
+    "GK-NC3-2016-Q009-TOP",
+    "GK-NC3-2016-Q010-TOP",
+    "GK-NC3-2016-Q011-TOP",
+    "GK-NC3-2017-Q007-TOP",
+    "GK-NC3-2017-Q008-TOP",
+    "GK-NC3-2017-Q009-TOP",
+    "GK-NC3-2017-Q010-TOP",
+    "GK-NC3-2017-Q011-TOP"
+  ],
+  "errors": [],
+  "checks": {
+    "coverage": true,
+    "traceability": true,
+    "answer_gate": true,
+    "m0_boundary": true,
+    "review_gate": true
+  }
+}

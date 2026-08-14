@@ -1,0 +1,228 @@
+{
+  "schema_version": "1.0",
+  "review_id": "chapter2_visual_v10_independent_static_candidate_review",
+  "review_scope": "N022-N030 visual_and_page_function",
+  "reviewer": "ppt_visual_qa",
+  "reviewed_at": "2026-08-13T20:55:00+08:00",
+  "candidate_sha256": "ad634b0b437c377d412742ea7f479f1dd1e16f57d4f56ab0e5568a0b40b870d2",
+  "candidate": {
+    "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_2/pptx/04_氓_V6第二章课堂课件.pptx",
+    "expected_sha256": "ad634b0b437c377d412742ea7f479f1dd1e16f57d4f56ab0e5568a0b40b870d2",
+    "actual_sha256": "ad634b0b437c377d412742ea7f479f1dd1e16f57d4f56ab0e5568a0b40b870d2",
+    "hash_status": "match",
+    "zip_integrity": "pass",
+    "stability": {
+      "consecutive_hash_checks": 2,
+      "interval_seconds": 3,
+      "sha256_both": "ad634b0b437c377d412742ea7f479f1dd1e16f57d4f56ab0e5568a0b40b870d2",
+      "size_bytes_both": 53928,
+      "mtime_both": "2026-08-13 18:08:07.525197965 +0800",
+      "inode_both": 12790129,
+      "status": "stable"
+    }
+  },
+  "review_inputs": {
+    "render_contact": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_2/pptx/rendered_v10/contact.jpg",
+      "sha256": "61159cb8f05e975f9a1798c417a719f8573f564cb7857d84648744d9f9c15c42"
+    },
+    "rendered_slides": {
+      "count": 9,
+      "pixel_size_each": "2000x1125",
+      "page_ids": ["N022", "N023", "N024", "N025", "N026", "N027", "N028", "N029", "N030"]
+    },
+    "markitdown": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_2/pptx/rendered_v10/markitdown.txt",
+      "sha256": "23f28088ed021e43382d59bbe26bc67c27bbf0cd62f75f130500e1b21124a3e8"
+    },
+    "snapshot": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_2/package/06_氓_V6第二章课程数据快照.json",
+      "sha256": "70237aaa80dc0303a4fe6b2ddbc1d8eac12d4b7af58fd59d0d1939641e39eb0a"
+    }
+  },
+  "independence_and_safety": "本轮不把既有视觉或学生审查报告当作答案；直接检查v10九张原尺寸图、联系表、MarkItDown、当前PPTX和课程快照。未运行构建、测试或覆盖型脚本，未修改PPTX、snapshot、rendered_v10或manifest。",
+  "severity_definition": {
+    "P0": "致命事实错误或安全问题",
+    "P1": "阻断核心学习",
+    "P2": "显著削弱页面功能或学生生成的有效性",
+    "P3": "不阻断使用的润色项",
+    "veto_rule": "任一P0/P1/P2即FAIL"
+  },
+  "page_findings": [
+    {
+      "page_id": "N022",
+      "physical_slide": 1,
+      "unique_function": "整章初读时以轻点追踪人物动作，读后独立留下三个最确定动作，形成章首动作脉冲。",
+      "first_glance_execution": "partially_executable",
+      "main_visual_support": "整章五句居中且29pt清楚；下方已重排为左侧轻点、单箭头、右侧三个分离动作槽，两阶段关系第一眼可读。",
+      "findings": [
+        {
+          "severity": "P2",
+          "type": "answer_leak_before_generation",
+          "evidence": "页面要求学生在三个空槽中写下三个最确定动作，但槽下直接显示‘望、泣、笑也算动作’。这恰好给出三个来自原诗、可直接抄入三个槽的有效答案；学生无需再从整章独立提取，章首产物失去诊断效度。",
+          "repair": "将页脚改成不含任何原词的分类边界，例如‘带有感受的动作也可以写’，或移入教师备注并只在学生把泣/笑误判为非动作时口头支架；生成前不要列出三个现成原词。"
+        }
+      ],
+      "layout_assessment": "原诗、两阶段、箭头和三槽对齐清楚；无重叠、溢出或装饰噪声。页脚18.5pt偏小，但主要问题是泄答而非字号。",
+      "answer_state": "FAIL_partial_answer_leak",
+      "deletion_loss": "删掉本页，学生会失去第二章第一次整体声音、动作轻点体验和章末可回取的初读三步。",
+      "status": "FAIL_P2"
+    },
+    {
+      "page_id": "N023",
+      "physical_slide": 2,
+      "unique_function": "把‘乘、望、复关’组织成人物站位、目光出发点和所望对象的空间关系。",
+      "first_glance_execution": "pass",
+      "main_visual_support": "42pt原句、28pt三连问及人物站位/视线方向/目光或路线三个空框构成唯一操作；学生先在纸上生成，屏幕不显示人物、墙体或完成箭头。",
+      "findings": [
+        {
+          "severity": "P3",
+          "type": "minor_typographic_polish",
+          "evidence": "三个框内类别标签为20pt、填写线为21pt，略低于其他核心页面的22pt基线；2000×1125图上仍可辨，不阻断执行。",
+          "repair": "有版面余量时将框内类别和选项统一提升至22pt。"
+        }
+      ],
+      "layout_assessment": "层级、对齐、间距和对比均清楚，无泄答、溢出或多焦点。无人物插图更优，可保留学生生成空间。",
+      "answer_state": "pass_no_answer_leak",
+      "deletion_loss": "删掉本页，学生只剩词义口译，无法把登高远望理解为空间动作和距离。",
+      "status": "PASS_WITH_P3"
+    },
+    {
+      "page_id": "N024",
+      "physical_slide": 3,
+      "unique_function": "把不见/既见两句并置，纵向对齐视线条件、人物动作和语势原词，解释声音转折。",
+      "first_glance_execution": "pass",
+      "main_visual_support": "两句40pt、蓝黄上下对照明显；三组空槽要求学生生成原词对应，不预填答案；底部明确独立填、同桌只找无依据一格、换笔修订。",
+      "findings": [],
+      "layout_assessment": "主视觉承担比较功能，颜色、对齐、留白和阅读次序稳定；无异常换行、泄答或装饰噪声。",
+      "answer_state": "pass_no_answer_leak",
+      "deletion_loss": "删掉本页，两句会被拆开讲解，视线变化、动作和声音翻转之间的同步关系消失。",
+      "status": "PASS"
+    },
+    {
+      "page_id": "N025",
+      "physical_slide": 4,
+      "unique_function": "让学生先独立把文本对照转成快慢、重音和停顿的个人朗读谱，再开口。",
+      "first_glance_execution": "pass",
+      "main_visual_support": "暗色活动页以36pt两句原诗为核心，下方三个22pt空产物格分别承载慢、快、重音/停顿，底部24pt要求补原词理由；没有教师标准谱。",
+      "findings": [],
+      "layout_assessment": "与文本比较页视觉异质，文字层级、对比、间距均清楚；无泄答或多主焦点。",
+      "answer_state": "pass_student_generated",
+      "deletion_loss": "删掉本页，下一页只能检验学生模仿，无法检验个人如何把文本理解转成声音方案。",
+      "status": "PASS"
+    },
+    {
+      "page_id": "N026",
+      "physical_slide": 5,
+      "unique_function": "用闭眼听者回执检验朗读谱，并只改一个声音变量后重读；未解决者保留待调整状态。",
+      "first_glance_execution": "pass",
+      "main_visual_support": "四条横向步骤分别标出读者、听者、只改一项和第二遍；22-24pt核心动作可读，‘更清楚/仍需调整；待调整者章末再试’使失败结果有后续而非被强迫成功。",
+      "findings": [
+        {
+          "severity": "P3",
+          "type": "classroom_condition_risk",
+          "evidence": "真实班级噪声可能降低闭眼听者辨认细微速度、停顿和重音的稳定性；仅凭桌面图无法验证。",
+          "repair": "试教时记录听者能否指出具体原词；必要时错峰轻声读或半班执行。"
+        }
+      ],
+      "layout_assessment": "步骤编号、角色、动作和反馈状态对齐清楚，无溢出或装饰噪声；页面与N025产物和交互真实异质。",
+      "answer_state": "pass_no_standard_reading_leak",
+      "deletion_loss": "删掉本页，朗读谱停留在纸面假设，学生无法获得真实听觉证据和一次可比较的修订。",
+      "status": "PASS_WITH_P3"
+    },
+    {
+      "page_id": "N027",
+      "physical_slide": 6,
+      "unique_function": "提供完成卜筮口译所需的四项文化支架，并区分此次无不祥与对后来关系的保证。",
+      "first_glance_execution": "pass",
+      "main_visual_support": "42pt原句、四张词义卡和两个24pt边界问题构成清楚顺序；龟板/蓍草/兆象为23pt，‘没有不祥之语’为22pt，核心释义已达到后排可读水平。",
+      "findings": [],
+      "layout_assessment": "词义映射对齐、留白充分、无低对比和溢出；下方两问不预填成品答案。无考古插图更优，避免文化背景压过口译和时间边界。",
+      "answer_state": "pass_questions_before_teacher_calibration",
+      "deletion_loss": "删掉本页，学生缺少准确口译的文化支架，也容易把仪式性结果误讲成长期婚姻质量保证。",
+      "status": "PASS"
+    },
+    {
+      "page_id": "N028",
+      "physical_slide": 7,
+      "unique_function": "借对称句式拆清男子来迎与女子携财物迁嫁两项相接但不同的行动。",
+      "first_glance_execution": "pass",
+      "main_visual_support": "42pt原句下以蓝黄两栏呈现‘以尔车来/以我贿迁’，34pt分句和25pt主体/物件问题直接支持拆句、双人对读和合回原诗。",
+      "findings": [],
+      "layout_assessment": "句法关系决定构图，层级、对比、对齐和间距清楚；未预填谁、车、财物或迁移答案。",
+      "answer_state": "pass_no_answer_leak",
+      "deletion_loss": "删掉本页，课堂容易用‘他们结婚了’压平双方不同动作、对称句式和女子迁嫁事实。",
+      "status": "PASS"
+    },
+    {
+      "page_id": "N029",
+      "physical_slide": 8,
+      "unique_function": "取回章首三步，与七个关键节点连接并排序，同时定位不见到既见的声音转折。",
+      "first_glance_execution": "partially_executable",
+      "main_visual_support": "七个24pt乱序词各有序号空槽，章首三步取回/圈出/保留规则以25.5pt置顶；原先未经定义的‘声纹’已改成一道明确转折线。",
+      "findings": [
+        {
+          "severity": "P2",
+          "type": "partial_sequence_answer_leak",
+          "evidence": "同一屏要求学生给七个乱序节点标1—7，却在排序完成前于下方直接按正确相对顺序并排显示‘不见 —— 既见’，并明确‘在中间画一道转折线’。这提前给出七词中两项的正确相对顺序和转折位置，削弱撤答排序的独立提取与同桌查错效度。",
+          "repair": "把转折线任务延后到排序完成后的下一状态/下一页；或在同页只留‘在你排好的七词中圈出声音转折处’，不再次按正确顺序显示‘不见/既见’。"
+        }
+      ],
+      "layout_assessment": "七词、序号和底部流程总体清楚；17.5pt‘序号’略小但词语24pt可辨。最底部21pt灰色回问对比偏低，属于次要收束，不构成阻断。",
+      "answer_state": "FAIL_partial_order_and_transition_leak",
+      "deletion_loss": "删掉本页，章首初读三步没有后用，细读后的七节点无法接受撤答重建，也失去把声音转折放回行动链的机会。",
+      "status": "FAIL_P2"
+    },
+    {
+      "page_id": "N030",
+      "physical_slide": 9,
+      "unique_function": "把空间、对照、声音、文化程序和迁嫁重新收束成可连续讲述的第二章。",
+      "first_glance_execution": "pass",
+      "main_visual_support": "五句原诗以27pt占据中央最大阅读区；下方24pt重读→合书讲30秒和三个23pt叙事支点清楚，22pt反馈链要求找遗漏、回诗补说、写章意。",
+      "findings": [],
+      "layout_assessment": "原诗仍为第一主焦点，活动支点未压制完整重读；层级、对比、对齐、间距均稳定，无溢出或答案泄露。",
+      "answer_state": "pass_retrieval_after_full_reread",
+      "deletion_loss": "删掉本页，视线、对照、朗读、卜筮和迁嫁仍会散落为活动与知识片段，不能重新成为一段完整叙事。",
+      "status": "PASS"
+    }
+  ],
+  "regression_focus_summary": {
+    "N022": "两阶段构图和三槽叠压已修复，但新增/保留的‘望、泣、笑’生成前泄答仍为P2。",
+    "N026": "通过；‘仍需调整’已获得章末再试出口，不强迫第二遍成功。",
+    "N027": "通过；四项核心释义已提升到22-23pt。",
+    "N029": "‘声纹’不可执行问题已修复，但同屏‘不见—既见’正确顺序和转折位置造成新的P2部分泄答。"
+  },
+  "technical_summary": {
+    "overflow": "none_found",
+    "overlap": "none_found",
+    "abnormal_wrap_or_orphan": "none_found",
+    "contrast_failure": "none_blocking",
+    "alignment_and_spacing": "pass_overall",
+    "decorative_noise": "none_blocking",
+    "answer_leak_pages": ["N022", "N029"]
+  },
+  "severity_counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 2,
+    "P3": 2
+  },
+  "page_matrix": {
+    "N022": "FAIL_P2",
+    "N023": "PASS_WITH_P3",
+    "N024": "PASS",
+    "N025": "PASS",
+    "N026": "PASS_WITH_P3",
+    "N027": "PASS",
+    "N028": "PASS",
+    "N029": "FAIL_P2",
+    "N030": "PASS"
+  },
+  "minimum_repair_set": [
+    "N022删除生成前列出的三个现成动作原词，改用不泄答的分类提示",
+    "N029把不见/既见转折线任务延后，或改为在学生自己排好的七词中圈转折，不在排序前显示正确相对顺序"
+  ],
+  "verdict": "FAIL",
+  "veto": true,
+  "claim_boundary": "visual_and_page_function_desktop_review_only; actual_classroom_learning_not_observed"
+}

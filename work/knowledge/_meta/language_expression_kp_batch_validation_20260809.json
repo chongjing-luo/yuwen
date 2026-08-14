@@ -1,0 +1,19 @@
+{
+  "schema_version": "language-expression-kp-batch-validation-0.1",
+  "result": "passed",
+  "row_count": 15,
+  "type_counts": {
+    "parallelism_or_practical": 4,
+    "practical_or_expansion": 3,
+    "sentence_expansion": 4,
+    "summary": 4
+  },
+  "errors": [],
+  "checks": {
+    "coverage": true,
+    "traceability": true,
+    "free_response_gate": true,
+    "m0_boundary": true,
+    "authority_gate": true
+  }
+}

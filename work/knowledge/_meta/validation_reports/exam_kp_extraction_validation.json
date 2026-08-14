@@ -1,0 +1,13 @@
+{
+  "schema_version": "exam-kp-extraction-validation-0.1",
+  "result": "passed",
+  "node_count": 310,
+  "exam_count": 17,
+  "errors": [],
+  "warnings": [],
+  "checks": {
+    "m0_boundary": true,
+    "provenance": true,
+    "denominators": true
+  }
+}

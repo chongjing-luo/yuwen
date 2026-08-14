@@ -1,0 +1,67 @@
+{
+  "lesson": "《氓》",
+  "package_version": "5.3-literary-participation-final",
+  "generated_at": "2026-08-11T22:16:19+08:00",
+  "scope": "desktop_design_validation",
+  "classroom_tested": false,
+  "status": "passed_pending_real_classroom_pilot",
+  "content": {
+    "master_slides": 127,
+    "hidden_teacher_index_slides": 1,
+    "student_visible_slides": 126,
+    "module_slides": [26, 23, 23, 28, 26],
+    "module_minutes": [47, 49, 52, 69, 57],
+    "total_minutes": 274,
+    "chapters": 6,
+    "line_groups": 30,
+    "meaning_units": 12,
+    "core_questions": 3
+  },
+  "automated_validation": {
+    "unittest_command": "python -m unittest tests/test_validate_meng_v5_lesson_package.py",
+    "tests_run": 25,
+    "tests_failed": 0,
+    "contract_command": "python scripts/validate_meng_v5_lesson_package.py --data work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json --lesson work/备课/选择性必修下册/氓/02_氓_V5全文逐句教学母版.md --worksheet work/备课/选择性必修下册/氓/03_氓_V5学生学习单.md --script work/备课/选择性必修下册/氓/04A_氓_V5逐页无生试讲稿.md --audit work/备课/选择性必修下册/氓/08_氓_V5学生接收桌面审计.md --pptx work/备课/选择性必修下册/氓/04_氓_V5全文逐句课堂课件_完整母版.pptx",
+    "contract_result": "OK Meng V5 contracts passed",
+    "hard_gates_total": 39,
+    "hard_gates_passed": 39,
+    "placeholder_backstage_and_outdated_framing_scan_matches": 0
+  },
+  "office_validation": {
+    "pptx_validated": 6,
+    "pptx_failed": 0,
+    "pptx_pdf_pages": [126, 26, 23, 23, 28, 26],
+    "docx_validated": 3,
+    "docx_failed": 0,
+    "docx_pdf_pages": [11, 6, 42]
+  },
+  "independent_reviews": {
+    "student_reception": {
+      "coverage": "current 127-slide build, with focused review of P89-P116",
+      "p0": 0,
+      "p1": 0,
+      "new_p2_in_focused_range": 0
+    },
+    "visual": {
+      "coverage": "126 student-visible slides, P89-P116 focused contact sheet, original-resolution P102/P111/P112, and three DOCX contact sheets",
+      "p0": 0,
+      "p1": 0,
+      "p2": 0,
+      "evidence_directory": "work/备课/选择性必修下册/氓/_qa_v53_final"
+    }
+  },
+  "rubric": {
+    "hard_gates_total": 39,
+    "hard_gates_passed": 39,
+    "score": 97,
+    "score_max": 100,
+    "release_threshold": 92
+  },
+  "version_cleanup": {
+    "canonical_principles": "work/备课基本原则.md",
+    "old_qa_directory_moved_to_trash": "work/备课/选择性必修下册/氓/_qa_v5r",
+    "permanent_delete_used": false,
+    "current_evidence_directory": "work/备课/选择性必修下册/氓/_qa_v53_final"
+  },
+  "truthfulness_boundary": "桌面设计已验证；这不代表真实学生已经理解、享受课堂或完成迁移，真实课堂效果待试教。"
+}

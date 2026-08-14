@@ -1,7 +1,7 @@
 ---
 schema_version: "2.0-candidate"
 card_id: "CARD-B1-U03-02"
-status: "drafted"
+status: "accepted"
 book: "必修上册"
 unit: "U03"
 material_type: "lesson"
@@ -10,15 +10,17 @@ curriculum_version: "普通高中语文课程标准（2017年版2020年修订）
 course_type: "必修"
 primary_task_group: "文学阅读与写作"
 related_task_groups: []
-quality_descriptor_refs: []
+quality_descriptor_refs:
+  - "QD-4-3"
 source_ids:
   - "SRC-PKG-B1-010"
+  - "SRC-CURR-2020"
 subtext_ids:
   - "SUBTEXT-CARD-B1-U03-02-01"
   - "SUBTEXT-CARD-B1-U03-02-02"
   - "SUBTEXT-CARD-B1-U03-02-03"
 producer: "evidence_design"
-reviewers: []
+reviewers: ["review_primary_textbook", "review_secondary_textbook"]
 version: "0.1.0"
 ---
 
@@ -60,7 +62,7 @@ version: "0.1.0"
 
 | 主/关联任务群 | 语言材料与语境 | 阅读与鉴赏 | 表达与交流 | 梳理与探究 | 主要核心素养表现及依据 | 学业质量表现描述定位 |
 |---|---|---|---|---|---|---|
-| 主：文学阅读与写作（受控词表候选定位） | 三种诗体及诗序、注释和学习提示；结合诗人身世与创作处境。 | 想象梦境、品析律诗意境与对仗、分析音乐和景物描写，解释形式与情感的关系。 | 诵读并用引文支撑小切口鉴赏判断。 | 梳理情感转折、意象、句法、叙事视角及人物处境。 | 重点涉及审美鉴赏与创造、文化传承与理解，并以语言建构支持有依据的鉴赏表达。 | `quality_descriptor_refs` 暂空；官方课标 Artifact 未登记，任务群仅作候选定位，不判定完整“水平X”。 |
+| 主：文学阅读与写作；关联：语言积累、梳理与探究 | 三种诗体及诗序、注释和学习提示；结合诗人身世与创作处境。 | 想象梦境、品析律诗意境与对仗、分析音乐和景物描写，解释形式与情感的关系。 | 诵读并用引文支撑小切口鉴赏判断。 | 梳理情感转折、意象、句法、叙事视角及人物处境。 | 重点涉及审美鉴赏与创造、文化传承与理解，并以语言建构支持有依据的鉴赏表达。 | QD-4-3：结合作品具体内容阐释情感、形象、主题和表现手法；只作表现定位，不判定完整水平。 |
 
 ## 5. 原子知识点
 
@@ -132,11 +134,14 @@ version: "0.1.0"
 | EV-CARD-B1-U03-02-015 | “逆境中的自我表达与理解他者”母题 | I | SRC-PKG-B1-010 | ART-PKG-B1-010-PDF | split PDF pp.2, 3, 5；master pp.68, 69, 71；printed pp.61, 62, 64 | 三诗分别呈现拒事权贵、漂泊老病与迁谪共情 | supports | verified / evidence_design / 2026-08-06（由 EV-003、EV-006、EV-008、EV-011 复核） |
 | EV-CARD-B1-U03-02-016 | 来源与关系边界 | D | — | work/knowledge/_meta/sources.jsonl；work/knowledge/_meta/deliverables.jsonl | 2026-08-06 本地账本核对 | 未登记本册教师用书、正式真题；相关卡尚未 accepted | supports | verified / evidence_design / 2026-08-06 |
 
+| EV-CARD-B1-U03-02-017 | 文学阅读与写作任务群 | M | SRC-CURR-2020 | ART-CURR-2020-PDF | PDF物理页25—26；印刷页17—18 | “在感受形象、品味语言、体验情感的过程中提升文学欣赏能力” | supports | verified / coordinator / 2026-08-07 |
+| EV-CARD-B1-U03-02-018 | 学业质量表现QD-4-3 | M | SRC-CURR-2020 | ART-CURR-2020-PDF | PDF物理页44；印刷页36 | “对作品的表现手法作出自己的评论” | supports | verified / coordinator / 2026-08-07 |
+
 ## 10. 自检、评审与版本记录
 
 - [x] 合编文本和子文本无遗漏
 - [x] 直接引文已回看规范PDF
-- [ ] 任务群已有受控值，但官方课标 Artifact 尚缺；课程类型和课标版本已按受控词表填写
+- [x] 任务群、课程标准 Artifact 和课程类型已绑定；学业质量只作具体表现定位
 - [x] 每个KP有主层级、理由和证据
 - [x] 所有I类解释至少两处文本依据
 - [x] 三类教学提示已分开

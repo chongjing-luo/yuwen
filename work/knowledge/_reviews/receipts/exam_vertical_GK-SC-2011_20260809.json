@@ -1,0 +1,84 @@
+{
+  "schema_version": "exam-vertical-review-receipt-0.1",
+  "receipt_id": "EXAM-VERTICAL-GK-SC-2011-20260809",
+  "exam_id": "GK-SC-2011",
+  "calibration_id": "SG-EXAM-CAL-2008-2024",
+  "generated_at": "2026-08-09T07:01:24+08:00",
+  "status": "structural_pass",
+  "acceptance": "conditional_review",
+  "scope": "response_node_decomposition_and_score_reconciliation",
+  "source_policy": {
+    "question_pdf_visual_check": "passed",
+    "source_pdf_read_only": true,
+    "mineru_full_md_read_only": true,
+    "answer_authority": "candidate_unverified_or_missing",
+    "mapping_boundary": "M0_only"
+  },
+  "visual_check": {
+    "pages_checked": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "notes": [
+      "2011 四川自主命题卷；已逐页核对第1—7页考试正文，第8页为资料广告页。",
+      "Q11 两句翻译 5/5 分，Q12 两问 3/5 分；Q13 两个名句分支任选一题。",
+      "第六大题合计 15 分，Q18/Q19/Q20 按 4/5/6 分登记。"
+    ]
+  },
+  "visual_review_receipt": "work/knowledge/_reviews/receipts/exam_visual_review_GK-SC-2011_20260809.json",
+  "node_count": 24,
+  "question_count": 21,
+  "score_total": 150,
+  "expected_score_total": 150,
+  "choice_groups": [
+    {
+      "id": "GK-SC-2011-Q013-OPTIONAL",
+      "questions": [
+        13,
+        13
+      ],
+      "scored_branch_count": 1
+    }
+  ],
+  "score_groups": [],
+  "score_notes": {},
+  "missing_answer_source_questions": [],
+  "source_hash_anchors": {
+    "question_pdf": {
+      "1": "5c49ca93d2005225ccf9764226887ea42e41e39254afe8c7544126ccc3d4057b",
+      "2": "5c49ca93d2005225ccf9764226887ea42e41e39254afe8c7544126ccc3d4057b",
+      "3": "5c49ca93d2005225ccf9764226887ea42e41e39254afe8c7544126ccc3d4057b",
+      "4": "5c49ca93d2005225ccf9764226887ea42e41e39254afe8c7544126ccc3d4057b",
+      "5": "5c49ca93d2005225ccf9764226887ea42e41e39254afe8c7544126ccc3d4057b",
+      "6": "5c49ca93d2005225ccf9764226887ea42e41e39254afe8c7544126ccc3d4057b",
+      "7": "5c49ca93d2005225ccf9764226887ea42e41e39254afe8c7544126ccc3d4057b",
+      "8": "5c49ca93d2005225ccf9764226887ea42e41e39254afe8c7544126ccc3d4057b",
+      "9": "5c49ca93d2005225ccf9764226887ea42e41e39254afe8c7544126ccc3d4057b",
+      "10": "5c49ca93d2005225ccf9764226887ea42e41e39254afe8c7544126ccc3d4057b",
+      "11": "5c49ca93d2005225ccf9764226887ea42e41e39254afe8c7544126ccc3d4057b",
+      "12": "5c49ca93d2005225ccf9764226887ea42e41e39254afe8c7544126ccc3d4057b",
+      "13": "5c49ca93d2005225ccf9764226887ea42e41e39254afe8c7544126ccc3d4057b",
+      "14": "5c49ca93d2005225ccf9764226887ea42e41e39254afe8c7544126ccc3d4057b",
+      "15": "5c49ca93d2005225ccf9764226887ea42e41e39254afe8c7544126ccc3d4057b",
+      "16": "5c49ca93d2005225ccf9764226887ea42e41e39254afe8c7544126ccc3d4057b",
+      "17": "5c49ca93d2005225ccf9764226887ea42e41e39254afe8c7544126ccc3d4057b",
+      "18": "5c49ca93d2005225ccf9764226887ea42e41e39254afe8c7544126ccc3d4057b",
+      "19": "5c49ca93d2005225ccf9764226887ea42e41e39254afe8c7544126ccc3d4057b",
+      "20": "5c49ca93d2005225ccf9764226887ea42e41e39254afe8c7544126ccc3d4057b",
+      "21": "5c49ca93d2005225ccf9764226887ea42e41e39254afe8c7544126ccc3d4057b"
+    }
+  },
+  "derived_jsonl": "work/knowledge/高考分析/GK-SC-2011-response_nodes_vertical_slice.jsonl",
+  "errors": [],
+  "warnings": [
+    "Q13 第一分支末尾出现孤立字符“0”，疑为 OCR/版面残片；不静默删除。",
+    "Q13 第一分支末尾出现孤立字符“0”，疑为 OCR/版面残片；不静默删除。",
+    "截去题段末尾下一节标题；原始题段保持不变。"
+  ]
+}

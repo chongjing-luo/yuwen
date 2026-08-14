@@ -1,0 +1,77 @@
+{
+  "schema_version": "exam-visual-review-receipt-0.1",
+  "receipt_id": "EXAM-VISUAL-GK-NC3-2017-20260809",
+  "exam_id": "GK-NC3-2017",
+  "generated_at": "2026-08-09T06:18:00+08:00",
+  "status": "passed_with_conservative_derivation",
+  "review_scope": "question_pdf_visual_review_and_ocr_boundary_arbitration",
+  "review_method": {
+    "render": "high_resolution_pdf_render",
+    "pdf_page_count": 14,
+    "pages_checked": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+    "exam_printed_pages": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+    "advertising_pages": [14]
+  },
+  "source_policy": {
+    "source_pdf_read_only": true,
+    "mineru_full_md_read_only": true,
+    "clean_md_read_only_during_review": true,
+    "raw_watermark_retained": true,
+    "answer_authority": "candidate_unverified_or_missing",
+    "mapping_boundary": "M0_only"
+  },
+  "source_hashes": {
+    "question_pdf_sha256": "a9f994cbcb8ba7d2819d527e164975fc10f35fa4ce8c36fa8946508c489f7bc4",
+    "mineru_full_md_sha256": "a0f81f30fbcf9136d7662c3ce2feebc3c19ef2a30471d04ed3f7183eccbd34e0",
+    "q3_chart_asset_sha256": "7aafb0a063ac1061ec862d14b77619bafbfa49a230f5f639d73b937acaed059d"
+  },
+  "findings": [
+    {
+      "scope": "Q1",
+      "finding": "派生 OCR 文本末尾的‘众 人’及黏连小问标记在 PDF 卷面不存在；PDF 题干边界清楚。",
+      "decision": "保留原始题段，清洗提示仅截去派生残片。"
+    },
+    {
+      "scope": "Q3",
+      "finding": "选项末尾孤立 W/A 在 PDF 卷面不存在；材料二图表在 PDF 中可见，且与 MinerU 图片资源内容和尺寸一致。",
+      "decision": "不补写图中文字或数值；保留图片源路径并移除派生孤立标记。"
+    },
+    {
+      "scope": "Q6",
+      "finding": "PDF 明确显示第一小题 3 个空格、第二小题 2 个空格，共 5 分；清洗/OCR 文本未稳定保留每个空格对应的完整句段和独立评分依据。",
+      "decision": "继续保留一个 5 分作答节点，不伪造 5 个单空节点；后续如获得独立权威评分源再细分。"
+    },
+    {
+      "scope": "Q9",
+      "finding": "选项 A 前孤立 V 在 PDF 卷面不存在。",
+      "decision": "清洗提示移除派生孤立标记，原始题段不改写。"
+    },
+    {
+      "scope": "Q11/Q12",
+      "finding": "PDF 第 13 页（MinerU/PDF 索引 12）卷面显示 Q11 的②、③为空白答题线，未见 OCR 文本中的孤立 0；Q12 作文题同页。两题无 MinerU block_ids。",
+      "decision": "保留空白作答线的语义，不臆补答案；派生节点使用 P13-PAGE-FALLBACK，不宣称题级 bbox。"
+    },
+    {
+      "scope": "all_pages",
+      "finding": "源 PDF 各页可见资料站水印及末页广告页。",
+      "decision": "水印和广告页只在源材料中留存；题目清洗稿通过双链回溯，不把广告内容纳入题文。"
+    }
+  ],
+  "derived_updates": {
+    "script": "scripts/decompose_exam_vertical_slices.py",
+    "config_change": "GK-NC3-2017.visual_check_status=passed",
+    "output": "work/knowledge/高考分析/GK-NC3-2017-response_nodes_vertical_slice.jsonl",
+    "receipt": "work/knowledge/_reviews/receipts/exam_vertical_GK-NC3-2017_20260809.json",
+    "content_policy": "仅更新派生节点的视觉核验元数据和清洗提示；未改写原始 PDF、MinerU full.md 或清洗源段。"
+  },
+  "acceptance": {
+    "visual_boundary": "passed",
+    "ocr_arbitration": "passed_with_explicit_residuals",
+    "graph_asset": "verified_present",
+    "q6_atomic_split": "deferred_conservatively",
+    "locator_precision": "page_level_fallback",
+    "answer_and_kp_mapping": "not_claimed; candidate_unverified_or_missing; M0/KP_ID=N/A"
+  },
+  "reviewer": "primary_agent",
+  "reviewed_at": "2026-08-09"
+}

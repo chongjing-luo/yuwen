@@ -1,0 +1,122 @@
+{
+  "schema_version": "exam-vertical-review-receipt-0.1",
+  "receipt_id": "EXAM-VERTICAL-GK-SC-2008-20260809-R2",
+  "exam_id": "GK-SC-2008",
+  "calibration_id": "SG-EXAM-CAL-2008-2024",
+  "generated_at": "2026-08-09T05:12:00+08:00",
+  "status": "structural_pass",
+  "acceptance": "conditional_review",
+  "scope": "independent_second_review_of_response_node_decomposition_score_reconciliation_and_pdf_visual_boundaries",
+  "source_policy": {
+    "question_pdf_visual_check": "passed",
+    "source_pdf_read_only": true,
+    "mineru_full_md_read_only": true,
+    "clean_md_read_only": true,
+    "derived_jsonl_read_only": true,
+    "answer_authority": "candidate_unverified_or_missing",
+    "mapping_boundary": "M0_only"
+  },
+  "visual_check": {
+    "pages_checked": [1, 2, 3, 4, 5, 6, 7],
+    "notes": [
+      "第1—6页为正式试卷，第7页为完整广告/推广页；广告未被Q21题段吸收，应登记为advertisement_excluded证据。",
+      "Q1—Q4位于第1页；Q5—Q7位于第2页（Q7跨第1—2页）；Q8—Q10位于第3页；Q11—Q13位于第4页；Q14—Q18位于第5—6页；Q19—Q21位于第6页。",
+      "PDF第5页明确Q14=4分、Q15=6分、Q16=4分、Q17=8分；旧派生版本曾登记6/6分，当前复生成版本已按PDF修正为4/8分。",
+      "PDF第4页明确Q13为两题任选一题、计5分；两个分支均保留为作答节点。"
+    ]
+  },
+  "node_count": 24,
+  "question_count": 21,
+  "score_reconciliation": {
+    "raw_node_score_total": 155,
+    "choice_branch_count_total": 2,
+    "scored_branch_count_total": 1,
+    "adjusted_score_total": 150,
+    "expected_paper_score": 150,
+    "section_checks": {
+      "一": 12,
+      "二": 9,
+      "三": 9,
+      "四": 23,
+      "五": 22,
+      "六": 15,
+      "七": 60
+    },
+    "per_question_pdf_score": {
+      "Q001": 3,
+      "Q002": 3,
+      "Q003": 3,
+      "Q004": 3,
+      "Q005": 3,
+      "Q006": 3,
+      "Q007": 3,
+      "Q008": 3,
+      "Q009": 3,
+      "Q010": 3,
+      "Q011-1": 4,
+      "Q011-2": 6,
+      "Q012-1": 2,
+      "Q012-2": 6,
+      "Q013-CHOICE-1": 5,
+      "Q013-CHOICE-2": 5,
+      "Q014": 4,
+      "Q015": 6,
+      "Q016": 4,
+      "Q017": 8,
+      "Q018": 4,
+      "Q019": 6,
+      "Q020": 5,
+      "Q021": 60
+    }
+  },
+  "choice_groups": [
+    {
+      "id": "GK-SC-2008-Q013-OPTIONAL",
+      "questions": ["GK-SC-2008-Q013-CHOICE-1", "GK-SC-2008-Q013-CHOICE-2"],
+      "choice_group": true,
+      "choice_branch_count": 2,
+      "scored_branch_count": 1,
+      "score_per_branch": 5,
+      "note": "两题任选一题，计5分。当前统一 JSONL 已填choice_group及分支计数，但choice_group_note字段仍为空。"
+    }
+  ],
+  "blocking_findings": [
+    {
+      "id": "GK-SC-2008-P1-OCR-Q004-Q008-Q010",
+      "severity": "P1",
+      "finding": "Q004选项序列及Q008—Q010文言文选项中的关键字/带圈序号仍未全部建立校正副本；Q008、Q009选项④、Q010的异文会改变作答判断。",
+      "required_action": "按PDF逐字校正prompt_text_for_extraction，保留prompt_text_raw并记录每项修订证据；Q009题干‘郑波’另按source_print_typo_candidate处理，不能静默改为郑濂。"
+    }
+  ],
+  "resolved_findings": [
+    {
+      "id": "GK-SC-2008-P1-SCORE-Q016-Q017",
+      "status": "resolved_in_current_derived_revision",
+      "finding": "旧派生版本Q016/Q017为6/6分；当前复生成版本已按PDF修正为4/8分。"
+    },
+    {
+      "id": "GK-SC-2008-P1-OCR-Q013",
+      "status": "resolved_in_extraction_prompt_but_raw_retained",
+      "finding": "当前prompt_text和prompt_text_for_extraction已校正黎民、俨然、层云、苏轼；prompt_text_raw及源题段仍保留原始OCR，并有source_warnings。"
+    }
+  ],
+  "warnings": [
+    "Q013两个节点已填choice_group、choice_branch_count和choice_scored_branch_count；choice_group_note仍为空，应补充‘两题任选一题，计5分’。",
+    "Q006选项C出现‘那么可以32%的汽油……’的语义不完整表达，需解析卷或独立来源复核，不能静默补写。",
+    "Q015派生prompt已校正为‘并说说’，raw仍保留‘井说说’并有修订记录；Q003标题污染仍保留，Q021首部Markdown标记已从派生prompt移除。",
+    "Q004派生文本丢失/错位了多个带圈序号；PDF视觉可读为A=③⑥①④⑤②、B=③⑤①②③④（源图中B亦疑似印刷重复③，需独立来源判定是否为原卷排版问题）、C=⑤②①⑥④③、D=⑤③①②④⑥，不能直接使用旧派生选项串。",
+    "Q008—Q010文言文选项存在多处关键字异文：Q008‘立擢湜为左参议’被识别为‘立握得为左参议’；Q009选项④‘字仲持、居官’被识别为‘宇仲持、居宫’，且题干‘郑波’已在review/exceptions中登记为source_print_typo_candidate（保留原卷字样）；Q010‘郑湜主持家政’被识别为‘郑渎主持家政’。",
+    "Q013两分支的source_warnings仍互相携带对方分支的OCR提示（分支1带屋舍/作者名，分支2带黎民），应按分支精确收敛警告。",
+    "当前normalize脚本已将‘32%的汽油’和‘井说说’警告分别挂到Q006、Q015；旧版本曾错挂到Q003/Q006，历史回执不可据此判断当前节点。",
+    "部分节点仍为ocr_status=not_reviewed；即使已有suspected_ocr_or_watermark_noise标记，答案/评分来源仍为candidate_unverified，不得据此生成M1/M2映射。"
+  ],
+  "source_hash_anchors": {
+    "question_pdf_sha256": "2e0c257e536c52c223b94d7c45d47be96b3efebe5e28742a7e0b62c9b6b38c65",
+    "q013_segment_sha256": "efd61062b99511ed8ec232234738de638e34339ff82bdfc97d6267a81c52464c",
+    "derived_jsonl_sha256": "e19a248271f62382c6dbadc6f0daa33e4022e72f0afb5896fb1f696c0cf136c8"
+  },
+  "derived_jsonl": "work/knowledge/高考分析/GK-SC-2008-response_nodes_vertical_slice.jsonl",
+  "source_pdf": "Data/2008-2024·（四川）语文高考真题/2008年高考语文试卷（四川）（空白卷）.pdf",
+  "errors": [],
+  "conclusion": "题号覆盖、边界、任选题结构和分值复算通过；Q016/Q017及Q013问题已在当前派生复生成版本修正或显式保留修订证据，但Q004、Q008—Q010关键OCR仍阻塞知识点批处理，当前为返工后条件通过。"
+}

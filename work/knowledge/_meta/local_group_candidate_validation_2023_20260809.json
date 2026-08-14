@@ -1,0 +1,13 @@
+{
+  "schema_version": "local-group-candidate-validation-2023-0.1",
+  "result": "passed",
+  "rows": 22,
+  "errors": [],
+  "checks": {
+    "coverage": true,
+    "group_boundaries": true,
+    "hashes": true,
+    "authority_and_scoring_gate": true,
+    "source_traceability": true
+  }
+}

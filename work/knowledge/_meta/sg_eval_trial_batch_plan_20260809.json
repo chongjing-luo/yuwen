@@ -1,0 +1,49 @@
+{
+  "schema_version": "sg-eval-trial-plan-0.1",
+  "candidate": "2.0-textbook-eval-1",
+  "trial_batch_id": "TRIAL-SG-EVAL-20260809-01",
+  "status": "snapshot_created_dg0_blocked",
+  "execution_receipt": "work/knowledge/_reviews/trials/TRIAL-SG-EVAL-20260809-01/snapshot_receipt.json",
+  "selection": [
+    {
+      "deliverable_id": "CARD-X1-U01-02",
+      "artifact_type": "knowledge_card",
+      "case": "dual_text",
+      "path": "work/knowledge/选择性必修上册/cards/CARD-X1-U01-02.md",
+      "reason": "两篇作品《长征胜利万岁》《大战中的插曲》，已有双文本边界与证据表。"
+    },
+    {
+      "deliverable_id": "CARD-B1-U05-01",
+      "artifact_type": "knowledge_card",
+      "case": "special_content",
+      "path": "work/knowledge/必修上册/cards/CARD-B1-U05-01.md",
+      "reason": "整本书阅读特殊内容包，包含学术著作导入、阅读指导和学习任务；当前 front matter 与 ledger 版本/评审者一致。"
+    },
+    {
+      "deliverable_id": "UNIT-X1-U01",
+      "artifact_type": "unit_graph",
+      "case": "unit_graph",
+      "path": "work/knowledge/选择性必修上册/units/UNIT-X1-U01.md",
+      "reason": "覆盖上述册内一组已 accepted 卡，适合验证卡—KP—任务回链和无边替代观察项。"
+    }
+  ],
+  "preconditions": [
+    "协调者批准候选内容与前向生效边界",
+    "为三件 canonical 文件建立只读 snapshot；不改写历史 accepted 文件",
+    "为每件补齐 claim register、constraint register、observation manifest 和独立 review package",
+    "生产者、主审、二审和协调者角色分离，且两审互不可见",
+    "先完成 DG0—DG3，DG4 仅在 content SHA 未变且 whitelist diff 合法时执行"
+  ],
+  "blocking_reasons": [
+    "当前候选尚未批准/激活",
+    "历史 accepted 文件不是前向 lifecycle-template 产物，不能直接套用新 content SHA 写回",
+    "尚无两份新的独立封存评审、DG4 receipt 或 green batch evidence"
+  ],
+  "green_criteria": {
+    "automatic_errors": 0,
+    "manual_required_checks": "all pass",
+    "hard_rejections": "R01-R10 all false",
+    "defects": {"P0": 0, "P1": "<=10%", "P2": "<=20%"},
+    "review_agreement": {"observation_consistency": ">=90%", "total_score_gap": "<=5", "dimension_score_gap": "<=2"}
+  }
+}

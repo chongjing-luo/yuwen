@@ -1,0 +1,13 @@
+{
+  "schema_version": "reference-answer-candidate-comparison-validation-2023-0.1",
+  "result": "passed",
+  "rows": 22,
+  "errors": [],
+  "checks": {
+    "coverage": true,
+    "candidate_links": true,
+    "evidence": true,
+    "no_silent_adjudication": true,
+    "authority_and_scoring_gate": true
+  }
+}

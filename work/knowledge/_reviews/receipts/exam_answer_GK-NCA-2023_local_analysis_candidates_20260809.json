@@ -1,0 +1,21 @@
+{
+  "schema_version": "exam-local-analysis-candidate-receipt-0.1",
+  "receipt_id": "EXAM-ANSWER-GK-NCA-2023-LOCAL-ANALYSIS-20260809",
+  "generated_at": "2026-08-09T12:53:40+08:00",
+  "exam_id": "GK-NCA-2023",
+  "status": "candidate_only",
+  "source_authority_status": "unverified_local_provided",
+  "answer_source_status": "missing_separate_answer_bundle",
+  "scoring_status": "not_available_as_official",
+  "mapping_status": "M0 | kp_id=N/A",
+  "rows": 22,
+  "candidate_status_counts": {
+    "candidate_mixed_analysis": 16,
+    "candidate_unverified": 6
+  },
+  "output": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NCA-2023/answers/local_analysis_candidates.jsonl",
+  "output_sha256": "6187fc8394ff5486f280ddd06b303dc35de9c474ffef78cd08d94d2d46e64ed2",
+  "report": "work/knowledge/高考分析/EXAM-LOCAL-ANALYSIS-CANDIDATES-2023.md",
+  "policy": "仅用于检索和人工比对；不得升级为官方答案、评分标准或 M1+ 映射。",
+  "raw_source_mutation": false
+}

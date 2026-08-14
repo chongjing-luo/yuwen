@@ -1,0 +1,42 @@
+{
+  "receipt_id": "RECEIPT-UNIT-X1-U04-G4-20260808",
+  "deliverable_id": "UNIT-X1-U04",
+  "gate": "DG4-MERGE",
+  "merged_at": "2026-08-08T16:25:00+08:00",
+  "artifact_version": "0.2.1",
+  "pre_merge_file_sha256": "5bb3601eb05962829c65604cecaf4b2a38c2b7a1f98db757db806f17b9013531",
+  "post_merge_file_sha256": "00e0eea0eef95963b578c6926ca25ecb1db6fa3b1038f3a1c5c731e6d6a01aba",
+  "content_change": false,
+  "allowed_diff": ["front_matter.status", "front_matter.reviewers", "ledger.status", "ledger.reviewers", "ledger.version", "state_transition"],
+  "review_binding": {
+    "rubric_version": "2.0-textbook",
+    "rubric_sha256": "ab9cc53d57834642e66e568824d1c0c53e128953e15b20b4c7bd04aa30610d43",
+    "taxonomy_sha256": "13e5e23c45c05359a5c91e360ce8bd71dbf2a841c2c6a72f1adca52bef7cbd4b",
+    "review_sha256": {
+      "unit_x1_u04_primary_review_r2_independent_20260808.md": "3350fec72dbff2c1459747cb6488ef59953b68ebf28b106181224923c7579ca5",
+      "unit_x1_u04_secondary_review_r2_independent_20260808.md": "0e4d02916386fe69eb4762913f04ca4e8dec632ae917e828c537d714ae5f3ce5"
+    },
+    "primary": {"reviewer": "independent_primary_u04_r2", "score": 100.0, "decision": "pass", "r": "R01-R10=0", "p": "P0/P1/P2=0/0/0"},
+    "secondary": {"reviewer": "independent_secondary_u04_r2", "score": 99.0, "decision": "pass", "r": "R01-R10=0", "p": "P0/P1/P2=0/0/0"}
+  },
+  "review_validator": {
+    "run_id": "VAL-20260808-161305+0800",
+    "report": null,
+    "report_sha256": "887cf09301f78b0ea5633d306f95c5b8b2134ab9c99e35a3298d949e07818ea3",
+    "availability": "hash_recorded_in_both_review_headers; immutable_report_not_archived_before_overwrite",
+    "result": "passed",
+    "errors": 0
+  },
+  "validator": {
+    "run_id": "VAL-20260808-162724+0800",
+    "report": "work/knowledge/_meta/validation_reports/archive/VAL-20260808-162724+0800.json",
+    "report_sha256": "2612c5e96aa4b1fbd99fe1f7e120cd95d06215f953b436325d012d7e3831d820",
+    "result": "passed",
+    "errors": 0
+  },
+  "upstream_snapshot": ["CARD-X1-U04-01"],
+  "downstream_impact": ["BOOK-X1"],
+  "transition": "STATE-20260808-UNIT-X1-U04-G4",
+  "status": "accepted",
+  "follow_up": "在教材锁定前补做一份只读 validator 报告归档审计；不改变正文或本次评审结论。"
+}

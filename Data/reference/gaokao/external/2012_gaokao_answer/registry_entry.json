@@ -1,0 +1,23 @@
+{
+  "source_id": "SRC-GK-2012-SC-GAOKAO-ANSWER-ATTACHMENT",
+  "artifact_id": "ART-GK-2012-SC-GAOKAO-ANSWER-ATTACHMENT",
+  "document_role": "answer_candidate_blocked",
+  "source_kind": "gaokao_answer_candidate",
+  "publisher_or_channel": "高考网/中学学科网（第三方转载）",
+  "original_url": "https://www.gaokao.com/e/20120606/4fcef9634a5c9.shtml",
+  "attachment_url": "https://files.eduuu.com/ohr/2012/06/11/172747_4fd5ba133fe3f.rar",
+  "authenticity_status": "unverified",
+  "status": "acquired_but_answer_content_absent",
+  "local_path": "Data/reference/gaokao/external/2012_gaokao_answer",
+  "coverage": "题卷 DOC；未发现答案或评分材料",
+  "relation": {
+    "type": "answer_candidate_of",
+    "target_source_id": "SRC-GK-2012-SC-QUESTION",
+    "status": "blocked_no_answer_content"
+  },
+  "evidence": [
+    "answer_source.txt 为 139 行题目文本，内容止于作文要求，无答案标记或评分段。",
+    "本地 2012_SC_answer 主答案索引仍不存在；不创建候选 JSONL。"
+  ],
+  "policy": "标题中的‘试题及答案’不作为答案存在的证据；仅在独立答案内容可定位时建立候选层。"
+}

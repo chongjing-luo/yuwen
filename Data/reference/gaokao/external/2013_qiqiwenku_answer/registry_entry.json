@@ -1,0 +1,22 @@
+{
+  "source_id": "SRC-GK-2013-SC-QIQIWENKU-ANSWER",
+  "artifact_id": "ART-GK-2013-SC-QIQIWENKU-ANSWER",
+  "source_kind": "gaokao_answer_candidate",
+  "document_role": "answer",
+  "source_level": "S3",
+  "metadata_status": "acquired_unverified_candidate_partial",
+  "publisher_or_channel": "360文库转链/齐齐文库",
+  "title": "2013年四川高考语文试题答案（齐齐文库第三方预览）",
+  "scope": "四川省自主命题",
+  "original_url": "https://wenku.so.com/d/c3cbdc68ef52be938ea746f39e9a3f84",
+  "partner_url": "https://www.qiqiwenku.com/docx/64926719.html",
+  "artifact_path": "Data/reference/gaokao/external/2013_qiqiwenku_answer",
+  "artifact_sha256": null,
+  "page_count": 29,
+  "authenticity_status": "unverified_third_party_reprint",
+  "status": "blocked_contaminated",
+  "is_canonical": false,
+  "main_answer_index_mutated": false,
+  "review_artifact": "Data/reference/gaokao/external/2013_qiqiwenku_answer/candidate_review.jsonl",
+  "contamination_reason": "answer heading is 江苏卷 and includes out-of-scope附加题 Q22-Q29"
+}

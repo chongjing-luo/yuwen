@@ -1,0 +1,67 @@
+{
+  "schema_version": "exam-reference-answer-candidate-receipt-0.2",
+  "receipt_id": "EXAM-REFERENCE-ANSWER-GK-SC-2010-20260809",
+  "generated_at": "2026-08-09T13:53:41+08:00",
+  "exam_id": "GK-SC-2010",
+  "source_registry_id": "SRC-GK-2010-SC-GAOKAO-ANSWER-CANDIDATE",
+  "source_authority_status": "unverified_third_party_reprint",
+  "coverage": {
+    "candidate_questions": [
+      1,
+      2,
+      4,
+      8,
+      9
+    ],
+    "missing_questions": [
+      3,
+      5,
+      6,
+      7,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ]
+  },
+  "inputs": {
+    "answer_source.txt": {
+      "path": "Data/reference/gaokao/external/2010_gaokao_answer/answer_source.txt",
+      "sha256": "738e3399626741700f8de1325d907807a8f83572954cc660d71f0cb4eb7da7df"
+    },
+    "source.html": {
+      "path": "Data/reference/gaokao/external/2010_gaokao_answer/source.html",
+      "sha256": "aa5d05978a94649f97ee0d1c6affcc13dd0de9977d5e90b96211c0491e226fc7"
+    },
+    "answer_bundle.rar": {
+      "path": "Data/reference/gaokao/external/2010_gaokao_answer/answer_bundle.rar",
+      "sha256": "c0d5f405cd7a09f1f60e68647ceb4b673a03e7f5ab83c2be6e86cdf491939351"
+    },
+    "四川语文答案.doc": {
+      "path": "Data/reference/gaokao/external/2010_gaokao_answer/四川语文答案.doc",
+      "sha256": "ef71c3873a5d4b1e853a3b5fc679a46018001a9b9eae844ac0f87a0ce43fa527"
+    }
+  },
+  "output": {
+    "path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-SC-2010/answers/reference_answer_candidates.jsonl",
+    "sha256": "f3167460e79f4b4834feeb2086408fa120245447dd398513ae3b92fdbd7da177",
+    "rows": 5
+  },
+  "report": {
+    "path": "work/knowledge/高考分析/EXAM-REFERENCE-ANSWER-CANDIDATES-2010.md",
+    "sha256": "032a03f0da1745143d0305e4eb37a3e06fef08451dddec26ffab5e1d21107d5d"
+  },
+  "raw_source_mutation": false,
+  "answer_index_mutation": false,
+  "scoring_status": "not_available_as_official",
+  "mapping_status": "M0 | kp_id=N/A",
+  "policy": "仅从明确答案标记建立候选；不补缺失题号、不生成官方评分标准。"
+}

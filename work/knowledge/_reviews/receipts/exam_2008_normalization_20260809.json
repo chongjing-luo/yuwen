@@ -1,0 +1,31 @@
+{
+  "schema_version": "exam-vertical-normalization-receipt-0.1",
+  "receipt_id": "EXAM-2008-NORMALIZE-20260809",
+  "exam_id": "GK-SC-2008",
+  "calibration_id": "SG-EXAM-CAL-2008-2024",
+  "generated_at": "2026-08-09T04:42:24+08:00",
+  "status": "structural_pass",
+  "source_legacy": "work/knowledge/高考分析/EXAM-2008-SC-response_nodes.jsonl",
+  "derived_output": "work/knowledge/高考分析/GK-SC-2008-response_nodes_vertical_slice.jsonl",
+  "normalization_policy": {
+    "raw_score_total": 155,
+    "choice_group": "GK-SC-2008-Q013-OPTIONAL",
+    "choice_branch_count": 2,
+    "scored_branch_count": 1,
+    "adjusted_score_total": 150,
+    "mapping_boundary": "M0_only",
+    "source_pdf_read_only": true,
+    "mineru_full_md_read_only": true
+  },
+  "validation": {
+    "validator": "scripts/validate_exam_vertical_slices.py",
+    "result": "passed",
+    "node_count": 24,
+    "question_count": 21,
+    "page_locator": "page_level_fallback"
+  },
+  "notes": [
+    "规范化只生成统一字段副本，不改写旧试点 JSONL、题段、MinerU full.md 或源 PDF。",
+    "扫描型 PDF 未在本回执中冒充完成题级 bbox 或官方答案核验。"
+  ]
+}

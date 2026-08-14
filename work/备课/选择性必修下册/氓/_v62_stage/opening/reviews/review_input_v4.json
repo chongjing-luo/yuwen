@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "review_input_id": "MENG_V62_OPENING_REVIEW_V4",
+  "created_at": "2026-08-13T12:16:26.539Z",
+  "status": "immutable_review_candidate",
+  "module_id": "MENG_V62_OPENING",
+  "page_ids": [
+    "O01",
+    "O02",
+    "O03",
+    "O04",
+    "O05",
+    "O06",
+    "O07",
+    "O08",
+    "O09"
+  ],
+  "total_minutes": 33,
+  "distribution_order": [
+    "03A at O01; contains no Meng title or later scaffold",
+    "03B at O07 after complete listening",
+    "03C at O08 after O07 response",
+    "O09 scaffold written into textbook; never preprinted"
+  ],
+  "release_gate": "P0=0 and P1=0 and P2=0 in both independent reviews",
+  "illustration_policy": "no_character_illustration_until_function_freeze",
+  "files": [
+    {
+      "role": "single_source",
+      "path": "scripts/meng_v62/content/opening.js",
+      "sha256": "8a341d498944315f8cea7c21de5dc4f11d1611db38b7f95d5f57564cc9c62c6b",
+      "bytes": 37396
+    },
+    {
+      "role": "teaching_master",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/opening/package/02_氓_V62导入教学母版.md",
+      "sha256": "f7600fdfd204841b644da035c7033ba3471909d15c3cbdd6d3bbf3a611dbcb79",
+      "bytes": 16948
+    },
+    {
+      "role": "literature_recall_sheet_O01",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/opening/package/03A_爱情与婚姻文学回忆单_O01发.md",
+      "sha256": "d3d63d6fb3823da4bd1d97d6a1586ff7fd2411006d721ff9b8402b8ef2181615",
+      "bytes": 593
+    },
+    {
+      "role": "initial_response_card_O07",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/opening/package/03B_氓_V62初听卡_O07发.md",
+      "sha256": "d04db42993d4d7cd8d946d2b8f711fab11118236bea85ddc7907f924e4acdf5c",
+      "bytes": 520
+    },
+    {
+      "role": "question_bookmark_O08",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/opening/package/03C_氓_V62三问阅读书签_O08发.md",
+      "sha256": "8e30ce7037f2c164185b0a37cba6cebbecbea6aa9829d6773608c224554a33b3",
+      "bytes": 686
+    },
+    {
+      "role": "rehearsal_script",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/opening/package/04A_氓_V62导入逐页无生试讲稿.md",
+      "sha256": "a1e2127af214ff2c8468a0033c09712e6bab60a57e18b108f16c9ddca811f6af",
+      "bytes": 17051
+    },
+    {
+      "role": "data_snapshot",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/opening/package/06_氓_V62导入课程数据快照.json",
+      "sha256": "478a6094a7e236da66bd57c42771a168e575bc8d05b9182c05f183d240aa4692",
+      "bytes": 41509
+    },
+    {
+      "role": "pptx",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/04_氓_V62导入课堂课件.pptx",
+      "sha256": "4c0573df3560734c4c8e4b0c0f187de524ecf54937fa8e9c0be568d970d24dd9",
+      "bytes": 53540
+    },
+    {
+      "role": "pptx_text_and_notes",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/markitdown_v4.txt",
+      "sha256": "3394bf5142648c46cdb61961ab68dbf01831011d4e1f9417221be7772f2e2fe3",
+      "bytes": 23707
+    },
+    {
+      "role": "rendered_pdf",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v4/04_氓_V62导入课堂课件.pdf",
+      "sha256": "795f0a7031e57332b8fca024d1e67c16c14315eaa364a38e928b50ca2c039cef",
+      "bytes": 140749
+    },
+    {
+      "role": "visual_contact_sheet",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v4/contact.jpg",
+      "sha256": "6328fbb6c5344485083a75e66c13b138656ab00325605042d3ebf38704e3ba5e",
+      "bytes": 151378
+    },
+    {
+      "role": "rendered_slide_1",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v4/slide-1.png",
+      "sha256": "cf8ce78bb8f036f78c1b5a4da2d8f189608effd85c1af9f661ad2f46216a8206",
+      "bytes": 77342
+    },
+    {
+      "role": "rendered_slide_2",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v4/slide-2.png",
+      "sha256": "ea26335765c9e73c4397a22e009362f7ff54cd4a2d43cc3d70714974f5afecfc",
+      "bytes": 74014
+    },
+    {
+      "role": "rendered_slide_3",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v4/slide-3.png",
+      "sha256": "909e7f0dc72b57740bf8d80840a664c17147ea5ab665d7d85fb597d2bcb3f029",
+      "bytes": 98295
+    },
+    {
+      "role": "rendered_slide_4",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v4/slide-4.png",
+      "sha256": "427d98d86030538734a176c42d94f44388bdee2003c8225da3e0534ad653bc71",
+      "bytes": 37043
+    },
+    {
+      "role": "rendered_slide_5",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v4/slide-5.png",
+      "sha256": "791ac432602e9546efe536eca7838608feea63d826cbeb924b3cc33439a845c1",
+      "bytes": 227837
+    },
+    {
+      "role": "rendered_slide_6",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v4/slide-6.png",
+      "sha256": "2c92d43850ef7564178a607f7e47a411fcfd2a05127d08b88d47e8df0a8569f6",
+      "bytes": 236871
+    },
+    {
+      "role": "rendered_slide_7",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v4/slide-7.png",
+      "sha256": "2c76ad65e6f5fad82095fd8244905c4eb7498139ca236210b34d3302fc84d167",
+      "bytes": 54971
+    },
+    {
+      "role": "rendered_slide_8",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v4/slide-8.png",
+      "sha256": "05ad9d31b392212f55dd58f9e1bd63fb2f1102b8569446ef9d60675cae3c868c",
+      "bytes": 105017
+    },
+    {
+      "role": "rendered_slide_9",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/opening/pptx/rendered_v4/slide-9.png",
+      "sha256": "6ea55459fa1551b4d4aaaebb92da454d54c0a5ce8eb6060d89b85ce8ec194819",
+      "bytes": 132993
+    }
+  ]
+}

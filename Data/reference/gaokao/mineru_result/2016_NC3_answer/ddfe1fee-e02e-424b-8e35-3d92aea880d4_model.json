@@ -1,0 +1,140 @@
+[
+    {
+        "layout_dets": [
+            {
+                "cls_id": 12,
+                "label": "header",
+                "score": 0.4791,
+                "bbox": [
+                    542,
+                    130,
+                    1109,
+                    172
+                ],
+                "index": 1
+            },
+            {
+                "cls_id": 21,
+                "label": "table",
+                "score": 0.9875,
+                "bbox": [
+                    125,
+                    203,
+                    1527,
+                    482
+                ],
+                "index": 2,
+                "html": "<table><tr><td rowspan=1 colspan=1>科目</td><td rowspan=1 colspan=2>试题答案</td><td rowspan=1 colspan=1>下载</td><td rowspan=1 colspan=1>科目</td><td rowspan=1 colspan=2>试题答案</td><td rowspan=1 colspan=1>下载</td></tr><tr><td rowspan=1 colspan=1>语文</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td><td rowspan=1 colspan=1>英语</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td></tr><tr><td rowspan=1 colspan=1>理科数学</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td><td rowspan=1 colspan=1>文科数学</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td></tr><tr><td rowspan=1 colspan=1>理科综合</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td><td rowspan=1 colspan=1>文科综合</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td></tr></table>"
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9812,
+                "bbox": [
+                    116,
+                    524,
+                    1534,
+                    681
+                ],
+                "index": 3
+            },
+            {
+                "cls_id": 14,
+                "label": "image",
+                "score": 0.6068,
+                "bbox": [
+                    120,
+                    710,
+                    166,
+                    756
+                ],
+                "index": 4
+            },
+            {
+                "cls_id": 7,
+                "label": "figure_title",
+                "score": 0.8669,
+                "bbox": [
+                    641,
+                    721,
+                    1044,
+                    765
+                ],
+                "index": 5
+            },
+            {
+                "cls_id": 21,
+                "label": "table",
+                "score": 0.9781,
+                "bbox": [
+                    126,
+                    805,
+                    1527,
+                    1106
+                ],
+                "index": 6,
+                "html": "<table><tr><td rowspan=1 colspan=11>2016年高考全国各省市各科试题及答案</td></tr><tr><td rowspan=1 colspan=1>全国卷I</td><td rowspan=1 colspan=1>全国卷ⅡII</td><td rowspan=1 colspan=1>湖北</td><td rowspan=1 colspan=1>山东</td><td rowspan=1 colspan=1>广东</td><td rowspan=1 colspan=1>四川</td><td rowspan=1 colspan=1>安徽</td><td rowspan=1 colspan=1>山西</td><td rowspan=1 colspan=1>黑龙江</td><td rowspan=1 colspan=1>辽宁</td><td rowspan=1 colspan=1>福建</td></tr><tr><td rowspan=1 colspan=1>河南</td><td rowspan=1 colspan=1>河北</td><td rowspan=1 colspan=1>江苏</td><td rowspan=1 colspan=1>陕西</td><td rowspan=1 colspan=1>湖南</td><td rowspan=1 colspan=1>北京</td><td rowspan=1 colspan=1>吉林</td><td rowspan=1 colspan=1>贵州</td><td rowspan=1 colspan=1>广西</td><td rowspan=1 colspan=1>云南</td><td rowspan=1 colspan=1>新疆</td></tr><tr><td rowspan=1 colspan=1>内蒙古</td><td rowspan=1 colspan=1>甘肃</td><td rowspan=1 colspan=1>浙江</td><td rowspan=1 colspan=1>重庆</td><td rowspan=1 colspan=1>江西</td><td rowspan=1 colspan=1>天津</td><td rowspan=1 colspan=1>上海</td><td rowspan=1 colspan=1>宁夏</td><td rowspan=1 colspan=1>青海</td><td rowspan=1 colspan=1>海南</td><td rowspan=1 colspan=1>西藏</td></tr></table>"
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    543,
+                    131,
+                    1107,
+                    169
+                ],
+                "score": 1.0,
+                "text": ""
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    197,
+                    532,
+                    1508,
+                    559
+                ],
+                "score": 1.0,
+                "text": ""
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    126,
+                    585,
+                    1525,
+                    617
+                ],
+                "score": 1.0,
+                "text": ""
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    126,
+                    643,
+                    909,
+                    670
+                ],
+                "score": 1.0,
+                "text": ""
+            },
+            {
+                "label": "ocr_text",
+                "bbox": [
+                    650,
+                    727,
+                    1037,
+                    761
+                ],
+                "score": 1.0,
+                "text": ""
+            }
+        ],
+        "page_info": {
+            "page_no": 0,
+            "width": 1653,
+            "height": 2339
+        }
+    }
+]

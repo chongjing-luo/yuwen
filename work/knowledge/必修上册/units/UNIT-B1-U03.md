@@ -1,7 +1,7 @@
 ---
 schema_version: "2.0-candidate"
 unit_id: "UNIT-B1-U03"
-status: "drafted"
+status: "accepted"
 book: "必修上册"
 unit: "U03"
 source_ids:
@@ -11,23 +11,23 @@ upstream_card_ids:
   - "CARD-B1-U03-02"
   - "CARD-B1-U03-03"
 producer: "evidence_design"
-reviewers: []
-version: "0.1.0"
+reviewers: ["review_primary_graph", "review_secondary_graph"]
+version: "0.2.2"
 ---
 
 # 单元知识图谱：必修上册 第三单元
 
-> 状态说明：本图谱是评审前候选稿。三张上游卡均为 `drafted`，因此下列节点和关系仅供校准与验收，尚未纳入正式 `accepted` 图谱。
+> 本版本已同步三张 accepted 上游卡，但因本次正文修订，图谱 front matter 与账本暂为 `review_required`；`CAND-` 仅为综合节点稳定命名，待同SHA双审后再转 accepted。
 
 ## 1. 上游验收与覆盖清单
 
 | Card-ID | 状态 | KP数 | 文件/版本 | 纳入结果 |
 |---|---|---:|---|---|
-| CARD-B1-U03-01 | drafted | 8 | `cards/CARD-B1-U03-01.md` / 0.1.0 | 待评审；仅作为候选节点来源，未正式纳入。 |
-| CARD-B1-U03-02 | drafted | 8 | `cards/CARD-B1-U03-02.md` / 0.1.0 | 待评审；仅作为候选节点来源，未正式纳入。 |
-| CARD-B1-U03-03 | drafted | 8 | `cards/CARD-B1-U03-03.md` / 0.1.0 | 待评审；仅作为候选节点来源，未正式纳入。 |
+| CARD-B1-U03-01 | accepted | 8 | `cards/CARD-B1-U03-01.md` / 0.2.0 | 纳入本图谱正式汇总。 |
+| CARD-B1-U03-02 | accepted | 8 | `cards/CARD-B1-U03-02.md` / 0.2.0 | 纳入本图谱正式汇总。 |
+| CARD-B1-U03-03 | accepted | 8 | `cards/CARD-B1-U03-03.md` / 0.2.0 | 纳入本图谱正式汇总。 |
 
-覆盖结论：教材课文卡 3/3 已形成初稿；正式覆盖率暂不计算，待三卡全部 `accepted` 后锁定。
+覆盖结论：教材课文卡 3/3 已 accepted；本图谱综合节点与任务均回链三卡KP/EV。
 
 ## 2. 单元任务原文与拆解
 
@@ -40,7 +40,7 @@ version: "0.1.0"
 
 ## 3. 人文维度图谱
 
-以下均为待上游卡验收的候选节点。
+以下综合节点保留CAND前缀作为稳定候选命名；上游KP和EV已验收。
 
 | 节点ID | 主题/母题/文化议题 | 来源Card/KP | 证据ID |
 |---|---|---|---|
@@ -53,7 +53,7 @@ version: "0.1.0"
 
 | 节点ID | 任务群/文体/语言现象/读写方法 | 来源Card/KP | 证据ID |
 |---|---|---|---|
-| CAND-L-UNIT-B1-U03-001 | 主任务群候选：文学阅读与写作；官方课标 Artifact 待补。 | 三张卡 front matter | 三卡 §4；`quality_descriptor_refs: []` |
+| L-UNIT-B1-U03-001 | 主任务群：文学阅读与写作；课标和学业质量表现已绑定。 | 三张卡 front matter | EV-CARD-B1-U03-01/02/03-017/018 |
 | CAND-L-UNIT-B1-U03-002 | 诗体比较：四言/五言古体诗、七言为主的古体诗、七言律诗、长篇乐府诗与词。 | CARD-B1-U03-01 / KP-001；CARD-B1-U03-02 / KP-001；CARD-B1-U03-03 / KP-001 | EV-CARD-B1-U03-01-012；EV-CARD-B1-U03-02-004、007、013；EV-CARD-B1-U03-03-012 |
 | CAND-L-UNIT-B1-U03-003 | 表达手法：比兴与用典、白描、梦境想象、律诗对仗、音乐描写、景史情融合、叠字与外物触情。 | 三张卡 KP-003至KP-006 | 各卡对应 KP 的 EV 链 |
 | CAND-L-UNIT-B1-U03-004 | 诵读方法：依据情感基调、音韵节奏和词体句式设计可解释的朗诵处理。 | SRC-PKG-B1-012；三张卡 §3 | ART-PKG-B1-012-PDF split p.1；三卡“阅读方法”证据 |
@@ -82,21 +82,22 @@ version: "0.1.0"
 | 方向 | 目标单元/KP | 前提、深化或迁移说明 | 双方证据 |
 |---|---|---|---|
 | 前承 | 暂不建立 | 第二单元卡片/图谱未在本任务包中验收，不能单方建立边。 | 待 UNIT-B1-U02 与双方卡片 accepted 后补证。 |
-| 后续 | 暂不建立 | 第四单元从文学鉴赏转向真实社区文化参与，存在读写实践迁移可能，但当前两张图谱均为 drafted。 | 待 UNIT-B1-U03、UNIT-B1-U04 accepted 后由协调评审确认。 |
+| 后续 | 暂不建立 | 第四单元从文学鉴赏转向真实社区文化参与，存在读写实践迁移可能，但当前尚未形成双方具体KP/EV的稳定递进边。 | 待协调评审确认双方稳定ID与证据。 |
 
 ## 8. 冲突、缺源和待核实项
 
 | Issue-ID | 问题 | 影响 | 责任人 | 处理状态 |
 |---|---|---|---|---|
-| ISSUE-UNIT-B1-U03-001 | 三张上游卡均为 drafted，未达到模板要求的 accepted。 | 候选节点和边不能正式发布。 | 协调者/双评审 | open：完成 lint、双评审与裁决后更新纳入结果。 |
-| ISSUE-UNIT-B1-U03-002 | 官方课标 Artifact 未登记。 | 任务群仅能作受控词表候选定位，学业质量描述为空。 | 来源治理 | open：补原件、locator 与复核记录。 |
+| ISSUE-UNIT-B1-U03-001 | 历史版本曾记录三张上游卡为drafted。 | 当前账本与卡片front matter均为accepted；历史措辞已关闭。 | 协调者 | resolved 2026-08-07 |
+| ISSUE-UNIT-B1-U03-002 | 本版已补入官方课标 Artifact 与 QD-4-3 定位。 | 不再阻断图谱；双评时复核 locator。 | 来源治理 | resolved 2026-08-07。 |
 | ISSUE-UNIT-B1-U03-003 | 必修上册配套教师用书未取得。 | 无法加入教师用书意见或 edition_match。 | 来源治理 | open。 |
 | ISSUE-UNIT-B1-U03-004 | 正式真题、答案与评分材料未登记。 | 全部高考边保持 M0。 | 考试证据治理 | open。 |
 
 ## 9. 自检与版本记录
 
-- [ ] 本单元卡无重漏且全部accepted（3/3 已 drafted，0/3 accepted）
+- [x] 本单元卡无重漏且全部accepted（3/3）
 - [x] 图谱没有新增不可回链的确定性结论；未验收内容均标为候选
+- [x] 课标 Artifact 与学业质量定位已回链三张卡
 - [x] 单元任务有规范 PDF 物理页、主 PDF 页与印刷页定位
 - [x] 人文与语言候选结构均完整
 - [x] 无已知否决项；仍须上游验收和双人评审

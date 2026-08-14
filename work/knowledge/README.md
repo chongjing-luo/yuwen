@@ -1,6 +1,6 @@
 # 知识点提取执行区
 
-本目录供多个 agent 按《语文备课系统：教材知识点提取与评价执行方案（V2.0）》协作。当前契约状态为 `2.0-candidate`；只有通过10卡+5图校准门禁后，协调者才能改为 `frozen`。
+本目录供教材与高考阶段按《语文备课系统：教材知识点提取与评价执行方案（V2.4）》协作。教材锁定记录为 `TEXTBOOK-LOCK-2.0-textbook`（81 卡、28 图、5 册表，共114项）；2008—2024 试卷已完成结构化批处理和 `SG-EXAM-CAL` 候选冻结，当前进入顶层节点→真实小问拆解与知识点抽取，教材—真题确定性映射仍保持 M0。
 
 ## 开始前
 
@@ -32,13 +32,17 @@ work/knowledge/
 └── 全局总览/
 ```
 
+## 2026-08-07 G2 校准状态
+
+原定 10 张知识卡和 5 张单元图谱已完成双角色评分，所有评审均达到 92 分或以上且未触发 R01–R10；U06 补齐的 CARD-B1-U06-03/04 也已完成预门禁双评。评分记录位于 `_reviews/scores/g2_reviews_20260807.jsonl`，汇总位于 `_reviews/scores/g2_review_summary_20260807.md`。教材契约冻结记录见 `dev/knowledge-extraction-foundation/04_execution/contract_freeze_20260807.md`。
+
 ## 2026-08-06 首轮校准执行状态
 
-已完成一轮受控吞吐校准：10 张知识卡和 5 张单元图谱已落盘，全部登记为 `drafted`，对应 15 项交付记录已写入 `_meta/deliverables.jsonl` 并标注 owner。图谱仅作候选校准视图，未把任何 `drafted` 卡汇总为正式 `accepted` 图谱。
+教材 81 张卡、28 份图谱和 5 份册级总表已完成 `accepted` 并锁定；高考首轮已生成 310 个顶层题目节点，尚未将其误报为最终小问或 M1/M2 映射。
 
 任务包位于 `dev/knowledge-extraction-foundation/05_task_packets/`；本轮覆盖必修上册 U02–U06。U06 图谱明确标出规划中的 U06-03、U06-04 尚未交付，U04 的真实学生实施材料也仍待补证。
 
-本轮完成后仍须经过独立评分、否决项审查和协调者裁决，才能推进 `drafted → linted → reviewed → accepted`；候选契约仍保持 `candidate`。
+其余批次仍须遵循 `drafted → linted → primary_reviewed → secondary_reviewed → accepted`；已冻结契约不得通过自由文本绕过门禁。教材 114 项已完成锁定；高考结构包和验证入口见 `work/knowledge/高考分析/SG-EXAM-CAL-RECEIPT.md`、`scripts/validate_exam_calibration_manifest.py` 和 `scripts/validate_exam_kp_extraction_drafts.py`。
 
 ## Agent执行协议
 
@@ -59,8 +63,8 @@ work/knowledge/
 
 ## 当前边界
 
-- 现有3张卡和1份图谱为`draft_existing`，须按V2返修后重新校验评分。
-- 高考评价体系、初中材料、四川政策和四年真题尚未全部取得；相关交付保持`planned`，不得用网络二手材料填补。
+- 现有教材核心产物已全部锁定；任何上游变化仍需触发 `review_required`。
+- 高考 17 年主批次已有本地 PDF/MinerU 快照并完成结构化；来源主体、下载 URL 和解析卷权威等级尚未全部核验，故当前只允许候选结构节点和 M0，不建立 M1/M2 映射。
 - `TB2→B2`的`edition_match`当前为`unknown`，教师用书意见必须保留该边界。
 
 ## 基础设施命令

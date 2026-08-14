@@ -27,7 +27,7 @@
   },
   "command": "scripts/validate_knowledge_base.py",
   "counts": {
-    "accepted_deliverables": 0,
+    "accepted_deliverables": 114,
     "artifacts": 1266,
     "deliverables": 120,
     "source_relations": 146,
@@ -38,11 +38,11 @@
   "hash_verification": true,
   "project_root": "/home/ubuntu/homes/LuoChongjing/Methods/yuwen",
   "result": "passed",
-  "run_at": "2026-08-06T06:11:59.076305+08:00",
-  "run_id": "VAL-20260806-061159+0800",
+  "run_at": "2026-08-10T14:10:28.097629+08:00",
+  "run_id": "VAL-20260810-141028+0800",
   "warnings": [
-    "外部评价体系、初中依据、四川政策和四年真题尚未完整登记",
+    "外部评价体系、初中依据、四川政策及官方原卷/评分资料尚未并入教材主注册表；2011—2025候选批次另见Data/reference/gaokao/",
     "TB2与B2的edition_match仍为unknown",
-    "契约状态为candidate，须经G2校准后冻结"
+    "教材契约已冻结为2.0-textbook；试卷契约仍需在G-TB后另行校准"
   ]
 }

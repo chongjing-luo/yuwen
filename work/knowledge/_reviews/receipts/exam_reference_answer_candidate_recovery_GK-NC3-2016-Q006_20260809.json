@@ -1,0 +1,35 @@
+{
+  "schema_version": "exam-reference-answer-candidate-recovery-receipt-0.1",
+  "receipt_id": "EXAM-REFERENCE-ANSWER-RECOVERY-GK-NC3-2016-Q006-20260809",
+  "generated_at": "2026-08-09T12:19:12+08:00",
+  "status": "candidate_only_local_recovery",
+  "source_mutation": false,
+  "answer_index_mutation": false,
+  "source_segment": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NC3-2016/segments/analysis/Q006.md",
+  "source_segment_sha256": "ebc781ea1b6dfbdf35dc1f8568d1192b50558a77c69e6c6580ccb3bf6ccdea3c",
+  "output": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NC3-2016/answers/reference_answer_candidates_q006_local_analysis.jsonl",
+  "output_sha256": "a6ea062f639e6ed2eba5cf3f435e3d90d3d67a4feec99c7b8d37517384cf1af0",
+  "report": "work/knowledge/高考分析/EXAM-REFERENCE-ANSWER-CANDIDATE-RECOVERY-2016-Q006.md",
+  "report_sha256": "16341315a4c014389488eb1d4aecb69e790f232e7b51f81fd844911df32882d2",
+  "comparison": {
+    "third_party_candidate_id": "GK-NC3-2016-Q006-GZYWTK-ANSWER",
+    "exact_text_match": false,
+    "compact_text_match": false,
+    "local_sha256": "714a2a76b683f7d007cdaf1166ad6fe7d6b2033dbfae9753e483ec1ca36a650c",
+    "third_party_sha256": "185c354f7cb1b288176340335c7504605efacf3d6489c0e3dcbb8b7e6dd168be",
+    "shared_content_guards": {
+      "答B给3分": true,
+      "坚持独立思考": true,
+      "天下兴亡": true,
+      "匹夫有责": true
+    },
+    "differences": [
+      "本地解析切片含分小问换行与标点；第三方候选将小问答案压为连续段落。",
+      "本地切片在第（3）小问后保留孤立‘1人’残片，第三方候选未保留；该残片按 OCR/版面污染处理。",
+      "本地切片为‘爱国主义传统’，第三方候选为‘爱国注意传统’，存在文字差异，不能静默裁决。"
+    ]
+  },
+  "scoring_status": "not_available_as_official",
+  "mapping_status": "M0 | kp_id=N/A",
+  "policy": "本地解析切片仅作候选；同源切片与第三方转载的文本一致不等于官方核验，不写回主答案索引。"
+}

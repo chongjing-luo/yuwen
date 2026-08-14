@@ -1,0 +1,25 @@
+{
+  "schema_version": "remaining-language-kp-batch-validation-0.1",
+  "result": "passed",
+  "row_count": 6,
+  "type_counts": {
+    "sentence_segmentation": 3,
+    "summary_or_application": 3
+  },
+  "node_ids": [
+    "GK-SC-2013-Q012-TOP",
+    "GK-SC-2013-Q019-TOP",
+    "GK-SC-2014-Q012-TOP",
+    "GK-SC-2014-Q019-TOP",
+    "GK-SC-2015-Q012-TOP",
+    "GK-SC-2015-Q019-TOP"
+  ],
+  "errors": [],
+  "checks": {
+    "coverage": true,
+    "traceability": true,
+    "answer_gate": true,
+    "m0_boundary": true,
+    "authority_gate": true
+  }
+}

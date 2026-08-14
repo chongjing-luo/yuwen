@@ -1,0 +1,22 @@
+{
+  "schema_version": "exam-extract-validation-0.1",
+  "exam_id": "GK-SC-2008",
+  "result": "passed",
+  "errors": [],
+  "warnings": [],
+  "checks": {
+    "manifest_roles": true,
+    "raw_hashes": true,
+    "clean_advertisement_isolation": true,
+    "question_coverage": true,
+    "provenance_links": true,
+    "segment_hashes": true,
+    "answer_bundle": true,
+    "answer_index": true,
+    "materials": true,
+    "exception_log": true
+  },
+  "answer_state": "unverified_local_provided",
+  "material_count": 5,
+  "expected_material_count": 5
+}

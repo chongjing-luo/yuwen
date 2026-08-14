@@ -1,0 +1,13 @@
+{
+  "schema_version": "reference-answer-candidate-validation-2016-q006-0.1",
+  "result": "passed",
+  "rows": 1,
+  "main_q006_status": "N/A",
+  "errors": [],
+  "checks": {
+    "single_question_coverage": true,
+    "source_hashes": true,
+    "authority_gate": true,
+    "main_index_unchanged_gate": true
+  }
+}

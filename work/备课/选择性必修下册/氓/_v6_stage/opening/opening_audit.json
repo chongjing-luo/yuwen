@@ -5,109 +5,7 @@
     "events": [
       {
         "actions": [
-          "看题名、出处并在教材中定位全文"
-        ],
-        "artifact_locations": [
-          "教材题名旁"
-        ],
-        "artifacts": [
-          "教材题名旁"
-        ],
-        "audit_scope": "learning_event",
-        "batch": "opening",
-        "carrier_ids": [
-          "N001"
-        ],
-        "event_id": "E_TITLE",
-        "evidence_refs": [
-          "N001#unique_function"
-        ],
-        "execution_order": 11,
-        "gate_4": {
-          "evidence_refs": [
-            "E_TITLE#observable_change"
-          ],
-          "failure_code": null,
-          "gate_id": "G4",
-          "gate_status": "pass",
-          "reviewed_at": "2026-08-13T10:30:00+08:00",
-          "reviewer": "v6-opening-current-self-reviewer"
-        },
-        "gate_5": {
-          "evidence_refs": [
-            "E_TITLE#artifacts",
-            "E_QUESTIONS#inputs"
-          ],
-          "failure_code": null,
-          "gate_id": "G5",
-          "gate_status": "pass",
-          "reviewed_at": "2026-08-13T10:30:00+08:00",
-          "reviewer": "v6-opening-current-self-reviewer"
-        },
-        "implemented": true,
-        "inherited_functions": [],
-        "inputs": [
-          "教材中的《氓》题名和出处"
-        ],
-        "legacy_source_refs": [
-          "S002"
-        ],
-        "next_use_contracts": [
-          {
-            "expected_use": "从旧有文学经验进入爱情与婚姻主题",
-            "target_event_id": "E_QUESTIONS",
-            "target_input_field": "inputs"
-          }
-        ],
-        "next_uses": [
-          "从旧有文学经验进入爱情与婚姻主题"
-        ],
-        "node_id": "E_TITLE",
-        "node_type": "event",
-        "observable_change": {
-          "after": "共同面向《氓》题名与出处",
-          "before": "注意尚未聚拢",
-          "criterion": "学生已翻到相同文本"
-        },
-        "owner_page_ids": [
-          "N001"
-        ],
-        "participation_contract": {
-          "all_students_have_entry": true,
-          "artifact_is_saved": true,
-          "later_reuse_is_named": true,
-          "listener_task": "听清题名出处，核对自己翻到的文本"
-        },
-        "release_status": "final",
-        "review_status": {
-          "adjudication": null,
-          "consensus": "passed",
-          "scope": "learning_event_structure",
-          "self_review": {
-            "defect_ids": [],
-            "reviewed_at": "2026-08-13T10:30:00+08:00",
-            "reviewer": "v6-opening-current-self-reviewer",
-            "status": "pass"
-          },
-          "student_reception": {
-            "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
-            "reviewer": "student_reception_qa",
-            "status": "pass"
-          },
-          "visual": {
-            "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
-            "reviewer": "ppt_visual_qa",
-            "status": "pass"
-          }
-        },
-        "terminal_sink": false,
-        "terminal_use": {}
-      },
-      {
-        "actions": [
-          "每人先独立写1—3篇；45秒仍空白者翻目录、看隐藏提示条或先听后补"
+          "每人先独立检索，至少写一篇，能想起更多就继续补；60秒仍空白者翻目录、领篇名提示条或先听后补"
         ],
         "artifact_locations": [
           "学习单·旧故事清单"
@@ -122,7 +20,7 @@
         "evidence_refs": [
           "N002#unique_function"
         ],
-        "execution_order": 21,
+        "execution_order": 11,
         "gate_4": {
           "evidence_refs": [
             "E_RECALL_PERSONAL#observable_change"
@@ -147,7 +45,7 @@
         "implemented": true,
         "inherited_functions": [],
         "inputs": [
-          "个人初高中语文学习记忆、教材目录和45秒后按需领取的篇名提示条"
+          "个人初高中语文学习记忆、教材目录和60秒后按需领取的篇名提示条"
         ],
         "legacy_source_refs": [
           "S003",
@@ -166,9 +64,9 @@
         "node_id": "E_RECALL_PERSONAL",
         "node_type": "event",
         "observable_change": {
-          "after": "每人拥有一份可说的旧经验",
+          "after": "每人拥有一份可说且可继续扩充的旧经验",
           "before": "等待教师列举作品",
-          "criterion": "清单含篇名和朴素主题"
+          "criterion": "清单至少含一篇的篇名和朴素主题，不设三篇上限"
         },
         "owner_page_ids": [
           "N002"
@@ -192,13 +90,13 @@
           },
           "student_reception": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "student_reception_qa",
             "status": "pass"
           },
           "visual": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "ppt_visual_qa",
             "status": "pass"
           }
@@ -208,13 +106,13 @@
       },
       {
         "actions": [
-          "四人依次发言，每人15—20秒；记录者只记篇名与主题短语"
+          "四人依次发言，每人15—20秒；每人圈两项，小组据全员材料形成两张不同贡献卡"
         ],
         "artifact_locations": [
-          "学习单A·小组作品谱；空白磁贴卡·全组贡献卡"
+          "学习单A·小组作品谱、个人两项圈选与贡献卡来源；两张带组号－卡号－原提议者号－签认栏的磁贴贡献卡"
         ],
         "artifacts": [
-          "学习单A·小组作品谱；空白磁贴卡·全组贡献卡"
+          "学习单A·小组作品谱、个人两项圈选与贡献卡来源；两张带组号－卡号－原提议者号－签认栏的磁贴贡献卡"
         ],
         "audit_scope": "learning_event",
         "batch": "opening",
@@ -223,7 +121,7 @@
         "evidence_refs": [
           "N003#unique_function"
         ],
-        "execution_order": 31,
+        "execution_order": 21,
         "gate_4": {
           "evidence_refs": [
             "E_RECALL_GROUP#observable_change"
@@ -271,9 +169,9 @@
         "node_id": "E_RECALL_GROUP",
         "node_type": "event",
         "observable_change": {
-          "after": "小组形成多人共同作品谱",
+          "after": "小组形成多人共同作品谱并筛出两项不同贡献",
           "before": "个人清单彼此隔离",
-          "criterion": "记录中可追溯每人贡献"
+          "criterion": "两张卡可追溯到原提议者并保留签认，两张卡不得完全重复"
         },
         "owner_page_ids": [
           "N003"
@@ -282,7 +180,7 @@
           "all_students_have_entry": true,
           "artifact_is_saved": true,
           "later_reuse_is_named": true,
-          "listener_task": "听者勾记一项自己未想到的作品或主题"
+          "listener_task": "听者勾记自己未想到的作品或主题，四轮后留下两项选择"
         },
         "release_status": "final",
         "review_status": {
@@ -297,13 +195,13 @@
           },
           "student_reception": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "student_reception_qa",
             "status": "pass"
           },
           "visual": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "ppt_visual_qa",
             "status": "pass"
           }
@@ -313,7 +211,7 @@
       },
       {
         "actions": [
-          "每组先贴贡献卡，再用20秒说新增作品或不同主题；八组公开、贴卡、换组与听众补记共5分钟"
+          "每组先贴两张贡献卡，再用20秒说明一处新增或不同；八组公开、贴卡、换组与听众补记共6分钟"
         ],
         "artifact_locations": [
           "学习单·我未想到的一项；黑板或磁贴板现场区"
@@ -328,7 +226,7 @@
         "evidence_refs": [
           "N004#unique_function"
         ],
-        "execution_order": 41,
+        "execution_order": 31,
         "gate_4": {
           "evidence_refs": [
             "E_RECALL_CLASS#observable_change"
@@ -375,9 +273,9 @@
         "node_id": "E_RECALL_CLASS",
         "node_type": "event",
         "observable_change": {
-          "after": "看见全班更广的文学主题",
+          "after": "看见由约十六张卡组成的更广文学主题场",
           "before": "只知道本组作品",
-          "criterion": "每人留下至少一项新增记录"
+          "criterion": "每人留下新增记录或一次有依据的重复核对；每组两张卡可追溯"
         },
         "owner_page_ids": [
           "N004"
@@ -386,7 +284,7 @@
           "all_students_have_entry": true,
           "artifact_is_saved": true,
           "later_reuse_is_named": true,
-          "listener_task": "全班每人勾下一项新增内容"
+          "listener_task": "有新增者记下一项；暂无新增者核对一张重复卡是否补出不同说法，并如实留下核对结果"
         },
         "release_status": "final",
         "review_status": {
@@ -401,13 +299,13 @@
           },
           "student_reception": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "student_reception_qa",
             "status": "pass"
           },
           "visual": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "ppt_visual_qa",
             "status": "pass"
           }
@@ -417,13 +315,13 @@
       },
       {
         "actions": [
-          "全班静看八张贡献卡；一名学生试移一张并说理由；教师只沿现场材料串联；全班核对、补充或纠正"
+          "每人先连接两张卡并临时命名；至少三名学生移动、命名、引用卡片文字；全班执行保留、改名或移回，提议者留下修订"
         ],
         "artifact_locations": [
-          "黑板或磁贴板主题谱；学习单·相近与不同"
+          "黑板或磁贴板主题谱；学习单·卡号、临时名字与保留／改名／移回记录"
         ],
         "artifacts": [
-          "黑板或磁贴板主题谱；学习单·相近与不同"
+          "黑板或磁贴板主题谱；学习单·卡号、临时名字与保留／改名／移回记录"
         ],
         "audit_scope": "learning_event",
         "batch": "opening",
@@ -432,7 +330,7 @@
         "evidence_refs": [
           "N005#unique_function"
         ],
-        "execution_order": 51,
+        "execution_order": 41,
         "gate_4": {
           "evidence_refs": [
             "E_THEME_MAP#observable_change"
@@ -445,7 +343,7 @@
         },
         "gate_5": {
           "evidence_refs": [],
-          "expected_use": "圆桌讨论回看主题谱，比较《氓》带来的新认识",
+          "expected_use": "先揭示今天的新篇目；全文后圆桌讨论再回看主题谱",
           "failure_code": null,
           "gate_id": "G5",
           "gate_status": "deferred",
@@ -468,20 +366,20 @@
         ],
         "next_use_contracts": [
           {
-            "expected_use": "圆桌讨论回看主题谱，比较《氓》带来的新认识",
+            "expected_use": "先揭示今天的新篇目；全文后圆桌讨论再回看主题谱",
             "target_event_id": "E_MARRIAGE_ROUND_TABLE",
             "target_input_field": "inputs"
           }
         ],
         "next_uses": [
-          "圆桌讨论回看主题谱，比较《氓》带来的新认识"
+          "先揭示今天的新篇目；全文后圆桌讨论再回看主题谱"
         ],
         "node_id": "E_THEME_MAP",
         "node_type": "event",
         "observable_change": {
-          "after": "形成带作品出处的宽广主题场",
+          "after": "学生把现场卡片组织成带出处、可争辩的主题谱",
           "before": "作品和主题仍零散",
-          "criterion": "每个主题至少保留一篇现场作品"
+          "criterion": "至少三组连接由学生命名，每组绑定卡号并保存一次保留、改名或移回的核对结果"
         },
         "owner_page_ids": [
           "N005"
@@ -490,7 +388,7 @@
           "all_students_have_entry": true,
           "artifact_is_saved": true,
           "later_reuse_is_named": true,
-          "listener_task": "核对每个主题是否能追溯到现场作品"
+          "listener_task": "每人核对卡上文字并保存一条保留、改名或移回的证据"
         },
         "release_status": "provisional",
         "review_status": {
@@ -505,13 +403,115 @@
           },
           "student_reception": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "student_reception_qa",
             "status": "pass"
           },
           "visual": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
+            "reviewer": "ppt_visual_qa",
+            "status": "pass"
+          }
+        },
+        "terminal_sink": false,
+        "terminal_use": {}
+      },
+      {
+        "actions": [
+          "看题名、听读题音，在教师报页码后翻到教材全文"
+        ],
+        "artifact_locations": [
+          "教材题名旁"
+        ],
+        "artifacts": [
+          "教材题名旁"
+        ],
+        "audit_scope": "learning_event",
+        "batch": "opening",
+        "carrier_ids": [
+          "N001"
+        ],
+        "event_id": "E_TITLE",
+        "evidence_refs": [
+          "N001#unique_function"
+        ],
+        "execution_order": 51,
+        "gate_4": {
+          "evidence_refs": [
+            "E_TITLE#observable_change"
+          ],
+          "failure_code": null,
+          "gate_id": "G4",
+          "gate_status": "pass",
+          "reviewed_at": "2026-08-13T10:30:00+08:00",
+          "reviewer": "v6-opening-current-self-reviewer"
+        },
+        "gate_5": {
+          "evidence_refs": [
+            "E_TITLE#artifacts",
+            "E_QUESTIONS#inputs"
+          ],
+          "failure_code": null,
+          "gate_id": "G5",
+          "gate_status": "pass",
+          "reviewed_at": "2026-08-13T10:30:00+08:00",
+          "reviewer": "v6-opening-current-self-reviewer"
+        },
+        "implemented": true,
+        "inherited_functions": [],
+        "inputs": [
+          "现场主题谱之后出现的《氓》题名与出处"
+        ],
+        "legacy_source_refs": [
+          "S002"
+        ],
+        "next_use_contracts": [
+          {
+            "expected_use": "用三个朴素问题进入第一次完整听读",
+            "target_event_id": "E_QUESTIONS",
+            "target_input_field": "inputs"
+          }
+        ],
+        "next_uses": [
+          "用三个朴素问题进入第一次完整听读"
+        ],
+        "node_id": "E_TITLE",
+        "node_type": "event",
+        "observable_change": {
+          "after": "共同转向一首新的婚姻叙事诗",
+          "before": "班级仍停在旧作主题谱",
+          "criterion": "学生能读准题名并找到第一句"
+        },
+        "owner_page_ids": [
+          "N001"
+        ],
+        "participation_contract": {
+          "all_students_have_entry": true,
+          "artifact_is_saved": true,
+          "later_reuse_is_named": true,
+          "listener_task": "听清题音和出处，核对自己翻到相同文本"
+        },
+        "release_status": "final",
+        "review_status": {
+          "adjudication": null,
+          "consensus": "passed",
+          "scope": "learning_event_structure",
+          "self_review": {
+            "defect_ids": [],
+            "reviewed_at": "2026-08-13T10:30:00+08:00",
+            "reviewer": "v6-opening-current-self-reviewer",
+            "status": "pass"
+          },
+          "student_reception": {
+            "defect_ids": [],
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
+            "reviewer": "student_reception_qa",
+            "status": "pass"
+          },
+          "visual": {
+            "defect_ids": [],
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "ppt_visual_qa",
             "status": "pass"
           }
@@ -613,13 +613,13 @@
           },
           "student_reception": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "student_reception_qa",
             "status": "pass"
           },
           "visual": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "ppt_visual_qa",
             "status": "pass"
           }
@@ -724,13 +724,13 @@
           },
           "student_reception": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "student_reception_qa",
             "status": "pass"
           },
           "visual": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "ppt_visual_qa",
             "status": "pass"
           }
@@ -833,13 +833,13 @@
           },
           "student_reception": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "student_reception_qa",
             "status": "pass"
           },
           "visual": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "ppt_visual_qa",
             "status": "pass"
           }
@@ -918,7 +918,7 @@
           "all_students_have_entry": true,
           "artifact_is_saved": true,
           "later_reuse_is_named": true,
-          "listener_task": "听同桌用一句话复述‘谁在回望什么’，核对三个定位词"
+          "listener_task": "听同桌回答‘谁在回望什么’，只核对人物、动作和对象是否说完整"
         },
         "release_status": "final",
         "review_status": {
@@ -933,13 +933,13 @@
           },
           "student_reception": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "student_reception_qa",
             "status": "pass"
           },
           "visual": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "ppt_visual_qa",
             "status": "pass"
           }
@@ -949,7 +949,7 @@
       },
       {
         "actions": [
-          "教师范读一次，全班跟读一次，同桌转看教材无斜线原句互读一次；末段在路标卡写下重读后改动的一处"
+          "教师范读、全班跟读，再转看教材无斜线原句互读；需要调整者标出修订处，原本读顺者圈出连续动作并重读"
         ],
         "artifact_locations": [
           "学习单B·第一章节奏标记"
@@ -1013,9 +1013,9 @@
         "node_id": "E_RHYTHM",
         "node_type": "event",
         "observable_change": {
-          "after": "能以基本节奏保持行动连贯",
-          "before": "四言可能被逐字点读",
-          "criterion": "为第一章句群讲读做好声音准备"
+          "after": "每人都能以基本节奏保持行动连贯",
+          "before": "四言可能被逐字点读，也可能已经读顺",
+          "criterion": "学生留下真实的修订或连续动作圈画"
         },
         "owner_page_ids": [
           "N012"
@@ -1024,7 +1024,7 @@
           "all_students_have_entry": true,
           "artifact_is_saved": true,
           "later_reuse_is_named": true,
-          "listener_task": "同桌指出一处机械停顿并用‘谁—做什么’帮助重读"
+          "listener_task": "同桌先判断是需要调整还是原本读顺，再用提问或复述动作帮助对方重读"
         },
         "release_status": "provisional",
         "review_status": {
@@ -1039,13 +1039,13 @@
           },
           "student_reception": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "student_reception_qa",
             "status": "pass"
           },
           "visual": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "ppt_visual_qa",
             "status": "pass"
           }
@@ -1130,13 +1130,13 @@
           },
           "student_reception": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "student_reception_qa",
             "status": "pass"
           },
           "visual": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "ppt_visual_qa",
             "status": "pass"
           }
@@ -1230,13 +1230,13 @@
           },
           "student_reception": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "student_reception_qa",
             "status": "pass"
           },
           "visual": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "ppt_visual_qa",
             "status": "pass"
           }
@@ -1336,13 +1336,13 @@
           },
           "student_reception": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "student_reception_qa",
             "status": "pass"
           },
           "visual": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "ppt_visual_qa",
             "status": "pass"
           }
@@ -1432,13 +1432,13 @@
           },
           "student_reception": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "student_reception_qa",
             "status": "pass"
           },
           "visual": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "ppt_visual_qa",
             "status": "pass"
           }
@@ -1517,13 +1517,13 @@
           },
           "student_reception": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "student_reception_qa",
             "status": "pass"
           },
           "visual": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "ppt_visual_qa",
             "status": "pass"
           }
@@ -1543,181 +1543,20 @@
     ],
     "pages": [
       {
-        "artifact_location": "教材题名旁",
-        "audit_scope": "event_carrier",
-        "channel_split": {
-          "screen": "氓\n《诗经·卫风》",
-          "teacher": "请翻到《氓》。先不猜它会走向哪里，只看题名和出处：氓，《诗经·卫风》。等大家都找到第一句，我们再从读过的爱情与婚姻故事慢慢走近它。",
-          "worksheet": "教材题名旁"
-        },
-        "deletion_loss": "失去共同文本和审美基调的安静入口",
-        "epistemic_status": "文本明写",
-        "execution_order": 10,
-        "framework_cost": "不引入中心思想或结尾情绪",
-        "gates": [
-          {
-            "evidence_refs": [
-              "N001#unique_function"
-            ],
-            "failure_code": null,
-            "gate_id": "G1",
-            "gate_status": "pass",
-            "reviewed_at": "2026-08-13T10:30:00+08:00",
-            "reviewer": "v6-opening-current-self-reviewer"
-          },
-          {
-            "evidence_refs": [
-              "N001#unique_function"
-            ],
-            "failure_code": null,
-            "gate_id": "G2",
-            "gate_status": "pass",
-            "reviewed_at": "2026-08-13T10:30:00+08:00",
-            "reviewer": "v6-opening-current-self-reviewer"
-          },
-          {
-            "evidence_refs": [
-              "N001#unique_function"
-            ],
-            "failure_code": null,
-            "gate_id": "G3",
-            "gate_status": "pass",
-            "reviewed_at": "2026-08-13T10:30:00+08:00",
-            "reviewer": "v6-opening-current-self-reviewer"
-          },
-          {
-            "evidence_refs": [
-              "E_TITLE#gate_4"
-            ],
-            "failure_code": null,
-            "gate_id": "G4",
-            "gate_status": "na",
-            "reviewed_at": null,
-            "reviewer": null
-          },
-          {
-            "evidence_refs": [
-              "E_TITLE#gate_5"
-            ],
-            "failure_code": null,
-            "gate_id": "G5",
-            "gate_status": "na",
-            "reviewed_at": null,
-            "reviewer": null
-          },
-          {
-            "evidence_refs": [
-              "N001#unique_function"
-            ],
-            "failure_code": null,
-            "gate_id": "G6",
-            "gate_status": "pass",
-            "reviewed_at": "2026-08-13T10:30:00+08:00",
-            "reviewer": "v6-opening-current-self-reviewer"
-          }
-        ],
-        "inherited_functions": [
-          {
-            "element_id": "page_function",
-            "legacy_id": "S002",
-            "target_field": "unique_function"
-          }
-        ],
-        "learning_unit": "E_TITLE",
-        "legacy_source_refs": [
-          "S002"
-        ],
-        "listener_task": {
-          "artifact": "课堂进入状态",
-          "reuse": "从旧有文学经验进入爱情与婚姻主题",
-          "task": "听清题名出处，核对自己翻到的文本"
-        },
-        "merge_test": {
-          "cannot_merge_reason": "失去共同文本和审美基调的安静入口",
-          "result": "cannot_merge"
-        },
-        "next_relation": "从旧有文学经验进入爱情与婚姻主题",
-        "next_use_refs": [
-          {
-            "expected_use": "从旧有文学经验进入爱情与婚姻主题",
-            "source_artifact_field": "artifact_location",
-            "target_event_id": "E_QUESTIONS",
-            "target_input_field": "inputs[0]"
-          }
-        ],
-        "node_id": "N001",
-        "node_type": "page",
-        "observable_change": {
-          "after": "共同面向《氓》题名与出处",
-          "before": "注意尚未聚拢",
-          "criterion": "学生已翻到相同文本"
-        },
-        "owner_event_id": "E_TITLE",
-        "page_id": "N001",
-        "prerequisite": "学生已翻到课文",
-        "previous_relation": "课堂开始",
-        "primary_visual_duty": "题名",
-        "release_status": "final",
-        "review_status": {
-          "adjudication": null,
-          "consensus": "passed",
-          "scope": "structure_only",
-          "self_review": {
-            "defect_ids": [],
-            "reviewed_at": "2026-08-13T10:30:00+08:00",
-            "reviewer": "v6-opening-current-self-reviewer",
-            "status": "pass"
-          },
-          "student_reception": {
-            "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
-            "reviewer": "student_reception_qa",
-            "status": "pass"
-          },
-          "visual": {
-            "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
-            "reviewer": "ppt_visual_qa",
-            "status": "pass"
-          }
-        },
-        "screen_content": "氓\n《诗经·卫风》",
-        "secondary_visual": "纸本肌理",
-        "student_action": {
-          "action": "看题名、出处并在教材中定位全文",
-          "actor": "每名学生",
-          "artifact": "课堂进入状态",
-          "duration_seconds": 60,
-          "object": "教材中的《氓》题名和出处"
-        },
-        "student_input": "教材中的《氓》题名和出处",
-        "student_visible_text": "氓\n《诗经·卫风》",
-        "supporting_move": "看题名、出处并在教材中定位全文",
-        "time_value": {
-          "irreplaceable_gain": "共同面向《氓》题名与出处",
-          "minutes": 1
-        },
-        "unique_function": "作为课堂进入事件的题名载体，只命名共同阅读的作品并聚拢注意，不独自虚构学习变化或后用",
-        "unit_role": "输入",
-        "visual_implementation": "按主视觉职责排版；人物图在角色设定冻结和插图必要性通过前一律不进入本页",
-        "voice_coverage": {
-          "all_have_entry": true,
-          "independent_entry": "听清题名出处，核对自己翻到的文本",
-          "selection_method": "全员同步完成；公开发言按页面所列轮说或增量贡献规则执行"
-        }
-      },
-      {
+        "artifact_authorship": "个人作者；教师只给检索线索",
         "artifact_location": "学习单·旧故事清单",
         "audit_scope": "learning_page",
+        "bounded_feedback": "本阶段静默书写；完成者再补一篇不同类型作品",
         "channel_split": {
-          "screen": "想起哪些爱情或婚姻故事？\n写下1—3篇初高中语文课上读过的课文或整本书。\n每篇只写：篇名＋它写了什么。\n一时想不起：翻教材目录｜领取一张只写篇名的提示条｜先听后补",
-          "teacher": "先不和同桌商量。请从初中到高中读过的语文课文或整本书里，想一想哪些写过爱情或婚姻。写下一到三篇，每篇只用一句平常话说它写了什么。四十五秒还想不起，可以翻目录，也可以举手领一张只写篇名的提示条；先听同伴再补，也算你的真实起点。",
+          "screen": "想起哪些爱情或婚姻故事？\n从初中到高中，尽量多写，至少一篇。\n每篇只写：篇名＋它写了什么。\n先独立回想。",
+          "teacher": "先不和同桌商量。请从初中到高中读过的语文课文或整本书里，想一想哪些写过爱情或婚姻。先写一篇；还能想起，就继续往下添，不设三篇上限。每篇只用一句平常话说它写了什么。（安静等待六十秒，巡视，不报篇名。）如果纸上还是空的，现在可以翻本班篇目目录，也可以举手领一张只写篇名的提示条；下一轮先听一位同伴再补，也算真实的开始。",
           "worksheet": "学习单·旧故事清单"
         },
+        "consumer_status": "implemented",
         "deletion_loss": "没有个人准备，后续小组容易被少数记忆快的学生包办",
         "epistemic_status": "课堂生成",
-        "execution_order": 20,
-        "framework_cost": "提示条由教师按本班真实学习进度提前准备，正面只列已经学过的作品篇名，不写主题；开始时扣放在讲台，45秒仍空白者举手领取",
+        "execution_order": 10,
+        "framework_cost": "提示条由教师按本班真实学习进度提前准备，正面只列已经学过的作品篇名，不写主题；开始时扣放在讲台，60秒仍空白者举手领取",
         "gates": [
           {
             "evidence_refs": [
@@ -1780,6 +1619,7 @@
             "reviewer": "v6-opening-current-self-reviewer"
           }
         ],
+        "individual_minimum_action": "每人独立检索，至少写下一篇，能想起更多就继续补写；每篇用一句自然话写它讲了什么",
         "inherited_functions": [
           {
             "element_id": "page_function",
@@ -1806,6 +1646,8 @@
           "cannot_merge_reason": "没有个人准备，后续小组容易被少数记忆快的学生包办",
           "result": "cannot_merge"
         },
+        "minimum_acceptance_criterion": "清单至少含一篇的篇名和朴素主题，不设三篇上限",
+        "named_consumer": "E_RECALL_GROUP",
         "next_relation": "四人轮说扩展小组公共记忆",
         "next_use_refs": [
           {
@@ -1818,14 +1660,16 @@
         "node_id": "N002",
         "node_type": "page",
         "observable_change": {
-          "after": "每人拥有一份可说的旧经验",
+          "after": "每人拥有一份可说且可继续扩充的旧经验",
           "before": "等待教师列举作品",
-          "criterion": "清单含篇名和朴素主题"
+          "criterion": "清单至少含一篇的篇名和朴素主题，不设三篇上限"
         },
         "owner_event_id": null,
         "page_id": "N002",
+        "participation_denominator": "全班每人至少一篇个人清单",
         "prerequisite": "只需回忆篇名或一个情节，不要求关系分析框架",
-        "previous_relation": "题名之后暂不进入预制结论",
+        "previous_artifact_input": "个人初高中语文学习记忆、教材目录和60秒后按需领取的篇名提示条",
+        "previous_relation": "课堂开始，学生尚未被告知今天的新篇目",
         "primary_visual_duty": "活动界面",
         "release_status": "final",
         "review_status": {
@@ -1840,36 +1684,47 @@
           },
           "student_reception": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "student_reception_qa",
             "status": "pass"
           },
           "visual": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "ppt_visual_qa",
             "status": "pass"
           }
         },
-        "screen_content": "想起哪些爱情或婚姻故事？\n写下1—3篇初高中语文课上读过的课文或整本书。\n每篇只写：篇名＋它写了什么。\n一时想不起：翻教材目录｜领取一张只写篇名的提示条｜先听后补",
+        "revision_evidence": "学习单·旧故事清单",
+        "screen_content": "想起哪些爱情或婚姻故事？\n从初中到高中，尽量多写，至少一篇。\n每篇只写：篇名＋它写了什么。\n先独立回想。",
         "secondary_visual": "章序或活动进度提示",
         "student_action": {
-          "action": "每人独立写下1—3篇作品，并用一句自然话写它讲了什么",
+          "action": "每人独立检索，至少写下一篇，能想起更多就继续补写；每篇用一句自然话写它讲了什么",
           "actor": "每名学生",
           "artifact": "个人作品清单",
           "duration_seconds": 120,
-          "object": "个人初高中语文学习记忆、教材目录和45秒后按需领取的篇名提示条"
+          "object": "个人初高中语文学习记忆、教材目录和60秒后按需领取的篇名提示条"
         },
-        "student_input": "个人初高中语文学习记忆、教材目录和45秒后按需领取的篇名提示条",
-        "student_visible_text": "想起哪些爱情或婚姻故事？\n写下1—3篇初高中语文课上读过的课文或整本书。\n每篇只写：篇名＋它写了什么。\n一时想不起：翻教材目录｜领取一张只写篇名的提示条｜先听后补",
-        "supporting_move": "每人独立写下1—3篇作品，并用一句自然话写它讲了什么",
+        "student_input": "个人初高中语文学习记忆、教材目录和60秒后按需领取的篇名提示条",
+        "student_reception_contract": {
+          "action": "每人独立检索，至少写下一篇，能想起更多就继续补写；每篇用一句自然话写它讲了什么",
+          "artifact": "个人作品清单",
+          "heard": "先不和同桌商量。请从初中到高中读过的语文课文或整本书里，想一想哪些写过爱情或婚姻。先写一篇；还能想起，就继续往下添，不设三篇上限。每篇只用一句平常话说它写了什么。（安静等待六十秒，巡视，不报篇名。）如果纸上还是空的，现在可以翻本班篇目目录，也可以举手领一张只写篇名的提示条；下一轮先听一位同伴再补，也算真实的开始。",
+          "next_use": "四人轮说扩展小组公共记忆",
+          "observable_change": "每人拥有一份可说且可继续扩充的旧经验",
+          "possible_thought": "我需要把个人初高中语文学习记忆、教材目录和60秒后按需领取的篇名提示条加工成个人作品清单",
+          "seen": "想起哪些爱情或婚姻故事？\n从初中到高中，尽量多写，至少一篇。\n每篇只写：篇名＋它写了什么。\n先独立回想。"
+        },
+        "student_visible_text": "想起哪些爱情或婚姻故事？\n从初中到高中，尽量多写，至少一篇。\n每篇只写：篇名＋它写了什么。\n先独立回想。",
+        "supporting_move": "每人独立检索，至少写下一篇，能想起更多就继续补写；每篇用一句自然话写它讲了什么",
         "time_value": {
-          "irreplaceable_gain": "每人拥有一份可说的旧经验",
+          "irreplaceable_gain": "每人拥有一份可说且可继续扩充的旧经验",
           "minutes": 2
         },
         "unique_function": "让每名学生先从自己的语文学习经历中广泛检索作品和朴素主题",
+        "unique_transformation": "让每名学生先从自己的语文学习经历中广泛检索作品和朴素主题",
         "unit_role": "生成",
-        "visual_implementation": "初始屏只显示三行主任务；45秒后页脚淡入三条恢复路径。提示条是纸卡，不另加作品答案页。",
+        "visual_implementation": "静态屏只显示主任务，不声称存在动画。60秒后教师口头开放目录、纸质篇名提示条和先听后补三条恢复路径。",
         "voice_coverage": {
           "all_have_entry": true,
           "independent_entry": "本阶段静默书写；完成者再补一篇不同类型作品",
@@ -1877,17 +1732,20 @@
         }
       },
       {
-        "artifact_location": "学习单A·小组作品谱；空白磁贴卡·全组贡献卡",
+        "artifact_authorship": "四名组员共同来源；两张贡献卡由全员圈选形成，并标明原提议者号、由原提议者亲写或签认",
+        "artifact_location": "学习单A·小组作品谱、个人两项圈选与贡献卡来源；两张带组号－卡号－原提议者号－签认栏的磁贴贡献卡",
         "audit_scope": "learning_page",
+        "bounded_feedback": "听见自己未想到的作品或主题就勾；四轮结束后，每人留下两项选择，暂无新增者如实标记并从小组作品谱选择两项",
         "channel_split": {
-          "screen": "把四个人的故事放在一起\n各组自定1号｜按1 → 2 → 3 → 4轮说\n轮到我｜15—20秒：篇名＋它写了什么\n听别人｜听见新内容就勾\n四轮后｜有勾项，圈一项；暂无新增，从作品谱圈一项\n执笔人｜记全组作品谱；轮到自己时，下一位代记",
-          "teacher": "每组自己定一号，再沿一个方向排出二、三、四号；从一号开始依次轮说，一个都不少。轮到你时，用十五到二十秒说清篇名和它写了什么。听别人说时，遇到自己原先没想到的作品或主题，就在个人听记处勾下来。四轮结束，有勾项的，从中圈出最想带进全班的一项；如果三轮都没有新增，就如实勾‘暂无新增’，再从小组作品谱里圈一项值得全班听见的。请一位同学执笔，记下全组的篇名和主题短语；轮到执笔人发言时，由下一位替他记。作品重复没有关系，能补出不同的主题就接着说。最后我会给每组一张空白磁贴卡，请用四十秒写清一篇的篇名和‘它写了什么’，交给下一轮发言的代表。",
-          "worksheet": "学习单A·小组作品谱；空白磁贴卡·全组贡献卡"
+          "screen": "四个人，把记得的故事说给彼此听\n各组自定1号｜按1 → 2 → 3 → 4轮说\n轮到我｜15—20秒：篇名＋它写了什么\n听别人｜听见新内容就勾\n四轮后｜每人圈两项；暂无新增，也从作品谱选两项\n全组留下｜两张不同的贡献卡；写明组号－卡号－原提议者号，由原提议者签认",
+          "teacher": "四个人先沿一个方向定一、二、三、四号，再选一位执笔人。等我说开始，一号先说，依次轮到四号，一个都不少。轮到你，只需二十秒：报篇名，用一句平常话说它写了什么；听别人时，听见自己没想到的作品或意思，就在旁边勾一下。执笔人只记篇名和短语，轮到自己时由下一位代记。（等待四轮完成。）现在每个人圈两项想带进全班的内容；没有新增，也请如实勾‘暂无新增’，再从全组作品谱里选两项。比较四个人的圈选，每组领取两张贡献卡，分别写清‘篇名＋它写了什么’，再补上组号、卡号和最初说出这项内容的同学号码，请这位同学亲手写卡或在卡上签认。尽量让两张卡来自两位同学；若两项确实都来自同一人，就如实写同一个号码。",
+          "worksheet": "学习单A·小组作品谱、个人两项圈选与贡献卡来源；两张带组号－卡号－原提议者号－签认栏的磁贴贡献卡"
         },
+        "consumer_status": "implemented",
         "deletion_loss": "省略轮说会使全员入口退化为自愿发言",
         "epistemic_status": "课堂生成",
-        "execution_order": 30,
-        "framework_cost": "不要求深析，只扩大文学主题的广度",
+        "execution_order": 20,
+        "framework_cost": "不要求深析，只扩大文学主题的广度；两张贡献卡优先保留不同作品或同一作品的不同主题，并优先出自两位不同提议者；若确实同源则如实写同一号码，不由教师指定篇目或作者",
         "gates": [
           {
             "evidence_refs": [
@@ -1950,6 +1808,7 @@
             "reviewer": "v6-opening-current-self-reviewer"
           }
         ],
+        "individual_minimum_action": "四人按1—4号依次发言，每人15—20秒；其他学生听见新内容就勾，四轮后每人圈出两项，暂无新增者也从小组作品谱选择两项；执笔人同步记录，轮到自己时由下一位代记；小组比较全员圈选，写成两张不同的贡献卡，卡面写组号、卡号和原提议者号，由原提议者书写或签认",
         "inherited_functions": [
           {
             "element_id": "page_function",
@@ -1968,14 +1827,16 @@
           "S004"
         ],
         "listener_task": {
-          "artifact": "小组作品谱和一张‘篇名＋它写了什么’的贡献卡",
+          "artifact": "小组作品谱和两张标明组号、卡号、原提议者号及签认的‘篇名＋它写了什么’贡献卡",
           "reuse": "每组向全班贡献新增作品或不同主题",
-          "task": "听见自己未想到的作品或主题就勾；四轮结束后，有勾项者从中圈出一项，暂无新增者如实标记并从小组作品谱圈出一项"
+          "task": "听见自己未想到的作品或主题就勾；四轮结束后，每人留下两项选择，暂无新增者如实标记并从小组作品谱选择两项"
         },
         "merge_test": {
           "cannot_merge_reason": "省略轮说会使全员入口退化为自愿发言",
           "result": "cannot_merge"
         },
+        "minimum_acceptance_criterion": "两张卡可追溯到原提议者并保留签认，两张卡不得完全重复",
+        "named_consumer": "E_RECALL_CLASS",
         "next_relation": "每组向全班贡献新增作品或不同主题",
         "next_use_refs": [
           {
@@ -1988,13 +1849,15 @@
         "node_id": "N003",
         "node_type": "page",
         "observable_change": {
-          "after": "小组形成多人共同作品谱",
+          "after": "小组形成多人共同作品谱并筛出两项不同贡献",
           "before": "个人清单彼此隔离",
-          "criterion": "记录中可追溯每人贡献"
+          "criterion": "两张卡可追溯到原提议者并保留签认，两张卡不得完全重复"
         },
         "owner_event_id": null,
         "page_id": "N003",
+        "participation_denominator": "每个四人组4/4开口，4/4留下两项圈选",
         "prerequisite": "每人已有作品清单；空白者可先听一位同伴后补写",
+        "previous_artifact_input": "四份个人作品清单",
         "previous_relation": "调用个人作品清单",
         "primary_visual_duty": "活动界面",
         "release_status": "final",
@@ -2010,54 +1873,68 @@
           },
           "student_reception": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "student_reception_qa",
             "status": "pass"
           },
           "visual": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "ppt_visual_qa",
             "status": "pass"
           }
         },
-        "screen_content": "把四个人的故事放在一起\n各组自定1号｜按1 → 2 → 3 → 4轮说\n轮到我｜15—20秒：篇名＋它写了什么\n听别人｜听见新内容就勾\n四轮后｜有勾项，圈一项；暂无新增，从作品谱圈一项\n执笔人｜记全组作品谱；轮到自己时，下一位代记",
+        "revision_evidence": "学习单A·小组作品谱、个人两项圈选与贡献卡来源；两张带组号－卡号－原提议者号－签认栏的磁贴贡献卡",
+        "screen_content": "四个人，把记得的故事说给彼此听\n各组自定1号｜按1 → 2 → 3 → 4轮说\n轮到我｜15—20秒：篇名＋它写了什么\n听别人｜听见新内容就勾\n四轮后｜每人圈两项；暂无新增，也从作品谱选两项\n全组留下｜两张不同的贡献卡；写明组号－卡号－原提议者号，由原提议者签认",
         "secondary_visual": "章序或活动进度提示",
         "student_action": {
-          "action": "四人按1—4号依次发言，每人15—20秒；其他学生听见新内容就勾，四轮后从勾项中圈一项，暂无新增者从小组作品谱圈一项；执笔人同步记录，轮到自己时由下一位代记；末段领取空白磁贴卡，写成全组贡献卡",
+          "action": "四人按1—4号依次发言，每人15—20秒；其他学生听见新内容就勾，四轮后每人圈出两项，暂无新增者也从小组作品谱选择两项；执笔人同步记录，轮到自己时由下一位代记；小组比较全员圈选，写成两张不同的贡献卡，卡面写组号、卡号和原提议者号，由原提议者书写或签认",
           "actor": "每名学生",
-          "artifact": "小组作品谱和一张‘篇名＋它写了什么’的贡献卡",
-          "duration_seconds": 180,
+          "artifact": "小组作品谱和两张标明组号、卡号、原提议者号及签认的‘篇名＋它写了什么’贡献卡",
+          "duration_seconds": 360,
           "object": "四份个人作品清单"
         },
         "student_input": "四份个人作品清单",
-        "student_visible_text": "把四个人的故事放在一起\n各组自定1号｜按1 → 2 → 3 → 4轮说\n轮到我｜15—20秒：篇名＋它写了什么\n听别人｜听见新内容就勾\n四轮后｜有勾项，圈一项；暂无新增，从作品谱圈一项\n执笔人｜记全组作品谱；轮到自己时，下一位代记",
-        "supporting_move": "四人按1—4号依次发言，每人15—20秒；其他学生听见新内容就勾，四轮后从勾项中圈一项，暂无新增者从小组作品谱圈一项；执笔人同步记录，轮到自己时由下一位代记；末段领取空白磁贴卡，写成全组贡献卡",
+        "student_reception_contract": {
+          "action": "四人按1—4号依次发言，每人15—20秒；其他学生听见新内容就勾，四轮后每人圈出两项，暂无新增者也从小组作品谱选择两项；执笔人同步记录，轮到自己时由下一位代记；小组比较全员圈选，写成两张不同的贡献卡，卡面写组号、卡号和原提议者号，由原提议者书写或签认",
+          "artifact": "小组作品谱和两张标明组号、卡号、原提议者号及签认的‘篇名＋它写了什么’贡献卡",
+          "heard": "四个人先沿一个方向定一、二、三、四号，再选一位执笔人。等我说开始，一号先说，依次轮到四号，一个都不少。轮到你，只需二十秒：报篇名，用一句平常话说它写了什么；听别人时，听见自己没想到的作品或意思，就在旁边勾一下。执笔人只记篇名和短语，轮到自己时由下一位代记。（等待四轮完成。）现在每个人圈两项想带进全班的内容；没有新增，也请如实勾‘暂无新增’，再从全组作品谱里选两项。比较四个人的圈选，每组领取两张贡献卡，分别写清‘篇名＋它写了什么’，再补上组号、卡号和最初说出这项内容的同学号码，请这位同学亲手写卡或在卡上签认。尽量让两张卡来自两位同学；若两项确实都来自同一人，就如实写同一个号码。",
+          "next_use": "每组向全班贡献新增作品或不同主题",
+          "observable_change": "小组形成多人共同作品谱并筛出两项不同贡献",
+          "possible_thought": "我需要把四份个人作品清单加工成小组作品谱和两张标明组号、卡号、原提议者号及签认的‘篇名＋它写了什么’贡献卡",
+          "seen": "四个人，把记得的故事说给彼此听\n各组自定1号｜按1 → 2 → 3 → 4轮说\n轮到我｜15—20秒：篇名＋它写了什么\n听别人｜听见新内容就勾\n四轮后｜每人圈两项；暂无新增，也从作品谱选两项\n全组留下｜两张不同的贡献卡；写明组号－卡号－原提议者号，由原提议者签认"
+        },
+        "student_visible_text": "四个人，把记得的故事说给彼此听\n各组自定1号｜按1 → 2 → 3 → 4轮说\n轮到我｜15—20秒：篇名＋它写了什么\n听别人｜听见新内容就勾\n四轮后｜每人圈两项；暂无新增，也从作品谱选两项\n全组留下｜两张不同的贡献卡；写明组号－卡号－原提议者号，由原提议者签认",
+        "supporting_move": "四人按1—4号依次发言，每人15—20秒；其他学生听见新内容就勾，四轮后每人圈出两项，暂无新增者也从小组作品谱选择两项；执笔人同步记录，轮到自己时由下一位代记；小组比较全员圈选，写成两张不同的贡献卡，卡面写组号、卡号和原提议者号，由原提议者书写或签认",
         "time_value": {
-          "irreplaceable_gain": "小组形成多人共同作品谱",
-          "minutes": 3
+          "irreplaceable_gain": "小组形成多人共同作品谱并筛出两项不同贡献",
+          "minutes": 6
         },
         "unique_function": "让每名学生的个人旧经验进入小组公共作品谱",
+        "unique_transformation": "让每名学生的个人旧经验进入小组公共作品谱",
         "unit_role": "交流",
         "visual_implementation": "按主视觉职责排版；人物图在角色设定冻结和插图必要性通过前一律不进入本页",
         "voice_coverage": {
           "all_have_entry": true,
-          "independent_entry": "听见自己未想到的作品或主题就勾；四轮结束后，有勾项者从中圈出一项，暂无新增者如实标记并从小组作品谱圈出一项",
+          "independent_entry": "听见自己未想到的作品或主题就勾；四轮结束后，每人留下两项选择，暂无新增者如实标记并从小组作品谱选择两项",
           "selection_method": "全员同步完成；公开发言按页面所列轮说或增量贡献规则执行"
         }
       },
       {
+        "artifact_authorship": "八个小组，各两张卡；个人核对记录归本人",
         "artifact_location": "学习单·我未想到的一项；黑板或磁贴板现场区",
         "audit_scope": "learning_page",
+        "bounded_feedback": "有新增时记下一项自己未想到的内容；暂无新增时核对一张重复卡是否真的补出不同说法，并如实留下核对结果",
         "channel_split": {
-          "screen": "让班级作品谱再大一点\n每组先贴一张卡，再说20秒：\n贡献一篇尚未出现的作品，或补一个不同主题。\n听众：勾下一项自己未想到的内容。\n八组公开、换组与听众补记：5分钟",
-          "teacher": "请确认上一轮写好的贡献卡已经在代表手里。轮到你们时，先把这张卡贴到空板上，再用二十秒说完。尽量贡献还没出现的作品；如果作品重复，就补一个不同的说法。台下每个人听的时候，至少勾下一项自己原先没有想到的内容。贴卡、换组和最后补记都算时间，我们给五分钟。",
+          "screen": "让更多故事走到全班面前\n每组先贴两张卡，再用20秒说清一处新增或不同\n卡墙还没有｜说清：篇名＋它写了什么\n卡墙已有相同内容｜说清相同或不同；完全重复，就说‘暂无新增’\n台下每人留下一个听见的结果\n有新增｜记下一项自己未想到的内容\n暂无新增｜核对一张重复卡：它真的补了不同说法吗？\n八组公开、贴卡、换组与补记：6分钟",
+          "teacher": "请让代表拿好两张贡献卡。轮到本组，先把两张都贴上去，再用二十秒说明其中一处新增或不同。卡墙还没有这篇或这层意思，就把它说清；卡墙已有相同内容，就把卡贴近一些，说出相同在哪里、有没有一点不同。若核对后确实完全重复，直接说‘暂无新增’也很好——这说明你们认真听见了别人。台下也有两条同样真实的路：听见新增，就记下一项；暂时没有新增，就核对一张重复卡，看它究竟补没补出不同说法，把核对结果留在纸上。现在从第一组开始。",
           "worksheet": "学习单·我未想到的一项；黑板或磁贴板现场区"
         },
+        "consumer_status": "implemented",
         "deletion_loss": "没有全班扩展，导入仍局限于少数固定篇目",
         "epistemic_status": "课堂生成",
-        "execution_order": 40,
-        "framework_cost": "按八组计算：每组20秒表达，另给平均10秒贴卡和换组共4分钟；此前说明20秒，末尾听众核对、补记和异常缓冲40秒，总计5分钟；更多小组先同主题并组",
+        "execution_order": 30,
+        "framework_cost": "按八组计算：每组先贴两卡，再用20秒说明一处新增或不同；给每组约17秒贴卡与换组，共5分钟；说明任务20秒，末尾听众核对、补记和异常缓冲40秒，总计6分钟；更多小组先同主题并组",
         "gates": [
           {
             "evidence_refs": [
@@ -2120,6 +1997,7 @@
             "reviewer": "v6-opening-current-self-reviewer"
           }
         ],
+        "individual_minimum_action": "每组代表先贴两张卡，再用20秒选择等价路径：说明其中一处新作品或新说法；已有相同内容则核对相同与不同，完全重复可如实报告暂无新增。听众同步选择有新增或暂无新增两条诚实路径",
         "inherited_functions": [
           {
             "element_id": "page_function",
@@ -2132,14 +2010,16 @@
           "S005"
         ],
         "listener_task": {
-          "artifact": "八张可追溯的班级贡献卡和个人新增记录",
+          "artifact": "约十六张可追溯的班级贡献卡，以及个人新增记录或重复卡核对记录",
           "reuse": "教师只用现场材料整理主题谱",
-          "task": "每人勾下一项自己未想到的作品或主题"
+          "task": "有新增时记下一项自己未想到的内容；暂无新增时核对一张重复卡是否真的补出不同说法，并如实留下核对结果"
         },
         "merge_test": {
           "cannot_merge_reason": "没有全班扩展，导入仍局限于少数固定篇目",
           "result": "cannot_merge"
         },
+        "minimum_acceptance_criterion": "每人留下新增记录或一次有依据的重复核对；每组两张卡可追溯",
+        "named_consumer": "E_THEME_MAP",
         "next_relation": "教师只用现场材料整理主题谱",
         "next_use_refs": [
           {
@@ -2152,13 +2032,15 @@
         "node_id": "N004",
         "node_type": "page",
         "observable_change": {
-          "after": "看见全班更广的文学主题",
+          "after": "看见由约十六张卡组成的更广文学主题场",
           "before": "只知道本组作品",
-          "criterion": "每人留下至少一项新增记录"
+          "criterion": "每人留下新增记录或一次有依据的重复核对；每组两张卡可追溯"
         },
         "owner_event_id": null,
         "page_id": "N004",
+        "participation_denominator": "每组一名代表公开；全班每人完成新增或重复核对",
         "prerequisite": "每组已有作品谱，并能识别哪些内容尚未出现",
+        "previous_artifact_input": "各组作品谱和两张写有‘篇名＋它写了什么’的贡献卡",
         "previous_relation": "调用小组作品谱",
         "primary_visual_duty": "活动界面",
         "release_status": "final",
@@ -2174,54 +2056,68 @@
           },
           "student_reception": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "student_reception_qa",
             "status": "pass"
           },
           "visual": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "ppt_visual_qa",
             "status": "pass"
           }
         },
-        "screen_content": "让班级作品谱再大一点\n每组先贴一张卡，再说20秒：\n贡献一篇尚未出现的作品，或补一个不同主题。\n听众：勾下一项自己未想到的内容。\n八组公开、换组与听众补记：5分钟",
+        "revision_evidence": "学习单·我未想到的一项；黑板或磁贴板现场区",
+        "screen_content": "让更多故事走到全班面前\n每组先贴两张卡，再用20秒说清一处新增或不同\n卡墙还没有｜说清：篇名＋它写了什么\n卡墙已有相同内容｜说清相同或不同；完全重复，就说‘暂无新增’\n台下每人留下一个听见的结果\n有新增｜记下一项自己未想到的内容\n暂无新增｜核对一张重复卡：它真的补了不同说法吗？\n八组公开、贴卡、换组与补记：6分钟",
         "secondary_visual": "章序或活动进度提示",
         "student_action": {
-          "action": "每组代表先把贡献卡贴入现场区，再用20秒说新增作品或不同主题；重复时指出一项有依据的联系",
+          "action": "每组代表先贴两张卡，再用20秒选择等价路径：说明其中一处新作品或新说法；已有相同内容则核对相同与不同，完全重复可如实报告暂无新增。听众同步选择有新增或暂无新增两条诚实路径",
           "actor": "每名学生",
-          "artifact": "八张可追溯的班级贡献卡和个人新增记录",
-          "duration_seconds": 300,
-          "object": "各组作品谱和一张写有‘篇名＋它写了什么’的贡献卡"
+          "artifact": "约十六张可追溯的班级贡献卡，以及个人新增记录或重复卡核对记录",
+          "duration_seconds": 360,
+          "object": "各组作品谱和两张写有‘篇名＋它写了什么’的贡献卡"
         },
-        "student_input": "各组作品谱和一张写有‘篇名＋它写了什么’的贡献卡",
-        "student_visible_text": "让班级作品谱再大一点\n每组先贴一张卡，再说20秒：\n贡献一篇尚未出现的作品，或补一个不同主题。\n听众：勾下一项自己未想到的内容。\n八组公开、换组与听众补记：5分钟",
-        "supporting_move": "每组代表先把贡献卡贴入现场区，再用20秒说新增作品或不同主题；重复时指出一项有依据的联系",
+        "student_input": "各组作品谱和两张写有‘篇名＋它写了什么’的贡献卡",
+        "student_reception_contract": {
+          "action": "每组代表先贴两张卡，再用20秒选择等价路径：说明其中一处新作品或新说法；已有相同内容则核对相同与不同，完全重复可如实报告暂无新增。听众同步选择有新增或暂无新增两条诚实路径",
+          "artifact": "约十六张可追溯的班级贡献卡，以及个人新增记录或重复卡核对记录",
+          "heard": "请让代表拿好两张贡献卡。轮到本组，先把两张都贴上去，再用二十秒说明其中一处新增或不同。卡墙还没有这篇或这层意思，就把它说清；卡墙已有相同内容，就把卡贴近一些，说出相同在哪里、有没有一点不同。若核对后确实完全重复，直接说‘暂无新增’也很好——这说明你们认真听见了别人。台下也有两条同样真实的路：听见新增，就记下一项；暂时没有新增，就核对一张重复卡，看它究竟补没补出不同说法，把核对结果留在纸上。现在从第一组开始。",
+          "next_use": "教师只用现场材料整理主题谱",
+          "observable_change": "看见由约十六张卡组成的更广文学主题场",
+          "possible_thought": "我需要把各组作品谱和两张写有‘篇名＋它写了什么’的贡献卡加工成约十六张可追溯的班级贡献卡，以及个人新增记录或重复卡核对记录",
+          "seen": "让更多故事走到全班面前\n每组先贴两张卡，再用20秒说清一处新增或不同\n卡墙还没有｜说清：篇名＋它写了什么\n卡墙已有相同内容｜说清相同或不同；完全重复，就说‘暂无新增’\n台下每人留下一个听见的结果\n有新增｜记下一项自己未想到的内容\n暂无新增｜核对一张重复卡：它真的补了不同说法吗？\n八组公开、贴卡、换组与补记：6分钟"
+        },
+        "student_visible_text": "让更多故事走到全班面前\n每组先贴两张卡，再用20秒说清一处新增或不同\n卡墙还没有｜说清：篇名＋它写了什么\n卡墙已有相同内容｜说清相同或不同；完全重复，就说‘暂无新增’\n台下每人留下一个听见的结果\n有新增｜记下一项自己未想到的内容\n暂无新增｜核对一张重复卡：它真的补了不同说法吗？\n八组公开、贴卡、换组与补记：6分钟",
+        "supporting_move": "每组代表先贴两张卡，再用20秒选择等价路径：说明其中一处新作品或新说法；已有相同内容则核对相同与不同，完全重复可如实报告暂无新增。听众同步选择有新增或暂无新增两条诚实路径",
         "time_value": {
-          "irreplaceable_gain": "看见全班更广的文学主题",
-          "minutes": 5
+          "irreplaceable_gain": "看见由约十六张卡组成的更广文学主题场",
+          "minutes": 6
         },
         "unique_function": "在受控时间内把八组材料扩展为全班可见的爱情与婚姻文学范围",
+        "unique_transformation": "在受控时间内把八组材料扩展为全班可见的爱情与婚姻文学范围",
         "unit_role": "交流",
-        "visual_implementation": "屏幕左侧固定20秒倒计时和听众任务，右侧只标示贴卡位置；作品内容留在真实黑板或磁贴板，不用预填动画冒充现场材料。",
+        "visual_implementation": "屏幕先突出‘贴两卡—说一处—听众留痕’这一条共同动作，再把‘墙上没有／已有’和‘有新增／暂无新增’作为口头与纸面诚实分支；作品内容留在真实黑板或磁贴板，不用预填动画冒充现场材料。",
         "voice_coverage": {
           "all_have_entry": true,
-          "independent_entry": "每人勾下一项自己未想到的作品或主题",
+          "independent_entry": "有新增时记下一项自己未想到的内容；暂无新增时核对一张重复卡是否真的补出不同说法，并如实留下核对结果",
           "selection_method": "全员同步完成；公开发言按页面所列轮说或增量贡献规则执行"
         }
       },
       {
-        "artifact_location": "黑板或磁贴板主题谱；学习单·相近与不同",
+        "artifact_authorship": "每人有个人连接；公开三组由提议学生命名并修订；教师无分类作者权",
+        "artifact_location": "黑板或磁贴板主题谱；学习单·卡号、临时名字与保留／改名／移回记录",
         "audit_scope": "learning_page",
+        "bounded_feedback": "每人先提交一组连接；公开移动时核对卡上文字，选择保留、改名或移回并写一句理由；不以沉默代替核对",
         "channel_split": {
-          "screen": "我们读过的爱情与婚姻故事\n观察｜哪几张卡在说相近的事？\n移动｜移动一张卡，说说理由\n核对｜任选一张：篇名与说法相配吗？",
-          "teacher": "先安静看这八张卡，不急着给它们套上现成的词。哪几张似乎在说相近的事？请一位同学上来移动一张，只说你为什么把它放到这里。接下来我只沿着你们真正贴出的卡片串两三条线；每个人任选一张核对，篇名和说法对不上就直接指出。没发言的同学，在学习单上留下一处相近或不同。",
-          "worksheet": "黑板或磁贴板主题谱；学习单·相近与不同"
+          "screen": "我们读过的爱情与婚姻故事\n每人先连一组｜写下两张卡号，给它临时命名\n三位同学上台｜移动卡片，说出卡上哪些字支持这样放\n全班核对｜每人写下理由；原提议者当场保留／改名／移回",
+          "teacher": "先安静看这些卡，不急着套上现成的词。请每个人先在学习单上写下两张卡号：你觉得它们在说相近、相反或者可以相互补充的事，再给这组关系起一个临时名字。（等待书写。）现在请三位同学依次上台；每人移动一组卡，读出卡上的几个字，再说明为什么这样放、为什么这样命名。台下每个人都要核对：有卡片原话支持，就暂时保留；名字说得太满，就提出一个更贴近卡片的名字；证据不足，就要求移回。上台的同学根据大家的证据，在卡墙上完成保留、改名或移回。（三轮完成后，教师只复述现场已经出现的两三条线索。）如果现场只有两条站得住，我们就只留下两条；没有卡片支持的词，我不替大家补。把这面卡墙和你纸上的修订保存好，读完今天的新故事后，我们还会回来。现在，请把目光交给屏幕。",
+          "worksheet": "黑板或磁贴板主题谱；学习单·卡号、临时名字与保留／改名／移回记录"
         },
+        "consumer_status": "declared",
         "deletion_loss": "没有主题谱，广泛发言不能沉淀为后续可调用的共同记忆",
         "epistemic_status": "课堂生成",
-        "execution_order": 50,
-        "framework_cost": "4分钟分配：静看30秒，学生试移与理由40秒，教师依卡串联90秒，全班核对60秒，留20秒拍照或补记；未由学生材料触发的词不上屏",
+        "execution_order": 40,
+        "framework_cost": "7分钟分配：静看30秒；每人连接、命名75秒；三名学生移动、命名并举证150秒；全班核对及提议者修订90秒；教师只复述现场已出现线索45秒；拍照或补记30秒。固定类别不得出现在PPT、学习单、逐字稿或教师口语中",
         "gates": [
           {
             "evidence_refs": [
@@ -2285,6 +2181,7 @@
             "reviewer": "v6-opening-current-self-reviewer"
           }
         ],
+        "individual_minimum_action": "每人先在学习单连接两张卡并写一个临时名字；至少三名学生分别上台移动、命名并引用卡上原话；全班对每组执行保留、改名或移回，原提议者按证据完成可见修订",
         "inherited_functions": [
           {
             "element_id": "page_function",
@@ -2297,18 +2194,20 @@
           "S005"
         ],
         "listener_task": {
-          "artifact": "班级爱情与婚姻文学主题谱",
-          "reuse": "圆桌讨论回看主题谱，比较《氓》带来的新认识",
-          "task": "每人任选一张卡核对篇名与说法；发现错配可直接指出，未发言者在学习单补记一处相近或不同"
+          "artifact": "由学生命名、带卡号与修订痕迹的班级爱情与婚姻文学主题谱",
+          "reuse": "先揭示今天的新篇目；全文后圆桌讨论再回看主题谱",
+          "task": "每人先提交一组连接；公开移动时核对卡上文字，选择保留、改名或移回并写一句理由；不以沉默代替核对"
         },
         "merge_test": {
           "cannot_merge_reason": "没有主题谱，广泛发言不能沉淀为后续可调用的共同记忆",
           "result": "cannot_merge"
         },
-        "next_relation": "圆桌讨论回看主题谱，比较《氓》带来的新认识",
+        "minimum_acceptance_criterion": "至少三组连接由学生命名，每组绑定卡号并保存一次保留、改名或移回的核对结果",
+        "named_consumer": "E_MARRIAGE_ROUND_TABLE",
+        "next_relation": "先揭示今天的新篇目；全文后圆桌讨论再回看主题谱",
         "next_use_refs": [
           {
-            "expected_use": "圆桌讨论回看主题谱，比较《氓》带来的新认识",
+            "expected_use": "先揭示今天的新篇目；全文后圆桌讨论再回看主题谱",
             "source_artifact_field": "artifact_location",
             "target_event_id": "E_MARRIAGE_ROUND_TABLE",
             "target_input_field": "inputs[0]"
@@ -2317,13 +2216,15 @@
         "node_id": "N005",
         "node_type": "page",
         "observable_change": {
-          "after": "形成带作品出处的宽广主题场",
+          "after": "学生把现场卡片组织成带出处、可争辩的主题谱",
           "before": "作品和主题仍零散",
-          "criterion": "每个主题至少保留一篇现场作品"
+          "criterion": "至少三组连接由学生命名，每组绑定卡号并保存一次保留、改名或移回的核对结果"
         },
         "owner_event_id": null,
         "page_id": "N005",
+        "participation_denominator": "全班每人先连接命名；至少三名不同学生公开举证；全班每人反馈",
         "prerequisite": "班级已经贡献作品和主题短语",
+        "previous_artifact_input": "黑板或磁贴板上约十六张带卡号的‘篇名＋它写了什么’贡献卡",
         "previous_relation": "只读取现场班级材料",
         "primary_visual_duty": "现场共创",
         "release_status": "provisional",
@@ -2339,50 +2240,247 @@
           },
           "student_reception": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "student_reception_qa",
             "status": "pass"
           },
           "visual": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "ppt_visual_qa",
             "status": "pass"
           }
         },
-        "screen_content": "我们读过的爱情与婚姻故事\n观察｜哪几张卡在说相近的事？\n移动｜移动一张卡，说说理由\n核对｜任选一张：篇名与说法相配吗？",
+        "revision_evidence": "黑板或磁贴板主题谱；学习单·卡号、临时名字与保留／改名／移回记录",
+        "screen_content": "我们读过的爱情与婚姻故事\n每人先连一组｜写下两张卡号，给它临时命名\n三位同学上台｜移动卡片，说出卡上哪些字支持这样放\n全班核对｜每人写下理由；原提议者当场保留／改名／移回",
         "secondary_visual": "章序或活动进度提示",
         "student_action": {
-          "action": "先静看卡片；一名学生试移一张相近卡并说明理由；教师只沿现场卡片作两三条串联；全班核对，发现错配即纠正",
+          "action": "每人先在学习单连接两张卡并写一个临时名字；至少三名学生分别上台移动、命名并引用卡上原话；全班对每组执行保留、改名或移回，原提议者按证据完成可见修订",
           "actor": "每名学生",
-          "artifact": "班级爱情与婚姻文学主题谱",
-          "duration_seconds": 240,
-          "object": "黑板或磁贴板上的八张‘篇名＋它写了什么’贡献卡"
+          "artifact": "由学生命名、带卡号与修订痕迹的班级爱情与婚姻文学主题谱",
+          "duration_seconds": 420,
+          "object": "黑板或磁贴板上约十六张带卡号的‘篇名＋它写了什么’贡献卡"
         },
-        "student_input": "黑板或磁贴板上的八张‘篇名＋它写了什么’贡献卡",
-        "student_visible_text": "我们读过的爱情与婚姻故事\n观察｜哪几张卡在说相近的事？\n移动｜移动一张卡，说说理由\n核对｜任选一张：篇名与说法相配吗？",
-        "supporting_move": "先静看卡片；一名学生试移一张相近卡并说明理由；教师只沿现场卡片作两三条串联；全班核对，发现错配即纠正",
+        "student_input": "黑板或磁贴板上约十六张带卡号的‘篇名＋它写了什么’贡献卡",
+        "student_reception_contract": {
+          "action": "每人先在学习单连接两张卡并写一个临时名字；至少三名学生分别上台移动、命名并引用卡上原话；全班对每组执行保留、改名或移回，原提议者按证据完成可见修订",
+          "artifact": "由学生命名、带卡号与修订痕迹的班级爱情与婚姻文学主题谱",
+          "heard": "先安静看这些卡，不急着套上现成的词。请每个人先在学习单上写下两张卡号：你觉得它们在说相近、相反或者可以相互补充的事，再给这组关系起一个临时名字。（等待书写。）现在请三位同学依次上台；每人移动一组卡，读出卡上的几个字，再说明为什么这样放、为什么这样命名。台下每个人都要核对：有卡片原话支持，就暂时保留；名字说得太满，就提出一个更贴近卡片的名字；证据不足，就要求移回。上台的同学根据大家的证据，在卡墙上完成保留、改名或移回。（三轮完成后，教师只复述现场已经出现的两三条线索。）如果现场只有两条站得住，我们就只留下两条；没有卡片支持的词，我不替大家补。把这面卡墙和你纸上的修订保存好，读完今天的新故事后，我们还会回来。现在，请把目光交给屏幕。",
+          "next_use": "先揭示今天的新篇目；全文后圆桌讨论再回看主题谱",
+          "observable_change": "学生把现场卡片组织成带出处、可争辩的主题谱",
+          "possible_thought": "我需要把黑板或磁贴板上约十六张带卡号的‘篇名＋它写了什么’贡献卡加工成由学生命名、带卡号与修订痕迹的班级爱情与婚姻文学主题谱",
+          "seen": "我们读过的爱情与婚姻故事\n每人先连一组｜写下两张卡号，给它临时命名\n三位同学上台｜移动卡片，说出卡上哪些字支持这样放\n全班核对｜每人写下理由；原提议者当场保留／改名／移回"
+        },
+        "student_visible_text": "我们读过的爱情与婚姻故事\n每人先连一组｜写下两张卡号，给它临时命名\n三位同学上台｜移动卡片，说出卡上哪些字支持这样放\n全班核对｜每人写下理由；原提议者当场保留／改名／移回",
+        "supporting_move": "每人先在学习单连接两张卡并写一个临时名字；至少三名学生分别上台移动、命名并引用卡上原话；全班对每组执行保留、改名或移回，原提议者按证据完成可见修订",
         "time_value": {
-          "irreplaceable_gain": "形成带作品出处的宽广主题场",
-          "minutes": 4
+          "irreplaceable_gain": "学生把现场卡片组织成带出处、可争辩的主题谱",
+          "minutes": 7
         },
-        "unique_function": "把全班实际说出的作品和自然话归类成可追溯主题谱，不预填婚姻处方",
+        "unique_function": "让学生把全班实际贡献的作品卡连接、命名、质询并修订成可追溯主题谱，教师不代写分类",
+        "unique_transformation": "让学生把全班实际贡献的作品卡连接、命名、质询并修订成可追溯主题谱，教师不代写分类",
         "unit_role": "收束",
-        "visual_implementation": "PPT只保留观察、移动、核对三步；真实贡献卡是主视觉。教师不在PPT预制分类框，不用动画伪造学生答案。",
+        "visual_implementation": "PPT只显示学生生成、公开举证和反馈修订三步；真实贡献卡是主视觉。教师不在PPT预制分类框，不用动画或插图伪造学生答案。",
         "voice_coverage": {
           "all_have_entry": true,
-          "independent_entry": "每人任选一张卡核对篇名与说法；发现错配可直接指出，未发言者在学习单补记一处相近或不同",
+          "independent_entry": "每人先提交一组连接；公开移动时核对卡上文字，选择保留、改名或移回并写一句理由；不以沉默代替核对",
           "selection_method": "全员同步完成；公开发言按页面所列轮说或增量贡献规则执行"
         }
       },
       {
+        "artifact_authorship": "学生个人或同桌共同作者；教师仅提供必要反馈",
+        "artifact_location": "教材题名旁",
+        "audit_scope": "event_carrier",
+        "bounded_feedback": "听清题音和出处，核对自己翻到相同文本",
+        "channel_split": {
+          "screen": "氓\n《诗经·卫风》",
+          "teacher": "刚才那面卡墙，让许多爱情与婚姻故事在教室里相遇。今天，我们再认识一位更早的讲述者。她的故事，收在《诗经·卫风》里，题目只有一个字——氓。这个字在这里读méng。请翻到课文，找到第一句‘氓之蚩蚩’；先别往结尾赶，让她自己把六章说完。",
+          "worksheet": "教材题名旁"
+        },
+        "consumer_status": "implemented",
+        "deletion_loss": "若没有此刻的揭题，旧作主题谱与新文本之间缺少审美停顿和共同焦点",
+        "epistemic_status": "文本明写",
+        "execution_order": 50,
+        "framework_cost": "只揭题、正音和报出处，不提前宣布悲剧结局或婚姻处方",
+        "gates": [
+          {
+            "evidence_refs": [
+              "N001#unique_function"
+            ],
+            "failure_code": null,
+            "gate_id": "G1",
+            "gate_status": "pass",
+            "reviewed_at": "2026-08-13T10:30:00+08:00",
+            "reviewer": "v6-opening-current-self-reviewer"
+          },
+          {
+            "evidence_refs": [
+              "N001#unique_function"
+            ],
+            "failure_code": null,
+            "gate_id": "G2",
+            "gate_status": "pass",
+            "reviewed_at": "2026-08-13T10:30:00+08:00",
+            "reviewer": "v6-opening-current-self-reviewer"
+          },
+          {
+            "evidence_refs": [
+              "N001#unique_function"
+            ],
+            "failure_code": null,
+            "gate_id": "G3",
+            "gate_status": "pass",
+            "reviewed_at": "2026-08-13T10:30:00+08:00",
+            "reviewer": "v6-opening-current-self-reviewer"
+          },
+          {
+            "evidence_refs": [
+              "E_TITLE#gate_4"
+            ],
+            "failure_code": null,
+            "gate_id": "G4",
+            "gate_status": "na",
+            "reviewed_at": null,
+            "reviewer": null
+          },
+          {
+            "evidence_refs": [
+              "E_TITLE#gate_5"
+            ],
+            "failure_code": null,
+            "gate_id": "G5",
+            "gate_status": "na",
+            "reviewed_at": null,
+            "reviewer": null
+          },
+          {
+            "evidence_refs": [
+              "N001#unique_function"
+            ],
+            "failure_code": null,
+            "gate_id": "G6",
+            "gate_status": "pass",
+            "reviewed_at": "2026-08-13T10:30:00+08:00",
+            "reviewer": "v6-opening-current-self-reviewer"
+          }
+        ],
+        "individual_minimum_action": "看题名、听读题音，在教师报页码后翻到教材全文",
+        "inherited_functions": [
+          {
+            "element_id": "page_function",
+            "legacy_id": "S002",
+            "target_field": "unique_function"
+          }
+        ],
+        "learning_unit": "E_TITLE",
+        "legacy_source_refs": [
+          "S002"
+        ],
+        "listener_task": {
+          "artifact": "全班共同面向的新文本",
+          "reuse": "用三个朴素问题进入第一次完整听读",
+          "task": "听清题音和出处，核对自己翻到相同文本"
+        },
+        "merge_test": {
+          "cannot_merge_reason": "若没有此刻的揭题，旧作主题谱与新文本之间缺少审美停顿和共同焦点",
+          "result": "cannot_merge"
+        },
+        "minimum_acceptance_criterion": "学生能读准题名并找到第一句",
+        "named_consumer": "E_QUESTIONS",
+        "next_relation": "用三个朴素问题进入第一次完整听读",
+        "next_use_refs": [
+          {
+            "expected_use": "用三个朴素问题进入第一次完整听读",
+            "source_artifact_field": "artifact_location",
+            "target_event_id": "E_QUESTIONS",
+            "target_input_field": "inputs[0]"
+          }
+        ],
+        "node_id": "N001",
+        "node_type": "page",
+        "observable_change": {
+          "after": "共同转向一首新的婚姻叙事诗",
+          "before": "班级仍停在旧作主题谱",
+          "criterion": "学生能读准题名并找到第一句"
+        },
+        "owner_event_id": "E_TITLE",
+        "page_id": "N001",
+        "participation_denominator": "全班每人完成本页所列个人或同桌动作",
+        "prerequisite": "学生已经广泛回忆旧作并看见本班现场主题谱",
+        "previous_artifact_input": "现场主题谱之后出现的《氓》题名与出处",
+        "previous_relation": "调用刚刚形成的班级爱情与婚姻文学主题谱，形成从旧作到新作的期待",
+        "primary_visual_duty": "题名",
+        "release_status": "final",
+        "review_status": {
+          "adjudication": null,
+          "consensus": "passed",
+          "scope": "structure_only",
+          "self_review": {
+            "defect_ids": [],
+            "reviewed_at": "2026-08-13T10:30:00+08:00",
+            "reviewer": "v6-opening-current-self-reviewer",
+            "status": "pass"
+          },
+          "student_reception": {
+            "defect_ids": [],
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
+            "reviewer": "student_reception_qa",
+            "status": "pass"
+          },
+          "visual": {
+            "defect_ids": [],
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
+            "reviewer": "ppt_visual_qa",
+            "status": "pass"
+          }
+        },
+        "revision_evidence": "教材题名旁",
+        "screen_content": "氓\n《诗经·卫风》",
+        "secondary_visual": "纸本肌理",
+        "student_action": {
+          "action": "看题名、听读题音，在教师报页码后翻到教材全文",
+          "actor": "每名学生",
+          "artifact": "全班共同面向的新文本",
+          "duration_seconds": 60,
+          "object": "现场主题谱之后出现的《氓》题名与出处"
+        },
+        "student_input": "现场主题谱之后出现的《氓》题名与出处",
+        "student_reception_contract": {
+          "action": "看题名、听读题音，在教师报页码后翻到教材全文",
+          "artifact": "全班共同面向的新文本",
+          "heard": "刚才那面卡墙，让许多爱情与婚姻故事在教室里相遇。今天，我们再认识一位更早的讲述者。她的故事，收在《诗经·卫风》里，题目只有一个字——氓。这个字在这里读méng。请翻到课文，找到第一句‘氓之蚩蚩’；先别往结尾赶，让她自己把六章说完。",
+          "next_use": "用三个朴素问题进入第一次完整听读",
+          "observable_change": "共同转向一首新的婚姻叙事诗",
+          "possible_thought": "我需要把现场主题谱之后出现的《氓》题名与出处加工成全班共同面向的新文本",
+          "seen": "氓\n《诗经·卫风》"
+        },
+        "student_visible_text": "氓\n《诗经·卫风》",
+        "supporting_move": "看题名、听读题音，在教师报页码后翻到教材全文",
+        "time_value": {
+          "irreplaceable_gain": "共同转向一首新的婚姻叙事诗",
+          "minutes": 1
+        },
+        "unique_function": "在班级形成爱情与婚姻文学主题谱之后，才揭示共同阅读的新篇目并聚拢注意",
+        "unique_transformation": "在班级形成爱情与婚姻文学主题谱之后，才揭示共同阅读的新篇目并聚拢注意",
+        "unit_role": "输入",
+        "visual_implementation": "按主视觉职责排版；人物图在角色设定冻结和插图必要性通过前一律不进入本页",
+        "voice_coverage": {
+          "all_have_entry": true,
+          "independent_entry": "听清题音和出处，核对自己翻到相同文本",
+          "selection_method": "全员同步完成；公开发言按页面所列轮说或增量贡献规则执行"
+        }
+      },
+      {
+        "artifact_authorship": "学生个人或同桌共同作者；教师仅提供必要反馈",
         "artifact_location": "学习单·三问导航",
         "audit_scope": "learning_page",
+        "bounded_feedback": "听教师明确‘现在不回答’，核对自己没有抢写原因",
         "channel_split": {
           "screen": "读完六章，再回答\n一、她经历了什么？\n二、她婚后的不幸，在生活中是什么样子？\n三、这场婚姻为什么走到这一步？",
-          "teacher": "刚才，我们把自己读过的故事贴在了这里。今天再读一个更早的故事。它不只写相遇，还由一位女子回望婚后的日子。先别急着回答，请看这三个问题；我们先带着它们完整听，再逐章读懂，六章都读完以后回到这里。",
+          "teacher": "题目很短，故事却要走过六章。请先看这三个问题：她经历了什么？婚后的不幸，在日子里怎样发生？这场婚姻为什么走到这一步？此刻不要抢答，也不必猜结论，只在最想追踪的一问旁做个记号。我们先完整听她说，再逐章读懂，六章讲完以后回到这里。",
           "worksheet": "学习单·三问导航"
         },
+        "consumer_status": "implemented",
         "deletion_loss": "没有导航，初听停顿难以在全文后回收到核心问题",
         "epistemic_status": "合理推断",
         "execution_order": 60,
@@ -2449,6 +2547,7 @@
             "reviewer": "v6-opening-current-self-reviewer"
           }
         ],
+        "individual_minimum_action": "静默读三问，只在问题旁标记最想追踪的一问",
         "inherited_functions": [
           {
             "element_id": "page_function",
@@ -2493,6 +2592,8 @@
           "cannot_merge_reason": "没有导航，初听停顿难以在全文后回收到核心问题",
           "result": "cannot_merge"
         },
+        "minimum_acceptance_criterion": "保留一项个人追踪重点",
+        "named_consumer": "E_FIRST_LISTEN",
         "next_relation": "不中断完整听读六章",
         "next_use_refs": [
           {
@@ -2511,7 +2612,9 @@
         },
         "owner_event_id": null,
         "page_id": "N007",
+        "participation_denominator": "全班每人完成本页所列个人或同桌动作",
         "prerequisite": "学生已知道《氓》是女子回望婚后日子的叙事",
+        "previous_artifact_input": "三道朴素问题",
         "previous_relation": "教师用一句自然转场承接现场主题谱：今天再读一个更早的故事；它不只写相遇，还由一位女子回望婚后的日子。转场不上独立页面、不预给结论",
         "primary_visual_duty": "活动界面",
         "release_status": "final",
@@ -2527,17 +2630,18 @@
           },
           "student_reception": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "student_reception_qa",
             "status": "pass"
           },
           "visual": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "ppt_visual_qa",
             "status": "pass"
           }
         },
+        "revision_evidence": "学习单·三问导航",
         "screen_content": "读完六章，再回答\n一、她经历了什么？\n二、她婚后的不幸，在生活中是什么样子？\n三、这场婚姻为什么走到这一步？",
         "secondary_visual": "章序或活动进度提示",
         "student_action": {
@@ -2548,6 +2652,15 @@
           "object": "三道朴素问题"
         },
         "student_input": "三道朴素问题",
+        "student_reception_contract": {
+          "action": "静默读三问，只在问题旁标记最想追踪的一问",
+          "artifact": "一处问题标记",
+          "heard": "题目很短，故事却要走过六章。请先看这三个问题：她经历了什么？婚后的不幸，在日子里怎样发生？这场婚姻为什么走到这一步？此刻不要抢答，也不必猜结论，只在最想追踪的一问旁做个记号。我们先完整听她说，再逐章读懂，六章讲完以后回到这里。",
+          "next_use": "不中断完整听读六章",
+          "observable_change": "拥有三个朴素追踪问题",
+          "possible_thought": "我需要把三道朴素问题加工成一处问题标记",
+          "seen": "读完六章，再回答\n一、她经历了什么？\n二、她婚后的不幸，在生活中是什么样子？\n三、这场婚姻为什么走到这一步？"
+        },
         "student_visible_text": "读完六章，再回答\n一、她经历了什么？\n二、她婚后的不幸，在生活中是什么样子？\n三、这场婚姻为什么走到这一步？",
         "supporting_move": "静默读三问，只在问题旁标记最想追踪的一问",
         "time_value": {
@@ -2555,6 +2668,7 @@
           "minutes": 1
         },
         "unique_function": "建立全文导航，只让学生读三问，不在缺少文本时写高阶猜想",
+        "unique_transformation": "建立全文导航，只让学生读三问，不在缺少文本时写高阶猜想",
         "unit_role": "输入",
         "visual_implementation": "按主视觉职责排版；人物图在角色设定冻结和插图必要性通过前一律不进入本页",
         "voice_coverage": {
@@ -2564,13 +2678,16 @@
         }
       },
       {
+        "artifact_authorship": "学生个人或同桌共同作者；教师仅提供必要反馈",
         "artifact_location": "教材原句旁",
         "audit_scope": "event_carrier",
+        "bounded_feedback": "听教师连续朗读，不在换页时讨论",
         "channel_split": {
           "screen": "第一次完整听读｜第一至第三章\n眼随声走｜不齐读｜用笔在教材原句旁留一点\n\n第一章\n氓之蚩蚩，抱布贸丝。匪来贸丝，来即我谋。\n送子涉淇，至于顿丘。匪我愆期，子无良媒。\n将子无怒，秋以为期。\n\n第二章\n乘彼垝垣，以望复关。不见复关，泣涕涟涟。\n既见复关，载笑载言。尔卜尔筮，体无咎言。\n以尔车来，以我贿迁。\n\n第三章\n桑之未落，其叶沃若。于嗟鸠兮，无食桑葚！\n于嗟女兮，无与士耽！士之耽兮，犹可说也。\n女之耽兮，不可说也！",
           "teacher": "这一遍先不翻译，也不齐读，也不回答刚才的三个问题。眼睛跟着屏幕，耳朵听她把话说下去；哪一句让你停了一下，就用笔在教材原句旁点一个点，也可以画一个问号。我会用光点停在正在读的一行开头，走神了就从光点处回来。读到第三章我会无声换页，我们不中断。现在从‘氓之蚩蚩’开始。\n\n氓之蚩蚩，抱布贸丝。匪来贸丝，来即我谋。送子涉淇，至于顿丘。匪我愆期，子无良媒。将子无怒，秋以为期。\n\n乘彼垝垣，以望复关。不见复关，泣涕涟涟。既见复关，载笑载言。尔卜尔筮，体无咎言。以尔车来，以我贿迁。\n\n桑之未落，其叶沃若。于嗟鸠兮，无食桑葚！于嗟女兮，无与士耽！士之耽兮，犹可说也。女之耽兮，不可说也！",
           "worksheet": "教材原句旁"
         },
+        "consumer_status": "implemented",
         "deletion_loss": "合并到一页会缩小原诗并损害后排可读性",
         "epistemic_status": "文本明写",
         "execution_order": 70,
@@ -2637,6 +2754,7 @@
             "reviewer": "v6-opening-current-self-reviewer"
           }
         ],
+        "individual_minimum_action": "随声音听读，中途不回答问题；遇到让自己停下的诗句，用笔在教材原句旁点一个点或画问号",
         "inherited_functions": [
           {
             "element_id": "page_function",
@@ -2657,6 +2775,8 @@
           "cannot_merge_reason": "合并到一页会缩小原诗并损害后排可读性",
           "result": "cannot_merge"
         },
+        "minimum_acceptance_criterion": "留下可能的个人停顿处",
+        "named_consumer": "E_FIRST_MARK",
         "next_relation": "不中断进入第四至第六章",
         "next_use_refs": [
           {
@@ -2675,7 +2795,9 @@
         },
         "owner_event_id": "E_FIRST_LISTEN",
         "page_id": "N008",
+        "participation_denominator": "全班每人完成本页所列个人或同桌动作",
         "prerequisite": "学生已读三问并知道只留下一个停顿记号",
+        "previous_artifact_input": "第一至第三章完整原诗",
         "previous_relation": "调用三问作为弱导航",
         "primary_visual_duty": "全文/章内整读",
         "release_status": "final",
@@ -2691,17 +2813,18 @@
           },
           "student_reception": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "student_reception_qa",
             "status": "pass"
           },
           "visual": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "ppt_visual_qa",
             "status": "pass"
           }
         },
+        "revision_evidence": "教材原句旁",
         "screen_content": "第一次完整听读｜第一至第三章\n眼随声走｜不齐读｜用笔在教材原句旁留一点\n\n第一章\n氓之蚩蚩，抱布贸丝。匪来贸丝，来即我谋。\n送子涉淇，至于顿丘。匪我愆期，子无良媒。\n将子无怒，秋以为期。\n\n第二章\n乘彼垝垣，以望复关。不见复关，泣涕涟涟。\n既见复关，载笑载言。尔卜尔筮，体无咎言。\n以尔车来，以我贿迁。\n\n第三章\n桑之未落，其叶沃若。于嗟鸠兮，无食桑葚！\n于嗟女兮，无与士耽！士之耽兮，犹可说也。\n女之耽兮，不可说也！",
         "secondary_visual": "章序或活动进度提示",
         "student_action": {
@@ -2712,6 +2835,15 @@
           "object": "第一至第三章完整原诗"
         },
         "student_input": "第一至第三章完整原诗",
+        "student_reception_contract": {
+          "action": "随声音听读，中途不回答问题；遇到让自己停下的诗句，用笔在教材原句旁点一个点或画问号",
+          "artifact": "前三章中的个人停顿记号",
+          "heard": "这一遍先不翻译，也不齐读，也不回答刚才的三个问题。眼睛跟着屏幕，耳朵听她把话说下去；哪一句让你停了一下，就用笔在教材原句旁点一个点，也可以画一个问号。我会用光点停在正在读的一行开头，走神了就从光点处回来。读到第三章我会无声换页，我们不中断。现在从‘氓之蚩蚩’开始。\n\n氓之蚩蚩，抱布贸丝。匪来贸丝，来即我谋。送子涉淇，至于顿丘。匪我愆期，子无良媒。将子无怒，秋以为期。\n\n乘彼垝垣，以望复关。不见复关，泣涕涟涟。既见复关，载笑载言。尔卜尔筮，体无咎言。以尔车来，以我贿迁。\n\n桑之未落，其叶沃若。于嗟鸠兮，无食桑葚！于嗟女兮，无与士耽！士之耽兮，犹可说也。女之耽兮，不可说也！",
+          "next_use": "不中断进入第四至第六章",
+          "observable_change": "连续接收前三章",
+          "possible_thought": "我需要把第一至第三章完整原诗加工成前三章中的个人停顿记号",
+          "seen": "第一次完整听读｜第一至第三章\n眼随声走｜不齐读｜用笔在教材原句旁留一点\n\n第一章\n氓之蚩蚩，抱布贸丝。匪来贸丝，来即我谋。\n送子涉淇，至于顿丘。匪我愆期，子无良媒。\n将子无怒，秋以为期。\n\n第二章\n乘彼垝垣，以望复关。不见复关，泣涕涟涟。\n既见复关，载笑载言。尔卜尔筮，体无咎言。\n以尔车来，以我贿迁。\n\n第三章\n桑之未落，其叶沃若。于嗟鸠兮，无食桑葚！\n于嗟女兮，无与士耽！士之耽兮，犹可说也。\n女之耽兮，不可说也！"
+        },
         "student_visible_text": "第一次完整听读｜第一至第三章\n眼随声走｜不齐读｜用笔在教材原句旁留一点\n\n第一章\n氓之蚩蚩，抱布贸丝。匪来贸丝，来即我谋。\n送子涉淇，至于顿丘。匪我愆期，子无良媒。\n将子无怒，秋以为期。\n\n第二章\n乘彼垝垣，以望复关。不见复关，泣涕涟涟。\n既见复关，载笑载言。尔卜尔筮，体无咎言。\n以尔车来，以我贿迁。\n\n第三章\n桑之未落，其叶沃若。于嗟鸠兮，无食桑葚！\n于嗟女兮，无与士耽！士之耽兮，犹可说也。\n女之耽兮，不可说也！",
         "supporting_move": "随声音听读，中途不回答问题；遇到让自己停下的诗句，用笔在教材原句旁点一个点或画问号",
         "time_value": {
@@ -2719,6 +2851,7 @@
           "minutes": 3
         },
         "unique_function": "让前三章在不中断听读时保持远距可读",
+        "unique_transformation": "让前三章在不中断听读时保持远距可读",
         "unit_role": "体验",
         "visual_implementation": "按主视觉职责排版；人物图在角色设定冻结和插图必要性通过前一律不进入本页",
         "voice_coverage": {
@@ -2728,13 +2861,16 @@
         }
       },
       {
+        "artifact_authorship": "学生个人或同桌共同作者；教师仅提供必要反馈",
         "artifact_location": "教材原句旁",
         "audit_scope": "event_carrier",
+        "bounded_feedback": "一直听到‘亦已焉哉’，结束前不公开交流",
         "channel_split": {
           "screen": "第一次完整听读｜第四至第六章\n眼随声走｜不齐读｜用笔在教材原句旁留一点\n\n第四章\n桑之落矣，其黄而陨。自我徂尔，三岁食贫。\n淇水汤汤，渐车帷裳。女也不爽，士贰其行。\n士也罔极，二三其德。\n\n第五章\n三岁为妇，靡室劳矣。夙兴夜寐，靡有朝矣。\n言既遂矣，至于暴矣。兄弟不知，咥其笑矣。\n静言思之，躬自悼矣。\n\n第六章\n及尔偕老，老使我怨。淇则有岸，隰则有泮。\n总角之宴，言笑晏晏。信誓旦旦，不思其反。\n反是不思，亦已焉哉！",
           "teacher": "桑之落矣，其黄而陨。自我徂尔，三岁食贫。淇水汤汤，渐车帷裳。女也不爽，士贰其行。士也罔极，二三其德。三岁为妇，靡室劳矣。夙兴夜寐，靡有朝矣。言既遂矣，至于暴矣。兄弟不知，咥其笑矣。静言思之，躬自悼矣。及尔偕老，老使我怨。淇则有岸，隰则有泮。总角之宴，言笑晏晏。信誓旦旦，不思其反。反是不思，亦已焉哉！",
           "worksheet": "教材原句旁"
         },
+        "consumer_status": "implemented",
         "deletion_loss": "合并到一页会缩小原诗并损害后排可读性",
         "epistemic_status": "文本明写",
         "execution_order": 80,
@@ -2801,6 +2937,7 @@
             "reviewer": "v6-opening-current-self-reviewer"
           }
         ],
+        "individual_minimum_action": "继续听读到结尾，再确认自己的一个停顿处",
         "inherited_functions": [
           {
             "element_id": "page_function",
@@ -2821,6 +2958,8 @@
           "cannot_merge_reason": "合并到一页会缩小原诗并损害后排可读性",
           "result": "cannot_merge"
         },
+        "minimum_acceptance_criterion": "形成一个待表达的停顿处",
+        "named_consumer": "E_FIRST_MARK",
         "next_relation": "同桌说出并保存停顿句",
         "next_use_refs": [
           {
@@ -2839,7 +2978,9 @@
         },
         "owner_event_id": "E_FIRST_LISTEN",
         "page_id": "N009",
+        "participation_denominator": "全班每人完成本页所列个人或同桌动作",
         "prerequisite": "前三章听读未被讲解打断",
+        "previous_artifact_input": "第四至第六章完整原诗",
         "previous_relation": "承接前三章连续听读",
         "primary_visual_duty": "全文/章内整读",
         "release_status": "final",
@@ -2855,17 +2996,18 @@
           },
           "student_reception": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "student_reception_qa",
             "status": "pass"
           },
           "visual": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "ppt_visual_qa",
             "status": "pass"
           }
         },
+        "revision_evidence": "教材原句旁",
         "screen_content": "第一次完整听读｜第四至第六章\n眼随声走｜不齐读｜用笔在教材原句旁留一点\n\n第四章\n桑之落矣，其黄而陨。自我徂尔，三岁食贫。\n淇水汤汤，渐车帷裳。女也不爽，士贰其行。\n士也罔极，二三其德。\n\n第五章\n三岁为妇，靡室劳矣。夙兴夜寐，靡有朝矣。\n言既遂矣，至于暴矣。兄弟不知，咥其笑矣。\n静言思之，躬自悼矣。\n\n第六章\n及尔偕老，老使我怨。淇则有岸，隰则有泮。\n总角之宴，言笑晏晏。信誓旦旦，不思其反。\n反是不思，亦已焉哉！",
         "secondary_visual": "章序或活动进度提示",
         "student_action": {
@@ -2876,6 +3018,15 @@
           "object": "第四至第六章完整原诗"
         },
         "student_input": "第四至第六章完整原诗",
+        "student_reception_contract": {
+          "action": "继续听读到结尾，再确认自己的一个停顿处",
+          "artifact": "六章范围内的个人停顿记号",
+          "heard": "桑之落矣，其黄而陨。自我徂尔，三岁食贫。淇水汤汤，渐车帷裳。女也不爽，士贰其行。士也罔极，二三其德。三岁为妇，靡室劳矣。夙兴夜寐，靡有朝矣。言既遂矣，至于暴矣。兄弟不知，咥其笑矣。静言思之，躬自悼矣。及尔偕老，老使我怨。淇则有岸，隰则有泮。总角之宴，言笑晏晏。信誓旦旦，不思其反。反是不思，亦已焉哉！",
+          "next_use": "同桌说出并保存停顿句",
+          "observable_change": "完成六章整体接收",
+          "possible_thought": "我需要把第四至第六章完整原诗加工成六章范围内的个人停顿记号",
+          "seen": "第一次完整听读｜第四至第六章\n眼随声走｜不齐读｜用笔在教材原句旁留一点\n\n第四章\n桑之落矣，其黄而陨。自我徂尔，三岁食贫。\n淇水汤汤，渐车帷裳。女也不爽，士贰其行。\n士也罔极，二三其德。\n\n第五章\n三岁为妇，靡室劳矣。夙兴夜寐，靡有朝矣。\n言既遂矣，至于暴矣。兄弟不知，咥其笑矣。\n静言思之，躬自悼矣。\n\n第六章\n及尔偕老，老使我怨。淇则有岸，隰则有泮。\n总角之宴，言笑晏晏。信誓旦旦，不思其反。\n反是不思，亦已焉哉！"
+        },
         "student_visible_text": "第一次完整听读｜第四至第六章\n眼随声走｜不齐读｜用笔在教材原句旁留一点\n\n第四章\n桑之落矣，其黄而陨。自我徂尔，三岁食贫。\n淇水汤汤，渐车帷裳。女也不爽，士贰其行。\n士也罔极，二三其德。\n\n第五章\n三岁为妇，靡室劳矣。夙兴夜寐，靡有朝矣。\n言既遂矣，至于暴矣。兄弟不知，咥其笑矣。\n静言思之，躬自悼矣。\n\n第六章\n及尔偕老，老使我怨。淇则有岸，隰则有泮。\n总角之宴，言笑晏晏。信誓旦旦，不思其反。\n反是不思，亦已焉哉！",
         "supporting_move": "继续听读到结尾，再确认自己的一个停顿处",
         "time_value": {
@@ -2883,6 +3034,7 @@
           "minutes": 3
         },
         "unique_function": "让后三章在不中断听读时保持远距可读并完成六章整体接收",
+        "unique_transformation": "让后三章在不中断听读时保持远距可读并完成六章整体接收",
         "unit_role": "体验",
         "visual_implementation": "按主视觉职责排版；人物图在角色设定冻结和插图必要性通过前一律不进入本页",
         "voice_coverage": {
@@ -2892,13 +3044,16 @@
         }
       },
       {
+        "artifact_authorship": "学生个人或同桌共同作者；教师仅提供必要反馈",
         "artifact_location": "学习单·第一次完整听读",
         "audit_scope": "learning_page",
+        "bounded_feedback": "听同桌说完，补记一项自己没有注意到的声音、画面或疑问",
         "channel_split": {
-          "screen": "哪一句把你留了下来？\n抄下一句。\n接一句：我听见……｜我看见……｜我想问……\n同桌各说一次；听的人补记一个不同之处。",
+          "screen": "把第一次听见的《氓》留在纸上\n有一句把我留住｜抄下它，再接一句：我听见／我看见／我想问……\n尚未找到｜如实写下；先听同桌，再决定补一句或保留\n同桌各说一次；听的人补记一个不同之处。",
           "teacher": "如果有一句把你留了下来，就抄下它，再接一句自然话：我听见、我看见，或者我想问。如果暂时没有，也请如实写‘尚未找到’，听同桌说完以后再决定要不要补一句。两个人都要说一次；听的人补记一个自己原先没有注意到的地方。",
           "worksheet": "学习单·第一次完整听读"
         },
+        "consumer_status": "declared",
         "deletion_loss": "没有保存和后用，完整听读只留下转瞬感受",
         "epistemic_status": "课堂生成",
         "execution_order": 90,
@@ -2966,6 +3121,7 @@
             "reviewer": "v6-opening-current-self-reviewer"
           }
         ],
+        "individual_minimum_action": "每人抄一句并接一句自然话，同桌各说一次，听者补记差异",
         "inherited_functions": [
           {
             "element_id": "page_function",
@@ -2986,6 +3142,8 @@
           "cannot_merge_reason": "没有保存和后用，完整听读只留下转瞬感受",
           "result": "cannot_merge"
         },
+        "minimum_acceptance_criterion": "全文回读时可核验理解变化",
+        "named_consumer": "E_FULL_TEXT_RETURN",
         "next_relation": "全文回读时重读原停顿并写下变化",
         "next_use_refs": [
           {
@@ -3004,7 +3162,9 @@
         },
         "owner_event_id": null,
         "page_id": "N010",
+        "participation_denominator": "全班每人完成本页所列个人或同桌动作",
         "prerequisite": "每人完成六章听读并拥有停顿记号或‘尚未找到’",
+        "previous_artifact_input": "个人停顿记号和原诗",
         "previous_relation": "调用完整听读形成的停顿",
         "primary_visual_duty": "活动界面",
         "release_status": "provisional",
@@ -3020,18 +3180,19 @@
           },
           "student_reception": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "student_reception_qa",
             "status": "pass"
           },
           "visual": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "ppt_visual_qa",
             "status": "pass"
           }
         },
-        "screen_content": "哪一句把你留了下来？\n抄下一句。\n接一句：我听见……｜我看见……｜我想问……\n同桌各说一次；听的人补记一个不同之处。",
+        "revision_evidence": "学习单·第一次完整听读",
+        "screen_content": "把第一次听见的《氓》留在纸上\n有一句把我留住｜抄下它，再接一句：我听见／我看见／我想问……\n尚未找到｜如实写下；先听同桌，再决定补一句或保留\n同桌各说一次；听的人补记一个不同之处。",
         "secondary_visual": "章序或活动进度提示",
         "student_action": {
           "action": "每人抄一句并接一句自然话，同桌各说一次，听者补记差异",
@@ -3041,13 +3202,23 @@
           "object": "个人停顿记号和原诗"
         },
         "student_input": "个人停顿记号和原诗",
-        "student_visible_text": "哪一句把你留了下来？\n抄下一句。\n接一句：我听见……｜我看见……｜我想问……\n同桌各说一次；听的人补记一个不同之处。",
+        "student_reception_contract": {
+          "action": "每人抄一句并接一句自然话，同桌各说一次，听者补记差异",
+          "artifact": "初读停顿卡和同伴差异补记",
+          "heard": "如果有一句把你留了下来，就抄下它，再接一句自然话：我听见、我看见，或者我想问。如果暂时没有，也请如实写‘尚未找到’，听同桌说完以后再决定要不要补一句。两个人都要说一次；听的人补记一个自己原先没有注意到的地方。",
+          "next_use": "全文回读时重读原停顿并写下变化",
+          "observable_change": "形成可读的初读证据并经过一次倾听",
+          "possible_thought": "我需要把个人停顿记号和原诗加工成初读停顿卡和同伴差异补记",
+          "seen": "把第一次听见的《氓》留在纸上\n有一句把我留住｜抄下它，再接一句：我听见／我看见／我想问……\n尚未找到｜如实写下；先听同桌，再决定补一句或保留\n同桌各说一次；听的人补记一个不同之处。"
+        },
+        "student_visible_text": "把第一次听见的《氓》留在纸上\n有一句把我留住｜抄下它，再接一句：我听见／我看见／我想问……\n尚未找到｜如实写下；先听同桌，再决定补一句或保留\n同桌各说一次；听的人补记一个不同之处。",
         "supporting_move": "每人抄一句并接一句自然话，同桌各说一次，听者补记差异",
         "time_value": {
           "irreplaceable_gain": "形成可读的初读证据并经过一次倾听",
           "minutes": 3
         },
         "unique_function": "把个人初听停顿转成可保存、可交流并在全文回读时调用的初读证据",
+        "unique_transformation": "把个人初听停顿转成可保存、可交流并在全文回读时调用的初读证据",
         "unit_role": "交流",
         "visual_implementation": "按主视觉职责排版；人物图在角色设定冻结和插图必要性通过前一律不进入本页",
         "voice_coverage": {
@@ -3057,13 +3228,16 @@
         }
       },
       {
+        "artifact_authorship": "学生个人或同桌共同作者；教师仅提供必要反馈",
         "artifact_location": "学习单B·三块最小路标",
         "audit_scope": "learning_page",
+        "bounded_feedback": "听同桌回答‘谁在回望什么’，只核对人物、动作和对象是否说完整",
         "channel_split": {
-          "screen": "《诗经》与《卫风》\n我国最早的诗歌总集｜305篇\n风、雅、颂｜《氓》属于《卫风》\n一位女子，用第一人称回望婚姻经历\n同桌各用一句话说：谁在回望什么？",
-          "teacher": "刚才我们先听见了六章。现在请接过这张路标卡，只给这首诗补三块够用的路标：我国最早的诗歌总集，三百零五篇；风、雅、颂，《氓》属于《卫风》；诗里是一位女子用‘我’回望自己的婚姻经历。请把三个定位词写在卡上，再和同桌各用一句话说清：谁在回望什么？",
+          "screen": "《诗经》与《卫风》\n我国最早的诗歌总集｜305篇\n风、雅、颂｜《氓》属于《卫风》\n一位女子，用第一人称回望婚姻经历\n记住三块路标；等屏幕收起答案，再同桌复述：谁在回望什么？",
+          "teacher": "刚才我们先听见了六章。现在只补三块够用的路标：第一，《诗经》是我国最早的诗歌总集，共三百零五篇；第二，它分风、雅、颂，《氓》属于《卫风》；第三，诗里是一位女子用‘我’回望自己的婚姻经历。请看屏幕，也把三个词写在路标卡上：三百零五、《卫风》、女子第一人称。（等待书写。）现在把卡片轻轻扣住，我也把完整答案收起来。只看屏幕上的三个问题：这是怎样的一部诗歌总集？《氓》属于哪一部分？谁在回望什么？同桌一人先说，另一人核对，再换一次。若一句话还没有说完整，听者只问：还缺了哪个动作，或哪个对象？",
           "worksheet": "学习单B·三块最小路标"
         },
+        "consumer_status": "implemented",
         "deletion_loss": "缺少体裁、出处和叙述主体会削弱后续语言判断",
         "epistemic_status": "文本明写",
         "execution_order": 100,
@@ -3130,6 +3304,7 @@
             "reviewer": "v6-opening-current-self-reviewer"
           }
         ],
+        "individual_minimum_action": "在初听后发下的路标卡写下305、卫风、女子第一人称三个定位词",
         "inherited_functions": [
           {
             "element_id": "page_function",
@@ -3144,12 +3319,14 @@
         "listener_task": {
           "artifact": "三项文本身份旁批",
           "reuse": "用四言节奏进入第一章句群",
-          "task": "听同桌用一句话复述‘谁在回望什么’，核对三个定位词"
+          "task": "听同桌回答‘谁在回望什么’，只核对人物、动作和对象是否说完整"
         },
         "merge_test": {
           "cannot_merge_reason": "缺少体裁、出处和叙述主体会削弱后续语言判断",
           "result": "cannot_merge"
         },
+        "minimum_acceptance_criterion": "能说出谁在回望何种经历",
+        "named_consumer": "E_RHYTHM",
         "next_relation": "用四言节奏进入第一章句群",
         "next_use_refs": [
           {
@@ -3168,7 +3345,9 @@
         },
         "owner_event_id": null,
         "page_id": "N011",
+        "participation_denominator": "全班每人完成本页所列个人或同桌动作",
         "prerequisite": "学生已听见六章并保留个人停顿",
+        "previous_artifact_input": "教材题名、出处和学习提示",
         "previous_relation": "不打断第一次完整听读",
         "primary_visual_duty": "信息路标",
         "release_status": "final",
@@ -3184,18 +3363,19 @@
           },
           "student_reception": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "student_reception_qa",
             "status": "pass"
           },
           "visual": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "ppt_visual_qa",
             "status": "pass"
           }
         },
-        "screen_content": "《诗经》与《卫风》\n我国最早的诗歌总集｜305篇\n风、雅、颂｜《氓》属于《卫风》\n一位女子，用第一人称回望婚姻经历\n同桌各用一句话说：谁在回望什么？",
+        "revision_evidence": "学习单B·三块最小路标",
+        "screen_content": "《诗经》与《卫风》\n我国最早的诗歌总集｜305篇\n风、雅、颂｜《氓》属于《卫风》\n一位女子，用第一人称回望婚姻经历\n记住三块路标；等屏幕收起答案，再同桌复述：谁在回望什么？",
         "secondary_visual": "章序或活动进度提示",
         "student_action": {
           "action": "在初听后发下的路标卡写下305、卫风、女子第一人称三个定位词",
@@ -3205,29 +3385,42 @@
           "object": "教材题名、出处和学习提示"
         },
         "student_input": "教材题名、出处和学习提示",
-        "student_visible_text": "《诗经》与《卫风》\n我国最早的诗歌总集｜305篇\n风、雅、颂｜《氓》属于《卫风》\n一位女子，用第一人称回望婚姻经历\n同桌各用一句话说：谁在回望什么？",
+        "student_reception_contract": {
+          "action": "在初听后发下的路标卡写下305、卫风、女子第一人称三个定位词",
+          "artifact": "三项文本身份旁批",
+          "heard": "刚才我们先听见了六章。现在只补三块够用的路标：第一，《诗经》是我国最早的诗歌总集，共三百零五篇；第二，它分风、雅、颂，《氓》属于《卫风》；第三，诗里是一位女子用‘我’回望自己的婚姻经历。请看屏幕，也把三个词写在路标卡上：三百零五、《卫风》、女子第一人称。（等待书写。）现在把卡片轻轻扣住，我也把完整答案收起来。只看屏幕上的三个问题：这是怎样的一部诗歌总集？《氓》属于哪一部分？谁在回望什么？同桌一人先说，另一人核对，再换一次。若一句话还没有说完整，听者只问：还缺了哪个动作，或哪个对象？",
+          "next_use": "用四言节奏进入第一章句群",
+          "observable_change": "获得最小作品身份",
+          "possible_thought": "我需要把教材题名、出处和学习提示加工成三项文本身份旁批",
+          "seen": "《诗经》与《卫风》\n我国最早的诗歌总集｜305篇\n风、雅、颂｜《氓》属于《卫风》\n一位女子，用第一人称回望婚姻经历\n记住三块路标；等屏幕收起答案，再同桌复述：谁在回望什么？"
+        },
+        "student_visible_text": "《诗经》与《卫风》\n我国最早的诗歌总集｜305篇\n风、雅、颂｜《氓》属于《卫风》\n一位女子，用第一人称回望婚姻经历\n记住三块路标；等屏幕收起答案，再同桌复述：谁在回望什么？",
         "supporting_move": "在初听后发下的路标卡写下305、卫风、女子第一人称三个定位词",
         "time_value": {
           "irreplaceable_gain": "获得最小作品身份",
           "minutes": 2
         },
         "unique_function": "在学生先听完整诗后补足继续逐句阅读所需的最小文本身份",
+        "unique_transformation": "在学生先听完整诗后补足继续逐句阅读所需的最小文本身份",
         "unit_role": "澄清",
         "visual_implementation": "按主视觉职责排版；人物图在角色设定冻结和插图必要性通过前一律不进入本页",
         "voice_coverage": {
           "all_have_entry": true,
-          "independent_entry": "听同桌用一句话复述‘谁在回望什么’，核对三个定位词",
+          "independent_entry": "听同桌回答‘谁在回望什么’，只核对人物、动作和对象是否说完整",
           "selection_method": "全员同步完成；公开发言按页面所列轮说或增量贡献规则执行"
         }
       },
       {
+        "artifact_authorship": "学生个人或同桌共同作者；教师仅提供必要反馈",
         "artifact_location": "学习单B·第一章节奏标记",
         "audit_scope": "learning_page",
+        "bounded_feedback": "同桌先判断是需要调整还是原本读顺，再用提问或复述动作帮助对方重读",
         "channel_split": {
-          "screen": "先借四言节奏走进声音\n氓之／蚩蚩，抱布／贸丝。\n匪来／贸丝，来即／我谋。\n／提示节奏，不切碎完整动作。\n① 看屏幕，跟读一遍。\n听到‘看教材’ → 转看教材第一章开头的无斜线原句。\n② 听者问‘谁做什么？’；读者带着完整动作再读。\n在路标卡写下重读后改动的一处。",
-          "teacher": "知道谁在说，还要先把她的话读顺。斜线只提示基本节奏，不能把‘抱布贸丝’这样的完整动作切碎。先看屏幕，听我读前两句，大家跟读一遍。等我说‘看教材’，再把目光移到教材第一章开头的无斜线原句。现在，看教材。同桌互读；听者若听见机械的一字一顿，就问‘谁做什么’，读者带着完整动作再读一遍。最后在路标卡上写下你重读后改动的一处。",
+          "screen": "先借四言节奏走进声音\n氓之／蚩蚩，抱布／贸丝。\n匪来／贸丝，来即／我谋。\n／提示节奏，不切碎完整动作。\n跟读一遍；听到‘看教材’，转看第一章开头的无斜线原句。\n停顿需要调整｜听者问‘谁做什么？’，读者带着完整动作再读\n原本读顺｜圈出一句中的连续动作，再读给同桌听",
+          "teacher": "知道谁在说，还要先把她的话读顺。斜线只提示基本节奏，不能把‘抱布贸丝’这样的动作切碎。先看屏幕，听我读前两句，大家跟读一遍。现在，看教材。同桌互读一次，再诚实选择一条路：若停顿需要调整，听者只问‘谁做什么’，读者带着完整动作再读，并标出改动；若原本已经读顺，不必故意改错，请圈出一句里的连续动作，再完整读给同桌听。两条路都在读懂声音，不分高低。",
           "worksheet": "学习单B·第一章节奏标记"
         },
+        "consumer_status": "declared",
         "deletion_loss": "没有声音支架，逐句解释容易变成断裂的字词翻译",
         "epistemic_status": "文本明写",
         "execution_order": 110,
@@ -3295,6 +3488,7 @@
             "reviewer": "v6-opening-current-self-reviewer"
           }
         ],
+        "individual_minimum_action": "教师范读、全班跟读，再转看教材无斜线原句互读；需要调整者标出修订处，原本读顺者圈出连续动作并重读",
         "inherited_functions": [
           {
             "element_id": "page_function",
@@ -3319,14 +3513,16 @@
           "S016"
         ],
         "listener_task": {
-          "artifact": "路标卡上的一处节奏修订",
+          "artifact": "路标卡上的节奏修订或连续动作圈画",
           "reuse": "进入第一章外在印象与真实来意句群",
-          "task": "同桌指出一处机械停顿并用‘谁—做什么’帮助重读"
+          "task": "同桌先判断是需要调整还是原本读顺，再用提问或复述动作帮助对方重读"
         },
         "merge_test": {
           "cannot_merge_reason": "没有声音支架，逐句解释容易变成断裂的字词翻译",
           "result": "cannot_merge"
         },
+        "minimum_acceptance_criterion": "学生留下真实的修订或连续动作圈画",
+        "named_consumer": "E_CHAPTER1_START",
         "next_relation": "进入第一章外在印象与真实来意句群",
         "next_use_refs": [
           {
@@ -3339,13 +3535,15 @@
         "node_id": "N012",
         "node_type": "page",
         "observable_change": {
-          "after": "能以基本节奏保持行动连贯",
-          "before": "四言可能被逐字点读",
-          "criterion": "为第一章句群讲读做好声音准备"
+          "after": "每人都能以基本节奏保持行动连贯",
+          "before": "四言可能被逐字点读，也可能已经读顺",
+          "criterion": "学生留下真实的修订或连续动作圈画"
         },
         "owner_event_id": null,
         "page_id": "N012",
+        "participation_denominator": "全班每人完成本页所列个人或同桌动作",
         "prerequisite": "学生已知道女子第一人称回望并准备进入第一章",
+        "previous_artifact_input": "第一章前两组原句和停顿示范",
         "previous_relation": "调用最小作品身份和初听声音",
         "primary_visual_duty": "原文批注",
         "release_status": "provisional",
@@ -3361,39 +3559,50 @@
           },
           "student_reception": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "student_reception_qa",
             "status": "pass"
           },
           "visual": {
             "defect_ids": [],
-            "reviewed_at": "2026-08-13T11:43:15+08:00",
+            "reviewed_at": "2026-08-13T17:13:00+08:00",
             "reviewer": "ppt_visual_qa",
             "status": "pass"
           }
         },
-        "screen_content": "先借四言节奏走进声音\n氓之／蚩蚩，抱布／贸丝。\n匪来／贸丝，来即／我谋。\n／提示节奏，不切碎完整动作。\n① 看屏幕，跟读一遍。\n听到‘看教材’ → 转看教材第一章开头的无斜线原句。\n② 听者问‘谁做什么？’；读者带着完整动作再读。\n在路标卡写下重读后改动的一处。",
+        "revision_evidence": "学习单B·第一章节奏标记",
+        "screen_content": "先借四言节奏走进声音\n氓之／蚩蚩，抱布／贸丝。\n匪来／贸丝，来即／我谋。\n／提示节奏，不切碎完整动作。\n跟读一遍；听到‘看教材’，转看第一章开头的无斜线原句。\n停顿需要调整｜听者问‘谁做什么？’，读者带着完整动作再读\n原本读顺｜圈出一句中的连续动作，再读给同桌听",
         "secondary_visual": "章序或活动进度提示",
         "student_action": {
-          "action": "教师范读一次，全班跟读一次，同桌转看教材无斜线原句互读一次；末段在路标卡写下重读后改动的一处",
+          "action": "教师范读、全班跟读，再转看教材无斜线原句互读；需要调整者标出修订处，原本读顺者圈出连续动作并重读",
           "actor": "每名学生",
-          "artifact": "路标卡上的一处节奏修订",
+          "artifact": "路标卡上的节奏修订或连续动作圈画",
           "duration_seconds": 120,
           "object": "第一章前两组原句和停顿示范"
         },
         "student_input": "第一章前两组原句和停顿示范",
-        "student_visible_text": "先借四言节奏走进声音\n氓之／蚩蚩，抱布／贸丝。\n匪来／贸丝，来即／我谋。\n／提示节奏，不切碎完整动作。\n① 看屏幕，跟读一遍。\n听到‘看教材’ → 转看教材第一章开头的无斜线原句。\n② 听者问‘谁做什么？’；读者带着完整动作再读。\n在路标卡写下重读后改动的一处。",
-        "supporting_move": "教师范读一次，全班跟读一次，同桌转看教材无斜线原句互读一次；末段在路标卡写下重读后改动的一处",
+        "student_reception_contract": {
+          "action": "教师范读、全班跟读，再转看教材无斜线原句互读；需要调整者标出修订处，原本读顺者圈出连续动作并重读",
+          "artifact": "路标卡上的节奏修订或连续动作圈画",
+          "heard": "知道谁在说，还要先把她的话读顺。斜线只提示基本节奏，不能把‘抱布贸丝’这样的动作切碎。先看屏幕，听我读前两句，大家跟读一遍。现在，看教材。同桌互读一次，再诚实选择一条路：若停顿需要调整，听者只问‘谁做什么’，读者带着完整动作再读，并标出改动；若原本已经读顺，不必故意改错，请圈出一句里的连续动作，再完整读给同桌听。两条路都在读懂声音，不分高低。",
+          "next_use": "进入第一章外在印象与真实来意句群",
+          "observable_change": "每人都能以基本节奏保持行动连贯",
+          "possible_thought": "我需要把第一章前两组原句和停顿示范加工成路标卡上的节奏修订或连续动作圈画",
+          "seen": "先借四言节奏走进声音\n氓之／蚩蚩，抱布／贸丝。\n匪来／贸丝，来即／我谋。\n／提示节奏，不切碎完整动作。\n跟读一遍；听到‘看教材’，转看第一章开头的无斜线原句。\n停顿需要调整｜听者问‘谁做什么？’，读者带着完整动作再读\n原本读顺｜圈出一句中的连续动作，再读给同桌听"
+        },
+        "student_visible_text": "先借四言节奏走进声音\n氓之／蚩蚩，抱布／贸丝。\n匪来／贸丝，来即／我谋。\n／提示节奏，不切碎完整动作。\n跟读一遍；听到‘看教材’，转看第一章开头的无斜线原句。\n停顿需要调整｜听者问‘谁做什么？’，读者带着完整动作再读\n原本读顺｜圈出一句中的连续动作，再读给同桌听",
+        "supporting_move": "教师范读、全班跟读，再转看教材无斜线原句互读；需要调整者标出修订处，原本读顺者圈出连续动作并重读",
         "time_value": {
-          "irreplaceable_gain": "能以基本节奏保持行动连贯",
+          "irreplaceable_gain": "每人都能以基本节奏保持行动连贯",
           "minutes": 2
         },
         "unique_function": "让学生用基本四言节奏读顺第一句群，同时推迟尚未观察到的手法命名",
+        "unique_transformation": "让学生用基本四言节奏读顺第一句群，同时推迟尚未观察到的手法命名",
         "unit_role": "体验",
         "visual_implementation": "按主视觉职责排版；人物图在角色设定冻结和插图必要性通过前一律不进入本页",
         "voice_coverage": {
           "all_have_entry": true,
-          "independent_entry": "同桌指出一处机械停顿并用‘谁—做什么’帮助重读",
+          "independent_entry": "同桌先判断是需要调整还是原本读顺，再用提问或复述动作帮助对方重读",
           "selection_method": "全员同步完成；公开发言按页面所列轮说或增量贡献规则执行"
         }
       }
@@ -3404,27 +3613,27 @@
       {
         "execution_order": 11,
         "module": "opening",
-        "node_id": "E_TITLE"
+        "node_id": "E_RECALL_PERSONAL"
       },
       {
         "execution_order": 21,
         "module": "opening",
-        "node_id": "E_RECALL_PERSONAL"
+        "node_id": "E_RECALL_GROUP"
       },
       {
         "execution_order": 31,
         "module": "opening",
-        "node_id": "E_RECALL_GROUP"
+        "node_id": "E_RECALL_CLASS"
       },
       {
         "execution_order": 41,
         "module": "opening",
-        "node_id": "E_RECALL_CLASS"
+        "node_id": "E_THEME_MAP"
       },
       {
         "execution_order": 51,
         "module": "opening",
-        "node_id": "E_THEME_MAP"
+        "node_id": "E_TITLE"
       },
       {
         "execution_order": 61,
@@ -3503,27 +3712,27 @@
       {
         "execution_order": 10,
         "module": "opening",
-        "node_id": "N001"
+        "node_id": "N002"
       },
       {
         "execution_order": 20,
         "module": "opening",
-        "node_id": "N002"
+        "node_id": "N003"
       },
       {
         "execution_order": 30,
         "module": "opening",
-        "node_id": "N003"
+        "node_id": "N004"
       },
       {
         "execution_order": 40,
         "module": "opening",
-        "node_id": "N004"
+        "node_id": "N005"
       },
       {
         "execution_order": 50,
         "module": "opening",
-        "node_id": "N005"
+        "node_id": "N001"
       },
       {
         "execution_order": 60,
@@ -3943,18 +4152,18 @@
     "p1": 0,
     "p2": 0,
     "review_scope": "opening_structure_desktop_design_only",
-    "reviewed_source_sha256": "0b3e968eb39d951929a69a922e145e28cb80266f6b1ed3ceb220c1dd8950e697",
+    "reviewed_source_sha256": "8cbf8a0a93baf6fb8f72691587331c972de9c0610a39d2c31ee9f8782e735b81",
     "schema_version": "1.0",
     "status": "pass",
     "student_reception": {
-      "module_regression": "11 pages / 15 events; N003 no-new-content branch, N008 permanent textbook mark, N012 removable rhythm scaffold and actual scripts/worksheets rechecked",
-      "reviewed_at": "2026-08-13T11:43:15+08:00",
+      "module_regression": "11 logical pages / 12 physical slides reconstructed page by page; N003 proposer authorship and signature, N010 parallel sentence stems, N011 input/recall answer boundary, N012 two honest reading paths, and full N002-N005 regression all passed",
+      "reviewed_at": "2026-08-13T17:13:00+08:00",
       "reviewer": "student_reception_qa",
       "status": "pass"
     },
     "visual": {
-      "module_regression": "11 pages / 15 events; three prototype duties re-rendered and rechecked; no character illustration admitted; physical-room risks retained as P3",
-      "reviewed_at": "2026-08-13T11:43:15+08:00",
+      "module_regression": "rendered_v15 all 12 physical slides inspected at 2400x1350; prior P2 defects on slides 1, 3, 9, 10 and 12 closed, N003 authorship visible, and all remaining slides passed regression",
+      "reviewed_at": "2026-08-13T17:13:00+08:00",
       "reviewer": "ppt_visual_qa",
       "status": "pass"
     }
@@ -47631,27 +47840,27 @@
       {
         "execution_order": 11,
         "module": "opening",
-        "node_id": "E_TITLE"
+        "node_id": "E_RECALL_PERSONAL"
       },
       {
         "execution_order": 21,
         "module": "opening",
-        "node_id": "E_RECALL_PERSONAL"
+        "node_id": "E_RECALL_GROUP"
       },
       {
         "execution_order": 31,
         "module": "opening",
-        "node_id": "E_RECALL_GROUP"
+        "node_id": "E_RECALL_CLASS"
       },
       {
         "execution_order": 41,
         "module": "opening",
-        "node_id": "E_RECALL_CLASS"
+        "node_id": "E_THEME_MAP"
       },
       {
         "execution_order": 51,
         "module": "opening",
-        "node_id": "E_THEME_MAP"
+        "node_id": "E_TITLE"
       },
       {
         "execution_order": 61,
@@ -47730,27 +47939,27 @@
       {
         "execution_order": 10,
         "module": "opening",
-        "node_id": "N001"
+        "node_id": "N002"
       },
       {
         "execution_order": 20,
         "module": "opening",
-        "node_id": "N002"
+        "node_id": "N003"
       },
       {
         "execution_order": 30,
         "module": "opening",
-        "node_id": "N003"
+        "node_id": "N004"
       },
       {
         "execution_order": 40,
         "module": "opening",
-        "node_id": "N004"
+        "node_id": "N005"
       },
       {
         "execution_order": 50,
         "module": "opening",
-        "node_id": "N005"
+        "node_id": "N001"
       },
       {
         "execution_order": 60,
@@ -47789,27 +47998,27 @@
       {
         "execution_order": 11,
         "module": "opening",
-        "node_id": "E_TITLE"
+        "node_id": "E_RECALL_PERSONAL"
       },
       {
         "execution_order": 21,
         "module": "opening",
-        "node_id": "E_RECALL_PERSONAL"
+        "node_id": "E_RECALL_GROUP"
       },
       {
         "execution_order": 31,
         "module": "opening",
-        "node_id": "E_RECALL_GROUP"
+        "node_id": "E_RECALL_CLASS"
       },
       {
         "execution_order": 41,
         "module": "opening",
-        "node_id": "E_RECALL_CLASS"
+        "node_id": "E_THEME_MAP"
       },
       {
         "execution_order": 51,
         "module": "opening",
-        "node_id": "E_THEME_MAP"
+        "node_id": "E_TITLE"
       },
       {
         "execution_order": 61,
@@ -47888,27 +48097,27 @@
       {
         "execution_order": 10,
         "module": "opening",
-        "node_id": "N001"
+        "node_id": "N002"
       },
       {
         "execution_order": 20,
         "module": "opening",
-        "node_id": "N002"
+        "node_id": "N003"
       },
       {
         "execution_order": 30,
         "module": "opening",
-        "node_id": "N003"
+        "node_id": "N004"
       },
       {
         "execution_order": 40,
         "module": "opening",
-        "node_id": "N004"
+        "node_id": "N005"
       },
       {
         "execution_order": 50,
         "module": "opening",
-        "node_id": "N005"
+        "node_id": "N001"
       },
       {
         "execution_order": 60,
@@ -47947,27 +48156,27 @@
       {
         "execution_order": 11,
         "module": "opening",
-        "node_id": "E_TITLE"
+        "node_id": "E_RECALL_PERSONAL"
       },
       {
         "execution_order": 21,
         "module": "opening",
-        "node_id": "E_RECALL_PERSONAL"
+        "node_id": "E_RECALL_GROUP"
       },
       {
         "execution_order": 31,
         "module": "opening",
-        "node_id": "E_RECALL_GROUP"
+        "node_id": "E_RECALL_CLASS"
       },
       {
         "execution_order": 41,
         "module": "opening",
-        "node_id": "E_RECALL_CLASS"
+        "node_id": "E_THEME_MAP"
       },
       {
         "execution_order": 51,
         "module": "opening",
-        "node_id": "E_THEME_MAP"
+        "node_id": "E_TITLE"
       },
       {
         "execution_order": 61,
@@ -48046,27 +48255,27 @@
       {
         "execution_order": 10,
         "module": "opening",
-        "node_id": "N001"
+        "node_id": "N002"
       },
       {
         "execution_order": 20,
         "module": "opening",
-        "node_id": "N002"
+        "node_id": "N003"
       },
       {
         "execution_order": 30,
         "module": "opening",
-        "node_id": "N003"
+        "node_id": "N004"
       },
       {
         "execution_order": 40,
         "module": "opening",
-        "node_id": "N004"
+        "node_id": "N005"
       },
       {
         "execution_order": 50,
         "module": "opening",
-        "node_id": "N005"
+        "node_id": "N001"
       },
       {
         "execution_order": 60,

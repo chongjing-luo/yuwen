@@ -1,0 +1,70 @@
+{
+  "receipt_id": "RECEIPT-X2-U02-CARDS-G4-20260808",
+  "gate": "DG4-MERGE",
+  "merged_at": "2026-08-08T17:46:00+08:00",
+  "artifact_version": "mixed: CARD-X2-U02-01/02 v0.2.0; CARD-X2-U02-03 v0.2.1",
+  "content_change": false,
+  "allowed_diff": ["front_matter.status", "front_matter.reviewers", "ledger.status", "ledger.reviewers", "state_transition"],
+  "deliverables": [
+    {
+      "deliverable_id": "CARD-X2-U02-01",
+      "artifact_version": "0.2.0",
+      "pre_merge_file_sha256": "2e9f93933f093806fc562c3e0dec12710030809f1f2a3cc5bff28440b06d16cf",
+      "post_merge_file_sha256": "117a68f1d16f55a252fca4b27177976dd062fd60213a4f474d25ee3d9add4b03",
+      "primary_score": 98.5,
+      "secondary_score": 98.0,
+      "primary_review": "card_x2_u02_01_primary_review_r1_independent_20260808.md",
+      "secondary_review": "card_x2_u02_01_secondary_review_r1_independent_20260808.md"
+    },
+    {
+      "deliverable_id": "CARD-X2-U02-02",
+      "artifact_version": "0.2.0",
+      "pre_merge_file_sha256": "9771a916f3a4eb625b889c22ad2dbd97a6afc59fdc580740504380b4f71d7185",
+      "post_merge_file_sha256": "4eb92ade64987dfaf8cc140d6aced084accec4b00ad3af3da010582e2cb26c9a",
+      "primary_score": 97.5,
+      "secondary_score": 97.5,
+      "primary_review": "card_x2_u02_02_primary_review_r1_independent_20260808.md",
+      "secondary_review": "card_x2_u02_02_secondary_review_r1_independent_20260808.md"
+    },
+    {
+      "deliverable_id": "CARD-X2-U02-03",
+      "artifact_version": "0.2.1",
+      "pre_merge_file_sha256": "3581294f46e25999582ddfe483f33e5c720dce4da066b88068d4549a4db3fdf2",
+      "post_merge_file_sha256": "edea1395617d133b653c1a1d0379985b9564839496312f0acbdc3a9173a2e27c",
+      "primary_score": 97.5,
+      "secondary_score": 97.5,
+      "primary_review": "card_x2_u02_03_primary_review_r1_independent_20260808.md",
+      "secondary_review": "card_x2_u02_03_secondary_review_r1_independent_20260808.md"
+    }
+  ],
+  "review_policy": {
+    "rubric_version": "2.0-textbook",
+    "rubric_sha256": "ab9cc53d57834642e66e568824d1c0c53e128953e15b20b4c7bd04aa30610d43",
+    "taxonomy_sha256": "13e5e23c45c05359a5c91e360ce8bd71dbf2a841c2c6a72f1adca52bef7cbd4b",
+    "r01_r10": "all 0",
+    "p0_p1_p2": "0/0/0"
+  },
+  "validator": {
+    "review_run_id": "VAL-20260808-173748+0800",
+    "post_merge_run_id": "VAL-20260808-174847+0800",
+    "report": "work/knowledge/_meta/validation_reports/archive/x2_u02_cards_validation_20260808_g4final2.json",
+    "report_sha256": "a3411a56caa51ca1da2491134b7a468268d9d2b0e9aa2ce1b76d33b3fc1fc5f6",
+    "result": "passed",
+    "errors": 0
+  },
+  "transition_ids": [
+    "STATE-20260808-CARD-X2-U02-01-G4",
+    "STATE-20260808-CARD-X2-U02-02-G4",
+    "STATE-20260808-CARD-X2-U02-03-G4"
+  ],
+  "downstream_impact": ["UNIT-X2-U02"],
+  "status": "accepted",
+  "review_file_sha256": {
+    "card_x2_u02_01_primary_review_r1_independent_20260808.md": "3a9d6c3d47f21f368516e3c85d87d684d3ffbaeaea839a644c3b1690f77fd4ca",
+    "card_x2_u02_01_secondary_review_r1_independent_20260808.md": "34fb410ab3451ba3fff8559ffb57323f938ec5c077a345da59b8375dbe520c59",
+    "card_x2_u02_02_primary_review_r1_independent_20260808.md": "cd4a308492078f6287bbf78d40c0ae5c1c90abcefc904179866f4837e1b9d146",
+    "card_x2_u02_02_secondary_review_r1_independent_20260808.md": "a877e1c21347eb131320a33171e8ba08849ae942e09b47ddd43a08e88414c9f6",
+    "card_x2_u02_03_primary_review_r1_independent_20260808.md": "be9173c5a4a9d4908f54272c465e478db29f0dbad04d4a7b9583426e5b8abc8a",
+    "card_x2_u02_03_secondary_review_r1_independent_20260808.md": "666a8f03f881dcf7115ee857deee9c93dda286c31e5b94558856b76acf7245e2"
+  }
+}

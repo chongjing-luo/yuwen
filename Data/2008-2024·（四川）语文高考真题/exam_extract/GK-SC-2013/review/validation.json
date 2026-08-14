@@ -1,0 +1,24 @@
+{
+  "schema_version": "exam-extract-validation-0.1",
+  "exam_id": "GK-SC-2013",
+  "result": "passed",
+  "errors": [],
+  "warnings": [
+    "answer bundle is an explicit missing-source placeholder; no answer/scoring claim is made"
+  ],
+  "checks": {
+    "manifest_roles": true,
+    "raw_hashes": true,
+    "clean_advertisement_isolation": true,
+    "question_coverage": true,
+    "provenance_links": true,
+    "segment_hashes": true,
+    "answer_bundle": true,
+    "answer_index": true,
+    "materials": true,
+    "exception_log": true
+  },
+  "answer_state": "missing",
+  "material_count": 4,
+  "expected_material_count": 4
+}

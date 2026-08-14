@@ -1,0 +1,49 @@
+{
+  "receipt_id": "RECEIPT-UNIT-X2-U04-G4-20260808",
+  "gate": "DG4-MERGE",
+  "merged_at": "2026-08-08T20:02:00+08:00",
+  "artifact_version": "UNIT-X2-U04 v0.2.0",
+  "content_change": false,
+  "allowed_diff": ["front_matter.status", "front_matter.reviewers", "self_check", "version_history", "ledger.status", "ledger.reviewers", "ledger.state_transition_history", "state_transition"],
+  "deliverable": {
+    "deliverable_id": "UNIT-X2-U04",
+    "artifact_version": "0.2.0",
+    "pre_merge_file_sha256": "10a30fbbf5af169e1651ff89ec0d9e49879cbe3a854c6058ceb4cf42d53f7d6f",
+    "post_merge_file_sha256": "d5ebda1d5d874bfc71da3e97987f61fb4a06f30ab4958758c243b59627c39a22",
+    "primary_score": 98.5,
+    "secondary_score": 98.5,
+    "primary_review": "unit_x2_u04_primary_review_final_20260808.md",
+    "secondary_review": "unit_x2_u04_secondary_review_final_20260808.md"
+  },
+  "upstream_snapshot": {
+    "CARD-X2-U04-01": "63683985b71331d6dc3b31fefc7bd0680a19a9a32c9ca7a0193b6dd303b1421c",
+    "CARD-X2-U04-02": "734847eaa30b6ddf3c8dff8540a1850ea98308692b1bb46a5020fbdc5ae80560"
+  },
+  "review_policy": {
+    "rubric_version": "2.0-textbook",
+    "rubric_sha256": "ab9cc53d57834642e66e568824d1c0c53e128953e15b20b4c7bd04aa30610d43",
+    "taxonomy_sha256": "13e5e23c45c05359a5c91e360ce8bd71dbf2a841c2c6a72f1adca52bef7cbd4b",
+    "ledger_pre_merge_sha256": "53e8a978d4412977fc836f412cdf5599752d07a2d1b26d710e843455e40d94ba",
+    "ledger_post_merge_sha256": "9e1d8f761e4e79e0fa9d89ce59bcce413cd7caa0e34803219dfbcc0317268d7c",
+    "r01_r10": "all 0",
+    "p0_p1_p2": "0/0/0"
+  },
+  "validator": {
+    "review_run_id": "VAL-20260808-195345+0800",
+    "review_report_sha256": "e7347b4892e03ff0db18e044e4cad9479403f07e24c71d4bd873ddadc763eeca",
+    "post_validator_run_id": "VAL-20260808-200313+0800",
+    "report": "work/knowledge/_meta/validation_reports/archive/VAL-20260808-200313+0800.json",
+    "report_sha256": "1ae9fb038917bef8563df336c60921779a07d34e93e18279e54208ded903e42a",
+    "latest_report": "work/knowledge/_meta/validation_reports/latest.json",
+    "latest_report_sha256": "1ae9fb038917bef8563df336c60921779a07d34e93e18279e54208ded903e42a",
+    "result": "passed",
+    "errors": 0
+  },
+  "review_file_sha256": {
+    "unit_x2_u04_primary_review_final_20260808.md": "b55d5077edcb04509c94e238763e32d019365d58626de725665fba830e7f152d",
+    "unit_x2_u04_secondary_review_final_20260808.md": "9382667d3fd52c2f3a044670b33390738e2e19aa1ac93476335e46a52d257c01"
+  },
+  "transition_id": "STATE-20260808-UNIT-X2-U04-G4",
+  "downstream_impact": ["BOOK-X2"],
+  "status": "accepted"
+}

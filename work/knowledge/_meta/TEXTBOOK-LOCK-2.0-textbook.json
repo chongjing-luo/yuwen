@@ -1,0 +1,24 @@
+{
+  "lock_id": "TEXTBOOK-LOCK-2.0-textbook",
+  "status": "passed",
+  "locked_at": "2026-08-09T03:16:09+08:00",
+  "scope": "教材侧81张知识卡、28个单元图谱、5个册级总表",
+  "accepted_counts": {
+    "knowledge_card": 81,
+    "unit_graph": 28,
+    "book_summary": 5,
+    "total": 114
+  },
+  "deliverables_sha256": "63a2974acd668e6b9a4b55f4c0a12b4adc42fb9e4df806e0a0a2d336fb723baa",
+  "validator_report": "work/knowledge/_meta/validation_reports/x3_book_g4_final_validation_20260809.json",
+  "validator_run_id": "VAL-20260809-025336+0800",
+  "validator_sha256": "9ac9195f15aadddcaadb45f92fc31f93867e4daa22cb6c25568130a2dbb2ed58",
+  "rubric_sha256": "ab9cc53d57834642e66e568824d1c0c53e128953e15b20b4c7bd04aa30610d43",
+  "taxonomy_sha256": "13e5e23c45c05359a5c91e360ce8bd71dbf2a841c2c6a72f1adca52bef7cbd4b",
+  "unlocked_stage": "SG-EXAM-CAL",
+  "constraints": [
+    "教材知识卡、图谱和册级总表只消费accepted教材上游",
+    "高考试卷、答案和评分资料仍须单独来源核验",
+    "教材—真题映射在SG-EXAM-CAL/SG-EXAM/SG-MAP完成前保持N/A | M0 | N/A"
+  ]
+}

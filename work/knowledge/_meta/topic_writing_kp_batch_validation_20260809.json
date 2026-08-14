@@ -1,0 +1,22 @@
+{
+  "schema_version": "topic-writing-kp-batch-validation-0.1",
+  "result": "passed",
+  "row_count": 7,
+  "year_counts": {
+    "2009": 1,
+    "2010": 1,
+    "2011": 1,
+    "2012": 1,
+    "2013": 1,
+    "2014": 1,
+    "2015": 1
+  },
+  "errors": [],
+  "checks": {
+    "coverage": true,
+    "traceability": true,
+    "free_response_gate": true,
+    "m0_boundary": true,
+    "authority_gate": true
+  }
+}

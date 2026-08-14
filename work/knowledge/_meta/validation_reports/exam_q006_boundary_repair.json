@@ -1,0 +1,60 @@
+{
+  "status": "repaired_q006_boundaries",
+  "results": [
+    {
+      "exam_id": "GK-NC3-2016",
+      "question": {
+        "path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NC3-2016/segments/question/Q006.md",
+        "clean_sha256": "2bc40174b945c91efd4af50ebe313163eeab9406fe48e574210579e6e6fa0c2e",
+        "source_block_count": 27,
+        "page_end": 11,
+        "page_index_end": 10
+      },
+      "analysis": {
+        "path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NC3-2016/segments/analysis/Q006.md",
+        "clean_sha256": "9722160eab4f74a4171887adbaa4d8c157ef26dee4a678abf8d272f97ab2de85",
+        "source_block_count": 47,
+        "page_end": 17,
+        "page_index_end": 16
+      },
+      "ledgers": {
+        "question": 2,
+        "analysis": 2
+      },
+      "nodes": {
+        "vertical": 4,
+        "top_level": 1
+      },
+      "practical_batch_rows": 4,
+      "exam_draft_updated": true
+    },
+    {
+      "exam_id": "GK-NCA-2024",
+      "question": {
+        "path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NCA-2024/segments/question/Q006.md",
+        "clean_sha256": "bbf360064d35f912608135854983f41c0012ed10492bddee7ec6a59b38c3ad0e",
+        "source_block_count": 18,
+        "page_end": 5,
+        "page_index_end": 4
+      },
+      "analysis": {
+        "path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NCA-2024/segments/analysis/Q006.md",
+        "clean_sha256": "f6c95533d674243076918b8e9417f606ed128bff9aca0207874c258528cebaa6",
+        "source_block_count": 25,
+        "page_end": 7,
+        "page_index_end": 6
+      },
+      "ledgers": {
+        "question": 2,
+        "analysis": 2
+      },
+      "nodes": {
+        "vertical": 1,
+        "top_level": 1
+      },
+      "practical_batch_rows": 1,
+      "exam_draft_updated": true
+    }
+  ],
+  "raw_preserved": true
+}

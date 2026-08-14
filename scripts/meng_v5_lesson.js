@@ -1,17 +1,17 @@
 "use strict";
 
 const THREE_QUESTIONS = [
-  "女主人公经历了怎样的关系与婚姻过程？",
-  "她的不幸婚姻，在现实生活中表现为哪些现象？",
-  "诗把失信、粗暴和关系失衡的直接责任指向哪里？哪些信息、投入、支持和时代条件使这段关系更难及时停止？",
+  "她怎样从“送子涉淇”一步步走到“亦已焉哉”？",
+  "她婚后的日子，究竟苦在哪里？",
+  "这场婚姻为什么会走到这一步？谁应为伤害负责？当她说出“亦已焉哉”，还要面对哪些阻力？",
 ];
 
 const modules = [
   { id: "M1", number: "一", title: "从旧故事走进初见", minutes: 47, safeStop: "首次听读后／第一章章结后" },
   { id: "M2", number: "二", title: "等待与回望中的劝诫", minutes: 49, safeStop: "第二章章结后／第三章章结后" },
   { id: "M3", number: "三", title: "婚后事实与长期处境", minutes: 52, safeStop: "第四章章结后／第五章章结后" },
-  { id: "M4", number: "四", title: "核验誓言，回收前两问", minutes: 45, safeStop: "第六章章结后／第一问回收后" },
-  { id: "M5", number: "五", title: "责任、困境与最终收纳", minutes: 37, safeStop: "责任线与困境线后／知识收纳后" },
+  { id: "M4", number: "四", title: "回望六章，把她的日子讲出来", minutes: 69, safeStop: "第六章章结后／接力讲述后／生活镜头后" },
+  { id: "M5", number: "五", title: "辨明伤害，把提醒留给后来人", minutes: 57, safeStop: "责任与停止后的现实阻力说清后／婚姻圆桌后／知识收纳后" },
 ];
 
 const chapters = [
@@ -114,8 +114,8 @@ const chapters = [
     ],
     activity: {
       title: "把“多年”还原成一天",
-      prompt: "用“原句证据｜现代生活转述｜诗中未写明”三栏，还原她的一天和她周围的支持网络。",
-      workspace: "清晨：________　白日：________　夜晚：________\n能否得到理解：________\n诗中没有写明：________________________",
+      prompt: "把她婚后的一天写成三个时刻，再圈出诗没有告诉我们的地方。",
+      workspace: "天还没亮：________　白日：________　夜深：________\n哪一句诗使你这样写：________________\n哪一处只是想象：____________________",
       returnTitle: "时间表让失衡变得可见",
       returnItems: ["长期家务与早起晚睡，使一方持续承担生活成本。", "粗暴与家人不解叠加，关系外的支持并未出现。", "诗没有写她是否求助，也没有写具体退出条件；这些空白不能被想当然填满。"],
     },
@@ -149,6 +149,16 @@ const meaningUnits = chapters.flatMap((chapter) => [
 ]);
 
 function allVisibleText(slide) {
+  if (slide.kind === "line") {
+    return [slide.title, slide.original, slide.translation, slide.line?.keywords, slide.chapter?.actionChain]
+      .filter(Boolean)
+      .join("\n");
+  }
+  if (slide.kind === "key") {
+    return [slide.title, slide.original, slide.translation, slide.line?.form, ...(slide.items || []), slide.chapter?.actionChain]
+      .filter(Boolean)
+      .join("\n");
+  }
   return [slide.title, slide.subtitle, slide.prompt, slide.original, slide.translation, slide.body]
     .concat(slide.items || [])
     .filter(Boolean)
@@ -166,6 +176,27 @@ function noteText({ page, module, bridge, speech, action, responses, evidence, t
     `【可观察证据】${evidence}`,
     `【明确切页句】${transition}`,
   ].join("\n");
+}
+
+function durationText(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const remainder = seconds % 60;
+  if (minutes && remainder) return `${minutes}分${remainder}秒`;
+  if (minutes) return `${minutes}分钟`;
+  return `${remainder}秒`;
+}
+
+function timedSteps(minutes, steps) {
+  const totalSeconds = minutes * 60;
+  const totalWeight = steps.reduce((sum, step) => sum + step.weight, 0);
+  let assigned = 0;
+  const allocations = steps.map((step, index) => {
+    if (index === steps.length - 1) return totalSeconds - assigned;
+    const seconds = Math.floor((totalSeconds * step.weight) / totalWeight / 5) * 5;
+    assigned += seconds;
+    return seconds;
+  });
+  return `${steps.map((step, index) => `${step.label}${durationText(allocations[index])}`).join("；")}。总用时${minutes}分钟。`;
 }
 
 function reception(slide) {
@@ -190,7 +221,7 @@ function reception(slide) {
 
 function notesForSlide(slide, page) {
   const module = modules.find((item) => item.id === slide.module);
-  const moduleName = `模块${module.number}·${module.title}`;
+  const moduleName = module ? `模块${module.number}·${module.title}` : "完整母版教师索引";
   const common = {
     page, module: moduleName,
     bridge: "教师让上一页最后一句停稳，再把学生的视线带到本页唯一的新内容。",
@@ -200,6 +231,17 @@ function notesForSlide(slide, page) {
     evidence: slide.evidence || "一处原词标记、一句可复述的理解或一个诚实保留的问题。",
     transition: "教师用一句话保存本页证据：“先把这个发现放回故事里。”随后明确指向下一页再切屏。",
   };
+
+  if (slide.kind === "teacher_index") {
+    return noteText({ ...common,
+      bridge: "本页为隐藏的教师导航页，不进入学生正常放映路径。",
+      speech: "“请在备课或续课时选择对应模块入口；实际课堂优先打开五个模块子课件。”",
+      action: "教师在课前点击模块入口或核对母版页码；课堂开始前直接进入封面页。",
+      responses: "本页不设计学生回应，也不作为课堂内容；若临时从母版授课，确认跳转后立即进入对应模块。",
+      evidence: "教师能够从母版直达五个模块入口。",
+      transition: "教师进入所需模块；若从头授课，切到下一页《氓》封面。",
+    });
+  }
 
   if (slide.kind === "cover") {
     return noteText({ ...common,
@@ -212,43 +254,146 @@ function notesForSlide(slide, page) {
     });
   }
   if (slide.kind === "prior") {
+    if (slide.title === "你记得哪一种关系？") {
+      return noteText({ ...common,
+        bridge: "教师把封面末句留在黑板右上角，转身指向三部已经学过的作品，不解释它们与《氓》的关系。",
+        speech: "“先别回答大道理。三部作品里选你最熟的一部，闭眼三秒，找回一个人物动作、一幅场景或一句原文。想到了，就把作品名轻轻圈住。”",
+        action: "学生静默检索三十秒，只圈选一部作品；教师观察是否人人有入口，不点名检查记忆优劣。",
+        responses: "如果学生说‘都忘了’，教师给场景入口：城角等待、反对包办婚姻、娜拉关门；只唤回记忆，不代替学生作判断。",
+        evidence: "圈定一部作品，并在记忆中找到一个可说的场景或行动。",
+        transition: "“把那一幕留住。下一页只做一件事：先说发生了什么，再说你怎么看。”",
+      });
+    }
+    if (slide.title === "从一部作品开始回忆") {
+      return noteText({ ...common,
+        bridge: "教师确认学生已经各自选定作品，把屏幕切成‘人物行动/原句’和‘我的判断’两条空线。",
+        speech: "“先写上面一行：人物做了什么，或者原文怎么说。写完再碰下面一行：这段关系的幸福或困境，取决于什么？不要把判断写在证据前面。”",
+        action: "学生独立书写四十秒；同桌各用四十秒说完整的‘因为……所以我认为……’，听者只追问一次‘依据在哪里’。",
+        responses: "若只有‘真爱、封建、独立’等标签，教师说：“把镜头拉近，哪一个动作让你这样判断？”若证据和判断不相干，请学生保留判断但重新找证据。",
+        evidence: "一处人物行动或原句，以及一条由它支撑的关系判断。",
+        transition: "“三部作品不必得出同一个答案。我们只把被作品证明的关系条件带到一起看。”",
+      });
+    }
     return noteText({ ...common,
-      bridge: "教师把学生从结尾的陌生声音带回熟悉作品，只使用班级确已学过的材料。",
-      speech: `“三部作品不需要全部回答。选你最熟悉的一部：${slide.prompt || "这段关系的幸福或困境，取决于什么？"} 请先在记忆里找到一个人物行动或一句原文。”`,
-      action: "个人检索三十秒，同桌各用四十秒说一部作品；听者只追问“依据是什么”。",
-      responses: "可能出现‘真诚、选择权、尊重、经济和权力、外部支持’等回答。教师不排成标准答案，只把能由作品支撑的词写在板书边缘。",
-      evidence: "一部已学作品、一处记忆锚点和一个关系条件。",
-      transition: "“这些故事把问题带到了关系内部。现在去听《氓》中的当事人怎样讲自己的多年经历。”",
+      bridge: "教师把刚才学生说出的证据词写在三张便签旁，只保留作品能够支撑的部分。",
+      speech: "“看这三句话：真实了解、尊重与行动、平衡支持与边界。它们不是给《氓》准备的答案，只是旧故事留给我们的三个追问。哪一句最需要长期观察，而不能靠一次承诺证明？”",
+      action: "学生先独立选择一句并说明理由，再听两名同学给出不同选择；教师允许分歧，不把三句排成固定优先级。",
+      responses: "若学生急着套用到《氓》，教师说：“先把它放在门口；等我们听完当事人的六章叙述，再决定哪些能进入文本。”",
+      evidence: "从旧作品提出一个关系条件，同时明确它尚不是《氓》的结论。",
+      transition: "“旧故事已经把问题打开。现在换成《氓》自己的三道问题，让六章原文来决定答案。”",
     });
   }
   if (slide.kind === "question" || slide.kind === "question_overview") {
+    const isReturn = slide.phase === "return";
+    const isThirdQuestion = slide.question_index === 3;
+    const returnTransition = slide.kind === "question_overview"
+      ? "“三问重新回来了。下一页，先把第一问读完整，再让六章拥有自己的讲述者。”"
+      : slide.question_index === 1
+      ? "“问题重新打开了。下一页，让六章分别拥有自己的讲述者。”"
+      : slide.question_index === 2
+        ? "“问题重新打开了。下一页，请从她婚后的日子里选一幕真正看见的生活。”"
+        : "“问题重新打开了。下一页，先从原诗里辨明谁应为伤害负责。”";
     return noteText({ ...common,
-      bridge: slide.phase === "return" ? "教师指向开课时保留的三问颜色和编号，提醒学生问题没有被换掉。" : "教师收起旧作品的答案，只留下三条等待全文检验的阅读线索。",
-      speech: slide.kind === "question_overview" ? "“今天只跟住三个短锚点：关系过程、现实处境、责任与困境。它们现在不是答案目录。”" : `“请把这道问题原样读一遍：${slide.visible} 先写一个不超过十五字的猜想；证据可以暂时空着。”`,
-      action: slide.phase === "return" ? "学生翻回初始猜想，静默四十秒，用不同颜色补写证据或划去旧判断。" : "学生静默二十秒读题；逐问页各停留二十秒，只写关键词，不展开讨论。",
-      responses: "如果学生试图立即给出完整主题，教师说：“先保存；六章之后我们再看它是否需要修改。”若觉得问题太长，教师只重读本页加重词。",
-      evidence: slide.phase === "return" ? "同一问题上的一处保留、修正或补证。" : "三道问题各一个初始猜想或空白。",
-      transition: slide.phase === "return" ? "“问题不变，答案开始拥有诗句。接下来完成这一问的共同整理。”" : "“问题已经在场，现在第一次完整听她说，不在中途拦住她。”",
+      bridge: isReturn ? "教师把开课时的三问重新投出，请学生先看自己当初写下的短句。" : "教师收起旧作品的答案，只留下三个要跟随女子走完六章的问题。",
+      speech: slide.kind === "question_overview"
+        ? (isReturn
+          ? "“六章已经读完。先别急着听我的结论：她怎样走到结尾，她的日子苦在哪里，这场婚姻为什么走到这一步——接下来要由你们把故事重新讲出来。”"
+          : "“今天只追着三件事走：她经历了什么，她的日子苦在哪里，这场婚姻为什么走到这一步。现在不必答全，让六章原诗慢慢把答案交给我们。”")
+        : isReturn
+          ? (isThirdQuestion
+            ? `“请把第三问慢慢读完：${slide.visible} 这两件事别混在一起——谁做出了伤害，她说出停止以后还会遇到什么。”`
+            : `“我们回到原来的问题：${slide.visible} 先读自己最初那句话，等会儿用讲述和讨论让它变得更完整。”`)
+          : `“请把这道问题读一遍：${slide.visible} 写下此刻最朴素的猜想。可以只有几个字，也可以诚实地留下空白。”`,
+      action: isReturn
+        ? timedSteps(slide.minutes, [
+          { label: "找回初始短句", weight: 1 },
+          { label: "默读问题并圈出最想回答的部分", weight: 1 },
+          { label: "写下一处准备使用的诗句", weight: 1 },
+        ])
+        : timedSteps(slide.minutes, [
+          { label: "静默读题", weight: 1 },
+          { label: "独立写下短猜想或问号", weight: 2 },
+        ]),
+      responses: isReturn
+        ? (isThirdQuestion
+          ? "如果回答仍只有‘负心、觉醒’，教师问：“哪一句能判断他的行为？哪一句能说明她面对的处境？”若证据不足，允许保留问题，不催成统一答案。"
+          : "如果回答仍只有‘痴情、负心、觉醒’，教师问：“你准备讲哪一个生活时刻？”若证据不足，允许保留问题，不催成统一答案。")
+        : "如果学生立即给出完整主题，教师回应：“先把这句话保存；六章之后再看它是否经得住原诗。”若一时无话可写，允许留下问号。",
+      evidence: isReturn ? "原有短句仍可辨认，旁边添有一处准备进入活动的原诗。" : "三道问题各有一个初始短句或诚实空白。",
+      transition: isReturn ? returnTransition : "“问题已经在场。现在先完整听她说，不在半路拦住她。”",
     });
   }
   if (slide.kind === "full_read") {
+    const isOpening = slide.phase === "opening";
+    const isFinal = slide.phase === "final";
     return noteText({ ...common,
-      bridge: slide.phase === "opening" ? "教师请学生把笔先放平，只留下耳朵和眼睛。" : "教师确认六章已经逐句走完，现在把所有分析暂时放下。",
-      speech: slide.phase === "opening" ? "“这一遍不翻译、不回答三问。只让眼睛跟着诗句走，哪一句真正拉住你，再轻点一下。”" : "“从第一章一直读到第六章，中间不提问。读到初读停顿点时轻按纸面，等最后一句结束再回看。”",
+      bridge: isOpening ? "教师请学生把笔先放平，只留下耳朵和眼睛。" : isFinal ? "知识收纳完成，教师把板书和分析暂时放下，让全诗以完整声音结束。" : "教师确认六章已经逐句走完，现在把所有分析暂时放下。",
+      speech: isOpening ? "“这一遍不翻译、不回答三问。只让眼睛跟着诗句走，哪一句真正拉住你，再轻点一下。”" : isFinal ? "“这是最后一次完整朗读。不要表演结论，只让六章的声音和你现在的理解一起走到‘亦已焉哉’。”" : "“从第一章一直读到第六章，中间不提问。读到初读停顿点时轻按纸面，等最后一句结束再回看。”",
       action: "教师或全班连续朗读本页内容；本页结束只无声切到下一半，不作口头插入。全部读完后静默十五秒。",
       responses: "出现漏读时教师只用手势从自然句首带回；有人急着解释时，教师以手势示意保存。没有停顿点也可写“尚未找到”。",
-      evidence: slide.phase === "opening" ? "一次不中断整体接收和一处初读停顿/问号。" : "一次不中断全文重读以及初读点的保留或变化。",
-      transition: slide.continues ? "教师不说话，直接无声切到下半首。" : "“完整声音先保留下来。现在从必要的出处和节奏支架开始，再进入第一章。”",
+      evidence: isOpening ? "一次不中断整体接收和一处初读停顿/问号。" : isFinal ? "一次不中断的最终朗读，以及读法或理解相对初读的一处变化。" : "一次不中断全文重读以及初读点的保留或变化。",
+      transition: slide.continues ? "教师不说话，直接无声切到下半首。" : isOpening ? "“完整声音先保留下来。现在从必要的出处和节奏支架开始，再进入第一章。”" : isFinal ? "“声音停在这里。最后只写下你能证明的理解，以及你仍愿意保留的问题。”" : "“六章重新连成了一首诗。现在翻回最初的停顿点，看你的判断保留、修正还是推翻。”",
+    });
+  }
+  if (slide.kind === "mark") {
+    return noteText({ ...common,
+      bridge: "全文最后一个字落下后，教师不立即提问，保留十五秒安静，再让屏幕只出现一句空白。",
+      speech: "“不要选‘最重要’的一句，只抄刚才真正让你停了一下的那句。下面接着写‘我听见……’‘我看见……’或‘我想问……’。写不出判断也没关系，先保存停顿。”",
+      action: "学生独立抄写并续写一分钟；教师安静巡视，不要求分享私人联想。完成者与同桌只读原句和自己的句首，不互相评价。",
+      responses: "若学生说‘没有哪句’，允许写‘尚未找到’并提出一个问号；若直接写‘渣男、恋爱脑、觉醒’，教师只问：“是哪几个字让你先这样猜？”",
+      evidence: "一处初读停顿原句，以及一条感受、画面或真实问题。",
+      transition: "“先不解释这处停顿。给这首诗装上三块最小的路标，我们就从第一章开始逐句走。”",
+    });
+  }
+  if (slide.kind === "background") {
+    if (slide.title === "《诗经》与《卫风》") {
+      return noteText({ ...common,
+        bridge: "教师把学生的初读停顿保留在学习单上，只给作品补一张足够使用的名片。",
+        speech: "“请把三行依次读出来：最早的诗歌总集，三百零五篇；风、雅、颂；《氓》属于《卫风》。最后一行更重要——接下来六章，是谁在回望自己的婚姻经历？”",
+        action: "全班齐读前两行，一名学生回答叙述者；教师用不超过四十秒补充‘风’与地域民歌传统，不展开文学史串讲。",
+        responses: "若答‘作者’，教师改问“诗里说‘我’的是谁”；若把《卫风》说成体裁，教师指出它是十五国风之一，够用即止。",
+        evidence: "能说出《诗经》305篇、风雅颂、《氓》属《卫风》，并确认女子第一人称回望。",
+        transition: "“知道谁在说，还要听见她怎样说。先用四言节奏把第一章读顺。”",
+      });
+    }
+    if (slide.title === "先借四言节奏走进声音") {
+      return noteText({ ...common,
+        bridge: "教师不先讲‘四言为主’的定义，直接用手指沿两组停顿带读。",
+        speech: "“听我读一遍：氓之／蚩蚩，抱布／贸丝。第二遍请跟进来。注意‘来即我谋’不要拆成逐字点读，让一句话保持行动。”",
+        action: "教师范读一次，全班齐读一次，同桌互读一次；第二遍尝试不看斜线保持自然语意。",
+        responses: "若机械二二停顿切断语意，教师用‘谁—做什么’重新连读；赋、比、兴和反复、叠词此时只听见，不抢先报术语。",
+        evidence: "能用四言基本节奏读顺两组诗句，同时保持句意连续。",
+        transition: "“节奏已经能托住句子。再扫清十个容易绊住声音的字，故事就可以开始。”",
+      });
+    }
+    return noteText({ ...common,
+      bridge: "教师把全诗难字压缩成四行，只处理读音，不在此处提前解释所有意义。",
+      speech: "“我指哪一组，就先自己默读，再一起出声。第一组——愆、将、垝垣；第二组——筮、说、徂。‘说’在这里读tuō，先在旁边写下音，不急着背释义。”",
+      action: "学生先默读十秒，随教师指示分组齐读；两人互查一次，最后教师随机指三词让全班迅速回读。",
+      responses: "对‘汤汤、渐、咥、泮’的误读只即时示范并再读，不用惩罚性齐抄；个别学生可在教材旁标拼音。",
+      evidence: "十个易错字能在诗句中准确发音，并知道具体释义将在原句处解决。",
+      transition: "“字音不再挡路。现在让第一章完整出现，先看一场关系怎样开始。”",
+    });
+  }
+  if (slide.kind === "checkpoint") {
+    return noteText({ ...common,
+      bridge: "教师收起文学常识与字音支架，让屏幕只保留第一章的故事位置。",
+      speech: "“第一章的标题是‘相识、求婚与婚期’。先不要判断谁好谁坏，只追踪两个人做了什么、说了什么。等五组诗句走完，再回头判断这次接近给你怎样的印象。”",
+      action: "学生翻到第一章，用手指从首句滑到章末，预览人物称谓和对话位置；教师等待十秒。",
+      responses: "若有人立即给出‘伪装、恋爱脑、警告信号’，教师说：“把它暂存为猜想；第一次观看只记录行动，全文后再核验。”",
+      evidence: "准备以行动顺序进入第一章，并保留而不抢跑现代判断。",
+      transition: "“从‘氓之蚩蚩，抱布贸丝’开始。先让整章声音在场。”",
     });
   }
   if (slide.kind === "chapter_text") {
+    const isEnd = slide.phase === "end";
     return noteText({ ...common,
-      bridge: slide.phase === "end" ? `教师把${slide.chapter.label}五组诗句重新放回同一页。` : `教师在进入${slide.chapter.label}逐句解释前，先让一章完整出现。`,
-      speech: slide.phase === "end" ? `“现在完整重读${slide.chapter.label}。读完不用列点，请用一口气讲清：${slide.chapter.actionChain}之间怎样连接？”` : `“先完整读${slide.chapter.label}，遇到人物动作就轻点桌面，遇到声音变化就停半拍。暂时不翻译。”`,
-      action: "全班按四言节奏朗读；章末学生闭书二十秒，向同桌连续口述章意，听者只补遗漏的行动。",
-      responses: `如果口述变成主题标签，教师指向行动链；如果顺序混乱，让学生回到本页逐句寻找。可接受多种情绪，但事件顺序必须准确。`,
-      evidence: `一次完整章读和一句连续章意：“${slide.chapter.summary}”`,
-      transition: slide.phase === "end" ? "“这一章的证据先保存，故事继续向下一章走。”" : "“整章声音已经在场，接下来逐句把行动和意思照亮。”",
+      bridge: isEnd ? `教师把${slide.chapter.label}五组诗句重新放回同一页。` : `教师在进入${slide.chapter.label}逐句解释前，先让一章完整出现。`,
+      speech: isEnd ? `“现在完整重读${slide.chapter.label}。读完不用列点，请用一口气讲清：${slide.chapter.actionChain}之间怎样连接？”` : `“先完整读${slide.chapter.label}，遇到人物动作就轻点桌面，遇到声音变化就停半拍。暂时不翻译，也不要求现在讲出章意。”`,
+      action: isEnd ? "全班按四言节奏完整重读；学生闭书二十秒，向同桌连续口述章意，听者只补遗漏的行动。" : "全班按四言节奏完整朗读一次；学生只在人物动作处轻点桌面，在声音变化处停半拍，不闭书、不提前概括。",
+      responses: isEnd ? `如果口述变成主题标签，教师指向行动链；如果顺序混乱，让学生回到本页逐句寻找。可接受多种情绪，但事件顺序必须准确。` : "若朗读漏行，教师只从自然句首带回；若学生急着解释主题，教师提醒先保存停顿，逐句教学后再形成连续章意。",
+      evidence: isEnd ? `一次完整章读和一句连续章意：“${slide.chapter.summary}”` : `一次不中断的章读，以及对本章动作或声音变化的一处初步标记。`,
+      transition: isEnd ? (slide.chapter.number === 6 ? "“六章已经逐句走完。现在让整首诗重新连成一个声音。”" : "“这一章的证据先保存，故事继续向下一章走。”") : "“整章声音已经在场，接下来逐句把行动和意思照亮。”",
     });
   }
   if (slide.kind === "line") {
@@ -289,21 +434,320 @@ function notesForSlide(slide, page) {
   if (slide.kind === "module_reconnect") {
     return noteText({ ...common,
       bridge: "教师在新的内容模块开始时，不用复习题轰炸学生，只恢复故事位置。",
-      speech: `“上次故事走到：${slide.body}。请用十五秒找到最后读懂的一句，再看今天要继续进入哪里。”`,
+      speech: `“上次故事走到这里：${slide.body} 请用十五秒找到最后读懂的一句，再看今天要继续进入哪里。”`,
       action: "学生翻到对应诗句，先自己复述，再由一名学生用不超过三十秒连接前后。",
       responses: "若遗忘，教师给行动链首尾词；若复述过长，只保留人物行动和未回答的问题。",
-      evidence: "能够说清上次停点、本次起点和仍在等待的三问。",
-      transition: "“位置恢复了，让下一章完整出现。”",
+      evidence: slide.module === "M5" ? "能够说清上次停点，并指出本次要分开回答的两个问题。" : "能够说清上次停点、本次起点和尚未回答的问题。",
+      transition: slide.module === "M5" ? "“故事和生活已经被看见。现在先辨明谁造成伤害，再看她说出停止后会面对哪些阻力。”" : "“位置恢复了，让下一章完整出现。”",
     });
   }
   if (slide.family === "synthesis") {
+    const plans = {
+      initial_compare: () => ({
+        bridge: "教师让全文重读后的安静再停几秒，请学生翻回第一次听读时留下的句子或问号。",
+        speech: "“先读当时的自己，不忙着否定。现在请在旁边写：我仍保留什么，什么已经改变；再添一句后来读到的诗，说明它为什么改变了你。”",
+        action: timedSteps(slide.minutes, [
+          { label: "找回初读记录", weight: 1 },
+          { label: "独立写下变化与新增诗句", weight: 2 },
+          { label: "同桌只交换新增证据", weight: 1 },
+        ]),
+        responses: "若学生只把‘痴情’改成‘清醒’，教师追问：“是哪一章让这个词变重了？”若判断没有变化，只要能说明诗句依据，也允许保留。",
+        evidence: "初读记录仍可辨认，旁边有一处变化说明和一处新增原诗。",
+        transition: "“变化已经写在纸上。现在不看我的概括，由你们把她的六章重新讲成一生。”",
+      }),
+      story_prepare: () => ({
+        bridge: "教师把六章并排呈现，不给阶段答案，只给每组一章和一个讲述位置。",
+        speech: "“每组认领一章。先各自在章旁写一句：这一章，她经历了什么。然后把几个人的句子放在一起，选出最能接住上一章、又能把故事送往下一章的说法。”",
+        action: timedSteps(slide.minutes, [
+          { label: "每名学生独立重读本组一章并写一句", weight: 2 },
+          { label: "小组轮流读句子并合成讲述", weight: 3 },
+          { label: "确定讲述者与原诗", weight: 1 },
+        ]),
+        responses: "若组内直接抄章意，教师问：“她在这里做了什么、心里有什么变化？”若一人包办，要求每名学生先读自己的句子再合成。",
+        evidence: "每名学生一条章内经历短句；每组一段共同讲述和一处原诗。",
+        transition: "“故事已经有了六位讲述者。下一页把每段话收紧成三句，让它既准确，又有人物的温度。”",
+      }),
+      story_script: () => ({
+        bridge: "各组已经找到了本章发生的事，教师把注意力转向人物声音和前后衔接。",
+        speech: "“三句话就够：第一句说她经历了什么；第二句说她的心境或认识怎样变；第三句让一处原诗开口。读给组员听，哪一句像论文，哪一句听不见人，就把它改掉。”",
+        action: timedSteps(slide.minutes, [
+          { label: "小组写成三句话", weight: 2 },
+          { label: "全组朗读并删去生硬概念", weight: 2 },
+          { label: "与相邻章小组试接首尾", weight: 1 },
+        ]),
+        responses: "若出现‘完成关系结构转变’一类抽象话，教师请学生换成动作和处境；若擅自补写情节，请回到原诗删改。",
+        evidence: "六段可在三十秒内讲完、含行动、心境和原诗的讲述稿。",
+        transition: "“六段话已经能首尾相接。接下来，请让她的一生在教室里真正走一遍。”",
+      }),
+      story_relay: () => ({
+        bridge: "教师走到屏幕侧面，把讲台让给六组；其余学生翻到‘故事守门人’位置。",
+        speech: "“从第一章开始，每组不超过三十秒。台下的同学不是等答案：记下一处你听得最清楚的转折，也记下一处仍没说清的空缺。每两章讲完，可以向讲述者追问一次。”",
+        action: timedSteps(slide.minutes, [
+          { label: "六组依次接力，听众同步记录转折与空缺", weight: 2 },
+          { label: "每两章一次追问、讲述者回应并补一句", weight: 1 },
+        ]),
+        responses: "若追问变成评价表演，教师把它拉回“她为什么这样做”“这一步把她带向哪里”“前文哪处到这里变了意味”；若故事断裂，让相邻两组共同补一句过桥话。",
+        evidence: "六段公开讲述、每名听众的转折与空缺记录、至少一次由追问促成的现场补充。",
+        transition: "“故事已经完整走过一遍，但哪一步最重要，我们未必同意。把你的判断单独写下来。”",
+      }),
+      story_turning: () => ({
+        bridge: "接力讲述结束，教师不公布所谓标准转折，只把几个可能发生改变的时刻重新留在学生记忆中。",
+        speech: "“六章里不只有一个转折。请先选出你认为最重要的一步，再写清：这一处怎样把她带向后来的生活。”",
+        action: timedSteps(slide.minutes, [
+          { label: "每名学生独立写出转折判断和诗句", weight: 2 },
+          { label: "四人组寻找不同答案", weight: 2 },
+          { label: "全班听取两种相左判断并追问", weight: 2 },
+        ]),
+        responses: "若学生认为第一章已经决定一切，追问文本能否证明宿命；若认为只有‘至于暴矣’才是转折，追问此前的投入和失衡是否已经改变处境。",
+        evidence: "每名学生一条‘重要转折—诗句—影响’判断；全班保留至少两种有证据的答案。",
+        transition: "“转折可以有分歧，故事顺序不能散。把同伴提醒你的那一步补回自己的讲述。”",
+      }),
+      story_revise: () => ({
+        bridge: "教师指向刚才由六组共同讲出的板书，屏幕只给出故事骨架，不替学生解释每一步。",
+        speech: "“读一遍你现在写出的她的一生。若刚才有人让你看见了一处遗漏，就把它添进去；若你仍坚持自己的转折，也请把那句诗留在旁边。”",
+        action: timedSteps(slide.minutes, [
+          { label: "个人补回遗漏或改写连接", weight: 2 },
+          { label: "同桌互读完整故事", weight: 1 },
+          { label: "全班用一句话回答第一问", weight: 1 },
+        ]),
+        responses: "若学生把第三章当成新的事件，教师提醒那是多年后的回望之声；若只剩八个标签，请重新说出至少一个具体动作。",
+        evidence: "一段能够从‘送子涉淇’讲到‘亦已焉哉’的个人叙述，以及一处受同伴影响的可见修订。",
+        transition: "“我们已经知道她经历了什么。接下来，不再站在故事外面概括，去看看这些年究竟是怎样的日子。”",
+      }),
+      scene_choose: () => ({
+        bridge: "教师把概括性的故事骨架收起，屏幕出现五个可进入的生活时刻。",
+        speech: "“选一个你最能看见的时刻：天还没亮、终于停下劳作、丈夫态度已经改变、兄弟的笑声响起，或她独自静下来。只谈作品；你可以只写旁白，不必表演。先别抄诗，把它在脑中看成一幕生活。”",
+        action: timedSteps(slide.minutes, [
+          { label: "每名学生独立选择并写下看见的动作", weight: 2 },
+          { label: "按选择进入小组", weight: 1 },
+          { label: "组内说明为什么选这一幕", weight: 2 },
+        ]),
+        responses: "若学生虚构具体暴力或对白，教师说：“可以想象气氛，不能替诗补写事实。”若只写‘她很惨’，追问此刻她正在做什么。",
+        evidence: "每名学生一个生活时刻、一项具体动作和一处准备回查的原诗。",
+        transition: "“画面已经出现。现在把它讲给一个从没读过《氓》的人听。”",
+      }),
+      scene_build: () => ({
+        bridge: "各组已经选定时刻，教师给出旁白、定格或双人讲述三种呈现方式。",
+        speech: "“四十秒以内，让今天的人听懂她过着怎样的生活。可以只用第三人称旁白，不必表演；但必须留一处原诗作根，诗里没有的对白和伤害方式，不要替她编出来。”",
+        action: timedSteps(slide.minutes, [
+          { label: "小组共同写出生活镜头", weight: 3 },
+          { label: "分配讲述、定格和引诗", weight: 2 },
+          { label: "完整试演并删去无据细节", weight: 2 },
+        ]),
+        responses: "若呈现变成搞笑表演，教师把语气带回人物处境；若全部照译原文，追问“今天的人怎样听懂这种生活”。",
+        evidence: "每组一段四十秒以内、以原诗为根且不虚构伤害细节的生活镜头。",
+        transition: "“表演者已经准备好。听的人也有任务：既要听见生活，也要守住原诗。”",
+      }),
+      scene_present: () => ({
+        bridge: "教师请各组依次呈现，屏幕只保留听众的两道追问。",
+        speech: "“每组呈现以后，台下先别评价好不好。请回答：哪一句诗托住了这一幕？哪一处只是合理想象，不能当成诗里明写的事实？”",
+        action: timedSteps(slide.minutes, [
+          { label: "各组公开呈现，听众同步记录原诗与想象边界", weight: 2 },
+          { label: "听众追问、呈现组回应并现场改一句", weight: 1 },
+        ]),
+        responses: "若听众只报诗句不解释，追问原词如何变成生活动作；若把推断当事实，教师请全班翻回原诗确认。",
+        evidence: "公开生活镜头、听众的诗句依据和边界判断，以及至少一处现场修改。",
+        transition: "“几幕生活合在一起，才是她所谓的多年。请各自写一句：她的苦，不只是什么，更是什么。”",
+      }),
+      scene_reflect: () => ({
+        bridge: "生活镜头结束，教师撤下表演提示，让学生独自面对一句尚未写完的话。",
+        speech: "“不要把刚才五幕重新列一遍。请把它们压成一句有层次的话：她的苦，不只是______，更是______。两个空格之间，应当有你真正看见的加深。”",
+        action: timedSteps(slide.minutes, [
+          { label: "学生独立写一句", weight: 2 },
+          { label: "同桌互读并追问一处诗句", weight: 1 },
+          { label: "自愿读出不同层次的表达", weight: 1 },
+        ]),
+        responses: "若写成‘不只是穷，更是惨’，教师追问生活中的具体失衡；若只责怪她爱得深，请回到劳动、粗暴与家人讥笑。",
+        evidence: "每名学生一条同时包含生活负担和关系伤害的总结句，并能指出原诗来源。",
+        transition: "“先读自己的话，再听全班刚才共同看见了哪些重量。”",
+      }),
+      scene_revise: () => ({
+        bridge: "教师从学生刚才的表达中选择有代表性的原话写在板书上，屏幕只留下三个等待现场补写的位置。",
+        speech: "“请用刚才真正出现过的话补全这三处：她的一天怎样过，别人怎样待她，她身边的人怎样回应。每补一处，都在旁边写下托住它的原诗；没有出现过的话，不替全班编出来。”",
+        action: timedSteps(slide.minutes, [
+          { label: "全班用学生原话现场补全三处并添原诗", weight: 2 },
+          { label: "个人对照板书修改自己的句子", weight: 1 },
+          { label: "两人互读修改前后并保留有证据的差异", weight: 1 },
+        ]),
+        responses: "若学生的原句已经完整，允许不改，只在旁边添诗句；若出现整齐划一的答案，教师请保留不同表达。",
+        evidence: "每名学生一条最终生活处境句及其原诗；至少一处可见的增加、删改或有理由的保留。",
+        transition: "“她的日子已经被看见。下一步先辨明谁造成了伤害，再看她说出停止后会面对哪些阻力。”",
+      }),
+      responsibility_choose: () => ({
+        bridge: "教师将‘她过得很苦’暂时放下，屏幕只留下四处诗中直接指向男子行为的话。",
+        speech: "“请从四句里选你认为最有力的一句，写清：他应当为哪一项行为负责？诗中的依据是什么？最后把原诗读出来。”",
+        action: timedSteps(slide.minutes, [
+          { label: "每名学生独立选择并写句子", weight: 2 },
+          { label: "小组轮流读出判断", weight: 2 },
+          { label: "小组选出最能守住诗意的一句", weight: 1 },
+        ]),
+        responses: "若回答转去评价女子，教师问：“这句话回答的是她的处境，还是他的行为责任？”若补写男子心理动机，请回到行为本身。",
+        evidence: "每名学生一条责任判断；每组一条以原诗为依据、不归咎受伤者的公开表达。",
+        transition: "“判断写出来还不够，要经得住别人的追问。下一页，另一组来问证据。”",
+      }),
+      responsibility_challenge: () => ({
+        bridge: "每组已经形成一句责任判断，教师指定相邻组交换并追问。",
+        speech: "“听完对方的句子，只追问一件事：你说的是诗中明写的行为，还是替人物补出的动机？被问的小组必须回到原句回答，可以当场改词。”",
+        action: timedSteps(slide.minutes, [
+          { label: "各组公开读出责任判断", weight: 2 },
+          { label: "另一组追问事实或动机", weight: 2 },
+          { label: "原组回到诗句回应并修改", weight: 2 },
+        ]),
+        responses: "若追问变成替男子辩护，教师重申只审查证据强度；若学生认为‘恋爱脑导致被伤害’，请分开‘她面对哪些现实阻力’与‘谁选择伤害’。",
+        evidence: "一次组际追问、一处原诗回应和一条经过质询的责任表达。",
+        transition: "“诗没有写出他的全部心理，却把他的行为写得很清楚。把这份清楚留住。”",
+      }),
+      responsibility_after: () => ({
+        bridge: "组际质询结束，教师按诗中出现的行为依次指向四句，不为男子补写动机。",
+        speech: "“‘贰其行’、‘二三其德’、‘至于暴矣’、‘不思其反’，这些词各自指向怎样的行为？用动词回答，不用心理诊断。”",
+        action: timedSteps(slide.minutes, [
+          { label: "全班逐句说出行为", weight: 1 },
+          { label: "个人检查自己的责任句是否混入女子投入", weight: 1 },
+          { label: "教师以四句原诗收束", weight: 1 },
+        ]),
+        responses: "若只说‘渣’，要求换成失信、反复、粗暴、违誓等可由诗句指认的行为；若说得过满，提醒文本未写男子动机。",
+        evidence: "四处原诗与四项行为对应；个人责任句不含对受伤者的归责。",
+        transition: "“责任说清以后，另一个问题才可以被认真理解：当她说出‘亦已焉哉’，转身还会面对什么？”",
+      }),
+      difficulty_discuss: () => ({
+        bridge: "教师明确这是理解处境，不是重新分配责任；四组分别接过一个贴近人物的问题。",
+        speech: "“四组各守一个问题：最初哪些事情尚未展开；她已经交付了什么；受伤时谁真正接住她；在那个时代，女子离开容易吗。先找诗，再用自己的话说。”",
+        action: timedSteps(slide.minutes, [
+          { label: "每名学生在本组问题下独立找诗句", weight: 2 },
+          { label: "四个小组合并证据并写解释", weight: 3 },
+          { label: "准备回应听众质疑", weight: 1 },
+        ]),
+        responses: "若把诗未写的制度细节说成事实，教师请改成时代处境的谨慎判断；若把投入说成男子伤害的原因，再次分开两个问题。",
+        evidence: "四组分别形成一条‘人物问题—原诗—解释’，每名学生参与找句或表述。",
+        transition: "“四个问题不是四个格子，而是四种真实的阻力。请讲给其他组听，让他们来补足。”",
+      }),
+      difficulty_present: () => ({
+        bridge: "四组已完成准备，教师依次邀请发言；其余三组承担补诗、质疑和连接任务。",
+        speech: "“每组先读诗，再解释。听众要做三件事之一：补一处诗，质疑一句说得太满的话，或把这个回答和另一个组连接起来。”",
+        action: timedSteps(slide.minutes, [
+          { label: "四组依次呈现", weight: 3 },
+          { label: "听众补充、质疑或连接", weight: 3 },
+          { label: "原组回应并改写一句", weight: 1 },
+        ]),
+        responses: "若台下只等教师总结，教师随机请一组选择“补诗/质疑/连接”；若结论互相矛盾，先检查两边是否谈的是不同阶段。",
+        evidence: "四项公开解释、至少三次听众介入，以及一处因同伴意见发生的修改。",
+        transition: "“现在我们能说清，不是一件东西拦住她，而是许多现实一起压在她身上。”",
+      }),
+      difficulty_after: () => ({
+        bridge: "教师不显示预先写好的结论，屏幕只留下四组问题与等待现场补入的原话。",
+        speech: "“请把四组真正说出的答案补在屏幕或板书上，每一处都添一行原诗。再从中选一处最容易被旁观者忽略的阻力，用自己的话说。”",
+        action: timedSteps(slide.minutes, [
+          { label: "个人选取最易被忽略的困难并写句子", weight: 2 },
+          { label: "同桌补一处原诗", weight: 1 },
+          { label: "全班听两种不同解释", weight: 1 },
+        ]),
+        responses: "若句子替她断言此前已经想离开，教师追问诗能证明到哪一步；若忽略时代性，回到‘士可说/女不可说’。",
+        evidence: "每名学生一条对现实阻力的解释及原诗，不将阻力转写为责任。",
+        transition: "“理解这些现实阻力，并不等于伤害可以被原谅。这条界线必须单独说清。”",
+      }),
+      responsibility_boundary: () => ({
+        bridge: "教师将两个问题左右分开，让学生先各自读一遍，再读中间的结论。",
+        speech: "“她说出停止判断后会面对哪些阻力，和他为什么失信、粗暴，不是同一道题。她的迁嫁、劳作、孤立与时代处境可以说明阻力，却不能制造、减轻或合理化他的伤害。”",
+        action: timedSteps(slide.minutes, [
+          { label: "学生默读两个问题", weight: 1 },
+          { label: "用自己的话向同桌复述界线", weight: 1 },
+          { label: "检查并改掉此前可能出现的归责句", weight: 1 },
+        ]),
+        responses: "若学生问她是否毫无选择，教师说明可以讨论选择，但选择空间不等于施害责任；若有人分享私人经历，允许停止并转回作品。",
+        evidence: "能够分别回答‘谁造成伤害’与‘她说出停止后会面对哪些阻力’，且没有因果偷换。",
+        transition: "“责任和困境分开以后，我们才能重新回到最初那场看似热烈的相遇。”",
+      }),
+      first_heat: () => ({
+        bridge: "教师重新投出第一章四个细节，让学生把初读印象和全文结局放在同一张纸上。",
+        speech: "“当初只读第一章，你看见怎样的男子？现在读到结局，哪些细节值得多看一眼？最后还要问：哪些判断可以想到，却不能说得太满？”",
+        action: timedSteps(slide.minutes, [
+          { label: "个人重读四处原词并写初见/再看", weight: 2 },
+          { label: "小组寻找彼此判断强弱的差别", weight: 2 },
+          { label: "全班讨论；听众记下一处要追问的证据并提出追问", weight: 2 },
+        ]),
+        responses: "若断言男子有计划伪装完整人格，教师追问诗能证明到哪一步；若把‘无怒’直接等同婚前暴力，提醒只能确认怒意进入关系现场。",
+        evidence: "至少一条初读与再读的判断变化，以及一条对判断强度的说明。",
+        transition: "“回头看可以让我们更警醒，也容易让人把后来知道的事强塞回最初。下一页把能说和不能说满的地方分清。”",
+      }),
+      first_heat_after: () => ({
+        bridge: "教师依据刚才的争议，把第一章的明写、可想和不可断言分别放好。",
+        speech: "“诗明写：贸丝只是表面来意，‘蚩蚩’是当时所见的样子，女子说过‘无怒’。我们可以想到初期印象与后来行为的反差；却不能断言他怎样策划，也不能责怪她为什么没有预知全部后来。”",
+        action: timedSteps(slide.minutes, [
+          { label: "学生把自己一句话放到‘明写/可想/不能说满’", weight: 2 },
+          { label: "同桌检查是否需要降一档语气", weight: 1 },
+          { label: "个人完成可见修订", weight: 1 },
+        ]),
+        responses: "若学生说‘恋爱脑’，教师接话：“这个词可以提醒今天的读者：投入感情时，也要长久观察一个人的言行。但它不能替背叛和粗暴分担责任，更不能倒过来责怪她没有预知后来。”",
+        evidence: "一处对第一章判断强度的准确修订，能区分明写、可想与不能断言。",
+        transition: "“到这里，我们不仅读懂了她，也开始知道怎样看待一段共同生活。现在把话交给全班。”",
+      }),
+      marriage_discussion: () => ({
+        bridge: "教师说明只谈作品或第三人称案例，不追问任何同学的私人关系；圆桌从《氓》的反面经验出发。",
+        speech: "“如果把《氓》说给后来人听，你认为一段值得珍惜的婚姻，最不能缺少什么？先说你的判断，再说诗中哪一处让你这样想。”",
+        action: timedSteps(slide.minutes, [
+          { label: "个人独立形成观点和原诗", weight: 2 },
+          { label: "四人圆桌依次发言、不得打断", weight: 2 },
+          { label: "小组寻找共同点和保留分歧", weight: 2 },
+        ]),
+        responses: "若讨论变成空泛鸡汤，教师追问诗中反面经验；若要求同学分享私人经历，立即制止并转回作品或第三人称案例。",
+        evidence: "每名学生一次有原诗依据的婚姻观点；每组一个共同点和一个可保留分歧。",
+        transition: "“观点已经在圆桌上出现。现在不要替别人概括，只写你真正愿意留下的一句提醒。”",
+      }),
+      marriage_write: () => ({
+        bridge: "圆桌讨论暂停，教师让教室安静下来，屏幕只保留四个可选句首。",
+        speech: "“从四个句首里选一个，也可以不用它们。把一句提醒留给后来人：不要写口号，要让人看见怎样的行动才值得相信，怎样的生活不能由一个人独自承担。”",
+        action: timedSteps(slide.minutes, [
+          { label: "每名学生独立写一句", weight: 2 },
+          { label: "为句子补一处《氓》的反面依据", weight: 1 },
+          { label: "默读并删去空泛词", weight: 1 },
+        ]),
+        responses: "若写成‘擦亮眼睛’等单向劝诫，教师追问关系双方应怎样行动；若只写‘要相爱’，追问怎样在岁月中看见相爱。",
+        evidence: "每名学生一句具体、有原诗根基且不归责受伤者的婚姻提醒。",
+        transition: "“句子已经属于你。下一页，先让同桌真正听见，再决定哪一句值得进入全班的声音。”",
+      }),
+      marriage_share: () => ({
+        bridge: "每名学生已经完成一句提醒，教师不先展示自己的总结，只给分享留下空白。",
+        speech: "“两人互读，不评价成熟不成熟，只告诉对方：哪一个词最有力量，哪一处还可以更具体。各自修改后，再选一句你们最想让全班听见的话。”",
+        action: timedSteps(slide.minutes, [
+          { label: "同桌互读并指出有力量/需具体处", weight: 2 },
+          { label: "个人修改", weight: 1 },
+          { label: "各桌推选并向全班分享", weight: 2 },
+          { label: "教师原样记录学生关键词", weight: 1 },
+        ]),
+        responses: "若全班句子趋同，教师邀请一条不同意见；若出现指责受伤者或美化忍耐，追问它能否经得住《氓》的多年生活。",
+        evidence: "一次同伴反馈、一处个人修改和多条进入全班板书的学生原话。",
+        transition: "“屏幕还留着空白。最后请用全班刚才真正说出的意思，把它补完。”",
+      }),
+      marriage_after: () => ({
+        bridge: "教师保留学生板书，屏幕显示四句尚未完成的话，等待全班原话进入。",
+        speech: "“请从刚才的板书中选择最准确的词，把这四句补完：怎样看一个人，怎样共同生活，受伤时怎样得到支持，想要停止伤害时应当守住什么。有分歧，就把两种有证据的说法都留下。”",
+        action: timedSteps(slide.minutes, [
+          { label: "全班从学生板书中为四句话选词", weight: 1 },
+          { label: "学生指出说得过满之处并保留分歧", weight: 1 },
+          { label: "教师只记录学生原话和对应诗句", weight: 1 },
+          { label: "个人修订并写下自己的最终版本", weight: 1 },
+        ]),
+        responses: "若学生认为离开并非唯一选择，教师保留讨论，但重申伤害不能被忍耐合理化；若收束过于整齐，以学生有证据的异议修正。",
+        evidence: "四句由学生原话与原诗共同完成的班级收束，以及每名学生最终保留的婚姻提醒。",
+        transition: "“现实的提醒已经从诗里生长出来。最后把故事、字词和写法收回原诗，再让六章完整响一次。”",
+      }),
+    };
+    const planFactory = plans[slide.kind];
+    if (planFactory) return noteText({ ...common, ...planFactory() });
+    const isPromptState = slide.phase === "question" || slide.kind === "initial_compare";
     return noteText({ ...common,
-      bridge: "教师确认六章已经完整讲解，才把问题和现代语言带回屏幕。",
-      speech: `“${slide.prompt || slide.title} 先用诗句完成，再转换成现实语言；如果本页是共同回收，请先核对自己的版本，不直接抄结论。”`,
-      action: "学生独立检索六十秒，小组按“原句—转述—边界”交流两分钟；涉及关系伤害时可匿名书写、不公开分享。",
-      responses: "如果把女主人公投入连到男子粗暴，教师立即拆开责任线与困境线；如果说“恋爱脑”，转换为“情感投入下的浪漫化解释”，并声明它不是责任原因。",
-      evidence: slide.evidence || "一条准确诗句、一条现代转述和一个解释边界。",
-      transition: "“这一步完成以后，再进入下一层；两条线不混写，问题也不换词。”",
+      bridge: isPromptState ? "教师确认六章已经完整讲解，先让学生自己的话出现。" : "教师确认学生已经有个人或小组产出，才显示本页。",
+      speech: isPromptState ? `“${slide.prompt || slide.title} 先写你的话，再请原诗来托住它。”` : `“先读自己的话，再看本页。哪里被同伴照亮了，哪里仍愿意保留不同判断？请把理由说出来。”`,
+      action: timedSteps(slide.minutes, isPromptState ? [
+        { label: "个人回到原诗形成短答", weight: 2 },
+        { label: "小组交换并追问", weight: 2 },
+      ] : [
+        { label: "个人对照自己的产出", weight: 1 },
+        { label: "同桌说明改变或保留的理由", weight: 1 },
+      ]),
+      responses: "如果回答只剩人物标签，追问哪一句诗和哪个生活时刻；如果推断过强，请学生降低语气而不是抹去想法。",
+      evidence: slide.evidence || "一条先由学生生成、再经诗句和同伴追问变得更准确的表达。",
+      transition: isPromptState ? "“请把自己的版本留在纸上，带着它进入下一次倾听。”" : "“这句话已经有了来处，继续向下一层走。”",
     });
   }
   if (slide.family === "knowledge") {
@@ -335,11 +779,12 @@ function addSlide(slide) {
   slides.push({ weight: 1, family: "synthesis", ...slide });
 }
 
+addSlide({ module: "MASTER", phase: "teacher", kind: "teacher_index", family: "knowledge", weight: 0, minutes: 0, title: "《氓》V5完整母版｜教师导航", items: modules.map((module) => `模块${module.number}｜${module.title}`), body: "本页在完整母版中隐藏；课堂优先使用五个模块子课件。" });
 addSlide({ module: "M1", phase: "opening", kind: "cover", family: "cover", weight: 1, title: "氓", subtitle: "她怎样走到“亦已焉哉”？", body: "反是不思，亦已焉哉！", evidence: "一个初始声音词或问号。" });
 addSlide({ module: "M1", phase: "opening", kind: "prior", family: "prior", weight: 2, title: "你记得哪一种关系？", items: ["《静女》｜相遇与等待", "《小二黑结婚》｜选择与阻力", "《玩偶之家（节选）》｜婚内结构与离开"], prompt: "选择最熟悉的一篇。" });
 addSlide({ module: "M1", phase: "opening", kind: "prior", family: "prior", weight: 3, title: "从一部作品开始回忆", prompt: "这段关系的幸福或困境，取决于什么？", body: "人物行动/原句：________________\n我的判断：______________________" });
 addSlide({ module: "M1", phase: "opening", kind: "prior", family: "prior", weight: 2, title: "三种故事，一道尚未结束的问题", items: ["相遇的欣悦，需要真实了解", "婚姻的选择，需要尊重与行动", "共同生活，需要平衡、支持与边界"], prompt: "这些是回忆入口，不是《氓》的预制答案。" });
-addSlide({ module: "M1", phase: "opening", kind: "question_overview", family: "question", weight: 1, title: "带着三个问题走完六章", visible: "关系过程｜现实处境｜责任与困境", items: ["关系过程", "现实处境", "责任与困境"] });
+addSlide({ module: "M1", phase: "opening", kind: "question_overview", family: "question", weight: 1, title: "带着三个问题走完六章", visible: "她经历了什么\n她的日子苦在哪里\n这场婚姻为什么走到这一步", items: ["她经历了什么", "她的日子苦在哪里", "这场婚姻为什么走到这一步"] });
 THREE_QUESTIONS.forEach((question, index) => addSlide({ module: "M1", phase: "opening", kind: "question", family: "question", weight: 1, title: `问题${["一", "二", "三"][index]}`, visible: question, question_index: index + 1, body: question }));
 addSlide({ module: "M1", phase: "opening", kind: "full_read", family: "full_read", weight: 3, title: "第一次完整听读｜第一至第三章", body: chapters.slice(0, 3).map((chapter) => chapter.text).join("\n\n"), continues: true });
 addSlide({ module: "M1", phase: "opening", kind: "full_read", family: "full_read", weight: 3, title: "第一次完整听读｜第四至第六章", body: chapters.slice(3).map((chapter) => chapter.text).join("\n\n"), continues: false });
@@ -377,31 +822,41 @@ addChapter(chapters[5]);
 addSlide({ module: "M4", phase: "return", kind: "full_read", family: "full_read", weight: 3, title: "再次完整朗读｜第一至第三章", body: chapters.slice(0, 3).map((chapter) => chapter.text).join("\n\n"), continues: true });
 addSlide({ module: "M4", phase: "return", kind: "full_read", family: "full_read", weight: 3, title: "再次完整朗读｜第四至第六章", body: chapters.slice(3).map((chapter) => chapter.text).join("\n\n"), continues: false });
 addSlide({ module: "M4", phase: "return", kind: "initial_compare", family: "synthesis", weight: 2, title: "回到最初的停顿点", prompt: "我的初读判断：__________\n现在：□保留　□修正　□推翻\n因为新增证据：________________" });
-addSlide({ module: "M4", phase: "return", kind: "question_overview", family: "question", weight: 1, title: "三个问题，开始回收", visible: "关系过程｜现实处境｜责任与困境", items: ["关系过程", "现实处境", "责任与困境"] });
-THREE_QUESTIONS.slice(0, 2).forEach((question, index) => addSlide({ module: "M4", phase: "return", kind: "question", family: "question", weight: 1, title: `回到问题${["一", "二"][index]}`, visible: question, question_index: index + 1, body: question }));
-addSlide({ module: "M4", phase: "question", kind: "q1_activity", family: "synthesis", weight: 3, title: "把她的经历连成一条路", prompt: "按六章排序，并为每一步标一处诗句。", items: ["相识议婚", "等待成婚", "迁嫁食贫", "长期劳作", "失信粗暴", "家人不解", "核验誓言", "停止判断"] });
-addSlide({ module: "M4", phase: "return", kind: "q1_return", family: "synthesis", weight: 2, title: "关系与婚姻过程", body: "相识议婚 → 等待成婚 → 迁嫁食贫 → 长期劳作\n→ 失信粗暴 → 家人不解 → 回望核验 → 作出停止判断", evidence: "八步过程、六章回链和一处初始排序修订。" });
-addSlide({ module: "M4", phase: "question", kind: "mapping_prompt", family: "synthesis", weight: 2, title: "把不幸翻译成现实生活语言", prompt: "每项都写：原句证据｜现代生活转述｜解释边界", body: "不直接抄诗句，也不把推断冒充事实。" });
-addSlide({ module: "M4", phase: "return", kind: "mapping", family: "synthesis", weight: 2, title: "表里差异", items: ["“贸丝/谋”｜表面来意与真实来意有别｜不能证明完整人格有计划伪装", "“女也不爽，士贰其行”｜婚前婚后表现反差｜责任由诗句直接指向男子", "“信誓旦旦/不思其反”｜承诺没有转化为长期行动｜不补写男子心理动机"] });
-addSlide({ module: "M4", phase: "return", kind: "mapping", family: "synthesis", weight: 2, title: "劳动与伤害", items: ["“夙兴夜寐”｜生活负担长期集中于一方｜不是偶发辛劳", "“至于暴矣”｜关系转为粗暴和伤害｜具体伤害方式未写明", "“二三其德”｜行为反复、不稳定｜不以投入为其原因"] });
-addSlide({ module: "M4", phase: "return", kind: "mapping", family: "synthesis", weight: 2, title: "支持与停止", items: ["“兄弟不知”｜未获得家人理解｜是否求助未写", "“女之耽兮，不可说也”｜停止代价不平等｜须结合时代处境", "“亦已焉哉”｜形成停止判断｜是否实际离开及退出条件未写"] });
-addSlide({ module: "M4", phase: "return", kind: "mapping_return", family: "synthesis", weight: 1, title: "第二问的回答边界", body: "现实语言让古诗进入今天；\n原句与“未写明”让今天的概念不覆盖古诗。", evidence: "至少三条“原句—转述—边界”映射。" });
+addSlide({ module: "M4", phase: "return", kind: "question_overview", family: "question", weight: 1, title: "六章读完，再问这三件事", visible: "她经历了什么\n她的日子苦在哪里\n这场婚姻为什么走到这一步", items: ["她经历了什么", "她的日子苦在哪里", "这场婚姻为什么走到这一步"] });
+addSlide({ module: "M4", phase: "return", kind: "question", family: "question", weight: 1, title: "回到问题一", visible: THREE_QUESTIONS[0], question_index: 1, body: THREE_QUESTIONS[0] });
+addSlide({ module: "M4", phase: "question", kind: "story_prepare", family: "synthesis", weight: 4, title: "六章，六位讲述者", prompt: "每组认领一章：先各写一句，再把几个人的句子合成一段讲述。", items: chapters.map((chapter) => `${chapter.label}　${chapter.title}`), evidence: "每名学生一条章内经历短句；每组一段共同讲述和一处原诗。" });
+addSlide({ module: "M4", phase: "question", kind: "story_script", family: "synthesis", weight: 3, title: "三句话，把这一章讲活", items: ["她经历了什么？", "她的心境或认识怎样变化？", "哪一句诗最能托住这段讲述？"], body: "每组不超过30秒。", evidence: "六段含行动、心境和原诗的讲述稿。" });
+addSlide({ module: "M4", phase: "question", kind: "story_relay", family: "synthesis", weight: 6, title: "把她的一生讲出来", prompt: "六组依次接力；每两章讲完，可以追问一次。", items: ["听众：记下一处最清楚的转折", "听众：记下一处仍没说清的空缺", "追问：她为什么这样做？这一步把她带向哪里？"], evidence: "六段公开讲述、每名听众的两项记录和至少一次现场补充。" });
+addSlide({ module: "M4", phase: "question", kind: "story_turning", family: "synthesis", weight: 4, title: "哪一步让她的生活明显转向？", prompt: "六章不只有一个转折；先选出你认为最重要的一步。", body: "我认为重要的转折是________，\n因为诗中写道________，\n从这里以后________。", evidence: "每名学生一条‘重要转折—诗句—影响’判断；全班保留不同答案。" });
+addSlide({ module: "M4", phase: "return", kind: "story_revise", family: "synthesis", weight: 3, title: "她从“送子涉淇”走到“亦已焉哉”", body: "相识远送 → 等待迁嫁 → 婚后食贫 → 日复一日的劳作\n失信粗暴 → 家人讥笑 → 回望旧誓 → ‘亦已焉哉’", items: ["把同伴提醒你的那一步补回自己的讲述", "对哪一步最重要，仍可保留不同判断"], evidence: "一段完整个人叙述及一处受同伴影响的可见修订。" });
+addSlide({ module: "M4", phase: "return", kind: "question", family: "question", weight: 1, title: "回到问题二", visible: THREE_QUESTIONS[1], question_index: 2, body: THREE_QUESTIONS[1] });
+addSlide({ module: "M4", phase: "question", kind: "scene_choose", family: "synthesis", weight: 3, title: "让诗句重新长成日子", prompt: "只谈作品；选择一个你最能看见的生活时刻。", items: ["一个天还没亮的清晨", "一个她终于停下劳作的夜晚", "一个她已经感到丈夫态度改变的时刻", "一次她面对兄弟讥笑的时刻", "一个她独自静下来回想的时刻"], evidence: "每名学生一个生活时刻、一项具体动作和一处准备回查的原诗。" });
+addSlide({ module: "M4", phase: "question", kind: "scene_build", family: "synthesis", weight: 5, title: "把这一幕讲给今天的人听", prompt: "四十秒以内，可以只用第三人称旁白，不必表演。", items: ["让人看见她正在怎样生活", "留一处原诗作根", "不替诗补写具体伤害和对白"], evidence: "每组一段以原诗为根且不虚构伤害细节的生活镜头。" });
+addSlide({ module: "M4", phase: "question", kind: "scene_present", family: "synthesis", weight: 6, title: "听见生活，也守住原诗", prompt: "每组呈现以后，听众回答两问。", items: ["哪一句诗托住了这一幕？", "哪一处只是合理想象，不能当成诗中明写？"], evidence: "公开生活镜头、听众的诗句依据与边界判断，以及现场修改。" });
+addSlide({ module: "M4", phase: "question", kind: "scene_reflect", family: "synthesis", weight: 3, title: "她的苦，不只是一件事", body: "她的不幸，不只是________________，\n更是____________________________。", prompt: "让第二层比第一层更深。", evidence: "每名学生一条同时容纳生活负担和关系伤害的总结句。" });
+addSlide({ module: "M4", phase: "return", kind: "scene_revise", family: "synthesis", weight: 3, title: "把刚才看见的日子留下来", items: ["她的一天怎样度过：________________", "丈夫怎样待她：____________________", "她身边的人怎样回应：______________"], prompt: "只用刚才真正出现过的学生原话补写；每一处都添上原诗。", evidence: "三处由学生原话与原诗现场完成的班级记录；每名学生一条最终生活处境句。" });
 
-addSlide({ module: "M5", phase: "reconnect", kind: "module_reconnect", family: "chapter_end", weight: 1, title: "故事与前两问已经站稳", body: "关系过程已排序｜现实处境已完成诗句—转述—边界", prompt: "现在只拆开责任线与困境线。" });
+addSlide({ module: "M5", phase: "reconnect", kind: "module_reconnect", family: "chapter_end", weight: 1, title: "故事讲完，判断还要说清", body: "谁应为伤害负责？\n她说出“亦已焉哉”以后，还会面对哪些阻力？", prompt: "先说谁造成伤害，再说她还会遇到什么；责任不能推给她。" });
 addSlide({ module: "M5", phase: "return", kind: "question", family: "question", weight: 2, title: "回到问题三", visible: THREE_QUESTIONS[2], question_index: 3, body: THREE_QUESTIONS[2] });
-addSlide({ module: "M5", phase: "return", kind: "responsibility_line", family: "synthesis", weight: 3, title: "责任线｜诗把什么责任指向男子？", body: "士贰其行 → 二三其德 → 至于暴矣 → 不思其反", items: ["失信", "行为反复", "粗暴", "违誓"], evidence: "责任线四处直接诗句；不补写男子动机。" });
-addSlide({ module: "M5", phase: "return", kind: "difficulty_line", family: "synthesis", weight: 3, title: "困境线｜什么使停止更加困难？", body: "初期信息有限与良好印象 → 情感和生活投入\n→ 单边劳动与权责失衡 → 家人不解与支持缺失", items: ["沉没成本、确认偏向、支持系统是现代分析工具", "这些概念只解释困境，不分担责任"] });
-addSlide({ module: "M5", phase: "return", kind: "boundary", family: "synthesis", weight: 2, title: "两条线之间，不画这支箭", body: "她的信任、投入、未及时停止　✕→　他的失信与粗暴", prompt: "困境线不能分担责任线中的责任。", evidence: "能够分别回答“谁的责任”和“为何难以停止”。" });
-addSlide({ module: "M5", phase: "question", kind: "retrospective", family: "synthesis", weight: 2, title: "回头看第一章", prompt: "第一次看，这些行动给你什么印象？\n读完全诗，哪些模糊细节需要重新评估？", items: ["蚩蚩", "贸丝/谋", "匪我愆期", "将子无怒"] });
-addSlide({ module: "M5", phase: "return", kind: "retrospective", family: "synthesis", weight: 2, title: "事实、推断与不能证明", items: ["事实｜表面来意为贸丝，真实来意为谋婚；蚩蚩是外在印象", "推断｜可能存在初期印象管理；婚前印象与婚后行为反差", "不能证明｜有计划地伪装完整人格；女子长期不知；无怒已是婚前暴力", "现代工具｜确认偏向、浪漫化解释；不是心理诊断，也不是粗暴原因"] });
-addSlide({ module: "M5", phase: "question", kind: "relation", family: "synthesis", weight: 3, title: "从《氓》反推关系结构", prompt: "一段关系要避免走向失衡，需要哪些可以长期观察和验证的条件？", body: "只讨论作品或第三人称案例，不必分享私人经历。" });
-addSlide({ module: "M5", phase: "return", kind: "relation", family: "synthesis", weight: 2, title: "从作品提出的观察维度", items: ["审慎了解｜不以一时形象替代长期观察", "言行一致｜承诺由持续行动检验", "权责平衡｜劳动、资源与决定共同承担", "相互尊重｜边界不以愤怒和粗暴回应", "可靠支持｜有可获得的理解、求助渠道与退出保障"] });
+addSlide({ module: "M5", phase: "question", kind: "responsibility_choose", family: "synthesis", weight: 4, title: "先把责任说清", prompt: "从四句中选择你认为最有力的一句。", items: ["女也不爽，士贰其行", "士也罔极，二三其德", "言既遂矣，至于暴矣", "信誓旦旦，不思其反"], body: "我认为他应为________负责。\n诗中的依据是________________。", evidence: "每名学生一条责任判断；每组一条不归责受伤者的公开表达。" });
+addSlide({ module: "M5", phase: "question", kind: "responsibility_challenge", family: "synthesis", weight: 4, title: "让判断经得住追问", prompt: "你说的是诗中明写的行为，还是替人物补出的动机？", items: ["另一组只追问这一件事", "发言组必须回到原句回答", "可以当场改掉一个说得太满的词"], evidence: "一次组际追问、一处原诗回应和一条经过质询的责任表达。" });
+addSlide({ module: "M5", phase: "return", kind: "responsibility_after", family: "synthesis", weight: 2, title: "诗把这些行为写得很清楚", body: "贰其行：失信　　二三其德：反复\n至于暴矣：粗暴　　不思其反：违背誓言", prompt: "诗没有写出他的全部心理，却没有模糊他的行为。", evidence: "四处原诗与四项行为对应；个人责任句不含对受伤者的归责。" });
+addSlide({ module: "M5", phase: "question", kind: "difficulty_discuss", family: "synthesis", weight: 5, title: "她要停下这段关系，会面对什么？", items: ["最初，哪些事情还没有展开？", "为这段关系，她已经交付了什么？", "她受伤时，身边有没有人真正接住她？", "在她所处的时代，女子离开一段婚姻容易吗？"], prompt: "四组各守一个问题：先找诗，再用自己的话说。", evidence: "四组分别形成一条‘人物问题—原诗—解释’。" });
+addSlide({ module: "M5", phase: "question", kind: "difficulty_present", family: "synthesis", weight: 5, title: "哪些东西绊住了她的脚步？", prompt: "每组先读诗，再解释；听众选择一种方式回应。", items: ["补一处诗", "质疑一句说得太满的话", "把这个回答和另一个组连接起来"], evidence: "四项公开解释、至少三次听众介入，以及一处因同伴意见发生的修改。" });
+addSlide({ module: "M5", phase: "return", kind: "difficulty_after", family: "synthesis", weight: 3, title: "把她面对的阻力写在诗句旁", items: ["最初，哪些事情尚未展开：____________", "她已经交付了什么：__________________", "受伤时，谁真正接住了她：____________", "时代给女子留下多少选择：____________"], prompt: "用四组刚才真正说出的原话现场补全；每一处都添上原诗。", evidence: "四项由学生原话与原诗完成的班级记录；每名学生一条对现实阻力的解释。" });
+addSlide({ module: "M5", phase: "return", kind: "responsibility_boundary", family: "synthesis", weight: 2, title: "理解阻力，不替伤害开脱", body: "迁嫁、劳作、孤立与时代处境，会使她作出停止判断后面对更多阻力；\n却不能制造、减轻或合理化他的失信与粗暴。", prompt: "谁造成伤害，她还会遇到什么，要分开说。", evidence: "能够分别回答两类问题，不把处境偷换成责任。" });
+addSlide({ module: "M5", phase: "question", kind: "first_heat", family: "synthesis", weight: 4, title: "回到最初的热烈", prompt: "读到结局以后，哪些细节值得多看一眼？\n哪些判断仍不能说得太满？", body: "听别人发言时，记下一处你想追问的证据。", items: ["蚩蚩", "贸丝 / 谋", "匪我愆期", "将子无怒"], evidence: "至少一条初读与再读的判断变化、一项听众追问和一处判断强度修订。" });
+addSlide({ module: "M5", phase: "return", kind: "first_heat_after", family: "synthesis", weight: 3, title: "回头看，也不能把话说满", items: ["诗明写：贸丝只是表面来意；\n‘蚩蚩’是初见的样子；她劝他‘无怒’", "可以想到：初见形象与婚后行动反差明显；\n‘贸丝 / 谋’、‘无怒’值得重看", "不能断言：他有意伪装整个人格；\n‘无怒’不等于婚前施暴；也不能说她早已看清后来"], prompt: "警醒需要证据，也需要分寸。", evidence: "一处对第一章判断强度的准确修订。" });
+addSlide({ module: "M5", phase: "question", kind: "marriage_discussion", family: "synthesis", weight: 4, title: "如果把《氓》说给后来人听", prompt: "一段值得珍惜的婚姻，最不能缺少什么？", body: "先说你的判断，再说诗中哪一处让你这样想。\n只谈作品或第三人称案例。", evidence: "每名学生一次有原诗依据的婚姻观点；每组一个共同点和一个分歧。" });
+addSlide({ module: "M5", phase: "question", kind: "marriage_write", family: "synthesis", weight: 4, title: "把一句提醒留给后来人", items: ["不要只听一个人怎样许诺，还要看________。", "两个人共同生活，不能总让一个人________。", "当伤害发生时，________。", "一段值得珍惜的婚姻，应当________。"], prompt: "可以选一个句首，也可以写自己的句子。", evidence: "每名学生一句具体、有原诗根基且不归责受伤者的婚姻提醒。" });
+addSlide({ module: "M5", phase: "question", kind: "marriage_share", family: "synthesis", weight: 5, title: "让彼此的句子被听见", prompt: "同桌互读：哪一个词最有力量？哪一处还可以更具体？", body: "修改以后，各桌选一句最想让全班听见的话。", evidence: "一次同伴反馈、一处个人修改和多条进入班级板书的学生原话。" });
+addSlide({ module: "M5", phase: "return", kind: "marriage_after", family: "synthesis", weight: 3, title: "诗没有替后来人写完答案", body: "怎样看一个人：________________________\n怎样共同生活：________________________\n受伤时怎样得到支持：__________________\n想要停止伤害时，应当守住：____________", prompt: "用班级刚才真正写出的句子现场补全；有证据的分歧可以并存。", evidence: "四句由学生原话与原诗完成的班级收束，以及每名学生最终保留的提醒。" });
 
 const knowledgeGroups = [
   { title: "故事与人物", prompt: "不看答案：用六个动作写出叙事结构，再写人物认识怎样变化。", items: ["相识议婚—等待迁嫁—婚后食贫—长期劳作—失信孤立—停止判断", "期待—投入—承受—自悼—核验违誓—形成停止判断"] },
   { title: "字词与《诗经》", prompt: "找出本课最容易误读、误解的八个字词，并说明《氓》属于哪一类诗。", items: ["《诗经》305篇；风、雅、颂；《氓》属于《卫风》；以四言为主", "愆 qiān｜将 qiāng｜筮 shì｜说 tuō｜徂 cú｜汤汤 shāng shāng｜渐 jiān｜咥 xì｜隰 xí｜泮 pàn"] },
   { title: "意象与写法", prompt: "各找一组原句说明：桑叶、淇水、对照、反复怎样参与理解。", items: ["桑叶｜沃若/黄而陨：比兴、状态对照，意义由语境筛选", "淇水｜三处语言连接空间与回望，方向不强行补写", "赋、比、兴｜对照、反复、叠词、呼告｜时间压缩、时间回环、第一人称回望"] },
-  { title: "三问与阅读方法", prompt: "用一条证据回答每问，再写出可迁移到其他叙事诗的阅读顺序。", items: ["Q1 关系过程｜Q2 现实处境｜Q3 责任线/困境线", "准确释义 → 行动叙事 → 声音情感 → 形式观察 → 证据判断 → 现实转换"] },
+  { title: "三问与阅读方法", prompt: "用一条证据回答每问，再写出可迁移到其他叙事诗的阅读顺序。", items: ["她怎样走到结尾｜她的日子苦在哪里｜谁造成伤害、她还要面对什么", "准确释义 → 追踪行动 → 听见声音 → 观察写法 → 用证据判断 → 联系真实生活"] },
 ];
 knowledgeGroups.forEach((group) => {
   addSlide({ module: "M5", phase: "question", kind: "knowledge", family: "knowledge", weight: 2, title: `知识检索｜${group.title}`, prompt: group.prompt });
@@ -457,13 +912,13 @@ const totalMinutes = modules.reduce((sum, module) => sum + module.minutes, 0);
 
 const causalLines = {
   responsibility: ["士贰其行", "二三其德", "至于暴矣", "不思其反"],
-  difficulty: ["初期信息有限", "情感和生活投入", "单边劳动", "支持缺失", "停止更加困难"],
-  links: [["士贰其行", "失信责任"], ["支持缺失", "停止更加困难"]],
+  difficulty: ["早期信息尚未展开", "迁嫁与多年生活", "单边劳动", "支持缺失", "性别与时代处境", "转身面对多重阻力"],
+  links: [["士贰其行", "失信责任"], ["支持缺失", "转身面对多重阻力"]],
 };
 
 function snapshot() {
   return {
-    version: "5.0-text-spine",
+    version: "5.3-literary-participation",
     generated_at: "2026-08-11",
     total_minutes: totalMinutes,
     modules,

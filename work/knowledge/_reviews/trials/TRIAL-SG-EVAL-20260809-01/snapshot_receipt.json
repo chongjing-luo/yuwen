@@ -1,0 +1,14 @@
+{
+  "schema_version": "sg-eval-trial-snapshot-receipt-0.1",
+  "trial_batch_id": "TRIAL-SG-EVAL-20260809-01",
+  "manifest_path": "work/knowledge/_reviews/trials/TRIAL-SG-EVAL-20260809-01/dg0_snapshot_manifest.json",
+  "manifest_sha256": "8b9b2de038541baef05c01b9d1a93f1d67dfda1a9af16be67091e6022dad47cb",
+  "canonical_write": false,
+  "snapshot_integrity": "pass",
+  "dg0": "blocked_coordinator_or_roles",
+  "dg1": "blocked_manual_semantic_lint_and_claim_sealing",
+  "dg2": "blocked_claim_register_not_sealed",
+  "source_count": 3,
+  "created_at": "2026-08-09T15:52:32+08:00",
+  "batch_report_path": "work/knowledge/_reviews/trials/TRIAL-SG-EVAL-20260809-01/batch_report.json"
+}

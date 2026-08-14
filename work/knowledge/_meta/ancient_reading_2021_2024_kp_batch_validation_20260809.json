@@ -1,0 +1,19 @@
+{
+  "schema_version": "ancient-reading-2021-2024-kp-batch-validation-0.1",
+  "result": "passed",
+  "row_count": 12,
+  "year_counts": {
+    "2021": 3,
+    "2022": 3,
+    "2023": 3,
+    "2024": 3
+  },
+  "errors": [],
+  "checks": {
+    "coverage": true,
+    "traceability": true,
+    "answer_gate": true,
+    "related_scope_gate": true,
+    "m0_boundary": true
+  }
+}

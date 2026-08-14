@@ -1,0 +1,67 @@
+{
+  "schema_version": "exam-visual-review-receipt-0.1",
+  "receipt_id": "EXAM-VISUAL-GK-NC3-2020-20260809",
+  "exam_id": "GK-NC3-2020",
+  "generated_at": "2026-08-09T06:40:00+08:00",
+  "status": "passed_with_conservative_derivation",
+  "review_scope": "question_pdf_visual_review_and_top_level_score_arbitration",
+  "review_method": {
+    "render": "high_resolution_pdf_render",
+    "pdf_page_count": 13,
+    "pages_checked": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+    "exam_printed_pages": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "blank_watermark_pages": [12],
+    "advertising_pages": [13]
+  },
+  "source_policy": {
+    "source_pdf_read_only": true,
+    "mineru_full_md_read_only": true,
+    "clean_md_read_only_during_review": true,
+    "raw_watermark_retained": true,
+    "answer_authority": "candidate_unverified_or_missing",
+    "mapping_boundary": "M0_only"
+  },
+  "source_hashes": {
+    "question_pdf_sha256": "fa7359faf5104a4489ee4ffdab910e5c05443f9fd2a3fda9579a14e1c7b59279",
+    "mineru_full_md_sha256": "0f79de71c15376df74bee2e82c9cc9cd9c05489094a2edbde59d9625f308bc64"
+  },
+  "findings": [
+    {
+      "scope": "Q1-Q7/Q9-Q10",
+      "finding": "逐页核对题干、文言文、诗歌、默写、语言文字运用与作文边界，未发现需要静默语义修正的题卷 OCR 残片。",
+      "decision": "按稳定顶层题号保留原始题段和页级回溯。"
+    },
+    {
+      "scope": "Q8",
+      "finding": "清洗/派生文本开头的孤立‘11’在 PDF 第10页卷面不存在，属于页码/OCR残片。",
+      "decision": "派生提示隔离该字符；原始 PDF、full.md 与清洗源段保持只读。"
+    },
+    {
+      "scope": "score",
+      "finding": "卷面 Q1—Q10 总分为 9/12/15/19/9/6/9/6/5/60，总分 150；内部小问没有稳定独立分值要求。",
+      "decision": "先生成十个顶层节点，不虚构小问级评分；待评分来源核验后细化。"
+    },
+    {
+      "scope": "all_pages",
+      "finding": "PDF 第12页为空白水印页，第13页为资料广告页。",
+      "decision": "不纳入题文清洗正文；原始 PDF 与清洗稿保持双链。"
+    }
+  ],
+  "derived_updates": {
+    "script": "scripts/decompose_exam_vertical_slices.py",
+    "config_change": "GK-NC3-2020 added with visual_check_status=passed and top-level-only conservative scoring",
+    "output": "work/knowledge/高考分析/GK-NC3-2020-response_nodes_vertical_slice.jsonl",
+    "receipt": "work/knowledge/_reviews/receipts/exam_vertical_GK-NC3-2020_20260809.json",
+    "content_policy": "仅生成派生节点和回执；未改写原始 PDF、MinerU full.md 或清洗源段。"
+  },
+  "acceptance": {
+    "visual_boundary": "passed",
+    "ocr_arbitration": "passed_with_explicit_residuals",
+    "score_reconciliation": "150/150",
+    "top_level_only": true,
+    "locator_precision": "page_level_fallback",
+    "answer_and_kp_mapping": "not_claimed; candidate_unverified_or_missing; M0/KP_ID=N/A"
+  },
+  "reviewer": "primary_agent",
+  "reviewed_at": "2026-08-09"
+}

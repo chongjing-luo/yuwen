@@ -1,0 +1,18 @@
+{
+  "schema_version": "reference-answer-candidate-validation-2009-0.1",
+  "result": "passed",
+  "rows": 6,
+  "source_hashes": {
+    "scdfz_source.html": "8cba1b4e241208900db97359aeb190418c394e887493a43f8df8905ac17919ab",
+    "scdfz_answer.pdf": "8cf78afe5b11abeedfbd293de22c80120741e3ffeffcc2a2c51ae21aec839881",
+    "source.html": "2df004b90a9b508ca55bfcb5d99ad4e288385e60d814d5700705db1ee1b0e325"
+  },
+  "main_index_present": false,
+  "errors": [],
+  "checks": {
+    "partial_coverage": true,
+    "source_hashes": true,
+    "authority_gate": true,
+    "main_index_unchanged_gate": true
+  }
+}

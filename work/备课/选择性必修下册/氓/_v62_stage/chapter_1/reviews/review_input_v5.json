@@ -1,0 +1,174 @@
+{
+  "schema_version": "1.0",
+  "review_input_id": "MENG_V62_CHAPTER1_REVIEW_V5",
+  "created_at": "2026-08-13T13:27:51.172Z",
+  "status": "immutable_review_candidate",
+  "module_id": "MENG_V62_CHAPTER_1",
+  "page_ids": [
+    "C101",
+    "C102",
+    "C103",
+    "C104",
+    "C105"
+  ],
+  "total_minutes": 27,
+  "distribution_order": [
+    "03A at C101; poem, action marks, question marks only",
+    "03B at C102 after C101; open prompts and blank story rail only"
+  ],
+  "required_review_axes": [
+    "per-page unique literary function and deletion loss",
+    "adjacent merge and global story-chain necessity",
+    "student generation before teacher calibration",
+    "no completed answer or later fact on frontstage",
+    "rehearsable script, listener task, evidence, revision, story return and next use",
+    "interaction variety without procedure overload",
+    "visual readability, hierarchy, alignment and functional restraint",
+    "C105 projector blackout makes closed-book retrieval genuine",
+    "C104 does not pre-name explanation, appeasement or appointment before student generation",
+    "C105 explicitly removes textbook, CH1-A/03A and CH1-B/03B before projector blackout",
+    "C103 cut line does not orally pre-name C104's student-generated speech-act categories"
+  ],
+  "release_gate": "P0=0 and P1=0 and P2=0 in both independent reviews",
+  "illustration_policy": "no_character_illustration_until_all_lesson_functions_are_frozen",
+  "files": [
+    {
+      "role": "single_source",
+      "path": "scripts/meng_v62/content/chapter_1.js",
+      "sha256": "784c8a4bf96f999fcec9b3828d6edff9a689a8799f2764082f383f6f2d28547b",
+      "bytes": 38027
+    },
+    {
+      "role": "teaching_master",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/chapter_1/package/02_氓_V62第一章教学母版.md",
+      "sha256": "006fc27527d61da4456d1acdea2ff96d3d203771abab36ef6cf366e4b7492529",
+      "bytes": 16414
+    },
+    {
+      "role": "initial_read_card_C101",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/chapter_1/package/03A_氓_V62第一章初读卡_C101发.md",
+      "sha256": "75d552537972c9674e9c81ecbfb2cba7903ae488eff1ae0ee6f322622bad0216",
+      "bytes": 730
+    },
+    {
+      "role": "close_reading_card_C102",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/chapter_1/package/03B_氓_V62第一章细读与故事轨道_C102发.md",
+      "sha256": "77c833ce5eebf4c0e3e689990b18afb02a734c219c17f51d65953386757f631c",
+      "bytes": 2492
+    },
+    {
+      "role": "rehearsal_script",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/chapter_1/package/04A_氓_V62第一章逐页无生试讲稿.md",
+      "sha256": "72941c4ff863dfa189a56ce40b7b3cf898fc425ddc0ff019bb0b333a6ab39a6d",
+      "bytes": 18986
+    },
+    {
+      "role": "data_snapshot",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/chapter_1/package/06_氓_V62第一章课程数据快照.json",
+      "sha256": "ee2d8d1f3d71a7a86c2029dc6827da72ab1c40bac9a2e23dd4ee05adb6a4f030",
+      "bytes": 40835
+    },
+    {
+      "role": "pptx",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/chapter_1/pptx/04_氓_V62第一章课堂课件.pptx",
+      "sha256": "252d3a13d8425f1f52c26acac6a4ecc06473934f122cf64b3107a10bc8143568",
+      "bytes": 40168
+    },
+    {
+      "role": "pptx_text_and_notes",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/chapter_1/pptx/markitdown_v5.txt",
+      "sha256": "d7a04cd3a80ce8aae040b2146a2c6a11acc76b3a747e2541adffdf7495c9ad4d",
+      "bytes": 21098
+    },
+    {
+      "role": "rendered_pdf",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/chapter_1/pptx/rendered_v5/04_氓_V62第一章课堂课件.pdf",
+      "sha256": "508d725d67316d041683c61b56045d5bea16d7f8b3c295bac345d8f3eeb6e19c",
+      "bytes": 81497
+    },
+    {
+      "role": "visual_contact_sheet",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/chapter_1/pptx/rendered_v5/contact.jpg",
+      "sha256": "ef46279de8f3a7ee39b134dcad60525576a9a2b62ddc621befa7ec03052918bd",
+      "bytes": 96050
+    },
+    {
+      "role": "rendered_slide_1",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/chapter_1/pptx/rendered_v5/slide-1.png",
+      "sha256": "f592d50a9dc3055b7d43bcd39a77e093bb7a6d84f31e670104c2e9fcef7c33d5",
+      "bytes": 168320
+    },
+    {
+      "role": "rendered_slide_2",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/chapter_1/pptx/rendered_v5/slide-2.png",
+      "sha256": "04fde57958dab78aa9b414d08563adad1878b6b47398f93bbed7b9f2463492d2",
+      "bytes": 130260
+    },
+    {
+      "role": "rendered_slide_3",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/chapter_1/pptx/rendered_v5/slide-3.png",
+      "sha256": "be373d158dcccdb0c4320d9d4812e3af16bd1391aa02ba3752f49a1d5e8c874a",
+      "bytes": 108354
+    },
+    {
+      "role": "rendered_slide_4",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/chapter_1/pptx/rendered_v5/slide-4.png",
+      "sha256": "d5ce2584fe10b2fd6cfc78e708c7721286576837aaf5147318ba685f1a139d1a",
+      "bytes": 134291
+    },
+    {
+      "role": "rendered_slide_5",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/chapter_1/pptx/rendered_v5/slide-5.png",
+      "sha256": "4e93b88a5d69dda4f69875907eaa6783ac884ee94f6fcca81640f6209f15f0df",
+      "bytes": 185051
+    },
+    {
+      "role": "internal_first_fix_and_verify_record",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/chapter_1/reviews/internal_visual_qa_v1.md",
+      "sha256": "06068b72e9cb1e469ce742ae1ad4dd3eb094fe3d474e28489d75bf1a7efc615a",
+      "bytes": 1395
+    },
+    {
+      "role": "v2_rejection_and_disposition",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/chapter_1/reviews/v2_independent_review_disposition.md",
+      "sha256": "4d93e37973575fae7b25fcb30a2adb46498985c6975c3113dc17bc318c02f9ec",
+      "bytes": 1376
+    },
+    {
+      "role": "v2_independent_visual_fail",
+      "path": "scripts/meng_v62/reviews/chapter1_visual_v2.json",
+      "sha256": "8c053d10b8bc1b627733d2fd81fd346aff1955ff0241c3d3a8de6f42c0daa401",
+      "bytes": 19805
+    },
+    {
+      "role": "v2_independent_student_fail",
+      "path": "scripts/meng_v62/reviews/chapter1_student_v2.json",
+      "sha256": "a522f1ff09d39df6a0db883ba24138df2093fe0392a11485ab3e5537056b5894",
+      "bytes": 17990
+    },
+    {
+      "role": "v3_internal_fix_and_verify_record",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/chapter_1/reviews/internal_visual_qa_v3.md",
+      "sha256": "e2a4ef69154b1fd1c902c5fce960627e27956f22751122100d1d4cf8e9788e96",
+      "bytes": 1813
+    },
+    {
+      "role": "v3_review_abort_integrity_record",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/chapter_1/reviews/v3_review_abort_integrity.md",
+      "sha256": "71ef3fb5f4cab4934925c11be4169b0b4eed092f2a03dbab9b9de34e196cf2e0",
+      "bytes": 643
+    },
+    {
+      "role": "v4_rejection_and_disposition",
+      "path": "work/备课/选择性必修下册/氓/_v62_stage/chapter_1/reviews/v4_independent_review_disposition.md",
+      "sha256": "85d7eed5788c105a854e6d0fa6329ea0f1321391f10ac8c35dd6a3a5abd02d56",
+      "bytes": 1124
+    },
+    {
+      "role": "v4_independent_visual_fail",
+      "path": "scripts/meng_v62/reviews/chapter1_visual_v4.json",
+      "sha256": "d477722b1d7f9512101f5e9ce52ab744c56e3b09154241f64e092f2b391a9b8b",
+      "bytes": 18004
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "exam-visual-review-receipt-0.1",
+  "receipt_id": "EXAM-VISUAL-GK-NCA-2023-20260809",
+  "exam_id": "GK-NCA-2023",
+  "generated_at": "2026-08-09T06:43:00+08:00",
+  "status": "passed_with_conservative_derivation",
+  "review_scope": "question_pdf_visual_review_and_top_level_score_arbitration",
+  "review_method": {"render": "high_resolution_pdf_render", "pdf_page_count": 11, "pages_checked": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "exam_printed_pages": [1, 2, 3, 4, 5, 6, 7, 8], "blank_watermark_pages": [9, 10], "advertising_pages": [11]},
+  "source_policy": {"source_pdf_read_only": true, "mineru_full_md_read_only": true, "clean_md_read_only_during_review": true, "raw_watermark_retained": true, "answer_authority": "candidate_unverified_or_missing", "mapping_boundary": "M0_only"},
+  "source_hashes": {"question_pdf_sha256": "0a3baa01c69be69b475613c23cf34c1da25946c740735caafdbb79e5bb3628a0", "mineru_full_md_sha256": "5a9a4440496daaf69ed208be1647d402172cfb11a2213b12c2742a9c096b7adf"},
+  "findings": [
+    {"scope": "Q1-Q22", "finding": "逐页核对现代文、古代诗文、语言文字运用与作文边界；第9—10页为空白水印页，第11页为广告页。", "decision": "仅第1—8页进入题文清洗正文，原始水印、空白页和广告页不静默删除。"},
+    {"scope": "score", "finding": "卷面分区总分为现代文36、古代诗文34、语言文字运用20、作文60；题面另印文言文20分与诗歌9分，出现1分算术冲突。", "decision": "暂按总分150复算，文言候选登记3/3/4/9；冲突保留为待评分资料核验事项，不宣称正式小问分值。"},
+    {"scope": "language_use", "finding": "Q17—Q21为统一20分题组，未印独立小问分值。", "decision": "仅在Q17组首登记20分，Q18—Q21为0分结构占位并显式标记。"}
+  ],
+  "derived_updates": {"script": "scripts/decompose_exam_vertical_slices.py", "output": "work/knowledge/高考分析/GK-NCA-2023-response_nodes_vertical_slice.jsonl", "receipt": "work/knowledge/_reviews/receipts/exam_vertical_GK-NCA-2023_20260809.json", "content_policy": "仅生成派生节点和回执；未改写原始PDF、MinerU full.md或清洗源段。"},
+  "acceptance": {"visual_boundary": "passed", "ocr_arbitration": "passed_with_explicit_residuals", "score_reconciliation": "150/150_candidate_reconciled", "top_level_only": false, "locator_precision": "page_level_fallback", "answer_and_kp_mapping": "not_claimed; candidate_unverified_or_missing; M0/KP_ID=N/A"},
+  "reviewer": "primary_agent",
+  "reviewed_at": "2026-08-09"
+}

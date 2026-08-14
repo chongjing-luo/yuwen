@@ -1,0 +1,38 @@
+{
+  "schema_version": "exam-extract-audit-0.1",
+  "years": [
+    2022,
+    2024
+  ],
+  "runs": [
+    {
+      "exam_id": "GK-NCA-2022",
+      "source_role": "analysis",
+      "question_count": 22,
+      "raw_sha256": "277d5ec8019fb135c48334348050b9eb978b7b71a390a1d5276c64116131f810",
+      "clean_sha256": "fd9b96644bbc30aa9f549c485c1b3e17acd044da297d572dd7ad72a596c1c295"
+    },
+    {
+      "exam_id": "GK-NCA-2022",
+      "source_role": "question",
+      "question_count": 22,
+      "raw_sha256": "13e56eaac22dc61735c549647a40e2c5532efebe94f7a3084d5212b32d159973",
+      "clean_sha256": "aee9cc67d9ec232f0098f8d800f2643b9c545b0934a19e9809f2e4251433d0b2"
+    },
+    {
+      "exam_id": "GK-NCA-2024",
+      "source_role": "analysis",
+      "question_count": 22,
+      "raw_sha256": "e48e7f510bba0a182b1c2de396cf0794396d817e3e066e6b4b779522e46794a8",
+      "clean_sha256": "ccc4ed0d8a176909e83b49de7624b35515badf2d2477bffcf780a65b44b38ff5"
+    },
+    {
+      "exam_id": "GK-NCA-2024",
+      "source_role": "question",
+      "question_count": 22,
+      "raw_sha256": "8b73ab179be24b8a3be54a6f653a918080dfbd3d270158b96efafdeb1f35793d",
+      "clean_sha256": "5ad1d243576f3b1b725eb34f22707a68a96b6f44b0999b37df2841f0b605dbd7"
+    }
+  ],
+  "status": "pilot_generated"
+}

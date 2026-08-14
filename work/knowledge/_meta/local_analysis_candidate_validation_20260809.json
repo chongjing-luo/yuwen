@@ -1,0 +1,16 @@
+{
+  "schema_version": "exam-local-analysis-candidate-validation-0.1",
+  "exam_id": "GK-SC-2013",
+  "result": "passed",
+  "rows": 21,
+  "errors": [],
+  "warnings": [],
+  "checks": {
+    "question_coverage": true,
+    "unique_ids": true,
+    "source_traceability": true,
+    "hashes": true,
+    "authority_gate": true,
+    "m0_boundary": true
+  }
+}

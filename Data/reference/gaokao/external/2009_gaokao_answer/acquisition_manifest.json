@@ -1,0 +1,27 @@
+{
+  "schema_version": "exam-answer-source-acquisition-0.1",
+  "acquired_at": "2026-08-09T14:11:50+08:00",
+  "exam_id": "GK-SC-2009",
+  "source_url": "https://www.gaokao.com/e/20090611/4b8bcafdad195.shtml",
+  "source_title": "2009年高考四川语文试题（含详细答案解析）",
+  "publisher_or_channel": "高考网转载（第三方）",
+  "source_status": "acquired_unverified_candidate",
+  "source_html": {
+    "path": "Data/reference/gaokao/external/2009_gaokao_answer/source.html",
+    "sha256": "2df004b90a9b508ca55bfcb5d99ad4e288385e60d814d5700705db1ee1b0e325",
+    "byte_size": 59126
+  },
+  "independent_source": {
+    "page_url": "https://www.scdfz.org.cn/scyx/scgkt/2000nyh/yw/content_19900",
+    "page_path": "Data/reference/gaokao/external/2009_gaokao_answer/scdfz_source.html",
+    "page_sha256": "8cba1b4e241208900db97359aeb190418c394e887493a43f8df8905ac17919ab",
+    "page_byte_size": 150862,
+    "pdf_url": "https://www.scdfz.org.cn/Upload/main/ContentManage/Article/File/201906061738078672.pdf",
+    "pdf_path": "Data/reference/gaokao/external/2009_gaokao_answer/scdfz_answer.pdf",
+    "pdf_sha256": "8cf78afe5b11abeedfbd293de22c80120741e3ffeffcc2a2c51ae21aec839881",
+    "pdf_byte_size": 495729,
+    "publisher_or_channel": "四川省地方志工作办公室网站转载（页面注明来源）"
+  },
+  "candidate_import_status": "not_started_visual_review_required",
+  "policy": "仅作第三方候选来源快照；不得据此标记官方答案或评分标准。"
+}

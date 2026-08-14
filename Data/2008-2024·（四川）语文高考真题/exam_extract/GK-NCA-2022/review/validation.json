@@ -1,0 +1,25 @@
+{
+  "schema_version": "exam-extract-validation-0.1",
+  "exam_id": "GK-NCA-2022",
+  "result": "failed",
+  "errors": [
+    "question segment count=22, expected 21",
+    "segment hash mismatch: /home/ubuntu/homes/LuoChongjing/Methods/yuwen/Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NCA-2022/segments/question/Q006.md",
+    "analysis segment count=22, expected 21",
+    "missing answer bundle",
+    "answer index rows=0, expected one row for Q001-Q021"
+  ],
+  "warnings": [],
+  "checks": {
+    "manifest_roles": true,
+    "raw_hashes": true,
+    "clean_advertisement_isolation": true,
+    "question_coverage": false,
+    "provenance_links": true,
+    "segment_hashes": false,
+    "answer_bundle": false,
+    "answer_index": false,
+    "materials": true,
+    "exception_log": true
+  }
+}

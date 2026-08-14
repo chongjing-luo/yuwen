@@ -1,0 +1,194 @@
+{
+  "schema_version": "1.0",
+  "review_id": "chapter1_visual_v8_independent_freeze_review",
+  "review_scope": "N013-N021 visual_and_page_function_read_only_review",
+  "reviewer": "ppt_visual_qa",
+  "reviewed_at": "2026-08-13T19:20:00+08:00",
+  "independence_statement": "本轮把v8作为全新冻结候选重新审查，未沿用v7页级结论；只读取PPTX、snapshot、rendered_v8及其派生文本，不修改课件。",
+  "input_verification": {
+    "pptx": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_1/pptx/04_氓_V6第一章课堂课件.pptx",
+      "expected_sha256": "9e6b0b57e6cc88356d79029baa5c28a87ee35eefa5366f04e2c1c814fb2890f0",
+      "actual_sha256": "9e6b0b57e6cc88356d79029baa5c28a87ee35eefa5366f04e2c1c814fb2890f0",
+      "status": "match",
+      "zip_integrity": "pass"
+    },
+    "snapshot": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_1/package/06_氓_V6第一章课程数据快照.json",
+      "expected_sha256": "f4e7459ea75bca08a9848603c2c00ebce6f93d3d3c9807904f7afb695bc89427",
+      "actual_sha256": "f4e7459ea75bca08a9848603c2c00ebce6f93d3d3c9807904f7afb695bc89427",
+      "status": "match"
+    },
+    "render_contact": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_1/pptx/rendered_v8/contact.jpg",
+      "expected_sha256": "9425b12a1cfdf82d6655ca6b2e7db207eb839e31374e93aae0b052630d0728a3",
+      "actual_sha256": "9425b12a1cfdf82d6655ca6b2e7db207eb839e31374e93aae0b052630d0728a3",
+      "status": "match"
+    },
+    "rendered_pdf": {
+      "path": "work/备课/选择性必修下册/氓/_v6_stage/chapter_1/pptx/rendered_v8/04_氓_V6第一章课堂课件.pdf",
+      "sha256": "28ecd645283376151d001844b39d5e5fd9fa59d2d5df548afba8f7dde37e2ee3",
+      "pages": 9,
+      "page_size_points": "959.981 x 540",
+      "aspect_ratio": "16:9"
+    },
+    "rendered_slides": {
+      "count": 9,
+      "pixel_size_each": "2400x1350",
+      "status": "complete"
+    },
+    "correspondence_evidence": "PPTX经MarkItDown抽取为9页，页序、N013-N021讲者备注、可见原文与snapshot逐页一致；rendered_v8 PDF为9页，contact及9张原尺寸PNG的可见文字和构图与PPTX抽取内容一致。"
+  },
+  "rubric": {
+    "pass_rule": "每页唯一且必要的教学意义可见；意义决定主视觉；关键原文、指令与产物后排可读；构图和交互提示直接服务学生动作；无设计术语或明显AI腔；P0/P1/P2均为0。",
+    "severity_rule": "任一P0、P1或P2即整体验收FAIL；P3为不阻断使用的微小观察或课堂待验证项。"
+  },
+  "page_reviews": [
+    {
+      "page_id": "N013",
+      "physical_slide": 1,
+      "unique_and_necessary_meaning": "先让第一章作为完整声音和人物行动场出现，再进入逐句讲解。",
+      "visual_realization": "pass",
+      "evidence": "五句原诗占据中央最大阅读场，29pt且行距充足；下方25pt蓝色指令只要求圈男子动作、划女子动作并核对主体，主视觉和学生动作一致。",
+      "problem_evidence": "未发现裁切、拥挤、答案泄露、多主视觉争抢或研发术语。",
+      "severity": null,
+      "status": "PASS",
+      "actionable_fix": "无阻断性修复；真实教室仅需验证最末排能否稳定区分圈与划两种标记。"
+    },
+    {
+      "page_id": "N014",
+      "physical_slide": 2,
+      "unique_and_necessary_meaning": "从男子眼前的出场神态和动作形成第一眼形象，同时不把初见倒灌成终身定论。",
+      "visual_realization": "pass",
+      "evidence": "42pt原句下设置‘谁／怎样／拿什么／做什么’四个22pt独立产物格；‘先看眼前这个出场’和‘只写眼前，不忙替后来下结论’把边界直接置于任务层，四格可合成为一句自然话。",
+      "problem_evidence": "四格标签、边界和原文轨道均完整；没有用人物插画替代文本，也没有显示成品翻译。",
+      "severity": null,
+      "status": "PASS",
+      "actionable_fix": "无阻断性修复；可选微调是将20.5pt边界句略增至22pt，但现状不影响任务执行。"
+    },
+    {
+      "page_id": "N015",
+      "physical_slide": 3,
+      "unique_and_necessary_meaning": "辨认诗句从先写的贸丝动作转到女子随后说明的议婚来意，并守住人格判断边界。",
+      "visual_realization": "pass",
+      "evidence": "42pt原句、29pt转折追问和23pt动作／来意双槽形成清晰的比较结构；学生必须自己圈出转折字并生成两项内容，画面没有预置欺骗或伪装判断。",
+      "problem_evidence": "双槽不是一般填空，而是对应本句叙事次序；未见低对比、断词或超出证据的标签。",
+      "severity": null,
+      "status": "PASS",
+      "actionable_fix": "无修复要求。"
+    },
+    {
+      "page_id": "N016",
+      "physical_slide": 4,
+      "unique_and_necessary_meaning": "借‘送—涉—至’的空间推进理解女子的实际行动和送行距离。",
+      "visual_realization": "pass",
+      "evidence": "42pt原句下以23pt‘送→涉→至’路线作为唯一操作骨架，并同步追问行动主体和终点；视觉关系直接服务画路线而非只记地名。",
+      "problem_evidence": "没有虚构地理方向或具体距离；原文轨道保持上下文但未压制主任务。",
+      "severity": null,
+      "status": "PASS",
+      "actionable_fix": "无修复要求。"
+    },
+    {
+      "page_id": "N017",
+      "physical_slide": 5,
+      "unique_and_necessary_meaning": "先由学生裁断女子是在拒婚还是说明暂时条件，再以原词和释义校准。",
+      "visual_realization": "pass",
+      "evidence": "两种22pt读法横向并列且不标正确项；21pt指令要求先圈选再抄托住判断的原词，屏幕未提前出现‘愆期／良媒’成品释义，确实支持先裁断后校准。",
+      "problem_evidence": "选择项语义对立清楚，证据槽可见；不存在仅靠教师口头才能成立的辨析。",
+      "severity": null,
+      "status": "PASS",
+      "actionable_fix": "无阻断性修复；可选将证据槽分成‘我的选择／原词’两处，但现有单槽已足够完成任务。"
+    },
+    {
+      "page_id": "N018",
+      "physical_slide": 6,
+      "unique_and_necessary_meaning": "学生先借注释拆出安抚与约期两层话，再经词义校准和朗读听见二者并存。",
+      "visual_realization": "pass",
+      "evidence": "42pt原句下只出现两个21pt生成空槽‘先劝什么／又把什么定下来’，没有成品释义；右侧21.5pt提示把后续动作转向重音和停顿，因此先做后释义、再朗读的次序不被答案画面破坏。",
+      "problem_evidence": "三项操作在同一蓝色区域内仍有明确左右顺序，未见旧版孤字换行；关键字和空槽后排可辨。",
+      "severity": null,
+      "status": "PASS",
+      "actionable_fix": "无修复要求。"
+    },
+    {
+      "page_id": "N019",
+      "physical_slide": 7,
+      "unique_and_necessary_meaning": "撤去答案，检验学生能否把五句重建为连续的五步人物行动链。",
+      "visual_realization": "pass",
+      "evidence": "暗色页面与逐句页明显切换，五个等宽空卡只保留编号和写入线；31pt首指令及底部24-25pt反馈流程清楚显示独立重建、同桌找断点、翻书修订、再合书连说。",
+      "problem_evidence": "没有诗句或五步答案泄露；空卡作为学生产物容器而非装饰性卡片。",
+      "severity": null,
+      "status": "PASS",
+      "actionable_fix": "无修复要求。"
+    },
+    {
+      "page_id": "N020",
+      "physical_slide": 8,
+      "unique_and_necessary_meaning": "区分文本事实、初读印象和当前不能断言的内容，保存可在全文后修订的第一章判断。",
+      "visual_realization": "pass",
+      "evidence": "三个大栏以不同色相和28pt口语化标题‘诗里写着／初读时我觉得／现在还说不准’并列；原词槽、暂存槽及24pt同桌追问共同支持比较和移栏，而不是展示三块知识卡。",
+      "problem_evidence": "没有‘事实层／推断层／解释边界’等研发术语；三栏对比、证据要求和修订动作均可见，中心栏对比度充分。",
+      "severity": null,
+      "status": "PASS",
+      "actionable_fix": "无阻断性修复；19pt‘全文读完后，我们再回来’是远期提醒而非当前核心动作，可在真实教室检验后排可见性。"
+    },
+    {
+      "page_id": "N021",
+      "physical_slide": 9,
+      "unique_and_necessary_meaning": "让逐句字词重新合成为一段连续事件，并通过合书讲述检验整体理解。",
+      "visual_realization": "pass",
+      "evidence": "第一章五句原诗置于左侧最大白色阅读区，每句31pt；右侧以30pt‘完整重读’、29pt‘合书讲30秒’和三个23pt叙事支点呈现先读后讲；底部22pt反馈链要求听者找遗漏、回诗补说并写章意。",
+      "problem_evidence": "原诗不再是小型背景轨道，而是本页主阅读对象；31pt字号、宽松行距和高对比足以支持后排完整重读，活动区未压缩原文。",
+      "severity": null,
+      "status": "PASS",
+      "actionable_fix": "无修复要求。"
+    }
+  ],
+  "cross_page_findings": {
+    "source_path_visibility": "pass",
+    "meaning_driven_visual_variation": "pass",
+    "rear_seat_readability": "pass",
+    "interaction_cues": "pass",
+    "student_product_visibility": "pass",
+    "answer_state_separation": "pass",
+    "design_jargon_or_ai_tone": "none_found",
+    "technical_layout": "no_overlap_no_cutoff_no_orphan_no_abnormal_wrap_no_low_contrast_failure",
+    "evidence": "N013整章进入，N014-N018分别使用四格、动作/来意双槽、路线、两项裁断、双层话朗读，N019撤答重建，N020三栏判断，N021整章回收；视觉方法随教学意义改变，不再只是同构流程卡。"
+  },
+  "non_blocking_observations": [
+    {
+      "observation_id": "C1-V8-P3-RAIL-DENSITY",
+      "severity": "P3",
+      "scope": ["N014", "N015", "N016", "N017", "N018"],
+      "finding": "逐句页底部原文轨道维持上下文很有价值，但17.5pt轨道标题和22pt五行原文占据稳定视觉面积；在低亮度投影和超大教室中的实际可见性与注意分配仍需试教验证。",
+      "actionable_follow_up": "真实授课记录后排学生能否迅速定位当前句；若轨道压制主任务，只缩短轨道标题或降低非当前句对比，不删除上下文轨道。"
+    },
+    {
+      "observation_id": "C1-V8-P3-MANIFEST-STALE-HASH",
+      "severity": "P3",
+      "scope": ["package_traceability"],
+      "finding": "chapter1_pptx_manifest.json当前登记PPTX SHA-256为24c079640ffb19a44f60c568f911835c90ef7678cbc3a71312294fc13731360c，与本次明确指定并已核验的冻结候选9e6b0b57e6cc88356d79029baa5c28a87ee35eefa5366f04e2c1c814fb2890f0不一致。该项不改变本轮视觉和逐页功能结论，但会影响包级追溯。",
+      "actionable_follow_up": "由主构建流程在冻结交付时重生成manifest并再次核对；不要手改课件。"
+    }
+  ],
+  "severity_counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 2
+  },
+  "page_matrix": {
+    "N013": "PASS",
+    "N014": "PASS",
+    "N015": "PASS",
+    "N016": "PASS",
+    "N017": "PASS",
+    "N018": "PASS",
+    "N019": "PASS",
+    "N020": "PASS",
+    "N021": "PASS"
+  },
+  "overall_status": "PASS",
+  "veto": false,
+  "claim_boundary": "v8 passes independent desktop visual and page-function review; real classroom reception, projection conditions and learning effects remain unobserved"
+}

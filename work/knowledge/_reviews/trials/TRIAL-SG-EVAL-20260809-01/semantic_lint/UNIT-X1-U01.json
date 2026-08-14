@@ -1,0 +1,99 @@
+{
+  "schema_version": "2.0-textbook-eval-1",
+  "deliverable_id": "UNIT-X1-U01",
+  "artifact_version": "0.2.0",
+  "result": "blocked",
+  "checks": [
+    {
+      "check_id": "SL-LIFECYCLE-UNIQUE",
+      "domain": "version_history",
+      "mode": "automatic",
+      "result": "pass",
+      "message": "Exactly one lifecycle-metadata block is present.",
+      "evidence_refs": [
+        "work/knowledge/_reviews/trials/TRIAL-SG-EVAL-20260809-01/snapshots/UNIT-X1-U01.md"
+      ]
+    },
+    {
+      "check_id": "SL-MARKDOWN-TABLES",
+      "domain": "markdown_table",
+      "mode": "automatic",
+      "result": "pass",
+      "message": "Markdown table column-count scan.",
+      "evidence_refs": [
+        "work/knowledge/_reviews/trials/TRIAL-SG-EVAL-20260809-01/snapshots/UNIT-X1-U01.md"
+      ],
+      "owner": "semantic-lint"
+    },
+    {
+      "check_id": "SL-FRONT-LEDGER-AUTO",
+      "domain": "front_matter_ledger",
+      "mode": "automatic",
+      "result": "pass",
+      "message": "Front matter ID/status/version/reviewer comparison.",
+      "evidence_refs": [
+        "work/knowledge/_reviews/trials/TRIAL-SG-EVAL-20260809-01/snapshots/UNIT-X1-U01.md"
+      ]
+    },
+    {
+      "check_id": "SL-CLAIM-EV-REFS",
+      "domain": "claim_kp_ev",
+      "mode": "automatic",
+      "result": "pass",
+      "message": "Machine scan that referenced EV IDs resolve to evidence rows.",
+      "evidence_refs": [
+        "work/knowledge/_reviews/trials/TRIAL-SG-EVAL-20260809-01/claim_registers/UNIT-X1-U01.json"
+      ]
+    },
+    {
+      "check_id": "SL-REGISTERS-SCHEMA",
+      "domain": "claim_kp_ev",
+      "mode": "automatic",
+      "result": "pass",
+      "message": "Claim and Constraint registers validate against their versioned JSON Schemas.",
+      "evidence_refs": [
+        "work/knowledge/_reviews/trials/TRIAL-SG-EVAL-20260809-01/claim_registers/UNIT-X1-U01.json",
+        "work/knowledge/_reviews/trials/TRIAL-SG-EVAL-20260809-01/constraint_registers/UNIT-X1-U01.json"
+      ]
+    },
+    {
+      "check_id": "SL-CLAIM-KP-EV",
+      "domain": "claim_kp_ev",
+      "mode": "manual_required",
+      "result": "not_checked",
+      "message": "Formal Claim classification, locator precision and denominator sealing remain human checks.",
+      "evidence_refs": [],
+      "owner": "trial-reviewer"
+    },
+    {
+      "check_id": "SL-Q-LOCATOR",
+      "domain": "q_locator",
+      "mode": "manual_required",
+      "result": "not_checked",
+      "message": "Q quote span and canonical locator visual verification remain human checks.",
+      "evidence_refs": [],
+      "owner": "trial-reviewer"
+    },
+    {
+      "check_id": "SL-M0-NA",
+      "domain": "m0_na",
+      "mode": "manual_required",
+      "result": "not_checked",
+      "message": "M0/N/A semantics remain human checks.",
+      "evidence_refs": [],
+      "owner": "trial-reviewer"
+    },
+    {
+      "check_id": "SL-TEACHING-PROMPT",
+      "domain": "teaching_prompt",
+      "mode": "manual_required",
+      "result": "not_checked",
+      "message": "Teaching-prompt boundary remains a human check.",
+      "evidence_refs": [],
+      "owner": "trial-reviewer"
+    }
+  ],
+  "warnings": [
+    "Automatic lint does not close manual DG1/DG2 checks."
+  ]
+}

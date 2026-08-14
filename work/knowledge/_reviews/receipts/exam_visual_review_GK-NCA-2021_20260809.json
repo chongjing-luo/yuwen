@@ -1,0 +1,42 @@
+{
+  "schema_version": "exam-visual-review-receipt-0.1",
+  "receipt_id": "EXAM-VISUAL-GK-NCA-2021-20260809",
+  "exam_id": "GK-NCA-2021",
+  "generated_at": "2026-08-09T06:43:00+08:00",
+  "status": "passed_with_conservative_derivation",
+  "review_scope": "question_pdf_visual_review_and_top_level_score_arbitration",
+  "review_method": {
+    "render": "high_resolution_pdf_render",
+    "pdf_page_count": 11,
+    "pages_checked": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "exam_printed_pages": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "blank_watermark_pages": [],
+    "advertising_pages": [11]
+  },
+  "source_policy": {
+    "source_pdf_read_only": true,
+    "mineru_full_md_read_only": true,
+    "clean_md_read_only_during_review": true,
+    "raw_watermark_retained": true,
+    "answer_authority": "candidate_unverified_or_missing",
+    "mapping_boundary": "M0_only"
+  },
+  "source_hashes": {
+    "question_pdf_sha256": "ceb527650d8f256368f144e158c1d9e95c7ced0fb049f5a0474ade174ea07c0c",
+    "mineru_full_md_sha256": "48c7e15bdfe363b6bd21e24a0810fd8334333970ec2ce9b1fa80a676d7798a1e"
+  },
+  "findings": [
+    {"scope": "Q1-Q22", "finding": "逐页核对现代文、古代诗文、语言文字运用与作文边界；题文与空白卷页序一致。", "decision": "保留稳定顶层题号和页级回溯，清洗提示仅截去下一节标题。"},
+    {"scope": "score", "finding": "卷面分区总分为现代文36、古代诗文34、语言文字运用20、作文60。Q4-Q6、Q7-Q9仅有题组总分，语言运用又分9+11两个子组。", "decision": "阅读组使用3/4/5、3/6/6候选；语言运用只在组首登记9/11，其他节点以0分结构占位并显式警告。"},
+    {"scope": "all_pages", "finding": "第11页为资料广告页，卷面水印保留。", "decision": "广告页不进入题文清洗正文，原始PDF与清洗稿保持双链。"}
+  ],
+  "derived_updates": {
+    "script": "scripts/decompose_exam_vertical_slices.py",
+    "output": "work/knowledge/高考分析/GK-NCA-2021-response_nodes_vertical_slice.jsonl",
+    "receipt": "work/knowledge/_reviews/receipts/exam_vertical_GK-NCA-2021_20260809.json",
+    "content_policy": "仅生成派生节点和回执；未改写原始PDF、MinerU full.md或清洗源段。"
+  },
+  "acceptance": {"visual_boundary": "passed", "ocr_arbitration": "passed_with_explicit_residuals", "score_reconciliation": "150/150", "top_level_only": false, "locator_precision": "page_level_fallback", "answer_and_kp_mapping": "not_claimed; candidate_unverified_or_missing; M0/KP_ID=N/A"},
+  "reviewer": "primary_agent",
+  "reviewed_at": "2026-08-09"
+}

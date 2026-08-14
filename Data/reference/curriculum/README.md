@@ -8,6 +8,8 @@
 - 官方通知：https://www.moe.gov.cn/srcsite/A26/s8001/202006/t20200603_462199.html
 - 官方附件：https://www.moe.gov.cn/srcsite/A26/s8001/202006/W020200603315372317586.zip
 - 本地文件：`普通高中语文课程标准（2017年版2020年修订）_教育部官方版.pdf`
+- 本地绝对路径：`/home/ubuntu/homes/LuoChongjing/Methods/yuwen/Data/reference/curriculum/普通高中语文课程标准（2017年版2020年修订）_教育部官方版.pdf`
+- MinerU 主检索稿绝对路径：`/home/ubuntu/homes/LuoChongjing/Methods/yuwen/Data/textbook_extract/普通高中语文课程标准（2017年版2020年修订）/mineru_result/普通高中语文课程标准（2017年版2020年修订）_教育部官方版/full.md`
 - PDF 信息：66 页，1,410,644 bytes，PDF 1.6
 - SHA-256：`7a187079f1fffe8ae834fdeff25bac9dd0e7de6b979db40fd875786dc0365977`
 

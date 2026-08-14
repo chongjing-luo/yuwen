@@ -1,0 +1,167 @@
+{
+  "schema_version": "2.0-textbook-eval-1",
+  "deliverable_id": "CARD-X1-U01-02",
+  "artifact_version": "0.2.1",
+  "claims": [
+    {
+      "claim_id": "CLM-CARD-X1-U01-02-0001",
+      "target_id": "KP-CARD-X1-U01-02-001",
+      "field_path": "/trial_inventory/KP-CARD-X1-U01-02-001/statement",
+      "claim_class": "D",
+      "formal": false,
+      "text": "课2包含两个独立子文本：《长征胜利万岁》作者杨成武，《大战中的插曲》作者聂荣臻，均选自作者回忆录。",
+      "evidence_refs": [
+        "EV-CARD-X1-U01-02-001"
+      ],
+      "locator_refs": []
+    },
+    {
+      "claim_id": "CLM-CARD-X1-U01-02-0002",
+      "target_id": "KP-CARD-X1-U01-02-002",
+      "field_path": "/trial_inventory/KP-CARD-X1-U01-02-002/statement",
+      "claim_class": "D",
+      "formal": false,
+      "text": "《长征胜利万岁》依次叙写到达吴起镇、吴起镇战斗、休整后与陕北红军会师以及全军干部会议，事件顺序构成全文历史线索。",
+      "evidence_refs": [
+        "EV-CARD-X1-U01-02-002",
+        "EV-CARD-X1-U01-02-003"
+      ],
+      "locator_refs": []
+    },
+    {
+      "claim_id": "CLM-CARD-X1-U01-02-0003",
+      "target_id": "KP-CARD-X1-U01-02-003",
+      "field_path": "/trial_inventory/KP-CARD-X1-U01-02-003/statement",
+      "claim_class": "D",
+      "formal": false,
+      "text": "《长征胜利万岁》用队伍欢叫、伏击战、会场欢呼等具体场面和人物细节再现历史，并穿插议论、抒情和毛泽东讲话表达长征意义。",
+      "evidence_refs": [
+        "EV-CARD-X1-U01-02-002",
+        "EV-CARD-X1-U01-02-003",
+        "EV-CARD-X1-U01-02-007"
+      ],
+      "locator_refs": []
+    },
+    {
+      "claim_id": "CLM-CARD-X1-U01-02-0004",
+      "target_id": "KP-CARD-X1-U01-02-004",
+      "field_path": "/trial_inventory/KP-CARD-X1-U01-02-004/statement",
+      "claim_class": "D",
+      "formal": false,
+      "text": "理解“长征万岁”须同时看到胜利、牺牲和后续使命：最后一仗宣告追剿破产却有伤亡，干部会议既总结远征，也指出中央红军损失巨大并将承担更艰巨任务。",
+      "evidence_refs": [
+        "EV-CARD-X1-U01-02-002",
+        "EV-CARD-X1-U01-02-003"
+      ],
+      "locator_refs": []
+    },
+    {
+      "claim_id": "CLM-CARD-X1-U01-02-0005",
+      "target_id": "KP-CARD-X1-U01-02-005",
+      "field_path": "/trial_inventory/KP-CARD-X1-U01-02-005/statement",
+      "claim_class": "D",
+      "formal": false,
+      "text": "作者把个人见闻、集体欢欣与对领导者和战友的记忆并置，使“长征胜利”既是历史结果，也是对奋斗、牺牲和团结的价值确认。",
+      "evidence_refs": [
+        "EV-CARD-X1-U01-02-002",
+        "EV-CARD-X1-U01-02-003"
+      ],
+      "locator_refs": []
+    },
+    {
+      "claim_id": "CLM-CARD-X1-U01-02-0006",
+      "target_id": "KP-CARD-X1-U01-02-006",
+      "field_path": "/trial_inventory/KP-CARD-X1-U01-02-006/statement",
+      "claim_class": "D",
+      "formal": false,
+      "text": "《大战中的插曲》按救起日本儿童、安置照料、决定送还、致信日本官兵、获知后续并于1980年重逢的顺序展开，题目“插曲”贯穿事件与后效。",
+      "evidence_refs": [
+        "EV-CARD-X1-U01-02-004",
+        "EV-CARD-X1-U01-02-005",
+        "EV-CARD-X1-U01-02-006",
+        "EV-CARD-X1-U01-02-007"
+      ],
+      "locator_refs": []
+    },
+    {
+      "claim_id": "CLM-CARD-X1-U01-02-0007",
+      "target_id": "KP-CARD-X1-U01-02-007",
+      "field_path": "/trial_inventory/KP-CARD-X1-U01-02-007/statement",
+      "claim_class": "D",
+      "formal": false,
+      "text": "聂荣臻以“孩子是无罪的”为判断起点，在战事、边区照料条件和儿童处境之间权衡后决定送还，革命人道主义由具体选择和行动呈现。",
+      "evidence_refs": [
+        "EV-CARD-X1-U01-02-004",
+        "EV-CARD-X1-U01-02-005"
+      ],
+      "locator_refs": []
+    },
+    {
+      "claim_id": "CLM-CARD-X1-U01-02-0008",
+      "target_id": "KP-CARD-X1-U01-02-008",
+      "field_path": "/trial_inventory/KP-CARD-X1-U01-02-008/statement",
+      "claim_class": "D",
+      "formal": false,
+      "text": "致日本官兵的信把日本军阀的侵略责任与日本士兵、人民区别开来，并把反侵略、政治工作、宽待俘虏和保护无辜者置于同一价值框架。",
+      "evidence_refs": [
+        "EV-CARD-X1-U01-02-005",
+        "EV-CARD-X1-U01-02-006"
+      ],
+      "locator_refs": []
+    },
+    {
+      "claim_id": "CLM-CARD-X1-U01-02-0009",
+      "target_id": "KP-CARD-X1-U01-02-009",
+      "field_path": "/trial_inventory/KP-CARD-X1-U01-02-009/statement",
+      "claim_class": "D",
+      "formal": false,
+      "text": "《大战中的插曲》全文收录致日本官兵的信，使叙事获得一手文献支撑，并以书信中的对象、责任判断和行动主张深化文章的历史意义与政治高度。",
+      "evidence_refs": [
+        "EV-CARD-X1-U01-02-005",
+        "EV-CARD-X1-U01-02-010"
+      ],
+      "locator_refs": []
+    },
+    {
+      "claim_id": "CLM-CARD-X1-U01-02-0010",
+      "target_id": "KP-CARD-X1-U01-02-010",
+      "field_path": "/trial_inventory/KP-CARD-X1-U01-02-010/statement",
+      "claim_class": "D",
+      "formal": false,
+      "text": "从战时救助、送还儿童到1980年重逢和旧军人道歉，“小小的‘插曲’”成为中日人民友好佳话；这一结论不等于淡化侵略责任。",
+      "evidence_refs": [
+        "EV-CARD-X1-U01-02-005",
+        "EV-CARD-X1-U01-02-006",
+        "EV-CARD-X1-U01-02-007"
+      ],
+      "locator_refs": []
+    },
+    {
+      "claim_id": "CLM-CARD-X1-U01-02-0011",
+      "target_id": "KP-CARD-X1-U01-02-011",
+      "field_path": "/trial_inventory/KP-CARD-X1-U01-02-011/statement",
+      "claim_class": "D",
+      "formal": false,
+      "text": "比较两篇回忆录时，可概括其共同的亲历叙述、具体场面和叙议结合，但须保留一篇聚焦长征胜利与新使命、另一篇聚焦战争中的人道选择与人民友好的差异。",
+      "evidence_refs": [
+        "EV-CARD-X1-U01-02-003",
+        "EV-CARD-X1-U01-02-005",
+        "EV-CARD-X1-U01-02-007"
+      ],
+      "locator_refs": []
+    },
+    {
+      "claim_id": "CLM-CARD-X1-U01-02-0012",
+      "target_id": "KP-CARD-X1-U01-02-012",
+      "field_path": "/trial_inventory/KP-CARD-X1-U01-02-012/statement",
+      "claim_class": "D",
+      "formal": false,
+      "text": "完成任务一和任务二第2项时，应以“事件/材料—细节或引文—情感—理性判断—意义”组织讨论；迁移写作中的材料还须真实可靠、出处可核并与观点或主旨相关。",
+      "evidence_refs": [
+        "EV-CARD-X1-U01-02-008",
+        "EV-CARD-X1-U01-02-010"
+      ],
+      "locator_refs": []
+    }
+  ]
+}

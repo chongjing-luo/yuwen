@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:yuwen:sg-eval-batch-report:0.1",
+  "title": "SG-EVAL Batch Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "trial_batch_id", "result", "automatic_checks", "manual_checks", "warnings"],
+  "properties": {
+    "schema_version": {"const": "sg-eval-batch-report-0.1"},
+    "trial_batch_id": {"type": "string", "minLength": 1},
+    "result": {"enum": ["green", "blocked", "red", "not_run"]},
+    "automatic_checks": {"type": "array", "items": {"$ref": "#/$defs/automatic"}, "minItems": 1},
+    "manual_checks": {"type": "array", "items": {"$ref": "#/$defs/manual"}, "minItems": 1},
+    "warnings": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+  },
+  "$defs": {
+    "automatic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["check_id", "result", "message"],
+      "properties": {
+        "check_id": {"type": "string", "minLength": 1},
+        "result": {"enum": ["pass", "fail", "not_run", "warning"]},
+        "message": {"type": "string", "minLength": 1}
+      }
+    },
+    "manual": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["check_id", "result", "owner", "message"],
+      "properties": {
+        "check_id": {"type": "string", "minLength": 1},
+        "result": {"enum": ["pass", "fail", "not_checked", "na", "warning"]},
+        "owner": {"type": "string", "minLength": 1},
+        "message": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

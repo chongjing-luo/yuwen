@@ -1,0 +1,75 @@
+{
+  "schema_version": "answer-clean-candidate-validation-0.1",
+  "result": "passed",
+  "errors": [],
+  "warnings": [
+    "GK-SC-2008-Q001: no safe question/analysis boundary",
+    "GK-SC-2008-Q002: no safe question/analysis boundary",
+    "GK-SC-2008-Q003: no safe question/analysis boundary",
+    "GK-SC-2008-Q004: no safe question/analysis boundary",
+    "GK-SC-2008-Q005: no safe question/analysis boundary",
+    "GK-SC-2008-Q006: no safe question/analysis boundary",
+    "GK-SC-2008-Q007: no safe question/analysis boundary",
+    "GK-SC-2008-Q008: no safe question/analysis boundary",
+    "GK-SC-2008-Q009: no safe question/analysis boundary",
+    "GK-SC-2008-Q010: no safe question/analysis boundary",
+    "GK-SC-2008-Q011: no safe question/analysis boundary",
+    "GK-SC-2008-Q012: no safe question/analysis boundary",
+    "GK-SC-2008-Q013: no safe question/analysis boundary",
+    "GK-SC-2008-Q014: no safe question/analysis boundary",
+    "GK-SC-2008-Q015: no safe question/analysis boundary",
+    "GK-SC-2008-Q016: no safe question/analysis boundary",
+    "GK-SC-2008-Q017: no safe question/analysis boundary",
+    "GK-SC-2008-Q018: no safe question/analysis boundary",
+    "GK-SC-2008-Q019: no safe question/analysis boundary",
+    "GK-SC-2008-Q020: no safe question/analysis boundary",
+    "GK-SC-2008-Q021: no safe question/analysis boundary"
+  ],
+  "exams": [
+    {
+      "exam_id": "GK-NC3-2016",
+      "source_rows": 12,
+      "clean_rows": 12
+    },
+    {
+      "exam_id": "GK-NC3-2017",
+      "source_rows": 12,
+      "clean_rows": 12
+    },
+    {
+      "exam_id": "GK-NC3-2018",
+      "source_rows": 10,
+      "clean_rows": 10
+    },
+    {
+      "exam_id": "GK-NC3-2019",
+      "source_rows": 10,
+      "clean_rows": 10
+    },
+    {
+      "exam_id": "GK-NC3-2020",
+      "source_rows": 10,
+      "clean_rows": 10
+    },
+    {
+      "exam_id": "GK-NCA-2024",
+      "source_rows": 22,
+      "clean_rows": 22
+    },
+    {
+      "exam_id": "GK-SC-2008",
+      "source_rows": 21,
+      "clean_rows": 21
+    },
+    {
+      "exam_id": "GK-SC-2013",
+      "source_rows": 21,
+      "clean_rows": 21
+    }
+  ],
+  "checks": {
+    "source_coverage": true,
+    "hashes": true,
+    "authority_gate": true
+  }
+}

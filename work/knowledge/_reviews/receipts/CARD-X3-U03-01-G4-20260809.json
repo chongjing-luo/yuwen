@@ -1,0 +1,58 @@
+{
+  "receipt_id": "RECEIPT-CARD-X3-U03-01-G4-20260809",
+  "deliverable_id": "CARD-X3-U03-01",
+  "gate": "DG4-MERGE",
+  "merged_at": "2026-08-09T00:05:41+08:00",
+  "artifact_version": "0.2.2",
+  "pre_merge_file_sha256": "9340e0cffa671087f18665ca094ef69d87d2e2d67333e31c8a85e7937169c5fc",
+  "post_merge_file_sha256": "846119c5135c6c3786bd580f42b19e1a5678792ef88a833558758b889ff80797",
+  "content_change": false,
+  "allowed_diff": [
+    "front_matter.status",
+    "front_matter.reviewers",
+    "self_check",
+    "version_history",
+    "ledger.status",
+    "ledger.reviewers",
+    "ledger.owner",
+    "ledger.version",
+    "ledger.state_transition_history",
+    "state_transition"
+  ],
+  "review_binding": {
+    "rubric_version": "2.0-textbook",
+    "rubric_sha256": "ab9cc53d57834642e66e568824d1c0c53e128953e15b20b4c7bd04aa30610d43",
+    "taxonomy_sha256": "13e5e23c45c05359a5c91e360ce8bd71dbf2a841c2c6a72f1adca52bef7cbd4b",
+    "ledger_review_snapshot_sha256": "95233edf7742554ab0abeb987bcb6fb04843a7374b5f3dadbb7fbbbb84e2f7d6",
+    "ledger_pre_merge_sha256": "95233edf7742554ab0abeb987bcb6fb04843a7374b5f3dadbb7fbbbb84e2f7d6",
+    "ledger_post_merge_sha256": "fa02ca45bb9ad1313963d12687a34c9b64df722eb09d9361e95b9ab78a34fd56",
+    "ledger_snapshot_note": "U03-REC-01在评审后并发写入共享账本；其新增已纳入DG4后的当前账本，卡片评审仍绑定95233历史快照，内容与卡片SHA未变。",
+    "primary": {
+      "reviewer": "independent_primary_x3_u03_01_r3",
+      "score": 98.5,
+      "decision": "pass",
+      "review_sha256": "9602ff6fcc74e583f56fd1383ffa7583f6dd525a3e5dfb1834742ee3baa54325"
+    },
+    "secondary": {
+      "reviewer": "independent_secondary_x3_u03_01_r3",
+      "score": 99.0,
+      "decision": "pass",
+      "review_sha256": "4dfe6c079490566e248cc815ee30e4b9e8a5d4020efa4f981259fcf56a52fba9"
+    },
+    "score_difference": 0.5,
+    "r01_r10": "all 0",
+    "p0_p1_p2": "0/0/0"
+  },
+  "validator": {
+    "review_run_id": "VAL-20260809-000058+0800",
+    "review_report_sha256": "77a485f035cfa96fb038a0e16494405e7d1e52cd826f99882cdf4d31a9689bbd",
+    "post_validator_run_id": "VAL-20260809-000541+0800",
+    "report": "work/knowledge/_meta/validation_reports/x3_u03_01_g4_validation_20260809.json",
+    "report_sha256": "ee0b01bcde0228c71485440cb921fcb4113823e65078219d5dc9e5559b65ae4a",
+    "result": "passed",
+    "errors": 0
+  },
+  "transition_id": "STATE-20260809-CARD-X3-U03-01-G4",
+  "downstream_impact": ["UNIT-X3-U03"],
+  "status": "accepted"
+}

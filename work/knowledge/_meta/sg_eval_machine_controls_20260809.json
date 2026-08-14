@@ -1,0 +1,43 @@
+{
+  "schema_version": "sg-eval-machine-controls-0.1",
+  "candidate": "2.0-textbook-eval-1",
+  "status": "candidate_controls_ready_trial_pending",
+  "generated_at": "2026-08-09T00:00:00+08:00",
+  "files": [
+    {"path": "scripts/content_sha256.py", "sha256": "70fbc69cb23ac61ac66bdcc691b7211cc69b0658da31541cc6db8d2ec79fc566"},
+    {"path": "scripts/validate_review_binding_manifest.py", "sha256": "c96654a9a8bc7d7d45e3807d5afcf322f47dbf289dc5637e4758d039c72b6ff5"},
+    {"path": "scripts/score_rubric_fixed.py", "sha256": "964761c1befe50277d2ec91f62542e2bb8062cb341705be1742d67c3933a1d7c"},
+    {"path": "scripts/validate_claim_constraint_registers.py", "sha256": "15c78c29f4559214edeaa7824c752a3956fe27416d895c2534e74d3f0bc1ab0d"},
+    {"path": "scripts/create_sg_eval_trial_snapshot.py", "sha256": "cba42cd6edb1732b96f21843edf94a6835b310251709d3d10bb446d8322465a3"},
+    {"path": "scripts/run_sg_eval_semantic_lint.py", "sha256": "62ffd99dbdbe8a99bbf9e54d855dbbafced14daeb994be5ce5b9bda9392181b6"},
+    {"path": "scripts/build_rubric_observation_manifest.py", "sha256": "296f1a5473cae4cc4cfa2d0b79846933aefa0dbb1e34c43833e1389bf2bc2d7f"},
+    {"path": "work/knowledge/_meta/schemas/claim_register.schema.json", "sha256": "6af50838154406a68e7ba24e0b2d7af682cd04dd8480dc57db5ba5bd44702f4e"},
+    {"path": "work/knowledge/_meta/schemas/constraint_register.schema.json", "sha256": "a9b38d8cd7c989441de87a2d819cd55d7ed7a7a2fa6cd6a859930cd05039afac"},
+    {"path": "work/knowledge/_meta/schemas/semantic_lint.schema.json", "sha256": "934a585ae993f55de6331961e04e53280ddfac90baa366800d1507e9a3ad6424"},
+    {"path": "work/knowledge/_meta/schemas/dg4_receipt.schema.json", "sha256": "8bcbbfd94dd1cc9379e64365a66cf4f2c2556e20410160d2c80b822d245bcbd6"},
+    {"path": "work/knowledge/_meta/rubric_observations_2.0-textbook-eval-1.json", "sha256": "77727f3d1346b3da679e9acd8cc46d0a55442223da58fe7eb4fe085bc67e46c4"},
+    {"path": "work/knowledge/_meta/validator_capability_matrix_2.0-textbook-eval-1.json", "sha256": "074dd0dc89775851b8e733c0606b986d1f432bf9bccf4cbbc333cb7e4d544a72"},
+    {"path": "work/knowledge/_meta/warning_register_2.0-textbook-eval-1.json", "sha256": "5c6c64c182fd697c3d092237d0f7172810bbb213709be3d2ce7927cf914f983e"},
+    {"path": "work/knowledge/_meta/semantic_lint_template.json", "sha256": "3837a654d3fa61e1fecc1f525eb4eb519179d62b4b5dded070131b3e1a00f4c5"},
+    {"path": "work/knowledge/_meta/dg4_receipt_template.json", "sha256": "bdf13e1165e7bbaad4db4ca3b8ac6e31404cf5d375e703091b1c0bd88a222fe3"},
+    {"path": "dev/knowledge-extraction-foundation/04_execution/evaluation_artifact_template_2.0-textbook-eval-1.md", "sha256": "593bf3d3a51705032e2b44f742f7e239cb43a6e0bd7ba9dff51b432acd9f274f"},
+    {"path": "dev/knowledge-extraction-foundation/04_execution/review_binding_manifest_schema_candidate_20260808_014300.json", "sha256": "c929ec4808bb16aeae4e26e75f02d2c235bba700b7595602f5ec8f2daf0ed4bb"},
+    {"path": "dev/knowledge-extraction-foundation/04_execution/review_binding_package_template_2.0-textbook-eval-1.md", "sha256": "63e68a9c7c3250ae4688c44cc99898f61b69e407eb8205ac944553f34a50a9bf"},
+    {"path": "dev/knowledge-extraction-foundation/04_execution/adjudication_record_template_2.0-textbook-eval-1.md", "sha256": "fad5d144951991c75d9c204cba4500a5f35b705b2aa1fbda65c42d2c3573a4f6"},
+    {"path": "dev/knowledge-extraction-foundation/04_execution/evaluation_cutover_checklist_20260808_014300.md", "sha256": "a732099db10ca542f1fece365ba9e91add687c00498a662b991d96f4a4fd76cf"},
+    {"path": "work/knowledge/_meta/sg_eval_trial_batch_plan_20260809.json", "sha256": "5d2baaa6acb6db7adcca4ee78c35fe43b0f111307864bbe26e095493aa2b27aa"},
+    {"path": "work/knowledge/_meta/sg_eval_trial_input_audit_20260809.json", "sha256": "bef2c2a58fc6db3309b8987a4926ba05f2b42bfb76ff2ed57d4f1fc2e480d31d"},
+    {"path": "work/knowledge/_meta/schemas/review.schema.json", "sha256": "1776ab6c5089386f796bf090208618448f1b6a54fef3650279d25238d287aaa6"},
+    {"path": "work/knowledge/_meta/schemas/sg_eval_batch_report.schema.json", "sha256": "5020668b98dbcc60ea582b43642659e5983f8baee569f9065a4684f3aa28721d"},
+    {"path": "work/knowledge/_reviews/EXAM-LEGACY-DRAFT-AUDIT-20260809.md", "sha256": "07b169e7abcf2b03703fbb5afbd651bff97433973b68f334a0a37440c8c5a0b2"},
+    {"path": "tests/test_evaluation_controls.py", "sha256": "d054a925e7b041505b72ad40d70f6295b853e33dc1bcabc46815cc3bbdf92673"},
+    {"path": "tests/test_sg_eval_trial_snapshot.py", "sha256": "f9eca5b859ccf8b815a7b2ad16c9f98f9e2d21a2d3affbf62d0dac1aa8e3c179"}
+  ],
+  "regression": {
+    "command": "pytest -q tests/test_evaluation_controls.py tests/test_sg_eval_trial_snapshot.py",
+    "result": "passed",
+    "tests": 10,
+    "scope": ["content SHA", "review binding", "Claim/Constraint schema", "DG4 receipt", "fixed-point scoring", "observation coverage", "read-only SG-EVAL trial snapshot"]
+  },
+  "activation_note": "Machine controls are ready for the two-batch trial; this receipt does not approve or activate the candidate and does not create a cutover_batch_id."
+}

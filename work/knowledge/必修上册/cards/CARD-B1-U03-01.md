@@ -1,7 +1,7 @@
 ---
 schema_version: "2.0-candidate"
 card_id: "CARD-B1-U03-01"
-status: "drafted"
+status: "accepted"
 book: "必修上册"
 unit: "U03"
 material_type: "lesson"
@@ -10,14 +10,16 @@ curriculum_version: "普通高中语文课程标准（2017年版2020年修订）
 course_type: "必修"
 primary_task_group: "文学阅读与写作"
 related_task_groups: []
-quality_descriptor_refs: []
+quality_descriptor_refs:
+  - "QD-4-3"
 source_ids:
   - "SRC-PKG-B1-009"
+  - "SRC-CURR-2020"
 subtext_ids:
   - "SUBTEXT-CARD-B1-U03-01-01"
   - "SUBTEXT-CARD-B1-U03-01-02"
 producer: "evidence_design"
-reviewers: []
+reviewers: ["review_primary_textbook", "review_secondary_textbook"]
 version: "0.1.0"
 ---
 
@@ -59,7 +61,7 @@ version: "0.1.0"
 
 | 主/关联任务群 | 语言材料与语境 | 阅读与鉴赏 | 表达与交流 | 梳理与探究 | 主要核心素养表现及依据 | 学业质量表现描述定位 |
 |---|---|---|---|---|---|---|
-| 主：文学阅读与写作（受控词表候选定位） | 两首不同时代、不同诗体风格的古体诗及其注释、学习提示；以诗人身世和作品语境辅助理解。 | 在诵读和想象中感受意境，比较四言/五言、比兴用典/白描及其表意作用。 | 围绕小切口，用“文本引文＋分析”表达鉴赏判断，尝试文学短评。 | 梳理意象、典故、节奏和情感推进，区分文本事实与解释性结论。 | 重点涉及审美鉴赏与创造、文化传承与理解；依据为教材关于艺术魅力、精神世界和传统文化传承的学习要求。 | `quality_descriptor_refs` 暂空；尚无已登记官方课标 Artifact，不能据单卡判定“水平X”。任务群仅为受控词表候选定位，待官方课标证据补入。 |
+| 主：文学阅读与写作；关联：语言积累、梳理与探究 | 两首不同时代、不同诗体风格的古体诗及其注释、学习提示；以诗人身世和作品语境辅助理解。 | 在诵读和想象中感受意境，比较四言/五言、比兴用典/白描及其表意作用。 | 围绕小切口，用“文本引文＋分析”表达鉴赏判断，尝试文学短评。 | 梳理意象、典故、节奏和情感推进，区分文本事实与解释性结论。 | 重点涉及审美鉴赏与创造、文化传承与理解；依据为教材关于艺术魅力、精神世界和传统文化传承的学习要求。 | QD-4-3：结合作品具体内容阐释情感、形象、主题和表现手法；只作表现定位，不判定完整水平。 |
 
 ## 5. 原子知识点
 
@@ -133,11 +135,14 @@ version: "0.1.0"
 | EV-CARD-B1-U03-01-015 | 比较阅读与短评任务的项目化组合 | I | SRC-PKG-B1-009 | ART-PKG-B1-009-PDF | split PDF pp.1, 3；master pp.64, 66；printed pp.57, 59 | 导语要求“尝试写作文学短评”，学习提示提供诗体、风格和技巧比较维度 | supports | verified / evidence_design / 2026-08-06（由 EV-002、EV-012 双证据复核） |
 | EV-CARD-B1-U03-01-016 | 来源边界：无本册教师用书、无真题、跨卡边待验收 | D | — | work/knowledge/_meta/sources.jsonl；work/knowledge/_meta/deliverables.jsonl | 2026-08-06 本地账本核对 | 未登记必修上册配套教师用书或正式真题；本卡状态为 drafted | supports | verified / evidence_design / 2026-08-06 |
 
+| EV-CARD-B1-U03-01-017 | 文学阅读与写作任务群 | M | SRC-CURR-2020 | ART-CURR-2020-PDF | PDF物理页25—26；印刷页17—18 | “阅读古今中外诗歌、散文、小说、剧本等不同体裁的优秀文学作品” | supports | verified / coordinator / 2026-08-07 |
+| EV-CARD-B1-U03-01-018 | 学业质量表现QD-4-3 | M | SRC-CURR-2020 | ART-CURR-2020-PDF | PDF物理页44；印刷页36 | “结合作品具体内容，阐释作品的情感、形象、主题和思想内涵” | supports | verified / coordinator / 2026-08-07 |
+
 ## 10. 自检、评审与版本记录
 
 - [x] 合编文本和子文本无遗漏
 - [x] 直接引文已回看规范PDF
-- [ ] 任务群已有受控值，但官方课标 Artifact 尚缺；课程类型和课标版本已按受控词表填写
+- [x] 任务群、课程标准 Artifact 和课程类型已绑定；学业质量只作具体表现定位
 - [x] 每个KP有主层级、理由和证据
 - [x] 所有I类解释至少两处文本依据
 - [x] 三类教学提示已分开

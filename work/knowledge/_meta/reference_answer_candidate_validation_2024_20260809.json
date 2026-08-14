@@ -1,0 +1,13 @@
+{
+  "schema_version": "reference-answer-candidate-validation-2024-0.1",
+  "result": "passed",
+  "rows": 9,
+  "main_index_missing_rows": 22,
+  "errors": [],
+  "checks": {
+    "partial_coverage": true,
+    "source_hashes": true,
+    "authority_gate": true,
+    "main_index_unchanged_gate": true
+  }
+}

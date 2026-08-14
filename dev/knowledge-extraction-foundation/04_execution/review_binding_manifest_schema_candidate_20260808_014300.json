@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:yuwen:review-binding-manifest:2.0-textbook-eval-1",
+  "title": "Review Binding Manifest Candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "binding_version",
+    "deliverable_id",
+    "artifact_version",
+    "contract_version",
+    "rubric_interpretation_version",
+    "content_sha256",
+    "pre_merge_file_sha256",
+    "claim_register_sha256",
+    "rubric_sha256",
+    "observation_manifest_sha256",
+    "upstream_snapshot_sha256",
+    "batch_manifest_sha256",
+    "validator_run_id",
+    "primary_review",
+    "secondary_review",
+    "dg3_decision"
+  ],
+  "properties": {
+    "binding_version": {
+      "const": "2.0-textbook-eval-1"
+    },
+    "deliverable_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifact_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "contract_version": {
+      "const": "2.0-textbook"
+    },
+    "rubric_interpretation_version": {
+      "const": "2.0-textbook-eval-1"
+    },
+    "content_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "pre_merge_file_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "post_merge_file_sha256": {
+      "oneOf": [
+        { "$ref": "#/$defs/sha256" },
+        { "type": "null" }
+      ],
+      "default": null
+    },
+    "claim_register_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "rubric_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "observation_manifest_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "upstream_snapshot_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "batch_manifest_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "validator_run_id": {
+      "type": "string",
+      "pattern": "^VAL-[0-9]{8}-[0-9]{6}[+-][0-9]{4}$"
+    },
+    "primary_review": {
+      "allOf": [
+        { "$ref": "#/$defs/review" },
+        {
+          "properties": {
+            "role": { "const": "primary" }
+          }
+        }
+      ]
+    },
+    "secondary_review": {
+      "allOf": [
+        { "$ref": "#/$defs/review" },
+        {
+          "properties": {
+            "role": { "const": "secondary" }
+          }
+        }
+      ]
+    },
+    "dg3_decision": {
+      "enum": ["pass", "rework", "adjudication"]
+    },
+    "dg4_receipt_path": {
+      "oneOf": [
+        { "type": "string", "minLength": 1 },
+        { "type": "null" }
+      ],
+      "default": null
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "dimension_scores": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "number",
+        "multipleOf": 0.5,
+        "minimum": 0
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role",
+        "reviewer",
+        "path",
+        "sha256",
+        "decision",
+        "total_score",
+        "dimension_scores",
+        "hard_rejections",
+        "p0",
+        "p1",
+        "p2",
+        "sealed_at"
+      ],
+      "properties": {
+        "role": {
+          "enum": ["primary", "secondary"]
+        },
+        "reviewer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "decision": {
+          "enum": ["pass", "rework", "adjudication"]
+        },
+        "total_score": {
+          "oneOf": [
+            { "type": "number", "multipleOf": 0.5, "minimum": 0, "maximum": 100 },
+            { "type": "null" }
+          ]
+        },
+        "dimension_scores": {
+          "$ref": "#/$defs/dimension_scores"
+        },
+        "hard_rejections": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^R(0[1-9]|10)$"
+          },
+          "uniqueItems": true
+        },
+        "p0": { "type": "integer", "minimum": 0 },
+        "p1": { "type": "integer", "minimum": 0 },
+        "p2": { "type": "integer", "minimum": 0 },
+        "sealed_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "status": "repaired_2024_q021_q022_sources",
+  "question": {
+    "Q021": {
+      "sha256": "29532af1420a5dd58637301882f00a9092460c7d445ba24d569adde341fcd059",
+      "blocks": [
+        "P9-B7",
+        "P9-B8",
+        "P9-B9"
+      ]
+    },
+    "Q022": {
+      "sha256": "20376cda66a667aff1f2d75506d3de1773c8531ed402c642df9e32b56b4ff7a8",
+      "blocks": [
+        "P9-B10",
+        "P9-B11",
+        "P10-B1",
+        "P10-B2",
+        "P10-B3"
+      ]
+    }
+  },
+  "analysis": {
+    "Q021": {
+      "sha256": "a599c5fb448484e014e0b54f21ccaaa7d8132717a846bb69b87fcac2cae40c2b",
+      "blocks": [
+        "P17-B10",
+        "P17-B11",
+        "P17-B12",
+        "P17-B13",
+        "P17-B14",
+        "P17-B15",
+        "P17-B16",
+        "P18-B1",
+        "P18-B2",
+        "P18-B3",
+        "P18-B4",
+        "P18-B5",
+        "P18-B6",
+        "P18-B7",
+        "P18-B8"
+      ]
+    },
+    "Q022": {
+      "sha256": "599398956bb7c097cd3908c5c58ce1cc49266933aab94a08198d6c9290af1233",
+      "blocks": [
+        "P18-B9",
+        "P18-B10",
+        "P18-B11",
+        "P18-B12",
+        "P18-B13",
+        "P18-B14",
+        "P18-B15",
+        "P18-B16",
+        "P18-B17",
+        "P19-B2",
+        "P19-B3",
+        "P19-B4",
+        "P19-B5",
+        "P19-B6",
+        "P19-B7",
+        "P19-B8",
+        "P19-B9",
+        "P19-B10",
+        "P19-B11",
+        "P19-B12",
+        "P20-B2",
+        "P20-B3",
+        "P20-B4",
+        "P20-B5",
+        "P20-B6"
+      ]
+    }
+  },
+  "ledger_rows_updated": {
+    "q21_question": 2,
+    "q22_question": 2,
+    "q21_analysis": 2,
+    "q22_analysis": 2
+  },
+  "nodes_updated": {
+    "vertical": 2,
+    "top_level": 2,
+    "batches": 2
+  },
+  "raw_sources_preserved": true,
+  "answer_authority": "candidate_unverified_local_analysis_only",
+  "mapping_status": "M0_only"
+}

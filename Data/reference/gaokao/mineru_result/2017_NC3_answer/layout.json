@@ -1,0 +1,666 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "score": 0.5243,
+                    "bbox": [
+                        47,
+                        43,
+                        317,
+                        61
+                    ],
+                    "index": 1,
+                    "type": "text",
+                    "lines": [
+                        {
+                            "bbox": [
+                                49,
+                                46,
+                                314,
+                                58
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        49,
+                                        46,
+                                        314,
+                                        58
+                                    ],
+                                    "type": "text",
+                                    "content": "全国III卷试题适用地区：云南、四川、广西、贵州",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        45,
+                        103,
+                        549,
+                        205
+                    ],
+                    "blocks": [
+                        {
+                            "score": 0.7553,
+                            "bbox": [
+                                195,
+                                78,
+                                398,
+                                93
+                            ],
+                            "index": 2,
+                            "type": "table_caption",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        195,
+                                        78,
+                                        398,
+                                        92
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                195,
+                                                78,
+                                                398,
+                                                92
+                                            ],
+                                            "type": "text",
+                                            "content": "2017年高考全国卷Ⅲ各科试题及答案汇总",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "score": 0.9864,
+                            "bbox": [
+                                45,
+                                103,
+                                549,
+                                205
+                            ],
+                            "index": 3,
+                            "type": "table_body",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        45,
+                                        103,
+                                        549,
+                                        205
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                45,
+                                                103,
+                                                549,
+                                                205
+                                            ],
+                                            "type": "table",
+                                            "html": "<table><tr><td rowspan=1 colspan=1>科目</td><td rowspan=1 colspan=2>试题答案</td><td rowspan=1 colspan=1>下载</td><td rowspan=1 colspan=1>科目</td><td rowspan=1 colspan=2>试题答案</td><td rowspan=1 colspan=1>下载</td></tr><tr><td rowspan=1 colspan=1>语文</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td><td rowspan=1 colspan=1>英语</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td></tr><tr><td rowspan=1 colspan=1>理科数学</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td><td rowspan=1 colspan=1>文科数学</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td></tr><tr><td rowspan=1 colspan=1>理科综合</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td><td rowspan=1 colspan=1>文科综合</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td></tr></table>",
+                                            "image_path": "dfdceb06d4d3bb01da3643d5716312adba5d866ce203932c23a89e18bd96d202.jpg"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "score": 0.9864
+                },
+                {
+                    "score": 0.9816,
+                    "bbox": [
+                        42,
+                        219,
+                        551,
+                        276
+                    ],
+                    "index": 4,
+                    "type": "text",
+                    "lines": [
+                        {
+                            "bbox": [
+                                70,
+                                222,
+                                543,
+                                232
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        70,
+                                        222,
+                                        543,
+                                        232
+                                    ],
+                                    "type": "text",
+                                    "content": "中国教育在线讯 2017高考于6月7日开始，中国教育在线在考试后及时公布高考试题、答案",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                45,
+                                242,
+                                549,
+                                254
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        45,
+                                        242,
+                                        549,
+                                        254
+                                    ],
+                                    "type": "text",
+                                    "content": "和高考作文，并提供高考试题下载以及高考试题的专家点评。请广大考生家长及时关注，同时祝",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                45,
+                                262,
+                                327,
+                                272
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        45,
+                                        262,
+                                        327,
+                                        272
+                                    ],
+                                    "type": "text",
+                                    "content": "广大考生在2017高考中发挥出最佳水平，考出好成绩！",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        43,
+                        288,
+                        60,
+                        303
+                    ],
+                    "blocks": [
+                        {
+                            "score": 0.5417,
+                            "bbox": [
+                                43,
+                                288,
+                                60,
+                                303
+                            ],
+                            "index": 5,
+                            "type": "image_body",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        288,
+                                        60,
+                                        303
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                43,
+                                                288,
+                                                60,
+                                                303
+                                            ],
+                                            "type": "image",
+                                            "image_path": "4a719ff4e25cd498f2e42f161080479d5a3d35e523df25e107fee918a268cafb.jpg"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "score": 0.5417
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        45,
+                        321,
+                        549,
+                        442
+                    ],
+                    "blocks": [
+                        {
+                            "score": 0.9031,
+                            "bbox": [
+                                231,
+                                291,
+                                376,
+                                307
+                            ],
+                            "index": 6,
+                            "type": "table_caption",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        234,
+                                        294,
+                                        373,
+                                        306
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                234,
+                                                294,
+                                                373,
+                                                306
+                                            ],
+                                            "type": "text",
+                                            "content": "2017全国卷3高考语文试题",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "score": 0.9777,
+                            "bbox": [
+                                45,
+                                321,
+                                549,
+                                442
+                            ],
+                            "index": 7,
+                            "type": "table_body",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        45,
+                                        321,
+                                        549,
+                                        442
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                45,
+                                                321,
+                                                549,
+                                                442
+                                            ],
+                                            "type": "table",
+                                            "html": "<table><tr><td rowspan=1 colspan=12>2017年高考全国各省市各科试题及答案</td></tr><tr><td rowspan=1 colspan=1>全国卷Ⅰ</td><td rowspan=1 colspan=1>湖北</td><td rowspan=1 colspan=1>福建</td><td rowspan=1 colspan=1>广东</td><td rowspan=1 colspan=1>湖南</td><td rowspan=1 colspan=1>安徽</td><td rowspan=1 colspan=1>山西</td><td rowspan=1 colspan=1>河北</td><td rowspan=1 colspan=1>河南</td><td rowspan=1 colspan=1>江西</td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td></tr><tr><td rowspan=1 colspan=1>全国卷Ⅱ</td><td rowspan=1 colspan=1>甘肃</td><td rowspan=1 colspan=1>青海</td><td rowspan=1 colspan=1>西藏</td><td rowspan=1 colspan=1>黑龙江</td><td rowspan=1 colspan=1>吉林</td><td rowspan=1 colspan=1>辽宁</td><td rowspan=1 colspan=1>宁夏</td><td rowspan=1 colspan=1>新疆</td><td rowspan=1 colspan=1>内蒙古</td><td rowspan=1 colspan=1>陕西</td><td rowspan=1 colspan=1>重庆</td></tr><tr><td rowspan=1 colspan=1>全国卷ⅢⅢ</td><td rowspan=1 colspan=1>云南</td><td rowspan=1 colspan=1>四川</td><td rowspan=1 colspan=1>广西</td><td rowspan=1 colspan=1>贵州</td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td></tr><tr><td rowspan=1 colspan=1>自主命题</td><td rowspan=1 colspan=1>北京</td><td rowspan=1 colspan=1>天津</td><td rowspan=1 colspan=1>江苏</td><td rowspan=1 colspan=1>山东</td><td rowspan=1 colspan=1>上海</td><td rowspan=1 colspan=1>海南</td><td rowspan=1 colspan=1>浙江</td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td></tr></table>",
+                                            "image_path": "fa75dbe0a80448a225c2cc680c36db7cc61bbb91c59ec35848d3107f34d46ced.jpg"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "score": 0.9777
+                }
+            ],
+            "page_idx": 0,
+            "page_size": [
+                594,
+                841
+            ],
+            "discarded_blocks": [],
+            "para_blocks": [
+                {
+                    "score": 0.5243,
+                    "bbox": [
+                        47,
+                        43,
+                        317,
+                        61
+                    ],
+                    "index": 1,
+                    "type": "text",
+                    "lines": [
+                        {
+                            "bbox": [
+                                49,
+                                46,
+                                314,
+                                58
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        49,
+                                        46,
+                                        314,
+                                        58
+                                    ],
+                                    "type": "text",
+                                    "content": "全国III卷试题适用地区：云南、四川、广西、贵州",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "bbox_fs": [
+                        49,
+                        46,
+                        314,
+                        58
+                    ]
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        45,
+                        103,
+                        549,
+                        205
+                    ],
+                    "blocks": [
+                        {
+                            "score": 0.7553,
+                            "bbox": [
+                                195,
+                                78,
+                                398,
+                                93
+                            ],
+                            "index": 2,
+                            "type": "table_caption",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        195,
+                                        78,
+                                        398,
+                                        92
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                195,
+                                                78,
+                                                398,
+                                                92
+                                            ],
+                                            "type": "text",
+                                            "content": "2017年高考全国卷Ⅲ各科试题及答案汇总",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "score": 0.9864,
+                            "bbox": [
+                                45,
+                                103,
+                                549,
+                                205
+                            ],
+                            "index": 3,
+                            "type": "table_body",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        45,
+                                        103,
+                                        549,
+                                        205
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                45,
+                                                103,
+                                                549,
+                                                205
+                                            ],
+                                            "type": "table",
+                                            "html": "<table><tr><td rowspan=1 colspan=1>科目</td><td rowspan=1 colspan=2>试题答案</td><td rowspan=1 colspan=1>下载</td><td rowspan=1 colspan=1>科目</td><td rowspan=1 colspan=2>试题答案</td><td rowspan=1 colspan=1>下载</td></tr><tr><td rowspan=1 colspan=1>语文</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td><td rowspan=1 colspan=1>英语</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td></tr><tr><td rowspan=1 colspan=1>理科数学</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td><td rowspan=1 colspan=1>文科数学</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td></tr><tr><td rowspan=1 colspan=1>理科综合</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td><td rowspan=1 colspan=1>文科综合</td><td rowspan=1 colspan=1>查看</td><td rowspan=1 colspan=1>答案</td><td rowspan=1 colspan=1>下载</td></tr></table>",
+                                            "image_path": "dfdceb06d4d3bb01da3643d5716312adba5d866ce203932c23a89e18bd96d202.jpg"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "score": 0.9864
+                },
+                {
+                    "score": 0.9816,
+                    "bbox": [
+                        42,
+                        219,
+                        551,
+                        276
+                    ],
+                    "index": 4,
+                    "type": "text",
+                    "lines": [
+                        {
+                            "bbox": [
+                                70,
+                                222,
+                                543,
+                                232
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        70,
+                                        222,
+                                        543,
+                                        232
+                                    ],
+                                    "type": "text",
+                                    "content": "中国教育在线讯 2017高考于6月7日开始，中国教育在线在考试后及时公布高考试题、答案",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                45,
+                                242,
+                                549,
+                                254
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        45,
+                                        242,
+                                        549,
+                                        254
+                                    ],
+                                    "type": "text",
+                                    "content": "和高考作文，并提供高考试题下载以及高考试题的专家点评。请广大考生家长及时关注，同时祝",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                45,
+                                262,
+                                327,
+                                272
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        45,
+                                        262,
+                                        327,
+                                        272
+                                    ],
+                                    "type": "text",
+                                    "content": "广大考生在2017高考中发挥出最佳水平，考出好成绩！",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "bbox_fs": [
+                        45,
+                        222,
+                        549,
+                        272
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        43,
+                        288,
+                        60,
+                        303
+                    ],
+                    "blocks": [
+                        {
+                            "score": 0.5417,
+                            "bbox": [
+                                43,
+                                288,
+                                60,
+                                303
+                            ],
+                            "index": 5,
+                            "type": "image_body",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        288,
+                                        60,
+                                        303
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                43,
+                                                288,
+                                                60,
+                                                303
+                                            ],
+                                            "type": "image",
+                                            "image_path": "4a719ff4e25cd498f2e42f161080479d5a3d35e523df25e107fee918a268cafb.jpg"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "score": 0.5417
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        45,
+                        321,
+                        549,
+                        442
+                    ],
+                    "blocks": [
+                        {
+                            "score": 0.9031,
+                            "bbox": [
+                                231,
+                                291,
+                                376,
+                                307
+                            ],
+                            "index": 6,
+                            "type": "table_caption",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        234,
+                                        294,
+                                        373,
+                                        306
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                234,
+                                                294,
+                                                373,
+                                                306
+                                            ],
+                                            "type": "text",
+                                            "content": "2017全国卷3高考语文试题",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "score": 0.9777,
+                            "bbox": [
+                                45,
+                                321,
+                                549,
+                                442
+                            ],
+                            "index": 7,
+                            "type": "table_body",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        45,
+                                        321,
+                                        549,
+                                        442
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                45,
+                                                321,
+                                                549,
+                                                442
+                                            ],
+                                            "type": "table",
+                                            "html": "<table><tr><td rowspan=1 colspan=12>2017年高考全国各省市各科试题及答案</td></tr><tr><td rowspan=1 colspan=1>全国卷Ⅰ</td><td rowspan=1 colspan=1>湖北</td><td rowspan=1 colspan=1>福建</td><td rowspan=1 colspan=1>广东</td><td rowspan=1 colspan=1>湖南</td><td rowspan=1 colspan=1>安徽</td><td rowspan=1 colspan=1>山西</td><td rowspan=1 colspan=1>河北</td><td rowspan=1 colspan=1>河南</td><td rowspan=1 colspan=1>江西</td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td></tr><tr><td rowspan=1 colspan=1>全国卷Ⅱ</td><td rowspan=1 colspan=1>甘肃</td><td rowspan=1 colspan=1>青海</td><td rowspan=1 colspan=1>西藏</td><td rowspan=1 colspan=1>黑龙江</td><td rowspan=1 colspan=1>吉林</td><td rowspan=1 colspan=1>辽宁</td><td rowspan=1 colspan=1>宁夏</td><td rowspan=1 colspan=1>新疆</td><td rowspan=1 colspan=1>内蒙古</td><td rowspan=1 colspan=1>陕西</td><td rowspan=1 colspan=1>重庆</td></tr><tr><td rowspan=1 colspan=1>全国卷ⅢⅢ</td><td rowspan=1 colspan=1>云南</td><td rowspan=1 colspan=1>四川</td><td rowspan=1 colspan=1>广西</td><td rowspan=1 colspan=1>贵州</td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td></tr><tr><td rowspan=1 colspan=1>自主命题</td><td rowspan=1 colspan=1>北京</td><td rowspan=1 colspan=1>天津</td><td rowspan=1 colspan=1>江苏</td><td rowspan=1 colspan=1>山东</td><td rowspan=1 colspan=1>上海</td><td rowspan=1 colspan=1>海南</td><td rowspan=1 colspan=1>浙江</td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td></tr></table>",
+                                            "image_path": "fa75dbe0a80448a225c2cc680c36db7cc61bbb91c59ec35848d3107f34d46ced.jpg"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "score": 0.9777
+                }
+            ]
+        }
+    ],
+    "_backend": "pipeline",
+    "_version_name": "3.4.4"
+}

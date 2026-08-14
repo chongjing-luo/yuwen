@@ -1,0 +1,15 @@
+{
+  "schema_version": "exam-qiqiwenku-candidate-review-validation-0.1",
+  "result": "passed",
+  "page_count": 29,
+  "review_rows": 1,
+  "main_answer_index_sha256": "489ba22579be29b0426db2ece4732bc83bc850a903ca8d513c192a510a74289a",
+  "errors": [],
+  "checks": {
+    "complete_preview": true,
+    "contamination_markers": true,
+    "blocked_boundary": true,
+    "main_index_unchanged": true,
+    "registry_traceability": true
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": "exam-answer-boundary-receipt-0.1",
+  "receipt_id": "EXAM-ANSWER-BOUNDARY-GK-SC-2008-20260809",
+  "generated_at": "2026-08-09T12:12:00+08:00",
+  "exam_id": "GK-SC-2008",
+  "status": "structural_boundary_recorded",
+  "scope": "answer_field_scope_review",
+  "source_mutation": false,
+  "scoring_status": "not_available_as_official",
+  "mapping_status": "M0 | kp_id=N/A",
+  "field_groups": {
+    "short_option_candidate": {
+      "question_ids": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      "decision": "每条源字段仅含一个选项字母；字段本身已是候选答案范围，不含可拆出的题干或分析。"
+    },
+    "leading_question_score_anchor": {
+      "question_ids": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+      "decision": "每条源字段以对应题号和分值锚点开头，随后为本地解析候选答案；仅确认字段范围，不将锚点改写为官方答案，也不虚构分析边界。"
+    },
+    "writing_score_placeholder": {
+      "question_ids": [21],
+      "decision": "源字段仅含‘21.（60分）’分值占位；没有可用答案或评分文本，继续标记为候选占位。"
+    }
+  },
+  "evidence": [
+    {
+      "path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-SC-2008/answers/answer_index.jsonl",
+      "sha256": "10f6dcba891af133d8c8bc53a30c3873ad358add5bba7d819674d39bdc17a693"
+    },
+    {
+      "path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-SC-2008/answers/answer_bundle.md",
+      "sha256": "9c5705e4f256428d733abe69284f01825525851326cb8fa71254cbd77058faff"
+    },
+    {
+      "path": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-SC-2008/answers/answer_clean_candidates.jsonl",
+      "sha256": "6b5425ab7f055cdbd0d9d210d966fc30935ce70eca7fcc54f8a5267c0a56840c"
+    },
+    {
+      "path": "work/knowledge/_reviews/receipts/exam_vertical_GK-SC-2008_20260809.json",
+      "sha256": "80d66a254977fd5099f8be730aea5d7ede70dabb5fe60484dd0c566bedfe3d64"
+    }
+  ],
+  "policy": "该回执只记录答案索引字段的结构范围；不修改原始PDF、MinerU full.md、clean_md或answer_index，不把本地解析升级为官方答案/评分标准。"
+}

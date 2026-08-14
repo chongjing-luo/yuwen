@@ -1,0 +1,23 @@
+{
+  "receipt_id": "RECEIPT-CARD-X1-REC-01-G4-20260808",
+  "deliverable_id": "CARD-X1-REC-01",
+  "gate": "DG4-MERGE",
+  "merged_at": "2026-08-08T17:05:00+08:00",
+  "artifact_version": "0.2.1",
+  "pre_merge_file_sha256": "285723af881907f453173ff4619a23e60a6ab84f131e1828e8e3a583ef46809e",
+  "post_merge_file_sha256": "fca312dba38367a8a2df116178476096f66a28a665e3ecb0239dcc132a249d96",
+  "content_change": false,
+  "allowed_diff": ["front_matter.status", "front_matter.reviewers", "ledger.status", "ledger.reviewers", "ledger.owner", "ledger.version", "state_transition"],
+  "review_binding": {
+    "rubric_version": "2.0-textbook",
+    "rubric_sha256": "ab9cc53d57834642e66e568824d1c0c53e128953e15b20b4c7bd04aa30610d43",
+    "taxonomy_sha256": "13e5e23c45c05359a5c91e360ce8bd71dbf2a841c2c6a72f1adca52bef7cbd4b",
+    "primary": {"reviewer":"independent_primary_rec_01","score":97.0,"decision":"pass","r":"R01-R10=0","p":"P0/P1/P2=0/0/0","review_sha256":"5834d77d4ba381b3c309935e67ccd5835b3f8405e3306b7ec936e8aefa3641a3"},
+    "secondary": {"reviewer":"independent_secondary_rec_01_r1","score":96.5,"decision":"pass","r":"R01-R10=0","p":"P0/P1/P2=0/0/0","review_sha256":"e5be539880671a98bbad4345d99091a4e8313933ef02aa6b40b58d577ec1d0ca"}
+  },
+  "review_validator": {"primary_run_id":"VAL-20260808-165123+0800","primary_report":"work/knowledge/_meta/validation_reports/archive/VAL-20260808-165123+0800.json","primary_report_sha256":"0969c140ee967d4c971c0022bb015149d96c790f62a31a9fc79f6f5407b4f75b","secondary_run_id":"VAL-20260808-165830+0800","secondary_report_sha256":"55611a5e7ae6d2efa910a0978f368a50091b63bc2a03d6c4a90c43d9e364fce6","result":"passed","errors":0},
+  "validator": {"run_id":"VAL-20260808-170450+0800","report":"work/knowledge/_meta/validation_reports/archive/VAL-20260808-170450+0800.json","report_sha256":"793b03cc53462e28c3ac77f3c7308c95ef6e3c0c90e6d31dc628ef8c45ff8d4f","result":"passed","errors":0},
+  "transition":"STATE-20260808-CARD-X1-REC-01-G4",
+  "downstream_impact":["BOOK-X1"],
+  "status":"accepted"
+}

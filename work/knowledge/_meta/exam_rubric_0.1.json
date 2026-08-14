@@ -1,0 +1,30 @@
+{
+  "rubric_id": "EXAM-RUBRIC-0.1",
+  "status": "candidate_for_SG-EXAM-CAL",
+  "scope": "exam_structure_and_response_node_extraction",
+  "hard_gates": {
+    "source_pairing": "34/34 manifest records and 17/17 question-analysis pairs",
+    "top_level_coverage": "every expected ID appears exactly once per role or has an explicit missing_source_marker placeholder",
+    "provenance": "100% question segments link clean_md, MinerU full.md, and source PDF",
+    "raw_integrity": "100% raw SHA-256 anchors match",
+    "segment_integrity": "100% segment clean hashes match",
+    "advertisement_isolation": "no known promotion marker in clean body",
+    "m0_boundary": "no M1/M2/M3 without verified bidirectional evidence"
+  },
+  "quality_dimensions": {
+    "source_and_version": 20,
+    "question_fidelity": 25,
+    "encoding_and_actions": 20,
+    "response_node_coverage": 15,
+    "uncertainty_and_provenance": 10,
+    "retrievability": 10
+  },
+  "provisional_threshold": {"total": 90, "minimum_dimension": 8, "p0_p1": 0},
+  "manual_review_required": [
+    "PDF/OCR visual check for known missing markers",
+    "subquestion/score decomposition on vertical slices 2008, 2013, 2016, 2024",
+    "answer and scoring authority verification",
+    "independent second review before SG-EXAM-CAL pass"
+  ],
+  "mapping_rule": "M0 is the default and is not a quality failure; M1/M2 require both source and accepted textbook evidence"
+}

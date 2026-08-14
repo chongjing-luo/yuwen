@@ -1,0 +1,24 @@
+{
+  "schema_version": "topic-writing-2016-2024-kp-batch-validation-0.1",
+  "result": "passed",
+  "row_count": 9,
+  "year_counts": {
+    "2016": 1,
+    "2017": 1,
+    "2018": 1,
+    "2019": 1,
+    "2020": 1,
+    "2021": 1,
+    "2022": 1,
+    "2023": 1,
+    "2024": 1
+  },
+  "errors": [],
+  "checks": {
+    "coverage": true,
+    "traceability": true,
+    "writing_gate": true,
+    "scope_gate": true,
+    "m0_boundary": true
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "ancient-content-kp-batch-validation-0.1",
+  "result": "passed",
+  "row_count": 7,
+  "years": [
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015
+  ],
+  "errors": [],
+  "checks": {
+    "coverage": true,
+    "traceability": true,
+    "m0_boundary": true,
+    "authority_gate": true
+  }
+}

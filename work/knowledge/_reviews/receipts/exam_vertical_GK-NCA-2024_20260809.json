@@ -1,0 +1,84 @@
+{
+  "schema_version": "exam-vertical-review-receipt-0.1",
+  "receipt_id": "EXAM-VERTICAL-GK-NCA-2024-20260809",
+  "exam_id": "GK-NCA-2024",
+  "calibration_id": "SG-EXAM-CAL-2008-2024",
+  "generated_at": "2026-08-09T09:49:28+08:00",
+  "status": "structural_pass",
+  "acceptance": "conditional_review",
+  "scope": "response_node_decomposition_and_score_reconciliation",
+  "source_policy": {
+    "question_pdf_visual_check": "passed",
+    "source_pdf_read_only": true,
+    "mineru_full_md_read_only": true,
+    "answer_authority": "candidate_unverified_or_missing",
+    "mapping_boundary": "M0_only"
+  },
+  "visual_check": {
+    "pages_checked": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "notes": [
+      "原卷首页明确满分150分；现代文36、古代诗文34、语言文字运用20、作文60。",
+      "实用类文本12分按Q4 3分、Q5 4分、Q6 5分登记；该分配以题组总分与题面作答量为校准假设，待正式评分资料复核。",
+      "Q13两句翻译各5分；Q16三组默写各2分；语言运用Q17-Q20按3/4/3/4分登记。",
+      "原卷存在可见水印；解析 PDF 第17—20页含 Q21/Q22 的本地解析候选，第21页为推广页。候选内容不等于官方答案或评分标准。"
+    ]
+  },
+  "node_count": 25,
+  "question_count": 22,
+  "score_total": 150,
+  "expected_score_total": 150,
+  "choice_groups": [],
+  "score_groups": [],
+  "score_notes": {},
+  "missing_answer_source_questions": [],
+  "source_hash_anchors": {
+    "question_pdf": {
+      "1": "6e1c731ac4a14bc493673bd3ee74ec7d35e3199d53469ddfa105d06e7c648f7a",
+      "2": "6e1c731ac4a14bc493673bd3ee74ec7d35e3199d53469ddfa105d06e7c648f7a",
+      "3": "6e1c731ac4a14bc493673bd3ee74ec7d35e3199d53469ddfa105d06e7c648f7a",
+      "4": "6e1c731ac4a14bc493673bd3ee74ec7d35e3199d53469ddfa105d06e7c648f7a",
+      "5": "6e1c731ac4a14bc493673bd3ee74ec7d35e3199d53469ddfa105d06e7c648f7a",
+      "6": "6e1c731ac4a14bc493673bd3ee74ec7d35e3199d53469ddfa105d06e7c648f7a",
+      "7": "6e1c731ac4a14bc493673bd3ee74ec7d35e3199d53469ddfa105d06e7c648f7a",
+      "8": "6e1c731ac4a14bc493673bd3ee74ec7d35e3199d53469ddfa105d06e7c648f7a",
+      "9": "6e1c731ac4a14bc493673bd3ee74ec7d35e3199d53469ddfa105d06e7c648f7a",
+      "10": "6e1c731ac4a14bc493673bd3ee74ec7d35e3199d53469ddfa105d06e7c648f7a",
+      "11": "6e1c731ac4a14bc493673bd3ee74ec7d35e3199d53469ddfa105d06e7c648f7a",
+      "12": "6e1c731ac4a14bc493673bd3ee74ec7d35e3199d53469ddfa105d06e7c648f7a",
+      "13": "6e1c731ac4a14bc493673bd3ee74ec7d35e3199d53469ddfa105d06e7c648f7a",
+      "14": "6e1c731ac4a14bc493673bd3ee74ec7d35e3199d53469ddfa105d06e7c648f7a",
+      "15": "6e1c731ac4a14bc493673bd3ee74ec7d35e3199d53469ddfa105d06e7c648f7a",
+      "16": "6e1c731ac4a14bc493673bd3ee74ec7d35e3199d53469ddfa105d06e7c648f7a",
+      "17": "6e1c731ac4a14bc493673bd3ee74ec7d35e3199d53469ddfa105d06e7c648f7a",
+      "18": "6e1c731ac4a14bc493673bd3ee74ec7d35e3199d53469ddfa105d06e7c648f7a",
+      "19": "6e1c731ac4a14bc493673bd3ee74ec7d35e3199d53469ddfa105d06e7c648f7a",
+      "20": "6e1c731ac4a14bc493673bd3ee74ec7d35e3199d53469ddfa105d06e7c648f7a",
+      "21": "6e1c731ac4a14bc493673bd3ee74ec7d35e3199d53469ddfa105d06e7c648f7a",
+      "22": "6e1c731ac4a14bc493673bd3ee74ec7d35e3199d53469ddfa105d06e7c648f7a"
+    }
+  },
+  "derived_jsonl": "work/knowledge/高考分析/GK-NCA-2024-response_nodes_vertical_slice.jsonl",
+  "errors": [],
+  "warnings": [
+    "独立 PDF 复核：Q006 正文/解析止于实用类文本第6题；‘（三）文学类文本’及其后内容不属于 Q006。",
+    "独立 PDF 复核：Q009 正文/解析止于文学类文本第9题；‘二、古代诗文阅读’及其后内容归入 Q010 起，不并入 Q009。",
+    "题段正文后带下一节标题“## 四、作文（60分）”；正文小问边界已截断，源段不改写。",
+    "截去题段末尾下一节标题；原始题段保持不变。",
+    "截去题段末尾下一节标题；原始题段保持不变。",
+    "截去题段末尾下一节标题；原始题段保持不变。",
+    "截去题段末尾下一节标题；原始题段保持不变。",
+    "截去题段末尾下一节标题；原始题段保持不变。",
+    "截去题段末尾下一节标题；原始题段保持不变。"
+  ]
+}

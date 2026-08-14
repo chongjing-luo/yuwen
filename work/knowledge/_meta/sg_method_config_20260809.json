@@ -1,0 +1,64 @@
+{
+  "schema_version": "sg-method-config-0.1",
+  "method_id": "SG-METHOD-20260809",
+  "status": "blocked",
+  "protocol_version": "2.0-textbook-eval-1/SG-METHOD-01",
+  "sampling": {
+    "stratification": "book_code × material_type",
+    "card_count": 12,
+    "unit_graph_count": 4,
+    "book_summary_count": 1,
+    "selection_status": "pending_new_source",
+    "seed": null,
+    "candidate_ids": []
+  },
+  "label_dimensions": ["primary_dimension", "knowledge_type", "four_layer"],
+  "label_universe": {
+    "primary_dimension": ["人文", "语言"],
+    "knowledge_type": ["事实", "概念", "程序", "策略", "解释", "价值辨析"],
+    "four_layer": ["必备知识", "关键能力", "学科素养", "核心价值"]
+  },
+  "gold_manifest_sha256": null,
+  "query_manifest_sha256": null,
+  "thresholds": {
+    "key_fact_task_recall": 1.0,
+    "kp_precision": 0.9,
+    "kp_recall": 0.9,
+    "kp_f1": 0.9,
+    "label_macro_f1": 0.85,
+    "claim_evidence_accuracy": 1.0,
+    "quote_locator_accuracy": 1.0,
+    "relation_precision": 0.9,
+    "unsupported_claim_rate": 0.0,
+    "query_completion": 0.9,
+    "query_fact_evidence_accuracy": 1.0,
+    "query_under_120_seconds": 11,
+    "teacher_usability_median": 4.0,
+    "teacher_serious_error_count": 0
+  },
+  "bootstrap": {
+    "iterations": 10000,
+    "seed": 20260809,
+    "unit": "deliverable",
+    "stratified": true,
+    "cluster_field": "deliverable_id"
+  },
+  "roles": {
+    "gold_annotator_a": null,
+    "gold_annotator_b": null,
+    "adjudicator": null,
+    "query_evaluators": [],
+    "external_teachers": []
+  },
+  "contamination_boundary": [
+    "现有81张卡、28份单元图和5份册表已暴露于生产流程或历史评审，不能无条件称为前瞻盲留出集。",
+    "当前只能登记 protocol-ready；待新来源或新契约产生后，再按 book_code × material_type 封存 12 张卡、4 图和 1 册表。",
+    "生产者在 Gold 双标封存前不得读取 Gold；仲裁者在两份原始标注封存前不得读取任一对方记录。"
+  ],
+  "source_refs": [
+    "work/语文备课系统_知识点提取研究计划.md §6.17",
+    "dev/knowledge-extraction-foundation/04_execution/evaluation_freeze_candidate_20260808_014300.md §13",
+    "work/knowledge/_reviews/SG-METHOD-PROTOCOL-20260809.md",
+    "work/knowledge/_reviews/SG-METHOD-REVIEW-20260809.md"
+  ]
+}

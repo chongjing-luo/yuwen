@@ -1,7 +1,7 @@
 ---
 schema_version: "2.0-candidate"
 card_id: "CARD-B1-U04-01"
-status: "drafted"
+status: "accepted"
 book: "必修上册"
 unit: "U04"
 material_type: "activity"
@@ -10,9 +10,12 @@ curriculum_version: "普通高中语文课程标准（2017年版2020年修订）
 course_type: "必修"
 primary_task_group: "当代文化参与"
 related_task_groups: []
-quality_descriptor_refs: []
+quality_descriptor_refs:
+  - "QD-2-2"
+  - "QD-2-4"
 source_ids:
   - "SRC-PKG-B1-013"
+  - "SRC-CURR-2020"
 subtext_ids:
   - "SUBTASK-CARD-B1-U04-01-01"
   - "SUBTASK-CARD-B1-U04-01-02"
@@ -21,7 +24,7 @@ subtext_ids:
   - "SUBTEXT-CARD-B1-U04-01-RES-02"
   - "SUBTEXT-CARD-B1-U04-01-RES-03"
 producer: "evidence_design"
-reviewers: []
+reviewers: ["review_primary_textbook", "review_secondary_textbook"]
 version: "0.1.0"
 ---
 
@@ -63,7 +66,7 @@ version: "0.1.0"
 
 | 主/关联任务群 | 语言材料与语境 | 阅读与鉴赏 | 表达与交流 | 梳理与探究 | 主要核心素养表现及依据 | 学业质量表现描述定位 |
 |---|---|---|---|---|---|---|
-| 主：当代文化参与（受控词表候选定位） | 城乡社区的真实文化生活、访谈对象、现场观察、文献与三则学习资源。 | 阅读方法资料与文化论述，辨认调查主张、证据、观点及语境。 | 开展中立访谈，撰写人物（风物）志、调查报告/演示文稿和建议书。 | 确定问题、收集并标注来源、整理分析资料、形成认识、论证可行建议。 | 重点涉及语言建构与运用、思维发展与提升、文化传承与理解；依据为真实语境中的调查、阐释与文化参与任务。 | `quality_descriptor_refs` 暂空；官方课标 Artifact 未登记，任务群仅为受控词表候选定位，不判定完整“水平X”。 |
+| 主：当代文化参与；关联：语言积累、梳理与探究 | 城乡社区的真实文化生活、访谈对象、现场观察、文献与三则学习资源。 | 阅读方法资料与文化论述，辨认调查主张、证据、观点及语境。 | 开展中立访谈，撰写人物（风物）志、调查报告/演示文稿和建议书。 | 确定问题、收集并标注来源、整理分析资料、形成认识、论证可行建议。 | 重点涉及语言建构与运用、思维发展与提升、文化传承与理解；依据为真实语境中的调查、阐释与文化参与任务。 | QD-2-2、QD-2-4：准确概括信息并有依据理解文化现象、提出建议；只作具体表现定位，不判定完整水平。 |
 
 ## 5. 原子知识点
 
@@ -148,11 +151,14 @@ version: "0.1.0"
 | EV-CARD-B1-U04-01-020 | 从记忆、调查到公共建议的任务链 | I | SRC-PKG-B1-013 | ART-PKG-B1-013-PDF | split PDF pp.1–4；master pp.78–81；printed pp.71–74 | 单元依次设置记录、现状调查、参与建设三项活动 | supports | verified / evidence_design / 2026-08-06（由 EV-002、EV-006、EV-010 复核） |
 | EV-CARD-B1-U04-01-021 | 来源与关系边界 | D | — | work/knowledge/_meta/sources.jsonl；work/knowledge/_meta/deliverables.jsonl | 2026-08-06 本地账本核对 | 未登记本册教师用书、官方课标 Artifact 或正式真题 | supports | verified / evidence_design / 2026-08-06 |
 
+| EV-CARD-B1-U04-01-022 | 当代文化参与任务群 | M | SRC-CURR-2020 | ART-CURR-2020-PDF | PDF物理页21—22；印刷页13—14 | “参与当代文化生活，学习运用语言文字参与和处理当代文化生活” | supports | verified / coordinator / 2026-08-07 |
+| EV-CARD-B1-U04-01-023 | 学业质量表现QD-2-2、QD-2-4 | M | SRC-CURR-2020 | ART-CURR-2020-PDF | PDF物理页44；印刷页36 | “理解并准确概括其内容、观点”；“理解各类作品中涉及的文化现象和观念” | supports | verified / coordinator / 2026-08-07 |
+
 ## 10. 自检、评审与版本记录
 
 - [x] 合编活动、学习资源和子任务无遗漏
 - [x] 直接引文已回看规范PDF
-- [ ] 任务群已有受控值，但官方课标 Artifact 尚缺；课程类型和课标版本已按受控词表填写
+- [x] 任务群、课程标准 Artifact 和课程类型已绑定；学业质量只作具体表现定位
 - [x] 每个KP有主层级、理由和证据
 - [x] 所有I类解释至少两处文本依据
 - [x] 三类教学提示已分开

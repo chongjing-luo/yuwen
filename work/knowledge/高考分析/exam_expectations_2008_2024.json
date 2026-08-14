@@ -1,0 +1,12 @@
+{
+  "schema_version": "sichuan-exam-expectations-0.2",
+  "source_status": "unverified_local_provided",
+  "top_level_question_count_by_year": {
+    "2008": 21, "2009": 21, "2010": 21, "2011": 21, "2012": 21, "2013": 21, "2014": 21, "2015": 21,
+    "2016": 12, "2017": 12, "2018": 10, "2019": 10, "2020": 10,
+    "2021": 22, "2022": 22, "2023": 22, "2024": 22
+  },
+  "paper_code_by_year": {"2008": "SC", "2009": "SC", "2010": "SC", "2011": "SC", "2012": "SC", "2013": "SC", "2014": "SC", "2015": "SC", "2016": "NC3", "2017": "NC3", "2018": "NC3", "2019": "NC3", "2020": "NC3", "2021": "NCA", "2022": "NCA", "2023": "NCA", "2024": "NCA"},
+  "known_missing_source_markers": [],
+  "validation_command": "python scripts/validate_sichuan_gaokao_batch.py --year 2008 --year 2009 --year 2010 --year 2011 --year 2012 --year 2013 --year 2014 --year 2015 --year 2016 --year 2017 --year 2018 --year 2019 --year 2020 --year 2021 --year 2022 --year 2023 --year 2024"
+}

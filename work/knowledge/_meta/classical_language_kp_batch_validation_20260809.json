@@ -1,0 +1,16 @@
+{
+  "schema_version": "classical-language-kp-batch-validation-0.1",
+  "result": "passed",
+  "row_count": 14,
+  "type_counts": {
+    "ancient_function_words": 7,
+    "ancient_vocab": 7
+  },
+  "errors": [],
+  "checks": {
+    "coverage": true,
+    "traceability": true,
+    "m0_boundary": true,
+    "authority_gate": true
+  }
+}

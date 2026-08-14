@@ -1,0 +1,23 @@
+{
+  "schema_version": "exam-answer-review-receipt-0.1",
+  "receipt_id": "EXAM-ANSWER-GK-SC-2013-MISSING-20260809",
+  "exam_id": "GK-SC-2013",
+  "generated_at": "2026-08-09T06:00:00+08:00",
+  "status": "blocked_missing_source",
+  "scope": "answer_bundle_and_scoring_index",
+  "source_registry": {
+    "artifact_id": "ART-GK-2013-SC-ANSWER",
+    "status": "blocked",
+    "error": "404 Client Error: Not Found",
+    "registry_path": "Data/reference/gaokao/registry/artifacts.jsonl"
+  },
+  "outputs": {
+    "answer_bundle": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-SC-2013/answers/answer_bundle.md",
+    "answer_index": "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-SC-2013/answers/answer_index.jsonl",
+    "answer_index_rows": 21,
+    "response_nodes_marked_missing": 23
+  },
+  "policy": "不创建猜测答案；不把结构切片通过视为答案完成；获得独立答案/评分源后再建立候选或官方分层。",
+  "errors": [],
+  "warnings": ["当前所有 2013 作答节点 answer_source_status=missing；KP_ID=N/A/M0 保持不变。"]
+}

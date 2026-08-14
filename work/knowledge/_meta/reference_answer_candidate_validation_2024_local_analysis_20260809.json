@@ -1,0 +1,13 @@
+{
+  "schema_version": "reference-answer-candidate-validation-2024-local-analysis-0.1",
+  "result": "passed",
+  "rows": 22,
+  "main_index_rows": 22,
+  "errors": [],
+  "checks": {
+    "coverage": true,
+    "source_hashes_and_offsets": true,
+    "authority_gate": true,
+    "main_index_unchanged_gate": true
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": "sg-eval-semantic-lint-run-0.1",
+  "trial_batch_id": "TRIAL-SG-EVAL-20260809-01",
+  "result": "passed",
+  "reports": [
+    {
+      "deliverable_id": "CARD-X1-U01-02",
+      "path": "work/knowledge/_reviews/trials/TRIAL-SG-EVAL-20260809-01/semantic_lint/CARD-X1-U01-02.json",
+      "sha256": "5c0c9601c8e9c82cefa4bfa51e16cf5b60b294d1a32c3c5f2228f5d9dae9c052",
+      "errors": []
+    },
+    {
+      "deliverable_id": "CARD-B1-U05-01",
+      "path": "work/knowledge/_reviews/trials/TRIAL-SG-EVAL-20260809-01/semantic_lint/CARD-B1-U05-01.json",
+      "sha256": "0c51a7b5241d2ea3b0df0cde8773a1e123e436c78c0d29cec606532138990ae1",
+      "errors": []
+    },
+    {
+      "deliverable_id": "UNIT-X1-U01",
+      "path": "work/knowledge/_reviews/trials/TRIAL-SG-EVAL-20260809-01/semantic_lint/UNIT-X1-U01.json",
+      "sha256": "5b9202adcaea01dc82ffdaf8e11c474f2b6c6658cef45c09a151df76802dc815",
+      "errors": []
+    }
+  ],
+  "errors": [],
+  "schema_errors": [],
+  "created_at": "2026-08-09T15:56:07+08:00"
+}

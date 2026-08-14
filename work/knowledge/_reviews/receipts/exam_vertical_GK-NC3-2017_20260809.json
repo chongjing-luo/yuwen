@@ -1,0 +1,87 @@
+{
+  "schema_version": "exam-vertical-review-receipt-0.1",
+  "receipt_id": "EXAM-VERTICAL-GK-NC3-2017-20260809",
+  "exam_id": "GK-NC3-2017",
+  "calibration_id": "SG-EXAM-CAL-2008-2024",
+  "generated_at": "2026-08-09T06:07:27+08:00",
+  "status": "structural_pass",
+  "acceptance": "conditional_review",
+  "scope": "response_node_decomposition_and_score_reconciliation",
+  "source_policy": {
+    "question_pdf_visual_check": "passed",
+    "source_pdf_read_only": true,
+    "mineru_full_md_read_only": true,
+    "answer_authority": "candidate_unverified_or_missing",
+    "mapping_boundary": "M0_only"
+  },
+  "visual_check": {
+    "pages_checked": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "notes": [
+      "2017 新课标Ⅲ卷；已对空白卷 14 页逐页完成高分辨率 PDF 视觉复核，原始 PDF、MinerU full.md 均保持只读。",
+      "Q1 论述类 9 分；Q2 文学类 14 分；Q3 实用类 12 分；Q4 文言文 19 分；Q5 古诗 11 分；Q6 默写 5 分。",
+      "Q4 翻译两句各 5 分；Q6 源卷可见 3+2 个空格，但清洗/OCR 文本未稳定保留空格对应的完整句段与独立评分依据，仍保留一个 5 分节点。",
+      "Q3 材料二图表已与 PDF 视觉比对；节点保留 MinerU 图片源路径，未臆补图中文字或数值。",
+      "Q1/Q3/Q9/Q11 的孤立字符仅出现在 OCR/版面派生文本中，PDF 卷面未见对应正文；派生提示继续保留可追溯清洗动作。",
+      "Q11/Q12 的 MinerU block_ids 为空，使用 P13-PAGE-FALLBACK；不宣称题级 bbox 或精确块定位。"
+    ]
+  },
+  "visual_review_receipt": "work/knowledge/_reviews/receipts/exam_visual_review_GK-NC3-2017_20260809.json",
+  "node_count": 23,
+  "question_count": 12,
+  "score_total": 150,
+  "expected_score_total": 150,
+  "choice_groups": [],
+  "missing_answer_source_questions": [],
+  "source_hash_anchors": {
+    "question_pdf": {
+      "1": "a9f994cbcb8ba7d2819d527e164975fc10f35fa4ce8c36fa8946508c489f7bc4",
+      "2": "a9f994cbcb8ba7d2819d527e164975fc10f35fa4ce8c36fa8946508c489f7bc4",
+      "3": "a9f994cbcb8ba7d2819d527e164975fc10f35fa4ce8c36fa8946508c489f7bc4",
+      "4": "a9f994cbcb8ba7d2819d527e164975fc10f35fa4ce8c36fa8946508c489f7bc4",
+      "5": "a9f994cbcb8ba7d2819d527e164975fc10f35fa4ce8c36fa8946508c489f7bc4",
+      "6": "a9f994cbcb8ba7d2819d527e164975fc10f35fa4ce8c36fa8946508c489f7bc4",
+      "7": "a9f994cbcb8ba7d2819d527e164975fc10f35fa4ce8c36fa8946508c489f7bc4",
+      "8": "a9f994cbcb8ba7d2819d527e164975fc10f35fa4ce8c36fa8946508c489f7bc4",
+      "9": "a9f994cbcb8ba7d2819d527e164975fc10f35fa4ce8c36fa8946508c489f7bc4",
+      "10": "a9f994cbcb8ba7d2819d527e164975fc10f35fa4ce8c36fa8946508c489f7bc4",
+      "11": "a9f994cbcb8ba7d2819d527e164975fc10f35fa4ce8c36fa8946508c489f7bc4",
+      "12": "a9f994cbcb8ba7d2819d527e164975fc10f35fa4ce8c36fa8946508c489f7bc4"
+    }
+  },
+  "derived_jsonl": "work/knowledge/高考分析/GK-NC3-2017-response_nodes_vertical_slice.jsonl",
+  "errors": [],
+  "warnings": [
+    "Q1 题段末尾出现孤立“众 人”并黏连下一小问标记，疑为 OCR/排版污染；派生提示截断该残片，原始题段不改写。",
+    "Q1 题段末尾出现孤立“众 人”并黏连下一小问标记，疑为 OCR/排版污染；派生提示截断该残片，原始题段不改写。",
+    "Q1 题段末尾出现孤立“众 人”并黏连下一小问标记，疑为 OCR/排版污染；派生提示截断该残片，原始题段不改写。",
+    "Q3 选项 C/D 末尾出现孤立字符“W”“A”，疑为 OCR/解析标记污染；派生提示移除孤立标记，原始题段不改写。",
+    "Q3 材料二图表来自 MinerU 图片资源；图中数值未在本批次臆补或转写，待 PDF 视觉复核。",
+    "Q3 选项 C/D 末尾出现孤立字符“W”“A”，疑为 OCR/解析标记污染；派生提示移除孤立标记，原始题段不改写。",
+    "Q3 材料二图表来自 MinerU 图片资源；图中数值未在本批次臆补或转写，待 PDF 视觉复核。",
+    "Q3 选项 C/D 末尾出现孤立字符“W”“A”，疑为 OCR/解析标记污染；派生提示移除孤立标记，原始题段不改写。",
+    "Q3 材料二图表来自 MinerU 图片资源；图中数值未在本批次臆补或转写，待 PDF 视觉复核。",
+    "Q9 选项 A 前出现孤立字符“V”，疑为 OCR/排版污染；派生提示移除该标记，原始题段不改写。",
+    "Q11 题面②、③位置出现孤立字符“0”，疑为 OCR/水印残片；派生提示显式标记，原始题段不改写。",
+    "截去题段末尾黏连的孤立字符‘众 人’及下一小问起始残片；原始题段保持不变。",
+    "移除选项末尾孤立字符 W/A（疑似 OCR/解析标记）；原始题段保持不变。",
+    "截去题段末尾下一节标题；原始题段保持不变。",
+    "移除选项 A 前孤立字符 V（疑似 OCR/排版污染）；原始题段保持不变。",
+    "截去题段末尾下一节标题；原始题段保持不变。",
+    "将孤立字符 0 显式标记为 OCR/水印疑点，不作语义纠正。"
+  ]
+}

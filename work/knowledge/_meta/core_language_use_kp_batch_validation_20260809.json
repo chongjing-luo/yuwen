@@ -1,0 +1,17 @@
+{
+  "schema_version": "core-language-use-kp-batch-validation-0.1",
+  "result": "passed",
+  "row_count": 21,
+  "type_counts": {
+    "orthography": 7,
+    "sentence_grammar": 7,
+    "word_usage": 7
+  },
+  "errors": [],
+  "checks": {
+    "coverage": true,
+    "traceability": true,
+    "m0_boundary": true,
+    "authority_gate": true
+  }
+}
