@@ -53,7 +53,7 @@ class MengV6Chapter2MarkdownTests(unittest.TestCase):
     def test_worksheet_saves_distinct_products_not_one_repeated_table(self):
         for phrase in (
             "视线线条", "两句对照", "我的朗读谱", "听者回执", "卜筮小注",
-            "以尔／以我", "七词复位", "第二章一句章意",
+            "以尔／以我", "从章首三步补出七个关键节点", "乱序", "第二章一句章意",
         ):
             self.assertIn(phrase, self.worksheet)
         self.assertNotIn("体验/思考/收获", self.worksheet)

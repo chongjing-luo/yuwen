@@ -1036,8 +1036,9 @@ principles:
     nodes: [K3]
     anchor: {doc: work/evaluation/三目标实现机制.md, heading: "### K3 检索与间隔（知识巩固排程）"}
     enforcement:
-      - {type: machine_check, checker: scripts/validate_homework_package.py, rule: 闭卷检索题存在, status: planned}
-    status: planned
+      - {type: machine_check, checker: scripts/validate_homework_package.py, rule: 闭卷检索题必含与时长上限}
+      - {type: machine_check, checker: scripts/validate_assessment_package.py, rule: 蓝图必须引用lesson与作业构成四站闭环}
+    status: active
   - id: N-03
     title: 知识网络化贯通
     statement: "课程数据的关系边引用真实卡片ID；单元规划上下游贯通；延伸作业含跨课文比较。"

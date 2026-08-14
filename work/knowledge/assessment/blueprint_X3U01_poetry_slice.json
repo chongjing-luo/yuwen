@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "blueprint_id": "BP-X3U01-POETRY-SLICE-01",
+  "title": "《氓》古诗切片卷（默写 + 鉴赏）",
+  "date": "2026-08-14",
+  "scope": {
+    "unit_ref": "UNIT-X3-U01",
+    "card_refs": ["CARD-X3-U01-01"],
+    "lesson_ref": "scripts/meng_v66/lesson.js",
+    "homework_ref": "work/teaching/选择性必修下册/氓/homework/homework_package.json"
+  },
+  "kp_weights": [
+    {"kp_id": "KP-CARD-X3-U01-01-003", "weight": 3, "basis": "叙事链与情绪变化——单元图谱核心 KP，课堂三问之一的主载体"},
+    {"kp_id": "KP-CARD-X3-U01-01-004", "weight": 3, "basis": "桑之比兴——课文形式重点，学习提示明确要求"},
+    {"kp_id": "KP-CARD-X3-U01-01-005", "weight": 2, "basis": "对照呈现责任失衡——学科素养层解释 KP"},
+    {"kp_id": "KP-CARD-X3-U01-01-006", "weight": 2, "basis": "信誓回收与决绝结尾——叙事闭环"}
+  ],
+  "type_distribution": [
+    {"type": "默写", "count": 1, "score": 6, "basis": "17 年真题语料：名句理解性默写为每年稳定题型（kp_batches/classical_memorization_2016_2024）"},
+    {"type": "古诗鉴赏-简答", "count": 2, "score": 16, "basis": "诗歌鉴赏主观题为稳定题型（kp_batches/poetry_appreciation_2016_2024）"}
+  ],
+  "items": [
+    {"bank_ref": "IB-AU-001", "in_student_paper": true},
+    {"bank_ref": "IB-AU-002", "in_student_paper": true},
+    {"bank_ref": "IB-AU-003", "in_student_paper": true},
+    {"bank_ref": "IB-SC-001", "in_student_paper": false},
+    {"bank_ref": "IB-SC-002", "in_student_paper": false},
+    {"bank_ref": "IB-SC-003", "in_student_paper": false},
+    {"bank_ref": "IB-SC-004", "in_student_paper": false}
+  ],
+  "total_score": 22,
+  "total_minutes": 28,
+  "scoring_principles": [
+    "按 scoring_points 逐点给分；立场不评分，论证质量评分（与课堂原则一致：不以答案复述为中心）",
+    "推断写成诗写的，该点降一半给分并标注错因类型（解释分层 U6）",
+    "默写错字不给分但在订正栏回炉，计入 mastery ledger 的字词维度"
+  ],
+  "claim_boundary": "蓝图权重来自单元图谱与 17 年真题题型分布；题型参照条目保持 candidate_only 状态（M0 未映射）。本卷为桌面组卷示范，信度效度须待真实施测（两本账纪律）。"
+}

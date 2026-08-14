@@ -106,7 +106,9 @@ class MengV6Chapter2PptxTests(unittest.TestCase):
     def test_scrambled_retrieval_slide_does_not_show_finished_chain(self):
         with zipfile.ZipFile(PPTX) as archive:
             retrieval = archive.read("ppt/slides/slide8.xml").decode("utf-8")
-        self.assertIn("七词复位", retrieval)
+        self.assertIn("从章首三步补出七个关键节点", retrieval)
+        self.assertIn("序号 __", retrieval)
+        self.assertIn("笑言", retrieval)
         self.assertNotIn("望 → 不见 → 泣 → 既见 → 笑言 → 卜筮 → 迁", retrieval)
         self.assertIn("换笔修订", retrieval)
 
