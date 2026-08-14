@@ -61,3 +61,13 @@ Corrections, insights, and knowledge gaps captured during development.
 - Promoted: work/备课基本原则.md
 
 ---
+
+## LRN-20260814-001 逐页合同字段被模板默认串填充等于未落实
+
+- **Date**: 2026-08-14
+- **Context**: 《氓》V6.6 课程数据 46 页中 45 页的教师角色、等待合同、故事回接等追溯字段仍是 `contract()` 的通用默认串（462 处，见 `work/evaluation/reports/principle_checks_meng_v66.json`）。
+- **Learning**: 设计字段的存在不等于原则的落实；只要字段可以有默认值，默认值就会被批量留下并冒充证据。机器合同必须区分"非空"与"非模板"。
+- **Action**: 反样板检查器 `scripts/checks/check_trace_evidence.py` 上线（P-17/P-19 的 enforcement），模式与 lesson.js 默认串同步由测试保护；新候选按 STANDARD-1.0 须样板清零。
+- **Recurrence-Count**: 1
+- **Status**: active
+- **Promoted-Principle**: P-28 enforcement 扩充（机器层）
