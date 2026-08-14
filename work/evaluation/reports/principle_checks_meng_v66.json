@@ -1,0 +1,92 @@
+{
+  "date": "2026-08-14",
+  "lesson": "meng_v66",
+  "standard_version": "STANDARD-1.0",
+  "config_drift": [],
+  "checks": {
+    "frontstage_banned": {
+      "ok": true,
+      "findings": [],
+      "count": 0
+    },
+    "timebox_conservation": {
+      "ok": true,
+      "findings": []
+    },
+    "three_questions_present": {
+      "ok": true,
+      "count": 3
+    },
+    "total_minutes": {
+      "ok": true,
+      "sum": 280,
+      "target": 280
+    },
+    "boilerplate_trace": {
+      "ok": false,
+      "strict": false,
+      "count": 462,
+      "pages": [
+        "C101",
+        "C102",
+        "C103",
+        "C104",
+        "C105",
+        "C201",
+        "C202",
+        "C204",
+        "C206",
+        "C301",
+        "C302",
+        "C303A",
+        "C303B",
+        "C305",
+        "C306",
+        "C401",
+        "C402",
+        "C403",
+        "C404_405",
+        "C406",
+        "C501",
+        "C502",
+        "C503",
+        "C504",
+        "C505",
+        "C601",
+        "C602",
+        "C603",
+        "C604",
+        "C605",
+        "C606_S01",
+        "O01",
+        "O02",
+        "O03",
+        "O05",
+        "O06",
+        "O07",
+        "O08",
+        "S02",
+        "S03",
+        "S04",
+        "S05A",
+        "S05B",
+        "S06",
+        "S08"
+      ],
+      "note": "样板发现默认不判失败（收敛规则：新检查进入下一标准版本）"
+    }
+  },
+  "failed": [],
+  "classroom_account": {
+    "status": "空——未真实试教（两本账纪律，P-12）",
+    "signals_to_collect": [
+      "主动开口率与自愿发言面（J1/J3）",
+      "首答阶段非空白抽样率（U1）",
+      "个人末答抽样正确率、修订痕迹率（U3/U8）",
+      "自发回读与课后仍谈论作品（J4）",
+      "沉默/想不起学生真实完成率（U7）",
+      "实际完成耗时 vs 预算偏差（U5）",
+      "单元测评 KP 掌握率与延迟保持率（K1/K3）"
+    ]
+  }
+}

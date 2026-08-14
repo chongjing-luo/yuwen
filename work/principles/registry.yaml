@@ -1,0 +1,1050 @@
+# ============================================================
+# 原则注册库 (Principle Registry)
+# 理念的唯一机器源：人读权威文本见各 source_anchor；
+# 本库把每条理念绑定为「机制节点 + 强制方式」，供校验器、
+# 构建器与阶段 skill 在流程时刻调用。
+# 校验：python3 scripts/checks/validate_principle_registry.py
+# ============================================================
+meta:
+  registry_version: "1.0"
+  standard_version: "STANDARD-1.0"
+  date: "2026-08-14"
+  north_star_doc: work/evaluation/三目标实现机制.md
+  coverage_rule: "每条原则必须映射至少一个机制节点，或声明 role=meta 并给出理由；每个节点必须被至少一条原则覆盖"
+
+# 机制节点（镜像自 work/evaluation/三目标实现机制.md，二者由校验器核对标题锚点）
+nodes:
+  K1: {name: 教什么先于怎么教, goal: 知识学习}
+  K2: {name: 知识在文本位置生长, goal: 知识学习}
+  K3: {name: 检索与间隔, goal: 知识学习}
+  K4: {name: 知识网络化, goal: 知识学习}
+  K5: {name: 丰富受负荷预算约束, goal: 知识学习}
+  U1: {name: 生成先于告知, goal: 能够学懂}
+  U2: {name: 证据锚定, goal: 能够学懂}
+  U3: {name: 校准后亲自修订, goal: 能够学懂}
+  U4: {name: "困难诊断 → 手法匹配", goal: 能够学懂}
+  U5: {name: 负荷管理, goal: 能够学懂}
+  U6: {name: 解释分层, goal: 能够学懂}
+  U7: {name: 反例诚实路径, goal: 能够学懂}
+  U8: {name: 理解闭环, goal: 能够学懂}
+  J1: {name: 自主感, goal: 享受学习}
+  J2: {name: 胜任感, goal: 享受学习}
+  J3: {name: 关联感, goal: 享受学习}
+  J4: {name: 文学本身的愉悦, goal: 享受学习}
+  J5: {name: 节奏多样, goal: 享受学习}
+  J6: {name: 心理安全, goal: 享受学习}
+  J7: {name: 流畅错觉防线, goal: 享受学习}
+
+principles:
+  # ---------- 《备课基本原则》43 条 ----------
+  - id: P-01
+    title: 学生接收优先于教师发送
+    statement: "教师讲过、PPT出现过、学生能够理解解释运用是三件事；每个课堂节点检查学生实际看见、听见、做过、想过和留下了什么，不以发送量评价课堂完整性。"
+    domain: 通用
+    stages: [S3, S5, S6]
+    nodes: [K5, U2]
+    anchor: {doc: work/备课基本原则.md, heading: "### 1. 学生接收优先于教师发送"}
+    enforcement:
+      - {type: design_trace, fields: [first_person_reception, observable_change]}
+      - {type: review_gate, gate: 学生接收审查}
+  - id: P-02
+    title: 原文是语文课堂的主线
+    statement: "按整体进入—局部细读—重新整体化推进；主题、背景、手法和现实讨论必须从原文生长，不能用知识结论页替代学生经历原文的过程。"
+    domain: 语文
+    stages: [S3]
+    nodes: [K2, J4]
+    anchor: {doc: work/备课基本原则.md, heading: "### 2. 原文是语文课堂的主线"}
+    enforcement:
+      - {type: machine_check, checker: scripts/meng_v6/verify_text.js, rule: 文本契约}
+      - {type: review_gate, gate: 学生接收审查}
+  - id: P-03
+    title: 体验先于命名
+    statement: "先让学生朗读、聆听、观察、比较、想象、停顿和表达，再用术语解释已经发生的体验；概念不作为课堂入口。"
+    domain: 语文
+    stages: [S3]
+    nodes: [U1, J4]
+    anchor: {doc: work/备课基本原则.md, heading: "### 3. 体验先于命名"}
+    enforcement:
+      - {type: review_gate, gate: 学生接收审查}
+  - id: P-04
+    title: 知识在相应文本位置生长
+    statement: "字音、词义、句法、手法、结构、情感和文化知识在相应语句中讲清；全文结束后通过先检索后回收总结，知识收纳不能截断阅读过程。"
+    domain: 语文
+    stages: [S3, S4]
+    nodes: [K2]
+    anchor: {doc: work/备课基本原则.md, heading: "### 4. 知识在相应文本位置生长"}
+    enforcement:
+      - {type: design_trace, fields: [literary_object]}
+  - id: P-05
+    title: 问题先于答案
+    statement: "问题页给学生独立生成、保存分歧和形成初稿的时间；回收页只能在学生已有产出后出现。"
+    domain: 通用
+    stages: [S3, S7]
+    nodes: [U1]
+    anchor: {doc: work/备课基本原则.md, heading: "### 5. 问题先于答案"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v5_lesson_package.py, rule: 独立问题态先于回收态}
+      - {type: design_trace, fields: [info_state]}
+  - id: P-06
+    title: 活动必须服务理解并留下证据
+    statement: "每项活动直接服务某段原文并形成可检查的标记、口译、朗读方案、图示、排序、判断、解释或修订；删除活动后若不影响学习则活动没有必要。"
+    domain: 通用
+    stages: [S3]
+    nodes: [U8]
+    anchor: {doc: work/备课基本原则.md, heading: "### 6. 活动必须服务理解并留下证据"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v6_page_audit.py, rule: G5产物后用}
+      - {type: design_trace, fields: [artifact, next_use]}
+  - id: P-07
+    title: 学生前台与教师后台严格分离
+    statement: "舞台指令、设计意图、方法论与评估口径只进入教案、备注与审计；学生可见区只显示此刻必须面对的原文、问题、任务材料、操作要求和活动后共同发现。"
+    domain: 通用
+    stages: [S3, S4]
+    nodes: [U1]
+    anchor: {doc: work/备课基本原则.md, heading: "### 7. 学生前台与教师后台严格分离"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v5_lesson_package.py, rule: 前台禁词扫描}
+      - {type: machine_check, checker: scripts/validate_meng_v6_lesson_package.py, rule: 前台物料泄漏扫描}
+  - id: P-08
+    title: 每一页都有可演出的真实剧本
+    statement: "逐字稿至少包含承接、教师原话、学生动作与明确秒数、回应分支、可观察证据和切页句；动作总时长不超过页面标称时间。"
+    domain: 通用
+    stages: [S4]
+    nodes: [U1, U3]
+    anchor: {doc: work/备课基本原则.md, heading: "### 8. 每一页都有可演出的真实剧本"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v6_lesson_package.py, rule: 逐字稿结构标记与时间盒守恒}
+      - {type: machine_check, checker: scripts/validate_meng_v5_lesson_package.py, rule: 逐字稿可演出标记}
+  - id: P-09
+    title: 解释分层并守住伦理边界
+    statement: "区分文本事实、合理推断、文本不能证明和现代解释工具；现实迁移不冒充作者原意；人物困境不得被写成人物责任。"
+    domain: 语文
+    stages: [S2, S3]
+    nodes: [U6, J6]
+    anchor: {doc: work/备课基本原则.md, heading: "### 9. 解释分层并守住伦理边界"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v6_page_audit.py, rule: epistemic_status枚举}
+      - {type: machine_check, checker: scripts/validate_meng_v5_lesson_package.py, rule: 备注受害归因句式扫描}
+  - id: P-10
+    title: 完整母版先于课时压缩
+    statement: "先设计学生真正需要经历的完整母版；压缩版只在原文意义单元和安全停点分割，并依真实试教证据删减。"
+    domain: 通用
+    stages: [S3]
+    nodes: [K5]
+    anchor: {doc: work/备课基本原则.md, heading: "### 10. 完整母版先于课时压缩"}
+    enforcement:
+      - {type: review_gate, gate: 课时切分审计}
+  - id: P-11
+    title: 多种材料同源，当前版本唯一
+    statement: "教案、学习单、PPT、备注、审计与验证器来自共享数据或明确映射；正式目录只保留一个当前版本。"
+    domain: 通用
+    stages: [S4, S5]
+    nodes: []
+    role: meta
+    justification: "同源与单版本是跨渠道审计可执行的前提，服务全部节点的机器检查基础"
+    anchor: {doc: work/备课基本原则.md, heading: "### 11. 多种材料同源，当前版本唯一"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v6_lesson_package.py, rule: manifest哈希一致}
+      - {type: meta, rule: 正式目录单一当前版本}
+  - id: P-12
+    title: 桌面验证不冒充真实课堂效果
+    statement: "自动测试与代理审查只证明设计条件；未真实试教前不得声称学生已理解、感动、享受或完成迁移。"
+    domain: 通用
+    stages: [S5, S6, S9]
+    nodes: [J7]
+    anchor: {doc: work/备课基本原则.md, heading: "### 12. 桌面验证不冒充真实课堂效果"}
+    enforcement:
+      - {type: review_gate, gate: 交付报告诚实声明}
+      - {type: machine_check, checker: scripts/checks/run_principle_checks.py, rule: 报告两本账分列}
+  - id: P-13
+    title: 学生前台文字应有语文的质地
+    statement: "学生看到听到的课堂语言优先使用人物、动作、场景、声音、诗句和真实提问；所有学生可见标题问题指令必须通过课堂朗读测试。"
+    domain: 语文
+    stages: [S3, S4]
+    nodes: [J4]
+    anchor: {doc: work/备课基本原则.md, heading: "### 13. 学生前台文字应有语文的质地"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v5_lesson_package.py, rule: 前台禁词扫描}
+      - {type: review_gate, gate: 前台朗读测试}
+  - id: P-14
+    title: 参与必须进入意义生成
+    statement: "真正的参与是学生对文本作出自己的讲述、选择、解释和判断，并在倾听他人后补充、质疑或改变原先看法；核心活动包含个人准备、小组共作、全班表达、同伴追问、返回原诗和可见修订。"
+    domain: 通用
+    stages: [S3]
+    nodes: [J1]
+    anchor: {doc: work/备课基本原则.md, heading: "### 14. 参与必须进入意义生成"}
+    enforcement:
+      - {type: design_trace, fields: [participation_path]}
+      - {type: review_gate, gate: 学生接收审查}
+  - id: P-15
+    title: 每页必须证明自己的不可替代意义
+    statement: "每页明确前页已知、解决哪个具体困难、学生完成哪个动作、留下什么可检查产物、怎样反馈修订、后页哪里真实调用、删除造成什么损失；相邻页能无损承担时合并或删除。"
+    domain: 通用
+    stages: [S3, S5]
+    nodes: [U5, U8]
+    anchor: {doc: work/备课基本原则.md, heading: "### 15. 每页必须证明自己的不可替代意义"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v6_page_audit.py, rule: 18字段完整与G6}
+  - id: P-16
+    title: 维护学生信息状态并审计全部暴露渠道
+    statement: "为每个学习事件维护已知—未知—此刻揭示—暂缓判断的信息状态，并逐渠道（屏幕、台词、学习单、教材、板书、音频、实物、课前材料）核对暴露时点。"
+    domain: 通用
+    stages: [S3, S5]
+    nodes: [U1]
+    anchor: {doc: work/备课基本原则.md, heading: "### 16. 维护学生信息状态并审计全部暴露渠道"}
+    enforcement:
+      - {type: design_trace, fields: [info_state]}
+      - {type: review_gate, gate: 多渠道泄答测试}
+  - id: P-17
+    title: 正常反例必须有诚实路径
+    statement: "对想不起、暂无新增、已经读顺、误读、沉默、不同意、走神和超时，学生有同等可见、可完成且无需伪造观点的路径；边界路径不能藏在后台。"
+    domain: 通用
+    stages: [S3]
+    nodes: [U7, J6]
+    anchor: {doc: work/备课基本原则.md, heading: "### 17. 正常反例必须有诚实路径"}
+    enforcement:
+      - {type: design_trace, fields: [normal_counterexample]}
+      - {type: machine_check, checker: scripts/checks/check_trace_evidence.py, rule: 反样板}
+  - id: P-18
+    title: 视觉和插图必须承担学习功能
+    statement: "视觉先服从页面唯一意义再追求美感；插图只有在能帮助学生辨认动作、空间、时间或意象且课堂中被观察比较引用时才能进入。"
+    domain: 语文
+    stages: [S3, S4]
+    nodes: [U1, J4]
+    anchor: {doc: work/备课基本原则.md, heading: "### 18. 视觉和插图必须承担学习功能"}
+    enforcement:
+      - {type: design_trace, fields: [visual_duty, illustration_eligibility]}
+      - {type: review_gate, gate: 视觉功能审查}
+  - id: P-19
+    title: 每页接受第一人称接收检验
+    statement: "一页结束后学生应能用第一人称说清读了什么、做了什么、比上一页多明白什么、依据哪一句、修改了哪里；审查者必须能沿画面逐字稿学习单证明这条接收链。"
+    domain: 通用
+    stages: [S3, S5]
+    nodes: [U2, J2]
+    anchor: {doc: work/备课基本原则.md, heading: "### 19. 每页接受第一人称接收检验"}
+    enforcement:
+      - {type: design_trace, fields: [first_person_reception]}
+      - {type: machine_check, checker: scripts/checks/check_trace_evidence.py, rule: 反样板}
+      - {type: review_gate, gate: 学生接收审查}
+  - id: P-20
+    title: 教学手法由学习困难选择并保持真实体验差异
+    statement: "先辨认困难属于哪一类再选能改变学生经验的手法；连续页面不得只是换标题；丰富性以学生认知动作和社会互动方式是否变化为准。"
+    domain: 语文
+    stages: [S3]
+    nodes: [U4, J5]
+    anchor: {doc: work/备课基本原则.md, heading: "### 20. 教学手法由学习困难选择，并保持真实体验差异"}
+    enforcement:
+      - {type: design_trace, fields: [unique_difficulty]}
+      - {type: review_gate, gate: 去同质化审计}
+  - id: P-21
+    title: 独立评估实行缺陷否决
+    statement: "独立视觉审查与学生接收审查逐页复验；P0/P1/P2任一存在即不放行，总分美观或其他优点不能抵消；P3只保留必须真实试教才能判断的风险并登记观察方法。"
+    domain: 通用
+    stages: [S5]
+    nodes: [J7]
+    anchor: {doc: work/备课基本原则.md, heading: "### 21. 独立评估实行缺陷否决，不以平均分妥协"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v6_lesson_package.py, rule: 双审回执P0P1P2清零}
+      - {type: review_gate, gate: 独立双审}
+  - id: P-22
+    title: 活动程序必须有注意力预算
+    statement: "学生为理解活动规则投入的注意力应显著少于面对诗文人物同伴表达的注意力；前台原则上一个主动作、一个必要反馈、一个亲自修订；学生课后更易复述活动手续则至少判P2。"
+    domain: 通用
+    stages: [S3, S5]
+    nodes: [U5, J7]
+    anchor: {doc: work/备课基本原则.md, heading: "### 22. 活动程序必须有注意力预算"}
+    enforcement:
+      - {type: machine_check, checker: scripts/verify_meng_v62_chapter1.js, rule: 退役程序词扫描}
+      - {type: review_gate, gate: 程序成本语文收益测试}
+  - id: P-23
+    title: 教师应在学生广泛表达后承担归纳责任
+    statement: "开放发言后由教师引用学生原话整理共同线索、差异和未解决问题；归纳后置、有证据、可被学生补充修正。"
+    domain: 通用
+    stages: [S3]
+    nodes: [U3]
+    anchor: {doc: work/备课基本原则.md, heading: "### 23. 教师应在学生广泛表达后承担归纳责任"}
+    enforcement:
+      - {type: design_trace, fields: [teacher_role]}
+      - {type: review_gate, gate: 教师归纳责任测试}
+  - id: P-24
+    title: 局部学习必须回到人物和故事
+    statement: "字词句法朗读空间意象手法可以让叙事暂时停驻，但页面结束前必须回答这句诗让谁做了什么、人物处境怎样变化；学生只能说圈了词画了卡则不得放行。"
+    domain: 语文
+    stages: [S3]
+    nodes: [U2]
+    anchor: {doc: work/备课基本原则.md, heading: "### 24. 局部学习必须回到人物和故事"}
+    enforcement:
+      - {type: design_trace, fields: [story_return]}
+      - {type: review_gate, gate: 活动遮蔽故事测试}
+  - id: P-25
+    title: 学生材料按真实分发时点设计和审计
+    statement: "会改变初读体验的材料拆成按时发放的独立物件；每份纸质材料登记首次可见时间、发放人、当时已知、是否提前泄露；没有真实分发台词的不算控制机制。"
+    domain: 通用
+    stages: [S3, S4, S5]
+    nodes: [U1]
+    anchor: {doc: work/备课基本原则.md, heading: "### 25. 学生材料按真实分发时点设计和审计"}
+    enforcement:
+      - {type: review_gate, gate: 真实分发顺序测试}
+  - id: P-26
+    title: 单页有用不等于值得独立成页
+    statement: "逐页优化同时接受相邻页和全课因果链的反证；产物在整课没有真实消费者就合并移动删除；每模块完成后检查连续理解轨迹可见。"
+    domain: 通用
+    stages: [S3, S5]
+    nodes: [U5, U8]
+    anchor: {doc: work/备课基本原则.md, heading: "### 26. 单页有用不等于值得独立成页"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v6_page_audit.py, rule: G5G6与连续理解}
+  - id: P-27
+    title: 全员参与与公共表达质量分别设计
+    statement: "分别提供证据：每个人确实说读写修订过；公共材料足够准确丰富并可被教师后置归纳；不能用公共发言人数替代全员认知参与。"
+    domain: 通用
+    stages: [S3, S5]
+    nodes: [U7, J3]
+    anchor: {doc: work/备课基本原则.md, heading: "### 27. 全员参与与公共表达质量分别设计"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v6_page_audit.py, rule: voice_coverage全员计量}
+      - {type: review_gate, gate: 全员开口与公共作品限额测试}
+  - id: P-28
+    title: 标准必须进入生成和放行机制
+    statement: "原则文件本身不能证明原则已经执行；数据源必须完整提交合同字段，缺关键字段或不一致时构建器或验证器直接失败；自动合同不能替代独立审查但必须阻止已知退化。"
+    domain: 通用
+    stages: [S3, S4, S5]
+    nodes: []
+    role: meta
+    justification: "本注册库自身——原则必须以 machine_check/design_trace/review_gate 之一进入管线才有效"
+    anchor: {doc: work/备课基本原则.md, heading: "### 28. 标准必须进入生成和放行机制"}
+    enforcement:
+      - {type: meta, rule: 注册库准入}
+      - {type: machine_check, checker: scripts/checks/validate_principle_registry.py, rule: 注册库自检}
+  - id: P-29
+    title: 候选方案必须经过证伪
+    statement: "设计者必须主动寻找至少一个泄答、旁观、孤立、遮蔽、可合并、失真或抢焦点问题；一轮检查没有发现任何问题应先怀疑检查力度；修改必须回到可观察变化重新举证。"
+    domain: 通用
+    stages: [S5]
+    nodes: [J7]
+    anchor: {doc: work/备课基本原则.md, heading: "### 29. 候选方案必须经过证伪，不把一次生成当成完成"}
+    enforcement:
+      - {type: review_gate, gate: 独立双审}
+  - id: P-30
+    title: 导入阶段的思考深度必须服从导入功能
+    statement: "导入首要功能是扩大文学记忆、降低开口门槛；共同证据未建立时不得要求抽象分析；深度在共享原文和证据以后发生。"
+    domain: 语文
+    stages: [S3]
+    nodes: [J1]
+    anchor: {doc: work/备课基本原则.md, heading: "### 30. 导入阶段的思考深度必须服从导入功能"}
+    enforcement:
+      - {type: review_gate, gate: 学生接收审查}
+  - id: P-31
+    title: 单页局部合理必须服从全课连续理解
+    statement: "每页还要说明怎样使学生沿原文增加连续理解；只记住词义标签规则却接不回人物故事至少判P2；全课审计远距重复。"
+    domain: 通用
+    stages: [S3, S5]
+    nodes: [U2, J5]
+    anchor: {doc: work/备课基本原则.md, heading: "### 31. 单页局部合理必须服从全课连续理解"}
+    enforcement:
+      - {type: review_gate, gate: 连续文本接收链测试}
+  - id: P-32
+    title: 教师既不包办答案也不退化为流程管理员
+    statement: "字词文化句法准确微讲；复杂联系先示范一处再迁移；值得的诗句用朗读示范、叙事复述、板书建模和文学停留提供经验；对学生生成材料承担后置归纳与语言提升。"
+    domain: 语文
+    stages: [S3]
+    nodes: [U3, J2, J4]
+    anchor: {doc: work/备课基本原则.md, heading: "### 32. 教师既不包办答案，也不退化为流程管理员"}
+    enforcement:
+      - {type: design_trace, fields: [teacher_role]}
+      - {type: review_gate, gate: 教师教学建模充分性测试}
+  - id: P-33
+    title: 全课节奏拥有独立否决权
+    statement: "从认知动作、感官通道、社会结构、作品形态和情绪节奏五维检查全课；连续三页三维度基本相同原则上返工；单页优点不能抵消全课疲劳。"
+    domain: 通用
+    stages: [S3, S5]
+    nodes: [J5]
+    anchor: {doc: work/备课基本原则.md, heading: "### 33. 全课节奏拥有独立否决权"}
+    enforcement:
+      - {type: review_gate, gate: 全课底层协议指纹测试}
+      - {type: machine_check, checker: scripts/checks/run_principle_checks.py, rule: 节奏五维同构扫描}
+  - id: P-34
+    title: 学生形成时刻必须在所有渠道中受到保护
+    statement: "把数据源、物理画面、教师台词、学习单和板书预案按时间顺序共同核对首答态、等待、公开比较、教师校准、学生修订；已发现的跨渠道泄答先写成失败测试再修复。"
+    domain: 通用
+    stages: [S3, S4, S5]
+    nodes: [U1]
+    anchor: {doc: work/备课基本原则.md, heading: "### 34. 学生形成时刻必须在所有渠道中受到保护"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v6_page_audit.py, rule: 首答态字段}
+      - {type: review_gate, gate: 数据源物理画面逐字稿同态测试}
+  - id: P-35
+    title: 时间可执行性按单页页面簇整课三级审计
+    statement: "每页只承担一个可检验的主要对象；模块累加书写讨论切换与情绪耗损；只有每一分钟换来必要经验思考收纳才是标准。"
+    domain: 通用
+    stages: [S3, S5]
+    nodes: [U5]
+    anchor: {doc: work/备课基本原则.md, heading: "### 35. 时间可执行性按“单页—页面簇—整课”三级审计"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v6_lesson_package.py, rule: 时间盒守恒}
+      - {type: review_gate, gate: 累计负荷与任务切换测试}
+  - id: P-36
+    title: 讨论活动先保障人人表达再限制公共作品数量
+    statement: "个人最低成本返诗选依据；四人按可见顺序完整说；所有人说过以后才追问合并；每组只形成一个值得全班比较的公共作品。"
+    domain: 通用
+    stages: [S3]
+    nodes: [U7, J3]
+    anchor: {doc: work/备课基本原则.md, heading: "### 36. 讨论活动先保障人人表达，再限制公共作品数量"}
+    enforcement:
+      - {type: design_trace, fields: [participation_path]}
+      - {type: review_gate, gate: 全员开口与公共作品限额测试}
+  - id: P-37
+    title: 评估标准先于方案证据不足不得降低门槛
+    statement: "页面设计前先写明什么证据出现才算功能实现、什么现象出现就必须返工；任一P0P1P2存在即返工，不因成本高画面好分数高或已多次修改而降低门槛。"
+    domain: 通用
+    stages: [S3, S5]
+    nodes: [J7]
+    anchor: {doc: work/备课基本原则.md, heading: "### 37. 评估标准先于方案，证据不足不得降低门槛"}
+    enforcement:
+      - {type: design_trace, fields: [failure_signals]}
+      - {type: meta, rule: 收敛规则标准版本锚定}
+  - id: P-38
+    title: 插图以学习增益做A/B不以喜好投票放行
+    statement: "插图绑定原句、唯一功能、观察动作、返回原词和禁止造成的推断；无图首答后短暂揭示撤图修订；比较撤图后的原词定位与有证据修订。"
+    domain: 语文
+    stages: [S4, S5]
+    nodes: [J7, U1]
+    anchor: {doc: work/备课基本原则.md, heading: "### 38. 插图以学习增益做A/B，不以喜好投票放行"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v6_page_audit.py, rule: 视觉功能增益与AB预注册}
+      - {type: review_gate, gate: 插图功能与人物连续性测试}
+  - id: P-39
+    title: 页面先接受删除审判再接受保留论证
+    statement: "审查默认本页应删除，由设计者举证删后哪一段学生理解个人证据或必要体验会实际断裂；有内容好看讲得顺制作很久均不是保留理由。"
+    domain: 通用
+    stages: [S5]
+    nodes: [U5, U8]
+    anchor: {doc: work/备课基本原则.md, heading: "### 39. 页面先接受删除审判，再接受保留论证"}
+    enforcement:
+      - {type: design_trace, fields: [deletion_loss, adjacent_counterproof]}
+      - {type: review_gate, gate: 相邻合并与全课因果链测试}
+  - id: P-40
+    title: 物理画面是剧本和审查的最小单位
+    statement: "逻辑活动拆成的每个物理画面都有独立逐字稿、舞台动作、时间盒、证据位置和切页触发；B0B1页面ID等构建标签只属后台，学生画面零容忍暴露。"
+    domain: 通用
+    stages: [S3, S4]
+    nodes: [U1, U3]
+    anchor: {doc: work/备课基本原则.md, heading: "### 40. 物理画面是剧本和审查的最小单位"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v6_lesson_package.py, rule: 物理事件时间盒与分支}
+  - id: P-41
+    title: 公共答案不能替代个人末答
+    statement: "核心问题在公共校准后撤去答案，让每个人以最低可执行形式完成个人末答、闭卷复述或带原诗修订；前页声明的产物后页必须真实取回同一载体。"
+    domain: 通用
+    stages: [S3, S7]
+    nodes: [U3, U8]
+    anchor: {doc: work/备课基本原则.md, heading: "### 41. 公共答案不能替代个人末答"}
+    enforcement:
+      - {type: design_trace, fields: [feedback_revision, next_use]}
+      - {type: review_gate, gate: 撤架复述与核心问题个人末答审查}
+  - id: P-42
+    title: 版式本身也属于答案暴露渠道
+    statement: "颜色分栏空间远近卡片大小排列顺序箭头和标题层级都会替学生分类排序判断；首答态使用等大同色随机散放；视觉美观建立在提前完成任务之上至少判P1。"
+    domain: 通用
+    stages: [S3, S4]
+    nodes: [U1]
+    anchor: {doc: work/备课基本原则.md, heading: "### 42. 版式本身也属于答案暴露渠道"}
+    enforcement:
+      - {type: review_gate, gate: 视觉功能审查}
+      - {type: design_trace, fields: [info_state]}
+  - id: P-43
+    title: 模块高失败率触发整体重建
+    statement: "超过四分之一物理画面被判P0P1P2，或同一根因贯穿三页以上，停止局部润色，从学生理解目标和原文顺序重新划分页面；旧页只作材料来源。"
+    domain: 通用
+    stages: [S5]
+    nodes: []
+    role: meta
+    justification: "收敛治理的一部分——防止逐页修补保留旧方案错误边界，与标准版本锚定制配合"
+    anchor: {doc: work/备课基本原则.md, heading: "### 43. 模块高失败率触发整体重建"}
+    enforcement:
+      - {type: meta, rule: 收敛规则}
+
+  # ---------- 审计协议：页面合同与六门 ----------
+  - id: A-01
+    title: 十六项页面功能合同
+    statement: "每逻辑页完整登记前页输入、当前困难、唯一功能、第一眼合同、信息状态、学生动作、可见产物、真实等待、有界反馈、可见修订、后页调用、正常反例、视觉职责、第一人称接收、删除损失、连续理解增量；第3/6/7/10/11/15项任一为空即无存在资格。"
+    domain: 通用
+    stages: [S3, S5]
+    nodes: [U2, U5, U8]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "## 二、每页功能合同"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v6_page_audit.py, rule: 18字段非空}
+  - id: A-02
+    title: 程序注意力预算登记
+    statement: "每页登记学生需记住的操作、身份、分支和记录位置数；超过主动作—反馈—修订三步逐项举证，否则删并。"
+    domain: 通用
+    stages: [S3, S5]
+    nodes: [U5]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "## 二、每页功能合同"}
+    enforcement:
+      - {type: design_trace, fields: [student_action]}
+      - {type: review_gate, gate: 程序成本语文收益测试}
+  - id: A-03
+    title: 故事回接句登记
+    statement: "页面结束时学生能用人物、动作、声音或处境说出什么新增意义；知识输入页也必须说明它如何帮助学生继续进入原文。"
+    domain: 语文
+    stages: [S3]
+    nodes: [U2]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "## 二、每页功能合同"}
+    enforcement:
+      - {type: design_trace, fields: [story_return]}
+  - id: A-04
+    title: 个体覆盖与公共质量双证据
+    statement: "开放表达页分别登记每名学生真正说读写修订的并行结构证据，与全班共同听见保存的新材料证据；只有串行点名或只有代表作品至少判P2。"
+    domain: 通用
+    stages: [S3, S5]
+    nodes: [U7, J3]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "## 二、每页功能合同"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v6_page_audit.py, rule: voice_coverage与listener_task}
+  - id: A-05
+    title: G1前置条件缺失门
+    statement: "本页依赖的前页产物必须真实存在且已发生；凭空开始的活动判失败。"
+    domain: 通用
+    stages: [S5]
+    nodes: [U8]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "## 四、严重度与否决条件"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v6_page_audit.py, rule: G1}
+  - id: A-06
+    title: G2功能重复门
+    statement: "一页只承担一个唯一功能；与已有页功能重复判失败。"
+    domain: 通用
+    stages: [S5]
+    nodes: [U5]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "## 四、严重度与否决条件"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v6_page_audit.py, rule: G2}
+  - id: A-07
+    title: G3覆盖虚假门
+    statement: "教师讲过不等于学生做到；声称的覆盖必须有学生动作证据。"
+    domain: 通用
+    stages: [S5]
+    nodes: [U2]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "## 四、严重度与否决条件"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v6_page_audit.py, rule: G3}
+  - id: A-08
+    title: G4变化不可观察门
+    statement: "本页必须产生可观察的学生变化；before与after必须不同。"
+    domain: 通用
+    stages: [S5]
+    nodes: [U2]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "## 四、严重度与否决条件"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v6_page_audit.py, rule: G4-observable_change}
+  - id: A-09
+    title: G5产物孤儿门
+    statement: "本页产物必须被后页真实调用；声明以后可能用不算。"
+    domain: 通用
+    stages: [S5]
+    nodes: [U8]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "## 四、严重度与否决条件"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v6_page_audit.py, rule: G5前向边}
+  - id: A-10
+    title: G6可无损合并门
+    statement: "相邻页能无损承担本页功能时判可合并失败。"
+    domain: 通用
+    stages: [S5]
+    nodes: [U5]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "## 四、严重度与否决条件"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v6_page_audit.py, rule: G6-merge_test}
+
+  # ---------- 审计协议：23 项反退化测试 ----------
+  - id: A-T01
+    title: 教师抢答测试
+    statement: "按时间播放逐字稿：学生第一次落笔或开口前，教师、PPT、学习单或板书已给出核心答案则为假活动。"
+    domain: 通用
+    stages: [S5]
+    nodes: [U1]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "### 1. 教师抢答测试"}
+    enforcement: [{type: review_gate, gate: 学生接收审查}]
+  - id: A-T02
+    title: 换名不换体验测试
+    statement: "抹去活动标题只看学生动作；连续页面仍是同一协议视为同质化，必须回困难重选手法。"
+    domain: 通用
+    stages: [S5]
+    nodes: [J5]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "### 2. 换名不换体验测试"}
+    enforcement: [{type: review_gate, gate: 去同质化审计}]
+  - id: A-T03
+    title: 第一人称复述测试
+    statement: "学生能不用设计术语说清发生了什么、为何这样理解、依据哪句、改了什么；只能复述词义说明理解链断裂。"
+    domain: 通用
+    stages: [S5]
+    nodes: [U2]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "### 3. 第一人称复述测试"}
+    enforcement: [{type: review_gate, gate: 学生接收审查}]
+  - id: A-T04
+    title: 多渠道泄答测试
+    statement: "同时查看投影、备注、学习单、教材指令、纸卡、板书预案和课前材料；任何渠道提前公开核心关系即泄答。"
+    domain: 通用
+    stages: [S5]
+    nodes: [U1]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "### 4. 多渠道泄答测试"}
+    enforcement: [{type: review_gate, gate: 学生接收审查}]
+  - id: A-T05
+    title: 美观服务功能测试
+    statement: "遮住标题，画面第一层级仍指向本页主动作；装饰元素没有被学生观察比较引用或与原诗争夺注意力则删除或降级。"
+    domain: 通用
+    stages: [S5]
+    nodes: [U1, J4]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "### 5. 美观服务功能测试"}
+    enforcement: [{type: review_gate, gate: 视觉功能审查}]
+  - id: A-T06
+    title: 活动遮蔽故事测试
+    statement: "遮住活动名称，学生只用人物动作处境原句回答故事新增了什么；只能说画了线填了表闭眼听了至少判P2；每章末留下可供后章调用的章意。"
+    domain: 语文
+    stages: [S5]
+    nodes: [U2, J7]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "### 6. 活动遮蔽故事测试"}
+    enforcement: [{type: review_gate, gate: 学生接收审查}]
+  - id: A-T07
+    title: 前台后台分离测试
+    statement: "前台出现目标解释、方法论、口号、禁令堆叠或替学生说明为什么这样学至少P2；舞台指令与占位标签上屏判P2。"
+    domain: 通用
+    stages: [S5]
+    nodes: [U1]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "### 7. 前台—后台分离测试"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v5_lesson_package.py, rule: 前台禁词扫描}
+      - {type: review_gate, gate: 视觉功能审查}
+  - id: A-T08
+    title: 程序成本语文收益测试
+    statement: "抹去诗文只读学生操作；手续不可举证删除；手续占据第一层级或时间大于阅读倾听表达至少P2；学生最易记住活动规则则不得放行。"
+    domain: 通用
+    stages: [S5]
+    nodes: [U5, J7]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "### 8. 程序成本—语文收益测试"}
+    enforcement: [{type: review_gate, gate: 程序成本语文收益测试}]
+  - id: A-T09
+    title: 教师归纳责任测试
+    statement: "教师不得在学生表达前预填完整主题，也不得把分类去重命名评审变成学生行政劳动；合格路径为个人材料—广泛表达—教师引用原话后置归纳—学生补充修正。"
+    domain: 通用
+    stages: [S5]
+    nodes: [U3]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "### 9. 教师归纳责任测试"}
+    enforcement: [{type: review_gate, gate: 教师归纳责任测试}]
+  - id: A-T10
+    title: 局部学习回到故事测试
+    statement: "字词声音空间意象手法活动后，学生能用自然话说出人物或故事多发生了什么；每章原则上一次正式合书重建。"
+    domain: 语文
+    stages: [S5]
+    nodes: [U2]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "### 10. 局部学习回到故事测试"}
+    enforcement: [{type: review_gate, gate: 学生接收审查}]
+  - id: A-T11
+    title: 真实分发顺序测试
+    statement: "按真实装订和分发状态检查全部纸张的页眉标题背面折页附录是否提前泄露；仅写请不要往后看不通过。"
+    domain: 通用
+    stages: [S4, S5]
+    nodes: [U1]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "### 11. 真实分发顺序测试"}
+    enforcement: [{type: review_gate, gate: 真实分发顺序测试}]
+  - id: A-T12
+    title: 相邻合并与全课因果链测试
+    statement: "删去换页动作并入相邻页无具体损失至少P2；从终点倒查每份作品被真实打开引用比较质询修订；遮住页码请学生按实际顺序复述理解增长。"
+    domain: 通用
+    stages: [S5]
+    nodes: [U5, U8]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "### 12. 相邻合并与全课因果链测试"}
+    enforcement: [{type: review_gate, gate: 相邻合并与全课因果链测试}]
+  - id: A-T13
+    title: 标题与首眼泄答测试
+    statement: "逐字检查标题副标题提示语色块标签插图学习单页眉和切页句是否提前出现核心产物或同义解释；至少判P1。"
+    domain: 通用
+    stages: [S4, S5]
+    nodes: [U1]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "### 13. 标题与首眼泄答测试"}
+    enforcement: [{type: review_gate, gate: 视觉功能审查}]
+  - id: A-T14
+    title: 产物落点唯一性测试
+    statement: "同一初稿只有一个明确落点；写入、反馈、修订、后页读取位置从数据源、材料与台词互相核对，不靠临场转抄补救。"
+    domain: 通用
+    stages: [S4, S5]
+    nodes: [U8]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "### 14. 产物落点唯一性测试"}
+    enforcement: [{type: machine_check, checker: scripts/validate_meng_v6_page_audit.py, rule: artifact_location一致}]
+  - id: A-T15
+    title: 连续文本接收链测试
+    statement: "依次恢复原句在哪里—字面写了什么—事件声音变化—人物处境增加—前后连接—判断依据—自然说出；一页可只负责一两环但须声明交接。"
+    domain: 语文
+    stages: [S5]
+    nodes: [U2]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "### 15. 连续文本接收链测试"}
+    enforcement: [{type: review_gate, gate: 连续文本接收链测试}]
+  - id: A-T16
+    title: 教师教学建模充分性测试
+    statement: "教师须在学生无法独立可靠获得处承担准确微讲、思维示范、朗读示范、板书建模或后置归纳；连续多页只有学生自写互查而教师只报流程至少P2。"
+    domain: 语文
+    stages: [S5]
+    nodes: [U3, J4]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "### 16. 教师教学建模充分性测试"}
+    enforcement: [{type: review_gate, gate: 教师教学建模充分性测试}]
+  - id: A-T17
+    title: 全课底层协议指纹测试
+    statement: "逐页登记认知动作×感官通道×社会结构×作品形态×反馈方式×教师作用；连续三页四维相同原则上P2；能力不逐次升级的同构练习不保留。"
+    domain: 通用
+    stages: [S5]
+    nodes: [J5]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "### 17. 全课底层协议指纹测试"}
+    enforcement: [{type: review_gate, gate: 全课底层协议指纹测试}]
+  - id: A-T18
+    title: 综合与收束防重复测试
+    statement: "综合页在选择组织解释讨论迁移已有材料，不为给旧产物安排消费者再生产同类表单；收束区连续个人长写同伴核查挤压完整朗读回味判P2。"
+    domain: 通用
+    stages: [S5]
+    nodes: [J5, U5]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "### 18. 综合与收束防重复测试"}
+    enforcement: [{type: review_gate, gate: 综合与收束防重复测试}]
+  - id: A-T19
+    title: 插图功能与人物连续性测试
+    statement: "插图登记对应原句、唯一作用、返回原词、可能误读、人物设定引用和收益；人物漂移或图像替学生完成解释直接否决；只增气氛的图片删除。"
+    domain: 语文
+    stages: [S4, S5]
+    nodes: [U1, U6]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "### 19. 插图功能与人物连续性测试"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_meng_v6_page_audit.py, rule: 人物圣经manifest}
+      - {type: review_gate, gate: 插图功能与人物连续性测试}
+  - id: A-T20
+    title: 数据源物理画面逐字稿同态测试
+    statement: "从真实PPT对象或文本抽取取得学生可见文字与课程源逐页对照；画面只显示问题而教师口头报答案判P1；修复后必须新增复现该渠道的失败测试。"
+    domain: 通用
+    stages: [S4, S5]
+    nodes: [U1]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "### 20. 数据源—物理画面—逐字稿同态测试"}
+    enforcement:
+      - {type: machine_check, checker: tests/test_meng_v66_pptx_notes.js, rule: 备注逐字一致}
+      - {type: review_gate, gate: 数据源物理画面逐字稿同态测试}
+  - id: A-T21
+    title: 首答态与后置完成态分工测试
+    statement: "首答态只出现文学对象、必要字面支架、开放问题和作品落点；后置完成态按等待首答—公开比较—教师校准—学生修订顺序；防泄答不等于教师退出。"
+    domain: 通用
+    stages: [S3, S5]
+    nodes: [U1, U3]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "### 21. 首答态与后置完成态分工测试"}
+    enforcement: [{type: review_gate, gate: 首答态与后置完成态分工测试}]
+  - id: A-T22
+    title: 累计负荷与任务切换测试
+    statement: "本页与前两页连续播放累计书写发言共作切换与归纳密度；两次高强度后仍多轮写卡合并总结至少P2；一页不得强行合并两个可独立检验的知识对象。"
+    domain: 通用
+    stages: [S5]
+    nodes: [U5]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "### 22. 累计负荷与任务切换测试"}
+    enforcement: [{type: review_gate, gate: 累计负荷与任务切换测试}]
+  - id: A-T23
+    title: 全员开口与公共作品限额测试
+    statement: "分别举证每人在低压条件下完成一次有文本依据的表达，与全班为什么只需听见少量高质量公共材料；不用代表发言冒充组内覆盖。"
+    domain: 通用
+    stages: [S5]
+    nodes: [U7, J3]
+    anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "### 23. 全员开口与公共作品限额测试"}
+    enforcement: [{type: review_gate, gate: 全员开口与公共作品限额测试}]
+
+  # ---------- 手法库 ----------
+  - id: M-01
+    title: 先诊断困难再选法
+    statement: "先诊断学生为何读不进去再选手法；每次使用登记对应原句、具体困难、学生动作、可见产物、反馈边界和后用位置。"
+    domain: 语文
+    stages: [S3]
+    nodes: [U4]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 一、选法原则"}
+    enforcement: [{type: design_trace, fields: [unique_difficulty]}]
+  - id: M-02
+    title: 十七类学习困难手法映射
+    statement: "记不起作品、进入不了声音、字词阻断、句法模糊、行动混乱、空间无感、时间压平、术语报菜名、情绪标签化、意象讲成答案、倒灌结局、文化陌生、叙事碎片、现实难想、讨论浅、私人风险、看见答案当会——每类困难有对应手法与可见产物。"
+    domain: 语文
+    stages: [S2, S3]
+    nodes: [U4]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 二、按学习困难选手法"}
+    enforcement: [{type: design_trace, fields: [unique_difficulty]}]
+  - id: M-03
+    title: 互动结构库
+    statement: "按参与目的选择互动结构；结构服务意义生成不服务气氛。"
+    domain: 通用
+    stages: [S3]
+    nodes: [J3]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 三、互动结构库"}
+    enforcement: [{type: design_trace, fields: [participation_path]}]
+  - id: M-04
+    title: 反馈手法库（有界反馈）
+    statement: "教师和同伴反馈有边界，避免报完整答案；反馈指向证据与下一步动作。"
+    domain: 通用
+    stages: [S3, S7]
+    nodes: [U3]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 四、反馈手法库"}
+    enforcement: [{type: design_trace, fields: [feedback_revision]}]
+  - id: M-05
+    title: 去同质化审计
+    statement: "连续页面底层维度相同判退化；表面换标题不换协议仍计同构。"
+    domain: 通用
+    stages: [S3, S5]
+    nodes: [J5]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 五、去同质化审计"}
+    enforcement: [{type: review_gate, gate: 去同质化审计}]
+  - id: M-06
+    title: 选法处方六句
+    statement: "先写困难、原句、学生动作、可见产物、反馈边界、后用位置，再准入手法。"
+    domain: 语文
+    stages: [S3]
+    nodes: [U4]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 六、选法处方：先写困难，再准入手法"}
+    enforcement: [{type: design_trace, fields: [unique_difficulty, literary_object, student_action, artifact, next_use]}]
+  - id: M-07
+    title: 体验节奏矩阵
+    statement: "全课按体验强度排布节奏，高强度生成后安排低负荷环节。"
+    domain: 通用
+    stages: [S3]
+    nodes: [J5]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 七、体验节奏矩阵"}
+    enforcement: [{type: review_gate, gate: 全课底层协议指纹测试}]
+  - id: M-08
+    title: 常见手法准入边界
+    statement: "每个常用手法有准入条件与禁用情形，不按新颖度选用。"
+    domain: 语文
+    stages: [S3]
+    nodes: [U4]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 八、常见手法的准入边界"}
+    enforcement: [{type: review_gate, gate: 去同质化审计}]
+  - id: M-09
+    title: 活动注意力预算
+    statement: "学生为理解规则投入的注意力显著少于面对诗文人物同伴的注意力。"
+    domain: 通用
+    stages: [S3, S5]
+    nodes: [U5]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 九、活动注意力预算"}
+    enforcement: [{type: review_gate, gate: 程序成本语文收益测试}]
+  - id: M-10
+    title: 广泛表达后的教师归纳
+    statement: "广泛表达后教师引用现场原话后置归纳，学生可补充修正。"
+    domain: 通用
+    stages: [S3]
+    nodes: [U3]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 十、广泛表达后的教师归纳"}
+    enforcement: [{type: design_trace, fields: [teacher_role]}]
+  - id: M-11
+    title: 手法结束的故事回接
+    statement: "每个手法结束时用一句自然话把声音词义手法接回人物处境。"
+    domain: 语文
+    stages: [S3]
+    nodes: [U2]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 十一、手法结束的故事回接"}
+    enforcement: [{type: design_trace, fields: [story_return]}]
+  - id: M-12
+    title: 大班广泛表达并行覆盖与公共精选
+    statement: "个人返诗选证—按座位轮说—全员说过后讨论—每组一件公共作品—全班聚类质询—教师后置归纳。"
+    domain: 通用
+    stages: [S3]
+    nodes: [U7, J3]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 十二、大班广泛表达：并行覆盖与公共精选"}
+    enforcement: [{type: design_trace, fields: [participation_path]}]
+  - id: M-13
+    title: 教师教学手法库
+    statement: "精讲、示范、板书建模、叙事复述等教师手法按需进入；教师手法与学生活动都以促进学生可检验理解为准。"
+    domain: 语文
+    stages: [S3]
+    nodes: [U3, J4]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 十三、教师教学手法库"}
+    enforcement: [{type: review_gate, gate: 教师教学建模充分性测试}]
+  - id: M-14
+    title: 底层协议指纹与全课节奏
+    statement: "登记每页底层协议维度，防同构疲劳。"
+    domain: 通用
+    stages: [S3, S5]
+    nodes: [J5]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 十四、底层协议指纹与全课节奏"}
+    enforcement: [{type: review_gate, gate: 全课底层协议指纹测试}]
+  - id: M-15
+    title: 综合与收束防重复
+    statement: "综合阶段不为消费产物再生产同类产物；收束不挤压完整朗读回味与自然表达。"
+    domain: 通用
+    stages: [S3, S5]
+    nodes: [J5]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 十五、综合与收束阶段的防重复规则"}
+    enforcement: [{type: review_gate, gate: 综合与收束防重复测试}]
+  - id: M-16
+    title: 首答态校准态双状态手法
+    statement: "手法按首答态与校准态分别设计；同一材料两种状态不同职责。"
+    domain: 通用
+    stages: [S3]
+    nodes: [U1, U3]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 十六、首答态—校准态双状态手法"}
+    enforcement: [{type: design_trace, fields: [info_state]}]
+  - id: M-17
+    title: 低负荷真讨论
+    statement: "全员轮说与一组一卡：不靠卡片数量冒充参与深度。"
+    domain: 通用
+    stages: [S3]
+    nodes: [U7, U5]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 十七、低负荷真讨论：全员轮说与一组一卡"}
+    enforcement: [{type: design_trace, fields: [participation_path]}]
+  - id: M-18
+    title: 知识收纳一页一个检索对象
+    statement: "知识收纳页一次只检索一个对象，不强行合并多个知识对象。"
+    domain: 语文
+    stages: [S3]
+    nodes: [K2, U5]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 十八、知识收纳拆分：一页一个检索对象"}
+    enforcement: [{type: design_trace, fields: [literary_object]}]
+  - id: M-19
+    title: 可复用语文体验手法
+    statement: "朗读、听读、想象等体验手法可复用，但须绑定具体文本经验。"
+    domain: 语文
+    stages: [S3]
+    nodes: [J4]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 十九、可复用的语文体验手法"}
+    enforcement: [{type: design_trace, fields: [student_action]}]
+  - id: M-20
+    title: 手法强度梯度
+    statement: "手法按认知与情感强度分级；高强度手法后配低负荷环节，任务落在够得着有增量处。"
+    domain: 通用
+    stages: [S3]
+    nodes: [U4, J2]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 二十、手法的强度梯度"}
+    enforcement: [{type: review_gate, gate: 体验节奏审计}]
+  - id: M-21
+    title: 撤架复述与核心问题个人末答
+    statement: "公共校准后撤去答案，个人以最低可执行形式完成末答。"
+    domain: 通用
+    stages: [S3, S7]
+    nodes: [U3]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 二十一、撤架复述与核心问题个人末答"}
+    enforcement: [{type: design_trace, fields: [feedback_revision]}]
+  - id: M-22
+    title: 随机散卡防版式分类
+    statement: "首答态材料等大同色随机散放，不以行群两栏视觉重心暗示标准答案。"
+    domain: 通用
+    stages: [S3, S4]
+    nodes: [U1]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 二十二、随机散卡：防止版式替学生分类"}
+    enforcement: [{type: review_gate, gate: 视觉功能审查}]
+  - id: M-23
+    title: 局部句义与人物判断适用范围
+    statement: "局部句义教学限定适用范围，不越界替代人物判断。"
+    domain: 语文
+    stages: [S3]
+    nodes: [U2]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 二十五、局部句义与人物判断的适用范围"}
+    enforcement: [{type: design_trace, fields: [unique_difficulty]}]
+  - id: M-24
+    title: 旧作取回真实消费者
+    statement: "学生作品拥有真实消费者；后页打开引用比较质询修订它。"
+    domain: 通用
+    stages: [S3, S5]
+    nodes: [U8, J3]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 二十三、旧作取回：让学生作品拥有真实消费者"}
+    enforcement: [{type: machine_check, checker: scripts/validate_meng_v6_page_audit.py, rule: G5前向边}]
+  - id: M-25
+    title: 讨论后三层收束
+    statement: "讨论后分学生原话、文本事实与现代延伸三层收束，不相混。"
+    domain: 语文
+    stages: [S3]
+    nodes: [U3, U6]
+    anchor: {doc: work/备课/语文课堂教学手法库.md, heading: "## 二十四、讨论后的三层收束：学生原话、文本事实与现代延伸"}
+    enforcement: [{type: design_trace, fields: [teacher_role]}]
+
+  # ---------- 视觉与插图功能规范 ----------
+  - id: V-01
+    title: 视觉的首要责任
+    statement: "视觉先服从页面唯一意义再追求美感；原诗、学生作品、卡墙、关系图、留白都可作为主视觉。"
+    domain: 语文
+    stages: [S3, S4]
+    nodes: [J4, U1]
+    anchor: {doc: work/备课/视觉与插图功能规范.md, heading: "## 一、视觉的首要责任"}
+    enforcement: [{type: design_trace, fields: [visual_duty]}]
+  - id: V-02
+    title: 插图准入五问
+    statement: "插图进入前回答五个准入问题（绑定原句、唯一功能、观察动作、返回原词、禁止推断）。"
+    domain: 语文
+    stages: [S4, S5]
+    nodes: [U1]
+    anchor: {doc: work/备课/视觉与插图功能规范.md, heading: "## 二、插图准入五问"}
+    enforcement: [{type: design_trace, fields: [illustration_eligibility]}]
+  - id: V-03
+    title: 人物与画风圣经冻结
+    statement: "人物图先冻结统一脸型、身高比例、发式、服装、年龄阶段、色调、光源、场景和道具；漂移即退回。"
+    domain: 语文
+    stages: [S4, S5]
+    nodes: [U6]
+    anchor: {doc: work/备课/视觉与插图功能规范.md, heading: "## 三、《氓》人物与画风圣经的冻结顺序"}
+    enforcement: [{type: machine_check, checker: scripts/validate_meng_v6_page_audit.py, rule: 人物圣经manifest}]
+  - id: V-04
+    title: 场景图功能分类与分轨
+    statement: "功能图与氛围图分轨；功能图承担辨认任务，氛围图不抢原诗焦点。"
+    domain: 语文
+    stages: [S4]
+    nodes: [J4]
+    anchor: {doc: work/备课/视觉与插图功能规范.md, heading: "### 功能图与氛围图分轨"}
+    enforcement: [{type: design_trace, fields: [primary_visual_duty]}]
+  - id: V-05
+    title: 版式泄答检查
+    statement: "颜色、分栏、远近、大小、顺序、箭头、层级不得替学生分类排序判断。"
+    domain: 通用
+    stages: [S4, S5]
+    nodes: [U1]
+    anchor: {doc: work/备课/视觉与插图功能规范.md, heading: "### 版式泄答检查"}
+    enforcement: [{type: review_gate, gate: 视觉功能审查}]
+  - id: V-06
+    title: PPT入页规则
+    statement: "每页进入PPT的元素按入页规则审查；字号可读性与第一层级指向主动作。"
+    domain: 通用
+    stages: [S4]
+    nodes: [J4, U5]
+    anchor: {doc: work/备课/视觉与插图功能规范.md, heading: "## 五、PPT入页规则"}
+    enforcement: [{type: machine_check, checker: tests/test_build_meng_v66_pptx.js, rule: 字号下限}]
+  - id: V-07
+    title: 独立视觉验收
+    statement: "视觉完成由独立审查者验收，不由作者自验。"
+    domain: 通用
+    stages: [S5]
+    nodes: [J4]
+    anchor: {doc: work/备课/视觉与插图功能规范.md, heading: "## 六、独立视觉验收"}
+    enforcement: [{type: review_gate, gate: 视觉功能审查}]
+  - id: V-08
+    title: 逐页资格与A/B预注册
+    statement: "插图逐页取得资格并预注册A/B比较方案；无图版为默认态。"
+    domain: 语文
+    stages: [S4, S5]
+    nodes: [J7, U1]
+    anchor: {doc: work/备课/视觉与插图功能规范.md, heading: "## 七、逐页资格与A/B预注册"}
+    enforcement: [{type: machine_check, checker: scripts/validate_meng_v6_page_audit.py, rule: AB预注册}]
+
+  # ---------- 新原则（由三目标机制补全，Phase C/E 落地） ----------
+  - id: N-01
+    title: 教级知识清单以知识卡为准
+    statement: "每课教学设计引用知识卡与单元图谱界定教级KP；每个教级KP有课堂落点或显式defer（含理由）；课程数据的knowledge_refs必须解析到真实卡片。"
+    domain: 语文
+    stages: [S2, S3, S7, S8]
+    nodes: [K1]
+    anchor: {doc: work/evaluation/三目标实现机制.md, heading: "### K1 教什么先于怎么教（知识界定）"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_lesson_schema.py, rule: knowledge_refs解析与KP覆盖, status: planned}
+    status: planned
+  - id: N-02
+    title: 检索与间隔排程
+    statement: "核心KP在课堂首答、作业闭卷、单元测评、跨课回投中被至少两次以提取方式激活；单元规划含复现排程表；作业含闭卷检索题。"
+    domain: 通用
+    stages: [S1, S7, S8]
+    nodes: [K3]
+    anchor: {doc: work/evaluation/三目标实现机制.md, heading: "### K3 检索与间隔（知识巩固排程）"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_homework_package.py, rule: 闭卷检索题存在, status: planned}
+    status: planned
+  - id: N-03
+    title: 知识网络化贯通
+    statement: "课程数据的关系边引用真实卡片ID；单元规划上下游贯通；延伸作业含跨课文比较。"
+    domain: 语文
+    stages: [S1, S2, S7]
+    nodes: [K4]
+    anchor: {doc: work/evaluation/三目标实现机制.md, heading: "### K4 知识网络化（纵向贯通）"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_lesson_schema.py, rule: 关系边解析, status: planned}
+    status: planned
