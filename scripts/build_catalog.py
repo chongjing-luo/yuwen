@@ -163,6 +163,7 @@ def render_index(rows):
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true", help="只校验不写盘")
+    parser.add_argument("--consume", metavar="ID[,ID...]", help="登记消费：更新给定实体的 last_consumed（MM-S0-08）")
     args = parser.parse_args()
 
     rows, errors = build()
@@ -170,14 +171,58 @@ def main() -> int:
         print(f"[error] {e}")
 
     if args.check:
-        missing = [r["id"] for r in rows if not (ROOT / r["path"]).exists()]
-        never_used = sum(1 for r in rows if r["last_consumed"] is None)
-        print(f"catalog 校验：{len(rows)} 实体 / 路径悬空 {len(missing)} / 未消费 {never_used}（首建全部未消费属正常）")
+        if not CATALOG.exists():
+            print("[error] catalog 不存在——先运行 build_catalog.py 重建")
+            return 1
+        persisted = [json.loads(l) for l in CATALOG.read_text(encoding="utf-8").splitlines() if l.strip()]
+        missing = [r["id"] for r in persisted if not (ROOT / r["path"]).exists()]
+        never_used = sum(1 for r in persisted if r["last_consumed"] is None)
+        print(f"catalog 校验：{len(persisted)} 实体 / 路径悬空 {len(missing)} / 未消费 {never_used}")
         for mid in missing:
             print(f"[error] 路径不可解析: {mid}")
         return 1 if (errors or missing) else 0
 
+    if args.consume:
+        wanted = [x.strip() for x in args.consume.split(",") if x.strip()]
+        known = {r["id"] for r in rows}
+        unknown = [w for w in wanted if w not in known]
+        if unknown:
+            print(f"[error] 未知实体: {unknown}")
+            return 1
+        import json as _json
+        existing = {}
+        if CATALOG.exists():
+            for line in CATALOG.read_text(encoding="utf-8").splitlines():
+                if line.strip():
+                    r = _json.loads(line)
+                    existing[r["id"]] = r
+        today = str(date.today())
+        marked = 0
+        for r in rows:
+            if r["id"] in wanted:
+                prev = existing.get(r["id"], {})
+                r["last_consumed"] = today
+                r["updated"] = prev.get("updated", r["updated"])
+                r["status"] = prev.get("status", r["status"])
+                r["authority"] = prev.get("authority", r["authority"])
+                marked += 1
+        CATALOG.parent.mkdir(parents=True, exist_ok=True)
+        with open(CATALOG, "w", encoding="utf-8") as fh:
+            for r in rows:
+                fh.write(_json.dumps(r, ensure_ascii=False) + "\n")
+        INDEX.write_text(render_index(rows), encoding="utf-8")
+        print(f"消费登记：{marked} 实体 last_consumed={today}")
+        return 0
+
     CATALOG.parent.mkdir(parents=True, exist_ok=True)
+    if CATALOG.exists():  # 重建不丢消费记录（MM-S0-08）
+        for line in CATALOG.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                old_row = json.loads(line)
+                if old_row.get("last_consumed"):
+                    for r in rows:
+                        if r["id"] == old_row["id"]:
+                            r["last_consumed"] = old_row["last_consumed"]
     with open(CATALOG, "w", encoding="utf-8") as fh:
         for r in rows:
             fh.write(json.dumps(r, ensure_ascii=False) + "\n")

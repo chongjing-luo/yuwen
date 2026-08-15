@@ -50,13 +50,25 @@ def main() -> int:
     code, output = run(["python3", "scripts/checks/run_principle_checks.py", "--lesson-js", args.lesson_js, "--name", args.name])
     sections.append((f"课程数据底线检查（{args.name}）", code == 0, output))
 
-    # 3. 全量测试
+    # 3. 全量测试（pytest + node）
     if args.skip_tests:
-        sections.append(("全量测试", True, "（--skip-tests 跳过）"))
+        sections.append(("全量测试（pytest）", True, "（--skip-tests 跳过）"))
+        sections.append(("node 测试", True, "（--skip-tests 跳过）"))
     else:
-        code, output = run(["python3", "-m", "pytest", "tests/", "-q", "--no-header"])
+        code, output = run(["python3", "-m", "pytest", "-q"])
         tail = "\n".join(output.splitlines()[-3:])
         sections.append(("全量测试（pytest）", code == 0, tail))
+        node_results, node_ok = [], True
+        for js in sorted((ROOT / "tests").glob("test_*.js")):
+            js_code, js_out = run(["node", str(js)])
+            node_ok = node_ok and js_code == 0
+            last_line = js_out.splitlines()[-1] if js_out.splitlines() else ""
+            node_results.append(f"[{'PASS' if js_code == 0 else 'FAIL'}] {js.name}: {last_line}")
+        sections.append(("node 测试", node_ok, "\n".join(node_results)))
+
+    # 3b. 知识账本（AGENTS：领取任务前必须 passed）
+    kb_code, kb_out = run(["python3", "scripts/validate_knowledge_base.py"])
+    sections.append(("知识账本校验", kb_code == 0, kb_out.splitlines()[-1] if kb_out.splitlines() else ""))
 
     # 4. 节点覆盖
     registry = load_registry()
