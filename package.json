@@ -1,0 +1,10 @@
+{
+  "name": "yuwen",
+  "version": "0.1.0",
+  "private": true,
+  "description": "高中语文全流程教学辅助系统（依赖声明见 package.json；python 依赖见 requirements.txt）",
+  "dependencies": {
+    "pptxgenjs": "^4.0.1",
+    "docx": "^9.7.1"
+  }
+}

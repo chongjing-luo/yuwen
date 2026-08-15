@@ -34,3 +34,6 @@ work/knowledge/_staging/
 # ---- Tmp 临时区（设计方案 §3.7：永不入 git，README 除外）----
 /Tmp/*
 !/Tmp/README.md
+
+# ---- Node ----
+node_modules/
