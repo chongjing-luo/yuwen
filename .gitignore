@@ -37,3 +37,7 @@ work/knowledge/_staging/
 
 # ---- Node ----
 node_modules/
+
+# ---- L0 高考语料（9.9GB，待统一治理专项；README 除外）----
+Data/高考语料/*
+!Data/高考语料/README.md

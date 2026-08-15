@@ -21,6 +21,8 @@ B1=必修上册 · B2=必修下册 · X1=选择性必修上册 · X2=选择性�
 | `MAT-*` | `work/knowledge/materials/{ID}*.md` | L1 |
 | `SRC-*` / `SRC-PKG-*` | `work/knowledge/_meta/{sources,split_manifest}.jsonl`；解析包实体在 `Data/textbook_extract/` | L0 |
 | `GK-*` | `Data/2008-2024·（四川）语文高考真题/exam_extract/{exam-id}/` | L0/L1 |
+| `PAPER-{卷代码}-{年份}` / `-Q{n}` | `work/knowledge/高考真题整理/PAPER-{代码}-{年份}_*/`（卷代码表见 docs/architecture/试卷库组织约定.md；`GK-NC3-2016` 族为其历史别名） | L1 |
+| `EXMAP-*` | `work/knowledge/高考真题整理/` 内映射表按 `map_id` 查行 | L1 |
 | `OBS-*` / `GRD-*` | `work/teaching/_classes/{班级}/observations.jsonl` / `grading.jsonl` 按行 `id` 字段 | L4 |
 | `MR-*` | `work/teaching/_classes/{班级}/mastery_ledger.jsonl` | L4 |
 | `REF-*` / `PR-*` | `work/teaching/_classes/{班级}/reflections/` | L4 |
