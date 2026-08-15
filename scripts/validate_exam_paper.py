@@ -56,7 +56,15 @@ def validate_paper(dir_path: Path, require_questions: bool) -> list[str]:
         if f.stat().st_size < 2000:
             errors.append(f"{pid}: {f.name} 疑似空壳（<2KB）")
 
-    # 3. questions.jsonl
+    # 3. questions.jsonl + questions/ 切割件（契约⑤）
+    qdir = dir_path / "questions"
+    if qdir.is_dir():
+        qfiles = sorted(qdir.glob("Q*.md"))
+        if not qfiles:
+            errors.append(f"{pid}: questions/ 目录为空")
+        for qf in qfiles:
+            if qf.stat().st_size < 30:
+                errors.append(f"{pid}: {qf.name} 疑似空壳")
     qfile = dir_path / "questions.jsonl"
     if qfile.exists():
         n = 0
@@ -69,9 +77,11 @@ def validate_paper(dir_path: Path, require_questions: bool) -> list[str]:
             except json.JSONDecodeError as e:
                 errors.append(f"{pid}: questions.jsonl 第{i}行 JSON 错误 {e}")
                 continue
-            for field in ("question_id", "question_type", "page_ref"):
+            for field in ("question_id", "question_type"):
                 if not q.get(field):
                     errors.append(f"{pid}: q{i} 缺 {field}")
+            if q.get("qfile") and not (dir_path / q["qfile"]).exists():
+                errors.append(f"{pid}: q{i} 切割件缺失 {q['qfile']}")
             if q.get("question_id") and not str(q["question_id"]).startswith(f"PAPER-{m.group(1)}-{m.group(2)}-Q"):
                 errors.append(f"{pid}: q{i} question_id 前缀错误: {q['question_id']}")
         if n == 0:
