@@ -1052,3 +1052,15 @@ principles:
       - {type: machine_check, checker: scripts/validate_lesson_schema.py, rule: relations关系边解析到真实卡片}
       - {type: machine_check, checker: scripts/validate_homework_package.py, rule: cross_book_refs跨册边解析}
     status: active
+
+  - id: N-04
+    title: 断言式标题仅限后置完成态
+    statement: "断言-证据式标题（完整判断句）只用于后置完成态、讲解页与校准态；首答态页面标题只命名此刻面对的文学对象或留开放问题，不得在标题完成本页学习任务。"
+    domain: 语文
+    stages: [S3, S4, S5]
+    nodes: [U1, J4]
+    anchor: {doc: work/备课/PPT制作操作手册.md, heading: "## 四、版式与布局"}
+    enforcement:
+      - {type: review_gate, gate: 标题与首眼泄答测试}
+      - {type: design_trace, fields: [info_state, first_glance]}
+    status: active
