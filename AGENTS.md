@@ -36,12 +36,12 @@
 | `Data/reference/` | 规范参考原件（课标 PDF、17 年四川高考真题与登记账本） |
 | `Data/textbook_extract/` | 144 个教材 MinerU 解析源包 |
 | `scripts/` | 构建器（build_*）、校验器（validate_*）、检查器（checks/）、知识库抽取脚本 |
-| `.agents/skills/` | 12 个阶段 skill（每环节一个 + 全局自检） |
+| `.agents/skills/` | 17 个 skill（12 环节 + 资料轴 4：intake/organize/curate/catalog + 工程轴 flow） |
 | `.learnings/` | 经验与错误沉淀（可 promote 为原则） |
 
 ## 工作流入口（按环节）
 
-备课从 S2 开始走：`.agents/skills/yuwen-research-text` → `yuwen-design-lesson` → `yuwen-build-materials` → `yuwen-audit-lesson`；课后走 `yuwen-trial-observation` → `yuwen-design-homework` / `yuwen-grade-feedback` → `yuwen-author-assessment` / `yuwen-diagnose-learning` → `yuwen-reflect-lesson`。全局健康检查：`yuwen-selfcheck`。
+备课从 S2 开始走：`.agents/skills/yuwen-research-text` → `yuwen-design-lesson` → `yuwen-build-materials` → `yuwen-audit-lesson`；课后走 `yuwen-trial-observation` → `yuwen-design-homework` / `yuwen-grade-feedback` → `yuwen-author-assessment` / `yuwen-diagnose-learning` → `yuwen-reflect-lesson`。外部资料入库走资料轴：`yuwen-intake` → `yuwen-organize` → `yuwen-curate`（→ `yuwen-catalog` 登记消费）。按环节跑门禁链：`yuwen-flow`；全局健康检查：`yuwen-selfcheck`。
 
 ## 环境安装（一次性）
 
