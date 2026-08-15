@@ -83,7 +83,7 @@ principles:
     nodes: [U1]
     anchor: {doc: work/备课基本原则.md, heading: "### 5. 问题先于答案"}
     enforcement:
-      - {type: machine_check, checker: scripts/validate_meng_v5_lesson_package.py, rule: 独立问题态先于回收态}
+      - {type: machine_check, checker: scripts/checks/run_principle_checks.py, rule: 独立问题态先于回收态, status: planned}
       - {type: design_trace, fields: [info_state]}
   - id: P-06
     title: 活动必须服务理解并留下证据
@@ -103,8 +103,8 @@ principles:
     nodes: [U1]
     anchor: {doc: work/备课基本原则.md, heading: "### 7. 学生前台与教师后台严格分离"}
     enforcement:
-      - {type: machine_check, checker: scripts/validate_meng_v5_lesson_package.py, rule: 前台禁词扫描}
-      - {type: machine_check, checker: scripts/validate_meng_v6_lesson_package.py, rule: 前台物料泄漏扫描}
+      - {type: machine_check, checker: scripts/checks/run_principle_checks.py, rule: 前台禁词扫描}
+      - {type: machine_check, checker: scripts/checks/run_principle_checks.py, rule: 前台物料泄漏扫描}
   - id: P-08
     title: 每一页都有可演出的真实剧本
     statement: "逐字稿至少包含承接、教师原话、学生动作与明确秒数、回应分支、可观察证据和切页句；动作总时长不超过页面标称时间。"
@@ -113,8 +113,8 @@ principles:
     nodes: [U1, U3]
     anchor: {doc: work/备课基本原则.md, heading: "### 8. 每一页都有可演出的真实剧本"}
     enforcement:
-      - {type: machine_check, checker: scripts/validate_meng_v6_lesson_package.py, rule: 逐字稿结构标记与时间盒守恒}
-      - {type: machine_check, checker: scripts/validate_meng_v5_lesson_package.py, rule: 逐字稿可演出标记}
+      - {type: machine_check, checker: scripts/validate_lesson_schema.py, rule: 逐字稿结构标记与时间盒守恒}
+      - {type: machine_check, checker: scripts/validate_lesson_schema.py, rule: 逐字稿可演出标记}
   - id: P-09
     title: 解释分层并守住伦理边界
     statement: "区分文本事实、合理推断、文本不能证明和现代解释工具；现实迁移不冒充作者原意；人物困境不得被写成人物责任。"
@@ -124,7 +124,7 @@ principles:
     anchor: {doc: work/备课基本原则.md, heading: "### 9. 解释分层并守住伦理边界"}
     enforcement:
       - {type: machine_check, checker: scripts/validate_meng_v6_page_audit.py, rule: epistemic_status枚举}
-      - {type: machine_check, checker: scripts/validate_meng_v5_lesson_package.py, rule: 备注受害归因句式扫描}
+      - {type: machine_check, checker: scripts/checks/run_principle_checks.py, rule: 备注受害归因句式扫描, status: planned}
   - id: P-10
     title: 完整母版先于课时压缩
     statement: "先设计学生真正需要经历的完整母版；压缩版只在原文意义单元和安全停点分割，并依真实试教证据删减。"
@@ -144,7 +144,7 @@ principles:
     justification: "同源与单版本是跨渠道审计可执行的前提，服务全部节点的机器检查基础"
     anchor: {doc: work/备课基本原则.md, heading: "### 11. 多种材料同源，当前版本唯一"}
     enforcement:
-      - {type: machine_check, checker: scripts/validate_meng_v6_lesson_package.py, rule: manifest哈希一致}
+      - {type: machine_check, checker: tests/test_build_meng_v66_pptx.js, rule: manifest哈希一致}
       - {type: meta, rule: 正式目录单一当前版本}
   - id: P-12
     title: 桌面验证不冒充真实课堂效果
@@ -164,7 +164,7 @@ principles:
     nodes: [J4]
     anchor: {doc: work/备课基本原则.md, heading: "### 13. 学生前台文字应有语文的质地"}
     enforcement:
-      - {type: machine_check, checker: scripts/validate_meng_v5_lesson_package.py, rule: 前台禁词扫描}
+      - {type: machine_check, checker: scripts/checks/run_principle_checks.py, rule: 前台禁词扫描}
       - {type: review_gate, gate: 前台朗读测试}
   - id: P-14
     title: 参与必须进入意义生成
@@ -244,7 +244,7 @@ principles:
     nodes: [J7]
     anchor: {doc: work/备课基本原则.md, heading: "### 21. 独立评估实行缺陷否决，不以平均分妥协"}
     enforcement:
-      - {type: machine_check, checker: scripts/validate_meng_v6_lesson_package.py, rule: 双审回执P0P1P2清零}
+      - {type: machine_check, checker: scripts/validate_meng_v6_page_audit.py, rule: 双审回执P0P1P2清零}
       - {type: review_gate, gate: 独立双审}
   - id: P-22
     title: 活动程序必须有注意力预算
@@ -254,7 +254,7 @@ principles:
     nodes: [U5, J7]
     anchor: {doc: work/备课基本原则.md, heading: "### 22. 活动程序必须有注意力预算"}
     enforcement:
-      - {type: machine_check, checker: scripts/verify_meng_v62_chapter1.js, rule: 退役程序词扫描}
+      - {type: machine_check, checker: scripts/checks/run_principle_checks.py, rule: 退役程序词扫描}
       - {type: review_gate, gate: 程序成本语文收益测试}
   - id: P-23
     title: 教师应在学生广泛表达后承担归纳责任
@@ -381,7 +381,7 @@ principles:
     nodes: [U5]
     anchor: {doc: work/备课基本原则.md, heading: "### 35. 时间可执行性按“单页—页面簇—整课”三级审计"}
     enforcement:
-      - {type: machine_check, checker: scripts/validate_meng_v6_lesson_package.py, rule: 时间盒守恒}
+      - {type: machine_check, checker: scripts/validate_lesson_schema.py, rule: 时间盒守恒}
       - {type: review_gate, gate: 累计负荷与任务切换测试}
   - id: P-36
     title: 讨论活动先保障人人表达再限制公共作品数量
@@ -431,7 +431,7 @@ principles:
     nodes: [U1, U3]
     anchor: {doc: work/备课基本原则.md, heading: "### 40. 物理画面是剧本和审查的最小单位"}
     enforcement:
-      - {type: machine_check, checker: scripts/validate_meng_v6_lesson_package.py, rule: 物理事件时间盒与分支}
+      - {type: machine_check, checker: scripts/validate_lesson_schema.py, rule: 物理事件时间盒与分支}
   - id: P-41
     title: 公共答案不能替代个人末答
     statement: "核心问题在公共校准后撤去答案，让每个人以最低可执行形式完成个人末答、闭卷复述或带原诗修订；前页声明的产物后页必须真实取回同一载体。"
@@ -614,7 +614,7 @@ principles:
     nodes: [U1]
     anchor: {doc: work/备课/逐页功能审计与放行协议.md, heading: "### 7. 前台—后台分离测试"}
     enforcement:
-      - {type: machine_check, checker: scripts/validate_meng_v5_lesson_package.py, rule: 前台禁词扫描}
+      - {type: machine_check, checker: scripts/checks/run_principle_checks.py, rule: 前台禁词扫描}
       - {type: review_gate, gate: 视觉功能审查}
   - id: A-T08
     title: 程序成本语文收益测试

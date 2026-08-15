@@ -3,7 +3,8 @@
 
 从 work/principles/registry.yaml 读取声明，对一份课程数据执行当前可在
 数据层完成的 machine_check（前台禁词、时间盒守恒、三问在场、总时长恒等、
-反样板），并核对 enforcement_config.json 与既有校验器词表无漂移。
+反样板），并校验 enforcement_config.json 作为禁词唯一真源的形状完整性
+（旧链校验器归档后，词表不再有第二份拷贝可漂移）。
 
 本执行器不替代 validate_meng_v6_page_audit.py 等重型校验器；它提供的是
 「任何课程数据都可跑」的通用底线检查 + 两本账报告框架（桌面账/课堂账）。
@@ -16,7 +17,6 @@
 from __future__ import annotations
 
 import argparse
-import ast
 import json
 import re
 import subprocess
@@ -31,13 +31,10 @@ REGISTRY_PATH = ROOT / "work/principles/registry.yaml"
 CONFIG_PATH = ROOT / "work/principles/enforcement_config.json"
 DEFAULT_REPORT_DIR = ROOT / "work/evaluation/reports"
 
-# enforcement_config.json 键 → (校验器路径, 校验器内常量名)
-CONFIG_DRIFT_TARGETS = {
-    "frontstage_banned_v5": ("scripts/validate_meng_v5_lesson_package.py", "FRONTSTAGE_BANNED"),
-    "first_view_banned_v5": ("scripts/validate_meng_v5_lesson_package.py", "FIRST_VIEW_BANNED"),
-    "note_banned_v5": ("scripts/validate_meng_v5_lesson_package.py", "NOTE_BANNED"),
-    "frontstage_banned_v6": ("scripts/validate_meng_v6_lesson_package.py", "BANNED_FRONTSTAGE"),
-}
+# enforcement_config.json 的禁词键。旧链校验器（validate_meng_v5/v6_lesson_package）
+# 归档后，本配置是禁词唯一真源，由 validate_lesson_schema.py 与本执行器共同消费；
+# 此处只做形状完整性检查，防止键缺失、空词表或词条重复。
+CONFIG_TOKEN_KEYS = ("frontstage_banned_v5", "first_view_banned_v5", "note_banned_v5", "frontstage_banned_v6")
 
 # 课堂账信号清单（S6 试教观察表采集；未试教前为空——两本账纪律）
 CLASSROOM_SIGNALS = [
@@ -63,19 +60,17 @@ def load_lesson(lesson_js: str) -> dict:
 
 
 def check_config_drift(config: dict) -> list[str]:
-    errors = []
-    for key, (validator, const_name) in CONFIG_DRIFT_TARGETS.items():
-        tree = ast.parse((ROOT / validator).read_text(encoding="utf-8"))
-        actual = None
-        for node in tree.body:
-            if isinstance(node, ast.Assign):
-                for target in node.targets:
-                    if isinstance(target, ast.Name) and target.id == const_name:
-                        actual = list(ast.literal_eval(node.value))
-        if actual is None:
-            errors.append(f"漂移核对失败：{validator} 中未找到常量 {const_name}")
-        elif actual != config.get(key):
-            errors.append(f"词表漂移：enforcement_config.json[{key}] 与 {validator}::{const_name} 不一致")
+    errors: list[str] = []
+    for key in CONFIG_TOKEN_KEYS:
+        words = config.get(key)
+        if not isinstance(words, list) or not words:
+            errors.append(f"词表缺失或为空：enforcement_config.json[{key}]")
+            continue
+        if not all(isinstance(w, str) and w.strip() for w in words):
+            errors.append(f"词表含非字符串或空白词条：enforcement_config.json[{key}]")
+        duplicates = sorted({w for w in words if words.count(w) > 1})
+        if duplicates:
+            errors.append(f"词表重复词条 {duplicates}：enforcement_config.json[{key}]")
     return errors
 
 

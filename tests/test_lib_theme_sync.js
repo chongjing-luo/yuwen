@@ -28,4 +28,17 @@ for (const colorKey of Object.values(theme.MODULE)) {
   assert.ok(colorKey in theme.C, `MODULE 引用了不存在的色键: ${colorKey}`);
 }
 
+// theme.json 正式化（E3）：theme.js 必须是 theme.json 的纯投影，JSON 是唯一真值
+const THEME_JSON = path.join(__dirname, "..", "scripts", "lib", "theme.json");
+const themeData = JSON.parse(fs.readFileSync(THEME_JSON, "utf-8"));
+assert.deepStrictEqual(theme.SERIF, themeData.serif, "SERIF 必须来自 theme.json");
+assert.deepStrictEqual(theme.SANS, themeData.sans, "SANS 必须来自 theme.json");
+assert.deepStrictEqual(theme.C, themeData.colors, "色板必须来自 theme.json");
+assert.deepStrictEqual(theme.MODULE, themeData.module_colors, "章节色映射必须来自 theme.json");
+assert.deepStrictEqual(theme.MODULE_LABELS, themeData.module_labels, "模块名必须来自 theme.json");
+assert.deepStrictEqual(theme.FONT_FLOORS, themeData.font_floors, "字号下限必须来自 theme.json");
+assert.strictEqual(theme.ART_RANDOM_FONT_SIZE, themeData.font_floors.phrase_card, "派生常量必须锚定 font_floors");
+const loaderSrc = fs.readFileSync(path.join(__dirname, "..", "scripts", "lib", "theme.js"), "utf-8");
+assert.ok(!/["'][0-9A-Fa-f]{6}["']/.test(loaderSrc), "装载器不得持有十六进制色值字面量");
+
 console.log(`LIB_THEME_SINGLE_SOURCE_OK colors=${Object.keys(theme.C).length} module=${Object.keys(theme.MODULE).length}`);

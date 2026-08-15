@@ -23,11 +23,16 @@ class ConfigDriftTest(unittest.TestCase):
     def test_current_config_has_no_drift(self):
         self.assertEqual(check_config_drift(CONFIG), [])
 
-    def test_drift_detected(self):
-        drifted = dict(CONFIG)
-        drifted["frontstage_banned_v6"] = drifted["frontstage_banned_v6"] + ["额外词"]
-        errors = check_config_drift(drifted)
-        self.assertTrue(any("词表漂移" in e for e in errors))
+    def test_missing_key_detected(self):
+        dropped = {k: v for k, v in CONFIG.items() if k != "frontstage_banned_v6"}
+        errors = check_config_drift(dropped)
+        self.assertTrue(any("词表缺失或为空" in e and "frontstage_banned_v6" in e for e in errors))
+
+    def test_duplicate_word_detected(self):
+        duplicated = dict(CONFIG)
+        duplicated["note_banned_v5"] = duplicated["note_banned_v5"] + [duplicated["note_banned_v5"][0]]
+        errors = check_config_drift(duplicated)
+        self.assertTrue(any("词表重复词条" in e for e in errors))
 
 
 class RunChecksTest(unittest.TestCase):

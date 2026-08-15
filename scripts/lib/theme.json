@@ -1,0 +1,55 @@
+{
+  "serif": "Noto Serif CJK SC",
+  "sans": "Noto Sans CJK SC",
+  "colors": {
+    "ink": "29241F",
+    "ink2": "51483F",
+    "muted": "7B7167",
+    "paper": "F5EFE4",
+    "paper2": "FFFCF7",
+    "white": "FFFDFC",
+    "warm": "DED0BC",
+    "warm2": "C5B39B",
+    "gold": "A67F4A",
+    "gold2": "EFE3CF",
+    "yellow": "B58B3E",
+    "yellow2": "F0E4C8",
+    "river": "446E78",
+    "river2": "DCE9E8",
+    "leaf": "657653",
+    "leaf2": "E1E7D9",
+    "plum": "725260",
+    "plum2": "E9DDE2",
+    "red": "94473B",
+    "red2": "EFDDD5",
+    "night": "28231F",
+    "night2": "383129"
+  },
+  "module_colors": {
+    "opening": "gold",
+    "chapter_1": "gold",
+    "chapter_2": "river",
+    "chapter_3": "leaf",
+    "chapter_4": "yellow",
+    "chapter_5": "plum",
+    "chapter_6": "red",
+    "synthesis": "ink2"
+  },
+  "module_labels": {
+    "opening": "初见",
+    "chapter_1": "第一章",
+    "chapter_2": "第二章",
+    "chapter_3": "第三章",
+    "chapter_4": "第四章",
+    "chapter_5": "第五章",
+    "chapter_6": "第六章",
+    "synthesis": "全文"
+  },
+  "font_floors": {
+    "original_verse": 28,
+    "phrase_card": 26,
+    "artifact_slot": 22,
+    "title": 36,
+    "label": 15
+  }
+}
