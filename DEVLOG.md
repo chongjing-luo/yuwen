@@ -18,4 +18,4 @@ rule: "更新本文件时：旧版本整体移入 docs/devlog/archive/DEVLOG_<�
 4. **真实试教** — 课堂账唯一来源（L4 目前为零）；教师执行，系统采集。
 5. **题-KP M0→M1/M2** — blocked 于官方答案源缺失；有新源时经 yuwen-intake 入册。
 6. **〔进行中〕多省试卷库** — 版本2 采集包已入库（978 件/9.9GB，台账+裁决+映射表 EXMAP-V2 979 行落盘，组织约定 spec v1.0）；〔本批完成〕③④已收口：优先批 13 份全过四件契约门禁（MinerU 13/13、questions.jsonl 结构候选 26-44 题/卷、paper.json 含答案纪律、identity_check 检出并换正 XG2-2021 错版主件、OCR 伪影 2 卷已标注）；validate_exam_paper.py + extract_exam_questions.py 落地；catalog 161 实体（+13 PAPER +2 映射表）。待：转型年 40 件核验、题目语义细化（curate）、XG2-2020 漏检补全。
-7. **L0 统一治理** — origin.pdf 双份 524MB 去重，需账本手术，专项另议。
+7. **L0 统一治理** — 专项方案已立（docs/architecture/L0统一治理专项方案.md v0.9）：实测双份=MinerU 包内 origin.pdf 重序列化副本（同内容不同字节，294M 工作树）+ _staging 历史违规 108 对象；三选项 A/B/C 待所有者裁决，执行轮另挂。
