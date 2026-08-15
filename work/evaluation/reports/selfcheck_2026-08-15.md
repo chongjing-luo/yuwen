@@ -28,7 +28,7 @@
 
 ### ✅ 知识账本校验
 
-    {"result": "passed", "run_id": "VAL-20260815-171815+0800", "errors": 0, "report": "/home/ubuntu/homes/LuoChongjing/Methods/yuwen/work/knowledge/_meta/validation_reports/latest.json"}
+    {"result": "passed", "run_id": "VAL-20260815-180524+0800", "errors": 0, "report": "/home/ubuntu/homes/LuoChongjing/Methods/yuwen/work/knowledge/_meta/validation_reports/latest.json"}
 
 ### ✅ 机制节点覆盖
 
