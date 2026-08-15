@@ -19,4 +19,4 @@ rule: "更新本文件时：旧版本整体移入 docs/devlog/archive/DEVLOG_<�
 5. **〔完成〕证据轴** — 五类 schema + validate_evidence.py（10 测试）+ admit_pr.py 回流边②准入器（8 测试：触发证据存在性/节点/强制方式/下一版本）；回流边①③已由 analyze_mastery 回教段与 L1 状态机承载。
 6. **〔挂起〕《氓》内容工作** — 样板清零暂停于 462→188（O/C1-C4 已清，剩 C5/C6/S 共 19 页）；lesson.json 迁移已完成；K2 锚定 21 处待数组化。恢复条件：所有者指示。
 7. **〔完成〕E1 依赖基建 + CI** — package.json/requirements.txt 入库，本地安装验证全量 453 测试绿；.github/workflows/ci.yml（push 跑全量 selfcheck）。旧构建器的 /usr/local 全局路径回退保留但本地依赖优先（清除随 E3 旧构建器归档）。
-8. **随路线推进** — 文件名后缀迁移（§3.8）、lib/theme 引擎化（E3）、第二课文切片、真实试教、题-KP M0→M1、新源预处理接入、L0 统一治理（设计方案 §10）。
+8. **〔部分完成〕随路线推进** — 文件名后缀迁移已完成（114 文件改名+账本同步+前缀解析，§3.8）；scripts/lib 种子已建（theme 参数表+paths，带漂移防护测试）；待：v66 构建器改引 lib、第二课文切片、真实试教、题-KP M0→M1、新源预处理、L0 统一治理。
