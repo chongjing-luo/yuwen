@@ -37,7 +37,7 @@ def resolve_card(kp_id: str) -> Path | None:
     if not match:
         return None
     card_id = f"CARD-{match.group(1)}-U{match.group(2)}-{match.group(3)}"
-    matches = list((ROOT / "work/knowledge").glob(f"*/cards/{card_id}.md"))
+    matches = list((ROOT / "work/knowledge").glob(f"*/cards/{card_id}*.md"))
     return matches[0] if matches else None
 
 

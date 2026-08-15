@@ -112,7 +112,7 @@ def validate(package: dict, package_path: Path) -> tuple[list[str], list[str]]:
     all_card_kps: set[str] = set()
     lesson_ref = package["lesson_ref"]
     for ref in lesson_ref.get("card_refs", []) + [c.get("card_id") for c in lesson_ref.get("cross_book_refs", []) if isinstance(c, dict)]:
-        matches = list(knowledge_dir.glob(f"*/cards/{ref}.md"))
+        matches = list(knowledge_dir.glob(f"*/cards/{ref}*.md"))
         if not matches:
             err(f"知识卡不存在: {ref}")
             continue

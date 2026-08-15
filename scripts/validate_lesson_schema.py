@@ -54,7 +54,7 @@ def load_lesson(lesson_js: str | None, lesson_json: str | None) -> dict:
 
 
 def resolve_card(card_id: str) -> Path | None:
-    matches = list((ROOT / "work/knowledge").glob(f"*/cards/{card_id}.md"))
+    matches = list((ROOT / "work/knowledge").glob(f"*/cards/{card_id}*.md"))
     return matches[0] if matches else None
 
 
@@ -99,7 +99,7 @@ def validate(lesson: dict, strict: bool) -> tuple[list[str], list[str], dict]:
         else:
             card_kps |= card_kp_ids(card)
     unit_ref = lesson["book_unit"].get("unit_ref")
-    if unit_ref and not list((ROOT / "work/knowledge").glob(f"*/units/{unit_ref}.md")):
+    if unit_ref and not list((ROOT / "work/knowledge").glob(f"*/units/{unit_ref}*.md")):
         errors.append(f"unit_ref 无法解析: {unit_ref}")
     scope = lesson["kp_scope"]
     for kp in scope.get("kp_ids", []):

@@ -36,7 +36,7 @@ def load_bank() -> dict[str, dict]:
 
 
 def card_kp_ids(card_id: str) -> set[str]:
-    matches = list((ROOT / "work/knowledge").glob(f"*/cards/{card_id}.md"))
+    matches = list((ROOT / "work/knowledge").glob(f"*/cards/{card_id}*.md"))
     if not matches:
         return set()
     return set(KP_ID_PATTERN.findall(matches[0].read_text(encoding="utf-8")))
