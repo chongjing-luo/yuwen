@@ -85,14 +85,19 @@ def admit(pr: dict, evidence_ids: set[str]) -> tuple[list[str], list[str]]:
 
 def emit_yaml(pr: dict) -> str:
     draft = pr.get("draft", {})
-    enforcement = "\n".join(
-        f"      - {{type: {en['type']}"
-        + (f", rule: {en['rule']}" if en.get("rule") else "")
-        + (f", gate: {en['gate']}" if en.get("gate") else "")
-        + (f", fields: [{', '.join(en['fields'])}]}" if en.get("fields") else "")
-        + "}"
-        for en in draft.get("enforcement", [])
-    )
+
+    def enforcement_line(en: dict) -> str:
+        parts = ["      - {type: " + str(en["type"])]
+        if en.get("rule"):
+            parts.append(", rule: " + str(en["rule"]))
+        if en.get("gate"):
+            parts.append(", gate: " + str(en["gate"]))
+        if en.get("fields"):
+            parts.append(", fields: [" + ", ".join(en["fields"]) + "]")
+        parts.append("}")
+        return "".join(parts)
+
+    enforcement = "\n".join(enforcement_line(en) for en in draft.get("enforcement", []))
     return f"""# 注册库条目草稿（由 {pr['id']} 生成，人工审阅后并入 registry.yaml）
   - id: <分配ID>
     title: {draft.get('title', '')}
