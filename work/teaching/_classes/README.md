@@ -2,6 +2,10 @@
 
 课堂证据的安家之处——设计方案 §3.1 L4 与证据轴的落点。**所有者裁决：学生内容不脱敏，如实入库。**
 
+## Schema
+
+五类记录（OBS/GRD/MR/REF/PR）的字段契约见 `work/teaching/_shared/evidence_schemas.md`；校验器 `scripts/validate_evidence.py`。
+
 ## 目录约定
 
 每个班级一个目录（命名如 `高2026级3班` 或你习惯的班级名）：
