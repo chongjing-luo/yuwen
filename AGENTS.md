@@ -21,7 +21,11 @@
 | 路径 | 内容 |
 |---|---|
 | `DEVLOG.md` | 开发日志：当前优化方向清单（只留最新，旧版归档于 `docs/devlog/archive/`） |
-| `work/knowledge/` | 机读知识库：81 知识卡、28 单元图谱、5 册表（114/114 accepted）、高考分析；账本与契约在 `_meta/` |
+| `docs/architecture/` | 项目设计方案（v0.9.x 待审计）+ ID 解析表（机器寻址规则） |
+| `work/manuals/` | 手册之家：S0-S9 十册（可执行核心；条目六字段含 P0/P1/P2 优先级，不设数量上限） |
+| `work/teaching/` | 设计层 L2（课程数据/作业包）与证据层 L4（`_classes/`：观察/批改/掌握/反思——学生数据如实入库不脱敏，只追加） |
+| `Tmp/` | 外部资料唯一入口（inbox 台账 + work 加工区；永不入 git，README 除外） |
+| `work/knowledge/` | 机读知识库：81 知识卡、28 单元图谱、5 册表（114/114 accepted）、高考分析、素材库 `materials/`；账本与契约在 `_meta/`（含 catalog） |
 | `work/principles/` | 原则注册库（机器可读理念，每条绑定机制节点与强制方式） |
 | `work/evaluation/` | 三目标机制、评估标准、收敛规则、自检报告 |
 | `work/备课基本原则.md` | 43 条备课原则（人读权威文本，注册库的来源） |
@@ -62,6 +66,7 @@ python3 scripts/run_selfcheck.py
 4. **不追溯否决**：候选按审查开始时冻结的标准版本评审；新原则进下一版本，不用于推翻已进入流程的候选（收敛规则见 `work/evaluation/convergence.md`）。
 5. **版本管理**：正式目录只保留当前版本；旧版进 git 历史；不用永久删除处理教学成果。
 6. **测试先行**：修 bug 先写失败测试；构建器改动必须全量回归（`python3 -m pytest tests/ -q` + node 测试）。
+7. **资料三纪**：外部资料必经 `Tmp/inbox` 台账（裁决四问后入库）；实体入册即登记 catalog（五件套）；L4 证据只追加、每条绑课程版本与机制节点。
 
 ## 数据治理
 
