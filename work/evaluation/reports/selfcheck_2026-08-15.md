@@ -18,11 +18,11 @@
     报告已写入 /home/ubuntu/homes/LuoChongjing/Methods/yuwen/work/evaluation/reports/principle_checks_meng_v66.json
     课堂账：空——未真实试教（两本账纪律，P-12）
 
-### ✅ 全量测试（pytest）
+### ❌ 全量测试（pytest）
 
-    ........................................................ [ 92%]
-    .................................                              [100%]
-    445 passed, 30 subtests passed in 71.37s (0:01:11)
+    ERROR tests/test_admit_pr.py
+    !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+    1 error in 0.54s
 
 ### ✅ 机制节点覆盖
 
