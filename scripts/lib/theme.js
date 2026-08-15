@@ -21,6 +21,10 @@ const MODULE = {
   opening: "gold", chapter_1: "gold", chapter_2: "river", chapter_3: "leaf",
   chapter_4: "yellow", chapter_5: "plum", chapter_6: "red", synthesis: "ink2",
 };
+const MODULE_LABELS = {
+  opening: "初见", chapter_1: "第一章", chapter_2: "第二章", chapter_3: "第三章",
+  chapter_4: "第四章", chapter_5: "第五章", chapter_6: "第六章", synthesis: "全文",
+};
 
 // 字号下限表（PPT 手册 §二 裁决线）
 const FONT_FLOORS = {
@@ -31,4 +35,4 @@ const FONT_FLOORS = {
   label: 15,            // 标签/页码/模块名（非内容性）
 };
 
-module.exports = { SERIF, SANS, C, MODULE, FONT_FLOORS, ART_RANDOM_FONT_SIZE: FONT_FLOORS.phrase_card };
+module.exports = { SERIF, SANS, C, MODULE, MODULE_LABELS, FONT_FLOORS, ART_RANDOM_FONT_SIZE: FONT_FLOORS.phrase_card };

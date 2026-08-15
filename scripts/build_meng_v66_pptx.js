@@ -13,7 +13,8 @@ function requireGlobal(name) {
 
 const pptxgen = requireGlobal("pptxgenjs");
 const globalRoot = process.env.NODE_GLOBAL_ROOT || "/usr/local/node-v22.22.2-linux-x64/lib/node_modules";
-const JSZip = require(path.join(globalRoot, "pptxgenjs", "node_modules", "jszip"));
+let JSZip;
+try { JSZip = require("jszip"); } catch (_) { JSZip = require(path.join(globalRoot, "pptxgenjs", "node_modules", "jszip")); }
 const lesson = require("./meng_v66/lesson");
 
 const ROOT = path.resolve(__dirname, "..");
@@ -22,23 +23,16 @@ const outputPath = path.join(OUT_DIR, `04_氓_V66逐页功能重构_${lesson.tar
 const manifestPath = path.join(OUT_DIR, "v66_no_image_manifest.json");
 const W = 13.333;
 const H = 7.5;
-const SERIF = "Noto Serif CJK SC";
-const SANS = "Noto Sans CJK SC";
-const ART_RANDOM_FONT_SIZE = 26;
 
-const C = {
-  ink: "29241F", ink2: "51483F", muted: "7B7167", paper: "F5EFE4", paper2: "FFFCF7",
-  warm: "DED0BC", warm2: "C5B39B", gold: "A67F4A", gold2: "EFE3CF", river: "446E78",
-  river2: "DCE9E8", leaf: "657653", leaf2: "E1E7D9", plum: "725260", plum2: "E9DDE2",
-  red: "94473B", red2: "EFDDD5", night: "28231F", night2: "383129", white: "FFFDFC",
-  yellow: "B58B3E", yellow2: "F0E4C8",
-};
-
-const MODULE = {
-  opening: ["初见", C.gold], chapter_1: ["第一章", C.gold], chapter_2: ["第二章", C.river],
-  chapter_3: ["第三章", C.leaf], chapter_4: ["第四章", C.yellow], chapter_5: ["第五章", C.plum],
-  chapter_6: ["第六章", C.red], synthesis: ["全文", C.ink2],
-};
+// 主题参数唯一来源：scripts/lib/theme.js（构建器不再持有字面量——E3）
+const theme = require("./lib/theme");
+const SERIF = theme.SERIF;
+const SANS = theme.SANS;
+const C = theme.C;
+const ART_RANDOM_FONT_SIZE = theme.ART_RANDOM_FONT_SIZE;
+const MODULE = Object.fromEntries(
+  Object.entries(theme.MODULE).map(([key, colorKey]) => [key, [theme.MODULE_LABELS[key], C[colorKey]]])
+);
 
 function sha256(filePath) { return crypto.createHash("sha256").update(fs.readFileSync(filePath)).digest("hex"); }
 
