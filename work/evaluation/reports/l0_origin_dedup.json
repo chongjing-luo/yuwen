@@ -1,14 +1,13 @@
 {
   "plan": "L0-A (docs/architecture/L0统一治理专项方案.md)",
-  "applied": false,
-  "allow_scan": false,
+  "applied": true,
   "pairs": 34,
   "verdicts": {
-    "mismatch": 2,
-    "dims_fallback": 32
+    "equivalent": 34
   },
   "unpaired_origins": [],
-  "deleted_bytes": 0,
+  "deletable_bytes": 307627206,
+  "deleted_bytes": 307627206,
   "results": [
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2008年高考语文试卷（四川）（空白卷）.pdf",
@@ -16,11 +15,16 @@
       "origin_bytes": 4900945,
       "src_pages": 7,
       "org_pages": 7,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 7,
-      "text_mismatch": 0,
-      "dim_mismatch": 6,
-      "verdict": "mismatch",
-      "reason": "文本差异页 0，尺寸差异页 6"
+      "pages": {
+        "ok": 7,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2008年高考语文试卷（四川）（解析卷）.pdf",
@@ -28,11 +32,16 @@
       "origin_bytes": 5553683,
       "src_pages": 9,
       "org_pages": 9,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 9,
-      "text_mismatch": 0,
-      "dim_mismatch": 8,
-      "verdict": "mismatch",
-      "reason": "文本差异页 0，尺寸差异页 8"
+      "pages": {
+        "ok": 9,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2009年高考语文试卷（四川）（空白卷）.pdf",
@@ -40,11 +49,16 @@
       "origin_bytes": 4881714,
       "src_pages": 9,
       "org_pages": 9,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 9,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 9,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2009年高考语文试卷（四川）（解析卷）.pdf",
@@ -52,11 +66,16 @@
       "origin_bytes": 12899910,
       "src_pages": 24,
       "org_pages": 24,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 24,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 24,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2010年高考语文试卷（四川）（空白卷）.pdf",
@@ -64,11 +83,16 @@
       "origin_bytes": 5024316,
       "src_pages": 9,
       "org_pages": 9,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 9,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 9,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2010年高考语文试卷（四川）（解析卷）.pdf",
@@ -76,11 +100,16 @@
       "origin_bytes": 7829406,
       "src_pages": 15,
       "org_pages": 15,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 15,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 15,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2011年高考语文试卷（四川）（空白卷）.pdf",
@@ -88,11 +117,16 @@
       "origin_bytes": 5388916,
       "src_pages": 8,
       "org_pages": 8,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 8,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 8,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2011年高考语文试卷（四川）（解析卷）.pdf",
@@ -100,11 +134,16 @@
       "origin_bytes": 6098596,
       "src_pages": 9,
       "org_pages": 9,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 9,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 9,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2012年高考语文试卷（四川）（空白卷）.pdf",
@@ -112,11 +151,16 @@
       "origin_bytes": 4973221,
       "src_pages": 7,
       "org_pages": 7,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 7,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 7,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2012年高考语文试卷（四川）（解析卷）.pdf",
@@ -124,11 +168,16 @@
       "origin_bytes": 6700618,
       "src_pages": 11,
       "org_pages": 11,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 11,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 11,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2013年高考语文试卷（四川）（空白卷）.pdf",
@@ -136,11 +185,16 @@
       "origin_bytes": 5012298,
       "src_pages": 7,
       "org_pages": 7,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 7,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 7,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2013年高考语文试卷（四川）（解析卷）.pdf",
@@ -148,11 +202,16 @@
       "origin_bytes": 8214167,
       "src_pages": 12,
       "org_pages": 12,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 12,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 12,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2014年高考语文试卷（四川）（空白卷）.pdf",
@@ -160,11 +219,16 @@
       "origin_bytes": 6115376,
       "src_pages": 8,
       "org_pages": 8,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 8,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 8,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2014年高考语文试卷（四川）（解析卷）.pdf",
@@ -172,11 +236,16 @@
       "origin_bytes": 14024777,
       "src_pages": 16,
       "org_pages": 16,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 16,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 16,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2015年高考语文试卷（四川）（空白卷）.pdf",
@@ -184,11 +253,16 @@
       "origin_bytes": 5232649,
       "src_pages": 8,
       "org_pages": 8,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 8,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 8,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2015年高考语文试卷（四川）（解析卷）.pdf",
@@ -196,11 +270,16 @@
       "origin_bytes": 13752724,
       "src_pages": 19,
       "org_pages": 19,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 19,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 19,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2016年高考语文试卷（新课标Ⅲ卷）（空白卷）.pdf",
@@ -208,11 +287,16 @@
       "origin_bytes": 8189262,
       "src_pages": 16,
       "org_pages": 16,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 16,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 16,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2016年高考语文试卷（新课标Ⅲ卷）（解析卷）.pdf",
@@ -220,11 +304,16 @@
       "origin_bytes": 12876845,
       "src_pages": 24,
       "org_pages": 24,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 24,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 24,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2017年高考语文试卷（新课标Ⅲ卷）（空白卷）.pdf",
@@ -232,11 +321,16 @@
       "origin_bytes": 7620490,
       "src_pages": 14,
       "org_pages": 14,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 14,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 14,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2017年高考语文试卷（新课标Ⅲ卷）（解析卷）.pdf",
@@ -244,11 +338,16 @@
       "origin_bytes": 15947844,
       "src_pages": 29,
       "org_pages": 29,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 29,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 29,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2018年高考语文试卷（新课标Ⅲ卷）（空白卷）.pdf",
@@ -256,11 +355,16 @@
       "origin_bytes": 8065069,
       "src_pages": 15,
       "org_pages": 15,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 15,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 15,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2018年高考语文试卷（新课标Ⅲ卷）（解析卷）.pdf",
@@ -268,11 +372,16 @@
       "origin_bytes": 14316748,
       "src_pages": 25,
       "org_pages": 25,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 25,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 25,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2019年高考语文试卷（新课标Ⅲ卷）（空白卷）.pdf",
@@ -280,11 +389,16 @@
       "origin_bytes": 7085555,
       "src_pages": 13,
       "org_pages": 13,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 13,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 13,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2019年高考语文试卷（新课标Ⅲ卷）（解析卷）.pdf",
@@ -292,11 +406,16 @@
       "origin_bytes": 15327447,
       "src_pages": 26,
       "org_pages": 26,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 26,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 26,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2020年高考语文试卷（新课标Ⅲ卷）（空白卷）.pdf",
@@ -304,11 +423,16 @@
       "origin_bytes": 7044662,
       "src_pages": 13,
       "org_pages": 13,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 13,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 13,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2020年高考语文试卷（新课标Ⅲ卷）（解析卷）.pdf",
@@ -316,11 +440,16 @@
       "origin_bytes": 13648499,
       "src_pages": 24,
       "org_pages": 24,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 24,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 24,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2021年高考语文试卷（全国甲卷）（空白卷）.pdf",
@@ -328,11 +457,16 @@
       "origin_bytes": 7276507,
       "src_pages": 11,
       "org_pages": 11,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 11,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 11,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2021年高考语文试卷（全国甲卷）（解析卷）.pdf",
@@ -340,11 +474,16 @@
       "origin_bytes": 12953510,
       "src_pages": 20,
       "org_pages": 20,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 20,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 20,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2022年高考语文试卷（全国甲卷）（空白卷）.pdf",
@@ -352,11 +491,16 @@
       "origin_bytes": 7306086,
       "src_pages": 12,
       "org_pages": 12,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 12,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 12,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2022年高考语文试卷（全国甲卷）（解析卷）.pdf",
@@ -364,11 +508,16 @@
       "origin_bytes": 13073456,
       "src_pages": 22,
       "org_pages": 22,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 22,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 22,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2023年高考语文试卷（全国甲卷）（空白卷）.pdf",
@@ -376,11 +525,16 @@
       "origin_bytes": 6564884,
       "src_pages": 11,
       "org_pages": 11,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 11,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 11,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2023年高考语文试卷（全国甲卷）（解析卷）.pdf",
@@ -388,11 +542,16 @@
       "origin_bytes": 13178671,
       "src_pages": 21,
       "org_pages": 21,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 21,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 21,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2024年高考语文试卷（全国甲卷）（空白卷）.pdf",
@@ -400,11 +559,16 @@
       "origin_bytes": 7101945,
       "src_pages": 11,
       "org_pages": 11,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 11,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 11,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     },
     {
       "source": "Data/2008-2024·（四川）语文高考真题/2024年高考语文试卷（全国甲卷）（解析卷）.pdf",
@@ -412,11 +576,16 @@
       "origin_bytes": 13446410,
       "src_pages": 21,
       "org_pages": 21,
+      "max_dim_diff_pt": 2.0000000063191692e-05,
       "scan_pages": 21,
-      "text_mismatch": 0,
-      "dim_mismatch": 0,
-      "verdict": "dims_fallback",
-      "reason": "全卷无文本层（扫描件），仅页数+尺寸可证"
+      "pages": {
+        "ok": 21,
+        "mismatch": 0,
+        "unverifiable": 0
+      },
+      "verdict": "equivalent",
+      "reason": "逐页文本/图像流哈希一致",
+      "deleted": true
     }
   ]
 }
