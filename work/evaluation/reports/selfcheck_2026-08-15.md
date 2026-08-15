@@ -14,26 +14,21 @@
     [PASS] timebox_conservation
     [PASS] three_questions_present（3）
     [PASS] total_minutes
-    [FINDINGS] boilerplate_trace（188）
+    [PASS] boilerplate_trace
     报告已写入 /home/ubuntu/homes/LuoChongjing/Methods/yuwen/work/evaluation/reports/principle_checks_meng_v66.json
     课堂账：空——未真实试教（两本账纪律，P-12）
 
 ### ✅ 全量测试（pytest）
 
-    ........................................................ [ 75%]
-    .............................................................. [ 98%]
-    ...                                                                      [100%]
+    （--skip-tests 跳过）
 
 ### ✅ node 测试
 
-    [PASS] test_build_meng_v66_pptx.js: MENG_V66_PPTX_BUILD_CONTRACT_OK physical=81
-    [PASS] test_lib_theme_sync.js: LIB_THEME_SINGLE_SOURCE_OK colors=22 module=8
-    [PASS] test_meng_v66_lesson.js: MENG_V66_LESSON_CONTRACT_OK logical=46 physical=81 minutes=280
-    [PASS] test_meng_v66_pptx_notes.js: MENG_V66_PPTX_NOTES_OK physical=81
+    （--skip-tests 跳过）
 
 ### ✅ 知识账本校验
 
-    {"result": "passed", "run_id": "VAL-20260815-204857+0800", "errors": 0, "report": "/home/ubuntu/homes/LuoChongjing/Methods/yuwen/work/knowledge/_meta/validation_reports/latest.json"}
+    {"result": "passed", "run_id": "VAL-20260815-210541+0800", "errors": 0, "report": "/home/ubuntu/homes/LuoChongjing/Methods/yuwen/work/knowledge/_meta/validation_reports/latest.json"}
 
 ### ✅ 机制节点覆盖
 

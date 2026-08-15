@@ -74,9 +74,9 @@ class ScanLessonTest(unittest.TestCase):
 
 
 class LessonJsSyncTest(unittest.TestCase):
-    """样板模式必须与 lesson.js contract() 默认串保持同步。"""
+    """真数据必须保持零默认串：模板标记若再现即样板回潮（462→0 清零守卫）。"""
 
-    def test_lesson_source_defaults_unchanged(self):
+    def test_lesson_source_defaults_absent(self):
         source = LESSON_SOURCE.read_text(encoding="utf-8")
         for marker in [
             "学生容易看见",
@@ -91,7 +91,7 @@ class LessonJsSyncTest(unittest.TestCase):
             "页面结束前由一句自然复述回到谁做了什么",
             "学生只能复述活动手续，不能复述诗意",
         ]:
-            self.assertIn(marker, source, f"lesson.js 默认串已变更，请同步 check_trace_evidence.py 模式: {marker}")
+            self.assertNotIn(marker, source, f"样板默认串回潮，请改写为该页具体陈述: {marker}")
 
 
 if __name__ == "__main__":
