@@ -18,9 +18,11 @@
     报告已写入 /home/ubuntu/homes/LuoChongjing/Methods/yuwen/work/evaluation/reports/principle_checks_meng_v66.json
     课堂账：空——未真实试教（两本账纪律，P-12）
 
-### ✅ 全量测试
+### ✅ 全量测试（pytest）
 
-    （--skip-tests 跳过）
+    ........................................................ [ 90%]
+    .........................................                      [100%]
+    453 passed, 30 subtests passed in 70.15s (0:01:10)
 
 ### ✅ 机制节点覆盖
 
