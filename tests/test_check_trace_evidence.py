@@ -13,7 +13,8 @@ from check_trace_evidence import (  # noqa: E402
     scan_lesson,
 )
 
-LESSON_JS = Path(__file__).resolve().parents[1] / "scripts/meng_v66/lesson.js"
+# 默认串的宿主已从 lesson.js（现为加载器）迁移为 canonical lesson.json
+LESSON_SOURCE = Path(__file__).resolve().parents[1] / "work/teaching/选择性必修下册/氓/lesson.json"
 
 
 def page(**kwargs):
@@ -75,8 +76,8 @@ class ScanLessonTest(unittest.TestCase):
 class LessonJsSyncTest(unittest.TestCase):
     """样板模式必须与 lesson.js contract() 默认串保持同步。"""
 
-    def test_lesson_js_defaults_unchanged(self):
-        source = LESSON_JS.read_text(encoding="utf-8")
+    def test_lesson_source_defaults_unchanged(self):
+        source = LESSON_SOURCE.read_text(encoding="utf-8")
         for marker in [
             "学生容易看见",
             "却不能把它准确接回人物和前后故事",
