@@ -50,6 +50,31 @@
 |---|---|---|---|---|
 | MAP-EXAM-KP | MAP-EXAM-KP | drafted | — | exam_kp_mapping（账本状态 drafted） |
 
+## exam_map（2）
+
+| ID | 标题 | 状态 | 权威 | 摘要 |
+|---|---|---|---|---|
+| EXMAP-V2 | EXMAP-V2_版本2文件试卷映射.jsonl | active | — | 978 行 |
+| province | province_usage.jsonl | active | — | 410 行 |
+
+## exam_paper（13）
+
+| ID | 标题 | 状态 | 权威 | 摘要 |
+|---|---|---|---|---|
+| PAPER-JIA-2021 | 2021年普通高等学校招生全国统一考试（全国甲卷） | candidate | — | 24 题（结构候选）；答案 candidate |
+| PAPER-JIA-2022 | 2022年普通高等学校招生全国统一考试（甲卷） | candidate | — | 25 题（结构候选）；答案 candidate |
+| PAPER-JIA-2023 | 2023年普通高等学校招生全国统一考试（全国甲卷） | candidate | — | 24 题（结构候选）；答案 candidate |
+| PAPER-JIA-2024 | 2024年普通高等学校招生全国统一考试（全国甲卷） | candidate | — | 27 题（结构候选）；答案 candidate |
+| PAPER-XG1-2020 | 2020年普通高等学校招生全国统一考试 | candidate | — | 44 题（结构候选）；答案 candidate |
+| PAPER-XG1-2021 | 2021年普通高等学校招生全国统一考试 | candidate | — | 27 题（结构候选）；答案 candidate |
+| PAPER-XG1-2022 | 2022年全国新高考1卷语文试题 | candidate | — | 27 题（结构候选）；答案 candidate |
+| PAPER-XG2-2020 | 2020年普通高等学校招生全国统一考试 | candidate | — | 10 题（结构候选）；答案 candidate |
+| PAPER-XG2-2021 | 2021年普通高等学校招生全国统一考试（新高考全国Ⅱ卷） | candidate | — | 26 题（结构候选）；答案 candidate |
+| PAPER-XG2-2022 | 2022年普通高等学校招生全国统一考试（新高考全国Ⅱ | candidate | — | 27 题（结构候选）；答案 candidate |
+| PAPER-YI-2021 | 2021年普通高等学校招生全国统一考试（乙卷） | candidate | — | 21 题（结构候选）；答案 candidate |
+| PAPER-YI-2022 | 2022年高考全国乙卷语文 | candidate | — | 24 题（结构候选）；答案 candidate |
+| PAPER-YI-2023 | 2023年普通高等学校招生全国统一考试 | candidate | — | 23 题（结构候选）；答案 candidate |
+
 ## global_map（1）
 
 | ID | 标题 | 状态 | 权威 | 摘要 |
@@ -211,4 +236,4 @@
 | UNIT-X3-U03 | UNIT-X3-U03_选择性必修下册U03（中华传统文化经 | accepted | — | unit_graph（账本状态 accepted） |
 | UNIT-X3-U04 | UNIT-X3-U04_选择性必修下册U04 | accepted | — | unit_graph（账本状态 accepted） |
 
-> 共 146 实体 · 生成于 2026-08-15 · 路径解析规则见 docs/architecture/ID解析表.md
+> 共 161 实体 · 生成于 2026-08-15 · 路径解析规则见 docs/architecture/ID解析表.md

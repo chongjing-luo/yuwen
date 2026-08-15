@@ -20,15 +20,22 @@
 
 ### ✅ 全量测试（pytest）
 
-    （--skip-tests 跳过）
+    ........................................................................ [ 77%]
+    ........................................................ [ 89%]
+    ................................................               [100%]
 
 ### ✅ node 测试
 
-    （--skip-tests 跳过）
+    [PASS] test_build_meng_v65_pptx.js: MENG_V65_PPTX_BUILD_CONTRACT_OK slides=45
+    [PASS] test_build_meng_v66_pptx.js: MENG_V66_PPTX_BUILD_CONTRACT_OK physical=81
+    [PASS] test_lib_theme_sync.js: LIB_THEME_SINGLE_SOURCE_OK colors=22 module=8
+    [PASS] test_meng_v65_lesson.js: MENG_V65_LESSON_CONTRACT_OK pages=45 minutes=230
+    [PASS] test_meng_v66_lesson.js: MENG_V66_LESSON_CONTRACT_OK logical=46 physical=81 minutes=280
+    [PASS] test_meng_v66_pptx_notes.js: MENG_V66_PPTX_NOTES_OK physical=81
 
 ### ✅ 知识账本校验
 
-    {"result": "passed", "run_id": "VAL-20260815-180524+0800", "errors": 0, "report": "/home/ubuntu/homes/LuoChongjing/Methods/yuwen/work/knowledge/_meta/validation_reports/latest.json"}
+    {"result": "passed", "run_id": "VAL-20260815-193549+0800", "errors": 0, "report": "/home/ubuntu/homes/LuoChongjing/Methods/yuwen/work/knowledge/_meta/validation_reports/latest.json"}
 
 ### ✅ 机制节点覆盖
 

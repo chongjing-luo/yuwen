@@ -119,6 +119,29 @@ def scan_manuals(rows):
                         tags=["手册"], summary="操作手册（规则的家）"))
 
 
+def scan_exam_papers(rows, errors):
+    base = KNOW / "高考真题整理"
+    if not base.is_dir():
+        return
+    for d in sorted(base.iterdir()):
+        if not (d.is_dir() and d.name.startswith("PAPER-")):
+            continue
+        meta_f = d / "paper.json"
+        if not meta_f.exists():
+            errors.append(f"{d.name}: paper.json 缺失（未完成契约④）")
+            continue
+        meta = json.loads(meta_f.read_text(encoding="utf-8"))
+        rows.append(row(meta["paper_id"], "exam_paper", meta.get("title", d.name)[:40], meta_f,
+                        status=meta.get("status", "candidate"),
+                        tags=[meta["paper_id"].split("-")[1], str(meta.get("year", ""))],
+                        summary=f"{meta.get('question_count', '?')} 题（结构候选）；答案 {meta.get('answer_source_status', '?')}"))
+    for f in ("EXMAP-V2_版本2文件试卷映射.jsonl", "province_usage.jsonl"):
+        fp = base / f
+        if fp.exists():
+            rows.append(row(fp.stem.split("_")[0], "exam_map", f, fp, tags=["映射表"],
+                            summary=f"{sum(1 for _ in fp.open(encoding='utf-8'))} 行"))
+
+
 def scan_materials(rows):
     for mat in sorted((KNOW / "materials").glob("MAT-*.md")):
         rows.append(row(mat.stem.split("_")[0], "material", mat.stem, mat, tags=["素材"],
@@ -131,6 +154,7 @@ def build():
     scan_assessment(rows, errors)
     scan_teaching(rows, errors)
     scan_manuals(rows)
+    scan_exam_papers(rows, errors)
     scan_materials(rows)
     seen = set()
     deduped = []
