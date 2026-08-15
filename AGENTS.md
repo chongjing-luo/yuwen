@@ -43,6 +43,13 @@
 
 备课从 S2 开始走：`.agents/skills/yuwen-research-text` → `yuwen-design-lesson` → `yuwen-build-materials` → `yuwen-audit-lesson`；课后走 `yuwen-trial-observation` → `yuwen-design-homework` / `yuwen-grade-feedback` → `yuwen-author-assessment` / `yuwen-diagnose-learning` → `yuwen-reflect-lesson`。全局健康检查：`yuwen-selfcheck`。
 
+## 环境安装（一次性）
+
+```bash
+pip install -r requirements.txt   # python 依赖
+npm install                        # node 依赖（pptxgenjs/docx，本地 node_modules）
+```
+
 ## 验证命令
 
 ```bash
