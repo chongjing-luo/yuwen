@@ -111,6 +111,54 @@ class ValidateLessonSchemaTest(unittest.TestCase):
         errors, _, _ = validate(lesson, strict=False)
         self.assertTrue(any("canonical_lines" in e for e in errors))
 
+    def test_literary_object_array_anchored_passes(self):
+        lesson = synthetic_lesson()
+        lesson["pages"][0]["literary_object"] = ["氓之蚩蚩，抱布贸丝", "桑之未落，其叶沃若"]
+        errors, _, _ = validate(lesson, strict=False)
+        self.assertFalse(any("literary_object" in e for e in errors))
+
+    def test_literary_object_array_unanchored_detected(self):
+        lesson = synthetic_lesson()
+        lesson["pages"][0]["literary_object"] = ["氓之蚩蚩，抱布贸丝", "不存在的句子"]
+        errors, _, _ = validate(lesson, strict=False)
+        self.assertTrue(any("数组含未锚定项" in e for e in errors))
+
+    def test_literary_object_object_scope_full_poem_passes(self):
+        lesson = synthetic_lesson()
+        lesson["pages"][0]["literary_object"] = {"kind": "student_products", "scope": "full_poem", "note": "个人初听停顿句"}
+        errors, _, _ = validate(lesson, strict=False)
+        self.assertFalse(any("literary_object" in e for e in errors))
+
+    def test_literary_object_object_with_lines_passes(self):
+        lesson = synthetic_lesson()
+        lesson["pages"][0]["literary_object"] = {"kind": "mixed", "lines": ["氓之蚩蚩，抱布贸丝"]}
+        errors, _, _ = validate(lesson, strict=False)
+        self.assertFalse(any("literary_object" in e for e in errors))
+
+    def test_literary_object_object_bad_kind_detected(self):
+        lesson = synthetic_lesson()
+        lesson["pages"][0]["literary_object"] = {"kind": "随便写", "scope": "full_poem"}
+        errors, _, _ = validate(lesson, strict=False)
+        self.assertTrue(any("kind 非法" in e for e in errors))
+
+    def test_literary_object_object_kind_only_passes(self):
+        lesson = synthetic_lesson()
+        lesson["pages"][0]["literary_object"] = {"kind": "student_products", "note": "诗前旧作回忆"}
+        errors, _, _ = validate(lesson, strict=False)
+        self.assertFalse(any("literary_object" in e for e in errors))
+
+    def test_literary_object_object_bad_scope_detected(self):
+        lesson = synthetic_lesson()
+        lesson["pages"][0]["literary_object"] = {"kind": "student_products", "scope": "半首诗"}
+        errors, _, _ = validate(lesson, strict=False)
+        self.assertTrue(any("scope 仅支持 full_poem" in e for e in errors))
+
+    def test_literary_object_object_lines_unanchored_detected(self):
+        lesson = synthetic_lesson()
+        lesson["pages"][0]["literary_object"] = {"kind": "mixed", "lines": ["不存在的句子"]}
+        errors, _, _ = validate(lesson, strict=False)
+        self.assertTrue(any("lines 须为非空且逐项锚定" in e for e in errors))
+
     def test_boilerplate_strict_fails_but_default_warns(self):
         lesson = synthetic_lesson()
         lesson["pages"][0]["story_return"] = "页面结束前由一句自然复述回到谁做了什么、人物处境怎样变化以及故事推进到哪里。"

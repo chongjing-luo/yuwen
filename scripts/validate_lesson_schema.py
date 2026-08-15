@@ -12,7 +12,8 @@ N-01（教级知识清单以知识卡为准）的机器强制——课程数据�
 3. K4：relations（若存在）的 card_id 解析；
 4. 页面：18 项合同字段非空；unique_difficulty 等追溯字段非样板（复用
    check_trace_evidence）；script.timeboxes 秒和 == minutes*60；branches ≥ 2；
-   next_use 非空；literary_object 在 canonical_lines 中（K2）；
+   next_use 非空；literary_object 三形态锚定 canonical_lines（K2：行串/行数组/
+   非行对象 kind 声明）；
 5. U1/P-07：frontstage 与 title 过前台禁词；
 6. 汇总样板发现数（默认不判失败——收敛规则：样板清零是 STANDARD-1.0 对
    新候选的要求，对存量数据作为缺口报告）。
@@ -39,6 +40,43 @@ PAGE_REQUIRED_FIELDS = [
     "next_use", "normal_counterexample", "first_person_reception",
     "deletion_loss", "story_return",
 ]
+
+# literary_object 非行对象的合法类别（K2）：行锚定之外，页面确以非诗对象为主时
+# 必须显式声明类别，不许自由散文冒充行锚定。
+NON_POEM_KINDS = {"student_products", "full_poem_voice", "cultural_knowledge", "question_set", "mixed"}
+
+
+def _line_anchored(obj: str, canonical: list[str]) -> bool:
+    return any(obj in line or line in obj for line in canonical)
+
+
+def literary_object_error(pid: str, obj, canonical: list[str]) -> str | None:
+    """K2 情境锚定三形态：行串（含多行拼接串）/ 行数组 / 非行对象声明。"""
+    if obj is None or obj == "" or obj == []:
+        return None  # 缺字段由 PAGE_REQUIRED_FIELDS 检查报告
+    if isinstance(obj, str):
+        if not _line_anchored(obj, canonical):
+            return f"{pid}: literary_object「{obj}」不在 canonical_lines 内（K2 情境锚定）"
+        return None
+    if isinstance(obj, list):
+        bad = [x for x in obj if not (isinstance(x, str) and _line_anchored(x, canonical))]
+        if bad:
+            return f"{pid}: literary_object 数组含未锚定项（K2）: {bad[:2]}"
+        return None
+    if isinstance(obj, dict):
+        if obj.get("kind") not in NON_POEM_KINDS:
+            return f"{pid}: literary_object.kind 非法（K2）: {obj.get('kind')!r}，合法类别: {sorted(NON_POEM_KINDS)}"
+        scope = obj.get("scope")
+        if scope is not None and scope != "full_poem":
+            return f"{pid}: literary_object.scope 仅支持 full_poem（K2）: {scope!r}"
+        lines = obj.get("lines")
+        if lines is not None and not (
+            isinstance(lines, list) and bool(lines)
+            and all(isinstance(x, str) and _line_anchored(x, canonical) for x in lines)
+        ):
+            return f"{pid}: literary_object.lines 须为非空且逐项锚定 canonical_lines（K2）"
+        return None
+    return f"{pid}: literary_object 类型非法（K2）: {type(obj).__name__}"
 
 
 def load_lesson(lesson_js: str | None, lesson_json: str | None) -> dict:
@@ -150,10 +188,10 @@ def validate(lesson: dict, strict: bool) -> tuple[list[str], list[str], dict]:
                 errors.append(f"{pid}: 时间盒 {total}s ≠ {expected}s")
         if len(script.get("branches") or []) < 2:
             errors.append(f"{pid}: script.branches < 2（P-08：必须有回应分支）")
-        if canonical and page.get("literary_object") and isinstance(page.get("literary_object"), str):
-            obj = page["literary_object"]
-            if not any(obj in line or line in obj for line in canonical):
-                errors.append(f"{pid}: literary_object「{obj}」不在 canonical_lines 内（K2 情境锚定）")
+        if canonical:
+            err = literary_object_error(pid, page.get("literary_object"), canonical)
+            if err:
+                errors.append(err)
         for text in [page.get("title", "")] + [t for t in (page.get("frontstage") or []) if isinstance(t, str)]:
             for word in banned:
                 if word in text:
