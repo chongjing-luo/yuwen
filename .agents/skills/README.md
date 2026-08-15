@@ -4,6 +4,11 @@
 
 | 环节 | Skill | 一句话职责 |
 |---|---|---|
+| S0 资料轴 | `yuwen-intake` | 外部资料→inbox 台账→裁决四问→L0/存根 |
+| S0 资料轴 | `yuwen-organize` | 原件→整理件（确定性无损转换，类型配方） |
+| S0 资料轴 | `yuwen-curate` | 整理件→策展件（语义加工+权威分级+血缘门禁） |
+| S0 资料轴 | `yuwen-catalog` | catalog/INDEX 重建、消费登记、零消费体检 |
+| 工程轴 | `yuwen-flow` | 按环节跑门禁链（S0-S9 定向回归） |
 | S1 规划 | `yuwen-plan-unit` | 单元 KP 落点、复现排程、跨课回投 |
 | S2 文本研究 | `yuwen-research-text` | 裸读、解释边界、困难预判、三问 |
 | S3 教学设计 | `yuwen-design-lesson` | 三问 + 18 字段页面合同 + 参与结构 |
@@ -17,4 +22,4 @@
 | S9 反思 | `yuwen-reflect-lesson` | 按节点归因 → 原则修订提案回流 |
 | 全局 | `yuwen-selfcheck` | 注册库/检查器/测试/两本账报告 |
 
-状态：12 个全部 active（2026-08-14）。
+状态：17 个 active（12 环节 + 4 资料轴 + 1 工程轴；2026-08-15）。

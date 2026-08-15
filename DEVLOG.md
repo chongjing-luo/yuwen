@@ -1,7 +1,7 @@
 ---
 document_type: development_log
 phase: 开发阶段
-version: 2
+version: 3
 date: "2026-08-15"
 rule: "更新本文件时：旧版本整体移入 docs/devlog/archive/DEVLOG_<日期>_v<序号>.md（并在其头部标注各条目完成情况），本文件只保留最新内容；条目保持简要：方向 + 验收标准各一行"
 ---
@@ -12,11 +12,10 @@ rule: "更新本文件时：旧版本整体移入 docs/devlog/archive/DEVLOG_<�
 
 ## 当前方向（按优先级）
 
-1. **设计方案定稿** — Q7 有效期默认方案获确认后升 v1.0；验收：§12 七问全部闭环。
-2. **V6.6 样板清零（进行中：462→403，O 模块已清）** — 逐页改写为具体陈述；验收：`check_trace_evidence --strict` 0 发现。
-   2b. **lesson.json 迁移（已完成）** — canonical 数据源已迁至 work/teaching/…/lesson.json，lesson.js 变加载器，v65/v62 require 链解除。
-   2c. **K2 锚定缺口（新登记）** — 21 处综合页 literary_object 为散文复合描述，需改为原句数组（schema 允许 string|array）；验收：validate_lesson_schema 0 错误。
-3. **手册编译** — S3/S4/S5 三册从旧文档迁移成六字段格式，S1/S2/S6-S9 骨架充实；验收：条目带优先级/出处/预期信号。
-4. **catalog 最小版实装** — 生成脚本 + INDEX/交叉视图 + 消费登记；验收：视图与账本一致、零消费体检可跑。
-5. **证据轴落地** — OBS/GRD/MR/REF schema + 三条回流边工程化；验收：synthetic 数据走通 S6→S9→提案全链（明确标注测试数据）。
-6. **随路线推进** — 第二课文切片、真实试教、题-KP M0→M1、新源类型预处理接入、L0 统一治理专项（见设计方案 §10）。
+1. **catalog 最小版实装（本轮）** — build_catalog.py + INDEX/交叉视图 + 消费登记；验收：视图与账本一致、零消费体检可跑。
+2. **资料轴 skill ×4 + yuwen-flow（本轮）** — intake/organize/curate/catalog 四 skill 步骤引用 MM-S0 条目；验收：每个 skill 声明读/门禁/写三件套。
+3. **S0 手册补全（本轮）** — MM-S0-05..09 从 §3.8 编译（无损整理/语义加工/视图生成/消费登记/命名细则）；验收：条目六字段齐。
+4. **手册编译（其余册）** — S3/S4/S5 迁移 + 六册骨架充实；验收：条目带优先级/出处/预期信号。
+5. **证据轴落地** — OBS/GRD/MR/REF schema + 三条回流边工程化；验收：synthetic 走通 S6→S9。
+6. **〔挂起〕《氓》内容工作** — 样板清零暂停于 462→188（O/C1-C4 已清，剩 C5/C6/S 共 19 页）；lesson.json 迁移已完成；K2 锚定 21 处待数组化。恢复条件：所有者指示。
+7. **随路线推进** — 第二课文切片、真实试教、题-KP M0→M1、新源预处理接入、L0 统一治理（设计方案 §10）。

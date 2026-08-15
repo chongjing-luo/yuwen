@@ -14,15 +14,15 @@
     [PASS] timebox_conservation
     [PASS] three_questions_present（3）
     [PASS] total_minutes
-    [FINDINGS] boilerplate_trace（403）
+    [FINDINGS] boilerplate_trace（188）
     报告已写入 /home/ubuntu/homes/LuoChongjing/Methods/yuwen/work/evaluation/reports/principle_checks_meng_v66.json
     课堂账：空——未真实试教（两本账纪律，P-12）
 
 ### ✅ 全量测试（pytest）
 
-    .................................................................. [ 96%]
-    ................                                               [100%]
-    428 passed, 30 subtests passed in 68.03s (0:01:08)
+    ................................................................................................................................ [ 94%]
+    .......................                                        [100%]
+    435 passed, 30 subtests passed in 70.31s (0:01:10)
 
 ### ✅ 机制节点覆盖
 
