@@ -57,23 +57,184 @@
 | EXMAP-V2 | EXMAP-V2_版本2文件试卷映射.jsonl | active | — | 978 行 |
 | province | province_usage.jsonl | active | — | 410 行 |
 
-## exam_paper（13）
+## exam_paper（174）
 
 | ID | 标题 | 状态 | 权威 | 摘要 |
 |---|---|---|---|---|
+| PAPER-AH-2012 | 2012年普通高等学校招生全国统一考试（安徽卷） | candidate | — | 25 题（结构候选）；答案 candidate |
+| PAPER-AH-2013 | 2013年高考安徽卷语文原卷（精编版） | candidate | — | 28 题（结构候选）；答案 candidate |
+| PAPER-AH-2014 | 2014年普通高等学校招生全国统一考试（安徽卷） | candidate | — | 26 题（结构候选）；答案 candidate |
+| PAPER-AH-2015 | 2015年高考语文安徽卷 | candidate | — | 27 题（结构候选）；答案 candidate |
+| PAPER-BJ-2008 | 2008年北京市高考语文试卷 | candidate | — | 20 题（结构候选）；答案 candidate |
+| PAPER-BJ-2009 | 2009年北京市高考语文试卷 | candidate | — | 21 题（结构候选）；答案 candidate |
+| PAPER-BJ-2010 | 2010年北京市高考语文试卷 | candidate | — | 19 题（结构候选）；答案 candidate |
+| PAPER-BJ-2011 | 2011年北京市高考语文试卷 | candidate | — | 19 题（结构候选）；答案 candidate |
+| PAPER-BJ-2012 | 2012年北京市高考语文试卷 | candidate | — | 18 题（结构候选）；答案 candidate |
+| PAPER-BJ-2013 | 2013年北京市高考语文试卷 | candidate | — | 19 题（结构候选）；答案 candidate |
+| PAPER-BJ-2014 | 2014年北京市高考语文试卷 | candidate | — | 17 题（结构候选）；答案 candidate |
+| PAPER-BJ-2015 | 2015年北京市高考语文试卷 | candidate | — | 12 题（结构候选）；答案 candidate |
+| PAPER-BJ-2016 | 2016年北京市高考语文试卷 | candidate | — | 17 题（结构候选）；答案 candidate |
+| PAPER-BJ-2017 | 2017年北京市高考语文试卷 | candidate | — | 12 题（结构候选）；答案 candidate |
+| PAPER-BJ-2018 | 2018年北京市高考语文试卷 | candidate | — | 18 题（结构候选）；答案 candidate |
+| PAPER-BJ-2019 | 2019年北京市高考语文试卷 | candidate | — | 17 题（结构候选）；答案 candidate |
+| PAPER-BJ-2020 | 2020年普通高等学校招生全国统一考试(北京卷) | candidate | — | 26 题（结构候选）；答案 candidate |
+| PAPER-BJ-2021 | 2021年普通高等学校招生全国统一考试（北京卷） | candidate | — | 29 题（结构候选）；答案 candidate |
+| PAPER-BJ-2022 | 2022年普通高等学校招生全国统一考试（北京卷） | candidate | — | 25 题（结构候选）；答案 candidate |
+| PAPER-BJ-2023 | 2023年普通高等学校招生全国统一考试（北京卷）语文 | candidate | — | 28 题（结构候选）；答案 candidate |
+| PAPER-BJ-2024 | 2024年普通高等学校招生全国统一考试·北京卷 | candidate | — | 26 题（结构候选）；答案 candidate |
+| PAPER-CQ-2012 | 2012年普通高等学校招生全国统一考试（重庆卷） | candidate | — | 14 题（结构候选）；答案 candidate |
+| PAPER-CQ-2013 | 2013年高考重庆语文原卷（精编版） | candidate | — | 29 题（结构候选）；答案 candidate |
+| PAPER-CQ-2014 | 2014年普通高等学校招生全国统一考试语文试题（重庆卷）语文 | candidate | — | 21 题（结构候选）；答案 candidate |
+| PAPER-CQ-2015 | 2015年普通高等学校招生全国统一考试（重庆卷） | candidate | — | 28 题（结构候选）；答案 candidate |
+| PAPER-DG1-2008 | 2008年全国统一高考语文试卷（全国卷I） | candidate | — | 27 题（结构候选）；答案 candidate |
+| PAPER-DG1-2009 | 2009年全国统一高考语文试卷（全国卷I） | candidate | — | 19 题（结构候选）；答案 candidate |
+| PAPER-DG1-2010 | 2010年全国统一高考语文试卷（大纲版Ⅰ） | candidate | — | 20 题（结构候选）；答案 candidate |
+| PAPER-DG2-2008 | 2008年全国统一高考语文试卷（全国卷Ⅱ） | candidate | — | 26 题（结构候选）；答案 candidate |
+| PAPER-DG2-2009 | 2009年全国统一高考语文试卷（全国卷Ⅱ） | candidate | — | 20 题（结构候选）；答案 candidate |
+| PAPER-DG2-2010 | 2010年全国统一高考语文试卷（大纲版Ⅱ） | candidate | — | 20 题（结构候选）；答案 candidate |
+| PAPER-DG2-2011 | 2011年全国统一高考语文试卷（全国卷ii） | candidate | — | 19 题（结构候选）；答案 candidate |
+| PAPER-DGB-2012 | 2012年全国统一高考语文试卷（大纲版） | candidate | — | 20 题（结构候选）；答案 candidate |
+| PAPER-FJ-2012 | 2012年普通高等学校招全国统一考试 语文 | candidate | — | 29 题（结构候选）；答案 candidate |
+| PAPER-FJ-2013 | 2013高考福建卷语文原卷（精编版） | candidate | — | 29 题（结构候选）；答案 candidate |
+| PAPER-FJ-2014 | 2014年普通高等学校招生全国统一考试（福建卷） | candidate | — | 29 题（结构候选）；答案 candidate |
+| PAPER-FJ-2015 | 2015年普通高等学校招生全国统一考试 | candidate | — | 30 题（结构候选）；答案 candidate |
+| PAPER-GD-2008 | 2008年广东高考语文试题 | candidate | — | 30 题（结构候选）；答案 candidate |
+| PAPER-GD-2009 |  | candidate | — | 27 题（结构候选）；答案 candidate |
+| PAPER-GD-2010 | 2010年普通高等学校招生全国统一考试（广东卷） | candidate | — | 28 题（结构候选）；答案 candidate |
+| PAPER-GD-2011 | 2011年广东高考语文试题 | candidate | — | 28 题（结构候选）；答案 candidate |
+| PAPER-GD-2012 | 2012年普通高等学校招生全国统一考试(广东卷) | candidate | — | 28 题（结构候选）；答案 candidate |
+| PAPER-GD-2013 | 2013年高考广东卷语文原卷（精编版） | candidate | — | 29 题（结构候选）；答案 candidate |
+| PAPER-GD-2014 | 试卷类型：B | candidate | — | 27 题（结构候选）；答案 candidate |
+| PAPER-GD-2015 | 2015年普通高等学校招生全国统一考试（广东卷） | candidate | — | 29 题（结构候选）；答案 candidate |
+| PAPER-HUB-2013 | 2013年高考湖北省语文原卷（精编版） | candidate | — | 29 题（结构候选）；答案 candidate |
+| PAPER-HUB-2014 | 2014年普通高等学校招生全国统一考试（湖北卷） | candidate | — | 28 题（结构候选）；答案 candidate |
+| PAPER-HUB-2015 | 绝密★启用前 | candidate | — | 29 题（结构候选）；答案 candidate |
+| PAPER-HUN-2008 | 2008年普通高等学校招生全国统一考试（湖南卷） | candidate | — | 29 题（结构候选）；答案 candidate |
+| PAPER-HUN-2009 | 2009年普通高等学校招生全国统一考试（湖南卷） | candidate | — | 27 题（结构候选）；答案 candidate |
+| PAPER-HUN-2010 | 2010年湖南高考语文试题及答案 | candidate | — | 26 题（结构候选）；答案 candidate |
+| PAPER-HUN-2011 | 2011年普通高等学校招生全国统一考试(湖南卷) | candidate | — | 28 题（结构候选）；答案 candidate |
+| PAPER-HUN-2012 | 2012年普通高等学校招生全国统一考试语文（湖南卷）（学生版 | candidate | — | 27 题（结构候选）；答案 candidate |
+| PAPER-HUN-2013 | 2013年高考湖南卷语文原卷（精编版） | candidate | — | 26 题（结构候选）；答案 candidate |
+| PAPER-HUN-2014 | 2014年普通高等学校招生全国统一考试（湖南卷） | candidate | — | 24 题（结构候选）；答案 candidate |
+| PAPER-HUN-2015 | 2015年高考湖南卷语文试题 | candidate | — | 28 题（结构候选）；答案 candidate |
 | PAPER-JIA-2021 | 2021年普通高等学校招生全国统一考试（全国甲卷） | candidate | — | 24 题（结构候选）；答案 candidate |
 | PAPER-JIA-2022 | 2022年普通高等学校招生全国统一考试（甲卷） | candidate | — | 25 题（结构候选）；答案 candidate |
 | PAPER-JIA-2023 | 2023年普通高等学校招生全国统一考试（全国甲卷） | candidate | — | 24 题（结构候选）；答案 candidate |
 | PAPER-JIA-2024 | 2024年普通高等学校招生全国统一考试（全国甲卷） | candidate | — | 27 题（结构候选）；答案 candidate |
+| PAPER-JS-2008 | 2008年江苏省高考语文试卷 | candidate | — | 23 题（结构候选）；答案 candidate |
+| PAPER-JS-2009 | 2009年江苏省高考语文试卷 | candidate | — | 21 题（结构候选）；答案 candidate |
+| PAPER-JS-2010 | 2010年江苏省高考语文试卷 | candidate | — | 21 题（结构候选）；答案 candidate |
+| PAPER-JS-2011 | 2011年江苏省高考语文试卷 | candidate | — | 21 题（结构候选）；答案 candidate |
+| PAPER-JS-2012 | 2012年江苏省高考语文试卷 | candidate | — | 17 题（结构候选）；答案 candidate |
+| PAPER-JS-2013 | 2013年江苏省高考语文试卷 | candidate | — | 20 题（结构候选）；答案 candidate |
+| PAPER-JS-2014 | 2014年江苏省高考语文试卷 | candidate | — | 17 题（结构候选）；答案 candidate |
+| PAPER-JS-2015 | 2015年江苏省高考语文试卷 | candidate | — | 22 题（结构候选）；答案 candidate |
+| PAPER-JS-2016 | 2016年江苏省高考语文试卷 | candidate | — | 17 题（结构候选）；答案 candidate |
+| PAPER-JS-2017 | 2017年江苏省高考语文试卷 | candidate | — | 18 题（结构候选）；答案 candidate |
+| PAPER-JS-2018 | 2018年江苏省高考语文试卷 | candidate | — | 18 题（结构候选）；答案 candidate |
+| PAPER-JS-2019 | 2019年江苏省高考语文试卷 | candidate | — | 22 题（结构候选）；答案 candidate |
+| PAPER-JS-2020 | 2020年普通高等学校招生全国统一考试（江苏卷） | candidate | — | 28 题（结构候选）；答案 candidate |
+| PAPER-JX-2012 | 2012普通高等学校招生全国统一考试（江西卷） | candidate | — | 18 题（结构候选）；答案 candidate |
+| PAPER-JX-2013 | 2013年高考江西语文科原卷（精编版） | candidate | — | 26 题（结构候选）；答案 candidate |
+| PAPER-JX-2014 | 2014年普通高等学校招生全国统一考试(江西卷) | candidate | — | 25 题（结构候选）；答案 candidate |
+| PAPER-LN-2012 | 2012年普通高等学校招生全国统一考试(辽宁卷) | candidate | — | 22 题（结构候选）；答案 candidate |
+| PAPER-LN-2013 | 2013年高考辽宁语文科原卷（精编版） | candidate | — | 23 题（结构候选）；答案 candidate |
+| PAPER-LN-2014 | 2014年普通高等学校招生全国统一考试（辽宁卷） | candidate | — | 23 题（结构候选）；答案 candidate |
+| PAPER-SD-2008 | 2008年山东高考语文试题及答案详解 | candidate | — | 33 题（结构候选）；答案 candidate |
+| PAPER-SD-2009 | 2009年普通高等学校招生全国统一考试（山东卷） | candidate | — | 32 题（结构候选）；答案 candidate |
+| PAPER-SD-2010 | 2010年普通高等学校招生全国统一考试（山东卷） | candidate | — | 32 题（结构候选）；答案 candidate |
+| PAPER-SD-2011 | 2011年普通高等学校招生全国统一考试（山东卷） | candidate | — | 30 题（结构候选）；答案 candidate |
+| PAPER-SD-2012 | 2012年普通高等学校招生全国统一考试（山东卷） | candidate | — | 25 题（结构候选）；答案 candidate |
+| PAPER-SD-2013 | 2013年高考山东语文解析（精编版） | candidate | — | 30 题（结构候选）；答案 candidate |
+| PAPER-SD-2014 | 2014年普通高等学校招生全国统一考试（山东卷） | candidate | — | 24 题（结构候选）；答案 candidate |
+| PAPER-SD-2015 | 2015年普通高等学校招生全国统一考试（山东卷） | candidate | — | 30 题（结构候选）；答案 candidate |
+| PAPER-SD-2016 | 2016年普通高等学校招生全国统一考试（山东卷） | candidate | — | 30 题（结构候选）；答案 candidate |
+| PAPER-SD-2017 | 2017年普通高等学校招生全国统一考试（山东卷） | candidate | — | 30 题（结构候选）；答案 candidate |
+| PAPER-SH-2008 | 2008年普通高等学校招生全国统一考试（上海卷） | candidate | — | 31 题（结构候选）；答案 candidate |
+| PAPER-SH-2009 | 2009年普通高等学校招生全国统一考试（上海卷） | candidate | — | 34 题（结构候选）；答案 candidate |
+| PAPER-SH-2010 | 绝密★启用前 | candidate | — | 28 题（结构候选）；答案 candidate |
+| PAPER-SH-2011 | 2011年普通高等学校招生全国统一考试（上海卷） | candidate | — | 34 题（结构候选）；答案 candidate |
+| PAPER-SH-2013 | 2013年普通高等学校招生全国统一考试（上海卷）语文试卷 | candidate | — | 33 题（结构候选）；答案 candidate |
+| PAPER-SH-2014 | 2014年普通高等学校招生全国统一考试（上海卷） | candidate | — | 33 题（结构候选）；答案 candidate |
+| PAPER-SH-2015 | 上海语文试卷 | candidate | — | 32 题（结构候选）；答案 candidate |
+| PAPER-SH-2016 | 2016上海高考语文真题及答案 | candidate | — | 34 题（结构候选）；答案 candidate |
+| PAPER-SH-2017 | 2017年上海市高考语文试卷 | candidate | — | 16 题（结构候选）；答案 candidate |
+| PAPER-SH-2018 | 2018年上海市高考语文试卷 | candidate | — | 16 题（结构候选）；答案 candidate |
+| PAPER-SH-2019 | 2019年上海市春季高考语文试卷 | candidate | — | 22 题（结构候选）；答案 candidate |
+| PAPER-SH-2020 | 2020年春季高考上海语文 | candidate | — | 25 题（结构候选）；答案 candidate |
+| PAPER-SH-2021 | 2021年上海市春季高考语文试卷 | candidate | — | 16 题（结构候选）；答案 candidate |
+| PAPER-SH-2022 | 2022年上海春考语文试卷真题 | candidate | — | 19 题（结构候选）；答案 candidate |
+| PAPER-SH-2023 | 2023年全国普通高等学校招生统一考试 | candidate | — | 31 题（结构候选）；答案 candidate |
+| PAPER-TJ-2008 | 2008年天津市高考语文试卷 | candidate | — | 21 题（结构候选）；答案 candidate |
+| PAPER-TJ-2009 | 2009年天津市高考语文试卷 | candidate | — | 20 题（结构候选）；答案 candidate |
+| PAPER-TJ-2010 | 2010年天津市高考语文试卷 | candidate | — | 21 题（结构候选）；答案 candidate |
+| PAPER-TJ-2011 | 2011年天津市高考语文试卷 | candidate | — | 21 题（结构候选）；答案 candidate |
+| PAPER-TJ-2012 | 2012年天津市高考语文试卷 | candidate | — | 21 题（结构候选）；答案 candidate |
+| PAPER-TJ-2013 | 2013年天津市高考语文试卷 | candidate | — | 21 题（结构候选）；答案 candidate |
+| PAPER-TJ-2014 | 2014年天津市高考语文试卷 | candidate | — | 19 题（结构候选）；答案 candidate |
+| PAPER-TJ-2015 | 2015年天津市高考语文试卷 | candidate | — | 20 题（结构候选）；答案 candidate |
+| PAPER-TJ-2016 | 2016年天津市高考语文试卷 | candidate | — | 19 题（结构候选）；答案 candidate |
+| PAPER-TJ-2017 | 2017年天津市高考语文试卷 | candidate | — | 17 题（结构候选）；答案 candidate |
+| PAPER-TJ-2018 | 2018年天津市高考语文试卷 | candidate | — | 18 题（结构候选）；答案 candidate |
+| PAPER-TJ-2019 | 2019年天津市高考语文试卷 | candidate | — | 17 题（结构候选）；答案 candidate |
+| PAPER-TJ-2020 | 2020年普通高等学校招生全国统一考试（天津卷） | candidate | — | 31 题（结构候选）；答案 candidate |
+| PAPER-TJ-2021 | 2021年普通高等学校招生全国统一考试（天津卷） | candidate | — | 32 题（结构候选）；答案 candidate |
+| PAPER-TJ-2022 | 2022年天津高考语文真题 | candidate | — | 28 题（结构候选）；答案 candidate |
+| PAPER-TJ-2023 | 2023年普通高等学校招生全国统一考试（天津卷） | candidate | — | 35 题（结构候选）；答案 candidate |
 | PAPER-XG1-2020 | 2020年普通高等学校招生全国统一考试 | candidate | — | 44 题（结构候选）；答案 candidate |
 | PAPER-XG1-2021 | 2021年普通高等学校招生全国统一考试 | candidate | — | 27 题（结构候选）；答案 candidate |
 | PAPER-XG1-2022 | 2022年全国新高考1卷语文试题 | candidate | — | 27 题（结构候选）；答案 candidate |
+| PAPER-XG1-2024 | 2024年普通高等学校招生全国统一考试（新高考Ⅰ卷） | candidate | — | 25 题（结构候选）；答案 candidate |
 | PAPER-XG2-2020 | 2020年普通高等学校招生全国统一考试 | candidate | — | 10 题（结构候选）；答案 candidate |
 | PAPER-XG2-2021 | 2021年普通高等学校招生全国统一考试（新高考全国Ⅱ卷） | candidate | — | 26 题（结构候选）；答案 candidate |
 | PAPER-XG2-2022 | 2022年普通高等学校招生全国统一考试（新高考全国Ⅱ | candidate | — | 27 题（结构候选）；答案 candidate |
+| PAPER-XK1-2013 | 2013年全国统一高考语文试卷（新课标Ⅰ） | candidate | — | 19 题（结构候选）；答案 candidate |
+| PAPER-XK1-2014 | 2014年全国统一高考语文试卷（新课标Ⅰ） | candidate | — | 18 题（结构候选）；答案 candidate |
+| PAPER-XK1-2015 | 2015年全国统一高考语文试卷（新课标I） | candidate | — | 17 题（结构候选）；答案 candidate |
+| PAPER-XK1-2016 | 2016年全国统一高考语文试卷（新课标Ⅰ） | candidate | — | 18 题（结构候选）；答案 candidate |
+| PAPER-XK1-2017 | 2017年全国统一高考语文试卷（新课标I） | candidate | — | 17 题（结构候选）；答案 candidate |
+| PAPER-XK1-2018 | 2018年全国统一高考语文试卷（新课标I） | candidate | — | 17 题（结构候选）；答案 candidate |
+| PAPER-XK1-2019 | 2019年全国统一高考语文试卷（新课标Ⅰ） | candidate | — | 17 题（结构候选）；答案 candidate |
+| PAPER-XK1-2020 | 2020年全国统一高考语文试卷（新课标Ⅰ） | candidate | — | 17 题（结构候选）；答案 candidate |
+| PAPER-XK1-2023 | 2023年普通高等学校招生全国统一考试（新课标全国Ⅰ卷） | candidate | — | 27 题（结构候选）；答案 candidate |
+| PAPER-XK1-2024 | 2024年普通高等学校招生全国统一考试（新高考Ⅰ卷） | candidate | — | 25 题（结构候选）；答案 candidate |
+| PAPER-XK2-2013 | 2013年全国统一高考语文试卷（新课标Ⅱ） | candidate | — | 18 题（结构候选）；答案 candidate |
+| PAPER-XK2-2014 | 2014年全国统一高考语文试卷（新课标Ⅱ） | candidate | — | 18 题（结构候选）；答案 candidate |
+| PAPER-XK2-2015 | 2015年全国统一高考语文试卷（新课标Ⅱ） | candidate | — | 16 题（结构候选）；答案 candidate |
+| PAPER-XK2-2016 | 2016年全国统一高考语文试卷（新课标Ⅱ） | candidate | — | 16 题（结构候选）；答案 candidate |
+| PAPER-XK2-2017 | 2017年全国统一高考语文试卷（新课标Ⅱ） | candidate | — | 17 题（结构候选）；答案 candidate |
+| PAPER-XK2-2018 | 2018年全国统一高考语文试卷（新课标Ⅱ） | candidate | — | 15 题（结构候选）；答案 candidate |
+| PAPER-XK2-2019 | 2019年全国统一高考语文试卷（新课标Ⅱ） | candidate | — | 17 题（结构候选）；答案 candidate |
+| PAPER-XK2-2020 | 2020年全国统一高考语文试卷（新课标Ⅱ） | candidate | — | 16 题（结构候选）；答案 candidate |
+| PAPER-XK2-2023 | 2023年普通高等学校招生全国统一考试（新高考全国Ⅱ卷） | candidate | — | 24 题（结构候选）；答案 candidate |
+| PAPER-XK2-2024 | 语文 | candidate | — | 27 题（结构候选）；答案 candidate |
+| PAPER-XK3-2016 | 2016年全国统一高考语文试卷（新课标Ⅲ） | candidate | — | 17 题（结构候选）；答案 candidate |
+| PAPER-XK3-2017 | 2017年全国统一高考语文试卷（新课标Ⅲ） | candidate | — | 19 题（结构候选）；答案 candidate |
+| PAPER-XK3-2018 | 2018年全国统一高考语文试卷（新课标Ⅲ） | candidate | — | 16 题（结构候选）；答案 candidate |
+| PAPER-XK3-2019 | 2019年全国统一高考语文试卷（新课标Ⅲ） | candidate | — | 17 题（结构候选）；答案 candidate |
+| PAPER-XK3-2020 | 2020年全国统一高考语文试卷（新课标Ⅲ） | candidate | — | 16 题（结构候选）；答案 candidate |
+| PAPER-XKB-2008 | 2008年全国高考语文试题详解（海南卷） | candidate | — | 26 题（结构候选）；答案 candidate |
+| PAPER-XKB-2009 | 2009年普通高等学校招生全国统一考试（海南、宁夏卷） | candidate | — | 20 题（结构候选）；答案 candidate |
+| PAPER-XKB-2010 | 2010年全国统一高考语文试卷（新课标） | candidate | — | 19 题（结构候选）；答案 candidate |
+| PAPER-XKB-2011 | 2011年全国统一高考语文试卷（新课标） | candidate | — | 19 题（结构候选）；答案 candidate |
+| PAPER-XKB-2012 | 2012年全国统一高考语文试卷（新课标） | candidate | — | 17 题（结构候选）；答案 candidate |
 | PAPER-YI-2021 | 2021年普通高等学校招生全国统一考试（乙卷） | candidate | — | 21 题（结构候选）；答案 candidate |
 | PAPER-YI-2022 | 2022年高考全国乙卷语文 | candidate | — | 24 题（结构候选）；答案 candidate |
 | PAPER-YI-2023 | 2023年普通高等学校招生全国统一考试 | candidate | — | 23 题（结构候选）；答案 candidate |
+| PAPER-ZJ-2008 | 2008年普通高考浙江卷语文试题 | candidate | — | 30 题（结构候选）；答案 candidate |
+| PAPER-ZJ-2009 | 2009年普通高等学校招生全国统一考试（浙江卷） | candidate | — | 32 题（结构候选）；答案 candidate |
+| PAPER-ZJ-2010 | 2010年普通高等学校招生全国统一考试（浙江卷） | candidate | — | 26 题（结构候选）；答案 candidate |
+| PAPER-ZJ-2011 | 2011年普通高等学校招生全国统一考试（浙江卷） | candidate | — | 32 题（结构候选）；答案 candidate |
+| PAPER-ZJ-2012 | 2012年高考浙江卷语文试题及答案 | candidate | — | 32 题（结构候选）；答案 candidate |
+| PAPER-ZJ-2013 | 2013高考浙江卷语文原卷（精编版） | candidate | — | 32 题（结构候选）；答案 candidate |
+| PAPER-ZJ-2014 | 浙江省2014高考语文试题 | candidate | — | 29 题（结构候选）；答案 candidate |
+| PAPER-ZJ-2015 | 2015浙江高考语文试题 | candidate | — | 31 题（结构候选）；答案 candidate |
+| PAPER-ZJ-2016 | 2016年普通高等学校全国统一考试（浙江卷） | candidate | — | 28 题（结构候选）；答案 candidate |
+| PAPER-ZJ-2017 | 2017年普通高等学校全国统一考试(浙江卷) | candidate | — | 28 题（结构候选）；答案 candidate |
+| PAPER-ZJ-2018 | 2018年普通高等学校招生全国统一考试（浙江卷） | candidate | — | 28 题（结构候选）；答案 candidate |
+| PAPER-ZJ-2019 | 2019年普通高等学校招生全国统一考试（浙江卷） | candidate | — | 31 题（结构候选）；答案 candidate |
+| PAPER-ZJ-2020 | 2020年全国统一高考语文试卷（新课标Ⅰ） | candidate | — | 17 题（结构候选）；答案 candidate |
+| PAPER-ZJ-2022 | 2022年高考浙江卷语文真题 | candidate | — | 28 题（结构候选）；答案 candidate |
 
 ## global_map（1）
 
@@ -236,4 +397,4 @@
 | UNIT-X3-U03 | UNIT-X3-U03_选择性必修下册U03（中华传统文化经 | accepted | — | unit_graph（账本状态 accepted） |
 | UNIT-X3-U04 | UNIT-X3-U04_选择性必修下册U04 | accepted | — | unit_graph（账本状态 accepted） |
 
-> 共 161 实体 · 生成于 2026-08-15 · 路径解析规则见 docs/architecture/ID解析表.md
+> 共 322 实体 · 生成于 2026-08-15 · 路径解析规则见 docs/architecture/ID解析表.md

@@ -20,8 +20,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-SECTION_RE = re.compile(r"^##\s+[一二三四五六七八九十]+、(.+?)(?:（(\d+)分）)?\s*$")
-SUB_RE = re.compile(r"^##\s+（[一二三四五六七八九十]+）(.+?)(?:（本题共(\d+)小题[，,](\d+)分）)?\s*$")
+SECTION_RE = re.compile(r"^##\s+[一二三四五六七八九十]+[、．\.\s]\s*(.+?)(?:[（(]?(\d+)分[）)]?)?\s*$")
+SUB_RE = re.compile(r"^##\s+[（(][一二三四五六七八九十]+[)）]\s*(.+?)(?:[（(]本题共(\d+)小题[，,](\d+)分[）)])?\s*$")
 Q_RE = re.compile(r"^(\d{1,2})[.．、]\s*(.*)")
 
 TYPE_MAP = [
