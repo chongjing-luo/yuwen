@@ -33,7 +33,7 @@
 
 ### ✅ 知识账本校验
 
-    {"result": "passed", "run_id": "VAL-20260816-092107+0800", "errors": 0, "report": "/home/ubuntu/homes/LuoChongjing/Methods/yuwen/work/knowledge/_meta/validation_reports/latest.json"}
+    {"result": "passed", "run_id": "VAL-20260816-101244+0800", "errors": 0, "report": "/home/ubuntu/homes/LuoChongjing/Methods/yuwen/work/knowledge/_meta/validation_reports/latest.json"}
 
 ### ✅ 机制节点覆盖
 

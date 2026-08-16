@@ -1,0 +1,115 @@
+# 高考题目考点受控词表（exam_points vocabulary）
+# 版本：1.1（2026-08-16，试点沪2011+津2012后修订：增设论述文迁移运用/文学类内容理解；考点上限放宽至 4）
+# 用途：题目语义 curate 的考点标注层——每题从本词表选 1-4 个考点，写入各卷 kp_tags.jsonl
+# 约束：
+#   1. 只能使用本词表中的考点（校验器强制）；
+#   2. 每题 1-4 个考点，按题面主要作答动作判定，不猜测超纲考点（组题小问动作多时取主要 4 个，其余写入 note）；
+#   3. kp_ids 仅当题面直接涉及教材课文（默写出处/选文即课文）时绑定 CARD-*，否则留空数组；古诗词诵读篇目在 CARD-{册}-REC-01 卡（如《登快阁》→CARD-X3-REC-01），标题不含篇名时须核对该卡内容文件后再绑定，不确定留空；
+#   4. mapping_level 批量产出只允许 M0（M1+ 需答案核验与双向证据，见 MAP-EXAM-KP §3）。
+
+exam_points:
+  # —— 语言文字运用 ——
+  字音辨析:
+    description: 多音字/形声字/形近字读音辨析
+  字形辨析:
+    description: 错别字/形近字辨析
+  词语辨析:
+    description: 实词虚词选用（含近义词）
+  成语使用:
+    description: 成语（含熟语）使用正误
+  病句辨析:
+    description: 语病类型判断与修改
+  标点使用:
+    description: 标点符号正误
+  语言表达连贯:
+    description: 衔接、排序、语句复位
+  语言表达得体:
+    description: 语体、谦敬、场合得体
+  修辞手法运用:
+    description: 比喻比拟排比对偶等修辞辨析与运用
+  图文转换:
+    description: 图表/漫画/徽标/流程图转文字
+  仿写句式:
+    description: 仿写、句式变换
+  压缩扩展语段:
+    description: 语段压缩概括、下定义、扩展
+  对联:
+    description: 对联拟写与匹配
+  语言综合运用:
+    description: 语用综合题（含情境语段多空）
+  # —— 默写 ——
+  名篇名句默写:
+    description: 课标名篇名句默写填空
+  # —— 文言文 ——
+  文言实词:
+    description: 实词意义（含古今异义/词类活用）
+  文言虚词:
+    description: 常见虚词意义与用法
+  文言断句:
+    description: 文言语句断句
+  文言翻译:
+    description: 文言句子翻译
+  文言文意理解:
+    description: 文言内容筛选、概括与分析
+  古代文化常识:
+    description: 古代官职/称谓/历法/典章等常识
+  # —— 古诗歌 ——
+  诗歌形象意象:
+    description: 意象、意境、人物形象
+  诗歌语言炼字:
+    description: 炼字、语言风格
+  诗歌表达技巧:
+    description: 技巧手法（用典/虚实/动静等）
+  诗歌思想情感:
+    description: 情感主旨、观点态度
+  诗歌比较鉴赏:
+    description: 两首/两句比较
+  # —— 论述类 ——
+  论述文内容理解:
+    description: 概念、句意、文意理解
+  论述文论证分析:
+    description: 论点论据、论证结构与方法
+  论述文观点推断:
+    description: 依据文意的推理判断
+  论述文迁移运用:
+    description: 联系现实/自身经验阐述运用（上海卷式迁移题）
+  # —— 实用类 ——
+  实用文信息筛选:
+    description: 信息筛选、判断
+  实用文内容概括:
+    description: 内容概括、要点整合
+  实用文图表解读:
+    description: 非连续文本图表信息
+  # —— 文学类 ——
+  文学类内容理解:
+    description: 内容信息筛选与理解（含"找出相关语句"式设问）
+  文学类形象分析:
+    description: 人物/物象形象分析
+  文学类语言赏析:
+    description: 语言艺术、词句赏析
+  文学类手法技巧:
+    description: 表现手法、叙事技巧
+  文学类结构主题:
+    description: 结构作用、主旨探究
+  文学类探究:
+    description: 探究题（标题/结尾/多元解读）
+  # —— 写作 ——
+  材料作文:
+    description: 材料驱动型作文
+  命题作文:
+    description: 命题/半命题作文
+  话题作文:
+    description: 话题作文
+  微写作:
+    description: 小规模写作（北京卷式）
+  应用文写作:
+    description: 书信/演讲稿/通知等实用文体
+  # —— 专项（地方卷特色） ——
+  名著阅读:
+    description: 整本书阅读（红楼梦/论语等考查）
+  文化经典阅读:
+    description: 文化经典语段理解（福建卷式）
+  文学常识:
+    description: 作家作品文体常识
+  综合学习:
+    description: 综合性学习/其他（无法归入上述时兜底，须 note 说明）
