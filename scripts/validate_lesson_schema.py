@@ -153,6 +153,17 @@ def validate(lesson: dict, strict: bool) -> tuple[list[str], list[str], dict]:
             if actual != contract["source_sha256"]:
                 errors.append("text_contract.source_sha256 与实际文件不匹配（原文漂移）")
 
+    # 1c. 过程品质（享受不单列目标，作为全课过程品质显式声明——三目标之 J 的安放处）
+    pq = lesson.get("process_quality") or {}
+    if not (pq.get("statement") or "").strip() or len(pq.get("statement", "").strip()) < 20:
+        errors.append("process_quality 缺失或过短（享受是过程品质不是单独目标，必须显式声明由什么承载）")
+    pq_nodes = pq.get("nodes") or []
+    if not pq_nodes:
+        errors.append("process_quality 未绑定 J 类机制节点")
+    for node in pq_nodes:
+        if node not in {f"J{i}" for i in range(1, 8)}:
+            errors.append(f"process_quality 节点须为 J 族（过程品质）: {node}")
+
     # 2. K1 知识绑定
     card_kps: set[str] = set()
     for card_id in lesson["book_unit"].get("card_refs", []):

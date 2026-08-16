@@ -38,6 +38,10 @@ def synthetic_lesson():
                 "evidence_pages": ["T01"],
             }
         ],
+        "process_quality": {
+            "statement": "享受不单列目标：由真实追问、前台语言质地与节奏变化承载。",
+            "nodes": ["J4", "J5"],
+        },
         "kp_scope": {
             "kp_ids": ["KP-CARD-X3-U01-01-003", "KP-CARD-X3-U01-01-004"],
             "deferred": [{"kp_id": "KP-CARD-X3-U01-01-007", "reason": "《离骚》属下一课"}],
@@ -208,6 +212,18 @@ class ValidateLessonSchemaTest(unittest.TestCase):
         lesson["objectives"][0]["statement"] = "理解课文"
         errors, _, _ = validate(lesson, strict=False)
         self.assertTrue(any("statement 过短" in e for e in errors))
+
+    def test_process_quality_missing_detected(self):
+        lesson = synthetic_lesson()
+        lesson.pop("process_quality")
+        errors, _, _ = validate(lesson, strict=False)
+        self.assertTrue(any("process_quality 缺失" in e for e in errors))
+
+    def test_process_quality_non_j_node_detected(self):
+        lesson = synthetic_lesson()
+        lesson["process_quality"]["nodes"] = ["K1"]
+        errors, _, _ = validate(lesson, strict=False)
+        self.assertTrue(any("J 族" in e for e in errors))
 
     def test_relation_unresolvable_detected(self):
         lesson = synthetic_lesson()
