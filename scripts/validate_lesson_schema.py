@@ -41,6 +41,9 @@ PAGE_REQUIRED_FIELDS = [
     "deletion_loss", "story_return",
 ]
 
+# 机制节点全集（work/evaluation/三目标实现机制.md 的 20 节点）
+NODE_IDS = {f"K{i}" for i in range(1, 6)} | {f"U{i}" for i in range(1, 9)} | {f"J{i}" for i in range(1, 8)}
+
 # literary_object 非行对象的合法类别（K2）：行锚定之外，页面确以非诗对象为主时
 # 必须显式声明类别，不许自由散文冒充行锚定。
 NON_POEM_KINDS = {"student_products", "full_poem_voice", "cultural_knowledge", "question_set", "mixed"}
@@ -114,6 +117,28 @@ def validate(lesson: dict, strict: bool) -> tuple[list[str], list[str], dict]:
     if len(lesson["three_questions"]) < 1:
         errors.append("three_questions 为空（J4：三问是全课叙事悬念）")
 
+    # 1b. 教学目标（全课指导：先于 pages 存在，每条可归因、可取证）
+    objectives = lesson.get("objectives") or []
+    if not objectives:
+        errors.append("objectives 为空（教学目标是全课指导，必须显式声明——目标先行）")
+    seen_obj_ids = set()
+    for i, obj in enumerate(objectives):
+        oid = obj.get("id", f"#{i}")
+        if oid in seen_obj_ids:
+            errors.append(f"objective {oid}: id 重复")
+        seen_obj_ids.add(oid)
+        if not (obj.get("dimension") or "").strip():
+            errors.append(f"objective {oid}: 缺 dimension（素养维度）")
+        if len((obj.get("statement") or "").strip()) < 20:
+            errors.append(f"objective {oid}: statement 过短或为空（不得以抽象套话充当目标）")
+        for node in obj.get("nodes") or []:
+            if node not in NODE_IDS:
+                errors.append(f"objective {oid}: 机制节点非法: {node}")
+        if not (obj.get("nodes") or []):
+            errors.append(f"objective {oid}: 未绑定机制节点（准入法庭）")
+        if not (obj.get("evidence_pages") or []):
+            errors.append(f"objective {oid}: 未声明证据页（目标必须可取证）")
+
     # 1. 文本契约
     contract = lesson["text_contract"]
     for field in ("source_path", "source_sha256", "canonical_lines"):
@@ -164,6 +189,17 @@ def validate(lesson: dict, strict: bool) -> tuple[list[str], list[str], dict]:
 
     pages = lesson["pages"]
     stats["pages"] = len(pages)
+    page_ids = {p.get("page_id") for p in pages}
+
+    # 教学目标的交叉校验（需 card_kps 与 page_ids）
+    for obj in lesson.get("objectives") or []:
+        oid = obj.get("id", "?")
+        for kp in obj.get("kp_refs") or []:
+            if kp not in card_kps:
+                errors.append(f"objective {oid}: kp_ref 未解析到引用卡片: {kp}")
+        for pid in obj.get("evidence_pages") or []:
+            if pid not in page_ids:
+                errors.append(f"objective {oid}: 证据页不存在: {pid}")
     findings = scan_lesson(lesson)
     stats["boilerplate"] = len(findings)
     canonical = contract.get("canonical_lines") or []

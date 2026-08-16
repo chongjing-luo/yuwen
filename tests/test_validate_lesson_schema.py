@@ -28,6 +28,16 @@ def synthetic_lesson():
             "interpretation_boundaries": [],
         },
         "three_questions": ["她经历了什么？"],
+        "objectives": [
+            {
+                "id": "OBJ-01",
+                "dimension": "语言建构与运用·读懂",
+                "statement": "能借助注释独立读通全诗，并用自己的话按时间顺序讲出完整经历。",
+                "kp_refs": ["KP-CARD-X3-U01-01-003"],
+                "nodes": ["K1", "U2"],
+                "evidence_pages": ["T01"],
+            }
+        ],
         "kp_scope": {
             "kp_ids": ["KP-CARD-X3-U01-01-003", "KP-CARD-X3-U01-01-004"],
             "deferred": [{"kp_id": "KP-CARD-X3-U01-01-007", "reason": "《离骚》属下一课"}],
@@ -168,6 +178,36 @@ class ValidateLessonSchemaTest(unittest.TestCase):
         self.assertTrue(any("样板" in w for w in warnings))
         errors, _, _ = validate(lesson, strict=True)
         self.assertTrue(any("样板" in e for e in errors))
+
+    def test_objectives_missing_detected(self):
+        lesson = synthetic_lesson()
+        lesson["objectives"] = []
+        errors, _, _ = validate(lesson, strict=False)
+        self.assertTrue(any("objectives 为空" in e for e in errors))
+
+    def test_objective_bad_node_detected(self):
+        lesson = synthetic_lesson()
+        lesson["objectives"][0]["nodes"] = ["X9"]
+        errors, _, _ = validate(lesson, strict=False)
+        self.assertTrue(any("机制节点非法" in e for e in errors))
+
+    def test_objective_unresolved_kp_detected(self):
+        lesson = synthetic_lesson()
+        lesson["objectives"][0]["kp_refs"] = ["KP-CARD-XX-U99-99-001"]
+        errors, _, _ = validate(lesson, strict=False)
+        self.assertTrue(any("kp_ref 未解析" in e for e in errors))
+
+    def test_objective_missing_evidence_page_detected(self):
+        lesson = synthetic_lesson()
+        lesson["objectives"][0]["evidence_pages"] = ["T99"]
+        errors, _, _ = validate(lesson, strict=False)
+        self.assertTrue(any("证据页不存在" in e for e in errors))
+
+    def test_objective_short_statement_detected(self):
+        lesson = synthetic_lesson()
+        lesson["objectives"][0]["statement"] = "理解课文"
+        errors, _, _ = validate(lesson, strict=False)
+        self.assertTrue(any("statement 过短" in e for e in errors))
 
     def test_relation_unresolvable_detected(self):
         lesson = synthetic_lesson()
