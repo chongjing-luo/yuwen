@@ -10,7 +10,9 @@
  "question_count": 24,
  "identity_check": {
   "declared_title": "2023年全国普通高等学校招生统一考试",
-  "expected_paper": "PAPER-SH-2023"
+  "expected_paper": "PAPER-SH-2023",
+  "exam_season": "autumn",
+  "exam_season_note": "主件为秋考空白卷（raw/README 有血缘）"
  },
  "status": "candidate",
  "question_count_basis": "manual_split questions.jsonl（卷面题号口径，选考A/B各计1）"

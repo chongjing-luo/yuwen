@@ -226,7 +226,7 @@
 | PAPER-XKB-2010 | 2010年全国统一高考语文试卷（新课标） | candidate | — | 12 题（结构候选）；答案 candidate |
 | PAPER-XKB-2011 | 2011年全国统一高考语文试卷（新课标） | candidate | — | 12 题（结构候选）；答案 candidate |
 | PAPER-XKB-2012 | 2012年全国统一高考语文试卷（新课标） | candidate | — | 12 题（结构候选）；答案 candidate |
-| PAPER-YI-2021 | 2021年普通高等学校招生全国统一考试（乙卷） | candidate | — | 20 题（结构候选）；答案 candidate |
+| PAPER-YI-2021 | 2021年普通高等学校招生全国统一考试（乙卷） | candidate | — | 22 题（结构候选）；答案 candidate |
 | PAPER-YI-2022 | 2022年高考全国乙卷语文 | candidate | — | 22 题（结构候选）；答案 candidate |
 | PAPER-YI-2023 | 2023年普通高等学校招生全国统一考试 | candidate | — | 22 题（结构候选）；答案 candidate |
 | PAPER-ZJ-2008 | 2008年普通高考浙江卷语文试题 | candidate | — | 25 题（结构候选）；答案 candidate |
@@ -241,7 +241,7 @@
 | PAPER-ZJ-2017 | 2017年普通高等学校全国统一考试(浙江卷) | candidate | — | 24 题（结构候选）；答案 candidate |
 | PAPER-ZJ-2018 | 2018年普通高等学校招生全国统一考试（浙江卷） | candidate | — | 24 题（结构候选）；答案 candidate |
 | PAPER-ZJ-2019 | 2019年普通高等学校招生全国统一考试（浙江卷） | candidate | — | 24 题（结构候选）；答案 candidate |
-| PAPER-ZJ-2020 | 2020年全国统一高考语文试卷（新课标Ⅰ） | candidate | — | 10 题（结构候选）；答案 candidate |
+| PAPER-ZJ-2020 | 浙江省2020年高考语文试题 | candidate | — | 20 题（结构候选）；答案 candidate |
 | PAPER-ZJ-2022 | 2022年高考浙江卷语文真题 | candidate | — | 24 题（结构候选）；答案 candidate |
 
 ## global_map（1）
@@ -405,4 +405,4 @@
 | UNIT-X3-U03 | UNIT-X3-U03_选择性必修下册U03（中华传统文化经 | accepted | — | unit_graph（账本状态 accepted） |
 | UNIT-X3-U04 | UNIT-X3-U04_选择性必修下册U04 | accepted | — | unit_graph（账本状态 accepted） |
 
-> 共 330 实体 · 生成于 2026-08-15 · 路径解析规则见 docs/architecture/ID解析表.md
+> 共 330 实体 · 生成于 2026-08-16 · 路径解析规则见 docs/architecture/ID解析表.md
