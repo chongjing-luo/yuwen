@@ -1064,3 +1064,14 @@ principles:
       - {type: review_gate, gate: 标题与首眼泄答测试}
       - {type: design_trace, fields: [info_state, first_glance]}
     status: active
+
+  - id: P-44
+    title: 教案先行与目标结构
+    statement: "备课从写教案开始：教学目标分素养维度目标与现实迁移目标（由全课追问承载落地），享受作为全课过程品质声明不单列；知识清单逐项绑定知识卡或注明无卡缺口；教案经审核讨论通过后才转课程数据与页面设计。"
+    domain: 通用
+    stages: [S3]
+    nodes: [K1]
+    anchor: {doc: work/备课基本原则.md, heading: "### 44. 教案先行与目标结构"}
+    enforcement:
+      - {type: machine_check, checker: scripts/validate_lesson_schema.py, rule: objectives与process_quality必检（目标结构机器化）}
+      - {type: review_gate, gate: 教案审核回执在案}
