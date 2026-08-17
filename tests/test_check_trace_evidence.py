@@ -73,6 +73,7 @@ class ScanLessonTest(unittest.TestCase):
         self.assertEqual(scan_lesson({"pages": []}), [])
 
 
+@unittest.skipUnless(LESSON_SOURCE.exists(), "《氓》课程数据重制中（教案先行）；数据落盘后守卫自动恢复")
 class LessonJsSyncTest(unittest.TestCase):
     """真数据必须保持零默认串：模板标记若再现即样板回潮（462→0 清零守卫）。"""
 

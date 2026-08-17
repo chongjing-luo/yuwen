@@ -153,7 +153,7 @@ const contract = {
   source: {
     textbook_path: "Data/textbook_extract/选择性必修下册/mineru_result/01_U1_导语_课1_氓_离骚/full.md",
     textbook_sha256: "384266a83e13663cdf758c6202e2d5f95737ee5f25408bc3e229e295667a9cfd",
-    evidence_dossier_path: "work/备课/选择性必修下册/氓/01_文本研究与证据档案.md",
+    evidence_dossier_path: "work/teaching/选择性必修下册/氓/01_文本研究与证据档案.md",
     evidence_dossier_sha256: "c0942e52d8655d40723f140b478cc1212292a733a342f796744fd1f51547ca10",
   },
   chapters,
