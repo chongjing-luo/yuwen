@@ -405,4 +405,4 @@
 | UNIT-X3-U03 | UNIT-X3-U03_选择性必修下册U03（中华传统文化经 | accepted | — | unit_graph（账本状态 accepted） |
 | UNIT-X3-U04 | UNIT-X3-U04_选择性必修下册U04 | accepted | — | unit_graph（账本状态 accepted） |
 
-> 共 330 实体 · 生成于 2026-08-16 · 路径解析规则见 docs/architecture/ID解析表.md
+> 共 330 实体 · 生成于 2026-08-17 · 路径解析规则见 docs/architecture/ID解析表.md
