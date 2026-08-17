@@ -1067,11 +1067,21 @@ principles:
 
   - id: P-44
     title: 教案先行与目标结构
-    statement: "备课从写教案开始：教学目标分素养维度目标与现实迁移目标（由全课追问承载落地），享受作为全课过程品质声明不单列；知识清单逐项绑定知识卡或注明无卡缺口；教案经审核讨论通过后才转课程数据与页面设计。"
+    statement: "备课从写教案开始：教学目标分素养维度目标与现实迁移目标（由全课追问承载落地），享受不单列目标（属常态品质要求，见 P-45）；知识清单逐项绑定知识卡或注明无卡缺口；教案经审核讨论通过后才转课程数据与页面设计。"
     domain: 通用
     stages: [S3]
     nodes: [K1]
     anchor: {doc: work/备课基本原则.md, heading: "### 44. 教案先行与目标结构"}
     enforcement:
-      - {type: machine_check, checker: scripts/validate_lesson_schema.py, rule: objectives与process_quality必检（目标结构机器化）}
+      - {type: machine_check, checker: scripts/validate_lesson_schema.py, rule: objectives必检（目标结构机器化）}
       - {type: review_gate, gate: 教案审核回执在案}
+
+  - id: P-45
+    title: 每一份产物都要尽善尽美
+    statement: "备课与上课的品质是常态要求而非某节课的教学目标：每一份教案、每一个课件、每一页学生可见材料都尽善尽美——语言有语文之美，版式视觉有设计之美，过程有体验之美；美是完成度的一部分，由审查把关，不进入目标栏或数据字段。"
+    domain: 通用
+    stages: [S3, S4, S5]
+    nodes: [J4]
+    anchor: {doc: work/备课基本原则.md, heading: "### 45. 每一份产物都要尽善尽美"}
+    enforcement:
+      - {type: review_gate, gate: 美与质地审查（教案/课件/学生材料不合格即退回）}
