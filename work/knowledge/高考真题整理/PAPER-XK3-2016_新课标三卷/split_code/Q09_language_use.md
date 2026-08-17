@@ -1,7 +1,0 @@
-# PAPER-XK3-2016 第9题（语言文字运用）
-
-9.（3分）填入下面文段空白处的词语，最恰当的一组是（）有的人在填报高考志愿时选报热门专业，理由是能学以致用，①是一种误解。学以致用的真正含义是将学到的知识用于实践，②不是看什么东西有用才决定去学。摒弃功利性③使人抱着乐观的态度去学习；④有用才去学习会使人产生心理负担，⑤总要担心以后会不会真的有用。抱着功利之心去挑选专业，在往会牺牲自己真正的兴趣，⑥毕业后谋到了不错的职位，也不一定就工作得很开心。
-<table><tr><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1>①</td><td rowspan=1 colspan=1>②</td><td rowspan=1 colspan=1>③</td><td rowspan=1 colspan=1>④</td><td rowspan=1 colspan=1>5</td><td rowspan=1 colspan=1>⑥</td></tr><tr><td rowspan=1 colspan=1>A</td><td rowspan=1 colspan=1>其实这</td><td rowspan=1 colspan=1>而</td><td rowspan=1 colspan=1>要</td><td rowspan=1 colspan=1>确定</td><td rowspan=1 colspan=1>所以</td><td rowspan=1 colspan=1>1</td></tr><tr><td rowspan=1 colspan=1>B</td><td rowspan=1 colspan=1>这其实</td><td rowspan=1 colspan=1>1</td><td rowspan=1 colspan=1>能</td><td rowspan=1 colspan=1>认为</td><td rowspan=1 colspan=1>因为</td><td rowspan=1 colspan=1>即使</td></tr><tr><td rowspan=1 colspan=1>C</td><td rowspan=1 colspan=1>实际上</td><td rowspan=1 colspan=1>却</td><td rowspan=1 colspan=1>会</td><td rowspan=1 colspan=1>1</td><td rowspan=1 colspan=1>可能</td><td rowspan=1 colspan=1>就是</td></tr><tr><td rowspan=1 colspan=1>D</td><td rowspan=1 colspan=1>这</td><td rowspan=1 colspan=1>当然</td><td rowspan=1 colspan=1>就是</td><td rowspan=1 colspan=1>如果</td><td rowspan=1 colspan=1>1</td><td rowspan=1 colspan=1>虽然</td></tr><tr><td rowspan=1 colspan=7>A. A
-B. B
-C. C
-D. D</td></tr></table>
