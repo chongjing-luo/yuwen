@@ -31,7 +31,7 @@ class ValidatePrincipleRegistryTest(unittest.TestCase):
     def test_real_registry_shape(self):
         registry = real_registry()
         self.assertEqual(len(registry["nodes"]), 20)
-        self.assertEqual(len(registry["principles"]), 115)
+        self.assertEqual(len(registry["principles"]), 116)
         report = build_report(registry)
         # 每个节点都有原则覆盖
         for nid, entry in report["by_node"].items():

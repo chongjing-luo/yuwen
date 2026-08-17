@@ -1085,3 +1085,13 @@ principles:
     anchor: {doc: work/备课基本原则.md, heading: "### 45. 每一份产物都要尽善尽美"}
     enforcement:
       - {type: review_gate, gate: 美与质地审查（教案/课件/学生材料不合格即退回）}
+
+  - id: P-46
+    title: 每篇课文必备文化知识
+    statement: "每篇课文都要介绍相应文化知识——作者、出处书籍、体裁、写作背景、时代背景等，作为知识清单必设类目逐条列入；不占教学目标席位，按本课文所需具体化，在需要处进入并过合书检索；时代背景解释须按解释分层标注。"
+    domain: 通用
+    stages: [S2, S3]
+    nodes: [K1]
+    anchor: {doc: work/备课基本原则.md, heading: "### 46. 每篇课文必备文化知识"}
+    enforcement:
+      - {type: review_gate, gate: 教案审查检查知识清单含文化知识五类条目（作者/书籍/体裁/写作背景/时代背景）}
