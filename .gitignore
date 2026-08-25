@@ -41,3 +41,36 @@ node_modules/
 # ---- L0 高考语料（9.9GB，待统一治理专项；README 除外）----
 Data/高考语料/*
 !Data/高考语料/README.md
+
+# ---- 私有原件（公开仓库只保留整理与研究结果）----
+/Data/textbook/普通高中教科书*.pdf
+/Data/textbook/*教师教学用书*.pdf
+/Data/textbook_extract/**/*.pdf
+/Data/reference/teacher_books/**/*.pdf
+/Data/reference/teacher_books/**/*.doc
+/Data/reference/teacher_books/**/*.docx
+/Data/reference/gaokao/**/*.pdf
+/Data/reference/gaokao/html/
+/Data/reference/gaokao/external/**/*.html
+/Data/reference/gaokao/external/**/*.doc
+/Data/reference/gaokao/external/**/*.docx
+/Data/reference/gaokao/external/**/*.rar
+/Data/reference/gaokao/external/**/*.zip
+/Data/reference/gaokao/external/**/*.jpg
+/Data/reference/gaokao/external/**/*.jpeg
+/Data/reference/gaokao/external/**/*.png
+/Data/reference/gaokao/external/**/*.webp
+/Data/reference/gaokao/external/**/*.gif
+/Data/reference/gaokao/external/**/*.tif
+/Data/reference/gaokao/external/**/*.tiff
+/Data/2008-2024·（四川）语文高考真题/**/*.pdf
+/work/knowledge/exams/papers/**/raw/*.pdf
+/work/knowledge/exams/papers/**/raw/*.doc
+/work/knowledge/exams/papers/**/raw/*.docx
+/work/knowledge/exams/papers/**/raw/*.jpg
+/work/knowledge/exams/papers/**/raw/*.jpeg
+/work/knowledge/exams/papers/**/raw/*.png
+/work/knowledge/exams/papers/**/raw/*.rar
+/work/knowledge/exams/papers/**/raw/*.zip
+/work/knowledge/高考真题整理/**/*.pdf
+/work/teaching/选择性必修中册/记念刘和珍君/记念刘和珍君 用 2026.05.07.pptx
