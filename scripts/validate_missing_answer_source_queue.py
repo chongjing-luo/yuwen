@@ -6,6 +6,8 @@ import hashlib
 import json
 from pathlib import Path
 
+from repository_source_policy import reference_is_available
+
 ROOT = Path(__file__).resolve().parents[1]
 VERTICAL = ROOT / "work/knowledge/exams/workbench/GK-SC-2013-response_nodes_vertical_slice.jsonl"
 INDEX = ROOT / "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-SC-2013/answers/answer_index.jsonl"
@@ -69,7 +71,7 @@ def main() -> int:
             errors.append(f"{node_id}: analysis source link mismatch")
         for key in ("question_source", "analysis_source", "source_pdf", "source_mineru_md"):
             value = row.get(key)
-            if not value or not (ROOT / value).exists():
+            if not value or not reference_is_available(ROOT, value):
                 errors.append(f"{node_id}: missing traceable path {key}")
     result = {
         "schema_version": "exam-missing-answer-source-queue-validation-0.1",

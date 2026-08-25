@@ -6,6 +6,8 @@ import hashlib
 import json
 from pathlib import Path
 
+from repository_source_policy import reference_is_available
+
 ROOT = Path(__file__).resolve().parents[1]
 BATCH = ROOT / "work/knowledge/exams/workbench/kp_batches/ancient_content_2009_2015.jsonl"
 REPORT = ROOT / "work/knowledge/_meta/ancient_content_kp_batch_validation_20260809.json"
@@ -33,7 +35,7 @@ def main() -> int:
             errors.append(f"{node}: mapping boundary escaped M0")
         for key in ("prompt_source", "prompt_source_pdf"):
             path = row.get(key)
-            if not path or not (ROOT / path).exists():
+            if not path or not reference_is_available(ROOT, path):
                 errors.append(f"{node}: missing {key}")
         analysis = row.get("analysis_source")
         if analysis:

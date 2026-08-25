@@ -6,6 +6,8 @@ import hashlib
 import json
 from pathlib import Path
 
+from repository_source_policy import reference_is_available
+
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "work/knowledge/exams/workbench/kp_batches/language_group_subquestion_split_2018_2020.json"
 BATCH = ROOT / "work/knowledge/exams/workbench/kp_batches/language_group_subquestion_2018_2020.jsonl"
@@ -38,7 +40,7 @@ def main() -> int:
     for item in manifest_rows:
         for key in ("question_source", "analysis_source", "parent_question_source", "parent_analysis_source"):
             path = item.get(key)
-            if not path or not (ROOT / path).exists():
+            if not path or not reference_is_available(ROOT, path):
                 errors.append(f"manifest: missing {key}={path}")
         if item.get("question_source") and (ROOT / item["question_source"]).exists() and item.get("question_sha256") != digest(source_body(ROOT / item["question_source"])):
             errors.append(f"manifest: question hash mismatch {item['question_source']}")
@@ -56,7 +58,7 @@ def main() -> int:
             errors.append(f"{node}: subquestion score was invented")
         for key in ("prompt_source", "analysis_source", "prompt_source_parent", "analysis_source_parent", "prompt_source_pdf"):
             path = row.get(key)
-            if not path or not (ROOT / path).exists():
+            if not path or not reference_is_available(ROOT, path):
                 errors.append(f"{node}: missing {key}")
         analysis = ROOT / row["analysis_source"]
         if analysis.exists() and row.get("analysis_source_sha256") != digest(source_body(analysis)):

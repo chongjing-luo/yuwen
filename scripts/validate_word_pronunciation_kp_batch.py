@@ -6,6 +6,8 @@ import hashlib
 import json
 from pathlib import Path
 
+from repository_source_policy import reference_is_available
+
 ROOT = Path(__file__).resolve().parents[1]
 BATCH = ROOT / "work/knowledge/exams/workbench/kp_batches/word_pronunciation_2008_2015.jsonl"
 REPORT = ROOT / "work/knowledge/_meta/word_pronunciation_kp_batch_validation_20260809.json"
@@ -36,10 +38,10 @@ def main() -> int:
         if row.get("kp_id") != "N/A" or row.get("mapping_level") != "M0":
             errors.append(f"{node}: mapping boundary escaped M0")
         question = row.get("prompt_source")
-        if not question or not (ROOT / question).exists():
+        if not question or not reference_is_available(ROOT, question):
             errors.append(f"{node}: question source missing")
         pdf = row.get("prompt_source_pdf")
-        if not pdf or not (ROOT / pdf).exists():
+        if not pdf or not reference_is_available(ROOT, pdf):
             errors.append(f"{node}: PDF source missing")
         analysis = row.get("analysis_source")
         if analysis:

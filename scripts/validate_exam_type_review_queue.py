@@ -6,6 +6,8 @@ import hashlib
 import json
 from pathlib import Path
 
+from repository_source_policy import reference_is_available
+
 ROOT = Path(__file__).resolve().parents[1]
 QUEUE = ROOT / "work/knowledge/exams/workbench/exam_type_review_queue.jsonl"
 TYPE_DIR = ROOT / "work/knowledge/exams/workbench/type_review_queue"
@@ -55,7 +57,7 @@ def main() -> int:
             ("source_pdf", "raw PDF"),
         ):
             source = row.get(field)
-            if not source or not (ROOT / source).exists():
+            if not source or not reference_is_available(ROOT, source):
                 errors.append(f"{row.get('queue_id')}: missing {label} source")
         if row.get("answer_source_status") == "missing" and row.get("manual_review_gate") != "answer_source_missing":
             errors.append(f"{row.get('queue_id')}: missing answer not gated")

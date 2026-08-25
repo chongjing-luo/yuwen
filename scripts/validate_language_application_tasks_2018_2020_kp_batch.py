@@ -6,6 +6,8 @@ import hashlib
 import json
 from pathlib import Path
 
+from repository_source_policy import reference_is_available
+
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "work/knowledge/exams/workbench/kp_batches/language_application_tasks_split_2018_2020.json"
 BATCH = ROOT / "work/knowledge/exams/workbench/kp_batches/language_application_tasks_2018_2020.jsonl"
@@ -48,7 +50,7 @@ def main() -> int:
     for item in records:
         for key in ("task_source", "parent_source", "source_pdf", "source_mineru_md", "source_clean_md"):
             path = item.get(key)
-            if not path or not (ROOT / path).exists():
+            if not path or not reference_is_available(ROOT, path):
                 errors.append(f"manifest: missing {key}={path}")
         task_path = ROOT / item["task_source"] if item.get("task_source") else None
         parent_path = ROOT / item["parent_source"] if item.get("parent_source") else None
@@ -64,7 +66,7 @@ def main() -> int:
             if token and parent_path and parent_path.exists() and token not in body(parent_path):
                 errors.append(f"manifest: 2018 Q008 boundary token missing: {token}")
         for image in item.get("source_image_paths", []):
-            if not (ROOT / image).exists():
+            if not reference_is_available(ROOT, image):
                 errors.append(f"manifest: missing image={image}")
     for row in rows:
         node = row.get("exam_node_id")
@@ -76,7 +78,7 @@ def main() -> int:
             errors.append(f"{node}: mapping boundary escaped M0")
         for key in ("task_source", "parent_source", "source_pdf", "source_mineru_md", "source_clean_md"):
             path = row.get(key)
-            if not path or not (ROOT / path).exists():
+            if not path or not reference_is_available(ROOT, path):
                 errors.append(f"{node}: missing {key}")
         task_path = ROOT / row["task_source"]
         if task_path.exists() and row.get("task_source_sha256") != digest(body(task_path)):

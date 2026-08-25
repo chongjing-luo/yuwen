@@ -6,6 +6,8 @@ import hashlib
 import json
 from pathlib import Path
 
+from repository_source_policy import reference_is_available
+
 ROOT = Path(__file__).resolve().parents[1]
 BATCH = ROOT / "work/knowledge/exams/workbench/kp_batches/language_application_2021_2024.jsonl"
 REPORT = ROOT / "work/knowledge/_meta/language_application_2021_2024_kp_batch_validation_20260809.json"
@@ -43,7 +45,7 @@ def main() -> int:
             errors.append(f"{node}: gate={row.get('manual_review_gate')} expected={expected_gate}")
         for key in ("prompt_source", "prompt_source_pdf", "analysis_source"):
             path = row.get(key)
-            if not path or not (ROOT / path).exists():
+            if not path or not reference_is_available(ROOT, path):
                 errors.append(f"{node}: missing {key}")
         analysis_path = ROOT / row["analysis_source"]
         if analysis_path.exists() and row.get("analysis_source_sha256") != digest(source_body(analysis_path)):
