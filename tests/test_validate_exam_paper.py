@@ -9,6 +9,7 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
 spec = importlib.util.spec_from_file_location("vep", ROOT / "scripts/validate_exam_paper.py")
 vep = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(vep)
@@ -55,6 +56,14 @@ class SyntheticTest(unittest.TestCase):
         d = make_paper(self.tmp, readme=False)
         errs = vep.validate_paper(d, require_questions=False)
         self.assertTrue(any("README" in e for e in errs))
+
+    def test_declared_private_raw_pdf_may_be_absent(self):
+        d = make_paper(self.tmp / "work/knowledge/exams/papers")
+        next((d / "raw").glob("PAPER-*.pdf")).unlink()
+
+        errs = vep.validate_paper(d, require_questions=False, root=self.tmp)
+
+        self.assertFalse(any("raw/ 下无 PAPER-*.pdf" in e for e in errs))
 
     def test_bad_question_prefix_detected(self):
         d = make_paper(self.tmp, questions=[

@@ -2,7 +2,7 @@
 """试卷整理校验器（分叉契约四件验收，试卷库组织约定 §七）。
 
 校验一份 PAPER-{code}-{year}_{卷名}/ 目录的交付完整性：
-1. raw/PAPER-*.pdf 存在，README 登记原件路径/SHA/渠道（血缘）；
+1. raw/PAPER-*.pdf 为本地私有原件（公开克隆可缺席），README 公开登记原件路径/SHA/渠道（血缘）；
 2. mineru_result/<name>/full.md 存在且非空（确定性整理件，可重建）；
 3. questions.jsonl（若已产出）：逐行 schema（question_id/question_type/page_ref/source_sha256）
    且 question_id 与卷代码前缀一致；
@@ -21,13 +21,15 @@ import re
 import sys
 from pathlib import Path
 
+from repository_source_policy import reference_is_available
+
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / "work/knowledge/exams/papers"
 PAPER_DIR_RE = re.compile(r"^PAPER-([A-Z0-9]+)-(\d{4})_(.+)$")
 VALID_ANSWER_STATUS = {"official", "candidate", "missing"}
 
 
-def validate_paper(dir_path: Path, require_questions: bool) -> list[str]:
+def validate_paper(dir_path: Path, require_questions: bool, root: Path = ROOT) -> list[str]:
     errors: list[str]
     errors = []
     pid = dir_path.name
@@ -39,7 +41,13 @@ def validate_paper(dir_path: Path, require_questions: bool) -> list[str]:
     # 1. 原件与血缘
     raw_pdfs = sorted((dir_path / "raw").glob("PAPER-*.pdf")) if (dir_path / "raw").is_dir() else []
     if not raw_pdfs:
-        errors.append(f"{pid}: raw/ 下无 PAPER-*.pdf（契约①）")
+        expected_raw = dir_path / "raw" / f"{pid}.pdf"
+        try:
+            expected_relative = expected_raw.resolve().relative_to(root.resolve()).as_posix()
+        except ValueError:
+            expected_relative = None
+        if not reference_is_available(root, expected_relative):
+            errors.append(f"{pid}: raw/ 下无 PAPER-*.pdf（契约①）")
     readme = dir_path / "raw" / "README.md"
     if not readme.exists():
         errors.append(f"{pid}: raw/README.md 缺失（血缘：原件路径/SHA/渠道）")
