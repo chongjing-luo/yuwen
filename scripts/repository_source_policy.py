@@ -56,8 +56,6 @@ def is_private_source_reference(relative_path: str | None) -> bool:
         return True
     if value.startswith("work/knowledge/exams/papers/") and "/raw/" in value:
         return suffix in PRIVATE_SOURCE_SUFFIXES
-    if value.startswith("work/knowledge/高考真题整理/") and suffix == ".pdf":
-        return True
     return value == "work/teaching/选择性必修中册/记念刘和珍君/记念刘和珍君 用 2026.05.07.pptx"
 
 
