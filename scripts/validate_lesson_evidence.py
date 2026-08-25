@@ -15,6 +15,7 @@ from pathlib import Path
 from pypdf import PdfReader
 
 from lesson_identity import LESSON_ID_PATTERN, check_lesson_id_registry, resolve_metadata_course
+from repository_source_policy import reference_is_available
 
 ROOT = Path(__file__).resolve().parents[1]
 NODE_IDS = {f"K{i}" for i in range(1, 6)} | {f"U{i}" for i in range(1, 9)} | {f"J{i}" for i in range(1, 8)}
@@ -93,6 +94,8 @@ def _check_file(entry: dict, label: str, root: Path, errors: list[str]) -> Path 
         path.relative_to(root.resolve())
     except ValueError:
         errors.append(f"{label}路径越出项目根: {path_value}")
+        return None
+    if not path.is_file() and not path.exists() and reference_is_available(root, path_value):
         return None
     if not path.is_file():
         errors.append(f"{label}文件不存在: {path_value}")

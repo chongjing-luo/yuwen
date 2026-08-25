@@ -161,6 +161,45 @@ def test_detects_file_hash_drift(tmp_path: Path):
     assert any("SHA-256不匹配" in error for error in errors)
 
 
+def test_declared_private_textbook_and_extract_pdfs_may_be_absent(tmp_path: Path):
+    manifest = _manifest(tmp_path)
+    textbook = manifest["normative_sources"][0]
+    extract = manifest["derived_sources"][0]
+
+    textbook["path"] = "Data/textbook/普通高中教科书·语文必修 上册.pdf"
+    extract["path"] = "Data/textbook_extract/必修上册/01_U1_导语_课1_沁园春长沙.pdf"
+
+    errors, _ = validate(manifest, root=tmp_path)
+
+    assert errors == []
+
+
+def test_missing_public_processed_source_still_fails_g0(tmp_path: Path):
+    manifest = _manifest(tmp_path)
+    extract = manifest["derived_sources"][0]
+    (tmp_path / extract["path"]).unlink()
+
+    errors, _ = validate(manifest, root=tmp_path)
+
+    assert any("derived_sources[0]文件不存在" in error for error in errors)
+
+
+def test_present_private_source_still_requires_matching_hash(tmp_path: Path):
+    manifest = _manifest(tmp_path)
+    textbook = manifest["normative_sources"][0]
+    original = tmp_path / textbook["path"]
+    private_path = tmp_path / "Data/textbook/普通高中教科书·语文必修 上册.pdf"
+    private_path.parent.mkdir(parents=True, exist_ok=True)
+    private_path.write_bytes(original.read_bytes())
+    textbook["path"] = str(private_path.relative_to(tmp_path))
+    textbook["sha256"] = "0" * 64
+    manifest["derived_sources"][0]["derived_from_sha256"] = textbook["sha256"]
+
+    errors, _ = validate(manifest, root=tmp_path)
+
+    assert any("normative_sources[0]的SHA-256不匹配" in error for error in errors)
+
+
 def test_derived_source_must_bind_normative_parent(tmp_path: Path):
     manifest = _manifest(tmp_path)
     manifest["derived_sources"][0]["derived_from_sha256"] = "0" * 64
