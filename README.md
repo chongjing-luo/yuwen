@@ -13,9 +13,9 @@
 │   ├── split_by_unit.py      # 按单元切分 PDF
 │   └── analyze.py            # 解析结果分析
 ├── Data/
-│   ├── textbook/             # 原始教材 PDF（6 本）
-│   ├── reference/            # 课程标准、政策、评价体系与真题等规范来源
-│   └── textbook_extract/     # 教材切分解析结果 + 课程标准等参考资料的 MinerU 解析结果
+│   ├── textbook/             # 本机教材与教师用书目录（PDF 不随公开仓库分发）
+│   ├── reference/            # 课程标准及来源登记；试卷原件不随公开仓库分发
+│   └── textbook_extract/     # 公开教材切分的 MinerU 整理结果；PDF 原件仅本机保留
 ├── work/                     # 方法论与知识库（详见 work/README.md）
 │   ├── knowledge/            # 机读知识库（81 卡 / 28 图谱 / 5 册表 / 高考分析）
 │   ├── principles/           # 原则注册库（机器可读理念，绑定机制节点）
@@ -49,6 +49,8 @@ Token 申请：https://mineru.net → 个人中心 → API Keys
 
 ### 2. 批量解析教材
 
+需先在本机 `Data/textbook/` 放入合法获得的教材或教师用书 PDF；这些原件不包含在公开仓库中。
+
 ```bash
 # 解析全部册（必修 + 选择性必修 + 教师用书）
 python scripts/batch_mineru.py
@@ -68,5 +70,6 @@ YUWEN_DATA_DIR=/path/to/textbook_extract python scripts/batch_mineru.py
 
 ## 注意事项
 
-- `Data/` 下含教材 PDF 及解析数据，体积较大。
+- 公开仓库不分发教材、教师用书、高考试卷及第三方参考原件；Markdown、JSON、知识卡、题目切分、来源登记和 MinerU 整理结果公开。
+- 原件在 `work/knowledge/_meta/artifacts.jsonl` 中以 `repository_visibility: private_local` 登记；本机存在时仍校验文件大小与 SHA-256，公开工作树中可缺席。
 - MinerU token 属敏感信息，请勿提交到代码中；本仓库已通过 `.gitignore` 排除 `.env`、`*.token`、`.workbuddy/` 等。

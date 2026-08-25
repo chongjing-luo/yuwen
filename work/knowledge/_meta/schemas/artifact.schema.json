@@ -3,7 +3,7 @@
   "$id": "artifact.schema.json",
   "title": "Artifact V2 Candidate",
   "type": "object",
-  "required": ["artifact_id", "source_id", "artifact_role", "carrier_type", "local_path", "byte_size", "sha256", "authenticity_status", "is_canonical"],
+  "required": ["artifact_id", "source_id", "artifact_role", "carrier_type", "local_path", "byte_size", "sha256", "authenticity_status", "is_canonical", "repository_visibility"],
   "properties": {
     "artifact_id": {"type": "string", "pattern": "^ART-[A-Z0-9-]+$"},
     "source_id": {"type": "string", "pattern": "^SRC-[A-Z0-9-]+$"},
@@ -19,7 +19,8 @@
     "transform": {"type": ["string", "null"]},
     "authenticity_status": {"enum": ["unverified", "verified", "conflict", "rejected"]},
     "verification_scope": {"enum": ["content_and_identity", "integrity_and_lineage_only"]},
-    "is_canonical": {"type": "boolean"}
+    "is_canonical": {"type": "boolean"},
+    "repository_visibility": {"enum": ["public", "private_local"]}
   },
   "additionalProperties": false
 }

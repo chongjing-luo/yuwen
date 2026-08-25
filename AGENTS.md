@@ -197,5 +197,7 @@ python3 scripts/run_selfcheck.py
 ## 数据治理
 
 - `Data/reference/`只收有来源记录、可核验版本的规范材料；AI输出与第三方题库不作为规范Artifact。
+- 教材、教师用书、试卷及第三方参考原件只在本机保留，不进入公开Git历史；整理后的Markdown、JSON、知识卡、题目切分、来源登记和MinerU结果公开。
+- `work/knowledge/_meta/artifacts.jsonl` 以 `repository_visibility` 区分 `public` 与 `private_local`；后者可在公开工作树缺席，但本机存在时必须通过大小与SHA-256校验。
 - 知识交付物使用`work/knowledge/_meta/deliverables.jsonl`状态机；领取任务前`python3 scripts/validate_knowledge_base.py`必须通过。
 - 大体积原始暂存和批处理过程件不进入Git。

@@ -120,6 +120,22 @@ class SourceRegistryIntegrationTests(unittest.TestCase):
         self.assertEqual(set(canonical_counts), {record["source_id"] for record in sources})
         self.assertTrue(all(count == 1 for count in canonical_counts.values()))
 
+    def test_artifact_repository_visibility_matches_public_distribution_boundary(self):
+        artifacts = self.registries["artifacts"]
+
+        self.assertEqual(
+            Counter(record["repository_visibility"] for record in artifacts),
+            {"public": 971, "private_local": 295},
+        )
+        self.assertEqual(
+            {
+                record["artifact_role"]
+                for record in artifacts
+                if record["repository_visibility"] == "private_local"
+            },
+            {"master_pdf", "split_pdf", "mineru_origin_pdf"},
+        )
+
     def test_all_split_mappings_are_verified_and_page_exact(self):
         manifests = self.registries["split_manifest"]
         self.assertEqual(len(manifests), 144)

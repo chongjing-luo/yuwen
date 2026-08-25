@@ -390,6 +390,7 @@ def _artifact_record(
     is_canonical=False,
     original_url=None,
     acquired_at=None,
+    repository_visibility="public",
 ):
     path = Path(path)
     if not path.is_file():
@@ -410,6 +411,7 @@ def _artifact_record(
         "authenticity_status": authenticity_status,
         "verification_scope": "content_and_identity" if is_canonical else "integrity_and_lineage_only",
         "is_canonical": is_canonical,
+        "repository_visibility": repository_visibility,
     }
 
 
@@ -452,6 +454,7 @@ def _derived_artifacts(root, source_id, parent_artifact_id, result_dir, artifact
                 derived_from=parent_artifact_id,
                 transform="MinerU v4 pipeline extraction",
                 is_canonical=False,
+                repository_visibility="private_local" if role == "mineru_origin_pdf" else "public",
             )
         )
     return records
@@ -498,6 +501,7 @@ def build_source_registries(project_root, packages):
                 "master_pdf",
                 "正式电子版",
                 is_canonical=True,
+                repository_visibility="private_local",
             )
         )
         master_fingerprints[book_code] = _pdf_page_fingerprints(master_path)
@@ -550,6 +554,7 @@ def build_source_registries(project_root, packages):
                 derived_from=master_artifact_id,
                 transform=f"contiguous page extraction p{start}-{end}",
                 is_canonical=True,
+                repository_visibility="private_local",
             )
         )
         result_dir = split_path.parent / "mineru_result" / split_path.stem

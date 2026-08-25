@@ -69,6 +69,7 @@ REQUIRED_SCHEMAS = {
     "evidence.schema.json",
     "review.schema.json",
 }
+REPOSITORY_VISIBILITIES = {"public", "private_local"}
 
 
 def load_json(path):
@@ -213,6 +214,9 @@ def validate_registry_links(project_root, sources, artifacts, relations, manifes
 
     for artifact in artifacts:
         artifact_id = artifact.get("artifact_id", "<missing>")
+        repository_visibility = artifact.get("repository_visibility")
+        if repository_visibility not in REPOSITORY_VISIBILITIES:
+            errors.append(f"{artifact_id} repository_visibility非法: {repository_visibility}")
         if artifact.get("source_id") not in source_set:
             errors.append(f"{artifact_id}引用不存在Source: {artifact.get('source_id')}")
         derived_from = artifact.get("derived_from")
@@ -220,7 +224,8 @@ def validate_registry_links(project_root, sources, artifacts, relations, manifes
             errors.append(f"{artifact_id} derived_from不存在: {derived_from}")
         local_path = root / artifact.get("local_path", "")
         if not local_path.is_file():
-            errors.append(f"{artifact_id}文件不存在: {artifact.get('local_path')}")
+            if repository_visibility != "private_local":
+                errors.append(f"{artifact_id}文件不存在: {artifact.get('local_path')}")
             continue
         if local_path.stat().st_size != artifact.get("byte_size"):
             errors.append(f"{artifact_id}文件大小变化")

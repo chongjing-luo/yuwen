@@ -1,5 +1,6 @@
 import copy
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -9,6 +10,27 @@ sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 
 import bootstrap_knowledge_infrastructure as bootstrap
 import validate_knowledge_base as validator
+
+
+def _registry_fixture(repository_visibility):
+    source = {
+        "source_id": "SRC-TEST",
+        "source_kind": "curriculum_standard",
+        "canonical_artifact_id": "ART-TEST",
+    }
+    artifact = {
+        "artifact_id": "ART-TEST",
+        "source_id": "SRC-TEST",
+        "artifact_role": "test_pdf",
+        "carrier_type": "正式电子版",
+        "local_path": "private/missing.pdf",
+        "byte_size": 1,
+        "sha256": "0" * 64,
+        "authenticity_status": "verified",
+        "is_canonical": True,
+        "repository_visibility": repository_visibility,
+    }
+    return [source], [artifact]
 
 
 class KnowledgeContractValidationTests(unittest.TestCase):
@@ -59,6 +81,45 @@ class KnowledgeContractValidationTests(unittest.TestCase):
             validator.validate_contract_files(PROJECT_ROOT / "work/knowledge"),
             [],
         )
+
+    def test_private_local_artifact_may_be_absent_from_public_checkout(self):
+        sources, artifacts = _registry_fixture("private_local")
+        with tempfile.TemporaryDirectory() as temp_dir:
+            errors = validator.validate_registry_links(
+                temp_dir,
+                sources,
+                artifacts,
+                [],
+                [],
+            )
+
+        self.assertFalse(any("ART-TEST文件不存在" in error for error in errors))
+
+    def test_public_artifact_must_exist_in_public_checkout(self):
+        sources, artifacts = _registry_fixture("public")
+        with tempfile.TemporaryDirectory() as temp_dir:
+            errors = validator.validate_registry_links(
+                temp_dir,
+                sources,
+                artifacts,
+                [],
+                [],
+            )
+
+        self.assertTrue(any("ART-TEST文件不存在" in error for error in errors))
+
+    def test_artifact_repository_visibility_is_required(self):
+        sources, artifacts = _registry_fixture(None)
+        with tempfile.TemporaryDirectory() as temp_dir:
+            errors = validator.validate_registry_links(
+                temp_dir,
+                sources,
+                artifacts,
+                [],
+                [],
+            )
+
+        self.assertTrue(any("ART-TEST repository_visibility非法" in error for error in errors))
 
 
 if __name__ == "__main__":
