@@ -54,9 +54,9 @@
 
 ### ✅ 全量测试（pytest）
 
-    .............................................................. [ 99%]
-    ..                                                                       [100%]
-    540 passed, 12 skipped, 26 subtests passed in 81.28s (0:01:21)
+    .............................................................. [ 97%]
+    ................                                                         [100%]
+    554 passed, 12 skipped, 26 subtests passed in 83.56s (0:01:23)
 
 ### ✅ node 测试
 
@@ -64,7 +64,7 @@
 
 ### ✅ 知识账本校验
 
-    {"result": "passed", "run_id": "VAL-20260825-172412+0800", "errors": 0, "report": "/home/ubuntu/homes/LuoChongjing/Methods/yuwen/work/knowledge/_meta/validation_reports/latest.json"}
+    {"result": "passed", "run_id": "VAL-20260825-175321+0800", "errors": 0, "report": "/home/ubuntu/homes/LuoChongjing/Methods/yuwen/work/knowledge/_meta/validation_reports/latest.json"}
 
 ### ✅ 备课方法节点覆盖（candidate框架）
 
