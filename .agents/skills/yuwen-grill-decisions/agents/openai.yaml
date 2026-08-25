@@ -1,0 +1,7 @@
+interface:
+  display_name: "语文重大决策压测"
+  short_description: "在语文项目重大方案冻结前查清事实、压测分支并确认取舍"
+  default_prompt: "Use $yuwen-grill-decisions to pressure-test this proposal before it is frozen."
+
+policy:
+  allow_implicit_invocation: false

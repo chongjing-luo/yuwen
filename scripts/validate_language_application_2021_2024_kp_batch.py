@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-BATCH = ROOT / "work/knowledge/高考分析/kp_batches/language_application_2021_2024.jsonl"
+BATCH = ROOT / "work/knowledge/exams/workbench/kp_batches/language_application_2021_2024.jsonl"
 REPORT = ROOT / "work/knowledge/_meta/language_application_2021_2024_kp_batch_validation_20260809.json"
 EXPECTED_NODES = {f"GK-NCA-{year}-Q{qid:03d}-TOP" for year in (2021, 2022, 2023, 2024) for qid in range(17, 22)}
 

@@ -15,7 +15,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SLICE_DIR = ROOT / "work/knowledge/高考分析"
+SLICE_DIR = ROOT / "work/knowledge/exams/workbench"
 OUT_JSONL = SLICE_DIR / "exam_type_review_queue.jsonl"
 OUT_DIR = SLICE_DIR / "type_review_queue"
 OUT_REPORT = SLICE_DIR / "EXAM-TYPE-KP-REVIEW-QUEUE-20260809.md"
@@ -218,7 +218,7 @@ def main() -> int:
         "|---|---:|---|---|",
     ]
     for type_name in sorted(grouped):
-        lines.append(f"| `{type_name}` | {counts[type_name]} | {TYPE_POINT.get(type_name, '待人工核定')} | [[work/knowledge/高考分析/type_review_queue/{type_name}.md|打开]] |")
+        lines.append(f"| `{type_name}` | {counts[type_name]} | {TYPE_POINT.get(type_name, '待人工核定')} | [[work/knowledge/exams/workbench/type_review_queue/{type_name}.md|打开]] |")
     lines += [
         "",
         "## 放行规则",
@@ -230,8 +230,8 @@ def main() -> int:
         "",
         "| 产物 | 路径 |",
         "|---|---|",
-        "| JSONL 队列 | `work/knowledge/高考分析/exam_type_review_queue.jsonl` |",
-        "| 题型目录 | `work/knowledge/高考分析/type_review_queue/` |",
+        "| JSONL 队列 | `work/knowledge/exams/workbench/exam_type_review_queue.jsonl` |",
+        "| 题型目录 | `work/knowledge/exams/workbench/type_review_queue/` |",
         "| 生成脚本 | `scripts/build_exam_type_review_queue.py` |",
         "",
     ]

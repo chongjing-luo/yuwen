@@ -1,0 +1,931 @@
+{
+  "schema_version": "lesson-plan-lock.v1",
+  "lesson_id": "LES-B1-QYC-01",
+  "author_id": "codex",
+  "lesson_plan": {
+    "path": "work/teaching/必修上册/沁园春长沙/教案.md",
+    "sha256": "8eb6498ee64c0b73440b4f2f3a41af18fdce646a701ecddc48866a794dffc274"
+  },
+  "evidence_manifest": {
+    "path": "work/teaching/必修上册/沁园春长沙/_meta/evidence_manifest.json",
+    "sha256": "72c7aa39cf36af65da9f5b39c230dae2a0fb73281745c533726f7bf97f7423db"
+  },
+  "owner_approval": {
+    "path": "work/teaching/必修上册/沁园春长沙/_meta/G1_owner_approval.json",
+    "sha256": "812bf96e7ef0f20c3406b6904db8272c90146cd575b3405a0d584fa4a3c16e63"
+  },
+  "contract": {
+    "mechanism_nodes": [
+      "K1",
+      "K2",
+      "K3",
+      "K4",
+      "K5",
+      "U2",
+      "U4",
+      "U6",
+      "U8",
+      "J3",
+      "J4",
+      "J5",
+      "J6",
+      "J7"
+    ],
+    "total_minutes": 135,
+    "closing_mode": "撤去局部译文完成全文连贯译述，借跨阕原句重建结构、主旨、作品表达指向和情感进程；最后合书回取、完整终读，并用一处原词作40—80字的当代回应。",
+    "objective_framework": {
+      "language_use": {
+        "status": "included",
+        "reason": "全文连续疏通、译述、朗读、背诵、鉴赏和当代回应都以原词语言实践为基座。",
+        "objective_refs": [
+          "O1",
+          "O2",
+          "O3",
+          "O4",
+          "O5"
+        ]
+      },
+      "thinking": {
+        "status": "included",
+        "reason": "学生须从压缩诗语还原句意，再用跨阕证据组织整体解释。",
+        "objective_refs": [
+          "O1",
+          "O4"
+        ]
+      },
+      "aesthetic": {
+        "status": "included",
+        "reason": "声音、视线、色彩、动词、意象和行动性文学画面共同形成不可由白话译文替代的审美经验，情感还须沿观看、发问、回忆与诗性回应形成完整脉络。",
+        "objective_refs": [
+          "O2",
+          "O3",
+          "O4"
+        ]
+      },
+      "culture": {
+        "status": "included",
+        "reason": "学生在教材时代坐标和原词范围内理解革命青年的公共关切与责任。",
+        "objective_refs": [
+          "O4"
+        ]
+      },
+      "moral_education": {
+        "status": "included",
+        "reason": "教材要求领略以天下为己任的胸怀；价值理解从时代发问、文字发声和行动性画面生长。",
+        "objective_refs": [
+          "O5"
+        ]
+      },
+      "reality_transfer": {
+        "status": "included",
+        "reason": "学生用一处原词说明对今天青春担当的具体启发，不模仿宏大口号，不把当代回应写成作者原意。",
+        "objective_refs": [
+          "O5"
+        ]
+      }
+    },
+    "objectives": [
+      {
+        "id": "O1",
+        "kind": "literacy",
+        "dimensions": [
+          "language_use",
+          "thinking"
+        ],
+        "statement": "学生能依全词顺序逐词逐句疏通25个连续意义单元，解释教材注释词、领字、必要调序和省略，并用通顺现代汉语先分阕、再连贯译述全文。",
+        "kid_refs": [
+          "K01"
+        ],
+        "mechanism_nodes": [
+          "K1",
+          "K2",
+          "U2",
+          "U8"
+        ],
+        "minimum_evidence": "随机抽取任一内部单元能解释关键词并还原句意；不看参考译文分别译述上下阕，再连贯译述全文。",
+        "high_quality_evidence": "译述准确、完整、自然，能说明必要语序或省略，并在译述后立即返回原词声音和表现力。",
+        "failure_signal": "只会解释若干重点词、跳过无注释句、逐字硬译不成句、漏主语地点领字范围或问答关系，或把译文当鉴赏结论。",
+        "recurrence": "P1、P2随文抽句回取，P3撤支架全文译述，后续诗词学习间隔检索。"
+      },
+      {
+        "id": "O2",
+        "kind": "literacy",
+        "dimensions": [
+          "language_use",
+          "aesthetic"
+        ],
+        "statement": "学生能正确朗读并背诵全词，依据准确句意、领字、意象路径和上下阕推进设计停连、重音与语势，使独立、写景、发问、回忆和击水呈现不同声音层次。",
+        "kid_refs": [
+          "K01",
+          "K02"
+        ],
+        "mechanism_nodes": [
+          "K1",
+          "K2",
+          "K3",
+          "U8",
+          "J5"
+        ],
+        "minimum_evidence": "朗读无关键错音、断裂和句意误伤；能在路径提示下合书补出全词，并说明两处声音处理理由。",
+        "high_quality_evidence": "背诵准确连贯，朗读由理解生长，不以从头到尾高声覆盖全词。",
+        "failure_signal": "只会齐读声势而不知句义，停顿切断领字范围，或背诵只靠机械续字。",
+        "recurrence": "各原文段读通后修订声音，P4合书回取与完整终读，后续作快速间隔检索。"
+      },
+      {
+        "id": "O3",
+        "kind": "literacy",
+        "dimensions": [
+          "language_use",
+          "aesthetic"
+        ],
+        "statement": "学生能按空间、视线和运动组织上阕意象，至少选择三处关键词说明它怎样改变画面、意境和情绪，形成原词—意象—意境—情感证据链。",
+        "kid_refs": [
+          "K03",
+          "K04",
+          "K08"
+        ],
+        "mechanism_nodes": [
+          "K1",
+          "K2",
+          "K4",
+          "U2",
+          "U4",
+          "U8",
+          "J3"
+        ],
+        "minimum_evidence": "用山、江、天、水和关键动词重建画面，并对一组换字作有依据的判断。",
+        "high_quality_evidence": "同时说明视线、色彩、动作与声音怎样互相加强，并承认画面想象的合理边界。",
+        "failure_signal": "只罗列意象或术语，把红、碧直接等同情感，或作答不返回原词。",
+        "recurrence": "P7一字鉴赏札记，本单元后续新诗及必修上第三单元继续回取。"
+      },
+      {
+        "id": "O4",
+        "kind": "literacy",
+        "dimensions": [
+          "language_use",
+          "thinking",
+          "aesthetic",
+          "culture"
+        ],
+        "statement": "学生能结合作者、1925年和教材必要时代坐标，以跨阕原句说明写景—发问—回忆—言志的关系，理解青年群像和结尾画面，并概括作品主旨、表达指向与情感进程。",
+        "kid_refs": [
+          "K05",
+          "K06",
+          "K07",
+          "K10",
+          "K11",
+          "K12",
+          "K13",
+          "K14",
+          "K16",
+          "K17"
+        ],
+        "mechanism_nodes": [
+          "K1",
+          "K2",
+          "K4",
+          "U6",
+          "U8",
+          "J4"
+        ],
+        "minimum_evidence": "完成一段含至少三处跨阕短引的全词解释，说清结构、主旨、作品表达指向和情感进程。",
+        "high_quality_evidence": "能解释关节词和相邻原句怎样组织推进，背景只在原词需要处进入，不把结尾文学画面当作完整史事。",
+        "failure_signal": "上下阕割裂，背豪迈爱国标签却说不出原词，用背景代替文本，或把文学画面补写成完整史事。",
+        "recurrence": "单元青春主题讨论、后续革命文化作品和不同文体结构阅读。"
+      },
+      {
+        "id": "O5",
+        "kind": "reality_transfer",
+        "dimensions": [
+          "language_use",
+          "moral_education",
+          "reality_transfer"
+        ],
+        "statement": "学生能用一处原词说明作品如何把个人青春与时代关切相联，并用一两句具体语言说出它给今天的自己什么启发。",
+        "kid_refs": [
+          "K05",
+          "K06",
+          "K07"
+        ],
+        "mechanism_nodes": [
+          "K1",
+          "U6",
+          "U8",
+          "J3",
+          "J6",
+          "J7"
+        ],
+        "minimum_evidence": "40—80字个人回应含一处准确引文、一项具体理解，并标明是今天的启发。",
+        "high_quality_evidence": "能说明原词与当代理解的启发关系，答案具体、真诚，不模仿宏大口号，也不要求所有人一致。",
+        "failure_signal": "只有努力、担当、报国等空词，没有原词或具体理解，要求统一表态，或把当代回应写成作者原意。",
+        "recurrence": "本单元青春主题讨论、后续革命文化作品和学期反思写作。"
+      }
+    ],
+    "knowledge_items": [
+      {
+        "kid": "K01",
+        "statement": "以U01—U25为完整内容范围，读懂本词须逐单元完成词义解释、必要省略与语序还原、整句译意，继而完成上阕、下阕和全文连贯译述；白话译述只校验理解，完成后须返回原词声音、形象和表现力",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-B1-U01-01#KP-CARD-B1-U01-01-012",
+        "stage_refs": [
+          "P0",
+          "P1",
+          "P2",
+          "P3"
+        ],
+        "mastery_evidence": "随机抽单元能释能译，完成分阕和全文连贯译述，并回读原词。",
+        "mechanism_nodes": [
+          "K1",
+          "K2",
+          "U8"
+        ],
+        "kp_ids": [
+          "KP-CARD-B1-U01-01-012"
+        ]
+      },
+      {
+        "kid": "K02",
+        "statement": "本词朗读与背诵依托准确句意、“看”“恰”等领字范围、山江天地的意象路径、上下阕推进和“问—忆—诗性回应”关系组织停连、重音、语势与回取线索，再逐步撤去提示",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-B1-U01-01#KP-CARD-B1-U01-01-013",
+        "stage_refs": [
+          "P0",
+          "P1",
+          "P2",
+          "P3",
+          "P4"
+        ],
+        "mastery_evidence": "有句意依据的分段朗读，路径提示下合书回取，撤提示背诵与终读。",
+        "mechanism_nodes": [
+          "K2",
+          "K5",
+          "U8"
+        ],
+        "kp_ids": [
+          "KP-CARD-B1-U01-01-013"
+        ]
+      },
+      {
+        "kid": "K03",
+        "statement": "“看”统摄“万山红遍”至“万类霜天竞自由”；景物依山林、江水船只、天空雄鹰、水中游鱼展开远近俯仰的动态意象群",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-B1-U01-01#KP-CARD-B1-U01-01-002",
+        "stage_refs": [
+          "P1",
+          "P3"
+        ],
+        "mastery_evidence": "标出统摄范围并用山江天地重建观看路径。",
+        "mechanism_nodes": [
+          "K2",
+          "K3",
+          "U4"
+        ],
+        "kp_ids": [
+          "KP-CARD-B1-U01-01-002"
+        ]
+      },
+      {
+        "kid": "K04",
+        "statement": "“红遍、尽染、碧透”写出范围、过程与通透质感，“争、击、翔、竞”写出主动运动；这些词共同使秋景明丽、强健而富有生命力，不能只概括成“色彩鲜明”",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-B1-U01-01#KP-CARD-B1-U01-01-003",
+        "stage_refs": [
+          "P1",
+          "P3"
+        ],
+        "mastery_evidence": "至少三处换字比较或关键词辩护，并修订悲秋首答。",
+        "mechanism_nodes": [
+          "K2",
+          "K3",
+          "U6"
+        ],
+        "kp_ids": [
+          "KP-CARD-B1-U01-01-003"
+        ]
+      },
+      {
+        "kid": "K05",
+        "statement": "“怅寥廓，问苍茫大地，谁主沉浮”把自然盛景中的观看推进为对世事盛衰和时代主体的追问；“怅”在教材语境中不是单纯悲伤，问句也没有在上阕给出唯一答案",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-B1-U01-01#KP-CARD-B1-U01-01-004",
+        "stage_refs": [
+          "P1",
+          "P3",
+          "P4"
+        ],
+        "mastery_evidence": "完成上阕译述后说明转折前后变化，并区分文本明写与解释。",
+        "mechanism_nodes": [
+          "K2",
+          "U6",
+          "U8"
+        ],
+        "kp_ids": [
+          "KP-CARD-B1-U01-01-004"
+        ]
+      },
+      {
+        "kid": "K06",
+        "statement": "“携—忆—恰”使抒情主体进入共同旧游；“恰”统摄青年群像，群像由风华、意气写到评论国事、文字发声和蔑视军阀官僚，呈现相互支撑的精神状态、公共关切与价值判断",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-B1-U01-01#KP-CARD-B1-U01-01-005",
+        "stage_refs": [
+          "P2",
+          "P3",
+          "P4"
+        ],
+        "mastery_evidence": "说明我—百侣—同学少年关系，完成状态—发声—判断证据链。",
+        "mechanism_nodes": [
+          "K2",
+          "K3",
+          "U6"
+        ],
+        "kp_ids": [
+          "KP-CARD-B1-U01-01-005"
+        ]
+      },
+      {
+        "kid": "K07",
+        "statement": "“曾记否”召回共同记忆；“到中流击水，浪遏飞舟”以含夸张的行动性文学画面收束全词，对前文时代追问形成诗性回应，但不足以直接证明一次现实政治行动或具体史实",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-B1-U01-01#KP-CARD-B1-U01-01-006",
+        "stage_refs": [
+          "P2",
+          "P3",
+          "P4"
+        ],
+        "mastery_evidence": "说明问答语势、关键词、夸张与回应关系，并守住事实边界。",
+        "mechanism_nodes": [
+          "K2",
+          "U6",
+          "U8"
+        ],
+        "kp_ids": [
+          "KP-CARD-B1-U01-01-006"
+        ]
+      },
+      {
+        "kid": "K08",
+        "statement": "诗歌鉴赏可沿“句中词义—意象与画面变化—意境—情感或志向”组织证据，并用换字、邻句和全文位置检验判断",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-B1-U01-01#KP-CARD-B1-U01-01-007",
+        "stage_refs": [
+          "P1",
+          "P3"
+        ],
+        "mastery_evidence": "完成一则有原词、画面变化和全文回接的一字鉴赏札记。",
+        "mechanism_nodes": [
+          "K3",
+          "K5",
+          "U8"
+        ],
+        "kp_ids": [
+          "KP-CARD-B1-U01-01-007"
+        ]
+      },
+      {
+        "kid": "K09",
+        "statement": "写诗时应以具体形象承载思想感情，并通过反复朗读调整语言和节奏",
+        "status": "defer",
+        "source_ref": "SRC-CARD-B1-U01-01#KP-CARD-B1-U01-01-008",
+        "stage_refs": [],
+        "mastery_evidence": "",
+        "mechanism_nodes": [
+          "K5"
+        ],
+        "defer_reason": "完整诗歌创作留到单元写作任务，本课只准备意象、炼字和朗读方法，避免挤压全文疏通与收束。"
+      },
+      {
+        "kid": "K10",
+        "statement": "本词把壮丽而富有生命力的湘江秋景、时代主体之问、革命青年群像和中流击水的行动性画面组织成整体，抒写昂扬的青春激情与凌云壮志，表现以天下为己任、关切时代并以文字发声的胸怀；结尾只承担诗性回应，不被解释为现实政治行动证明",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-B1-U01-01#KP-CARD-B1-U01-01-003",
+        "stage_refs": [
+          "P3",
+          "P4"
+        ],
+        "mastery_evidence": "至少三处跨阕短引说明各部分怎样共同形成主旨。",
+        "mechanism_nodes": [
+          "K1",
+          "K2",
+          "U6",
+          "U8"
+        ],
+        "kp_ids": [
+          "KP-CARD-B1-U01-01-003",
+          "KP-CARD-B1-U01-01-004",
+          "KP-CARD-B1-U01-01-005",
+          "KP-CARD-B1-U01-01-006"
+        ]
+      },
+      {
+        "kid": "K11",
+        "statement": "作品把秋江观看者逐步写成时代发问者，又在共同青春记忆中呈现评论国事、文字发声和行动性文学形象，引导读者把个人青春放进国家、社会与共同生活中理解；这是作品表达指向，不冒充可直接证明的作者心理动机",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-B1-U01-01#KP-CARD-B1-U01-01-004",
+        "stage_refs": [
+          "P3",
+          "P4"
+        ],
+        "mastery_evidence": "用独立—问—忆—恰—曾记否及相邻原句说明作品怎样组织理解。",
+        "mechanism_nodes": [
+          "K1",
+          "K2",
+          "U6",
+          "U8"
+        ],
+        "kp_ids": [
+          "KP-CARD-B1-U01-01-004",
+          "KP-CARD-B1-U01-01-005",
+          "KP-CARD-B1-U01-01-006"
+        ]
+      },
+      {
+        "kid": "K12",
+        "statement": "全词情感由寒秋独立时的沉着开阔，经万物竞发的明丽激越转入深沉追问，下阕在共同旧游中变得昂扬自信，最终以中流击水达到豪迈而富于行动感的文学高峰",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-B1-U01-01#KP-CARD-B1-U01-01-002",
+        "stage_refs": [
+          "P3",
+          "P4"
+        ],
+        "mastery_evidence": "为各阶段找原词，说明至少两处转折并据此修订朗读。",
+        "mechanism_nodes": [
+          "K1",
+          "K2",
+          "K3",
+          "U8"
+        ],
+        "kp_ids": [
+          "KP-CARD-B1-U01-01-002",
+          "KP-CARD-B1-U01-01-003",
+          "KP-CARD-B1-U01-01-004",
+          "KP-CARD-B1-U01-01-005",
+          "KP-CARD-B1-U01-01-006"
+        ]
+      },
+      {
+        "kid": "K13",
+        "statement": "全词按写景—发问—回忆—言志推进，也可从阅读经验概括为看—问—忆—诗性回应；下阕不是给出“唯一答案”，而以青年群像和结尾行动性画面回应上阕追问",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-B1-U01-01#KP-CARD-B1-U01-01-001",
+        "stage_refs": [
+          "P3",
+          "P4"
+        ],
+        "mastery_evidence": "完成含跨阕短引和保留词的结构说明。",
+        "mechanism_nodes": [
+          "K1",
+          "K2",
+          "U8"
+        ],
+        "kp_ids": [
+          "KP-CARD-B1-U01-01-001",
+          "KP-CARD-B1-U01-01-004",
+          "KP-CARD-B1-U01-01-005",
+          "KP-CARD-B1-U01-01-006"
+        ]
+      },
+      {
+        "kid": "K14",
+        "statement": "《沁园春·长沙》的作者是毛泽东，教材标注写于1925年，选自《毛泽东诗词集》（中央文献出版社1996年版）",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-B1-U01-01#KP-CARD-B1-U01-01-009",
+        "stage_refs": [
+          "P0",
+          "P3"
+        ],
+        "mastery_evidence": "能说出作者和写作年代，能从教材查证出处。",
+        "mechanism_nodes": [
+          "K1",
+          "K2",
+          "U6"
+        ],
+        "kp_ids": [
+          "KP-CARD-B1-U01-01-009"
+        ]
+      },
+      {
+        "kid": "K15",
+        "statement": "本篇为词，以上下阕和长短句组织抒情；课堂检索并校准沁园春为词牌、长沙为题目的旧知，不将完整词谱作为本课新授。",
+        "status": "retrieve_prior",
+        "source_ref": "SRC-CARD-B1-U01-01#KP-CARD-B1-U01-01-010",
+        "stage_refs": [
+          "P0"
+        ],
+        "mastery_evidence": "能辨认词、上下阕与题名两部分。",
+        "mechanism_nodes": [
+          "K1",
+          "K3",
+          "K4",
+          "U6"
+        ],
+        "kp_ids": [
+          "KP-CARD-B1-U01-01-010"
+        ]
+      },
+      {
+        "kid": "K16",
+        "statement": "教材把本词置于反帝反封建斗争风起云涌、工农运动蓬勃发展的时代，并要求查找写作背景以加深主旨理解；这项一般时代坐标在“谁主沉浮”与青年群像出现时辅助读文",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-B1-U01-01#KP-CARD-B1-U01-01-014",
+        "stage_refs": [
+          "P1",
+          "P3"
+        ],
+        "mastery_evidence": "说出教材级时代坐标，并说明它帮助理解哪处原词而不代替哪处证据。",
+        "mechanism_nodes": [
+          "K1",
+          "K2",
+          "U6"
+        ],
+        "kp_ids": [
+          "KP-CARD-B1-U01-01-014"
+        ]
+      },
+      {
+        "kid": "K17",
+        "statement": "本课背景解释以上述教材时代坐标和U22“万户侯”的课下注释为上限；具体政治事件、创作行程、词外轶事以及把“击水”坐实为现实政治行动，均须另有可靠来源，否则不得进入作品内部结论",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-B1-U01-01#KP-CARD-B1-U01-01-011",
+        "stage_refs": [
+          "P2",
+          "P3"
+        ],
+        "mastery_evidence": "准确译述粪土当年万户侯，不向作品结论补写无据史事。",
+        "mechanism_nodes": [
+          "K1",
+          "K2",
+          "U6",
+          "J7"
+        ],
+        "kp_ids": [
+          "KP-CARD-B1-U01-01-011",
+          "KP-CARD-B1-U01-01-014"
+        ]
+      }
+    ],
+    "knowledge_clusters": [
+      {
+        "id": "KC1",
+        "name": "进入并读通这首词",
+        "organizing_basis": "从可证作品坐标、全文连续语言单元和声音回取建立阅读底座。",
+        "rationale": "先准确知道面对什么作品，再把人物、时地、景物、发问、回忆与行动逐句读通，后续鉴赏才不成为标签套用。",
+        "kid_refs": [
+          "K01",
+          "K02",
+          "K14",
+          "K15"
+        ]
+      },
+      {
+        "id": "KC2",
+        "name": "看：湘江秋景怎样展开",
+        "organizing_basis": "依照看统摄的山—江—天—水视线及色彩、动作的共同作用聚合。",
+        "rationale": "意象路径、炼字效果和鉴赏方法只有在同一组景物原句中才能形成证据链。",
+        "kid_refs": [
+          "K03",
+          "K04",
+          "K08"
+        ]
+      },
+      {
+        "id": "KC3",
+        "name": "问：盛景之后为什么发问",
+        "organizing_basis": "依照怅—问—谁主沉浮从自然观看转向时代思考，并在此处调用教材最低时代坐标。",
+        "rationale": "问句须从盛景和最低时代坐标中升起，不能成为孤立名句或背景答案。",
+        "kid_refs": [
+          "K05",
+          "K16"
+        ]
+      },
+      {
+        "id": "KC4",
+        "name": "忆：一群青年怎样站到词中",
+        "organizing_basis": "依照携—忆—恰推出人物关系、青年群像、文字发声与价值判断，并同步守住背景边界。",
+        "rationale": "精神状态、公共关切和文本可证的行动合在群像原句中理解，防止详细政治史替代文本。",
+        "kid_refs": [
+          "K06",
+          "K17"
+        ]
+      },
+      {
+        "id": "KC5",
+        "name": "行：中流击水怎样收束",
+        "organizing_basis": "依照曾记否的共同记忆和结尾行动性文学画面聚合。",
+        "rationale": "夸张、动作与诗性回应一起读，才能避免把结尾补写成词外史实或现实政治行动。",
+        "kid_refs": [
+          "K07"
+        ]
+      },
+      {
+        "id": "KC6",
+        "name": "全词重新成为整体",
+        "organizing_basis": "依照写景—发问—回忆—言志及跨上下阕证据聚合。",
+        "rationale": "局部读懂后仍需形成结构、主旨、表达指向与情感组织，四项只在全文证据中成立。",
+        "kid_refs": [
+          "K10",
+          "K11",
+          "K12",
+          "K13"
+        ]
+      },
+      {
+        "id": "KC7",
+        "name": "留到单元写作的表达知识",
+        "organizing_basis": "依照本课与单元写诗任务的后续学习依赖聚合。",
+        "rationale": "完整诗歌创作建立在本课意象、炼字和朗读经验之后，不挤压本课全文疏通与收束。",
+        "kid_refs": [
+          "K09"
+        ]
+      }
+    ],
+    "work_interpretation": {
+      "central_meaning": {
+        "status": "included",
+        "kid_refs": [
+          "K10"
+        ],
+        "evidence_boundary": "青春激情、凌云壮志与以天下为己任来自教材学习提示；全文意义关系由跨阕原词复核，结尾只作诗性回应，不证明现实政治行动。",
+        "not_applicable_reason": ""
+      },
+      "expressive_intent": {
+        "status": "included",
+        "kid_refs": [
+          "K11"
+        ],
+        "evidence_boundary": "依据抒情主体、关节词、群像、评论国事、文字发声和结尾行动性文学形象形成作品表达指向；不冒充作者心理事实。",
+        "not_applicable_reason": ""
+      },
+      "emotional_organization": {
+        "status": "included",
+        "kid_refs": [
+          "K12"
+        ],
+        "evidence_boundary": "由色彩词、动作词、关节词、青年群像和朗读语势共同支持；不把独立等同孤独，也不把怅等同悲伤。",
+        "not_applicable_reason": ""
+      }
+    },
+    "questions": [],
+    "overall_teaching_logic": {
+      "text": "课堂先以完整听读让学生遇见整首词，只简洁校准词体、作者和年代，保留初读画面、声音和真实不懂。随后沿原词顺序读上阕：还原一人一洲一江的站位，在释义与译述中发现看的统摄、山江天水的视线、色彩与动作的生命力；盛景站稳后再读怅—问—谁主沉浮，教材必要时代坐标只作扶手。下阕继续逐句读，从携—忆—恰走进共同青春，由风华、意气读到评论国事、文字发声，再由曾记否进入中流击水的行动性画面。两阕读通后，撤去局部译文完成全文译述，再借跨阕原句重建结构、主旨、作品表达指向和情感进程。最后合书回取并完整终读，现实迁移只以一处原词和40—80字具体回应收束，不让价值讨论压过文学本身。",
+      "stage_refs": [
+        "P0",
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "mechanism_nodes": [
+        "K1",
+        "K2",
+        "K3",
+        "K4",
+        "U8",
+        "J3",
+        "J4",
+        "J5"
+      ],
+      "components": {
+        "entry": {
+          "status": "included",
+          "reason": "以词体旧知、作品最低坐标和完整听读进入，不预发主题。",
+          "stage_refs": [
+            "P0"
+          ]
+        },
+        "context": {
+          "status": "included",
+          "reason": "作者年代在P0简洁校准，教材必要时代坐标与万户侯注释分别在P1、P2随文进入。",
+          "stage_refs": [
+            "P0",
+            "P1",
+            "P2"
+          ]
+        },
+        "text_development": {
+          "status": "included",
+          "reason": "沿原词25个连续意义单元读通上下阕，再回到全词。",
+          "stage_refs": [
+            "P0",
+            "P1",
+            "P2",
+            "P3",
+            "P4"
+          ]
+        },
+        "knowledge_formation": {
+          "status": "included",
+          "reason": "词义、句意、声音、意象、炼字、群像和整体解释均在对应原句或全文回归中形成。",
+          "stage_refs": [
+            "P0",
+            "P1",
+            "P2",
+            "P3"
+          ]
+        },
+        "student_experience": {
+          "status": "included",
+          "reason": "学生经历听见整体、逐句破译、秋景展开、问句停顿、群像走来、全词重建与终读收束。",
+          "stage_refs": [
+            "P0",
+            "P1",
+            "P2",
+            "P3",
+            "P4"
+          ]
+        },
+        "discussion": {
+          "status": "included",
+          "reason": "局部问题只在相应原句读通后讨论，当代回应放在文学理解完成之后。",
+          "stage_refs": [
+            "P1",
+            "P2",
+            "P3",
+            "P4"
+          ]
+        },
+        "synthesis_retrieval": {
+          "status": "included",
+          "reason": "撤去局部译文完成全文译述、整体解释、背诵回取和终读。",
+          "stage_refs": [
+            "P3",
+            "P4"
+          ]
+        },
+        "assessment_evidence": {
+          "status": "included",
+          "reason": "只在关键达标点取证：首读、分阕译述、关键词解释、全文译述、整体解释、背诵与短回应。",
+          "stage_refs": [
+            "P0",
+            "P1",
+            "P2",
+            "P3",
+            "P4"
+          ]
+        },
+        "transfer": {
+          "status": "included",
+          "reason": "鉴赏方法进入后续诗歌；价值理解以一处原词和40—80字具体回应进入当代生活。",
+          "stage_refs": [
+            "P3",
+            "P4"
+          ]
+        },
+        "exam_link": {
+          "status": "not_applicable",
+          "reason": "已检索直接与同类真题，但当前来源和答案仍为M0候选，不进入课堂。",
+          "stage_refs": []
+        },
+        "contemporary_link": {
+          "status": "included",
+          "reason": "不引入新闻，直接从原词理解个人青春、时代关切与共同生活的联系。",
+          "stage_refs": [
+            "P4"
+          ]
+        }
+      }
+    },
+    "stages": [
+      {
+        "id": "P0",
+        "name": "先听见整首词",
+        "entry_reason": "先获得完整声音与真实初读，逐句细读才不会从零散注释开始。",
+        "text_scope": "单元位置、题名、词体旧知、作者与年代；全词完整听读与首读。",
+        "objective_refs": [
+          "O1",
+          "O2",
+          "O4"
+        ],
+        "kid_refs": [
+          "K01",
+          "K02",
+          "K14",
+          "K15"
+        ],
+        "initial_method": "知识性质是词体旧知检索和作品整体初遇；目标深度只到辨认、初读与真实诊断；主要困难是先被主题标签和示范覆盖。采用AC01感知进入与AC02检索唤醒，证据是一次首读和三处初读痕迹。",
+        "student_change": "从篇名标签进入一个完整的声音世界，知道面对什么作品，也知道自己哪里未读通。",
+        "student_experience": "先听、再自读，允许暂时不懂；声音和画面先于术语与结论。",
+        "teacher_role": "提供准确完整的声音，简洁校准词体、作者和年代，记录共性断点，不预讲主题。",
+        "evidence": "能简要辨认词体与作者年代；完成一次无重大误切的首读；留下第一幅画面、一处力量和一处真实不懂。",
+        "transition_reason": "共同拥有整首词的声音和真实困难后，才能沿原词从开头读起。"
+      },
+      {
+        "id": "P1",
+        "name": "秋江从一人眼前展开",
+        "entry_reason": "上阕同时承担站位还原、全文疏通底座、意象炼字和时代发问，必须按原词顺序连续形成。",
+        "text_scope": "U01—U13：一人一洲一江、湘江秋景、关键词和怅—问；教材必要时代坐标。",
+        "objective_refs": [
+          "O1",
+          "O2",
+          "O3",
+          "O4",
+          "O5"
+        ],
+        "kid_refs": [
+          "K01",
+          "K02",
+          "K03",
+          "K04",
+          "K05",
+          "K08",
+          "K16"
+        ],
+        "initial_method": "知识由释义、空间关系、语言效果和情感转折组成；困难是压缩诗语、视线混杂和悲秋套读。以AC03释义疏通为底座，用AC04关系建构组织视线，以AC05证据推理和AC06比较辨析品味关键词，达标证据是上阕译述、观看路径和关键词解释。",
+        "student_change": "从读清一人一洲一江，到组织一幅明丽、开阔、竞发的秋景，再理解盛景之后为何升起时代之问。",
+        "student_experience": "站位由模糊变清晰，视线随山江天水展开；色彩和动作的发现带来明亮与开阔，到问句时真正停下。",
+        "teacher_role": "精准讲解必要词义、省略和语序，示范一处有证据的炼字，组织整幅秋景的文学归纳，只在问句需要时引入背景。",
+        "evidence": "U01—U13释义和译述；上阕连贯译述；观看路径；至少三处关键词辩析；问句语势与转折解释。",
+        "transition_reason": "上阕的盛景和时代之问已站稳，下阕的共同旧游才具有寻找回应的动力。"
+      },
+      {
+        "id": "P2",
+        "name": "旧游中走来一群少年",
+        "entry_reason": "下阕必须在准确句意中读清人物关系、青年群像、文字发声与结尾行动画面，才能回应上阕。",
+        "text_scope": "U14—U25：共同旧游、青年群像、评论国事、文字发声、中流击水。",
+        "objective_refs": [
+          "O1",
+          "O2",
+          "O4",
+          "O5"
+        ],
+        "kid_refs": [
+          "K01",
+          "K02",
+          "K06",
+          "K07",
+          "K17"
+        ],
+        "initial_method": "知识由连续释义、人物关系、群像概括和文学作用组成；困难是主体关系错置、意动误解和将文学画面当史事。以AC03释义疏通、AC04关系建构和AC05证据推理完成，证据是下阕译述、群像概括和结尾解释。",
+        "student_change": "从一人深思转入一群人的青春，能用原词说出他们的精神状态、公共关切、文字发声和行动性形象。",
+        "student_experience": "课堂由一人的寒秋独立转入共同旧游，语势从风华与意气逐步推向文字发声和江心行动。",
+        "teacher_role": "校准U14—U25词义与语法，以原词串起青年群像，讲清夸张与跨阕照应，对无据史事只作简短边界提示。",
+        "evidence": "U14—U25释义和译述；下阕连贯译述；人物关系与群像概括；结尾夸张和照应解释。",
+        "transition_reason": "两阕已分别读通，必须撤去局部答案，检验它们能否重新成为一首词。"
+      },
+      {
+        "id": "P3",
+        "name": "让两阕重新成为一首词",
+        "entry_reason": "局部读懂不等于能连贯译述和整体解释，需要撤支架并重建篇章关系。",
+        "text_scope": "全词；全文译述；写景—发问—回忆—言志；主旨、作品表达指向、情感进程与炼字表达。",
+        "objective_refs": [
+          "O1",
+          "O2",
+          "O3",
+          "O4"
+        ],
+        "kid_refs": [
+          "K01",
+          "K02",
+          "K03",
+          "K04",
+          "K05",
+          "K06",
+          "K07",
+          "K08",
+          "K10",
+          "K11",
+          "K12",
+          "K13",
+          "K14",
+          "K16",
+          "K17"
+        ],
+        "initial_method": "知识性质是分散句意和局部鉴赏的整体化；目标深度到独立译述与有跨阕证据的解释；主要困难是局部会而整体不会。以AC13独立表现检验译述，以AC14综合重建组织整体，以AC12反馈修订补漏。",
+        "student_change": "从25个局部句意重建一首词，能说出画面、语言、转折、群像和志向怎样相互生成。",
+        "student_experience": "先独立译述暴露真实断点，再由原词和教师富有文学质地的归纳使分散所得重新开阔起来。",
+        "teacher_role": "根据学生译述只查真实断点，引导跨阕证据重建，最后用准确、简洁、有文学感的语言收纳主旨、表达指向和情感进程。",
+        "evidence": "不看参考译文的全文译述；跨阕结构解释；一段整体理解；一则有证据的炼字表达。",
+        "transition_reason": "学生已有准确整体理解，才能把全词交还给背诵、终读和不空洞的当代回应。"
+      },
+      {
+        "id": "P4",
+        "name": "把这首词留在声音与心中",
+        "entry_reason": "课堂收束应让学生带走原词声音、整体理解和具体的价值启发，不再叠加一轮重型写作。",
+        "text_scope": "全词背诵与终读；青春的价值的短讨论；40—80字当代回应。",
+        "objective_refs": [
+          "O2",
+          "O4",
+          "O5"
+        ],
+        "kid_refs": [
+          "K02",
+          "K05",
+          "K06",
+          "K07",
+          "K10",
+          "K11",
+          "K12",
+          "K13"
+        ],
+        "initial_method": "知识性质是声音回取、价值理解和轻量现实迁移；困难是机械背诵和空洞表态。以AC09观点协商保留不同理解，以AC11迁移应用完成短回应，以AC01感知进入完成整体终读。",
+        "student_change": "从理解词中青年，到用原词说出今天的具体启发，并把白话句意重新还给原词声音。",
+        "student_experience": "学生可以倾听不同回应，也可以只留下自己的简短文字；课堂最后回到完整朗读，不用口号收尾。",
+        "teacher_role": "守住有原词、有具体理解、明确是当代启发三条边界，允许不同感受；组织合书回取与完整终读。",
+        "evidence": "合书背诵或断点记录；40—80字当代回应；一次完整终读。",
+        "transition_reason": "全课在可带走的原词声音、整体理解和具体启发中结束。"
+      }
+    ],
+    "claim_boundary": "课堂证据状态：未采集；学生掌握、理解与享受均待真实试教验证。"
+  },
+  "status": "approved"
+}

@@ -8,7 +8,7 @@ from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-BATCH = ROOT / "work/knowledge/高考分析/kp_batches/remaining_language_2009_2015.jsonl"
+BATCH = ROOT / "work/knowledge/exams/workbench/kp_batches/remaining_language_2009_2015.jsonl"
 REPORT = ROOT / "work/knowledge/_meta/remaining_language_kp_batch_validation_20260809.json"
 EXPECTED_COUNTS = {"sentence_segmentation": 3, "summary_or_application": 3}
 EXPECTED_NODES = {f"GK-SC-{year}-Q012-TOP" for year in (2013, 2014, 2015)} | {f"GK-SC-{year}-Q019-TOP" for year in (2013, 2014, 2015)}

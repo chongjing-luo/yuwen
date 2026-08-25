@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import batch_mineru as bm
 
-MAP = ROOT / "work/knowledge/高考真题整理/EXMAP-V2_版本2文件试卷映射.jsonl"
+MAP = ROOT / "work/knowledge/exams/papers/EXMAP-V2_版本2文件试卷映射.jsonl"
 WORK = ROOT / "Tmp/work/repair"
 CN = {"XK1": "新课标一卷", "XK2": "新课标二卷", "XK3": "新课标三卷", "ZJ": "浙江卷",
       "XG1": "新高考一卷", "XG2": "新高考二卷", "JIA": "全国甲卷", "YI": "全国乙卷"}
@@ -37,7 +37,7 @@ def main(code, year):
     for r in cands:
         s = r.get("sha256") or sha_of(ROOT / r["file"])
         by_sha.setdefault(s, r)
-    paper_dir = ROOT / "work/knowledge/高考真题整理" / f"PAPER-{code}-{year}_{CN[code]}"
+    paper_dir = ROOT / "work/knowledge/exams/papers" / f"PAPER-{code}-{year}_{CN[code]}"
     print(f"{code}-{year}: {len(cands)} 候选 / {len(by_sha)} 不同 SHA")
     if WORK.exists():
         shutil.rmtree(WORK)

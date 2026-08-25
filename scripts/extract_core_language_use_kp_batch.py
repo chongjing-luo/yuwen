@@ -10,7 +10,7 @@ from pathlib import Path
 from extract_word_pronunciation_kp_batch import answer_candidate, body, knowledge_evidence
 
 ROOT = Path(__file__).resolve().parents[1]
-SLICE_DIR = ROOT / "work/knowledge/高考分析"
+SLICE_DIR = ROOT / "work/knowledge/exams/workbench"
 OUT_DIR = SLICE_DIR / "kp_batches"
 OUT_JSONL = OUT_DIR / "core_language_use_2009_2015.jsonl"
 OUT_MD = OUT_DIR / "core_language_use_2009_2015.md"
@@ -135,8 +135,8 @@ def render(rows: list[dict]) -> str:
         "",
         "| 产物 | 路径 |",
         "|---|---|",
-        "| JSONL | `work/knowledge/高考分析/kp_batches/core_language_use_2009_2015.jsonl` |",
-        "| 本报告 | `work/knowledge/高考分析/kp_batches/core_language_use_2009_2015.md` |",
+        "| JSONL | `work/knowledge/exams/workbench/kp_batches/core_language_use_2009_2015.jsonl` |",
+        "| 本报告 | `work/knowledge/exams/workbench/kp_batches/core_language_use_2009_2015.md` |",
         "| 生成脚本 | `scripts/extract_core_language_use_kp_batch.py` |",
         "",
     ]

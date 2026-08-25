@@ -46,4 +46,4 @@ python3 scripts/build_assessment_paper.py work/knowledge/assessment/blueprint_X3
 
 ## 边界
 
-真题语料的题—KP 映射目前全部 M0（`work/knowledge/高考分析/` 登记在案）；官方答案与评分标准大多未取得。本目录的示范卷为桌面组卷，信度效度待真实施测。M0→M1/M2 映射的推进记录在 `dev/knowledge-extraction-foundation/PROJECT_INDEX.md`。
+真题语料的题—KP 映射目前全部 M0（`work/knowledge/exams/workbench/` 登记在案）；官方答案与评分标准大多未取得。本目录的示范卷为桌面组卷，信度效度待真实施测。M0→M1/M2 映射的推进记录在 `dev/knowledge-extraction-foundation/PROJECT_INDEX.md`。

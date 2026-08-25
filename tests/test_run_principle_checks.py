@@ -7,7 +7,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts" / "checks"))
 
-from run_principle_checks import check_config_drift, run_checks  # noqa: E402
+from run_principle_checks import check_config_drift, load_lesson, run_checks  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "work/principles/enforcement_config.json").read_text(encoding="utf-8"))
@@ -36,6 +36,15 @@ class ConfigDriftTest(unittest.TestCase):
 
 
 class RunChecksTest(unittest.TestCase):
+    def test_json_course_data_can_be_loaded(self):
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "lesson.json"
+            expected = lesson([])
+            path.write_text(json.dumps(expected, ensure_ascii=False), encoding="utf-8")
+            self.assertEqual(load_lesson(None, str(path)), expected)
+
     def test_clean_lesson_passes(self):
         result = run_checks(
             lesson(
@@ -134,9 +143,13 @@ class RunChecksTest(unittest.TestCase):
         self.assertEqual(result["boilerplate_trace"]["count"], 1)
         self.assertIn("收敛规则", result["boilerplate_trace"]["note"])
 
-    def test_missing_three_questions_detected(self):
+    def test_empty_guiding_question_projection_is_valid(self):
         result = run_checks(lesson([{"page_id": "T06", "title": "标题", "minutes": 2, "script": {"timeboxes": [{"label": "读", "seconds": 120}]}}], three_questions=[]), CONFIG, strict=False)
-        self.assertFalse(result["three_questions_present"]["ok"])
+        self.assertTrue(result["guiding_questions_well_formed"]["ok"])
+
+    def test_nonempty_guiding_questions_cannot_contain_blank_items(self):
+        result = run_checks(lesson([], three_questions=["有效问题", " "]), CONFIG, strict=False)
+        self.assertFalse(result["guiding_questions_well_formed"]["ok"])
 
 
 if __name__ == "__main__":

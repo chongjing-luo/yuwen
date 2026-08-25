@@ -66,7 +66,7 @@ def admit(pr: dict, evidence_ids: set[str]) -> tuple[list[str], list[str]]:
                 errors.append(f"{where}: draft.{field} 为空")
         enforcement = draft.get("enforcement") or []
         if not enforcement:
-            errors.append(f"{where}: draft.enforcement 为空——理念必须落强制方式（准入法庭）")
+            errors.append(f"{where}: draft.enforcement 为空——教学理念必须落强制方式")
         for i, en in enumerate(enforcement):
             if en.get("type") not in ENFORCED_TYPES:
                 errors.append(f"{where}: enforcement[{i}].type 非法: {en.get('type')!r}")

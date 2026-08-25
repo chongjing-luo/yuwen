@@ -11,7 +11,7 @@ from pathlib import Path
 from extract_word_pronunciation_kp_batch import body
 
 ROOT = Path(__file__).resolve().parents[1]
-SLICE_DIR = ROOT / "work/knowledge/高考分析"
+SLICE_DIR = ROOT / "work/knowledge/exams/workbench"
 OUT_DIR = SLICE_DIR / "kp_batches"
 OUT_JSONL = OUT_DIR / "topic_writing_2016_2024.jsonl"
 OUT_MD = OUT_DIR / "topic_writing_2016_2024.md"
@@ -93,7 +93,7 @@ def render(rows: list[dict]) -> str:
     lines = ["---", 'schema_version: "exam-kp-candidate-batch-0.1"', 'batch_id: "TOPIC-WRITING-2016-2024"', 'status: "candidate_only"', 'mapping_status: "M0_only"', "---", "", "# 材料/命题作文小问级知识点候选批次（2016—2024）", "", "> 作文属于长篇自由作答。本批次只登记题干任务、来源和候选写作动作，不生成范文、立意答案或评分结论；所有记录保持 `M0 / kp_id=N/A`。", "", "| 年份 | 节点 | 分值 | 解析状态 | 候选作答动作 | 审核门 |", "|---:|---|---:|---|---|---|"]
     for row in rows:
         lines.append(f"| {row['year']} | `{row['exam_node_id']}` [[{row['prompt_source']}|题干]] | {row['score_candidate'] or 'N/A'} | `{row['answer_candidate_status']}` | {row['candidate_ability_action']} | `{row['manual_review_gate']}` |")
-    lines += ["", "## 复核规则", "", "1. 逐页核对材料、题目、写作要求、字数、文体和分值。", "2. 独立登记材料寓意、可接受立意范围、评分等级和样文来源；不得把网络解析意见当官方评分。", "3. 只有题文—答案/评分—教材 KP 三方证据闭合后，才允许升级映射等级。", "", "| 产物 | 路径 |", "|---|---|", "| JSONL | `work/knowledge/高考分析/kp_batches/topic_writing_2016_2024.jsonl` |", "| 本报告 | `work/knowledge/高考分析/kp_batches/topic_writing_2016_2024.md` |", "| 生成脚本 | `scripts/extract_topic_writing_2016_2024_kp_batch.py` |", ""]
+    lines += ["", "## 复核规则", "", "1. 逐页核对材料、题目、写作要求、字数、文体和分值。", "2. 独立登记材料寓意、可接受立意范围、评分等级和样文来源；不得把网络解析意见当官方评分。", "3. 只有题文—答案/评分—教材 KP 三方证据闭合后，才允许升级映射等级。", "", "| 产物 | 路径 |", "|---|---|", "| JSONL | `work/knowledge/exams/workbench/kp_batches/topic_writing_2016_2024.jsonl` |", "| 本报告 | `work/knowledge/exams/workbench/kp_batches/topic_writing_2016_2024.md` |", "| 生成脚本 | `scripts/extract_topic_writing_2016_2024_kp_batch.py` |", ""]
     return "\n".join(lines)
 
 

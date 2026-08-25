@@ -250,12 +250,6 @@
 |---|---|---|---|---|
 | GLOBAL-YUWEN | GLOBAL-YUWEN | drafted | — | global_map（账本状态 drafted） |
 
-## homework_package（1）
-
-| ID | 标题 | 状态 | 权威 | 摘要 |
-|---|---|---|---|---|
-| HW-MENG-V66-01 | HW-MENG-V66-01 | active | — | 6 题 |
-
 ## knowledge_card（81）
 
 | ID | 标题 | 状态 | 权威 | 摘要 |
@@ -342,12 +336,6 @@
 | CARD-X3-U04-01 | CARD-X3-U04-01_导语-课13-自然选择的证明- | accepted | — | knowledge_card（账本状态 accepted） |
 | CARD-X3-U04-02 | CARD-X3-U04-02_课14-天文学上的旷世之争 | accepted | — | knowledge_card（账本状态 accepted） |
 
-## lesson（1）
-
-| ID | 标题 | 状态 | 权威 | 摘要 |
-|---|---|---|---|---|
-| LES-X3-MENG-01 | 《氓》 | active | — | 46 页 / 280 分钟 |
-
 ## manual（10）
 
 | ID | 标题 | 状态 | 权威 | 摘要 |
@@ -369,7 +357,7 @@
 |---|---|---|---|---|
 | SHARED-essay_feedback_rubric | essay_feedback_rubric | active | — | essay_feedback_rubric |
 | SHARED-evidence_schemas | evidence_schemas | active | — | evidence_schemas |
-| SHARED-lesson_schema_v1 | lesson_schema_v1 | active | — | lesson_schema_v1 |
+| SHARED-lesson_schema_v2 | lesson_schema_v2 | active | — | lesson_schema_v2 |
 | SHARED-课后反思模板 | 课后反思模板 | active | — | 课后反思模板 |
 
 ## unit_graph（28）
@@ -405,4 +393,4 @@
 | UNIT-X3-U03 | UNIT-X3-U03_选择性必修下册U03（中华传统文化经 | accepted | — | unit_graph（账本状态 accepted） |
 | UNIT-X3-U04 | UNIT-X3-U04_选择性必修下册U04 | accepted | — | unit_graph（账本状态 accepted） |
 
-> 共 330 实体 · 生成于 2026-08-17 · 路径解析规则见 docs/architecture/ID解析表.md
+> 共 328 实体 · 生成于 2026-08-21 · 路径解析规则见 docs/architecture/ID解析表.md

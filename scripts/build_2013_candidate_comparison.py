@@ -22,7 +22,7 @@ LOCAL = BASE / "answers/local_analysis_candidates.jsonl"
 EXTERNAL = BASE / "answers/reference_answer_candidates.jsonl"
 MAIN = BASE / "answers/answer_index.jsonl"
 OUT = BASE / "answers/reference_answer_candidate_comparison.jsonl"
-REPORT = ROOT / "work/knowledge/高考分析/EXAM-REFERENCE-ANSWER-CANDIDATE-COMPARISON-2013.md"
+REPORT = ROOT / "work/knowledge/exams/workbench/EXAM-REFERENCE-ANSWER-CANDIDATE-COMPARISON-2013.md"
 RECEIPT = ROOT / "work/knowledge/_reviews/receipts/exam_reference_answer_candidate_comparison_GK-SC-2013_20260809.json"
 
 EXPECTED_MAIN_SHA256 = "489ba22579be29b0426db2ece4732bc83bc850a903ca8d513c192a510a74289a"

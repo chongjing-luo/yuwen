@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 URL = "https://www.gzywtk.com/sjbrow/1881-4.html"
 HTML_OUT = ROOT / "Data/reference/gaokao/html/2016/answer_gzywtk_1881-4.html"
 OUT = ROOT / "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NC3-2016/answers/reference_answer_candidates_q006_gzywtk.jsonl"
-REPORT = ROOT / "work/knowledge/高考分析/EXAM-REFERENCE-ANSWER-CANDIDATES-2016-Q006.md"
+REPORT = ROOT / "work/knowledge/exams/workbench/EXAM-REFERENCE-ANSWER-CANDIDATES-2016-Q006.md"
 RECEIPT = ROOT / "work/knowledge/_reviews/receipts/exam_reference_answer_candidate_GK-NC3-2016-Q006_20260809.json"
 LOCAL_REGISTRY = ROOT / "Data/reference/gaokao/external/2016_gzywtk_answer/registry_entry.json"
 

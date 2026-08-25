@@ -7,9 +7,9 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VERTICAL = ROOT / "work/knowledge/高考分析/GK-SC-2013-response_nodes_vertical_slice.jsonl"
+VERTICAL = ROOT / "work/knowledge/exams/workbench/GK-SC-2013-response_nodes_vertical_slice.jsonl"
 INDEX = ROOT / "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-SC-2013/answers/answer_index.jsonl"
-QUEUE = ROOT / "work/knowledge/高考分析/EXAM-MISSING-SOURCE-REVIEW-QUEUE-20260809.jsonl"
+QUEUE = ROOT / "work/knowledge/exams/workbench/EXAM-MISSING-SOURCE-REVIEW-QUEUE-20260809.jsonl"
 REPORT = ROOT / "work/knowledge/_meta/missing_answer_source_queue_validation_20260809.json"
 
 

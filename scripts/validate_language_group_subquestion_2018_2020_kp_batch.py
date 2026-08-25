@@ -7,8 +7,8 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-MANIFEST = ROOT / "work/knowledge/高考分析/kp_batches/language_group_subquestion_split_2018_2020.json"
-BATCH = ROOT / "work/knowledge/高考分析/kp_batches/language_group_subquestion_2018_2020.jsonl"
+MANIFEST = ROOT / "work/knowledge/exams/workbench/kp_batches/language_group_subquestion_split_2018_2020.json"
+BATCH = ROOT / "work/knowledge/exams/workbench/kp_batches/language_group_subquestion_2018_2020.jsonl"
 REPORT = ROOT / "work/knowledge/_meta/language_group_subquestion_2018_2020_kp_batch_validation_20260809.json"
 EXPECTED_NODES = {f"GK-NC3-{year}-Q007-{code}" for year in (2018, 2019, 2020) for code in ("1", "2", "3")}
 

@@ -11,7 +11,7 @@ from pathlib import Path
 from extract_word_pronunciation_kp_batch import body
 
 ROOT = Path(__file__).resolve().parents[1]
-SLICE_DIR = ROOT / "work/knowledge/高考分析"
+SLICE_DIR = ROOT / "work/knowledge/exams/workbench"
 OUT_DIR = SLICE_DIR / "kp_batches"
 OUT_JSONL = OUT_DIR / "ancient_reading_2021_2024.jsonl"
 OUT_MD = OUT_DIR / "ancient_reading_2021_2024.md"
@@ -95,7 +95,7 @@ def render(rows: list[dict]) -> str:
     lines = ["---", 'schema_version: "exam-kp-candidate-batch-0.1"', 'batch_id: "ANCIENT-READING-2021-2024"', 'status: "candidate_only"', 'mapping_status: "M0_only"', "---", "", "# 文言文基础阅读小问级知识点候选批次（2021—2024）", "", "> 本批次覆盖断句、文言词语/文化常识和内容理解；文言翻译另列批次。答案不自动抽取，所有记录保持 `M0 / kp_id=N/A`。", "", "| 年份 | 节点 | 分值 | 解析状态 | 候选作答动作 | 审核门 |", "|---:|---|---:|---|---|---|"]
     for row in rows:
         lines.append(f"| {row['year']} | `{row['exam_node_id']}` [[{row['prompt_source']}|题干]] | {row['score_candidate'] or 'N/A'} | `{row['answer_candidate_status']}` | {row['candidate_ability_action']} | `{row['manual_review_gate']}` |")
-    lines += ["", "## 复核规则", "", "1. 逐页核对断句标号、词语/文化常识选项、内容选项、分值和 OCR/水印疑点。", "2. 将原文证据、正确选项和错因分栏登记；不能把解析结论直接当官方答案。", "3. 只有题文—答案/评分—教材 KP 三方证据闭合后，才允许升级映射等级。", "", "| 产物 | 路径 |", "|---|---|", "| JSONL | `work/knowledge/高考分析/kp_batches/ancient_reading_2021_2024.jsonl` |", "| 本报告 | `work/knowledge/高考分析/kp_batches/ancient_reading_2021_2024.md` |", "| 生成脚本 | `scripts/extract_ancient_reading_2021_2024_kp_batch.py` |", ""]
+    lines += ["", "## 复核规则", "", "1. 逐页核对断句标号、词语/文化常识选项、内容选项、分值和 OCR/水印疑点。", "2. 将原文证据、正确选项和错因分栏登记；不能把解析结论直接当官方答案。", "3. 只有题文—答案/评分—教材 KP 三方证据闭合后，才允许升级映射等级。", "", "| 产物 | 路径 |", "|---|---|", "| JSONL | `work/knowledge/exams/workbench/kp_batches/ancient_reading_2021_2024.jsonl` |", "| 本报告 | `work/knowledge/exams/workbench/kp_batches/ancient_reading_2021_2024.md` |", "| 生成脚本 | `scripts/extract_ancient_reading_2021_2024_kp_batch.py` |", ""]
     return "\n".join(lines)
 
 

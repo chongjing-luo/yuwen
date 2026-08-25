@@ -6,7 +6,7 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/"Data/2008-2024·（四川）语文高考真题/exam_extract/GK-SC-2008"
-OUT=ROOT/"work/knowledge/高考分析"
+OUT=ROOT/"work/knowledge/exams/workbench"
 
 def body(path): return (ROOT/path).read_text(encoding="utf8").split("---\n\n",2)[-1].strip()
 

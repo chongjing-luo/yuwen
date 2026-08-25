@@ -15,7 +15,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 EXAM_ROOT = ROOT / "Data/2008-2024·（四川）语文高考真题"
-OUT = ROOT / "work/knowledge/高考分析/kp_batches/language_application_tasks_split_2018_2020.json"
+OUT = ROOT / "work/knowledge/exams/workbench/kp_batches/language_application_tasks_split_2018_2020.json"
 
 TARGETS = {
     (2018, 8): {

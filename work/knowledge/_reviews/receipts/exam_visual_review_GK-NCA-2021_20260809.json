@@ -32,7 +32,7 @@
   ],
   "derived_updates": {
     "script": "scripts/decompose_exam_vertical_slices.py",
-    "output": "work/knowledge/高考分析/GK-NCA-2021-response_nodes_vertical_slice.jsonl",
+    "output": "work/knowledge/exams/workbench/GK-NCA-2021-response_nodes_vertical_slice.jsonl",
     "receipt": "work/knowledge/_reviews/receipts/exam_vertical_GK-NCA-2021_20260809.json",
     "content_policy": "仅生成派生节点和回执；未改写原始PDF、MinerU full.md或清洗源段。"
   },

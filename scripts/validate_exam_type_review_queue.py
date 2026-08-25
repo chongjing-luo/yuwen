@@ -7,8 +7,8 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-QUEUE = ROOT / "work/knowledge/高考分析/exam_type_review_queue.jsonl"
-TYPE_DIR = ROOT / "work/knowledge/高考分析/type_review_queue"
+QUEUE = ROOT / "work/knowledge/exams/workbench/exam_type_review_queue.jsonl"
+TYPE_DIR = ROOT / "work/knowledge/exams/workbench/type_review_queue"
 REPORT = ROOT / "work/knowledge/_meta/exam_type_review_queue_validation_20260809.json"
 
 
@@ -24,7 +24,7 @@ def main() -> int:
     errors: list[str] = []
     rows = [json.loads(line) for line in QUEUE.read_text(encoding="utf-8").splitlines() if line.strip()] if QUEUE.exists() else []
     source_rows: dict[str, dict] = {}
-    for path in ROOT.joinpath("work/knowledge/高考分析").glob("*-response_nodes_vertical_slice.jsonl"):
+    for path in ROOT.joinpath("work/knowledge/exams/workbench").glob("*-response_nodes_vertical_slice.jsonl"):
         for line in path.read_text(encoding="utf-8").splitlines():
             if line.strip():
                 source = json.loads(line)

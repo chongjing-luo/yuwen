@@ -23,7 +23,7 @@ def sha256(path: Path) -> str:
 
 def main() -> int:
     manifest = json.loads((CORPUS / "manifest.json").read_text(encoding="utf8"))
-    expectations = json.loads((ROOT / "work/knowledge/高考分析/exam_expectations_2008_2024.json").read_text(encoding="utf8"))
+    expectations = json.loads((ROOT / "work/knowledge/exams/_meta/exam_expectations_2008_2024.json").read_text(encoding="utf8"))
     rows = []
     for year in range(2008, 2025):
         recs = [r for r in manifest["records"] if int(r["year"]) == year]

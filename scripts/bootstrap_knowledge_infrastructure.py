@@ -286,7 +286,7 @@ def build_deliverables(packages):
             exam_id,
             "exam_analysis",
             title,
-            f"work/knowledge/高考分析/{exam_id}.md",
+            f"work/knowledge/exams/workbench/{exam_id}.md",
             source_status="missing_official_artifacts",
         )
         for exam_id, title in EXAMS
@@ -295,7 +295,7 @@ def build_deliverables(packages):
         "MAP-EXAM-KP",
         "exam_kp_mapping",
         "高考考点映射总表",
-        "work/knowledge/高考分析/MAP-EXAM-KP.md",
+        "work/knowledge/exams/_meta/MAP-EXAM-KP.md",
         upstream_deliverable_ids=[item["deliverable_id"] for item in exams + cards],
     )
     global_map = _deliverable_record(

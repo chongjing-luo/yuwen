@@ -14,7 +14,7 @@
     {"scope": "score", "finding": "卷面分值结构可复算为150分；Q13为两个名句分支任选一题，Q18—Q20分值按卷面题组结构登记。", "decision": "保留24个派生节点、选择组和双链；答案与评分仍为candidate_unverified。"},
     {"scope": "ocr", "finding": "Q14存在孤立‘Y’等疑似OCR/水印残片。", "decision": "显式登记，不静默修订原始题段。"}
   ],
-  "derived_updates": {"script": "scripts/decompose_exam_vertical_slices.py", "output": "work/knowledge/高考分析/GK-SC-2010-response_nodes_vertical_slice.jsonl", "receipt": "work/knowledge/_reviews/receipts/exam_vertical_GK-SC-2010_20260809.json", "content_policy": "仅生成派生节点和回执，未改写原始PDF、MinerU full.md或清洗源段。"},
+  "derived_updates": {"script": "scripts/decompose_exam_vertical_slices.py", "output": "work/knowledge/exams/workbench/GK-SC-2010-response_nodes_vertical_slice.jsonl", "receipt": "work/knowledge/_reviews/receipts/exam_vertical_GK-SC-2010_20260809.json", "content_policy": "仅生成派生节点和回执，未改写原始PDF、MinerU full.md或清洗源段。"},
   "acceptance": {"visual_boundary": "passed", "source_label_arbitration": "passed_with_conflict", "score_reconciliation": "150/150", "locator_precision": "page_level_fallback", "answer_and_kp_mapping": "not_claimed; candidate_unverified_or_missing; M0/KP_ID=N/A"},
   "reviewer": "primary_agent",
   "reviewed_at": "2026-08-09"

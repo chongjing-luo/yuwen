@@ -17,8 +17,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import batch_mineru as bm
 
-MAP = ROOT / "work/knowledge/高考真题整理/EXMAP-V2_版本2文件试卷映射.jsonl"
-DEST_BASE = ROOT / "work/knowledge/高考真题整理"
+MAP = ROOT / "work/knowledge/exams/papers/EXMAP-V2_版本2文件试卷映射.jsonl"
+DEST_BASE = ROOT / "work/knowledge/exams/papers"
 
 CN_NAME = {
     "DG1": "大纲全国一卷", "DG2": "大纲全国二卷", "DGB": "大纲版2012",

@@ -16,7 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 EXTRACT = ROOT / "Data/2008-2024·（四川）语文高考真题/exam_extract"
-OUT_REPORT = ROOT / "work/knowledge/高考分析/EXAM-ANSWER-CANDIDATE-EXTRACTION-20260809.md"
+OUT_REPORT = ROOT / "work/knowledge/exams/workbench/EXAM-ANSWER-CANDIDATE-EXTRACTION-20260809.md"
 
 
 def sha256_text(text: str) -> str:

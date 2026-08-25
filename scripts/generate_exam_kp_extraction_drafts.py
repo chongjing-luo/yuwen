@@ -14,7 +14,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 META = ROOT / "work/knowledge/_meta"
-OUT = ROOT / "work/knowledge/高考分析"
+OUT = ROOT / "work/knowledge/exams/workbench"
 
 ACTION = {
     "word_pronunciation": "辨析字音",

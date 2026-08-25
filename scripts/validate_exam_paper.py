@@ -10,7 +10,7 @@
    {official, candidate, missing}（答案纪律）。
 
 用法：python3 scripts/validate_exam_paper.py <PAPER 目录> [--require-questions]
-      python3 scripts/validate_exam_paper.py --batch   # 校验高考真题整理/ 下全部 PAPER 目录
+      python3 scripts/validate_exam_paper.py --batch   # 校验 exams/papers/ 下全部 PAPER 目录
 退出码：0 通过；1 失败。
 """
 from __future__ import annotations
@@ -22,7 +22,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = ROOT / "work/knowledge/高考真题整理"
+BASE = ROOT / "work/knowledge/exams/papers"
 PAPER_DIR_RE = re.compile(r"^PAPER-([A-Z0-9]+)-(\d{4})_(.+)$")
 VALID_ANSWER_STATUS = {"official", "candidate", "missing"}
 

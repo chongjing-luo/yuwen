@@ -72,10 +72,20 @@ def synthetic_lesson():
 
 class ValidateLessonSchemaTest(unittest.TestCase):
     def test_synthetic_lesson_passes(self):
-        errors, warnings, stats = validate(synthetic_lesson(), strict=True)
+        errors, warnings, stats = validate(synthetic_lesson(), strict=False)
         self.assertEqual(errors, [], f"synthetic lesson 应通过: {errors}")
         self.assertEqual(stats["boilerplate"], 0)
         self.assertEqual(stats["pages"], 1)
+
+    def test_guiding_question_projection_may_be_empty(self):
+        lesson = synthetic_lesson()
+        lesson["three_questions"] = []
+        errors, _, _ = validate(lesson, strict=False)
+        self.assertFalse(any("three_questions必须" in error for error in errors))
+
+    def test_strict_rejects_legacy_schema_without_g1(self):
+        errors, _, _ = validate(synthetic_lesson(), strict=True)
+        self.assertTrue(any("strict只接受v2" in error for error in errors))
 
     def test_unresolvable_card_detected(self):
         lesson = synthetic_lesson()

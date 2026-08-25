@@ -64,10 +64,42 @@ class ScanLessonTest(unittest.TestCase):
         findings = scan_lesson(lesson)
         self.assertEqual(findings, [])
 
+    def test_literary_ellipsis_inside_specific_sentence_is_not_a_placeholder(self):
+        lesson = {
+            "pages": [
+                page(
+                    story_return="教师追问“后来呢……”，再回到女子临行前的最后一句。",
+                )
+            ]
+        }
+        self.assertEqual(scan_lesson(lesson), [])
+
     def test_failure_signals_default_list_flagged(self):
         lesson = {"pages": [page(failure_signals=list(BOILERPLATE_FAILURE_SIGNALS))]}
         findings = scan_lesson(lesson)
         self.assertEqual([f["field"] for f in findings], ["failure_signals"])
+
+    def test_v25_nested_visual_placeholder_is_detected(self):
+        lesson = {
+            "schema_version": "2.5",
+            "pages": [
+                page(
+                    slide_design={
+                        "physical_screens": [
+                            {"image_plan": {"content_brief": "待补充教材配图规格"}}
+                        ]
+                    }
+                )
+            ],
+        }
+        findings = scan_lesson(lesson)
+        self.assertTrue(
+            any(
+                finding["kind"] == "placeholder"
+                and "physical_screens" in finding["field"]
+                for finding in findings
+            )
+        )
 
     def test_empty_pages(self):
         self.assertEqual(scan_lesson({"pages": []}), [])

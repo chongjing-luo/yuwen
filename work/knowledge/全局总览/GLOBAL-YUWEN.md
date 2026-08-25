@@ -38,7 +38,7 @@ version: "0.2.0"
 - 教材卡与图谱已全部 accepted（双人评审 + G2 校准完成）。
 - 教师用书仅在已取得同版材料时纳入；未取得版本不填补（现 4/5 册未取得）。
 - 课程标准统一使用《普通高中语文课程标准（2017年版2020年修订）》。
-- 全流程教学消费：见 `docs/workflow/教学全流程地图.md` 与 `work/evaluation/三目标实现机制.md`（知识库经 lesson_schema/homework/assessment 校验器接入备课管线）。
+- 全流程教学消费：见 `docs/workflow/教学全流程地图.md` 与 `work/methodology/lesson-preparation/备课三目标与实现机制.md`（知识库经 lesson_schema/homework/assessment 校验器接入备课管线）。
 
 ## 4. 关联交付
 

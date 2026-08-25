@@ -20,7 +20,7 @@ HTML = SOURCE_DIR / "source.html"
 RAR = SOURCE_DIR / "answer_bundle.rar"
 DOC = SOURCE_DIR / "四川语文答案.doc"
 OUT = BASE / "answers/reference_answer_candidates.jsonl"
-REPORT = ROOT / "work/knowledge/高考分析/EXAM-REFERENCE-ANSWER-CANDIDATES-2010.md"
+REPORT = ROOT / "work/knowledge/exams/workbench/EXAM-REFERENCE-ANSWER-CANDIDATES-2010.md"
 RECEIPT = ROOT / "work/knowledge/_reviews/receipts/exam_reference_answer_candidates_2010_20260809.json"
 REGISTRY_ENTRY = SOURCE_DIR / "registry_entry.json"
 

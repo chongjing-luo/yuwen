@@ -22,7 +22,7 @@ SEGMENT = BASE / "segments/analysis/Q006.md"
 MAIN = BASE / "answers/answer_index.jsonl"
 THIRD_PARTY = BASE / "answers/reference_answer_candidates_q006_gzywtk.jsonl"
 OUT = BASE / "answers/reference_answer_candidates_q006_local_analysis.jsonl"
-REPORT = ROOT / "work/knowledge/高考分析/EXAM-REFERENCE-ANSWER-CANDIDATE-RECOVERY-2016-Q006.md"
+REPORT = ROOT / "work/knowledge/exams/workbench/EXAM-REFERENCE-ANSWER-CANDIDATE-RECOVERY-2016-Q006.md"
 RECEIPT = ROOT / "work/knowledge/_reviews/receipts/exam_reference_answer_candidate_recovery_GK-NC3-2016-Q006_20260809.json"
 VALIDATION = ROOT / "work/knowledge/_meta/reference_answer_candidate_validation_2016_q006_local_20260809.json"
 

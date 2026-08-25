@@ -20,7 +20,7 @@ EXAM_ID = "GK-NCA-2023"
 BASE = ROOT / "Data/2008-2024·（四川）语文高考真题/exam_extract" / EXAM_ID
 INPUT = BASE / "answers/local_analysis_candidates.jsonl"
 OUT = BASE / "answers/local_analysis_group_candidates.jsonl"
-REPORT = ROOT / "work/knowledge/高考分析/EXAM-LOCAL-GROUP-CANDIDATES-2023.md"
+REPORT = ROOT / "work/knowledge/exams/workbench/EXAM-LOCAL-GROUP-CANDIDATES-2023.md"
 RECEIPT = ROOT / "work/knowledge/_reviews/receipts/exam_local_group_candidates_GK-NCA-2023_20260809.json"
 
 GROUPS = {

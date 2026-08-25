@@ -1,0 +1,19 @@
+{
+  "schema_version": "g1-owner-approval.v1",
+  "lesson_id": "LES-B1-QYC-01",
+  "reviewer_id": "project_owner",
+  "author_id": "codex",
+  "decision": "approved",
+  "reviewed_at": "2026-08-23T15:47:08+08:00",
+  "approval_event_id": "G1-OWNER-20260823-QYC-CORE-FIRST-01",
+  "approval_source": "conversation:user:explicit-approval-after-current-four-hash-G1-request",
+  "verification_mode": "external_review_gate",
+  "authentication_boundary": "本地验证器只验证回执结构与血缘，不认证人类身份；真实所有者身份须由宿主对话记录人工核验。",
+  "lesson_plan_path": "work/teaching/必修上册/沁园春长沙/教案.md",
+  "lesson_plan_sha256": "8eb6498ee64c0b73440b4f2f3a41af18fdce646a701ecddc48866a794dffc274",
+  "approval_statement": "项目所有者在收到当前四项哈希组合后明确回复批准；批准教案SHA-256 8eb6498ee64c0b73440b4f2f3a41af18fdce646a701ecddc48866a794dffc274、G1候选SHA-256 e2a04bdf1fb6df20501f3311dd8da53f2f5382d39b53ee495d239342c108258b、候选合同canonical SHA-256 a4fd53965a684c0e87675c7a416701f0174a393e1171c2ad77066272443f629b和G0清单SHA-256 72c7aa39cf36af65da9f5b39c230dae2a0fb73281745c533726f7bf97f7423db进入G1，并同意进入S3。",
+  "lesson_plan_contract_sha256": "a4fd53965a684c0e87675c7a416701f0174a393e1171c2ad77066272443f629b",
+  "evidence_manifest_sha256": "72c7aa39cf36af65da9f5b39c230dae2a0fb73281745c533726f7bf97f7423db",
+  "standard_version": "STANDARD-1.2-candidate",
+  "resolved_issues": []
+}

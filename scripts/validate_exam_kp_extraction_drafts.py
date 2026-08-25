@@ -5,7 +5,7 @@ import hashlib, json
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
-NODE_FILE=ROOT/"work/knowledge/高考分析/exam_response_nodes_top_level.jsonl"
+NODE_FILE=ROOT/"work/knowledge/exams/workbench/exam_response_nodes_top_level.jsonl"
 
 def main()->int:
     nodes=[json.loads(x) for x in NODE_FILE.read_text(encoding="utf8").splitlines() if x.strip()]

@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import batch_mineru as bm
 
-MAP = ROOT / "work/knowledge/高考真题整理/EXMAP-V2_版本2文件试卷映射.jsonl"
+MAP = ROOT / "work/knowledge/exams/papers/EXMAP-V2_版本2文件试卷映射.jsonl"
 WORK = ROOT / "Tmp/work/transition-verify"
 
 TITLE_RULES = [

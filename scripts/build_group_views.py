@@ -19,7 +19,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BASE = ROOT / "work/knowledge/高考真题整理"
+BASE = ROOT / "work/knowledge/exams/papers"
 
 MATERIAL_RE = re.compile(r"^【材料】")
 QUESTION_RE = re.compile(r"^【题目】")

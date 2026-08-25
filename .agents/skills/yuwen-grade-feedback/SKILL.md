@@ -5,7 +5,7 @@ description: 高中语文批改与反馈（S7b 环节）。当需要批改作文
 
 # 批改与反馈（S7b）
 
-服务机制节点：**U2（证据锚定）、U3（反馈触发修订）、U6（解释分层）、J2（进步可见）**。量规：`work/teaching/_shared/grading/essay_feedback_rubric.json`（FR-01…FR-06）。
+服务机制节点：**U2（证据锚定）、U3（反馈触发修订）、U6（解释分层）、J2（进步可见）**。执行依据：`work/methodology/manuals/S7-作业批改手册.md`中的`MM-S7-04`—`MM-S7-07`；量规：`work/teaching/_shared/grading/essay_feedback_rubric.json`（FR-01…FR-06）。
 
 ## 输入
 
@@ -21,14 +21,14 @@ description: 高中语文批改与反馈（S7b 环节）。当需要批改作文
 4. 至少一处进步增量对比前稿（FR-05，J2）；无增量时如实写明并给一个够得着的下一步。
 5. 优秀片段登记为"值得全班听"候选（供下节课公共材料真实取回，J3/P-41）。
 6. 产出**教师终审前草稿**，头部标注；教师修订后才发学生（FR-06）。
-7. 批改数据回流入 mastery ledger：每题/每维得分 + 错因类型（喂 `scripts/analyze_mastery.py`）。
+7. 批改事实只追加到`work/teaching/_classes/<班级>/grading.jsonl`（GRD）；S8再消费GRD/测验数据形成MR，不在S7直接写mastery ledger。
 
 ## 放行条件
 
 - 反馈草稿每条有原文引用；
 - 每篇至少一条可执行修订指令；
 - 推断/越界标注齐；
-- ledger 条目含错因类型。
+- GRD条目含可操作错因类型，并可被S8追溯消费。
 
 ## 常见错误
 

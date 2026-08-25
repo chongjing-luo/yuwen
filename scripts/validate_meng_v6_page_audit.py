@@ -57,8 +57,8 @@ BUNDLE_COMPONENTS = {
     ),
 }
 WORKSPACE_ROOT = Path(__file__).resolve().parents[1]
-V5_SNAPSHOT_PATH = "work/备课/选择性必修下册/氓/06_氓_V5课程数据快照.json"
-V5_BASELINE_MANIFEST_PATH = "work/备课/选择性必修下册/氓/_v6_stage/baseline_manifest.json"
+V5_SNAPSHOT_PATH = "work/teaching/选择性必修下册/氓/06_氓_V5课程数据快照.json"
+V5_BASELINE_MANIFEST_PATH = "work/teaching/选择性必修下册/氓/_v6_stage/baseline_manifest.json"
 V5_SNAPSHOT_SHA256 = "23c920fc5e511f5e9cc1d8400efdb3b371d35b50f185e0bc7858e790c38631c3"
 V6_AUDIT_INDEX_PATH = "scripts/meng_v6/audit/index.json"
 SKELETON_BATCHES = (

@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-BATCH = ROOT / "work/knowledge/高考分析/kp_batches/word_pronunciation_2008_2015.jsonl"
+BATCH = ROOT / "work/knowledge/exams/workbench/kp_batches/word_pronunciation_2008_2015.jsonl"
 REPORT = ROOT / "work/knowledge/_meta/word_pronunciation_kp_batch_validation_20260809.json"
 
 

@@ -137,7 +137,7 @@ def main() -> int:
                 "question_sha256": sha(body(q_out)),
                 "analysis_sha256": sha(body(a_out)),
             })
-    out = ROOT / "work/knowledge/高考分析/kp_batches/language_group_subquestion_split_2018_2020.json"
+    out = ROOT / "work/knowledge/exams/workbench/kp_batches/language_group_subquestion_split_2018_2020.json"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps({"schema_version": "exam-language-group-split-0.1", "status": "candidate", "records": manifest}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"record_count": len(manifest), "manifest": str(out.relative_to(ROOT))}, ensure_ascii=False, indent=2))

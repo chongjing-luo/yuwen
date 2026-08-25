@@ -3,7 +3,7 @@
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PATH = ROOT / "work/knowledge/高考分析/GK-NC3-2016-response_nodes_vertical_slice.jsonl"
+PATH = ROOT / "work/knowledge/exams/workbench/GK-NC3-2016-response_nodes_vertical_slice.jsonl"
 BAD = '"na_reason": "校准切片仅完成作答节点与分值结构；review_status":'
 GOOD = '"na_reason": "校准切片仅完成作答节点与分值结构；", "review_status":'
 

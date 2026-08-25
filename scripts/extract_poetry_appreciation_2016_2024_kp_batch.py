@@ -11,7 +11,7 @@ from pathlib import Path
 from extract_word_pronunciation_kp_batch import body
 
 ROOT = Path(__file__).resolve().parents[1]
-SLICE_DIR = ROOT / "work/knowledge/高考分析"
+SLICE_DIR = ROOT / "work/knowledge/exams/workbench"
 OUT_DIR = SLICE_DIR / "kp_batches"
 OUT_JSONL = OUT_DIR / "poetry_appreciation_2016_2024.jsonl"
 OUT_MD = OUT_DIR / "poetry_appreciation_2016_2024.md"
@@ -122,7 +122,7 @@ def render(rows: list[dict]) -> str:
     for row in rows:
         lines.append(f"| {row['year']} | `{row['exam_node_id']}` [[{row['prompt_source']}|题干]] | {row['score_candidate'] or 'N/A'} | `{row['answer_candidate_status']}` | {row['candidate_ability_action']} | `{row['manual_review_gate']}` |")
     counts = Counter(row["answer_candidate_status"] for row in rows)
-    lines += ["", "## 统计", "", f"- 总节点：{len(rows)}；共享解析候选源：{counts.get('poetry_candidate_source', 0)}；缺少解析源：{counts.get('missing_analysis_source', 0)}。", "- `analysis_scope=shared_top_level_analysis_segment` 表示同一解析段可能服务同题多小问；不能把段内任一结论直接归给单个小问。", "- `answer_candidate` 全部保持空值；解析中出现“答案”字样也不表示答案已核验。", "", "## 复核规则", "", "1. 逐页核对诗文、设问、分值、材料边界和 OCR/水印疑点。", "2. 按小问分别登记诗句证据、作答要点、评分点和解析来源；共享解析段不得跨小问复制结论。", "3. 只有题文—答案/评分—教材 KP 三方证据闭合后，才允许升级映射等级。", "", "| 产物 | 路径 |", "|---|---|", "| JSONL | `work/knowledge/高考分析/kp_batches/poetry_appreciation_2016_2024.jsonl` |", "| 本报告 | `work/knowledge/高考分析/kp_batches/poetry_appreciation_2016_2024.md` |", "| 生成脚本 | `scripts/extract_poetry_appreciation_2016_2024_kp_batch.py` |", ""]
+    lines += ["", "## 统计", "", f"- 总节点：{len(rows)}；共享解析候选源：{counts.get('poetry_candidate_source', 0)}；缺少解析源：{counts.get('missing_analysis_source', 0)}。", "- `analysis_scope=shared_top_level_analysis_segment` 表示同一解析段可能服务同题多小问；不能把段内任一结论直接归给单个小问。", "- `answer_candidate` 全部保持空值；解析中出现“答案”字样也不表示答案已核验。", "", "## 复核规则", "", "1. 逐页核对诗文、设问、分值、材料边界和 OCR/水印疑点。", "2. 按小问分别登记诗句证据、作答要点、评分点和解析来源；共享解析段不得跨小问复制结论。", "3. 只有题文—答案/评分—教材 KP 三方证据闭合后，才允许升级映射等级。", "", "| 产物 | 路径 |", "|---|---|", "| JSONL | `work/knowledge/exams/workbench/kp_batches/poetry_appreciation_2016_2024.jsonl` |", "| 本报告 | `work/knowledge/exams/workbench/kp_batches/poetry_appreciation_2016_2024.md` |", "| 生成脚本 | `scripts/extract_poetry_appreciation_2016_2024_kp_batch.py` |", ""]
     return "\n".join(lines)
 
 

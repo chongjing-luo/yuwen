@@ -28,9 +28,16 @@ work/knowledge/
 ├── _reviews/
 ├── 必修上册/ … 选择性必修下册/
 ├── 册级汇总/
-├── 高考分析/
+├── exams/
+│   ├── papers/          # 试卷与题目唯一实体
+│   ├── views/by_type/   # 可重建题型视图
+│   ├── research/        # 带状态边界的研究报告
+│   ├── workbench/       # 草稿、切片、候选与队列
+│   └── _meta/           # 协议、映射与冻结记录
 └── 全局总览/
 ```
+
+高考资料必须从 `work/knowledge/exams/README.md` 进入；`work/knowledge/assessment/` 是命题组卷资产，不与来源试卷混放。
 
 ## 2026-08-07 G2 校准状态
 
@@ -42,7 +49,7 @@ work/knowledge/
 
 任务包位于 `dev/knowledge-extraction-foundation/05_task_packets/`；本轮覆盖必修上册 U02–U06。U06 图谱明确标出规划中的 U06-03、U06-04 尚未交付，U04 的真实学生实施材料也仍待补证。
 
-其余批次仍须遵循 `drafted → linted → primary_reviewed → secondary_reviewed → accepted`；已冻结契约不得通过自由文本绕过门禁。教材 114 项已完成锁定；高考结构包和验证入口见 `work/knowledge/高考分析/SG-EXAM-CAL-RECEIPT.md`、`scripts/validate_exam_calibration_manifest.py` 和 `scripts/validate_exam_kp_extraction_drafts.py`。
+其余批次仍须遵循 `drafted → linted → primary_reviewed → secondary_reviewed → accepted`；已冻结契约不得通过自由文本绕过门禁。教材 114 项已完成锁定；高考结构包和验证入口见 `work/knowledge/exams/_meta/SG-EXAM-CAL-RECEIPT.md`、`scripts/validate_exam_calibration_manifest.py` 和 `scripts/validate_exam_kp_extraction_drafts.py`。
 
 ## Agent执行协议
 

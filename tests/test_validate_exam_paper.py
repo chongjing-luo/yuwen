@@ -76,7 +76,7 @@ class SyntheticTest(unittest.TestCase):
 
 class IntegrationTest(unittest.TestCase):
     def test_priority_batch_present_and_valid(self):
-        base = ROOT / "work/knowledge/高考真题整理"
+        base = ROOT / "work/knowledge/exams/papers"
         papers = sorted(d for d in base.iterdir() if d.is_dir() and vep.PAPER_DIR_RE.match(d.name))
         if not papers:
             self.skipTest("优先批尚未落地（MinerU 运行中）")

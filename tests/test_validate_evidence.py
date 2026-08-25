@@ -11,6 +11,25 @@ ve = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(ve)
 
 FIX = ROOT / "tests/fixtures/evidence"
+HOST_RELEASE_REGISTRY = {
+    "schema_version": "external-host-release-registry.v1",
+    "events": {
+        "HOST-RELEASE-SYNTH-01": {
+            "verified_by_host": True,
+            "decision": "released",
+            "lesson_id": "LES-SYNTH",
+            "g4_audit_lock_sha256": "b" * 64,
+            "locator": "host-release://synthetic/2099/01",
+            "record_sha256": "c" * 64,
+        }
+    },
+}
+CURRENT_G4_AUDIT_LOCK = {
+    "schema_version": "audit-lock.v1",
+    "lesson_id": "LES-SYNTH",
+    "status": "awaiting_host_release",
+}
+CURRENT_G4_AUDIT_LOCK_SHA256 = "b" * 64
 
 
 def load(name):
@@ -20,7 +39,14 @@ def load(name):
 
 class GoodRowsTest(unittest.TestCase):
     def test_valid_obs(self):
-        errors = ve.validate_row(load("obs.jsonl")[0], "obs", 1)
+        errors = ve.validate_row(
+            load("obs.jsonl")[0],
+            "obs",
+            1,
+            host_release_registry=HOST_RELEASE_REGISTRY,
+            current_g4_audit_lock=CURRENT_G4_AUDIT_LOCK,
+            current_g4_audit_lock_sha256=CURRENT_G4_AUDIT_LOCK_SHA256,
+        )
         self.assertEqual(errors, [])
 
     def test_valid_grd(self):
@@ -46,6 +72,30 @@ class BadRowsTest(unittest.TestCase):
         self.assertTrue(any("前缀" in e for e in errors))
         self.assertTrue(any("node 非法" in e for e in errors))
         self.assertTrue(any("hex" in e for e in errors))
+
+    def test_obs_without_verified_host_release_event_is_rejected(self):
+        errors = ve.validate_row(load("obs.jsonl")[0], "obs", 1)
+        self.assertTrue(any("宿主放行" in e for e in errors))
+
+    def test_obs_cannot_use_registry_hash_without_current_g4_lock(self):
+        errors = ve.validate_row(
+            load("obs.jsonl")[0],
+            "obs",
+            1,
+            host_release_registry=HOST_RELEASE_REGISTRY,
+        )
+        self.assertTrue(any("当前G4" in e for e in errors))
+
+    def test_obs_current_g4_lock_hash_must_match_released_hash(self):
+        errors = ve.validate_row(
+            load("obs.jsonl")[0],
+            "obs",
+            1,
+            host_release_registry=HOST_RELEASE_REGISTRY,
+            current_g4_audit_lock=CURRENT_G4_AUDIT_LOCK,
+            current_g4_audit_lock_sha256="d" * 64,
+        )
+        self.assertTrue(any("当前G4锁哈希" in e for e in errors))
 
     def test_bad_error_type_detected(self):
         errors = ve.validate_row(load("grd.jsonl")[1], "grd", 2)

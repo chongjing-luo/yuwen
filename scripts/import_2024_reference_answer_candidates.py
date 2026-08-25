@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE_PDF = ROOT / "Data/reference/gaokao/pdf/2024/2024_NCA_answer.pdf"
 SOURCE_MD = ROOT / "Data/reference/gaokao/mineru_result/2024_NCA_answer/full.md"
 OUT = ROOT / "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NCA-2024/answers/reference_answer_candidates.jsonl"
-REPORT = ROOT / "work/knowledge/高考分析/EXAM-REFERENCE-ANSWER-CANDIDATES-2024.md"
+REPORT = ROOT / "work/knowledge/exams/workbench/EXAM-REFERENCE-ANSWER-CANDIDATES-2024.md"
 RECEIPT = ROOT / "work/knowledge/_reviews/receipts/exam_reference_answer_candidates_2024_20260809.json"
 
 
@@ -104,7 +104,7 @@ def main() -> int:
         "---\n\n"
         "# 2024 全国甲卷参考答案候选（部分）\n\n"
         "> 来源为中国教育在线网页渲染 PDF，登记状态为 `unverified`；该外部参考 PDF 的本地 MinerU 结果只有 Q1—Q9。另有一份从考试解析卷恢复的本地候选层，覆盖 Q1—Q22，但仍未核验。该层不改变主答案索引的 22 条 `missing`，不提供官方评分标准。\n\n"
-        f"- 派生记录：9 条（Q1—Q9）；Q10—Q22：仍缺失。\n- PDF：`{rel(SOURCE_PDF)}`，SHA-256 `{source_pdf_sha}`。\n- MinerU：`{rel(SOURCE_MD)}`，SHA-256 `{source_md_sha}`。\n- 派生 JSONL：`{rel(OUT)}`。\n- 本地解析卷全量候选：`Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NCA-2024/answers/reference_answer_candidates_local_analysis.jsonl`。\n- 本地解析卷候选报告：`work/knowledge/高考分析/EXAM-REFERENCE-ANSWER-CANDIDATES-2024-LOCAL-ANALYSIS.md`。\n",
+        f"- 派生记录：9 条（Q1—Q9）；Q10—Q22：仍缺失。\n- PDF：`{rel(SOURCE_PDF)}`，SHA-256 `{source_pdf_sha}`。\n- MinerU：`{rel(SOURCE_MD)}`，SHA-256 `{source_md_sha}`。\n- 派生 JSONL：`{rel(OUT)}`。\n- 本地解析卷全量候选：`Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NCA-2024/answers/reference_answer_candidates_local_analysis.jsonl`。\n- 本地解析卷候选报告：`work/knowledge/exams/workbench/EXAM-REFERENCE-ANSWER-CANDIDATES-2024-LOCAL-ANALYSIS.md`。\n",
         encoding="utf-8",
     )
     RECEIPT.parent.mkdir(parents=True, exist_ok=True)

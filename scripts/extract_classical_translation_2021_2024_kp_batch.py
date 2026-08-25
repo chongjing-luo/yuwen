@@ -17,7 +17,7 @@ from pathlib import Path
 from extract_word_pronunciation_kp_batch import body
 
 ROOT = Path(__file__).resolve().parents[1]
-SLICE_DIR = ROOT / "work/knowledge/高考分析"
+SLICE_DIR = ROOT / "work/knowledge/exams/workbench"
 OUT_DIR = SLICE_DIR / "kp_batches"
 OUT_JSONL = OUT_DIR / "classical_translation_2021_2024.jsonl"
 OUT_MD = OUT_DIR / "classical_translation_2021_2024.md"
@@ -147,8 +147,8 @@ def render(rows: list[dict]) -> str:
         "",
         "| 产物 | 路径 |",
         "|---|---|",
-        "| JSONL | `work/knowledge/高考分析/kp_batches/classical_translation_2021_2024.jsonl` |",
-        "| 本报告 | `work/knowledge/高考分析/kp_batches/classical_translation_2021_2024.md` |",
+        "| JSONL | `work/knowledge/exams/workbench/kp_batches/classical_translation_2021_2024.jsonl` |",
+        "| 本报告 | `work/knowledge/exams/workbench/kp_batches/classical_translation_2021_2024.md` |",
         "| 生成脚本 | `scripts/extract_classical_translation_2021_2024_kp_batch.py` |",
         "",
     ]

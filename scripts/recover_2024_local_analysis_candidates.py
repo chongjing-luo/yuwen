@@ -33,7 +33,7 @@ FULL = CORPUS / "mineru_result/2024年高考语文试卷（全国甲卷）（解
 PDF = CORPUS / "2024年高考语文试卷（全国甲卷）（解析卷）.pdf"
 MEIPIAN = BASE / "answers/reference_answer_candidates_meipian.jsonl"
 OUT = BASE / "answers/reference_answer_candidates_local_analysis.jsonl"
-REPORT = ROOT / "work/knowledge/高考分析/EXAM-REFERENCE-ANSWER-CANDIDATES-2024-LOCAL-ANALYSIS.md"
+REPORT = ROOT / "work/knowledge/exams/workbench/EXAM-REFERENCE-ANSWER-CANDIDATES-2024-LOCAL-ANALYSIS.md"
 RECEIPT = ROOT / "work/knowledge/_reviews/receipts/exam_reference_answer_candidates_local_analysis_GK-NCA-2024_20260809.json"
 
 

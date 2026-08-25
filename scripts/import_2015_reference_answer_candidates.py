@@ -22,7 +22,7 @@ SOURCE_HTML = SOURCE_DIR / "source.html"
 SOURCE_ZIP = SOURCE_DIR / "answer_bundle.zip"
 SOURCE_DOC = next(SOURCE_DIR.glob("*.doc"), None)
 OUT = BASE / "answers/reference_answer_candidates.jsonl"
-REPORT = ROOT / "work/knowledge/高考分析/EXAM-REFERENCE-ANSWER-CANDIDATES-2015.md"
+REPORT = ROOT / "work/knowledge/exams/workbench/EXAM-REFERENCE-ANSWER-CANDIDATES-2015.md"
 RECEIPT = ROOT / "work/knowledge/_reviews/receipts/exam_reference_answer_candidates_2015_20260809.json"
 
 

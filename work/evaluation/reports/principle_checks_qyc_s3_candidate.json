@@ -1,0 +1,47 @@
+{
+  "date": "2026-08-22",
+  "lesson": "qyc_s3_candidate",
+  "standard_version": "STANDARD-1.2-candidate",
+  "config_drift": [],
+  "checks": {
+    "frontstage_banned": {
+      "ok": true,
+      "findings": [],
+      "count": 0
+    },
+    "timebox_conservation": {
+      "ok": true,
+      "findings": []
+    },
+    "guiding_questions_well_formed": {
+      "ok": true,
+      "count": 0,
+      "note": "G1未设置贯穿问题时空列表合法；有问题时每项须为非空字符串。"
+    },
+    "total_minutes": {
+      "ok": true,
+      "sum": 200,
+      "target": 200
+    },
+    "boilerplate_trace": {
+      "ok": true,
+      "strict": true,
+      "count": 0,
+      "pages": [],
+      "note": "样板发现默认不判失败（收敛规则：新检查进入下一标准版本）"
+    }
+  },
+  "failed": [],
+  "classroom_account": {
+    "status": "空——未真实试教（两本账纪律，P-12）",
+    "signals_to_collect": [
+      "主动开口率与自愿发言面（J1/J3）",
+      "首答阶段非空白抽样率（U1）",
+      "个人末答抽样正确率、修订痕迹率（U3/U8）",
+      "自发回读与课后仍谈论作品（J4）",
+      "沉默/想不起学生真实完成率（U7）",
+      "实际完成耗时 vs 预算偏差（U5）",
+      "单元测评 KP 掌握率与延迟保持率（K1/K3）"
+    ]
+  }
+}

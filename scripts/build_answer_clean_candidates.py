@@ -17,8 +17,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 EXTRACT = ROOT / "Data/2008-2024·（四川）语文高考真题/exam_extract"
-REPORT = ROOT / "work/knowledge/高考分析/EXAM-ANSWER-CLEAN-CANDIDATES-20260809.md"
-REVIEW_QUEUE = ROOT / "work/knowledge/高考分析/EXAM-ANSWER-CLEAN-REVIEW-QUEUE-20260809.md"
+REPORT = ROOT / "work/knowledge/exams/workbench/EXAM-ANSWER-CLEAN-CANDIDATES-20260809.md"
+REVIEW_QUEUE = ROOT / "work/knowledge/exams/workbench/EXAM-ANSWER-CLEAN-REVIEW-QUEUE-20260809.md"
 RECEIPT = ROOT / "work/knowledge/_reviews/receipts/exam_answer_clean_candidates_20260809.json"
 COMPOUND_RECEIPT = ROOT / "work/knowledge/_reviews/receipts/exam_answer_compound_alignment_GK-NC3-2016_20260809.json"
 ANSWER_BOUNDARY_RECEIPT = ROOT / "work/knowledge/_reviews/receipts/exam_answer_boundary_GK-NC3-2020-Q002_20260809.json"

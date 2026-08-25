@@ -10,7 +10,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PATH = ROOT / "work/knowledge/高考分析/GK-NCA-2024-response_nodes_vertical_slice.jsonl"
+PATH = ROOT / "work/knowledge/exams/workbench/GK-NCA-2024-response_nodes_vertical_slice.jsonl"
 CORRECTION = (
     "B. 中国古建筑大木构架剖面示意图展示了几种不同位置、不同尺寸的柱，"
     "这些柱子中，立于地面的立柱比较容易发生糟朽残损的情况。"

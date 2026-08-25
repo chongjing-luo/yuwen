@@ -13,7 +13,7 @@
     {"scope": "score", "finding": "卷面分区总分为现代文36、古代诗文34、语言文字运用20、作文60。Q4-Q6、Q7-Q9为题组总分，语言运用子组为11+9。", "decision": "阅读组使用3/4/5、3/6/6候选；语言运用只在组首登记11/9，其他节点以0分结构占位并显式警告。"},
     {"scope": "ocr", "finding": "Q2、Q10、Q13存在可疑OCR残片或异文。", "decision": "保留清洗源原样并登记异常，不作语义纠正。"}
   ],
-  "derived_updates": {"script": "scripts/decompose_exam_vertical_slices.py", "output": "work/knowledge/高考分析/GK-NCA-2022-response_nodes_vertical_slice.jsonl", "receipt": "work/knowledge/_reviews/receipts/exam_vertical_GK-NCA-2022_20260809.json", "content_policy": "仅生成派生节点和回执；未改写原始PDF、MinerU full.md或清洗源段。"},
+  "derived_updates": {"script": "scripts/decompose_exam_vertical_slices.py", "output": "work/knowledge/exams/workbench/GK-NCA-2022-response_nodes_vertical_slice.jsonl", "receipt": "work/knowledge/_reviews/receipts/exam_vertical_GK-NCA-2022_20260809.json", "content_policy": "仅生成派生节点和回执；未改写原始PDF、MinerU full.md或清洗源段。"},
   "acceptance": {"visual_boundary": "passed", "ocr_arbitration": "passed_with_explicit_residuals", "score_reconciliation": "150/150", "top_level_only": false, "locator_precision": "page_level_fallback", "answer_and_kp_mapping": "not_claimed; candidate_unverified_or_missing; M0/KP_ID=N/A"},
   "reviewer": "primary_agent",
   "reviewed_at": "2026-08-09"

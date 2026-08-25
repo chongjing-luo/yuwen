@@ -16,7 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 EXTRACT = ROOT / "Data/2008-2024·（四川）语文高考真题/exam_extract"
-OUT = ROOT / "work/knowledge/高考分析"
+OUT = ROOT / "work/knowledge/exams/workbench"
 RECEIPTS = ROOT / "work/knowledge/_reviews/receipts"
 
 

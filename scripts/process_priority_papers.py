@@ -2,7 +2,7 @@
 """优先批试卷 MinerU 整理（试卷配方，一次性工具）。
 
 从 EXMAP 取 role=primary 且 kind=空白卷 且 2020+ 全国卷系主件，
-按 PAPER-{code}-{year} 组织到 work/knowledge/高考真题整理/，
+按 PAPER-{code}-{year} 组织到 work/knowledge/exams/papers/，
 提交 MinerU 并把 full.md 落到各卷 mineru_result/。断点续跑。
 """
 import json
@@ -18,8 +18,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import batch_mineru as bm
 
-MAP = ROOT / "work/knowledge/高考真题整理/EXMAP-V2_版本2文件试卷映射.jsonl"
-DEST_BASE = ROOT / "work/knowledge/高考真题整理"
+MAP = ROOT / "work/knowledge/exams/papers/EXMAP-V2_版本2文件试卷映射.jsonl"
+DEST_BASE = ROOT / "work/knowledge/exams/papers"
 PRIORITY_CODES = {"XG1", "XG2", "JIA", "YI"}
 PRIORITY_FROM = 2020
 CN_NAME = {"XG1": "新高考一卷", "XG2": "新高考二卷", "JIA": "全国甲卷", "YI": "全国乙卷"}

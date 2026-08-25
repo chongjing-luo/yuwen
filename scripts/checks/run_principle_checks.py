@@ -2,7 +2,7 @@
 """注册表驱动的通用原则检查执行器。
 
 从 work/principles/registry.yaml 读取声明，对一份课程数据执行当前可在
-数据层完成的 machine_check（前台禁词、时间盒守恒、三问在场、总时长恒等、
+数据层完成的 machine_check（前台禁词、时间盒守恒、按需问题投影合法、总时长恒等、
 反样板），并校验 enforcement_config.json 作为禁词唯一真源的形状完整性
 （旧链校验器归档后，词表不再有第二份拷贝可漂移）。
 
@@ -10,7 +10,7 @@
 「任何课程数据都可跑」的通用底线检查 + 两本账报告框架（桌面账/课堂账）。
 
 用法：
-  python3 scripts/checks/run_principle_checks.py --lesson-js scripts/meng_v66/lesson.js --name meng_v66
+  python3 scripts/checks/run_principle_checks.py (--lesson-json PATH | --lesson-js PATH) --name ID
 退出码：0 全部通过；1 存在失败（样板发现默认不失败，--strict 时失败——
 这符合收敛规则：新检查进入下一标准版本，不追溯否决当前候选）。
 """
@@ -48,7 +48,11 @@ CLASSROOM_SIGNALS = [
 ]
 
 
-def load_lesson(lesson_js: str) -> dict:
+def load_lesson(lesson_js: str | None, lesson_json: str | None = None) -> dict:
+    if bool(lesson_js) == bool(lesson_json):
+        raise ValueError("必须且只能提供lesson_js或lesson_json之一")
+    if lesson_json:
+        return json.loads(Path(lesson_json).resolve().read_text(encoding="utf-8"))
     result = subprocess.run(
         ["node", "-e", "console.log(JSON.stringify(require(process.argv[1])))", str(Path(lesson_js).resolve())],
         capture_output=True,
@@ -111,8 +115,15 @@ def run_checks(lesson: dict, config: dict, strict: bool) -> dict:
             timebox_errors.append({"page_id": p.get("page_id"), "sum": total, "expected": expected})
     results["timebox_conservation"] = {"ok": not timebox_errors, "findings": timebox_errors}
 
-    questions = lesson.get("three_questions") or []
-    results["three_questions_present"] = {"ok": len(questions) >= 1 and all(bool(q) for q in questions), "count": len(questions)}
+    questions = lesson.get("three_questions")
+    questions_well_formed = isinstance(questions, list) and all(
+        isinstance(question, str) and bool(question.strip()) for question in questions
+    )
+    results["guiding_questions_well_formed"] = {
+        "ok": questions_well_formed,
+        "count": len(questions) if isinstance(questions, list) else 0,
+        "note": "G1未设置贯穿问题时空列表合法；有问题时每项须为非空字符串。",
+    }
 
     total_minutes = sum(p.get("minutes") or 0 for p in pages)
     target = lesson.get("target_natural_minutes")
@@ -137,7 +148,9 @@ def run_checks(lesson: dict, config: dict, strict: bool) -> dict:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--lesson-js", required=True, help="课程数据 Node 模块路径")
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("--lesson-js", help="legacy课程数据Node模块路径")
+    group.add_argument("--lesson-json", help="v2课程数据JSON路径")
     parser.add_argument("--name", required=True, help="课程标识（用于报告命名）")
     parser.add_argument("--strict", action="store_true")
     parser.add_argument("--report-dir", default=str(DEFAULT_REPORT_DIR))
@@ -145,7 +158,7 @@ def main() -> int:
 
     registry = yaml.safe_load(REGISTRY_PATH.read_text(encoding="utf-8"))
     config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
-    lesson = load_lesson(args.lesson_js)
+    lesson = load_lesson(args.lesson_js, args.lesson_json)
 
     drift_errors = check_config_drift(config)
     checks = run_checks(lesson, config, args.strict)

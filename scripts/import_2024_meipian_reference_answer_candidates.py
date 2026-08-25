@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parents[1]
 URL = "https://www.meipian.cn/552rdrkt"
 HTML_OUT = ROOT / "Data/reference/gaokao/html/2024/answer_meipian_552rdrkt.html"
 OUT = ROOT / "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NCA-2024/answers/reference_answer_candidates_meipian.jsonl"
-REPORT = ROOT / "work/knowledge/高考分析/EXAM-REFERENCE-ANSWER-CANDIDATES-2024-MEIPIAN.md"
+REPORT = ROOT / "work/knowledge/exams/workbench/EXAM-REFERENCE-ANSWER-CANDIDATES-2024-MEIPIAN.md"
 RECEIPT = ROOT / "work/knowledge/_reviews/receipts/exam_reference_answer_candidates_meipian_GK-NCA-2024_20260809.json"
 LOCAL_REGISTRY = ROOT / "Data/reference/gaokao/external/2024_meipian_answer/registry_entry.json"
 

@@ -7,7 +7,7 @@
 3. 每个机制节点被至少一条原则覆盖（planned 单列）；
 4. source_anchor 指向的文档存在，且 heading 逐行真实存在（人读权威文本与机器源不漂移）；
 5. enforcement 类型合法；machine_check 引用的 checker 文件存在；
-6. 机制节点名称与《三目标实现机制》文档标题一致（两文件互为镜像）；
+6. 教学原则的机制节点名称与《备课三目标与实现机制》文档标题一致（两文件互为镜像）；
 7. 输出理念覆盖报告（按节点 × 强制方式统计——理念贯彻成为可度量指标）。
 
 用法：python3 scripts/checks/validate_principle_registry.py [--report OUT.md]
@@ -25,7 +25,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
 REGISTRY_PATH = ROOT / "work/principles/registry.yaml"
-MECHANISM_DOC = ROOT / "work/evaluation/三目标实现机制.md"
+MECHANISM_DOC = ROOT / "work/methodology/lesson-preparation/备课三目标与实现机制.md"
 
 ID_PATTERN = re.compile(r"^(P|A|M|V|N)-[A-Z0-9]{2,3}$")
 VALID_DOMAINS = {"通用", "语文"}
@@ -48,7 +48,11 @@ def load_headings(doc_path: Path) -> set[str]:
     return headings
 
 
-def validate(registry: dict) -> tuple[list[str], list[str]]:
+def validate(
+    registry: dict,
+    *,
+    check_external_references: bool = True,
+) -> tuple[list[str], list[str]]:
     errors: list[str] = []
     warnings: list[str] = []
     principles = registry.get("principles") or []
@@ -108,7 +112,11 @@ def validate(registry: dict) -> tuple[list[str], list[str]]:
                 checker = en.get("checker")
                 if not checker:
                     errors.append(f"{pid}.enforcement[{idx}]: machine_check 必须给 checker")
-                elif en.get("status") != "planned" and not (ROOT / checker).exists():
+                elif (
+                    check_external_references
+                    and en.get("status") != "planned"
+                    and not (ROOT / checker).exists()
+                ):
                     errors.append(f"{pid}.enforcement[{idx}]: checker 不存在: {checker}")
                 if not (en.get("rule") or "").strip():
                     errors.append(f"{pid}.enforcement[{idx}]: machine_check 必须给 rule")
@@ -147,28 +155,34 @@ def validate(registry: dict) -> tuple[list[str], list[str]]:
         if not doc or not heading:
             errors.append(f"{pid}: anchor 缺 doc/heading")
             continue
-        doc_path = ROOT / doc
-        if not doc_path.exists():
-            errors.append(f"{pid}: anchor 文档不存在: {doc}")
-            continue
-        if doc not in anchor_docs:
-            anchor_docs[doc] = load_headings(doc_path)
-        if heading not in anchor_docs[doc]:
-            errors.append(f"{pid}: anchor heading 在 {doc} 中不存在: {heading!r}")
+        if check_external_references:
+            doc_path = ROOT / doc
+            if not doc_path.exists():
+                errors.append(f"{pid}: anchor 文档不存在: {doc}")
+                continue
+            if doc not in anchor_docs:
+                anchor_docs[doc] = load_headings(doc_path)
+            if heading not in anchor_docs[doc]:
+                errors.append(f"{pid}: anchor heading 在 {doc} 中不存在: {heading!r}")
 
-    if MECHANISM_DOC.exists():
-        mech_headings = load_headings(MECHANISM_DOC)
-        for nid, spec in nodes.items():
-            name = spec.get("name")
-            goal = spec.get("goal")
-            if not any(name in h for h in mech_headings):
-                errors.append(f"节点 {nid} 名称「{name}」未出现在《三目标实现机制》标题中（镜像漂移）")
-            if goal not in GOAL_OF_PREFIX.values():
-                errors.append(f"节点 {nid}: goal 非法: {goal!r}")
-            if nid[0] not in GOAL_OF_PREFIX or GOAL_OF_PREFIX[nid[0]] != goal:
-                errors.append(f"节点 {nid}: 前缀与 goal 不一致")
-    else:
+    mech_headings = (
+        load_headings(MECHANISM_DOC)
+        if check_external_references and MECHANISM_DOC.exists()
+        else set()
+    )
+    if check_external_references and not MECHANISM_DOC.exists():
         errors.append(f"机制文档不存在: {MECHANISM_DOC}")
+    for nid, spec in nodes.items():
+        name = spec.get("name")
+        goal = spec.get("goal")
+        if not str(name or "").strip():
+            errors.append(f"节点 {nid}: name 为空")
+        elif check_external_references and not any(name in h for h in mech_headings):
+            errors.append(f"节点 {nid} 名称「{name}」未出现在《备课三目标与实现机制》标题中（镜像漂移）")
+        if goal not in GOAL_OF_PREFIX.values():
+            errors.append(f"节点 {nid}: goal 非法: {goal!r}")
+        if not nid or nid[0] not in GOAL_OF_PREFIX or GOAL_OF_PREFIX[nid[0]] != goal:
+            errors.append(f"节点 {nid}: 前缀与 goal 不一致")
 
     return errors, warnings
 

@@ -20,7 +20,7 @@ from extract_exam_answer_candidates import extract_candidate
 ROOT = Path(__file__).resolve().parents[1]
 EXTRACT = ROOT / "Data/2008-2024·（四川）语文高考真题/exam_extract"
 DEFAULT_EXAM_ID = "GK-SC-2013"
-DEFAULT_REPORT = ROOT / "work/knowledge/高考分析/EXAM-LOCAL-ANALYSIS-CANDIDATES-20260809.md"
+DEFAULT_REPORT = ROOT / "work/knowledge/exams/workbench/EXAM-LOCAL-ANALYSIS-CANDIDATES-20260809.md"
 DEFAULT_RECEIPT = ROOT / "work/knowledge/_reviews/receipts/exam_answer_GK-SC-2013_local_analysis_candidates_20260809.json"
 
 

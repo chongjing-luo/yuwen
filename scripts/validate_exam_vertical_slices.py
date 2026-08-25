@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "work/knowledge/高考分析"
+OUT = ROOT / "work/knowledge/exams/workbench"
 REPORT_DIR = ROOT / "work/knowledge/_meta/validation_reports"
 
 SLICES = {

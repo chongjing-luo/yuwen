@@ -18,10 +18,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CORPUS = ROOT / "Data" / "2008-2024·（四川）语文高考真题"
 EXTRACT = CORPUS / "exam_extract"
-SLICE_DIR = ROOT / "work/knowledge/高考分析"
+SLICE_DIR = ROOT / "work/knowledge/exams/workbench"
 REGISTRY_DIR = ROOT / "Data/reference/gaokao/registry"
 OUT_JSON = ROOT / "work/knowledge/_meta/exam_answer_scoring_audit_20260809.json"
-OUT_MD = ROOT / "work/knowledge/高考分析/EXAM-ANSWER-SCORING-AUDIT-20260809.md"
+OUT_MD = ROOT / "work/knowledge/exams/workbench/EXAM-ANSWER-SCORING-AUDIT-20260809.md"
 
 EXPECTED = {
     **{y: 21 for y in range(2008, 2016)},
@@ -295,12 +295,12 @@ def render_markdown(audit: dict) -> str:
         "| 产物 | 路径 |",
         "|---|---|",
         "| 机器审计 | `work/knowledge/_meta/exam_answer_scoring_audit_20260809.json` |",
-        "| 本报告 | `work/knowledge/高考分析/EXAM-ANSWER-SCORING-AUDIT-20260809.md` |",
-        "| 候选答案层 | `work/knowledge/高考分析/EXAM-ANSWER-CANDIDATE-EXTRACTION-20260809.md` |",
-        "| 题型清洗队列 | `work/knowledge/高考分析/EXAM-TYPE-KP-REVIEW-QUEUE-20260809.md` |",
+        "| 本报告 | `work/knowledge/exams/workbench/EXAM-ANSWER-SCORING-AUDIT-20260809.md` |",
+        "| 候选答案层 | `work/knowledge/exams/workbench/EXAM-ANSWER-CANDIDATE-EXTRACTION-20260809.md` |",
+        "| 题型清洗队列 | `work/knowledge/exams/workbench/EXAM-TYPE-KP-REVIEW-QUEUE-20260809.md` |",
         "| 执行脚本 | `scripts/audit_exam_answer_scoring_sources.py` |",
         "| 2013 候选交叉比对 | `Data/2008-2024·（四川）语文高考真题/exam_extract/GK-SC-2013/answers/reference_answer_candidate_comparison.jsonl` |",
-        "| 2013 比对报告 | `work/knowledge/高考分析/EXAM-REFERENCE-ANSWER-CANDIDATE-COMPARISON-2013.md` |",
+        "| 2013 比对报告 | `work/knowledge/exams/workbench/EXAM-REFERENCE-ANSWER-CANDIDATE-COMPARISON-2013.md` |",
         "| 2013 比对验证 | `scripts/validate_2013_candidate_comparison.py` |",
         "| 2023 外部部分候选 | `Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NCA-2023/answers/reference_answer_candidates.jsonl` |",
         "| 2023 本地共享答案切分 | `Data/2008-2024·（四川）语文高考真题/exam_extract/GK-NCA-2023/answers/local_analysis_group_candidates.jsonl` |",

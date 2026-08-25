@@ -13,7 +13,7 @@
     {"scope": "score", "finding": "卷面分区总分为现代文36、古代诗文34、语言文字运用20、作文60；题面另印文言文20分与诗歌9分，出现1分算术冲突。", "decision": "暂按总分150复算，文言候选登记3/3/4/9；冲突保留为待评分资料核验事项，不宣称正式小问分值。"},
     {"scope": "language_use", "finding": "Q17—Q21为统一20分题组，未印独立小问分值。", "decision": "仅在Q17组首登记20分，Q18—Q21为0分结构占位并显式标记。"}
   ],
-  "derived_updates": {"script": "scripts/decompose_exam_vertical_slices.py", "output": "work/knowledge/高考分析/GK-NCA-2023-response_nodes_vertical_slice.jsonl", "receipt": "work/knowledge/_reviews/receipts/exam_vertical_GK-NCA-2023_20260809.json", "content_policy": "仅生成派生节点和回执；未改写原始PDF、MinerU full.md或清洗源段。"},
+  "derived_updates": {"script": "scripts/decompose_exam_vertical_slices.py", "output": "work/knowledge/exams/workbench/GK-NCA-2023-response_nodes_vertical_slice.jsonl", "receipt": "work/knowledge/_reviews/receipts/exam_vertical_GK-NCA-2023_20260809.json", "content_policy": "仅生成派生节点和回执；未改写原始PDF、MinerU full.md或清洗源段。"},
   "acceptance": {"visual_boundary": "passed", "ocr_arbitration": "passed_with_explicit_residuals", "score_reconciliation": "150/150_candidate_reconciled", "top_level_only": false, "locator_precision": "page_level_fallback", "answer_and_kp_mapping": "not_claimed; candidate_unverified_or_missing; M0/KP_ID=N/A"},
   "reviewer": "primary_agent",
   "reviewed_at": "2026-08-09"

@@ -11,7 +11,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "work/knowledge/高考分析"
+OUT = ROOT / "work/knowledge/exams/workbench"
 PILOT = OUT / "EXAM-2008-SC-response_nodes.jsonl"
 TARGET = OUT / "GK-SC-2008-response_nodes_vertical_slice.jsonl"
 

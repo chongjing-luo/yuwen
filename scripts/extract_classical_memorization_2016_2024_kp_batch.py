@@ -11,7 +11,7 @@ from pathlib import Path
 from extract_word_pronunciation_kp_batch import body
 
 ROOT = Path(__file__).resolve().parents[1]
-SLICE_DIR = ROOT / "work/knowledge/高考分析"
+SLICE_DIR = ROOT / "work/knowledge/exams/workbench"
 OUT_DIR = SLICE_DIR / "kp_batches"
 OUT_JSONL = OUT_DIR / "classical_memorization_2016_2024.jsonl"
 OUT_MD = OUT_DIR / "classical_memorization_2016_2024.md"
@@ -104,7 +104,7 @@ def render(rows: list[dict]) -> str:
     for row in rows:
         lines.append(f"| {row['year']} | `{row['exam_node_id']}` [[{row['prompt_source']}|题干]] | {row['score_candidate'] or 'N/A'} | `{row['answer_candidate_status']}` | `{str(row['analysis_contains_answer_marker']).lower()}` | `{row['manual_review_gate']}` |")
     counts = Counter(row["answer_candidate_status"] for row in rows)
-    lines += ["", "## 统计", "", f"- 总节点：{len(rows)}；默写解析源：{counts.get('fill_in_candidate_source', 0)}；缺少解析源：{counts.get('missing_analysis_source', 0)}。", "- `analysis_contains_answer_marker` 只表示源文本出现“答案”字样，不表示答案已核验；`answer_candidate` 全部保持空值。", "", "## 复核规则", "", "1. 逐页核对题干、篇目、上下句边界、限选数量、分值和 OCR/水印疑点。", "2. 独立登记规范答案、易错字、通假字和评分规则；不得把解析示例直接当官方答案。", "3. 只有题文—答案/评分—教材 KP 三方证据闭合后，才允许升级映射等级。", "", "| 产物 | 路径 |", "|---|---|", "| JSONL | `work/knowledge/高考分析/kp_batches/classical_memorization_2016_2024.jsonl` |", "| 本报告 | `work/knowledge/高考分析/kp_batches/classical_memorization_2016_2024.md` |", "| 生成脚本 | `scripts/extract_classical_memorization_2016_2024_kp_batch.py` |", ""]
+    lines += ["", "## 统计", "", f"- 总节点：{len(rows)}；默写解析源：{counts.get('fill_in_candidate_source', 0)}；缺少解析源：{counts.get('missing_analysis_source', 0)}。", "- `analysis_contains_answer_marker` 只表示源文本出现“答案”字样，不表示答案已核验；`answer_candidate` 全部保持空值。", "", "## 复核规则", "", "1. 逐页核对题干、篇目、上下句边界、限选数量、分值和 OCR/水印疑点。", "2. 独立登记规范答案、易错字、通假字和评分规则；不得把解析示例直接当官方答案。", "3. 只有题文—答案/评分—教材 KP 三方证据闭合后，才允许升级映射等级。", "", "| 产物 | 路径 |", "|---|---|", "| JSONL | `work/knowledge/exams/workbench/kp_batches/classical_memorization_2016_2024.jsonl` |", "| 本报告 | `work/knowledge/exams/workbench/kp_batches/classical_memorization_2016_2024.md` |", "| 生成脚本 | `scripts/extract_classical_memorization_2016_2024_kp_batch.py` |", ""]
     return "\n".join(lines)
 
 

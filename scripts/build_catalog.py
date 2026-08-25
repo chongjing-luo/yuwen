@@ -10,7 +10,7 @@
   3. assessment/blueprint_*.json —— 蓝图 BP-*
   4. assessment/ 下构建产物      —— 学生卷/教师卷（L3，type=derived）
   5. work/teaching/ 的实体       —— lesson.json(LES)/homework_package(HW)
-  6. work/manuals/S*.md          —— 手册（MANUAL-S*）
+  6. work/methodology/manuals/S*.md          —— 手册（MANUAL-S*）
   7. work/knowledge/materials/   —— 素材 MAT-*（现为空）
 
 用法：
@@ -30,7 +30,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 KNOW = ROOT / "work/knowledge"
 TEACH = ROOT / "work/teaching"
-MANUALS = ROOT / "work/manuals"
+MANUALS = ROOT / "work/methodology/manuals"
 CATALOG = KNOW / "_meta/catalog.jsonl"
 INDEX = KNOW / "INDEX.md"
 
@@ -120,7 +120,7 @@ def scan_manuals(rows):
 
 
 def scan_exam_papers(rows, errors):
-    base = KNOW / "高考真题整理"
+    base = KNOW / "exams/papers"
     if not base.is_dir():
         return
     for d in sorted(base.iterdir()):

@@ -1,0 +1,551 @@
+{
+  "schema_version": "lesson-plan-candidate.v1",
+  "lesson_id": "LES-X2-LHZ-01",
+  "author_id": "codex",
+  "lesson_plan": {
+    "path": "work/teaching/选择性必修中册/记念刘和珍君/教案.md",
+    "sha256": "3f2a6a3020a09d374d7efdd3c8cecffc8ce839503ec3147ba86b4063d0fb2140"
+  },
+  "evidence_manifest": {
+    "path": "work/teaching/选择性必修中册/记念刘和珍君/_meta/evidence_manifest.json",
+    "sha256": "750372372d5cefa05b27397a1e50c2099c5c8982c8b17893055d3631fbc1c8f8"
+  },
+  "contract": {
+    "mechanism_nodes": [
+      "K1",
+      "K2",
+      "K3",
+      "K4",
+      "K5",
+      "U2",
+      "U4",
+      "U6",
+      "U8",
+      "J3",
+      "J4",
+      "J5",
+      "J6",
+      "J7"
+    ],
+    "total_minutes": 180,
+    "closing_mode": "撤去七节提纲，学生闭卷重建全文推进并修订贯穿问题末答；继而以跨节原句完成作品整体解释，以两处短引写出文本结论与今天理解分层的个人回应，最后回读题名与结尾。",
+    "objective_framework": {
+      "language_use": {
+        "status": "included",
+        "reason": "词语释义、长句复述、七节重建、人物证据链、语言短析、整体解释和当代回应都必须准确调用原文。",
+        "objective_refs": ["O1", "O2", "O3", "O4", "O5"]
+      },
+      "thinking": {
+        "status": "included",
+        "reason": "学生须组织七节关系、区分事实与标签、处理请愿方式和牺牲意义的层次，并限制现代迁移。",
+        "objective_refs": ["O1", "O2", "O4", "O5"]
+      },
+      "aesthetic": {
+        "status": "included",
+        "reason": "反复、对比、反语、排比、叙议抒交织及句群节奏共同形成不可由主题标签替代的文学经验。",
+        "objective_refs": ["O3", "O4"]
+      },
+      "culture": {
+        "status": "included",
+        "reason": "学生在教材三一八惨案和革命文化语境中理解青年选择、女性勇毅与公共记忆。",
+        "objective_refs": ["O4"]
+      },
+      "moral_education": {
+        "status": "included",
+        "reason": "育人价值从具体生命、尸骸证据、反流言、尊重生命和生者责任生长，不以统一口号替代原文。",
+        "objective_refs": ["O4", "O5"]
+      },
+      "reality_transfer": {
+        "status": "included",
+        "reason": "学生把保存姓名与可核验事实的阅读所得用于今天的公共表达，并明确现代判断不等于作者原意。",
+        "objective_refs": ["O5"]
+      }
+    },
+    "objectives": [
+      {
+        "id": "O1",
+        "kind": "literacy",
+        "dimensions": ["language_use", "thinking"],
+        "statement": "学生能准确解释本文必需词语和复杂句意，按七节原序复述内容，并说明全文怎样由写作与失语推进到具体的人、事实与流言、牺牲意义和生者责任。",
+        "kid_refs": ["K01", "K03"],
+        "mechanism_nodes": ["K1", "K2", "U2", "U8"],
+        "minimum_evidence": "不看提纲，用七个动词或短语串起全文，每节至少说清一个事实或思想动作；随机抽取一个必需词语和一处复杂句能准确释义复述。",
+        "high_quality_evidence": "能说明至少两处相邻章节为何必须如此衔接，并用原句校准复述中的主体、转折和评价对象。",
+        "failure_signal": "只记名句、错置节次、逐节概括互不相连，或长句只作逐字替换而不能自然复述。",
+        "recurrence": "P0首读诊断，P1—P4逐节回取，P5闭卷重建；后续《为了忘却的记念》和单元批注本再次调用。"
+      },
+      {
+        "id": "O2",
+        "kind": "literacy",
+        "dimensions": ["language_use", "thinking"],
+        "statement": "学生能用至少四处跨节事实概括刘和珍，区分文本事实、人物判断和流言标签，并说明温和与坚定怎样在同一个具体青年身上共存。",
+        "kid_refs": ["K06", "K07"],
+        "mechanism_nodes": ["K1", "K2", "U4", "U6", "U8"],
+        "minimum_evidence": "完成一条含四处以上、来自两个以上章节的事实—品质—判断边界证据链。",
+        "high_quality_evidence": "能解释温和与坚定的共存，主动检查单一英雄标签遗漏了什么，并保留修订前后痕迹。",
+        "failure_signal": "只写勇敢爱国，把政府或流言标签当事实，或只引一处微笑便完成全部人物结论。",
+        "recurrence": "P2形成并修订，P5整体解释回取；后续两文比较和人物评论继续使用。"
+      },
+      {
+        "id": "O3",
+        "kind": "literacy",
+        "dimensions": ["language_use", "aesthetic"],
+        "statement": "学生能选择至少三组关键句，说明反复、对比、反语、排比或叙议抒交织怎样在具体语境中承载哀痛、愤怒、尊敬、反思和希望。",
+        "kid_refs": ["K04", "K05", "K08", "K09", "K10", "K16"],
+        "mechanism_nodes": ["K1", "K2", "K4", "U4", "U6", "U8", "J3"],
+        "minimum_evidence": "完成三则原句—形式—语境冲突或推进—情感与判断短析，其中至少一则准确处理反语。",
+        "high_quality_evidence": "能听出句群节奏和评价对象的变化，并说明若改成直白陈述或删去反复会损失什么。",
+        "failure_signal": "只报修辞术语和生动形象，把反语按字面理解，或把全文情感压成一个悲痛标签。",
+        "recurrence": "P1处理反复与对照，P3处理反语与叙事，P4处理议论转折，P5形成情感组织。"
+      },
+      {
+        "id": "O4",
+        "kind": "literacy",
+        "dimensions": ["language_use", "thinking", "aesthetic", "culture", "moral_education"],
+        "statement": "学生能区分鲁迅对徒手请愿方式的判断、对生命和人格的尊重及对牺牲作用的确认，并用跨节证据概括作品主旨、表达指向与情感组织。",
+        "kid_refs": ["K02", "K03", "K11", "K12", "K13", "K14", "K15", "K16"],
+        "mechanism_nodes": ["K1", "K2", "K4", "U6", "U8", "J4", "J6"],
+        "minimum_evidence": "以至少四处跨节短引写一段180—250字整体解释，完整处理请愿方式、生命价值、牺牲作用、主旨、作品表达指向和情感组织。",
+        "high_quality_evidence": "能处理第六、七节的表面张力，既不美化死亡，也不抹去勇毅、记忆和未来意义，并明确解释边界。",
+        "failure_signal": "把请愿反思说成否定死者，把牺牲意义说成歌颂死亡，或主题只剩赞美爱国青年。",
+        "recurrence": "P0建立坐标，P1—P4累积跨节证据，P4形成证据提纲，P5完成整体解释；后续革命传统作品研习继续回取。"
+      },
+      {
+        "id": "O5",
+        "kind": "reality_transfer",
+        "dimensions": ["language_use", "thinking", "moral_education", "reality_transfer"],
+        "statement": "学生能从本文事实与语言出发，说明纪念为什么要保存具体的人和可核验的事实，并以有边界的个人语言形成今天的公共记忆判断。",
+        "kid_refs": ["K08", "K14", "K15", "K17"],
+        "mechanism_nodes": ["K1", "U6", "U8", "J3", "J6", "J7"],
+        "minimum_evidence": "80—120字个人回应含两处准确短引、一项文本结论和一项明确标注的今天的理解。",
+        "high_quality_evidence": "能承认情绪和判断边界，表达具体、克制，既不替作者发言，也不要求他人与自己立场一致。",
+        "failure_signal": "只有铭记历史、努力奋斗等通用口号，没有原文，借现代议题替作者发言，或要求全班统一表态。",
+        "recurrence": "P3辨认事实与污名，P4讨论生者责任，P5独立回应；后续公共表达和纪念性写作继续使用。"
+      }
+    ],
+    "knowledge_items": [
+      {
+        "kid": "K01",
+        "statement": "本文需要读准并在语境中解释寥落、长歌当哭、出离、深味、菲薄、微漠、桀骜、喋血、立仆、沉勇、惩创、殒身不恤、山阿等词，能把多重转折、评价对象和省略成分还原为通顺句意，但不以白话复述代替文学阅读",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-X2-U02-01#KP-CARD-X2-U02-01-014",
+        "kp_ids": ["KP-CARD-X2-U02-01-014"],
+        "stage_refs": ["P0", "P1", "P2", "P3", "P4", "P5"],
+        "mastery_evidence": "随机抽词释义；选一处长句自然复述并指出转折或评价对象。",
+        "mechanism_nodes": ["K1", "K2", "U2", "U8"]
+      },
+      {
+        "kid": "K02",
+        "statement": "《记念刘和珍君》选自《华盖集续编》，写于1926年4月1日，是以写人记事为主的纪念性散文；教材把它置于革命文化单元，要求从人物事实、情感脉络、关键语言和牺牲意义研习",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-X2-U02-01#KP-CARD-X2-U02-01-003",
+        "kp_ids": ["KP-CARD-X2-U02-01-002", "KP-CARD-X2-U02-01-003"],
+        "stage_refs": ["P0"],
+        "mastery_evidence": "能说清体裁、写作日期和本课四项教材要求，不背无关作者生平。",
+        "mechanism_nodes": ["K1", "K4", "U6"]
+      },
+      {
+        "kid": "K03",
+        "statement": "七节依次推进写作必要与失语、猛士庸人与遗忘、追忆刘和珍、尸骸击破传言、复原遇害与反语控诉、反思请愿并保存血痕、确认女性勇毅与未来意义，全文形成写与无言—人—事实—意义的结构",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-X2-U02-01#KP-CARD-X2-U02-01-014",
+        "kp_ids": ["KP-CARD-X2-U02-01-014"],
+        "stage_refs": ["P0", "P1", "P2", "P3", "P4", "P5"],
+        "mastery_evidence": "七节顺序复述；说明至少两处相邻章节的转段关系。",
+        "mechanism_nodes": ["K2", "K3", "U8", "J4"]
+      },
+      {
+        "kid": "K04",
+        "statement": "有写一点东西的必要与无话可说并不互相取消，写是纪念死者、安慰生者、抵抗遗忘与流言的责任，无言来自极度哀痛、愤怒和并非人间的震骇，反复使这组拉扯贯穿全文",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-X2-U02-01#KP-CARD-X2-U02-01-004",
+        "kp_ids": ["KP-CARD-X2-U02-01-004"],
+        "stage_refs": ["P1", "P5"],
+        "mastery_evidence": "汇集至少三处写与无言句，说明每次出现时理解如何加深。",
+        "mechanism_nodes": ["K2", "U4", "U6", "U8"]
+      },
+      {
+        "kid": "K05",
+        "statement": "真的猛士因敢于直面、正视而成为哀痛者，也因保持清醒和担当获得精神上的自觉；庸人借时间洗涤旧迹而偷生，忘却的救主以反语讽刺遗忘",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-X2-U02-01#KP-CARD-X2-U02-01-005",
+        "kp_ids": ["KP-CARD-X2-U02-01-005"],
+        "stage_refs": ["P1"],
+        "mastery_evidence": "解释哀痛者和幸福者的双重关系，并说清救主的反语冲突。",
+        "mechanism_nodes": ["K2", "U6", "U8"]
+      },
+      {
+        "kid": "K06",
+        "statement": "刘和珍反抗有势力的校长、生活艰难仍预订《莽原》、始终微笑温和、关心母校而泣下、欣然请愿并在弹雨中从容，这些事实共同支持温和而坚定、富有公共责任感和勇气的判断",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-X2-U02-01#KP-CARD-X2-U02-01-006",
+        "kp_ids": ["KP-CARD-X2-U02-01-006"],
+        "stage_refs": ["P2", "P5"],
+        "mastery_evidence": "至少四处跨节事实支持人物判断，并说明证据支持到什么程度。",
+        "mechanism_nodes": ["K1", "K2", "U4", "U8"]
+      },
+      {
+        "kid": "K07",
+        "statement": "人物阅读应先列正文事实，再概括共同指向，最后检查反证与越界；微笑温和不是软弱，反抗势利也不等于性情尖锐，复杂事实不能被单一英雄标签抹平",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-X2-U02-01#KP-CARD-X2-U02-01-006",
+        "kp_ids": ["KP-CARD-X2-U02-01-006", "KP-CARD-X2-U02-01-014"],
+        "stage_refs": ["P2"],
+        "mastery_evidence": "完成事实—品质—边界表，并修订一次过宽或过窄的人物标签。",
+        "mechanism_nodes": ["K2", "U6", "U8"]
+      },
+      {
+        "kid": "K08",
+        "statement": "第四节让自己的尸骸和棍棒伤痕证明虐杀，再并置暴徒、受人利用等命名，文章据此区分可验证事实与污名化流言，并追问民族为何沉默",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-X2-U02-01#KP-CARD-X2-U02-01-007",
+        "kp_ids": ["KP-CARD-X2-U02-01-007"],
+        "stage_refs": ["P3", "P5"],
+        "mastery_evidence": "将尸骸与伤痕、政府命令、流言分别归类，并说明它们为何不等权。",
+        "mechanism_nodes": ["K1", "K2", "U6", "U8", "J6"]
+      },
+      {
+        "kid": "K09",
+        "statement": "第五节以中弹、互相扶助、棍击等连续细节复原三位女子的遭遇，始终微笑的和蔼与死亡事实反复相撞，使哀痛具体化，也使从容友爱与凶残形成强烈对照",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-X2-U02-01#KP-CARD-X2-U02-01-007",
+        "kp_ids": ["KP-CARD-X2-U02-01-006", "KP-CARD-X2-U02-01-007"],
+        "stage_refs": ["P3"],
+        "mastery_evidence": "按叙事顺序复述遭遇，选择一处反复或对照说明表达损失。",
+        "mechanism_nodes": ["K2", "U4", "U8", "J3"]
+      },
+      {
+        "kid": "K10",
+        "statement": "文明人所发明的枪弹、伟绩、武功在惨杀语境中是反语，褒义字面与屠戮事实冲突，讽刺杀人者的残暴及其自我粉饰，并使愤怒达到尖锐处",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-X2-U02-01#KP-CARD-X2-U02-01-007",
+        "kp_ids": ["KP-CARD-X2-U02-01-007"],
+        "stage_refs": ["P3"],
+        "mastery_evidence": "还原字面义和语境义，解释反语对象与效果，不只报术语。",
+        "mechanism_nodes": ["K2", "U6", "U8"]
+      },
+      {
+        "kid": "K11",
+        "statement": "鲁迅认为徒手请愿难以进入以巨大代价换取历史进展的斗争路径，这是对斗争方式和实际效用的反思，不等于否定请愿者的爱国动机、人格和生命价值",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-X2-U02-01#KP-CARD-X2-U02-01-008",
+        "kp_ids": ["KP-CARD-X2-U02-01-008"],
+        "stage_refs": ["P4", "P5"],
+        "mastery_evidence": "用自己的话同时写出否定什么和没有否定什么。",
+        "mechanism_nodes": ["K2", "U6", "U7", "U8"]
+      },
+      {
+        "kid": "K12",
+        "statement": "血痕扩大首先指死者形象进入亲族、师友、爱人的长期记忆，第七节又以弹雨互助证明中国女子的勇毅没有消亡，牺牲意义由私人哀悼走向公共精神",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-X2-U02-01#KP-CARD-X2-U02-01-008",
+        "kp_ids": ["KP-CARD-X2-U02-01-008"],
+        "stage_refs": ["P4", "P5"],
+        "mastery_evidence": "说明扩大的两个层次，并各引一处原句。",
+        "mechanism_nodes": ["K2", "K4", "U8"]
+      },
+      {
+        "kid": "K13",
+      "statement": "第七节先以三点意外的排比，将当局的凶残、流言家的下劣与中国女性的从容并置；结尾再分写苟活者由血色见微茫希望、真的猛士更奋然前行。这些语句不宣称死亡本身美好，而强调勇毅如何改变不同生者",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-X2-U02-01#KP-CARD-X2-U02-01-008",
+        "kp_ids": ["KP-CARD-X2-U02-01-008"],
+        "stage_refs": ["P4", "P5"],
+      "mastery_evidence": "说明三点意外的排比关系，区分两类生者及其变化，写清不美化死亡的边界。",
+        "mechanism_nodes": ["K2", "U6", "U8", "J6"]
+      },
+      {
+        "kid": "K14",
+        "statement": "作品通过保存刘和珍的具体生命、惨案的身体证据和生者的情感思考，哀悼并赞颂青年，揭露杀戮与流言，抵抗遗忘，探问牺牲如何转化为生者的希望与继续前行",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-X2-U02-01#KP-CARD-X2-U02-01-004",
+        "kp_ids": ["KP-CARD-X2-U02-01-004", "KP-CARD-X2-U02-01-006", "KP-CARD-X2-U02-01-007", "KP-CARD-X2-U02-01-008"],
+        "stage_refs": ["P1", "P2", "P3", "P4", "P5"],
+        "mastery_evidence": "至少四处跨节短引支持完整主旨，不能只引结尾。",
+        "mechanism_nodes": ["K1", "K2", "U6", "U8", "J4"]
+      },
+      {
+        "kid": "K15",
+        "statement": "作品把读者从一个有姓名、有微笑、有选择的青年带入公共历史，在事实与污名的冲突中唤起记忆、判断和言说责任，并从中国女性的勇毅中保存未来可能",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-X2-U02-01#KP-CARD-X2-U02-01-007",
+        "kp_ids": ["KP-CARD-X2-U02-01-004", "KP-CARD-X2-U02-01-007", "KP-CARD-X2-U02-01-008"],
+        "stage_refs": ["P1", "P3", "P4", "P5"],
+        "mastery_evidence": "沿姓名—尸骸—流言—血痕—生者说明作品怎样组织读者理解，不猜作者隐秘心理。",
+        "mechanism_nodes": ["K1", "K2", "U6", "U8", "J4"]
+      },
+      {
+        "kid": "K16",
+        "statement": "情感由写作责任与失语的痛楚起笔，经直面现实的愤激、追忆刘和珍的温厚敬意、复原惨案的悲愤与讽刺，进入对请愿效用的冷峻反思，最终落在女性勇毅、微茫希望和继续前行的确认",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-X2-U02-01#KP-CARD-X2-U02-01-004",
+        "kp_ids": ["KP-CARD-X2-U02-01-004", "KP-CARD-X2-U02-01-005", "KP-CARD-X2-U02-01-006", "KP-CARD-X2-U02-01-007", "KP-CARD-X2-U02-01-008"],
+        "stage_refs": ["P1", "P2", "P3", "P4", "P5"],
+        "mastery_evidence": "为至少四个情感节点找原句，说明两次以上变化而非罗列同义词。",
+        "mechanism_nodes": ["K2", "U4", "U8", "J3", "J4"]
+      },
+      {
+        "kid": "K17",
+        "statement": "纪念性阅读与表达应保存具体姓名和可核验事实，区分事实、评价、流言与现代迁移，今天的公共记忆判断可以受本文启发，但不能被写成鲁迅原意或要求全班立场一致",
+        "status": "must_teach",
+        "source_ref": "SRC-CARD-X2-U02-01#KP-CARD-X2-U02-01-008",
+        "kp_ids": ["KP-CARD-X2-U02-01-008", "KP-CARD-X2-U02-01-014"],
+        "stage_refs": ["P3", "P5"],
+        "mastery_evidence": "80—120字回应含原文证据、文本结论和明确标注的当代理解。",
+        "mechanism_nodes": ["K1", "K5", "U6", "U8", "J6", "J7"]
+      },
+      {
+        "kid": "K18",
+        "statement": "《记念刘和珍君》与《为了忘却的记念》可比较忘却的语气、抒情曲直、人物材料和议论位置，比较必须在第二篇完整学习后进行",
+        "status": "defer",
+        "source_ref": "SRC-CARD-X2-U02-01#KP-CARD-X2-U02-01-013",
+        "stage_refs": [],
+        "mastery_evidence": "",
+        "mechanism_nodes": ["K4", "K5"],
+        "defer_reason": "本课只保存第一篇的原文批注，待完整学习第二篇后再比较，避免以预发结论替代第二篇阅读。"
+      },
+      {
+        "kid": "K19",
+        "statement": "详细军阀史、鲁迅完整生平、学术解释史、未登记同版教师用书和未核验真题属于教师储备，缺可靠来源或无本课不可替代作用时不进入学生主线",
+        "status": "teacher_reserve",
+        "source_ref": "SRC-CARD-X2-U02-01#KP-CARD-X2-U02-01-001",
+        "stage_refs": [],
+        "mastery_evidence": "",
+        "mechanism_nodes": ["K1", "U6", "J7"]
+      }
+    ],
+    "knowledge_clusters": [
+      {
+        "id": "KC1",
+        "name": "一个名字回到历史现场",
+        "organizing_basis": "以准确词句、作品体裁、最低历史坐标和七节路径建立全文阅读底座。",
+        "rationale": "先准确知道面对怎样的作品并拥有全文顺序，人物、语言和价值解释才不会从名句与标签开始。",
+        "kid_refs": ["K01", "K02", "K03"]
+      },
+      {
+        "id": "KC2",
+        "name": "非写不可，又几乎不能言说",
+        "organizing_basis": "依第一、二节必要—无言—猛士—庸人—忘却的语言推进聚合。",
+        "rationale": "写作动力、情感基调和贯穿矛盾在同一组反复与对照中形成，不能拆成互不相干的名句。",
+        "kid_refs": ["K04", "K05"]
+      },
+      {
+        "id": "KC3",
+        "name": "先把烈士还原为一个具体的人",
+        "organizing_basis": "依第三节生活事实及跨节人物证据聚合。",
+        "rationale": "事实链和人物判断方法必须共同存在，才能保留刘和珍温和、坚定与公共关切的复杂性。",
+        "kid_refs": ["K06", "K07"]
+      },
+      {
+        "id": "KC4",
+        "name": "尸骸作证，流言夺名",
+        "organizing_basis": "依第四、五节身体证据、权力命名、流言、遇害叙事与反语控诉聚合。",
+        "rationale": "事实裁决和语言强度在同一惨案叙事中发生，分开会使反语失去对象、证据失去伦理重量。",
+        "kid_refs": ["K08", "K09", "K10"]
+      },
+      {
+        "id": "KC5",
+        "name": "血痕向哪里扩大",
+        "organizing_basis": "依第六、七节请愿方式、亲友情感、女性勇毅和未来作用的分层判断聚合。",
+        "rationale": "只有把策略、生命和牺牲作用同时纳入，才能避免否定死者或美化死亡的单边结论。",
+        "kid_refs": ["K11", "K12", "K13"]
+      },
+      {
+        "id": "KC6",
+        "name": "一篇纪念文字怎样抵达生者",
+        "organizing_basis": "依全文跨节证据重新形成主旨、作品表达指向、情感组织和有边界的现实迁移。",
+        "rationale": "四项理解只能在全文读完后共同成立，不能由结尾名句或当代话题单独定义。",
+        "kid_refs": ["K14", "K15", "K16", "K17"]
+      },
+      {
+        "id": "KC7",
+        "name": "留给合编课文与单元研习",
+        "organizing_basis": "依合编教材的跨篇比较、单元成果和教师证据边界聚合。",
+        "rationale": "后续比较与教师储备保留在账内，但不提前夺取本篇细读时间或冒充已完成学习。",
+        "kid_refs": ["K18", "K19"]
+      }
+    ],
+    "work_interpretation": {
+      "central_meaning": {
+        "status": "included",
+        "kid_refs": ["K14"],
+        "evidence_boundary": "由第一至七节的写与无言、人物事实、尸骸与流言、请愿判断和结尾生者作用共同支持，不以一处名句或单元口号包办。",
+        "not_applicable_reason": ""
+      },
+      "expressive_intent": {
+        "status": "included",
+        "kid_refs": ["K15"],
+        "evidence_boundary": "只判断作品怎样把读者从具体青年带入公共记忆和生者责任，不猜测鲁迅未在文本中表露的私人心理。",
+        "not_applicable_reason": ""
+      },
+      "emotional_organization": {
+        "status": "included",
+        "kid_refs": ["K16"],
+        "evidence_boundary": "依据七节中的反复、人物回忆、惨案叙述、反语、议论转折与结尾语势形成，允许多种情感交织，不压成单一悲痛标签。",
+        "not_applicable_reason": ""
+      }
+    },
+    "questions": [
+      {
+        "id": "Q1",
+        "text": "鲁迅为什么反复说有写一点东西的必要，又反复说无话可说、我说不出话？",
+        "rationale": "问题直接来自正文与教材学习提示，初读者确会疑惑；必须跨第一、二、四、五、六、七节积累写作责任、哀愤、人物记忆、事实与流言、牺牲意义和生者责任，删去后全文回环失去统摄。",
+        "objective_refs": ["O3", "O4"],
+        "kid_refs": ["K04", "K05", "K08", "K10", "K11", "K14", "K15", "K16"],
+        "stage_refs": ["P1", "P3", "P4", "P5"],
+        "recovery_stage_refs": ["P5"],
+        "mechanism_nodes": ["K1", "K2", "U4", "U8", "J4"]
+      }
+    ],
+    "overall_teaching_logic": {
+      "text": "课堂先从题名中的记念和追悼会上的一句先生还是写一点罢进入，让学生在最低历史坐标中完整默读七节，只留下写作与无言的真实矛盾，不提前公布主题。第一、二节连起来细读，使学生从必要—无话—必要中感受纪念责任、哀痛和反遗忘，也从猛士—庸人—忘却辨认不同生者位置。第三节把抽象烈士还原为具体的刘和珍，学生沿事实理解温和、坚定与责任怎样共存。第四、五节让尸骸和伤痕裁决事实，使政府命令与流言显出对死者的再次污名，再从连续遇害叙述、反复和反语中听见哀痛怎样推向愤怒。第六、七节分开评价徒手请愿的效用、生命与人格、血痕对亲友和未来的作用，理解微茫希望并非美化死亡。最后撤去提纲，学生回到贯穿问题，调用各阶段原句重建主旨、作品表达指向和情感组织，再以短文回答今天怎样保存具体的人与可核验事实，并明标这是当代回应而非作者原意。",
+      "stage_refs": ["P0", "P1", "P2", "P3", "P4", "P5"],
+      "mechanism_nodes": ["K1", "K2", "K3", "U8", "J4", "J5", "J6"],
+      "components": {
+        "entry": {
+          "status": "included",
+          "reason": "由题名、追悼会言语和完整首读建立真实疑问，不从主题答案开始。",
+          "stage_refs": ["P0"]
+        },
+        "context": {
+          "status": "included",
+          "reason": "教材三一八最低背景只在读懂追悼会、尸骸、请愿和流言时进入。",
+          "stage_refs": ["P0", "P3"]
+        },
+        "text_development": {
+          "status": "included",
+          "reason": "六阶段严格消费七节原文，从写与无言推进到人、事实、意义和生者责任。",
+          "stage_refs": ["P0", "P1", "P2", "P3", "P4", "P5"]
+        },
+        "knowledge_formation": {
+          "status": "included",
+          "reason": "人物、语言、结构和价值判断均在相应原文位置形成并于全文后综合。",
+          "stage_refs": ["P1", "P2", "P3", "P4", "P5"]
+        },
+        "student_experience": {
+          "status": "included",
+          "reason": "完整默读、人物发现、沉静阅读、观点协商和个人回应共同调节沉重文本的认知与情绪节奏。",
+          "stage_refs": ["P0", "P1", "P2", "P3", "P4", "P5"]
+        },
+        "discussion": {
+          "status": "included",
+          "reason": "讨论只在学生已有个人批注后处理事实与流言、请愿方式与牺牲意义及生者责任。",
+          "stage_refs": ["P3", "P4", "P5"]
+        },
+        "synthesis_retrieval": {
+          "status": "included",
+          "reason": "全文结束后撤去七节提纲，闭卷重建、修订贯穿问题和整体解释。",
+          "stage_refs": ["P5"]
+        },
+        "assessment_evidence": {
+          "status": "included",
+          "reason": "首答、七节动词、人物证据链、语言短析、双栏判断、整体解释和个人回应逐段留下证据。",
+          "stage_refs": ["P0", "P1", "P2", "P3", "P4", "P5"]
+        },
+        "transfer": {
+          "status": "included",
+          "reason": "把保存姓名与事实迁移为今天的公共表达判断，并显式限制现代迁移。",
+          "stage_refs": ["P5"]
+        },
+        "exam_link": {
+          "status": "not_applicable",
+          "reason": "本课知识卡与册级资产均为M0，未发现规范题文—答案评分—KP双向核验材料，不以未核验题源打断文本。",
+          "stage_refs": []
+        },
+        "contemporary_link": {
+          "status": "included",
+          "reason": "全文读懂后讨论公共记忆、事实与污名、生者言说责任，不引入无不可替代作用的热点新闻。",
+          "stage_refs": ["P5"]
+        }
+      }
+    },
+    "stages": [
+      {
+        "id": "P0",
+        "name": "一个名字，从追悼会走来",
+        "entry_reason": "先让学生面对作品、历史现场和自己的初读，避免从鲁迅名篇、烈士故事或主题标签开始。",
+        "text_scope": "单元导语最低要求；题名、题注；全文七节完整默读。",
+        "objective_refs": ["O1", "O4"],
+        "kid_refs": ["K01", "K02", "K03"],
+        "initial_method": "知识性质是词句底座、作品坐标和全文初遇；目标深度到辨认、初读和真实诊断；主要困难是背景与主题标签提前覆盖文本。采用AC01感知进入和AC03释义疏通，证据是一次完整默读、七节动词和贯穿问题首答。",
+        "student_change": "从熟悉的鲁迅名篇或烈士标签进入一个有姓名、有日期、有言说困难的具体文本，并知道七节大致走向。",
+        "student_experience": "安静读完全文，允许沉默和暂时不懂；先留下自己听见的写与无言，不被标准主题抢答。",
+        "teacher_role": "校准题名、体裁、日期和惨案最低坐标，提供准确词义入口，不渲染死亡，不预讲结论。",
+        "evidence": "一次完整默读；七节各留一个动词或短语；随机词句释义；对必要与无言的个人首答。",
+        "transition_reason": "共同拥有全文轮廓和首答后，才能从第一节追问写作为何发生。"
+      },
+      {
+        "id": "P1",
+        "name": "写，还是无言",
+        "entry_reason": "开篇的矛盾决定全文为何被写，也决定学生怎样听见文章的情感和反遗忘责任。",
+        "text_scope": "第一、二节；必要与无话可说、猛士与庸人、忘却的救主。",
+        "objective_refs": ["O1", "O3", "O4"],
+        "kid_refs": ["K01", "K03", "K04", "K05", "K14", "K15", "K16"],
+        "initial_method": "知识性质是反复、对照、反语和情感起点；目标深度到证据化解释；主要困难是把矛盾当逻辑错误或把幸福按字面理解。采用AC03释义疏通、AC05证据推理和AC06比较辨析，证据是三处写与无言、猛士庸人关系和首轮问题修订。",
+        "student_change": "从把写与无言当成矛盾，转为理解极度哀痛中的写作责任，并能辨认直面和遗忘两种生者位置。",
+        "student_experience": "在反复句中感到语言一次次逼近却又停住，既有理解的张力，也保留个人节奏。",
+        "teacher_role": "追问主语、评价对象和上下文冲突，在学生首答后精讲必要概念，不把猛士解释成预制口号。",
+        "evidence": "三处写与无言证据；哀痛者和幸福者解释；忘却的救主反语短析；贯穿问题第一次修订。",
+        "transition_reason": "写作责任成立后，文章必须回答所纪念的究竟是怎样一个人。"
+      },
+      {
+        "id": "P2",
+        "name": "微笑的姓名",
+        "entry_reason": "先看见具体生命，后面的尸骸、流言和牺牲意义才不会只剩抽象历史。",
+        "text_scope": "第三节，并回取第一节预订《莽原》、第五节欣然前往和第七节从容勇毅。",
+        "objective_refs": ["O1", "O2", "O4"],
+        "kid_refs": ["K01", "K03", "K06", "K07", "K14", "K16"],
+        "initial_method": "知识性质是跨节人物事实与解释边界；目标深度到综合判断和可见修订；主要困难是单一英雄标签与无证据赞语。采用AC04关系建构、AC05证据推理和AC12反馈修订，证据是跨节事实—品质—边界链。",
+        "student_change": "从抽象烈士进入温和、坚定、关心共同生活的青年，理解微笑和反抗可以在同一人格中并存。",
+        "student_experience": "在预想的桀骜与真实的温和之间获得发现感，人物不再是等待赞美的扁平符号。",
+        "teacher_role": "守住文本事实和判断强度，提醒跨节取证，要求说明判断边界而不代替学生归纳。",
+        "evidence": "至少四处跨节事实；事实—品质—边界人物证据链；一次保留痕迹的标签修订。",
+        "transition_reason": "一个具体的人已经站立起来，接下来才能理解尸骸和流言为什么格外残酷。"
+      },
+      {
+        "id": "P3",
+        "name": "尸骸作证，流言夺名",
+        "entry_reason": "第四、五节是事实裁决与语言强度的中心，须在完整阅读中处理而不能剪成名句。",
+        "text_scope": "第四、五节；尸骸、伤痕、命令、流言、三位女子遇害和伟绩武功反语。",
+        "objective_refs": ["O1", "O3", "O4", "O5"],
+        "kid_refs": ["K01", "K03", "K08", "K09", "K10", "K14", "K15", "K16", "K17"],
+        "initial_method": "知识性质是事实层级、叙事细节、反复对比与反语；目标深度到裁决、解释和初步迁移；主要困难是把流言与尸骸等权或用术语隔离情感。采用AC04关系建构、AC05证据推理、AC06比较辨析和AC01感知进入，证据是证据三分、叙事复述与语言短析。",
+        "student_change": "从知道发生惨案进入身体证据与污名化的双重伤害，既感到哀痛，也能辨认文字怎样把愤怒变得准确。",
+        "student_experience": "沉重叙事保留个人默读和停顿，不以血腥图片、模拟声音或表演制造刺激；表达可以先写后说。",
+        "teacher_role": "澄清事实、命名和流言不等权，示范一次反语分析后撤去支架，观察并照顾不适反应。",
+        "evidence": "事实、命名、流言三分；遇害顺序复述；两则语言短析；贯穿问题第二次修订。",
+        "transition_reason": "事实已被写下，但文章仍须回答请愿怎样评价、死亡能留下什么。"
+      },
+      {
+        "id": "P4",
+        "name": "血痕向哪里扩大",
+        "entry_reason": "第六、七节必须共同阅读，才能避免否定请愿者或美化牺牲的单边结论。",
+        "text_scope": "第六、七节；煤的比喻、陶渊明引诗、三点意外、女性勇毅、苟活者与猛士。",
+        "objective_refs": ["O1", "O3", "O4", "O5"],
+        "kid_refs": ["K01", "K03", "K11", "K12", "K13", "K14", "K15", "K16"],
+        "initial_method": "知识性质是策略、生命、记忆和未来作用的分层价值判断；目标深度到有边界的综合解释；主要困难是非此即彼和牺牲口号化。采用AC06比较辨析、AC09观点协商和AC05证据推理，证据是双栏判断、血痕两层和整体解释证据提纲。",
+        "student_change": "从非此即彼的判断走向分层思考，在沉重之后看见勇毅被保存、希望仍微茫而真实。",
+        "student_experience": "先个人批注再交流，允许保留分歧；不要求全班使用同一种赞颂措辞。",
+        "teacher_role": "持续追问原文证明到哪一步，区分策略与人格、死亡与意义，防止牺牲口号化。",
+        "evidence": "否定什么与没有否定什么双栏；血痕扩大两层解释；两类生者辨析；整体解释证据提纲。",
+        "transition_reason": "局部判断已形成，需要回到全文检验贯穿问题并让七节重新成为一篇文章。"
+      },
+      {
+        "id": "P5",
+        "name": "让记念抵达生者",
+        "entry_reason": "分散的事实、语言和判断只有重新组织，才成为可迁移的完整理解。",
+        "text_scope": "全文；贯穿问题末答；作品整体解释；当代回应。",
+        "objective_refs": ["O1", "O2", "O3", "O4", "O5"],
+        "kid_refs": ["K01", "K03", "K04", "K06", "K08", "K11", "K12", "K13", "K14", "K15", "K16", "K17"],
+        "initial_method": "知识性质是全文综合、独立回取和有边界迁移；目标深度到达成与完整表现；主要困难是局部答案拼接和现实口号覆盖文本。采用AC14综合重建、AC13独立表现和AC11迁移应用，证据是闭卷七节、贯穿问题末答、整体解释完整稿和个人回应。",
+        "student_change": "从知道若干名句转为能说明自己怎样沿七节理解一篇纪念文字，并以自己的语言承担生者的记忆与言说责任。",
+        "student_experience": "看见自己的首答怎样被全文改变，在不被强迫一致的前提下完成个人表达，最后重新回到题名和结尾。",
+        "teacher_role": "后置归纳学生证据，明确文本结论与今天理解的边界，用完整回读收束，不另加新的知识负担。",
+        "evidence": "七节闭卷重建；贯穿问题末答；180—250字整体解释完整稿；80—120字当代回应。",
+        "transition_reason": "本课以完整作品、个人判断和可复查证据收束，为第二篇与单元批注本留下真实材料。"
+      }
+    ],
+    "claim_boundary": "课堂证据状态：未采集；学生掌握、理解与享受均待真实试教验证。"
+  },
+  "status": "candidate_owner_review"
+}

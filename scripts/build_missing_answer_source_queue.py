@@ -14,14 +14,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 EXAM_ID = "GK-SC-2013"
-VERTICAL = ROOT / "work/knowledge/高考分析/GK-SC-2013-response_nodes_vertical_slice.jsonl"
+VERTICAL = ROOT / "work/knowledge/exams/workbench/GK-SC-2013-response_nodes_vertical_slice.jsonl"
 ANSWER_DIR = ROOT / "Data/2008-2024·（四川）语文高考真题/exam_extract/GK-SC-2013/answers"
 INDEX = ANSWER_DIR / "answer_index.jsonl"
 LOCAL = ANSWER_DIR / "local_analysis_candidates.jsonl"
 EXTERNAL = ANSWER_DIR / "reference_answer_candidates.jsonl"
 COMPARISON = ANSWER_DIR / "reference_answer_candidate_comparison.jsonl"
-OUT_JSONL = ROOT / "work/knowledge/高考分析/EXAM-MISSING-SOURCE-REVIEW-QUEUE-20260809.jsonl"
-OUT_MD = ROOT / "work/knowledge/高考分析/EXAM-MISSING-SOURCE-REVIEW-QUEUE-20260809.md"
+OUT_JSONL = ROOT / "work/knowledge/exams/workbench/EXAM-MISSING-SOURCE-REVIEW-QUEUE-20260809.jsonl"
+OUT_MD = ROOT / "work/knowledge/exams/workbench/EXAM-MISSING-SOURCE-REVIEW-QUEUE-20260809.md"
 RECEIPT = ROOT / "work/knowledge/_reviews/receipts/exam_missing_source_queue_20260809.json"
 
 

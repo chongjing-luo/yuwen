@@ -60,7 +60,7 @@
   "derived_updates": {
     "script": "scripts/decompose_exam_vertical_slices.py",
     "config_change": "GK-NC3-2017.visual_check_status=passed",
-    "output": "work/knowledge/高考分析/GK-NC3-2017-response_nodes_vertical_slice.jsonl",
+    "output": "work/knowledge/exams/workbench/GK-NC3-2017-response_nodes_vertical_slice.jsonl",
     "receipt": "work/knowledge/_reviews/receipts/exam_vertical_GK-NC3-2017_20260809.json",
     "content_policy": "仅更新派生节点的视觉核验元数据和清洗提示；未改写原始 PDF、MinerU full.md 或清洗源段。"
   },

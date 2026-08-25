@@ -5,7 +5,7 @@ description: 高中语文学期/单元规划（S1 环节）。当需要为一个
 
 # 单元与学期规划（S1）
 
-服务机制节点：**K1 教什么界定、K3 复现排程、K4 网络化**。通用参考：`.agents/skills/_shared/references.md`。
+服务机制节点：**K1 教什么界定、K3 复现排程、K4 网络化**。执行依据：`work/methodology/manuals/S1-规划手册.md`中的`MM-S1-01`—`MM-S1-05`；通用参考：`.agents/skills/_shared/references.md`。
 
 ## 输入
 

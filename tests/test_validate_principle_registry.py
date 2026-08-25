@@ -31,7 +31,7 @@ class ValidatePrincipleRegistryTest(unittest.TestCase):
     def test_real_registry_shape(self):
         registry = real_registry()
         self.assertEqual(len(registry["nodes"]), 20)
-        self.assertEqual(len(registry["principles"]), 116)
+        self.assertEqual(len(registry["principles"]), 117)
         report = build_report(registry)
         # 每个节点都有原则覆盖
         for nid, entry in report["by_node"].items():
@@ -56,7 +56,7 @@ class ValidatePrincipleRegistryTest(unittest.TestCase):
                 "domain": "通用",
                 "stages": ["S3"],
                 "nodes": [],
-                "anchor": {"doc": "work/备课基本原则.md", "heading": "### 1. 学生接收优先于教师发送"},
+                "anchor": {"doc": "work/methodology/lesson-preparation/备课基本原则.md", "heading": "### 1. 学生接收优先于教师发送"},
                 "enforcement": [{"type": "review_gate", "gate": "测试"}],
             }
         )
@@ -74,7 +74,7 @@ class ValidatePrincipleRegistryTest(unittest.TestCase):
                 "stages": ["S3"],
                 "nodes": [],
                 "role": "meta",
-                "anchor": {"doc": "work/备课基本原则.md", "heading": "### 1. 学生接收优先于教师发送"},
+                "anchor": {"doc": "work/methodology/lesson-preparation/备课基本原则.md", "heading": "### 1. 学生接收优先于教师发送"},
                 "enforcement": [{"type": "meta", "rule": "测试"}],
             }
         )

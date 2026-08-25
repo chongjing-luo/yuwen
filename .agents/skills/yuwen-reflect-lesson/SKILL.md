@@ -5,7 +5,7 @@ description: 高中语文课后反思与知识沉淀（S9 环节）。当需要�
 
 # 课后反思与知识沉淀（S9）
 
-服务机制节点：**全部节点的迭代闭环 + J7（警惕"这节课很顺"作为质量证据）**。模板：`work/teaching/_shared/reflection/课后反思模板.md`。
+服务机制节点：**全部节点的迭代闭环 + J7（警惕“这节课很顺”作为质量证据）**。执行依据：`work/methodology/manuals/S9-反思手册.md`的`MM-S9-01`—`MM-S9-05`；模板：`work/teaching/_shared/reflection/课后反思模板.md`。
 
 ## 输入
 

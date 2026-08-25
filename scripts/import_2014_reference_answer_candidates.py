@@ -13,7 +13,7 @@ SOURCE_DIR = ROOT / "Data/reference/gaokao/external/2014_gaokao_answer"
 HTML = SOURCE_DIR / "source.html"
 IMAGE = SOURCE_DIR / "page1.jpg"
 OUT = BASE / "answers/reference_answer_candidates.jsonl"
-REPORT = ROOT / "work/knowledge/高考分析/EXAM-REFERENCE-ANSWER-CANDIDATES-2014.md"
+REPORT = ROOT / "work/knowledge/exams/workbench/EXAM-REFERENCE-ANSWER-CANDIDATES-2014.md"
 RECEIPT = ROOT / "work/knowledge/_reviews/receipts/exam_reference_answer_candidates_2014_20260809.json"
 ANSWERS = {1: "A", 2: "D", 3: "D", 4: "B", 5: "C", 6: "C", 7: "D", 8: "B", 9: "B"}
 

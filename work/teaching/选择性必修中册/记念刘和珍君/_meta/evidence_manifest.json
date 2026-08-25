@@ -1,0 +1,82 @@
+{
+  "schema_version": "lesson-evidence.v1",
+  "lesson_id": "LES-X2-LHZ-01",
+  "mechanism_nodes": [
+    "K1",
+    "K2",
+    "K4",
+    "U4",
+    "U6",
+    "J4",
+    "J7"
+  ],
+  "normative_sources": [
+    {
+      "source_id": "SRC-MASTER-X2",
+      "role": "textbook",
+      "authority": "S1",
+      "path": "Data/textbook/普通高中教科书·语文选择性必修 中册.pdf",
+      "sha256": "5b561935422047b1f7f1b99c1340b5d623a77013062a6bf8bdb863fc010cd269"
+    },
+    {
+      "source_id": "SRC-CURR-2020",
+      "role": "curriculum_standard",
+      "authority": "S1",
+      "path": "Data/reference/curriculum/普通高中语文课程标准（2017年版2020年修订）_教育部官方版.pdf",
+      "sha256": "7a187079f1fffe8ae834fdeff25bac9dd0e7de6b979db40fd875786dc0365977"
+    }
+  ],
+  "derived_sources": [
+    {
+      "source_id": "SRC-PKG-X2-007",
+      "role": "textbook_lesson_pdf",
+      "path": "Data/textbook_extract/选择性必修中册/07_U2_导语_课6_记念刘和珍君_为了忘却的记念.pdf",
+      "sha256": "88f8f162f5cf46e9c5d4474d208fafe6de16c0d290624623a3063ba4cf637616",
+      "derived_from_source_id": "SRC-MASTER-X2",
+      "derived_from_sha256": "5b561935422047b1f7f1b99c1340b5d623a77013062a6bf8bdb863fc010cd269"
+    },
+    {
+      "source_id": "SRC-PKG-X2-007-MINERU",
+      "role": "textbook_extract",
+      "path": "Data/textbook_extract/选择性必修中册/mineru_result/07_U2_导语_课6_记念刘和珍君_为了忘却的记念/full.md",
+      "sha256": "ef7c90709ddedc330785c0ff13ab4ab17e7dcb867d9a69ffde13300f73cb6aaa",
+      "derived_from_source_id": "SRC-MASTER-X2",
+      "derived_from_sha256": "5b561935422047b1f7f1b99c1340b5d623a77013062a6bf8bdb863fc010cd269"
+    },
+    {
+      "source_id": "SRC-PKG-X2-010",
+      "role": "unit_task_pdf",
+      "path": "Data/textbook_extract/选择性必修中册/10_U2_单元研习任务.pdf",
+      "sha256": "3d90ed6a9b2af696231f54c44a6ba991a42cccc02125bd6c3fdbd425830fe1ab",
+      "derived_from_source_id": "SRC-MASTER-X2",
+      "derived_from_sha256": "5b561935422047b1f7f1b99c1340b5d623a77013062a6bf8bdb863fc010cd269"
+    }
+  ],
+  "knowledge_sources": [
+    {
+      "source_id": "SRC-CARD-X2-U02-01",
+      "path": "work/knowledge/选择性必修中册/cards/CARD-X2-U02-01_导语-课6-记念刘和珍君-为了忘却的记念.md",
+      "sha256": "117a68f1d16f55a252fca4b27177976dd062fd60213a4f474d25ee3d9add4b03"
+    },
+    {
+      "source_id": "SRC-UNIT-X2-U02",
+      "path": "work/knowledge/选择性必修中册/units/UNIT-X2-U02_选择性必修中册第二单元.md",
+      "sha256": "99239de9a8a599ed7bd57f366caa6d2068541dcbaafda04090a652ba24bc8d49"
+    },
+    {
+      "source_id": "SRC-BOOK-X2",
+      "path": "work/knowledge/册级汇总/BOOK-X2_册级知识总表选择性必修中册.md",
+      "sha256": "d5a158f608487c61b46d24dc2c13c9641fb25c64b7841659d159be187a851f27"
+    },
+    {
+      "source_id": "SRC-TR-X2-U02-01",
+      "path": "work/teaching/选择性必修中册/记念刘和珍君/TR-X2-U02-01_文本研究.md",
+      "sha256": "85d8b1e238d7f155f8e368330393d4889103b9277f1215fd70fe50d1ea5b6cf4"
+    }
+  ],
+  "evidence_dossier": {
+    "path": "work/teaching/选择性必修中册/记念刘和珍君/TR-X2-U02-01_文本研究.md",
+    "sha256": "85d8b1e238d7f155f8e368330393d4889103b9277f1215fd70fe50d1ea5b6cf4"
+  },
+  "claim_boundary": "课堂证据状态：未采集；学生掌握、理解与享受均待真实试教验证。"
+}

@@ -5,10 +5,10 @@
 ## OBS 课堂观察（observations.jsonl）
 
 ```json
-{"id":"OBS-20260910-01","date":"2026-09-10","lesson_id":"LES-X3-MENG-01","lesson_version_sha":"<16+hex>","page_id":"O07","node":"U1","signal":"首答非空白抽样率","value":"34/38","students":["全班"],"source":{"type":"observation","ref":"观察表P3"}}
+{"id":"OBS-20260910-01","date":"2026-09-10","lesson_id":"LES-X3-MENG-01","lesson_version_sha":"<16+hex>","g4_audit_lock_sha256":"<64hex>","host_release_event_id":"HRE-20260909-01","host_release_source":{"locator":"host://reviews/HRE-20260909-01","record_sha256":"<64hex>"},"page_id":"O07","node":"U1","signal":"首答非空白抽样率","value":"34/38","students":["全班"],"source":{"type":"observation","ref":"观察表P3"}}
 ```
 
-必填：id/date/lesson_id/lesson_version_sha/node/signal/value/source。`node` ∈ K1-K5/U1-U8/J1-J7；`value` 只记事实（人次/原话/动作），不记评价。
+必填：id/date/lesson_id/lesson_version_sha/g4_audit_lock_sha256/host_release_event_id/host_release_source/node/signal/value/source。`node` ∈ K1-K5/U1-U8/J1-J7；`value`只记事实（人次/原话/动作），不记评价。每条OBS必须绑定项目外宿主放行事件与项目内当前`_meta/audit_lock.json`的真实字节哈希。
 
 ## GRD 批改记录（grading.jsonl）
 
@@ -45,5 +45,11 @@ analyze_mastery 既有校验全部保留；新增 id 可选（存量兼容）、
 ## 校验
 
 ```bash
-python3 scripts/validate_evidence.py <file> --type obs|grd|mr|ref|pr
+# OBS默认失败关闭：两项外部/当前对象参数均必需
+python3 scripts/validate_evidence.py <observations.jsonl> --type obs \
+  --host-release-registry <项目目录外宿主只读注册表> \
+  --audit-lock work/teaching/<册>/<课>/_meta/audit_lock.json
+
+# 其余证据类型
+python3 scripts/validate_evidence.py <file> --type grd|mr|ref|pr
 ```

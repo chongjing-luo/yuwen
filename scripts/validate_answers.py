@@ -16,7 +16,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BASE = ROOT / "work/knowledge/高考真题整理"
+BASE = ROOT / "work/knowledge/exams/papers"
 OBJ_RE = re.compile(r"^[A-H][A-H,，、\s]*$")
 
 

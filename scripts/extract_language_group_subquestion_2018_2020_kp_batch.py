@@ -9,8 +9,8 @@ from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SPLIT_MANIFEST = ROOT / "work/knowledge/高考分析/kp_batches/language_group_subquestion_split_2018_2020.json"
-OUT_DIR = ROOT / "work/knowledge/高考分析/kp_batches"
+SPLIT_MANIFEST = ROOT / "work/knowledge/exams/workbench/kp_batches/language_group_subquestion_split_2018_2020.json"
+OUT_DIR = ROOT / "work/knowledge/exams/workbench/kp_batches"
 OUT_JSONL = OUT_DIR / "language_group_subquestion_2018_2020.jsonl"
 OUT_MD = OUT_DIR / "language_group_subquestion_2018_2020.md"
 
@@ -134,9 +134,9 @@ def render(rows: list[dict]) -> str:
         "",
         "| 产物 | 路径 |",
         "|---|---|",
-        "| 小问切分清单 | `work/knowledge/高考分析/kp_batches/language_group_subquestion_split_2018_2020.json` |",
-        "| JSONL | `work/knowledge/高考分析/kp_batches/language_group_subquestion_2018_2020.jsonl` |",
-        "| 本报告 | `work/knowledge/高考分析/kp_batches/language_group_subquestion_2018_2020.md` |",
+        "| 小问切分清单 | `work/knowledge/exams/workbench/kp_batches/language_group_subquestion_split_2018_2020.json` |",
+        "| JSONL | `work/knowledge/exams/workbench/kp_batches/language_group_subquestion_2018_2020.jsonl` |",
+        "| 本报告 | `work/knowledge/exams/workbench/kp_batches/language_group_subquestion_2018_2020.md` |",
         "| 切分脚本 | `scripts/split_language_group_subquestions_2018_2020.py` |",
         "| 生成脚本 | `scripts/extract_language_group_subquestion_2018_2020_kp_batch.py` |",
         "",

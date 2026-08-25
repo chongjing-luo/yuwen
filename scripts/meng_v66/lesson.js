@@ -1,11 +1,9 @@
 "use strict";
 
 /**
- * 兼容加载器：canonical 数据源已迁移至
- * work/teaching/选择性必修下册/氓/lesson.json（schema v1.0）。
- * 本文件保留模块接口供既有构建器/测试 require；不再承载内容，
- * 也不再依赖 meng_v65 / meng_v62（派生内容已内联进 JSON）。
- * 编辑课程数据请直接改 lesson.json（P-11 单一数据源）。
+ * 历史V6.6兼容加载器，仅在旧lesson.json存在时供旧构建器读取。
+ * 它不是现行备课默认入口，也不得被当作v2 strict课程数据。
+ * 《氓》现行候选须依次重走G0/G1/G2，在G1真实批准前不重建此JSON。
  */
 const fs = require("fs");
 const path = require("path");

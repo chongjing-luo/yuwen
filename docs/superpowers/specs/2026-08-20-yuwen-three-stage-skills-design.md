@@ -1,8 +1,9 @@
 ---
 document_type: skill_architecture_design
-status: "owner-review"
+status: "approved"
 version: "0.1"
 date: "2026-08-20"
+owner_decision: "2026-08-20：同意方案；终审与全局治理独立但不新增内容制作阶段"
 scope: "以教案—教学设计—PPT与物料为骨架重构单篇语文备课 skill 链"
 north_star: "让学生学到更多有价值的知识、真正学懂、享受学习"
 mechanism_nodes: [K1, K2, K3, K4, K5, U1, U2, U3, U4, U5, U6, U7, U8, J1, J2, J3, J4, J5, J6, J7]
@@ -32,10 +33,10 @@ S3 第二阶段：教学设计 G2
   ↓
 S4 第三阶段：PPT与物料 G3
   ↓
-S5 最终审计与放行 G4
+S5 独立终审候选 G4 → 宿主项目外放行
 ```
 
-三个阶段是正式教学成果的生成顺序；G0 是第一阶段内部的证据准备，不另立第四个正式阶段；G4 是质量门，不是内容制作阶段。
+三个阶段是正式教学成果的生成顺序；G0 是第一阶段内部的证据准备，不另立第四个正式阶段；G4 是质量门，不是内容制作阶段，项目内最多形成`awaiting_host_release`候选，不能自称宿主已放行。
 
 ## 二、“整体教学逻辑”放在哪里
 
@@ -87,7 +88,7 @@ S5 最终审计与放行 G4
 | 第二阶段主 skill | `yuwen-design-lesson` | 只消费已批准教案，把宏观逻辑落实为课堂事件链、学生经历、页面功能合同和课程数据 | 暗改教案合同、制作视觉成品 |
 | 第三阶段主 skill | `yuwen-build-materials` | 从已批准课程数据同源生成 PPT、逐屏真实剧本、学习单、板书和其他物料 | 新增知识、改目标、改活动机制、改信息顺序 |
 | 工程门禁 skill | `yuwen-flow` | 运行 G0—G4 对象专属验证器，报告通过、失败和失效链 | 生成或改写教学内容 |
-| 最终审计 skill | `yuwen-audit-lesson` | 机器检查、反样板、视觉与学生接收双审、冻结放行 | 作为第四个内容制作阶段 |
+| 最终审计 skill | `yuwen-audit-lesson` | 机器检查、反样板、视觉与学生接收双审、冻结待宿主放行候选 | 作为第四个内容制作阶段或在项目文件内自称已放行 |
 | 全局治理 skill | `yuwen-selfcheck` | 注册库、机制覆盖、测试、两本账与项目健康检查 | 代替阶段门禁或课堂证据 |
 
 `yuwen-research-text` 保留为可单独调用的专业支持 skill，因为教师可能只需要研究文本，也因为裸读、PDF回源和解释边界值得独立复用；但其输出全部标为“候选”，最终裁决只能发生在 `yuwen-author-lesson-plan`。
@@ -141,7 +142,7 @@ evidence_manifest.json
   ↓ design_lock.json（绑定 lesson_plan_sha256 + 两项设计产物）
 PPT/剧本/学习单/板书 + manifest
   ↓ materials_lock.json（绑定 design_hash + manifest_hash）
-G4审计冻结（绑定 materials_lock_hash + 标准版本/注册库hash）
+G4审计候选冻结（绑定 materials_lock_hash + 标准版本/注册库与执行配置hash；status=awaiting_host_release）
 ```
 
 建议统一放在 `work/teaching/<册>/<课>/_meta/`：
@@ -169,7 +170,7 @@ G1 回执至少含 `lesson_id`、`reviewer_id`、`decision`、`reviewed_at`、`l
 | G1 教案门 | `教案.md`、G1回执、`lesson_plan_lock.json` | 新建 `validate_lesson_plan.py`：目标/KID/阶段稳定ID，目标与KID全覆盖，defer有理由，落实表无孤项，回执与哈希一致 | 所有者审查独特价值、知识完整性、整体教学逻辑与课程合理性（K1/K2/K5/U8/J4） |
 | G2 设计门 | `教学设计.md`、`lesson.json`、`design_lock.json` | 扩展 `validate_lesson_schema.py`：绑定教案哈希、事件/页面合同、时间守恒、上游锁定字段不漂移；反样板检查 | 学生经历、教师作用、活动后用、节奏、文学质地与心理安全（U1—U8/J1—J7） |
 | G3 物料门 | 全部成品、manifest、`materials_lock.json` | 构建测试、跨物料一致性、前台禁词、备注/逐屏剧本存在、设计哈希绑定 | 朗读测试、视觉 QA、真实剧本可执行性（K2/U1/J3/J4） |
-| G4 放行门 | 冻结物料包 | 原则检查、反样板、manifest/锁链、渲染检查 | 视觉功能审查＋新鲜学生接收审查；P0/P1/P2清零或按收敛规则处理（J7） |
+| G4 终审候选门 | 冻结物料包 | 原则检查、反样板、manifest/锁链、渲染检查、冻结配置与宿主外部事件核对 | 视觉功能审查＋新鲜学生接收审查；P0/P1/P2清零或按收敛规则处理；本地只产`awaiting_host_release`，宿主另行放行（J7） |
 
 机器检查只验证可确定的结构、血缘和覆盖关系，不用标题正则冒充文学质量判断。知识是否准确、整体逻辑是否成立、文字是否有语文质地，必须保留为有明确证据要求的审核门。
 

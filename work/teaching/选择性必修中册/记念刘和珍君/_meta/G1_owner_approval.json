@@ -1,0 +1,21 @@
+{
+  "schema_version": "g1-owner-approval.v1",
+  "lesson_id": "LES-X2-LHZ-01",
+  "reviewer_id": "project_owner",
+  "author_id": "codex",
+  "decision": "approved",
+  "reviewed_at": "2026-08-24T10:45:40+08:00",
+  "approval_event_id": "G1-OWNER-20260824-LHZ-EXPLICIT-02",
+  "approval_source": "conversation:user:explicit-approval-of-revised-current-four-hash-G1-candidate",
+  "verification_mode": "external_review_gate",
+  "authentication_boundary": "本地验证器只验证回执结构与血缘，不认证人类身份；真实所有者身份须由宿主对话记录人工核验。",
+  "lesson_plan_path": "work/teaching/选择性必修中册/记念刘和珍君/教案.md",
+  "lesson_plan_sha256": "3f2a6a3020a09d374d7efdd3c8cecffc8ce839503ec3147ba86b4063d0fb2140",
+  "approval_statement": "项目所有者在收到修订后的当前四项哈希组合后明确回复“批准”；批准教案SHA-256 3f2a6a3020a09d374d7efdd3c8cecffc8ce839503ec3147ba86b4063d0fb2140、G1候选SHA-256 1fd9d478f363d3f6b3fdf962634ea31248560b2d48cbca3dfd7891b39a1c03d0、候选合同canonical SHA-256 2bf68b617425a8c51cc2b66404a3aa1ca7c213f5a75beeb1d46e953c987367da和G0清单SHA-256 750372372d5cefa05b27397a1e50c2099c5c8982c8b17893055d3631fbc1c8f8进入G1，并同意进入S3。",
+  "lesson_plan_contract_sha256": "2bf68b617425a8c51cc2b66404a3aa1ca7c213f5a75beeb1d46e953c987367da",
+  "evidence_manifest_sha256": "750372372d5cefa05b27397a1e50c2099c5c8982c8b17893055d3631fbc1c8f8",
+  "standard_version": "STANDARD-1.2-candidate",
+  "resolved_issues": [
+    "K01随P0—P5各阶段按原文位置形成并在结尾回取"
+  ]
+}

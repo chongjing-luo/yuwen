@@ -8,7 +8,7 @@ from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-BATCH = ROOT / "work/knowledge/高考分析/kp_batches/ancient_reading_2021_2024.jsonl"
+BATCH = ROOT / "work/knowledge/exams/workbench/kp_batches/ancient_reading_2021_2024.jsonl"
 REPORT = ROOT / "work/knowledge/_meta/ancient_reading_2021_2024_kp_batch_validation_20260809.json"
 EXPECTED_COUNTS = {2021: 3, 2022: 3, 2023: 3, 2024: 3}
 

@@ -30,6 +30,7 @@ ROOT = Path(__file__).resolve().parents[2]
 BOILERPLATE_PATTERNS: dict[str, re.Pattern | tuple] = {
     "unique_difficulty": re.compile(r"^学生容易看见“.+”，却不能把它准确接回人物和前后故事。$"),
     "prior_input": re.compile(r"^学生已经完成前页任务，手中保留与“.+”有关的原词或初稿。$"),
+    "previous_page_input": re.compile(r"^学生已经完成前页任务，手中保留与“.+”有关的原词或初稿。$"),
     "first_person_reception": re.compile(r"^我刚才面对“.+”，留下了.+；我能用原词说清自己新增或修正的理解。$"),
     "adjacent_counterproof": re.compile(r"^相邻页不同时处理“.+”；合并会挤掉必要首答、校准或故事回接。$"),
 }
@@ -47,6 +48,23 @@ BOILERPLATE_FAILURE_SIGNALS = [
     "首答前已经看见完成关系或答案",
     "产物在后页没有真实消费者",
 ]
+PLACEHOLDER_RE = re.compile(
+    r"(?:TODO|TBD|FIXME|待填写|待补充|此处填写|根据实际情况|具体内容)",
+    re.IGNORECASE,
+)
+ELLIPSIS_ONLY_RE = re.compile(r"^[\s….]+$")
+
+
+def _placeholder_values(value, path: str):
+    if isinstance(value, str):
+        if PLACEHOLDER_RE.search(value) or ELLIPSIS_ONLY_RE.fullmatch(value):
+            yield path, value
+    elif isinstance(value, list):
+        for index, item in enumerate(value):
+            yield from _placeholder_values(item, f"{path}[{index}]")
+    elif isinstance(value, dict):
+        for key, item in value.items():
+            yield from _placeholder_values(item, f"{path}.{key}" if path else str(key))
 
 
 def load_lesson(lesson_js: str | None, lesson_json: str | None) -> dict:
@@ -66,6 +84,7 @@ def load_lesson(lesson_js: str | None, lesson_json: str | None) -> dict:
 
 def scan_lesson(lesson: dict) -> list[dict]:
     findings: list[dict] = []
+    is_v2 = str(lesson.get("schema_version") or "").startswith("2.")
     for page in lesson.get("pages") or []:
         pid = page.get("page_id", "?")
         for field, pattern in BOILERPLATE_PATTERNS.items():
@@ -79,6 +98,9 @@ def scan_lesson(lesson: dict) -> list[dict]:
         signals = page.get("failure_signals")
         if isinstance(signals, list) and [s for s in signals if isinstance(s, str)] == BOILERPLATE_FAILURE_SIGNALS:
             findings.append({"page_id": pid, "field": "failure_signals", "kind": "exact_list", "value": signals})
+        if is_v2:
+            for field, value in _placeholder_values(page, ""):
+                findings.append({"page_id": pid, "field": field, "kind": "placeholder", "value": value})
     return findings
 
 

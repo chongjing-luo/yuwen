@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""试卷切割与格式清理器（organize 配方核心步：full.md → 每题一文件 + by_type 视图）。
+"""试卷切割与格式清理器（organize 配方核心步：full.md → 每题一文件 + 全库题型视图）。
 
 清理规则【保守，只做确定性变换】：
   1. 文档顶部卷务模板段（注意事项/考生注意/绝密★启用前/本试卷共…）不入题目；
@@ -10,7 +10,7 @@
 输出：
   questions/Q{n:02d}_{type}.md —— 题目全文（含选项与随题材料）
   questions.jsonl 更新 —— 附加 qfile / content_sha256 / line_span
-  by_type/{type}.md —— 全库题型视图（生成物）
+  work/knowledge/exams/views/by_type/{type}.md —— 全库题型视图（生成物）
 用法：python3 scripts/split_paper_questions.py <PAPER 目录> [...] | --all
 """
 from __future__ import annotations
@@ -24,7 +24,8 @@ from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = ROOT / "work/knowledge/高考真题整理"
+BASE = ROOT / "work/knowledge/exams/papers"
+TYPE_VIEW = ROOT / "work/knowledge/exams/views/by_type"
 
 SECTION_RE = re.compile(r"^##\s+[一二三四五六七八九十]+[、．.\s]\s*(.+?)(?:[（(]?(\d+)分[）)])?\s*$")
 SUB_RE = re.compile(r"^##\s+[（(][一二三四五六七八九十]+[)）]\s*(.+?)(?:[（(]本题共(\d+)小题[，,](\d+)分[）)])?\s*$")
@@ -268,11 +269,11 @@ def split_paper(paper_dir: Path) -> tuple[int, list[str]]:
 
 
 def rebuild_by_type():
-    bt = BASE / "by_type"
+    bt = TYPE_VIEW
     if bt.exists():
         for f in bt.glob("*.md"):
             f.unlink()
-    bt.mkdir(exist_ok=True)
+    bt.mkdir(parents=True, exist_ok=True)
     index = defaultdict(list)
     for d in sorted(BASE.iterdir()):
         if not (d.is_dir() and d.name.startswith("PAPER-")):

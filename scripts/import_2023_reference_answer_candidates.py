@@ -21,7 +21,7 @@ PDF = ROOT / "Data/reference/gaokao/pdf/2023/2023_NCA_answer.pdf"
 HTML = ROOT / "Data/reference/gaokao/html/2023/answer.html"
 FULL = ROOT / "Data/reference/gaokao/mineru_result/2023_NCA_answer/full.md"
 OUT = BASE / "answers/reference_answer_candidates.jsonl"
-REPORT = ROOT / "work/knowledge/高考分析/EXAM-REFERENCE-ANSWER-CANDIDATES-2023.md"
+REPORT = ROOT / "work/knowledge/exams/workbench/EXAM-REFERENCE-ANSWER-CANDIDATES-2023.md"
 RECEIPT = ROOT / "work/knowledge/_reviews/receipts/exam_reference_answer_candidates_GK-NCA-2023_20260809.json"
 
 QIDS = [1, 2, 3, 6, 7, 8, 9, 10]

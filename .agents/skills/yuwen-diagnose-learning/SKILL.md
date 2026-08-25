@@ -5,11 +5,11 @@ description: 高中语文学情诊断（S8b 环节）。当需要录入作业/�
 
 # 学情诊断（S8b）
 
-服务机制节点：**K1（四站第四站闭环）、K3（掌握记录）、K4（班级知识地图）**。
+服务机制节点：**K1（四站第四站闭环）、K3（掌握记录）、K4（班级知识地图）**。执行依据：`work/methodology/manuals/S8-命题诊断手册.md`的`MM-S8-05`与`MM-S8-06`。
 
 ## 输入
 
-- mastery ledger：`work/teaching/<班级>/diagnostics/mastery_ledger.jsonl`（格式见 `scripts/analyze_mastery.py` docstring）
+- mastery ledger：`work/teaching/_classes/<班级>/mastery_ledger.jsonl`（S8只追加MR；格式见 `scripts/analyze_mastery.py` docstring）
 - 数据来源：批改记录（yuwen-grade-feedback 产出）、测验成绩、观察记录
 
 ## 步骤

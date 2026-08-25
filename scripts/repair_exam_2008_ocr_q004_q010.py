@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PATH = ROOT / "work/knowledge/高考分析/GK-SC-2008-response_nodes_vertical_slice.jsonl"
+PATH = ROOT / "work/knowledge/exams/workbench/GK-SC-2008-response_nodes_vertical_slice.jsonl"
 notes = {
     4: "Q004：PDF 第1页视觉回溯确认四组序列；prompt_text_raw 保留 OCR 数字/括号缺损，派生提示规范化。",
     8: "Q008：PDF 第3页视觉回溯确认‘立擢湜为左参议’；prompt_text_raw 保留‘立握得’，派生提示修正。",

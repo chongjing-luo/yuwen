@@ -1,0 +1,64 @@
+{
+  "schema_version": "lesson-evidence.v1",
+  "lesson_id": "LES-B1-QYC-01",
+  "mechanism_nodes": [
+    "K1",
+    "K2",
+    "K4",
+    "U4",
+    "U6",
+    "J4",
+    "J7"
+  ],
+  "normative_sources": [
+    {
+      "source_id": "SRC-B1-TEXTBOOK",
+      "role": "textbook",
+      "authority": "S1",
+      "path": "Data/textbook/普通高中教科书·语文必修 上册.pdf",
+      "sha256": "8fc46001e32d24f4616cf804891ca14e8f503ba538de1df6bb7e3839e454fa40"
+    },
+    {
+      "source_id": "SRC-HS-CURRICULUM-2020",
+      "role": "curriculum_standard",
+      "authority": "S1",
+      "path": "Data/reference/curriculum/普通高中语文课程标准（2017年版2020年修订）_教育部官方版.pdf",
+      "sha256": "7a187079f1fffe8ae834fdeff25bac9dd0e7de6b979db40fd875786dc0365977"
+    }
+  ],
+  "derived_sources": [
+    {
+      "source_id": "SRC-B1-QYC-PDF-SLICE",
+      "role": "textbook_lesson_pdf",
+      "path": "Data/textbook_extract/必修上册/01_U1_导语_课1_沁园春长沙.pdf",
+      "sha256": "5f4afb95f1aa5fec6d8749547bc79d82d34f6f50ce9b1849969dd17528981223",
+      "derived_from_source_id": "SRC-B1-TEXTBOOK",
+      "derived_from_sha256": "8fc46001e32d24f4616cf804891ca14e8f503ba538de1df6bb7e3839e454fa40"
+    },
+    {
+      "source_id": "SRC-B1-QYC-MINERU",
+      "role": "textbook_extract",
+      "path": "Data/textbook_extract/必修上册/mineru_result/01_U1_导语_课1_沁园春长沙/full.md",
+      "sha256": "9a3b823aef68369aab47d620d7640c36a3d82a8bcb59ae69217a14e1a75c00f2",
+      "derived_from_source_id": "SRC-B1-TEXTBOOK",
+      "derived_from_sha256": "8fc46001e32d24f4616cf804891ca14e8f503ba538de1df6bb7e3839e454fa40"
+    }
+  ],
+  "knowledge_sources": [
+    {
+      "source_id": "SRC-CARD-B1-U01-01",
+      "path": "work/knowledge/必修上册/cards/CARD-B1-U01-01_沁园春·长沙.md",
+      "sha256": "84e0f16668f9ba47842a151a1c449ed5c01d454bb3d5ba890b2d6a8ec951662e"
+    },
+    {
+      "source_id": "SRC-TR-B1-U01-01",
+      "path": "work/teaching/必修上册/沁园春长沙/TR-B1-U01-01_文本研究.md",
+      "sha256": "be59c9916ad1ea878b2cfc8e57650945043e246dd7a01a28ecb9d13e64b4a145"
+    }
+  ],
+  "evidence_dossier": {
+    "path": "work/teaching/必修上册/沁园春长沙/TR-B1-U01-01_文本研究.md",
+    "sha256": "be59c9916ad1ea878b2cfc8e57650945043e246dd7a01a28ecb9d13e64b4a145"
+  },
+  "claim_boundary": "课堂证据状态：未采集；学生掌握、理解与享受均待真实试教验证。"
+}

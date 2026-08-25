@@ -7,8 +7,8 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-MANIFEST = ROOT / "work/knowledge/高考分析/kp_batches/language_application_tasks_split_2018_2020.json"
-BATCH = ROOT / "work/knowledge/高考分析/kp_batches/language_application_tasks_2018_2020.jsonl"
+MANIFEST = ROOT / "work/knowledge/exams/workbench/kp_batches/language_application_tasks_split_2018_2020.json"
+BATCH = ROOT / "work/knowledge/exams/workbench/kp_batches/language_application_tasks_2018_2020.jsonl"
 REPORT = ROOT / "work/knowledge/_meta/language_application_tasks_2018_2020_kp_batch_validation_20260809.json"
 EXPECTED_UNITS = {
     (2018, 8): {"1", "2", "3", "4", "5"},

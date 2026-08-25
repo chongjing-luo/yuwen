@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-path = ROOT / "work/knowledge/高考分析/GK-SC-2013-response_nodes_vertical_slice.jsonl"
+path = ROOT / "work/knowledge/exams/workbench/GK-SC-2013-response_nodes_vertical_slice.jsonl"
 note = (
     "2013 四川卷当前没有可核验答案/评分源；中国教育在线答案链接在来源登记中为 404。"
     "结构切片通过不等于答案完成，保持 M0/KP_ID=N/A。"
