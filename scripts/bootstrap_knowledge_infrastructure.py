@@ -91,6 +91,18 @@ EXISTING_DELIVERABLES = {
     "CARD-B1-U01-03": "work/knowledge/必修上册/知识点卡_03_U1_百合花_哦香雪.md",
     "UNIT-B1-U01": "work/knowledge/必修上册/单元图谱_U1.md",
 }
+PACKAGE_FIELDS = (
+    "source_id",
+    "source_kind",
+    "book_code",
+    "book_name",
+    "audience",
+    "package_sequence",
+    "title",
+    "unit_number",
+    "material_type",
+    "local_path",
+)
 
 
 def _package_sort_key(path):
@@ -170,6 +182,33 @@ def discover_packages(project_root):
     counts = Counter(record["audience"] for record in records)
     if len(records) != 144 or counts != {"student": 113, "teacher": 31}:
         raise ValueError(f"package inventory invariant failed: total={len(records)}, {dict(counts)}")
+    return records
+
+
+def load_registered_packages(project_root):
+    """Load the public package inventory without requiring private PDF files."""
+    registry = Path(project_root).resolve() / "work/knowledge/_meta/sources.jsonl"
+    records = []
+    with registry.open(encoding="utf-8") as handle:
+        for line_number, line in enumerate(handle, start=1):
+            if not line.strip():
+                continue
+            item = json.loads(line)
+            if item.get("source_kind") != "textbook_package":
+                continue
+            missing = [field for field in PACKAGE_FIELDS if field not in item]
+            if missing:
+                raise ValueError(f"{registry}:{line_number}: missing package fields {missing}")
+            records.append({field: item[field] for field in PACKAGE_FIELDS})
+    records.sort(key=lambda item: (BOOK_ORDER.index(item["book_code"]), item["package_sequence"]))
+    counts = Counter(record["audience"] for record in records)
+    book_counts = Counter(record["book_code"] for record in records)
+    expected_books = {code: config["expected_packages"] for code, config in BOOKS.items()}
+    if len(records) != 144 or counts != {"student": 113, "teacher": 31} or book_counts != expected_books:
+        raise ValueError(
+            f"registered package inventory invariant failed: total={len(records)}, "
+            f"audiences={dict(counts)}, books={dict(book_counts)}"
+        )
     return records
 
 

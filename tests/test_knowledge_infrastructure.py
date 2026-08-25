@@ -12,9 +12,20 @@ sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 import bootstrap_knowledge_infrastructure as bootstrap
 
 
+def _private_textbook_corpus_available():
+    for config in bootstrap.BOOKS.values():
+        package_dir = PROJECT_ROOT / "Data/textbook_extract" / config["name"]
+        if len(list(package_dir.glob("*.pdf"))) != config["expected_packages"]:
+            return False
+    return True
+
+
+PRIVATE_TEXTBOOK_CORPUS_AVAILABLE = _private_textbook_corpus_available()
+
+
 class KnowledgeInventoryTests(unittest.TestCase):
-    def test_real_package_inventory_has_expected_counts(self):
-        packages = bootstrap.discover_packages(PROJECT_ROOT)
+    def test_registered_package_inventory_has_expected_counts(self):
+        packages = bootstrap.load_registered_packages(PROJECT_ROOT)
         counts = Counter(record["audience"] for record in packages)
 
         self.assertEqual(len(packages), 144)
@@ -25,7 +36,7 @@ class KnowledgeInventoryTests(unittest.TestCase):
         )
 
     def test_deliverable_inventory_is_exact_and_dependency_closed(self):
-        packages = bootstrap.discover_packages(PROJECT_ROOT)
+        packages = bootstrap.load_registered_packages(PROJECT_ROOT)
         deliverables = bootstrap.build_deliverables(packages)
         type_counts = Counter(record["deliverable_type"] for record in deliverables)
 
@@ -48,7 +59,7 @@ class KnowledgeInventoryTests(unittest.TestCase):
             self.assertTrue(set(record["upstream_deliverable_ids"]).issubset(known))
 
     def test_duplicate_x3_source_prefixes_receive_distinct_permanent_ids(self):
-        packages = bootstrap.discover_packages(PROJECT_ROOT)
+        packages = bootstrap.load_registered_packages(PROJECT_ROOT)
         duplicates = [
             record
             for record in packages
@@ -68,7 +79,7 @@ class KnowledgeInventoryTests(unittest.TestCase):
         self.assertEqual(len({record["deliverable_id"] for record in cards}), 2)
 
     def test_existing_samples_are_imports_not_accepted_outputs(self):
-        packages = bootstrap.discover_packages(PROJECT_ROOT)
+        packages = bootstrap.load_registered_packages(PROJECT_ROOT)
         deliverables = bootstrap.build_deliverables(packages)
         imported = [record for record in deliverables if record["status"] == "draft_existing"]
 
@@ -100,7 +111,15 @@ class KnowledgeInventoryTests(unittest.TestCase):
                 [{"new": True}],
             )
 
+    @unittest.skipUnless(PRIVATE_TEXTBOOK_CORPUS_AVAILABLE, "requires private textbook PDFs")
+    def test_private_corpus_discovery_matches_registered_inventory(self):
+        self.assertEqual(
+            bootstrap.discover_packages(PROJECT_ROOT),
+            bootstrap.load_registered_packages(PROJECT_ROOT),
+        )
 
+
+@unittest.skipUnless(PRIVATE_TEXTBOOK_CORPUS_AVAILABLE, "requires private textbook PDFs")
 class SourceRegistryIntegrationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

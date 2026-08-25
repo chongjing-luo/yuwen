@@ -38,7 +38,7 @@ class KnowledgeContractValidationTests(unittest.TestCase):
     def setUpClass(cls):
         cls.taxonomy = validator.load_json(PROJECT_ROOT / "work/knowledge/_meta/taxonomy.yaml")
         cls.rubrics = validator.load_json(PROJECT_ROOT / "work/knowledge/_meta/rubrics.json")
-        cls.packages = bootstrap.discover_packages(PROJECT_ROOT)
+        cls.packages = bootstrap.load_registered_packages(PROJECT_ROOT)
         cls.deliverables = bootstrap.build_deliverables(cls.packages)
 
     def test_candidate_taxonomy_and_rubrics_are_valid(self):
