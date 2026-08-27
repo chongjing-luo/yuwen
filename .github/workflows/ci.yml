@@ -20,4 +20,12 @@ jobs:
       - name: Install node deps
         run: npm ci
       - name: Run selfcheck (registry + principle checks + full tests + coverage)
-        run: python3 scripts/run_selfcheck.py
+        run: |
+          set +e
+          python3 scripts/run_selfcheck.py | tee /tmp/selfcheck.log
+          code=${PIPESTATUS[0]}
+          if [ "$code" -ne 0 ]; then
+            report=$(grep -o '报告 → .*' /tmp/selfcheck.log | tail -1 | sed 's/^报告 → //')
+            python3 scripts/checks/emit_selfcheck_failure_annotations.py "$report" || true
+            exit "$code"
+          fi
